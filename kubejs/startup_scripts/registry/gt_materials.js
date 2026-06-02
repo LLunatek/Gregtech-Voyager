@@ -417,7 +417,7 @@ register_fluid('liquid_martian_air', '0x732a22', [], [no_decomp])
 
 // shock glass
 register_fluid('4-4-methylenediphenyl-diisocyanate', '0xd1bab6', ['15x carbon', '10x hydrogen', '2x nitrogen', '2x oxygen'], no_decomp)
-register_fluid('nitrosyl_chloride', '0xffe3a6', ['nitrogen', 'oxygen', 'chlorine'], no_decomp)
+// register_fluid('nitrosyl_chloride', '0xffe3a6', ['nitrogen', 'oxygen', 'chlorine'], no_decomp)
 register_fluid('aromatic_feedstock', '0xffd06b', [], no_decomp)
 register_fluid('boron_trichloride', '0xbcffad',['boron', '3x chlorine'], no_decomp)
 register_fluid('nitro_aromatic_compound', '0xffd0aa', [], no_decomp)
