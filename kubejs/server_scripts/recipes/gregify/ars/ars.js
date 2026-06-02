@@ -1,6 +1,5 @@
 ServerEvents.recipes(event => {
 
-    //event.remove({ output: 'ars_nouveau:source_gem' })
     event.remove({ output: 'ars_nouveau:imbuement_chamber' })
     event.remove({ output: 'ars_nouveau:sourcestone' })
     event.remove({ output: 'ars_nouveau:source_jar' })
