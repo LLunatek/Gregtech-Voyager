@@ -405,6 +405,23 @@ register_fluid('uranium_ethanol_solution','0x91e600', ['uranium_235', 'ethanol']
 register_gas('martian_air', '0x4a140e', [], [no_decomp])
 register_fluid('liquid_martian_air', '0x732a22', [], [no_decomp])
 
+// shock glass
+register_fluid('4-4-methylenediphenyl-diisocyanate', '0xd1bab6', ['15x carbon', '10x hydrogen', '2x nitrogen', '2x oxygen'], no_decomp)
+register_fluid('nitrosyl_chloride', '0xffe3a6', ['nitrogen', 'oxygen', 'chlorine'], no_decomp)
+register_fluid('aromatic_feedstock', '0xffd06b', [], no_decomp)
+register_fluid('boron_trichloride', '0xbcffad',['boron', '3x chlorine'], no_decomp)
+register_fluid('nitro_aromatic_compound', '0xffd0aa', [], no_decomp)
+register_fluid('aromatic_amine', '0xeed0aa', [], no_decomp)
+register_fluid('diamine_intermediate', '0xded0aa', [], no_decomp)
+register_fluid('crude_4-4-methylenediphenyl-diisocyanate', '0xfed0bb', ['15x carbon', '10x hydrogen', '2x nitrogen', '2x oxygen'], no_decomp)
+register_fluid('polymeric_4-4-methylenediphenyl-diisocyanate', '0xdffab6', ['15x carbon', '10x hydrogen', '2x nitrogen', '2x oxygen'], no_decomp)
+register_fluid('molten_tpu', '0x1c1c00', ['15x carbon', '10x hydrogen', '2x nitrogen', '2x oxygen'], no_decomp)
+StartupEvents.registry('item', event => {
+    event.create('tpu_pellet')
+        .displayName('TPU Pellet')
+})
+
+
 /*
     Materials are in-game items or fluids. They can be dusts, ingots, gems, fluids and all their derivatives.
     To make a new material(NOTE: to add a material that is present on the periodic table, but 
