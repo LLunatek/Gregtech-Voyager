@@ -28,8 +28,8 @@ ServerEvents.recipes(event => {
     )
 
     event.recipes.ars_nouveau.enchanting_apparatus(
-        ['minecraft:ender_pearl', 'gtceu:source_gem', 'minecraft:ender_pearl', 'gtceu:source_gem',
-            'gtceu:source_gem'
+        ['minecraft:ender_pearl', 'ars_nouveau:source_gem', 'minecraft:ender_pearl', 'ars_nouveau:source_gem',
+            'ars_nouveau:source_gem'
         ], // input items
         'gtceu:flawless_source_gem', // reagent
         {type: 'minecraft:item_nbt', item: 'gateways:gate_pearl',

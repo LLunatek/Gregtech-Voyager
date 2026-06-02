@@ -310,7 +310,17 @@ GTCEuStartupEvents.registry('gtceu:material', event => {
 
 
 
+
 register_gem("source", '0xd745ff', [], )
+
+GTCEuStartupEvents.materialModification(event => {
+	TagPrefix.gem["setIgnored(com.gregtechceu.gtceu.api.data.chemical.material.Material,java.util.function.Supplier[])"](GTMaterialRegistry.getMaterial('source'), () => Item.getItem('ars_nouveau:source_gem'))
+	TagPrefix.block["setIgnored(com.gregtechceu.gtceu.api.data.chemical.material.Material,java.util.function.Supplier[])"](GTMaterialRegistry.getMaterial('source'), () => Item.getItem('ars_nouveau:source_gem_block'))
+	TagPrefix.block.modifyMaterialAmount(GTMaterialRegistry.getMaterial('source'),4)
+})
+
+
+
 
 register_fluid('acetylene','0xfff2f2', ['2x carbon', '2x hydrogen'], electrolyze)
 register_fluid('ilmenite_slurry','0x1a1818', [], no_decomp)

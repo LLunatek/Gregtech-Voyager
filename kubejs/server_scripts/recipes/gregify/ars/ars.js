@@ -1,6 +1,5 @@
 ServerEvents.recipes(event => {
 
-    event.remove({ output: 'ars_nouveau:source_gem' })
     event.remove({ output: 'ars_nouveau:imbuement_chamber' })
     event.remove({ output: 'ars_nouveau:sourcestone' })
     event.remove({ output: 'ars_nouveau:source_jar' })
@@ -59,7 +58,7 @@ ServerEvents.recipes(event => {
         .itemInputs(
             '1x gtceu:lazurite_gem',
         )
-        .itemOutputs('gtceu:source_gem')
+		.itemOutputs('ars_nouveau:source_gem')
         .inputFluids('kubejs:magebloom_oil 100')
         .outputFluids('kubejs:mana_residue 20')
         .duration(200)
@@ -69,7 +68,7 @@ ServerEvents.recipes(event => {
         .itemInputs(
             '2x minecraft:amethyst_shard',
         )
-        .itemOutputs('gtceu:source_gem')
+		.itemOutputs('ars_nouveau:source_gem')
         .inputFluids('kubejs:magebloom_oil 50')
         .outputFluids('kubejs:mana_residue 20')
         .duration(100)
@@ -96,13 +95,13 @@ ServerEvents.recipes(event => {
         
     event.recipes.ars_nouveau.imbuement(
         'gtceu:lazurite_gem', // input item
-        'gtceu:source_gem', // output
+        'ars_nouveau:source_gem', // output
         500, // source cost
         []
     )
     event.recipes.ars_nouveau.imbuement(
         'minecraft:amethyst_shard', // input item
-        'gtceu:source_gem', // output
+        'ars_nouveau:source_gem', // output
         250, // source cost
         []
     )
@@ -130,7 +129,7 @@ ServerEvents.recipes(event => {
         .itemInputs(
             '4x gtceu:rose_gold_plate',
             '1x gtceu:rose_gold_ring',
-            '1x gtceu:source_gem',
+            '1x ars_nouveau:source_gem',
             '4x ars_nouveau:archwood_planks',
             '4x gtceu:glass_plate'
         )
@@ -142,7 +141,7 @@ ServerEvents.recipes(event => {
     event.recipes.gtceu.assembler('kubejs:arcane_pedestal')
         .itemInputs(
             '4x gtceu:long_rose_gold_rod',
-            '1x gtceu:source_gem',
+            '1x ars_nouveau:source_gem',
             '4x ars_nouveau:sourcestone',
             '4x gtceu:gold_screw'
         )
