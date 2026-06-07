@@ -1,0 +1,972 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "chapter_2_im_blue_da_boo_di_da_boo_di"
+	group: "3E515D2B3A8DFC29"
+	icon: "gtceu:good_integrated_circuit"
+	id: "6DC4B97C5DB377F5"
+	order_index: 4
+	quest_links: [ ]
+	quests: [
+		{
+			dependencies: ["3B1202F3A9BF4E46"]
+			id: "419A5B81DA99E1A0"
+			size: 2.0d
+			subtitle: "Is it just me, or does it feel like you can take a bite out of this?"
+			tasks: [{
+				count: 16L
+				id: "0E8D2F499D4F422C"
+				item: { Count: 16, id: "gtceu:aluminium_ingot" }
+				type: "item"
+			}]
+			x: -1.0d
+			y: -5.0d
+		}
+		{
+			dependencies: ["3B1202F3A9BF4E46"]
+			id: "4ADC887D4291587B"
+			size: 2.0d
+			tasks: [{
+				count: 4L
+				id: "20D9436FCB245824"
+				item: { Count: 4, id: "gtceu:good_electronic_circuit" }
+				type: "item"
+			}]
+			x: 3.5d
+			y: -3.5d
+		}
+		{
+			dependencies: [
+				"26BAFB93E377E732"
+				"38B51C570B6D8316"
+			]
+			description: ["Yep. You need a LOT of stuff to greg succesfully. So, be aware, we are doing this &n&o&lEVERY. CHAPTER."]
+			id: "3B1202F3A9BF4E46"
+			size: 3.0d
+			subtitle: "This again?"
+			tasks: [{
+				id: "1EF893213F18477C"
+				title: "More collection"
+				type: "checkmark"
+			}]
+			x: 2.0d
+			y: -6.0d
+		}
+		{
+			dependencies: ["419A5B81DA99E1A0"]
+			hide_dependent_lines: true
+			id: "2B5A2AE2F218E742"
+			size: 1.5d
+			subtitle: "You DO, in fact, need a lot of aluminium"
+			tasks: [{
+				id: "06C243F6FE616C62"
+				item: "gtceu:mv_machine_hull"
+				type: "item"
+			}]
+			x: -3.0d
+			y: -5.25d
+		}
+		{
+			dependencies: ["419A5B81DA99E1A0"]
+			id: "7E9733D387BA5BE2"
+			size: 1.5d
+			subtitle: "We do need to preform this song and dance again"
+			tasks: [{
+				id: "0E3AD670897CF899"
+				item: "gtceu:mv_electric_motor"
+				type: "item"
+			}]
+			title: "You're gonna hate this in MV I"
+			x: -0.75d
+			y: -3.0d
+		}
+		{
+			dependencies: ["7E9733D387BA5BE2"]
+			id: "27E4822E8D7DBDAF"
+			subtitle: "These are just aluminium checks"
+			tasks: [{
+				id: "7EEF9CD2C5920371"
+				item: "gtceu:mv_electric_piston"
+				type: "item"
+			}]
+			title: "You're gonna hate this in MV II"
+			x: -2.0d
+			y: -1.5d
+		}
+		{
+			dependencies: ["7E9733D387BA5BE2"]
+			id: "1D392A6831DCF0D0"
+			subtitle: "Does anyone even use GT item routing?"
+			tasks: [{
+				id: "514BB8660BE3E51D"
+				item: "gtceu:mv_conveyor_module"
+				type: "item"
+			}]
+			title: "You're gonna hate this in MV III"
+			x: -2.0d
+			y: -0.5d
+		}
+		{
+			dependencies: ["4ADC887D4291587B"]
+			id: "417BBD08E300AC6B"
+			subtitle: "This one would be even worse to point at an airplane"
+			tasks: [{
+				id: "34BCF43418D3AD9E"
+				item: "gtceu:mv_emitter"
+				type: "item"
+			}]
+			title: "You're gonna hate this in MV VII"
+			x: 5.0d
+			y: -3.0d
+		}
+		{
+			dependencies: ["4ADC887D4291587B"]
+			id: "7EC0567F57BDAFCE"
+			optional: true
+			subtitle: "Can sense more things than you can imagine"
+			tasks: [{
+				id: "37D5254E01D109A7"
+				item: "gtceu:mv_sensor"
+				type: "item"
+			}]
+			title: "You're gonna hate this in MV IIX"
+			x: 5.0d
+			y: -4.0d
+		}
+		{
+			dependencies: [
+				"27E4822E8D7DBDAF"
+				"7E9733D387BA5BE2"
+			]
+			id: "5036ABCE601C92A6"
+			size: 1.25d
+			subtitle: "Blue cyborg?"
+			tasks: [{
+				id: "30A09BEEDE87FA84"
+				item: "gtceu:mv_robot_arm"
+				type: "item"
+			}]
+			title: "You're gonna hate this in MV V"
+			x: -4.0d
+			y: -1.0d
+		}
+		{
+			dependencies: ["7EC0567F57BDAFCE"]
+			id: "3CF6A272AFB7D9FD"
+			optional: true
+			subtitle: "When LV automatic mining is too slow"
+			tasks: [{
+				id: "1F1DEC3C490F48E1"
+				item: "gtceu:mv_miner"
+				type: "item"
+			}]
+			x: 6.0d
+			y: -4.0d
+		}
+		{
+			dependencies: [
+				"5036ABCE601C92A6"
+				"2B5A2AE2F218E742"
+				"1D392A6831DCF0D0"
+			]
+			id: "538EC8442BCC6589"
+			size: 1.0d
+			subtitle: "We do be assembling"
+			tasks: [{
+				id: "512F70B3080262B3"
+				item: "gtceu:mv_assembler"
+				type: "item"
+			}]
+			x: -3.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["7E9733D387BA5BE2"]
+			id: "6C57DDC176F398D1"
+			subtitle: "The pump is always the most annoying to craft"
+			tasks: [{
+				id: "648A1AF5926EA7F5"
+				item: "gtceu:mv_electric_pump"
+				type: "item"
+			}]
+			title: "You're gonna hate this in MV IV"
+			x: -3.5d
+			y: -4.0d
+		}
+		{
+			dependencies: ["6C57DDC176F398D1"]
+			id: "52BDFD2A8FC3FC07"
+			optional: true
+			subtitle: "Yes, this is in the questbook twice. Why do you ask?"
+			tasks: [{
+				id: "5850518BAB282C18"
+				item: "gtceu:mv_chemical_bath"
+				type: "item"
+			}]
+			x: -5.5d
+			y: -4.5d
+		}
+		{
+			dependencies: ["6C57DDC176F398D1"]
+			id: "162C4272B08CCB6F"
+			optional: true
+			subtitle: "Extracting the souls of the gregged"
+			tasks: [{
+				id: "568224DB6A96B234"
+				item: "gtceu:mv_extractor"
+				type: "item"
+			}]
+			x: -5.5d
+			y: -3.5d
+		}
+		{
+			dependencies: [
+				"162C4272B08CCB6F"
+				"52BDFD2A8FC3FC07"
+			]
+			icon: "ars_nouveau:novice_spell_book"
+			id: "4EE4195E595A74FD"
+			optional: true
+			subtitle: "IT'S WIZARD TIME"
+			tasks: [{
+				id: "2617AD6756CDAFAA"
+				title: "Ars"
+				type: "checkmark"
+			}]
+			x: -7.0d
+			y: -4.0d
+		}
+		{
+			dependencies: [
+				"5036ABCE601C92A6"
+				"2B5A2AE2F218E742"
+			]
+			id: "719F6D1B75209AD8"
+			subtitle: "Assembling friends EVEN BETTER"
+			tasks: [{
+				id: "7E08D153FCF731B7"
+				item: "gtceu:mv_helper_assembler"
+				type: "item"
+			}]
+			x: -5.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["7E9733D387BA5BE2"]
+			id: "5B8348AB4F45374A"
+			subtitle: "More advanced alloys"
+			tasks: [{
+				id: "4C4B71D066565456"
+				item: "gtceu:mv_mixer"
+				type: "item"
+			}]
+			x: 0.5d
+			y: -3.0d
+		}
+		{
+			dependencies: [
+				"5B8348AB4F45374A"
+				"2D373E7FC492E348"
+			]
+			id: "1B78AE56EB953517"
+			subtitle: "Electrum 2.0"
+			tasks: [{
+				id: "5EDEABC8477EEEC0"
+				item: "gtceu:fluxed_electrum_ingot"
+				type: "item"
+			}]
+			x: 0.0d
+			y: -1.5d
+		}
+		{
+			dependencies: ["538EC8442BCC6589"]
+			id: "34256B5B77FAF597"
+			subtitle: "No soldering alloy alternative?"
+			tasks: [{
+				id: "588D83B28C77DEDC"
+				item: "kubejs:mv_helper_computation_array"
+				type: "item"
+			}]
+			x: -4.0d
+			y: 0.5d
+		}
+		{
+			dependencies: [
+				"3778C068660FCD61"
+				"719F6D1B75209AD8"
+				"34256B5B77FAF597"
+				"432590144B64AB10"
+			]
+			description: ["&oDosen't exactly know what he's doing, but we love him anyways"]
+			id: "42FC8A4E03960F10"
+			rewards: [{
+				id: "1619A6847239A649"
+				item: "kubejs:mv_loot_bag"
+				type: "item"
+			}]
+			subtitle: "Biff"
+			tasks: [{
+				id: "558EAE8E3E23FC63"
+				item: "kubejs:mv_technician_helper"
+				type: "item"
+			}]
+			x: -4.5d
+			y: 2.0d
+		}
+		{
+			dependencies: [
+				"3778C068660FCD61"
+				"719F6D1B75209AD8"
+				"34256B5B77FAF597"
+			]
+			description: [
+				"Reduces the time on certain MV level EBF recipes by &l15%&r (check JEI for more info)"
+				""
+				"&oThey say let him cook for a reason"
+			]
+			id: "093BADDDF8149E8E"
+			rewards: [{
+				id: "574F27F482124910"
+				item: "kubejs:mv_loot_bag"
+				type: "item"
+			}]
+			subtitle: "D'Quanda"
+			tasks: [{
+				id: "54F391B2BC7E4D5C"
+				item: "kubejs:lv_ebf_helper"
+				type: "item"
+			}]
+			x: -6.0d
+			y: 1.5d
+		}
+		{
+			dependencies: [
+				"68CEAD8ABAED6196"
+				"538EC8442BCC6589"
+			]
+			id: "4C1ED02854ED8430"
+			size: 2.0d
+			subtitle: "HV EBF time!!"
+			tasks: [{
+				id: "6B7A0072E04EB446"
+				item: "gtceu:mv_energy_input_hatch"
+				type: "item"
+			}]
+			x: -1.0d
+			y: 1.0d
+		}
+		{
+			dependencies: [
+				"417BBD08E300AC6B"
+				"2B5A2AE2F218E742"
+			]
+			id: "74B5AD5B1311F3E7"
+			subtitle: "Etching circuits like it's no one's buisness"
+			tasks: [{
+				id: "3112F50E8CB2A4AC"
+				item: "gtceu:mv_laser_engraver"
+				type: "item"
+			}]
+			x: 5.5d
+			y: -2.0d
+		}
+		{
+			dependencies: [
+				"27E4822E8D7DBDAF"
+				"7E9733D387BA5BE2"
+				"2B5A2AE2F218E742"
+			]
+			hide_dependency_lines: true
+			id: "2411310CF21320C9"
+			subtitle: "Faster 2-1 rods"
+			tasks: [{
+				id: "05ECAF7C96CD42F8"
+				item: "gtceu:mv_lathe"
+				type: "item"
+			}]
+			x: 7.5d
+			y: -1.5d
+		}
+		{
+			dependencies: [
+				"54383B663449C45D"
+				"74B5AD5B1311F3E7"
+				"2411310CF21320C9"
+			]
+			id: "68CEAD8ABAED6196"
+			subtitle: "The symbol this has looks kinda like a ~"
+			tasks: [{
+				id: "111AFFBA4580DC9F"
+				item: "gtceu:ulpic_chip"
+				type: "item"
+			}]
+			x: 4.0d
+			y: -1.0d
+		}
+		{
+			dependencies: [
+				"54383B663449C45D"
+				"74B5AD5B1311F3E7"
+				"2411310CF21320C9"
+			]
+			id: "59B674C96777452E"
+			subtitle: "THEY HAVE RAM!"
+			tasks: [{
+				id: "18AFB9F49BF0B602"
+				item: "gtceu:ram_chip"
+				type: "item"
+			}]
+			x: 7.5d
+			y: 0.5d
+		}
+		{
+			dependencies: [
+				"54383B663449C45D"
+				"2411310CF21320C9"
+				"74B5AD5B1311F3E7"
+			]
+			id: "025B372D6DEB3E59"
+			subtitle: "Lost the logic when it became small"
+			tasks: [{
+				id: "70A615B783CC3D6D"
+				item: "gtceu:ilc_chip"
+				type: "item"
+			}]
+			x: 5.0d
+			y: -0.5d
+		}
+		{
+			dependencies: [
+				"025B372D6DEB3E59"
+				"4335A9DF8AA086EF"
+			]
+			id: "6A1887AE0B579449"
+			subtitle: "More advanced circuitry"
+			tasks: [{
+				id: "151BFAF24A28A8C6"
+				item: "gtceu:basic_integrated_circuit"
+				type: "item"
+			}]
+			x: 5.0d
+			y: 0.5d
+		}
+		{
+			dependencies: ["6A1887AE0B579449"]
+			id: "10835D2C1A8C7F7A"
+			subtitle: "Cheaper MV circuits for the whole family"
+			tasks: [{
+				id: "0C6A6B669601F520"
+				item: "gtceu:good_integrated_circuit"
+				type: "item"
+			}]
+			x: 2.5d
+			y: 1.0d
+		}
+		{
+			dependencies: [
+				"59B674C96777452E"
+				"1B78AE56EB953517"
+				"10835D2C1A8C7F7A"
+				"4EE7F344816F8356"
+			]
+			id: "432590144B64AB10"
+			size: 2.0d
+			subtitle: "Time for HV (if you have PE and white steel)"
+			tasks: [{
+				id: "57BC46E6731E7968"
+				item: "gtceu:advanced_integrated_circuit"
+				type: "item"
+			}]
+			x: 1.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["4ADC887D4291587B"]
+			id: "5003483C6028EE64"
+			subtitle: "Whadda think this machine even does?"
+			tasks: [{
+				id: "2C809EDBFF61A04D"
+				item: "gtceu:mv_electrolyzer"
+				type: "item"
+			}]
+			x: 2.5d
+			y: -2.5d
+		}
+		{
+			dependencies: [
+				"5B8348AB4F45374A"
+				"5003483C6028EE64"
+			]
+			id: "2D373E7FC492E348"
+			subtitle: "Everything is chrome in the future, Squidward"
+			tasks: [{
+				id: "7EE0C6FBE4A39AD7"
+				item: "gtceu:chromium_dust"
+				type: "item"
+			}]
+			x: 1.5d
+			y: -3.0d
+		}
+		{
+			dependencies: ["2D373E7FC492E348"]
+			id: "36817259703DEB93"
+			subtitle: "Steel variant #1"
+			tasks: [{
+				id: "6AA072E4AF79E5B0"
+				item: "gtceu:vanadium_steel_ingot"
+				type: "item"
+			}]
+			x: 1.5d
+			y: -2.0d
+		}
+		{
+			dependencies: [
+				"36817259703DEB93"
+				"2B5A2AE2F218E742"
+			]
+			id: "3D5A07370F18961C"
+			subtitle: "Now this one takes time"
+			tasks: [{
+				id: "1017960218D23492"
+				item: "gtceu:mv_cutter"
+				type: "item"
+			}]
+			x: 1.5d
+			y: -1.0d
+		}
+		{
+			dependencies: ["72BCD56BAC6F1E57"]
+			id: "01C94BA5CADFA830"
+			subtitle: "Names get very long and stupid from here on out"
+			tasks: [{
+				id: "4869194546F6D979"
+				item: "gtceu:silicon_boule"
+				type: "item"
+			}]
+			x: 3.5d
+			y: -2.0d
+		}
+		{
+			dependencies: [
+				"3D5A07370F18961C"
+				"01C94BA5CADFA830"
+			]
+			id: "54383B663449C45D"
+			subtitle: "Only sixteen from each boule?"
+			tasks: [{
+				id: "59617BCE97D49673"
+				item: "gtceu:silicon_wafer"
+				type: "item"
+			}]
+			x: 2.5d
+			y: -1.5d
+		}
+		{
+			dependencies: [
+				"5B8348AB4F45374A"
+				"2D373E7FC492E348"
+			]
+			hide_dependent_lines: true
+			id: "7316516D8EB8CD60"
+			subtitle: "Uh oh"
+			tasks: [{
+				id: "1CD5ACED2CED8598"
+				item: "gtceu:kanthal_dust"
+				type: "item"
+			}]
+			x: 0.5d
+			y: -4.0d
+		}
+		{
+			dependencies: [
+				"2B5A2AE2F218E742"
+				"6C57DDC176F398D1"
+				"1D392A6831DCF0D0"
+			]
+			hide_dependency_lines: true
+			id: "654CD3417DA4DA1D"
+			subtitle: "Cooling hot things"
+			tasks: [{
+				id: "1B82D782352263F3"
+				item: "gtceu:mv_chemical_bath"
+				type: "item"
+			}]
+			x: -2.5d
+			y: 4.0d
+		}
+		{
+			dependencies: [
+				"4C1ED02854ED8430"
+				"654CD3417DA4DA1D"
+				"7316516D8EB8CD60"
+			]
+			id: "31ECA53434A3F674"
+			subtitle: "Now for the other 127"
+			tasks: [{
+				id: "403F89F7786D027C"
+				item: "gtceu:kanthal_ingot"
+				type: "item"
+			}]
+			x: -2.5d
+			y: 1.0d
+		}
+		{
+			dependencies: [
+				"538EC8442BCC6589"
+				"31ECA53434A3F674"
+			]
+			id: "0A90A77024E6430C"
+			subtitle: "How long did these take?"
+			tasks: [{
+				id: "094E36401DF24B3C"
+				item: "gtceu:kanthal_coil_block"
+				type: "item"
+			}]
+			x: -1.5d
+			y: 3.0d
+		}
+		{
+			dependencies: [
+				"0A90A77024E6430C"
+				"654CD3417DA4DA1D"
+			]
+			id: "4BD922E5CE685F22"
+			subtitle: "Yes, this was the entire reason for kanthal"
+			tasks: [{
+				id: "34E72C8FB6E27A04"
+				item: "gtceu:silicon_ingot"
+				type: "item"
+			}]
+			x: 0.5d
+			y: 3.5d
+		}
+		{
+			dependencies: ["4BD922E5CE685F22"]
+			id: "4EE7F344816F8356"
+			subtitle: "Moore's law goes hard"
+			tasks: [{
+				id: "64DA5C3B16DE3B6A"
+				item: "gtceu:transistor"
+				type: "item"
+			}]
+			x: 1.5d
+			y: 3.5d
+		}
+		{
+			dependencies: [
+				"0A90A77024E6430C"
+				"654CD3417DA4DA1D"
+			]
+			id: "3778C068660FCD61"
+			subtitle: "The cooler bronze"
+			tasks: [{
+				id: "5F60C0A1E2460EAF"
+				item: "gtceu:black_bronze_ingot"
+				type: "item"
+			}]
+			x: -4.5d
+			y: 3.5d
+		}
+		{
+			dependencies: [
+				"4C1ED02854ED8430"
+				"5BDC588635E9B551"
+			]
+			id: "7A2ABD419B2FB9E0"
+			subtitle: "Steel variant #3"
+			tasks: [{
+				id: "53B76633304435DC"
+				item: "gtceu:stainless_steel_ingot"
+				type: "item"
+			}]
+			x: -1.0d
+			y: 5.0d
+		}
+		{
+			dependencies: [
+				"5B8348AB4F45374A"
+				"2D373E7FC492E348"
+			]
+			hide_dependent_lines: true
+			id: "5BDC588635E9B551"
+			subtitle: "White steel"
+			tasks: [{
+				id: "2A67C8FAFEDA3312"
+				item: "gtceu:stainless_steel_dust"
+				type: "item"
+			}]
+			x: 1.5d
+			y: -4.0d
+		}
+		{
+			dependencies: [
+				"7A2ABD419B2FB9E0"
+				"31386F98AE94D575"
+			]
+			id: "6A65D57C567806CB"
+			shape: "gear"
+			size: 3.0d
+			subtitle: "And then there were four"
+			tasks: [{
+				id: "7D9BAD4691887122"
+				item: "gtceu:hv_machine_hull"
+				type: "item"
+			}]
+			x: -9.0d
+			y: 4.5d
+		}
+		{
+			dependencies: ["7E9733D387BA5BE2"]
+			id: "2DE64A0F27847F54"
+			size: 2.0d
+			subtitle: "First REAL chemical reactor"
+			tasks: [{
+				id: "4FA99F5E2B70B86B"
+				item: "gtceu:mv_chemical_reactor"
+				type: "item"
+			}]
+			x: -9.0d
+			y: -2.0d
+		}
+		{
+			dependencies: [
+				"088A47A6F8B2E1EC"
+				"2AE88B3B3356EFF3"
+				"2DE64A0F27847F54"
+			]
+			id: "49F17D4469082171"
+			min_required_tasks: 1
+			subtitle: "You don't need to do this yet, but PLEASE passive this"
+			tasks: [{
+				id: "794E07DB1F0BC94B"
+				item: "gtceu:ethylene_bucket"
+				type: "item"
+			}]
+			x: -9.0d
+			y: 0.5d
+		}
+		{
+			dependencies: ["49F17D4469082171"]
+			id: "31386F98AE94D575"
+			size: 1.5d
+			subtitle: "FINALLY first plastic"
+			tasks: [{
+				id: "3513000C23710BB9"
+				item: "gtceu:polyethylene_ingot"
+				type: "item"
+			}]
+			x: -10.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["49F17D4469082171"]
+			hide_until_deps_visible: false
+			id: "3F19DD981F340045"
+			optional: true
+			subtitle: "Thought second would take more time, huh?"
+			tasks: [{
+				id: "534C22800761FE39"
+				item: "gtceu:polyvinyl_chloride_ingot"
+				type: "item"
+			}]
+			x: -10.0d
+			y: -0.5d
+		}
+		{
+			dependencies: ["31386F98AE94D575"]
+			id: "34E27193A1178686"
+			optional: true
+			subtitle: "I don't know what a \"hermetic\" is either"
+			tasks: [{
+				id: "5ACC0205599E85DF"
+				item: "gtceu:lv_hermetic_casing"
+				type: "item"
+			}]
+			x: -12.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["3F19DD981F340045"]
+			id: "729685A8B2D7482C"
+			optional: true
+			subtitle: "Still don't know what a \"hermetic\" is"
+			tasks: [{
+				id: "7C54C2A17922D829"
+				item: "gtceu:mv_hermetic_casing"
+				type: "item"
+			}]
+			x: -12.0d
+			y: -0.5d
+		}
+		{
+			dependencies: ["34E27193A1178686"]
+			id: "4BFF7E28298F7F53"
+			optional: true
+			size: 1.75d
+			subtitle: "FINALLY good fluid storage"
+			tasks: [{
+				id: "3AA4B864680864E0"
+				item: "gtceu:lv_super_tank"
+				type: "item"
+			}]
+			x: -14.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["729685A8B2D7482C"]
+			id: "1865DE166C804C4D"
+			optional: true
+			size: 1.75d
+			subtitle: "Why would you not use these?"
+			tasks: [{
+				id: "34DAD8B892301A59"
+				item: "gtceu:mv_super_tank"
+				type: "item"
+			}]
+			x: -14.0d
+			y: -0.5d
+		}
+		{
+			dependencies: ["7B351CBB336D5129"]
+			id: "2AE88B3B3356EFF3"
+			optional: true
+			subtitle: "Don't use fermented biomass for this please"
+			tasks: [{
+				id: "3B52384194F1F5FC"
+				item: "gtceu:ethanol_bucket"
+				type: "item"
+			}]
+			x: -8.0d
+			y: 0.5d
+		}
+		{
+			dependencies: ["540D3841076D1667"]
+			id: "7B351CBB336D5129"
+			optional: true
+			subtitle: "Made of plants"
+			tasks: [{
+				id: "1BEB15230B211168"
+				item: "gtceu:biomass_bucket"
+				type: "item"
+			}]
+			x: -8.0d
+			y: 1.5d
+		}
+		{
+			dependencies: [
+				"2B5A2AE2F218E742"
+				"6C57DDC176F398D1"
+				"27E4822E8D7DBDAF"
+				"4ADC887D4291587B"
+			]
+			hide_dependency_lines: true
+			id: "540D3841076D1667"
+			optional: true
+			subtitle: "Coke oven 2.0"
+			tasks: [{
+				id: "2D9BAE73632F26E2"
+				item: "gtceu:pyrolyse_oven"
+				type: "item"
+			}]
+			x: -8.0d
+			y: 2.5d
+		}
+		{
+			dependencies: ["6ECAE141D27C5E82"]
+			id: "088A47A6F8B2E1EC"
+			optional: true
+			subtitle: "Black gold. 'Nuff said"
+			tasks: [{
+				id: "0FEF9A0E76F9CB56"
+				item: "gtceu:oil_bucket"
+				type: "item"
+			}]
+			x: -10.0d
+			y: 0.5d
+		}
+		{
+			dependencies: ["31386F98AE94D575"]
+			id: "136C44FC0AA0FC95"
+			optional: true
+			size: 1.5d
+			subtitle: "Needed for TSS"
+			tasks: [{
+				id: "3E7DC6885513ED46"
+				item: "toms_storage:ts.inventory_connector"
+				type: "item"
+			}]
+			x: -11.5d
+			y: 4.5d
+		}
+		{
+			dependencies: ["432590144B64AB10"]
+			id: "13C87727AE1B10DA"
+			size: 1.5d
+			subtitle: "Make this"
+			tasks: [{
+				id: "237B4EC75B5047CF"
+				item: "gtceu:mv_circuit_assembler"
+				type: "item"
+			}]
+			x: 3.0d
+			y: 3.0d
+		}
+		{
+			dependencies: ["31386F98AE94D575"]
+			id: "6A3ADC148BE019C6"
+			optional: true
+			size: 1.5d
+			subtitle: "Tom's simple storage, anyone?"
+			tasks: [{
+				id: "104C6B0446F6DF58"
+				item: "toms_storage:ts.storage_terminal"
+				type: "item"
+			}]
+			x: -13.0d
+			y: 3.5d
+		}
+		{
+			dependencies: ["6A3ADC148BE019C6"]
+			id: "0DF6DAD9846C3812"
+			optional: true
+			subtitle: "No crafting table needed."
+			tasks: [{
+				id: "3045161A8F1016DE"
+				item: "toms_storage:ts.crafting_terminal"
+				type: "item"
+			}]
+			x: -14.5d
+			y: 4.0d
+		}
+		{
+			dependencies: ["38B51C570B6D8316"]
+			id: "4335A9DF8AA086EF"
+			subtitle: "Why WOULDN'T you need this?"
+			tasks: [{
+				id: "50695A946C458099"
+				item: "gtceu:lv_circuit_assembler"
+				type: "item"
+			}]
+			x: 3.5d
+			y: 0.0d
+		}
+		{
+			dependencies: [
+				"6A3ADC148BE019C6"
+				"136C44FC0AA0FC95"
+			]
+			id: "5A190F37B32908DC"
+			optional: true
+			size: 1.75d
+			subtitle: "Not AE2, but a decent alternative"
+			tasks: [{
+				id: "430D5E62101E6E2D"
+				title: "Tom's Simple Storage"
+				type: "checkmark"
+			}]
+			x: -13.5d
+			y: 5.5d
+		}
+	]
+	title: "Chapter 2: Medium Voltage"
+}

@@ -1,0 +1,929 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "chapter_1_the_real_beggining"
+	group: "3E515D2B3A8DFC29"
+	icon: "gtceu:lp_steam_solid_boiler"
+	id: "158792A0BFCEECD4"
+	order_index: 2
+	quest_links: [ ]
+	quests: [
+		{
+			dependencies: ["6ADAC23B330B235C"]
+			id: "0BF5B842E06C2661"
+			shape: "gear"
+			size: 2.0d
+			subtitle: "The end of the stone age was never due to a lack of stones"
+			tasks: [{
+				count: 64L
+				id: "1139C5E63CE01552"
+				item: { Count: 64, id: "gtceu:bronze_ingot" }
+				type: "item"
+			}]
+			x: -23.0d
+			y: 2.0d
+		}
+		{
+			can_repeat: false
+			dependencies: [
+				"1E86B791EF8D2C10"
+				"6ADAC23B330B235C"
+			]
+			id: "3057D811EC559A13"
+			shape: "gear"
+			size: 2.0d
+			subtitle: "Remeber these?"
+			tasks: [{
+				count: 16L
+				id: "5110C8521AB05136"
+				item: { Count: 16, id: "minecraft:bricks" }
+				type: "item"
+			}]
+			x: -19.0d
+			y: 2.0d
+		}
+		{
+			dependencies: [
+				"0BF5B842E06C2661"
+				"3057D811EC559A13"
+			]
+			id: "665922B1E3FAA7C7"
+			shape: "gear"
+			size: 1.5d
+			subtitle: "The first machine hull"
+			tasks: [{
+				id: "26921764DF0F4DA5"
+				item: "gtceu:bronze_brick_casing"
+				type: "item"
+			}]
+			x: -21.0d
+			y: 2.25d
+		}
+		{
+			dependencies: ["3A557C43CE0F534F"]
+			description: ["Gregtech requires a LOT of different materials. So, to get you prepared, this quest chapter will begin with you getting small amounts of some materials."]
+			id: "6ADAC23B330B235C"
+			shape: "pentagon"
+			size: 3.0d
+			subtitle: "I need more things to eat, for example"
+			tasks: [{
+				id: "773D371284E627A9"
+				title: "Rescource check"
+				type: "checkmark"
+			}]
+			x: -21.0d
+			y: -1.5d
+		}
+		{
+			dependencies: ["665922B1E3FAA7C7"]
+			description: ["Welcome to the first voltage tier, 0.5 ULV! (aka steam) This tier is unique because it uses steam machines, instead of power. It also has some other mechanics, but we will come across those as we get to them."]
+			id: "4CA574760EF63553"
+			subtitle: "You did 1000 years of human technologocial advancements in about an hour"
+			tasks: [{
+				id: "71BE5591C28A30B4"
+				title: "The steam age is now!"
+				type: "checkmark"
+			}]
+			x: -21.0d
+			y: 3.5d
+		}
+		{
+			dependencies: [
+				"4CA574760EF63553"
+				"1AA68223242ECD8C"
+			]
+			description: ["Steam is produced using boilers. These allow you to.. boil water. There are three types of boilers: &l&0the solid boiler&r, which burns solid fuels, like charcoal and coal coal, &l&1the liquid boiler&r, which burns liquids like creosote and lava, and &lthe solar boiler&r, which uses the &l&o&epower of the sun&r to boil water."]
+			id: "694D21DD359391F9"
+			size: 1.25d
+			subtitle: "Can't use a nuclear power plant yet"
+			tasks: [
+				{
+					id: "126ACE72A2C937D9"
+					item: "gtceu:lp_steam_solid_boiler"
+					type: "item"
+				}
+				{
+					id: "58919CCC39DEEEED"
+					item: "gtceu:lp_steam_liquid_boiler"
+					type: "item"
+				}
+				{
+					id: "770A14CD70696DE4"
+					item: "gtceu:lp_steam_solar_boiler"
+					type: "item"
+				}
+			]
+			title: "Actually making steam"
+			x: -24.375d
+			y: 3.75d
+		}
+		{
+			dependencies: ["22A38B844EA1BE5B"]
+			description: ["You need water for all of your steam machines. This multiblock, thankfully, will make water for free!"]
+			icon: "gtceu:primitive_pump"
+			id: "1AA68223242ECD8C"
+			shape: "gear"
+			size: 1.5d
+			subtitle: "Sadly no ULV pump"
+			tasks: [
+				{
+					id: "4672BC6EAAEC085F"
+					item: "gtceu:primitive_pump"
+					type: "item"
+				}
+				{
+					count: 10L
+					id: "38694340DABE66E7"
+					item: { Count: 10, id: "gtceu:treated_wood_frame" }
+					type: "item"
+				}
+				{
+					count: 10L
+					id: "508B4C8CCCBF8213"
+					item: { Count: 10, id: "gtceu:pump_deck" }
+					type: "item"
+				}
+				{
+					id: "61E9FA13ACD1324C"
+					item: "gtceu:pump_hatch"
+					type: "item"
+				}
+			]
+			x: -26.5d
+			y: 2.0d
+		}
+		{
+			dependencies: ["1AA68223242ECD8C"]
+			description: [
+				"When it comes to moving fluids, you need to use Gregtech pipes. These have various variables to them, but the most important right now are the &l&cheat capacity&r and the &l&o&bfluid transfer rate.&r The pipe you should for water should be treated wood, and use bronze for the steam for now."
+				""
+				"Another mechanic that is very relevant to the primitive pump is that output hatches will automatically output to the pipe they are connected to."
+			]
+			id: "09DCF85E9679FFE3"
+			subtitle: "Yes, even moving fluids is gregified"
+			tasks: [{
+				id: "2875B59B86B0989B"
+				title: "Pipes?"
+				type: "checkmark"
+			}]
+			x: -27.5d
+			y: 3.5d
+		}
+		{
+			dependencies: ["694D21DD359391F9"]
+			description: ["The forge hammer will allow for plates to be made at a 3-2 ratio, instead of a 2-1 (As a tip from gregger to gregger, 9 ingots is 6 plates. That one helped me a lot. Or maybe i'm just dumb, who knows.)"]
+			id: "6E52D3FAEFF8D5C1"
+			optional: true
+			subtitle: "Tired of 2-1 ratios? Try this!"
+			tasks: [{
+				id: "5007F778E954B881"
+				item: "gtceu:lp_steam_forge_hammer"
+				type: "item"
+			}]
+			x: -27.0d
+			y: 5.0d
+		}
+		{
+			dependencies: ["694D21DD359391F9"]
+			description: ["The rock breaker is basically a cobble gen in a box. All you need to do is put water and lava next to this guy, and put a piece of cobblestone in it, and you will get infinite cobblestone for free!"]
+			id: "5BE328CB9E229D34"
+			optional: true
+			subtitle: "Wait, this is a thing?"
+			tasks: [{
+				id: "20EE7F4CE650583F"
+				item: "gtceu:lp_steam_rock_crusher"
+				type: "item"
+			}]
+			x: -22.0d
+			y: 5.0d
+		}
+		{
+			dependencies: ["694D21DD359391F9"]
+			description: [
+				"The macerator is your first instance of ore processing. This will be greatly expanded later on, but right now, you can throw all of your raw ores in the macerator, and they will &l&6Double.&r"
+				""
+				"The macerator can also be used to replace the mortars you used to make the copper and tin dust."
+				""
+				"Macerators infamously use so little power that you can run an HV macerator on 1 amp of LV. All this means for you is that you can run quite a few macerators off of very little steam."
+			]
+			id: "45575EE69718E395"
+			optional: true
+			subtitle: "Hulk SMASH!!"
+			tasks: [{
+				id: "54E4646743108295"
+				item: "gtceu:lp_steam_macerator"
+				type: "item"
+			}]
+			x: -26.0d
+			y: 5.5d
+		}
+		{
+			dependencies: ["6BE7BE31179AD3F3"]
+			description: [
+				"The alloy smelter &owould &rhave been used for also making better bronze, but that role was taken by the tinkers smeltery you made"
+				""
+				"&oYou did make a tinkers smeltery, right?"
+			]
+			id: "182D72912E295B5F"
+			subtitle: "For vulcanizing the rubber pulp"
+			tasks: [{
+				id: "56CDA2B40E4F9C62"
+				item: "gtceu:lp_steam_alloy_smelter"
+				type: "item"
+			}]
+			x: -26.5d
+			y: 8.0d
+		}
+		{
+			dependencies: ["694D21DD359391F9"]
+			description: ["Did you happen to run across any rubber trees while you were searching for ore veins? if you didn't grab any of them, i would reccomend you go back and do so, becasue you need the &o&6sticky resin &rthat the trees drop, and then put them in this extractor machine."]
+			id: "6BE7BE31179AD3F3"
+			subtitle: "Extracting things without the fluids"
+			tasks: [{
+				id: "6E6E4ABC83057CA7"
+				item: "gtceu:lp_steam_extractor"
+				type: "item"
+			}]
+			x: -25.0d
+			y: 6.0d
+		}
+		{
+			dependencies: [
+				"182D72912E295B5F"
+				"36B56F9A4C3CE9EB"
+			]
+			description: [
+				"The entire reason you went to the nether was so you could find &o&esulfur ore, &rwhich is used to \"vulcanize\" your rubber. "
+				""
+				"&oFun Fact: Vulcanization is a real thing in the real world, and was invented in 1839 by Dr. Goodyear, when he was mixing sulfur with rubber, and dropped it in a hot frying pan."
+			]
+			id: "47451BD6913C7E56"
+			shape: "gear"
+			size: 1.5d
+			subtitle: "The best material for bands"
+			tasks: [{
+				count: 16L
+				id: "1984AF1A3530326C"
+				item: { Count: 16, id: "gtceu:rubber_ingot" }
+				type: "item"
+			}]
+			x: -25.5d
+			y: 10.5d
+		}
+		{
+			dependencies: ["694D21DD359391F9"]
+			id: "2F7A53AA41406D0D"
+			subtitle: "Can be used for a youtube hydraulic press channel"
+			tasks: [{
+				id: "313278BB316BCA25"
+				item: "gtceu:lp_steam_compressor"
+				type: "item"
+			}]
+			x: -24.0d
+			y: 6.0d
+		}
+		{
+			dependencies: ["2F7A53AA41406D0D"]
+			description: ["The &l&7Primitive Blast Furnace&r is a multiblock that will produce steel very slowly, with the ratio being 2 coal and 1 iron to 1 steel. I would reccomend building at least 4 of these, so you can get a lot of extra steel."]
+			id: "0EC7EBD2F1EF165B"
+			subtitle: "Steel, here we come!"
+			tasks: [
+				{
+					count: 32L
+					id: "481979102CC0F972"
+					item: { Count: 32, id: "gtceu:firebricks" }
+					type: "item"
+				}
+				{
+					id: "279624302A9D5EB1"
+					item: "gtceu:primitive_blast_furnace"
+					type: "item"
+				}
+			]
+			x: -24.0d
+			y: 7.0d
+		}
+		{
+			dependencies: ["0EC7EBD2F1EF165B"]
+			description: ["Just like real life, steel is used in a lot of different places. But, for now, it is just used for going to the Nether."]
+			id: "17B74197E07434BC"
+			shape: "gear"
+			size: 1.5d
+			subtitle: "When bronze is too weak"
+			tasks: [{
+				id: "7588FFD5E84BD475"
+				item: "gtceu:steel_ingot"
+				type: "item"
+			}]
+			x: -24.0d
+			y: 9.0d
+		}
+		{
+			dependencies: ["17B74197E07434BC"]
+			id: "36B56F9A4C3CE9EB"
+			subtitle: "Because of course the flint and steel takes steel"
+			tasks: [{
+				dimension: "minecraft:the_nether"
+				id: "1D596E2446D1BED1"
+				type: "dimension"
+			}]
+			title: "Go to the Nether!"
+			x: -24.0d
+			y: 10.5d
+		}
+		{
+			dependencies: ["694D21DD359391F9"]
+			description: ["While this takes the same amount of time as a furnace, this machine runs on steam and not burnables, so it is &otechnically &rbetter. Although, you should just use a tinker's smeltery"]
+			id: "290498B1719B554E"
+			optional: true
+			subtitle: "For when furnaces are eating too much fuel"
+			tasks: [{
+				id: "742D55E662AB9F7A"
+				item: "gtceu:lp_steam_furnace"
+				type: "item"
+			}]
+			x: -23.0d
+			y: 5.5d
+		}
+		{
+			dependencies: [
+				"17B74197E07434BC"
+				"241DCDAF1DCCB290"
+			]
+			description: ["Now that we have steel, we can make high pressure steam producers! These make a LOT more steam, with the drawback of not using any less fuel. The only one I would say is &otruly&r worth making is the solar boiler, because it is just more efficent with the water, and less spam is always nice"]
+			id: "33ABA0144D049B42"
+			optional: true
+			subtitle: "These make a lot of steam"
+			tasks: [
+				{
+					id: "5F48CB4192C530B1"
+					item: "gtceu:hp_steam_solid_boiler"
+					type: "item"
+				}
+				{
+					id: "3C3F961A2FF83EE1"
+					item: "gtceu:hp_steam_liquid_boiler"
+					type: "item"
+				}
+				{
+					id: "202F76808F1A9F67"
+					item: "gtceu:hp_steam_solar_boiler"
+					type: "item"
+				}
+			]
+			title: "High pressure steam producers"
+			x: -22.5d
+			y: 9.5d
+		}
+		{
+			dependencies: ["3EC37E139DFA0443"]
+			description: ["Wrought iron can be obtained by smelting iron nuggets in a furnace."]
+			id: "241DCDAF1DCCB290"
+			optional: true
+			subtitle: "This is annoying to make"
+			tasks: [{
+				id: "6F747CCC19BF331B"
+				item: "gtceu:wrought_iron_nugget"
+				type: "item"
+			}]
+			x: -22.0d
+			y: 8.0d
+		}
+		{
+			dependencies: [
+				"241DCDAF1DCCB290"
+				"17B74197E07434BC"
+			]
+			description: ["Along with the steam producers getting an upgrade, the machines do too! The low pressure machines actually had a speed debuff, with all recipes running at half speed, but these remove the debuff, running at full speed!"]
+			id: "4F58BDC4A67CB655"
+			optional: true
+			subtitle: "Cause slow isn't an option"
+			tasks: [
+				{
+					id: "0047B66A311AF3BE"
+					item: "gtceu:hp_steam_extractor"
+					type: "item"
+				}
+				{
+					id: "1E3F1C3DC0CDBBBF"
+					item: "gtceu:hp_steam_macerator"
+					type: "item"
+				}
+				{
+					id: "4B3CD61E7B8B8166"
+					item: "gtceu:hp_steam_compressor"
+					type: "item"
+				}
+				{
+					id: "63BF38484CEFBA76"
+					item: "gtceu:hp_steam_forge_hammer"
+					type: "item"
+				}
+				{
+					id: "16D1CBCF5FD65484"
+					item: "gtceu:hp_steam_furnace"
+					type: "item"
+				}
+				{
+					id: "5C645645A111EA93"
+					item: "gtceu:hp_steam_alloy_smelter"
+					type: "item"
+				}
+				{
+					id: "438D92D741387226"
+					item: "gtceu:hp_steam_rock_crusher"
+					type: "item"
+				}
+			]
+			title: "High pressure steam machines"
+			x: -23.0d
+			y: 7.5d
+		}
+		{
+			dependencies: ["241DCDAF1DCCB290"]
+			id: "59B6518A6B806E1A"
+			optional: true
+			rewards: [{
+				id: "7AB1110E76D2FAB8"
+				item: {
+					Count: 1
+					id: "gtceu:blue_steel_wrench"
+					tag: {
+						Damage: 0
+						DisallowContainerItem: 0b
+						GT.Behaviours: {
+							Mode: 2b
+						}
+						GT.Tool: {
+							DefaultEnchantments: [ ]
+							Enchantability: 33
+							HarvestLevel: 3
+							MaxDamage: 1023
+							ToolSpeed: 19.0f
+						}
+						HideFlags: 2
+					}
+				}
+				type: "item"
+			}]
+			subtitle: "The Greg edition"
+			tasks: [
+				{
+					id: "69C02954616F62A2"
+					item: {
+						Count: 1
+						id: "gtceu:wrought_iron_hammer"
+						tag: {
+							Damage: 0
+							DisallowContainerItem: 0b
+							GT.Behaviours: { }
+							GT.Tool: {
+								DefaultEnchantments: [ ]
+								Enchantability: 5
+								HarvestLevel: 2
+								MaxDamage: 383
+								ToolSpeed: 6.0f
+							}
+							HideFlags: 2
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "73D5125B023B2C1A"
+					item: {
+						Count: 1
+						id: "gtceu:wrought_iron_file"
+						tag: {
+							Damage: 0
+							DisallowContainerItem: 0b
+							GT.Behaviours: { }
+							GT.Tool: {
+								DefaultEnchantments: [ ]
+								Enchantability: 5
+								MaxDamage: 383
+							}
+							HideFlags: 2
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "01F02645F2470489"
+					item: {
+						Count: 1
+						id: "gtceu:wrought_iron_mortar"
+						tag: {
+							Damage: 0
+							DisallowContainerItem: 0b
+							GT.Behaviours: { }
+							GT.Tool: {
+								DefaultEnchantments: [ ]
+								Enchantability: 5
+								MaxDamage: 383
+							}
+							HideFlags: 2
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "62CC051FFB52633B"
+					item: {
+						Count: 1
+						id: "gtceu:wrought_iron_wire_cutter"
+						tag: {
+							Damage: 0
+							DisallowContainerItem: 0b
+							GT.Behaviours: { }
+							GT.Tool: {
+								DefaultEnchantments: [ ]
+								Enchantability: 5
+								HarvestLevel: 2
+								MaxDamage: 383
+								ToolSpeed: 6.0f
+							}
+							HideFlags: 2
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "4BFBCB5343CD0991"
+					item: {
+						Count: 1
+						id: "gtceu:wrought_iron_saw"
+						tag: {
+							Damage: 0
+							DisallowContainerItem: 0b
+							GT.Behaviours: {
+								HarvestIce: 1b
+							}
+							GT.Tool: {
+								DefaultEnchantments: [ ]
+								Enchantability: 5
+								MaxDamage: 383
+							}
+							HideFlags: 2
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "43FDFEC103BA323F"
+					item: {
+						Count: 1
+						id: "gtceu:wrought_iron_screwdriver"
+						tag: {
+							Damage: 0
+							DisallowContainerItem: 0b
+							GT.Behaviours: { }
+							GT.Tool: {
+								DefaultEnchantments: [ ]
+								Enchantability: 5
+								MaxDamage: 383
+							}
+							HideFlags: 2
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "686CE0F27D68C27A"
+					item: {
+						Count: 1
+						id: "gtceu:wrought_iron_wrench"
+						tag: {
+							Damage: 0
+							DisallowContainerItem: 0b
+							GT.Behaviours: {
+								Mode: 2b
+							}
+							GT.Tool: {
+								DefaultEnchantments: [ ]
+								Enchantability: 5
+								HarvestLevel: 2
+								MaxDamage: 383
+								ToolSpeed: 6.0f
+							}
+							HideFlags: 2
+						}
+					}
+					type: "item"
+				}
+			]
+			title: "Wrought Iron Tools [GT]"
+			x: -21.0d
+			y: 7.5d
+		}
+		{
+			dependencies: ["241DCDAF1DCCB290"]
+			id: "7C3D1884F34D3782"
+			optional: true
+			rewards: [{
+				id: "29842940430028DF"
+				item: {
+					Count: 1
+					id: "gtceu:blue_steel_mining_hammer"
+					tag: {
+						Damage: 0
+						DisallowContainerItem: 0b
+						GT.Behaviours: {
+							AoEColumn: 1
+							AoELayer: 0
+							AoERow: 1
+							MaxAoEColumn: 1
+							MaxAoELayer: 0
+							MaxAoERow: 1
+							TorchPlacing: 1b
+						}
+						GT.Tool: {
+							DefaultEnchantments: [ ]
+							Enchantability: 33
+							HarvestLevel: 3
+							MaxDamage: 3071
+							ToolSpeed: 10.0f
+						}
+						HideFlags: 2
+					}
+				}
+				type: "item"
+			}]
+			subtitle: "When tinkers tools are too cringe."
+			tasks: [
+				{
+					id: "37680C604E31CFBC"
+					item: {
+						Count: 1
+						id: "gtceu:wrought_iron_pickaxe"
+						tag: {
+							Damage: 0
+							DisallowContainerItem: 0b
+							GT.Behaviours: {
+								TorchPlacing: 1b
+							}
+							GT.Tool: {
+								DefaultEnchantments: [ ]
+								Enchantability: 5
+								HarvestLevel: 2
+								MaxDamage: 383
+								ToolSpeed: 6.0f
+							}
+							HideFlags: 2
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "34D648D36C08E050"
+					item: {
+						Count: 1
+						id: "gtceu:wrought_iron_shovel"
+						tag: {
+							Damage: 0
+							DisallowContainerItem: 0b
+							GT.Behaviours: { }
+							GT.Tool: {
+								DefaultEnchantments: [ ]
+								Enchantability: 5
+								HarvestLevel: 2
+								MaxDamage: 383
+								ToolSpeed: 6.0f
+							}
+							HideFlags: 2
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "68E786C34F6C5937"
+					item: {
+						Count: 1
+						id: "gtceu:wrought_iron_axe"
+						tag: {
+							Damage: 0
+							DisallowContainerItem: 0b
+							GT.Behaviours: {
+								DisableShields: 1b
+								TreeFelling: 1b
+							}
+							GT.Tool: {
+								DefaultEnchantments: [ ]
+								Enchantability: 5
+								HarvestLevel: 2
+								MaxDamage: 383
+								ToolSpeed: 4.0f
+							}
+							HideFlags: 2
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "07ED0C82C0D89D46"
+					item: {
+						Count: 1
+						id: "gtceu:wrought_iron_sword"
+						tag: {
+							Damage: 0
+							DisallowContainerItem: 0b
+							GT.Behaviours: { }
+							GT.Tool: {
+								AttackDamage: 5.0f
+								AttackSpeed: -2.6000001f
+								DefaultEnchantments: [ ]
+								Enchantability: 5
+								MaxDamage: 383
+							}
+							HideFlags: 2
+						}
+					}
+					type: "item"
+				}
+			]
+			title: "Wrought Iron Tools"
+			x: -21.0d
+			y: 8.5d
+		}
+		{
+			dependencies: ["17B74197E07434BC"]
+			id: "5500D47A44ACE611"
+			rewards: [
+				{
+					exclude_from_claim_all: true
+					id: "550C415BC6CF5903"
+					table_id: 7627987465819050157L
+					type: "choice"
+				}
+				{
+					count: 4
+					id: "0BD92B6F7FDA3EAD"
+					item: "kubejs:lv_universal_coin"
+					type: "item"
+				}
+			]
+			subtitle: "Taking things on the go"
+			tasks: [{
+				id: "23B24978E85D68E2"
+				item: "sophisticatedbackpacks:backpack"
+				type: "item"
+			}]
+			x: -25.0d
+			y: 8.0d
+		}
+		{
+			dependencies: ["47451BD6913C7E56"]
+			id: "4E18C34ED24D379B"
+			rewards: [
+				{
+					exclude_from_claim_all: true
+					id: "0EB3AE43F748BCCC"
+					table_id: 7804472915765149448L
+					type: "choice"
+				}
+				{
+					id: "22E23E5A08A5057E"
+					item: "kubejs:ulv_loot_bag"
+					type: "item"
+				}
+			]
+			subtitle: "I wonder what these are for?"
+			tasks: [
+				{
+					id: "07E47ECDAF5ABF81"
+					item: "gtceu:red_alloy_single_cable"
+					type: "item"
+				}
+				{
+					id: "613DDBE622B16798"
+					item: "gtceu:glass_tube"
+					type: "item"
+				}
+				{
+					id: "7539E7DB74D05BF8"
+					item: "gtceu:resistor"
+					type: "item"
+				}
+				{
+					id: "3BB93A63C5C49BDC"
+					item: "gtceu:resin_printed_circuit_board"
+					type: "item"
+				}
+			]
+			title: "Circuit Parts"
+			x: -27.0d
+			y: 11.0d
+		}
+		{
+			dependencies: [
+				"4E18C34ED24D379B"
+				"17B74197E07434BC"
+			]
+			id: "56789FF17493784B"
+			shape: "gear"
+			size: 2.0d
+			subtitle: "Turns out, circuits"
+			tasks: [{
+				id: "341636B710240585"
+				item: "gtceu:basic_electronic_circuit"
+				type: "item"
+			}]
+			x: -28.5d
+			y: 9.5d
+		}
+		{
+			dependencies: [
+				"47451BD6913C7E56"
+				"17B74197E07434BC"
+			]
+			id: "12EEF6CEEB33CB25"
+			shape: "gear"
+			size: 2.0d
+			subtitle: "Machine hull #2"
+			tasks: [{
+				id: "68BA470EB93C3EFB"
+				item: "gtceu:lv_machine_hull"
+				type: "item"
+			}]
+			x: -22.0d
+			y: 13.0d
+		}
+		{
+			dependencies: [
+				"56789FF17493784B"
+				"12EEF6CEEB33CB25"
+			]
+			id: "76633C5616D9BE3B"
+			shape: "gear"
+			size: 3.0d
+			subtitle: "Your first electricity."
+			tasks: [{
+				id: "7176E0F8DB6C0A74"
+				item: "gtceu:lv_steam_turbine"
+				type: "item"
+			}]
+			x: -28.5d
+			y: 12.5d
+		}
+		{
+			dependencies: ["12EEF6CEEB33CB25"]
+			id: "17B4A2B310307830"
+			optional: true
+			rewards: [
+				{
+					count: 16
+					id: "5F3CA9495FF895BC"
+					item: "kubejs:lv_tech_coin"
+					type: "item"
+				}
+				{
+					exclude_from_claim_all: true
+					id: "77FBF66BD9292C4C"
+					table_id: 3238365205241762905L
+					type: "choice"
+				}
+				{
+					count: 2
+					id: "20E4408F9617CCE6"
+					item: "kubejs:lv_loot_bag"
+					type: "item"
+				}
+			]
+			size: 1.5d
+			subtitle: "True speed for Wrought Iron and Steel"
+			tasks: [
+				{
+					id: "0D76BA82B50D0A04"
+					item: "gtceu:steam_blast_furnace"
+					type: "item"
+				}
+				{
+					id: "0390F53BB2D39915"
+					item: "gtceu:lv_muffler_hatch"
+					type: "item"
+				}
+				{
+					count: 9L
+					id: "204679EE678FDDC5"
+					item: { Count: 9, id: "gtceu:steel_firebox_casing" }
+					type: "item"
+				}
+				{
+					count: 6L
+					id: "2C2EC55BA471C2B2"
+					item: { Count: 6, id: "gtceu:steel_brick_casing" }
+					type: "item"
+				}
+				{
+					count: 7L
+					id: "2EC1892334079221"
+					item: { Count: 7, id: "gtceu:steel_machine_casing" }
+					type: "item"
+				}
+			]
+			x: -25.5d
+			y: 12.0d
+		}
+	]
+	title: "Chapter 0.5: Ultra Low Voltage (Ft. Steam)"
+}

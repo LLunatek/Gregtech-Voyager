@@ -16,6 +16,7 @@
 				type: "item"
 			}]
 			size: 1.5d
+			subtitle: "The beginning of a truly incredible voyage"
 			tasks: [{
 				id: "0ED1C97CCBF691CA"
 				item: "minecraft:flint"
@@ -27,6 +28,7 @@
 		{
 			dependencies: ["7C46710EF18B9648"]
 			id: "7F23975179B70629"
+			subtitle: "Crafting stuff "
 			tasks: [{
 				id: "3F19B0F03784B91A"
 				item: "minecraft:crafting_table"
@@ -39,6 +41,7 @@
 			dependencies: ["7F23975179B70629"]
 			id: "2AE4CD36755CB4AD"
 			size: 0.75d
+			subtitle: "Taking crafting on the go"
 			tasks: [{
 				id: "02EFD1068BED52D4"
 				item: "crafting_on_a_stick:crafting_table"
@@ -49,6 +52,7 @@
 		}
 		{
 			dependencies: ["7F23975179B70629"]
+			description: ["did you get the refrence?"]
 			id: "32BCB293CF73DF87"
 			rewards: [{
 				id: "481EB568E4B0250B"
@@ -56,6 +60,7 @@
 				type: "item"
 			}]
 			size: 0.75d
+			subtitle: "Yes, Tinkers is in this pack"
 			tasks: [{
 				id: "17867AFFB7FB6B5B"
 				item: "tconstruct:crafting_station"
@@ -67,6 +72,7 @@
 		{
 			dependencies: ["7C46710EF18B9648"]
 			id: "79F5C09B1B3DFCC1"
+			subtitle: "Tinker's construct, my beloved"
 			tasks: [{
 				id: "4EC6C213A02601F8"
 				item: "tconstruct:pattern"
@@ -79,31 +85,34 @@
 			dependencies: [
 				"79F5C09B1B3DFCC1"
 				"7F23975179B70629"
+				"0A7847B88DC2A1C6"
 			]
-			hide_dependency_lines: true
 			id: "4AA0AEEC31BD3EDA"
+			subtitle: "Building the tools"
 			tasks: [{
 				id: "21847638489A7A8E"
 				item: "tconstruct:tinker_station"
 				type: "item"
 			}]
-			x: -2.5d
-			y: 0.5d
+			x: -5.5d
+			y: 3.0d
 		}
 		{
 			dependencies: ["79F5C09B1B3DFCC1"]
 			id: "1A9147331B7CC694"
+			subtitle: "Making the tool components"
 			tasks: [{
 				id: "6E520DE71B26C11C"
 				item: "tconstruct:part_builder"
 				type: "item"
 			}]
-			x: -4.0d
-			y: 2.0d
+			x: -3.5d
+			y: 1.5d
 		}
 		{
 			dependencies: ["7F23975179B70629"]
 			id: "24AE545643722390"
+			subtitle: "Storing all of that stuff you have"
 			tasks: [{
 				id: "75014E02D516529D"
 				item: "minecraft:chest"
@@ -119,6 +128,7 @@
 				"79F5C09B1B3DFCC1"
 			]
 			id: "6C7E21FE242E1E58"
+			subtitle: "Storing all of your extra parts"
 			tasks: [{
 				id: "073E00198DDD1483"
 				item: "tconstruct:part_chest"
@@ -128,10 +138,7 @@
 			y: 4.5d
 		}
 		{
-			dependencies: [
-				"4AA0AEEC31BD3EDA"
-				"1A9147331B7CC694"
-			]
+			dependencies: ["1A9147331B7CC694"]
 			id: "0A7847B88DC2A1C6"
 			rewards: [
 				{
@@ -151,6 +158,7 @@
 					type: "item"
 				}
 			]
+			subtitle: "Becuase we're too cool for stone tools"
 			tasks: [
 				{
 					id: "6C178E6A69816CBF"
@@ -197,19 +205,21 @@
 					type: "item"
 				}
 			]
-			x: -4.0d
-			y: 0.5d
+			title: "Flint Tool Parts"
+			x: -4.5d
+			y: 1.0d
 		}
 		{
 			dependencies: ["1A807CCA515A0B94"]
 			id: "437D1FF759A7E40C"
+			subtitle: "Combination of 3 types of sediments... oy oy oy."
 			tasks: [{
 				id: "647B9EFD0E1B4E4C"
 				item: "tconstruct:grout"
 				type: "item"
 			}]
-			x: 5.0d
-			y: 7.0d
+			x: 3.0d
+			y: 5.0d
 		}
 		{
 			dependencies: ["171628CDF529A4DB"]
@@ -219,13 +229,16 @@
 				item: "kubejs:stone_bag"
 				type: "item"
 			}]
+			shape: "gear"
+			size: 2.0d
+			subtitle: "First of many alloys.. in ingot form"
 			tasks: [{
 				id: "0AD173CC7659443C"
 				item: "gtceu:bronze_ingot"
 				type: "item"
 			}]
-			x: 5.0d
-			y: 4.0d
+			x: 6.0d
+			y: 2.0d
 		}
 		{
 			dependencies: ["1FC60FD20FF11A9F"]
@@ -235,6 +248,7 @@
 				item: "kubejs:stone_bag"
 				type: "item"
 			}]
+			subtitle: "Putting those furnaces to use"
 			tasks: [{
 				id: "6C96C9C00F65B5F7"
 				item: "tconstruct:seared_brick"
@@ -254,6 +268,7 @@
 				item: "tconstruct:repair_kit_cast"
 				type: "item"
 			}]
+			subtitle: "For cooking things into molten metals"
 			tasks: [
 				{
 					id: "79AB12A9AE7B2BBF"
@@ -286,28 +301,32 @@
 					type: "item"
 				}
 			]
+			title: "Basic Smeltery Parts"
 			x: 6.5d
 			y: 5.0d
 		}
 		{
 			dependencies: ["1A807CCA515A0B94"]
 			id: "26A6C0E4B38F51B3"
+			subtitle: "Brick type #3"
 			tasks: [{
 				id: "02531C812AA9F65F"
 				item: "gtceu:coke_oven_brick"
 				type: "item"
 			}]
-			x: 4.0d
-			y: 8.0d
+			x: 1.0d
+			y: 5.5d
 		}
 		{
 			dependencies: ["26A6C0E4B38F51B3"]
+			description: ["&l&3Lore:&r&o One GTNH player got gaslit into making 576 Coke ovens in LV, the record until Three in the \"Hermitcraft of modded minecraft,\" Project Singularity, made 577, where the record still stands."]
 			id: "22A38B844EA1BE5B"
 			rewards: [{
 				id: "3C9A6150631FA25E"
 				item: "kubejs:stone_bag"
 				type: "item"
 			}]
+			subtitle: "1 out of 576"
 			tasks: [
 				{
 					id: "3AD6C645AB9D85B0"
@@ -321,8 +340,8 @@
 					type: "item"
 				}
 			]
-			x: 2.0d
-			y: 8.0d
+			x: 0.0d
+			y: 5.5d
 		}
 		{
 			dependencies: ["3ABEDA348136284C"]
@@ -334,13 +353,14 @@
 				type: "item"
 			}]
 			size: 1.5d
+			subtitle: "Making the big boy, huh?"
 			tasks: [{
 				id: "27D9CF45EBFD1D9E"
 				item: "tconstruct:smeltery_controller"
 				type: "item"
 			}]
-			x: 7.5d
-			y: 6.0d
+			x: 8.25d
+			y: 4.5d
 		}
 		{
 			dependencies: ["22A38B844EA1BE5B"]
@@ -350,28 +370,30 @@
 				item: "kubejs:stone_bag"
 				type: "item"
 			}]
+			subtitle: "DO NOT VOID!!"
 			tasks: [{
 				id: "4C07BA626F713A93"
 				item: "gtceu:creosote_bucket"
 				type: "item"
 			}]
 			title: "Creosote"
-			x: 2.0d
-			y: 6.5d
+			x: -1.0d
+			y: 5.5d
 		}
 		{
 			dependencies: ["51EBA3EE740C75FB"]
 			id: "2F4B6CBA03B8301B"
+			subtitle: "Similar to a spa day"
 			tasks: [{
 				id: "68D899463FFE5381"
 				item: "gtceu:treated_wood_planks"
 				type: "item"
 			}]
-			x: 0.5d
-			y: 6.5d
+			x: -2.0d
+			y: 5.5d
 		}
 		{
-			dependencies: ["21517C495219BC6F"]
+			dependencies: ["3ABEDA348136284C"]
 			description: [
 				"In GT:V There are 3 ways of getting your tinkers anvil:"
 				""
@@ -381,7 +403,6 @@
 				""
 				"Any of the three work, and each of the three will take you on a different road of progression."
 			]
-			hide_dependent_lines: true
 			icon: "tconstruct:tinkers_anvil"
 			id: "559EBC87398D8C8D"
 			min_required_tasks: 1
@@ -390,6 +411,7 @@
 				item: "kubejs:stone_bag"
 				type: "item"
 			}]
+			subtitle: "Please don't drop this on anyone's head"
 			tasks: [
 				{
 					count: 3L
@@ -439,8 +461,8 @@
 				}
 			]
 			title: "Tinkers Anvil"
-			x: 7.5d
-			y: 7.5d
+			x: 6.5d
+			y: 6.5d
 		}
 		{
 			dependencies: ["559EBC87398D8C8D"]
@@ -511,6 +533,7 @@
 				item: "artifacts:digging_claws"
 				type: "item"
 			}]
+			subtitle: "No one will slime you out with this"
 			tasks: [
 				{
 					id: "14DC52974028719D"
@@ -622,13 +645,14 @@
 				}
 			]
 			title: "The \"Slimer\""
-			x: 8.5d
-			y: 7.5d
+			x: 8.0d
+			y: 6.5d
 		}
 		{
 			dependencies: ["3A557C43CE0F534F"]
 			description: ["You will need 2 bronze drums to make the entire smeltery"]
 			id: "2977381A674780EF"
+			subtitle: "Fluid storage that isn't in increments of a bucket"
 			tasks: [{
 				count: 2L
 				id: "266EFB11B60C83E4"
@@ -642,6 +666,7 @@
 			dependencies: ["3EC37E139DFA0443"]
 			description: ["Using the mortar, you can make dusts a lot easier. You can also crush down gravel into flint."]
 			id: "5C8EE868D8D19826"
+			subtitle: "I would go with iron, but whatever"
 			tasks: [{
 				id: "48E032979BF52B2D"
 				item: {
@@ -668,25 +693,23 @@
 			dependencies: ["5C8EE868D8D19826"]
 			description: ["Using your new mortar, in a crafting table: combine a mortar with a copper or tin ingot to get it's dust"]
 			id: "51B224E5DE4919CD"
-			tasks: [
-				{
-					id: "0C795A84AAF91188"
-					item: "gtceu:copper_dust"
-					type: "item"
-				}
-				{
-					id: "70C9D2B9373BB18D"
-					item: "gtceu:tin_dust"
-					type: "item"
-				}
-			]
-			x: 4.0d
-			y: 3.0d
+			subtitle: "Making dusts are hard with..."
+			tasks: [{
+				id: "0C795A84AAF91188"
+				item: "gtceu:copper_dust"
+				type: "item"
+			}]
+			x: 3.0d
+			y: 3.5d
 		}
 		{
-			dependencies: ["51B224E5DE4919CD"]
+			dependencies: [
+				"51B224E5DE4919CD"
+				"4B52F2513E4B9796"
+			]
 			description: ["3 copper + 1 tin dust = bronze dust!"]
 			id: "171628CDF529A4DB"
+			subtitle: "First of many alloys"
 			tasks: [{
 				id: "4F85905FE11CA088"
 				item: "gtceu:bronze_dust"
@@ -698,6 +721,7 @@
 		{
 			dependencies: ["7C46710EF18B9648"]
 			id: "3EC37E139DFA0443"
+			subtitle: "Cooking things fairly slowly"
 			tasks: [{
 				id: "4B3BB6268500AA7F"
 				item: "minecraft:furnace"
@@ -707,20 +731,24 @@
 			y: 2.0d
 		}
 		{
-			dependencies: ["21517C495219BC6F"]
+			dependencies: ["3ABEDA348136284C"]
 			description: ["Now that you have a smeltery, some alloys no longer need a mortar to craft - Bronze being a great example."]
 			id: "434B8B61662C96C1"
+			subtitle: "Molten bronze is my favorite drink"
 			tasks: [{
 				id: "3E486B0EA597851C"
 				title: "Easier Bronze"
 				type: "checkmark"
 			}]
-			x: 9.0d
-			y: 6.0d
+			x: 7.5d
+			y: 5.5d
 		}
 		{
 			dependencies: ["2F4B6CBA03B8301B"]
 			id: "1282177A7209F2D6"
+			shape: "octagon"
+			size: 1.25d
+			subtitle: "Better than a Paraglider"
 			tasks: [{
 				id: "0E2D5AD3530CEF29"
 				item: {
@@ -732,14 +760,14 @@
 				}
 				type: "item"
 			}]
-			x: 0.5d
-			y: 8.0d
+			x: -3.5d
+			y: 6.0d
 		}
 		{
 			dependencies: ["7F23975179B70629"]
 			description: ["If you were expecting a chill and easy night, I have bad news for you. Mobs are not only a lot stronger, they are often spawned in with weapons, and other items. Be weary of the ender pearling creeper."]
 			id: "008A757AD8AEB6E7"
-			subtitle: "Speedrun this"
+			subtitle: "This is for going Honk Shoo in record amounts of time"
 			tasks: [{
 				id: "2FA8299AE752ACB0"
 				item: "minecraft:white_bed"
@@ -750,6 +778,7 @@
 		}
 		{
 			id: "1A807CCA515A0B94"
+			subtitle: "Most are from the beach!"
 			tasks: [
 				{
 					id: "3E73BCF78C9943DE"
@@ -767,19 +796,21 @@
 					type: "item"
 				}
 			]
-			x: 5.0d
-			y: 8.0d
+			title: "Various natural sediments"
+			x: 2.5d
+			y: 6.0d
 		}
 		{
 			dependencies: ["437D1FF759A7E40C"]
 			id: "1FC60FD20FF11A9F"
+			subtitle: "Because it HAD to be gregified"
 			tasks: [{
 				id: "285C37C7F360B1D6"
 				item: "kubejs:compressed_grout"
 				type: "item"
 			}]
-			x: 5.0d
-			y: 6.0d
+			x: 4.0d
+			y: 5.0d
 		}
 		{
 			dependencies: ["3EC37E139DFA0443"]
@@ -790,13 +821,13 @@
 				""
 				"You will also need a set of tools for maintenance later on."
 			]
-			hide_dependency_lines: true
 			id: "373A1AFF7B07272C"
 			rewards: [{
 				id: "61ABF2AE6F841A9F"
 				item: "travelertoolbelt:belt"
 				type: "item"
 			}]
+			subtitle: "Don't expect to be making these just once"
 			tasks: [
 				{
 					id: "6F187B5F2E798AEA"
@@ -947,15 +978,47 @@
 			y: 1.0d
 		}
 		{
+			dependencies: ["0A7847B88DC2A1C6"]
+			description: [
+				"This modpack has Tinker's Construct. Basically, instead of making \"stone\" or \"gold\" tools, you make tool &b&lheads, rods, &rand &l&bbindings.&r And these diffrent parts have quite a large effect on the tool itself. They effect &l&4minimg speed, &6mining level &r(i.e. can you mine iron ore? than that's &8stone&r mining level), and even &l&adurability.&rNow, this pack has &o&lGregtech&r, so Tinker's parts will also include materials from &l&oGregtech.&r Do you want a aluminium pickaxe? You can do that! Do you want a tungsten sword? You can do that! (although, I would not reccomend, seeing as tungsten is heavy)"
+				""
+				"And, the best part, you can make Gregtech tools with tinkers parts! No more are the days of making 300 files or 500 hammers, you need to make one, and just repair them with the kits! there &oare&r electric versions of the tools, but those take, y'know, electricity."
+			]
 			id: "09E450DE0A6F98C7"
+			subtitle: "Tool crafting of the future"
 			tasks: [{
 				id: "38F17BD7CB6012CB"
 				type: "checkmark"
 			}]
 			title: "Gregeric Tinkering"
-			x: -5.5d
-			y: 2.0d
+			x: -4.5d
+			y: 0.0d
+		}
+		{
+			dependencies: ["5C8EE868D8D19826"]
+			id: "4B52F2513E4B9796"
+			subtitle: "...out a Macerator"
+			tasks: [{
+				id: "58492D17BD18DA6D"
+				item: "gtceu:tin_dust"
+				type: "item"
+			}]
+			x: 4.0d
+			y: 3.0d
+		}
+		{
+			dependencies: ["1A807CCA515A0B94"]
+			id: "1E86B791EF8D2C10"
+			subtitle: "This one's gregified too"
+			tasks: [{
+				count: 16L
+				id: "7C6727B2D82404AC"
+				item: { Count: 16, id: "minecraft:brick" }
+				type: "item"
+			}]
+			x: 3.5d
+			y: 6.5d
 		}
 	]
-	title: "Chapter 0: Stone Age"
+	title: "Chapter 0: Not A Voltage"
 }
