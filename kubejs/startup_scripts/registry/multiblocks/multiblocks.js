@@ -48,6 +48,7 @@ GTCEuStartupEvents.registry("gtceu:recipe_type", event => {
         .setSlotOverlay(false, false, GuiTextures.ARROW_INPUT_OVERLAY)
         .setSound(GTSoundEntries.ARC);
 
+
 });
 
 GTCEuStartupEvents.registry("gtceu:machine", event => {

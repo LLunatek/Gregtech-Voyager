@@ -9,10 +9,7 @@
 	quest_links: [ ]
 	quests: [
 		{
-			dependencies: [
-				"0535DF5BC7E5408E"
-				"72B2C4E461AD6C2F"
-			]
+			dependencies: ["72B2C4E461AD6C2F"]
 			dependency_requirement: "one_completed"
 			id: "7E166DF2354CDBB6"
 			rewards: [{

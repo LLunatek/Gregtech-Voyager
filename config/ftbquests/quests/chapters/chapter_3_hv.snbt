@@ -9,7 +9,7 @@
 		tag: { }
 	}
 	id: "56DF01AB75C1C354"
-	order_index: 4
+	order_index: 5
 	quest_links: [ ]
 	quests: [
 		{
@@ -40,10 +40,7 @@
 			y: 0.75d
 		}
 		{
-			dependencies: [
-				"1D82153A32B07B53"
-				"55A799EAFBBFCAC0"
-			]
+			dependencies: ["55A799EAFBBFCAC0"]
 			id: "29C1E4853C4FB803"
 			rewards: [{
 				id: "2D9C2F725FB45A36"
@@ -278,7 +275,6 @@
 			y: 2.0d
 		}
 		{
-			dependencies: ["1D82153A32B07B53"]
 			id: "55A799EAFBBFCAC0"
 			rewards: [{
 				id: "53F80CCC84589244"
@@ -1002,11 +998,7 @@
 			y: 1.0d
 		}
 		{
-			dependencies: [
-				"6598C333C23E5ED0"
-				"03BF4D37CBD358AE"
-				"55B9E1206C6F262C"
-			]
+			dependencies: ["6598C333C23E5ED0"]
 			description: [
 				"SMDs will &lmassively&r increase the yield of circuits per resource. Batch craft TONS of these and watch your early circuit problems go away!"
 				""
@@ -1170,7 +1162,6 @@
 			y: 4.0d
 		}
 		{
-			dependencies: ["197AFAFE1E390EAC"]
 			id: "415FE2F21EE43FE0"
 			tasks: [{
 				id: "05D96051BB21FC74"
@@ -1776,7 +1767,6 @@
 			y: 17.5d
 		}
 		{
-			dependencies: ["6F3EF270981DC567"]
 			id: "7AFFB11728B9B7B1"
 			tasks: [{
 				id: "229F1F7D6BD56440"

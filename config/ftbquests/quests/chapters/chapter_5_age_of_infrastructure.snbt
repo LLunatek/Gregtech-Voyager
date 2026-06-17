@@ -5,7 +5,7 @@
 	group: "3E515D2B3A8DFC29"
 	icon: "gtceu:iv_parallel_hatch"
 	id: "6BF380BE63F87279"
-	order_index: 6
+	order_index: 7
 	quest_links: [ ]
 	quests: [
 		{
@@ -1210,7 +1210,7 @@
 				item: "gtceu:iv_large_miner"
 				type: "item"
 			}]
-			x: -9.75d
+			x: -11.25d
 			y: 1.5d
 		}
 		{
@@ -1392,6 +1392,111 @@
 			}]
 			x: 0.5d
 			y: 11.5d
+		}
+		{
+			description: ["new multi, some more steps"]
+			id: "28F6A549D92272A6"
+			tasks: [{
+				id: "256215D0C4AFF1EF"
+				title: "add more here"
+				type: "checkmark"
+			}]
+			x: 5.5d
+			y: 6.0d
+		}
+		{
+			description: ["add a new glue or something, a chemical line"]
+			id: "0A561E6A1254E7EB"
+			tasks: [{
+				id: "063B3E942673A2D6"
+				title: "iv parts need to be more expensiove"
+				type: "checkmark"
+			}]
+			x: -8.5d
+			y: 2.5d
+		}
+		{
+			id: "1749596C4A6731DE"
+			tasks: [{
+				id: "4C0D8B04D13AFB62"
+				title: "add the coil modifier., check gtceu docs"
+				type: "checkmark"
+			}]
+			x: -13.5d
+			y: 3.0d
+		}
+		{
+			id: "53EE7E9B7385C0F1"
+			tasks: [{
+				id: "2F5721E98431B52B"
+				title: "new turbine"
+				type: "checkmark"
+			}]
+			x: -14.0d
+			y: 7.5d
+		}
+		{
+			id: "6DAAD97C5FB922C8"
+			tasks: [{
+				id: "05581D2F4A804129"
+				title: "new steam"
+				type: "checkmark"
+			}]
+			x: -14.0d
+			y: 8.5d
+		}
+		{
+			id: "28BB5D5BCA8CA65B"
+			tasks: [{
+				id: "10F5E3BFA33B70F5"
+				title: "new cookie gen"
+				type: "checkmark"
+			}]
+			x: -14.0d
+			y: 6.5d
+		}
+		{
+			id: "521C085A6699A959"
+			tasks: [{
+				id: "7DB9B52E62872A8E"
+				title: "new gas gen"
+				type: "checkmark"
+			}]
+			title: "eces"
+			x: -14.0d
+			y: 5.5d
+		}
+		{
+			id: "01E99051F2368253"
+			tasks: [{
+				id: "3DCCE615E46A269C"
+				title: "make easier"
+				type: "checkmark"
+			}]
+			x: -1.0d
+			y: 14.0d
+		}
+		{
+			description: ["bring zpm pre assline, make assline EXPENSIVEEE"]
+			id: "28951E3BA3404702"
+			tasks: [{
+				id: "25B66CC395FC66E5"
+				title: "make harder."
+				type: "checkmark"
+			}]
+			x: -5.0d
+			y: 8.0d
+		}
+		{
+			description: ["for rotors, and lots of other things. make it hard and infrea check"]
+			id: "22C4CCE18104BDC4"
+			tasks: [{
+				id: "3FD6943752261F9C"
+				title: "new \"industrial titanite\" alloy"
+				type: "checkmark"
+			}]
+			x: 5.5d
+			y: 9.0d
 		}
 	]
 	title: "Chapter 5: Age of Infrastructure (IV)"

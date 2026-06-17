@@ -75,10 +75,6 @@
 			y: -3.0d
 		}
 		{
-			dependencies: [
-				"3BBA83FABB7EC581"
-				"33E97EC2C3D18C53"
-			]
 			icon: "gtceu:diode"
 			id: "6F6B23A85522E39A"
 			rewards: [{
@@ -142,7 +138,6 @@
 			y: -1.0d
 		}
 		{
-			dependencies: ["5810557C941D6C80"]
 			icon: "gtceu:transistor"
 			id: "19E6593E904D9849"
 			rewards: [{
@@ -304,7 +299,6 @@
 			y: -1.0d
 		}
 		{
-			dependencies: ["48C0F2B5DB6E97D2"]
 			icon: "gtceu:silicon_boule"
 			id: "0BA5695B79DA547D"
 			rewards: [{
@@ -410,7 +404,6 @@
 			y: -3.0d
 		}
 		{
-			dependencies: ["5AACBB49F0E61499"]
 			icon: "gtceu:resin_printed_circuit_board"
 			id: "332E0F5C1E4BF45D"
 			rewards: [{

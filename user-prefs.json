@@ -1206,11 +1206,15 @@
         "isSelected": true
       },
       {
-        "path": "config\\ftbquests\\quests\\chapters\\chapter_1_uhv_lv.snbt",
+        "path": "config\\ftbquests\\quests\\chapters\\chapter_1_the_real_beggining.snbt",
         "isSelected": true
       },
       {
-        "path": "config\\ftbquests\\quests\\chapters\\chapter_2_mv.snbt",
+        "path": "config\\ftbquests\\quests\\chapters\\chapter_1_we_are_in_the_early_game.snbt",
+        "isSelected": true
+      },
+      {
+        "path": "config\\ftbquests\\quests\\chapters\\chapter_2_im_blue_da_boo_di_da_boo_di.snbt",
         "isSelected": true
       },
       {
@@ -2610,56 +2614,60 @@
         "isSelected": false
       },
       {
+        "path": "crash-reports\\crash-2026-06-01_21.09.11-client.txt",
+        "isSelected": false
+      },
+      {
         "path": "datapacks",
         "isSelected": true
       },
       {
         "path": "defaultconfigs",
-        "isSelected": false
+        "isSelected": true
       },
       {
         "path": "defaultconfigs\\forestry-server.toml",
-        "isSelected": false
+        "isSelected": true
       },
       {
         "path": "defaultconfigs\\ftbchunks",
-        "isSelected": false
+        "isSelected": true
       },
       {
         "path": "defaultconfigs\\ftbchunks\\client-config.snbt",
-        "isSelected": false
+        "isSelected": true
       },
       {
         "path": "defaultconfigs\\ftbchunks\\ftbchunks-world.snbt",
-        "isSelected": false
+        "isSelected": true
       },
       {
         "path": "defaultconfigs\\ftblibrary",
-        "isSelected": false
+        "isSelected": true
       },
       {
         "path": "defaultconfigs\\ftblibrary\\ftblibrary-client.snbt",
-        "isSelected": false
+        "isSelected": true
       },
       {
         "path": "defaultconfigs\\ftbquests",
-        "isSelected": false
+        "isSelected": true
       },
       {
         "path": "defaultconfigs\\ftbquests\\client-config.snbt",
-        "isSelected": false
+        "isSelected": true
       },
       {
         "path": "defaultconfigs\\ftbxmodcompat",
-        "isSelected": false
+        "isSelected": true
       },
       {
         "path": "defaultconfigs\\ftbxmodcompat\\ftbxmodcompat.snbt",
-        "isSelected": false
+        "isSelected": true
       },
       {
         "path": "defaultconfigs\\solcarrot-server.toml",
-        "isSelected": false
+        "isSelected": true
       },
       {
         "path": "downloads",
@@ -3078,6 +3086,10 @@
         "isSelected": false
       },
       {
+        "path": "journeymap\\data\\mp\\~6Gregtech~r~dVoyager~v0~1~0a~Playtest\\overworld\\-12",
+        "isSelected": false
+      },
+      {
         "path": "journeymap\\data\\mp\\~6Gregtech~r~dVoyager~v0~1~0a~Playtest\\overworld\\-14",
         "isSelected": false
       },
@@ -3127,6 +3139,86 @@
       },
       {
         "path": "journeymap\\data\\mp\\~6Gregtech~r~dVoyager~v0~1~0a~Playtest_18b2e1fa~8d61~4c88~a95f~474fa3a5729d\\overworld",
+        "isSelected": false
+      },
+      {
+        "path": "journeymap\\data\\mp\\~6Gregtech~r~dVoyager~v0~1~0a~Playtest_18b2e1fa~8d61~4c88~a95f~474fa3a5729d\\overworld\\3",
+        "isSelected": false
+      },
+      {
+        "path": "journeymap\\data\\mp\\~6Gregtech~r~dVoyager~v0~1~0a~Playtest_18b2e1fa~8d61~4c88~a95f~474fa3a5729d\\overworld\\3\\-1,-1.png",
+        "isSelected": false
+      },
+      {
+        "path": "journeymap\\data\\mp\\~6Gregtech~r~dVoyager~v0~1~0a~Playtest_18b2e1fa~8d61~4c88~a95f~474fa3a5729d\\overworld\\3\\-1,0.png",
+        "isSelected": false
+      },
+      {
+        "path": "journeymap\\data\\mp\\~6Gregtech~r~dVoyager~v0~1~0a~Playtest_18b2e1fa~8d61~4c88~a95f~474fa3a5729d\\overworld\\3\\0,-1.png",
+        "isSelected": false
+      },
+      {
+        "path": "journeymap\\data\\mp\\~6Gregtech~r~dVoyager~v0~1~0a~Playtest_18b2e1fa~8d61~4c88~a95f~474fa3a5729d\\overworld\\3\\0,0.png",
+        "isSelected": false
+      },
+      {
+        "path": "journeymap\\data\\mp\\~6Gregtech~r~dVoyager~v0~1~0a~Playtest_18b2e1fa~8d61~4c88~a95f~474fa3a5729d\\overworld\\3\\cache",
+        "isSelected": false
+      },
+      {
+        "path": "journeymap\\data\\mp\\~6Gregtech~r~dVoyager~v0~1~0a~Playtest_18b2e1fa~8d61~4c88~a95f~474fa3a5729d\\overworld\\3\\cache\\r.-1.-1.mca",
+        "isSelected": false
+      },
+      {
+        "path": "journeymap\\data\\mp\\~6Gregtech~r~dVoyager~v0~1~0a~Playtest_18b2e1fa~8d61~4c88~a95f~474fa3a5729d\\overworld\\3\\cache\\r.-1.0.mca",
+        "isSelected": false
+      },
+      {
+        "path": "journeymap\\data\\mp\\~6Gregtech~r~dVoyager~v0~1~0a~Playtest_18b2e1fa~8d61~4c88~a95f~474fa3a5729d\\overworld\\3\\cache\\r.0.-1.mca",
+        "isSelected": false
+      },
+      {
+        "path": "journeymap\\data\\mp\\~6Gregtech~r~dVoyager~v0~1~0a~Playtest_18b2e1fa~8d61~4c88~a95f~474fa3a5729d\\overworld\\3\\cache\\r.0.0.mca",
+        "isSelected": false
+      },
+      {
+        "path": "journeymap\\data\\mp\\~6Gregtech~r~dVoyager~v0~1~0a~Playtest_18b2e1fa~8d61~4c88~a95f~474fa3a5729d\\overworld\\4",
+        "isSelected": false
+      },
+      {
+        "path": "journeymap\\data\\mp\\~6Gregtech~r~dVoyager~v0~1~0a~Playtest_18b2e1fa~8d61~4c88~a95f~474fa3a5729d\\overworld\\4\\-1,-1.png",
+        "isSelected": false
+      },
+      {
+        "path": "journeymap\\data\\mp\\~6Gregtech~r~dVoyager~v0~1~0a~Playtest_18b2e1fa~8d61~4c88~a95f~474fa3a5729d\\overworld\\4\\-1,0.png",
+        "isSelected": false
+      },
+      {
+        "path": "journeymap\\data\\mp\\~6Gregtech~r~dVoyager~v0~1~0a~Playtest_18b2e1fa~8d61~4c88~a95f~474fa3a5729d\\overworld\\4\\0,-1.png",
+        "isSelected": false
+      },
+      {
+        "path": "journeymap\\data\\mp\\~6Gregtech~r~dVoyager~v0~1~0a~Playtest_18b2e1fa~8d61~4c88~a95f~474fa3a5729d\\overworld\\4\\0,0.png",
+        "isSelected": false
+      },
+      {
+        "path": "journeymap\\data\\mp\\~6Gregtech~r~dVoyager~v0~1~0a~Playtest_18b2e1fa~8d61~4c88~a95f~474fa3a5729d\\overworld\\4\\cache",
+        "isSelected": false
+      },
+      {
+        "path": "journeymap\\data\\mp\\~6Gregtech~r~dVoyager~v0~1~0a~Playtest_18b2e1fa~8d61~4c88~a95f~474fa3a5729d\\overworld\\4\\cache\\r.-1.-1.mca",
+        "isSelected": false
+      },
+      {
+        "path": "journeymap\\data\\mp\\~6Gregtech~r~dVoyager~v0~1~0a~Playtest_18b2e1fa~8d61~4c88~a95f~474fa3a5729d\\overworld\\4\\cache\\r.-1.0.mca",
+        "isSelected": false
+      },
+      {
+        "path": "journeymap\\data\\mp\\~6Gregtech~r~dVoyager~v0~1~0a~Playtest_18b2e1fa~8d61~4c88~a95f~474fa3a5729d\\overworld\\4\\cache\\r.0.-1.mca",
+        "isSelected": false
+      },
+      {
+        "path": "journeymap\\data\\mp\\~6Gregtech~r~dVoyager~v0~1~0a~Playtest_18b2e1fa~8d61~4c88~a95f~474fa3a5729d\\overworld\\4\\cache\\r.0.0.mca",
         "isSelected": false
       },
       {
@@ -6838,6 +6930,14 @@
         "isSelected": true
       },
       {
+        "path": "kubejs\\assets\\kubejs\\textures\\block\\casing\\condensation_resistant_tungsten_casing_ctm.png",
+        "isSelected": true
+      },
+      {
+        "path": "kubejs\\assets\\kubejs\\textures\\block\\casing\\condensation_resistant_tungsten_casing.png",
+        "isSelected": true
+      },
+      {
         "path": "kubejs\\assets\\kubejs\\textures\\block\\casing\\durable_desh_casing_ctm.png",
         "isSelected": true
       },
@@ -6859,6 +6959,14 @@
       },
       {
         "path": "kubejs\\assets\\kubejs\\textures\\block\\casing\\firm_ultimet_casing.png.mcmeta",
+        "isSelected": true
+      },
+      {
+        "path": "kubejs\\assets\\kubejs\\textures\\block\\casing\\heat_resistant_refined_fluxed_electrum_casing_ctm.png",
+        "isSelected": true
+      },
+      {
+        "path": "kubejs\\assets\\kubejs\\textures\\block\\casing\\heat_resistant_refined_fluxed_electrum_casing.png",
         "isSelected": true
       },
       {
@@ -7083,6 +7191,10 @@
       },
       {
         "path": "kubejs\\assets\\kubejs\\textures\\block\\ruined_beam_block.png",
+        "isSelected": true
+      },
+      {
+        "path": "kubejs\\assets\\kubejs\\textures\\block\\shock_proof_glass.png",
         "isSelected": true
       },
       {
@@ -7563,6 +7675,10 @@
       },
       {
         "path": "kubejs\\assets\\kubejs\\textures\\item\\shredded_martian_scrap.png",
+        "isSelected": true
+      },
+      {
+        "path": "kubejs\\assets\\kubejs\\textures\\item\\small_naquadah_meteorite.png",
         "isSelected": true
       },
       {
@@ -11402,6 +11518,34 @@
         "isSelected": false
       },
       {
+        "path": "logs\\2026-05-30-1.log.gz",
+        "isSelected": false
+      },
+      {
+        "path": "logs\\2026-06-01-1.log.gz",
+        "isSelected": false
+      },
+      {
+        "path": "logs\\2026-06-01-2.log.gz",
+        "isSelected": false
+      },
+      {
+        "path": "logs\\2026-06-01-3.log.gz",
+        "isSelected": false
+      },
+      {
+        "path": "logs\\2026-06-01-4.log.gz",
+        "isSelected": false
+      },
+      {
+        "path": "logs\\2026-06-01-5.log.gz",
+        "isSelected": false
+      },
+      {
+        "path": "logs\\2026-06-01-6.log.gz",
+        "isSelected": false
+      },
+      {
         "path": "logs\\kubejs",
         "isSelected": false
       },
@@ -12187,6 +12331,14 @@
       },
       {
         "path": "mods\\theurgy-1.20.1-1.28.0.jar",
+        "isSelected": true
+      },
+      {
+        "path": "mods\\tiab_gtm_compat-1.0.1+mc.20.1.jar.disabled",
+        "isSelected": true
+      },
+      {
+        "path": "mods\\time-in-a-bottle-4.0.4-mc1.20.1.jar.disabled",
         "isSelected": true
       },
       {
