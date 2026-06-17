@@ -45,21 +45,29 @@ event.replaceInput(
 event.replaceInput(
   { output: 'gtceu:iv_parallel_hatch' }, // Arg 1: the filter
   'gtceu:platinum_double_cable',            // Arg 2: the item to replace
-  'gtceu:titanite_double_cable'         // Arg 3: the item to replace it with
+  'gtceu:titanite_octal_cable'         // Arg 3: the item to replace it with
   // Note: tagged fluid ingredients do not work on Fabric, but tagged items do.
 )
 
-event.replaceInput(
-  { output: 'gtceu:power_substation' }, // Arg 1: the filter
-  '#gtceu:circuits/luv',            // Arg 2: the item to replace
-  '#gtceu:circuits/zpm'         // Arg 3: the item to replace it with
-  // Note: tagged fluid ingredients do not work on Fabric, but tagged items do.
-)
+// event.replaceInput(
+//   { output: 'gtceu:power_substation' }, // Arg 1: the filter
+//   '#gtceu:circuits/luv',            // Arg 2: the item to replace
+//   '#gtceu:circuits/zpm'         // Arg 3: the item to replace it with
+//   // Note: tagged fluid ingredients do not work on Fabric, but tagged items do.
+// )
 
 event.replaceInput(
   { output: 'gtceu:assembly_line_casing' }, // Arg 1: the filter
   '#gtceu:circuits/ev',            // Arg 2: the item to replace
-  '#gtceu:circuits/iv'         // Arg 3: the item to replace it with
+  '#gtceu:circuits/zpm'         // Arg 3: the item to replace it with
+  // Note: tagged fluid ingredients do not work on Fabric, but tagged items do.
+)
+
+
+event.replaceInput(
+  { output: 'gtceu:assembly_line_casing' }, // Arg 1: the filter
+  'gtceu:hpic_chip',            // Arg 2: the item to replace
+  '#gtceu:circuits/luv'         // Arg 3: the item to replace it with
   // Note: tagged fluid ingredients do not work on Fabric, but tagged items do.
 )
 
@@ -80,7 +88,7 @@ event.replaceInput(
 event.replaceInput(
   { output: 'gtceu:assembly_line_unit' }, // Arg 1: the filter
   'gtceu:steel_plate',            // Arg 2: the item to replace
-  'gtceu:titanite_plate'         // Arg 3: the item to replace it with
+  'gtceu:double_titanite_plate'         // Arg 3: the item to replace it with
   // Note: tagged fluid ingredients do not work on Fabric, but tagged items do.
 )
 
