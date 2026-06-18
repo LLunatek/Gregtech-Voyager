@@ -324,7 +324,7 @@ function abs_mat(name, color, genrotor)
     GTCEuStartupEvents.registry('gtceu:material', event => {
         const mat = event.create("molten_" + name)
             .fluid()
-            .color(darkenHex(color, 0.7, 0.2))
+            .color(darkenAndSaturateHex(color, 0.7, 0.2))
 
     });
 }
