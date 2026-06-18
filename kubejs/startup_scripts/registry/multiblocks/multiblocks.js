@@ -48,6 +48,13 @@ GTCEuStartupEvents.registry("gtceu:recipe_type", event => {
         .setSlotOverlay(false, false, GuiTextures.ARROW_INPUT_OVERLAY)
         .setSound(GTSoundEntries.ARC);
 
+    event.create("radiation_chamber")
+        .category("multiblock")
+        // .setEUIO("in")
+        .setMaxIOSize(3, 2, 2, 2)
+        .setSlotOverlay(false, false, GuiTextures.ARROW_INPUT_OVERLAY)
+        .setSound(GTSoundEntries.ARC);
+
 
 });
 

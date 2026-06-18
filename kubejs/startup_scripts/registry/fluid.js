@@ -53,6 +53,12 @@ StartupEvents.registry('fluid', event => {
     .displayName('Dissolved Martian Mineral Solution')
     .noBlock() 
 
+  event.create('high_temp_binding_agent_s')
+    .thickTexture(0xdbaa40)
+    .bucketColor(0xdbaa40)
+    .displayName('HT-BA (S)')
+    .noBlock() 
+
     
 
 

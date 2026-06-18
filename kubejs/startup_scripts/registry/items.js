@@ -215,6 +215,9 @@ StartupEvents.registry('item', event => {
     event.create('medium_naquadah_meteorite').texture('kubejs:item/medium_naquadah_meteorite').displayName('Medium Naquadah Meteorite')
     event.create('large_naquadah_meteorite').texture('kubejs:item/large_naquadah_meteorite').displayName('Large Naquadah Meteorite')
 
+
+    event.create('high_temp_binding_agent_rod_s').texture('kubejs:item/high_temp_binding_agent_rod_s').displayName('HT-BA (S) Rod')
+
     // cookies
 
     event.create('grandmas_baking_sheet').texture('kubejs:item/grandmas_baking_sheet').maxStackSize(1).displayName('Grandma\'s Super Durable Baking Sheet');

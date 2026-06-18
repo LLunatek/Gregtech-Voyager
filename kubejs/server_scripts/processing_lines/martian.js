@@ -3,11 +3,61 @@
 ServerEvents.recipes(event => {
     const fullName = (name) => 'kubejs:' + name;
 
+        function centrifuge(name, inputItems, inputFluids, outputItems, outputFluids, duration, eut, helper)
+    {
+      
+
+        if(helper)
+        {
+          event.recipes.gtceu.centrifuge("kubejs:centrifuge_helper_" + name)
+          .itemInputs(inputItems)
+          .notConsumable('kubejs:' + helper)
+          .itemOutputs(outputItems)
+          .inputFluids(inputFluids)
+          .circuit(3)
+          .outputFluids(outputFluids)
+          .duration(duration * 20 * .85) 
+          .EUt(eut)  
+        }
+        else
+        {
+          event.recipes.gtceu.centrifuge("kubejs:centrifuge_" + name)
+          .itemInputs(inputItems)
+          .itemOutputs(outputItems)
+          .inputFluids(inputFluids)
+          .outputFluids(outputFluids)
+          .duration(duration * 20) 
+          .EUt(eut)  
+        }
+    }
+
+    function macerator(outputItem, ns, inputItem, time, eut)
+    {
+        event.recipes.gtceu.macerator("kubejs:macerator_" + outputItem)
+          .itemInputs(inputItem)
+          .itemOutputs(`${ns}:${outputItem}`)
+          .duration(time * 20) 
+          .EUt(eut)  
+    }
+
     function create_mixer_recipe(name, ingredientsItem, fluidIngredients, itemOutputs, fluidOutputs, eut, time)
     {
         event.recipes.gtceu.mixer(fullName(name))
             .itemInputs(ingredientsItem)
             .inputFluids(fluidIngredients)
+            .itemOutputs(itemOutputs)
+            .outputFluids(fluidOutputs)
+            .duration(time * 20)
+            .EUt(eut);
+    }
+
+    function radiation_chamber(name, ingredientsItem, fluidIngredients, pt, itemOutputs, fluidOutputs, eut, time)
+    {
+        event.recipes.gtceu.radiation_chamber(fullName(name))
+            .itemInputs(ingredientsItem)
+            .perTick(true)
+            .inputFluids(`gtceu:${fluidIngredients} ${pt}`)
+            .perTick(false)
             .itemOutputs(itemOutputs)
             .outputFluids(fluidOutputs)
             .duration(time * 20)
@@ -151,5 +201,30 @@ ServerEvents.recipes(event => {
         .outputFluids('minecraft:water 2000')
         .duration(60 * 2 * 20) 
         .EUt(7860) 
+
+    // sulfuria
+
+    centrifuge('martian_sand', '64x gtceu:martian_sand_dust', 'gtceu:toluene 500', ['12x gtceu:salt_dust','9x gtceu:magnetite_dust','7x gtceu:magnesium_dust', '5x gtceu:phosphorus_dust', '3x gtceu:inert_sulfur_dust'],
+    [], 60, 1920
+    )
+    centrifuge('martian_sand', '92x gtceu:martian_sand_dust', 'gtceu:toluene 350', ['32x gtceu:salt_dust','9x gtceu:magnetite_dust','7x gtceu:magnesium_dust', '12x gtceu:phosphorus_dust', '8x gtceu:inert_sulfur_dust'],
+    [], 48, 1200
+    ,'advanced_chemist_helper')
+    radiation_chamber('excited_sulfur', 'gtceu:inert_sulfur_dust', 'uranium', 3, 'gtceu:excited_sulfur_dust', 'gtceu:radon 5000', 7860, 48)
+
+    create_recipe_lcr('carb_tetrach', 'gtceu:carbon_dust', 'gtceu:chlorine 4000', [], 'gtceu:carbon_tetrachloride 1000', 20, 480)
+
+    create_recipe_lcr('sulfuria_sol', ['2x gtceu:excited_sulfur_dust', 'gtceu:copper_dust'], 'gtceu:carbon_tetrachloride 1000', [], 'gtceu:sulfuria_solution 1000', 30, 1920)
+
+    event.recipes.gtceu
+        .distillation_tower('kubejs:sulfuria')   
+        .inputFluids('gtceu:sulfuria_solution 1000') 
+        .outputFluids('gtceu:carbon_tetrachloride 1000')
+        .itemOutputs('3x gtceu:copper_sulfuriate_dust')
+        .duration(20 * 32)                              
+        .EUt(7860)
+
+    
+
 
 });

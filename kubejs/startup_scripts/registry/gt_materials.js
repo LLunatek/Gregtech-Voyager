@@ -92,6 +92,7 @@ GTCEuStartupEvents.materialModification(event => {
     GTMaterials.get('calorite').setFormula('Rc');
     GTMaterials.get('calorite_carbide').setFormula('Rc4C2');
     GTMaterials.get('industrial_perfected_electrum').setFormula('(*Au**Ag*)5(C2Rc4)');
+    GTMaterials.get('sulfuria').setFormula('*S*');
     
 
 });
@@ -324,7 +325,7 @@ function abs_mat(name, color, genrotor)
     GTCEuStartupEvents.registry('gtceu:material', event => {
         const mat = event.create("molten_" + name)
             .fluid()
-            .color(darkenAndSaturateHex(color, 0.7, 0.2))
+            .color(darkenAndSaturateHex(color, 0.7, 0.4))
 
     });
 }
@@ -475,6 +476,14 @@ register_ore_gem('titanichite', ['2x titanite', 'fluorine'], '0xff0055', [no_dec
 register_ore_metal('ostrite', ['3x oxygen', '12x chlorine', '8x ostrum'], '0xc785a2', [electrolyze]);
 register_ore_metal('dalumite', ['3x oxygen', '8x desh'], '0xad7600', [electrolyze]);
 
+// mars precious mats
+register_dust('inert_sulfur', ['sulfur'], '0x948243', no_decomp)
+// radiation chamber
+register_dust('excited_sulfur', ['sulfur'], '0xffca69', no_decomp)
+register_dust('sulfuria', [], '0xffae00', no_decomp)
+register_dust('copper_sulfuriate', ['2x sulfuria', 'copper'], '0xffaeff', electrolyze)
+register_fluid('carbon_tetrachloride', '0x22292b', ['carbon', '4x chlorine'], no_decomp)
+register_fluid('sulfuria_solution', '0xffa500', ['carbon', '4x chlorine', 'sulfur', 'copper'], no_decomp)
 register_dust('martian_sand', [], '0x732a22', no_decomp)
 
 // desh line
@@ -522,10 +531,10 @@ StartupEvents.registry('item', event => {
         .displayName('TPU Pellet')
 })
 
-// iv compounds
-abs_mat('titanex-594-ht-a', '0x2e2736')
-abs_mat('titanex-879-ht-b', '0x799e6c', [601, 500, 1, 1000000])
-abs_mat('titanex-901-ht-b', '0xffd4de')
+// abs compounds
+abs_mat('titanex-594-hta', '0x2e2736')
+abs_mat('titanex-879-htb', '0x799e6c', [601, 500, 1, 1000000])
+abs_mat('titanex-901-htc', '0xffd4de')
 // naq
 
 // component polymer
