@@ -240,7 +240,7 @@ function register_nosmelt_elem_metal(name, ingredients, ebf, color, blasting, ge
 
 function darkenAndSaturateHex(hex, darkenFactor, saturationBoost) {
     // Parse hex string
-    const color = parseInt(hex.replace(/^#|^0x/, ""), 16);
+    let color = parseInt(hex.replace(/^#|^0x/, ""), 16);
 
     // Extract RGB and darken
     let r = ((color >> 16) & 0xFF) / 255 * darkenFactor;
@@ -248,26 +248,26 @@ function darkenAndSaturateHex(hex, darkenFactor, saturationBoost) {
     let b = (color & 0xFF) / 255 * darkenFactor;
 
     // RGB -> HSL
-    const max = Math.max(r, g, b);
-    const min = Math.min(r, g, b);
+    let max = Math.max(r, g, b);
+    let min = Math.min(r, g, b);
     let h, s;
-    const l = (max + min) / 2;
+    let l = (max + min) / 2;
 
     if (max === min) {
         h = s = 0;
     } else {
-        const d = max - min;
-        s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
+        let z = max - min;
+        s = l > 0.5 ? z / (2 - max - min) : z / (max + min);
 
         switch (max) {
             case r:
-                h = (g - b) / d + (g < b ? 6 : 0);
+                h = (g - b) / z + (g < b ? 6 : 0);
                 break;
             case g:
-                h = (b - r) / d + 2;
+                h = (b - r) / z + 2;
                 break;
             default:
-                h = (r - g) / d + 4;
+                h = (r - g) / z + 4;
         }
 
         h /= 6;
@@ -287,15 +287,15 @@ function darkenAndSaturateHex(hex, darkenFactor, saturationBoost) {
     }
 
     if (s !== 0) {
-        const q = l < 0.5 ? l * (1 + s) : l + s - l * s;
-        const p = 2 * l - q;
+        let q = l < 0.5 ? l * (1 + s) : l + s - l * s;
+        let p = 2 * l - q;
 
         r = hue2rgb(p, q, h + 1 / 3);
         g = hue2rgb(p, q, h);
         b = hue2rgb(p, q, h - 1 / 3);
     }
 
-    const result =
+    let result =
         ((Math.round(r * 255) & 0xFF) << 16) |
         ((Math.round(g * 255) & 0xFF) << 8) |
         (Math.round(b * 255) & 0xFF);
