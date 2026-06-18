@@ -389,4 +389,38 @@ GTCEuStartupEvents.registry("gtceu:machine", event => {
             .build())
         .workableCasingModel('kubejs:block/casing/titanite_casing',
             'kubejs:block/multiblock/titanite_blast_furnace');
+
+        event.create('radiation_chamber', 'multiblock')
+            .rotationState(RotationState.NON_Y_AXIS)
+            .recipeType('radiation_chamber')
+            .recipeModifiers([GTRecipeModifiers.PARALLEL_HATCH, GTRecipeModifiers.OC_PERFECT])
+            .appearanceBlock(() => Block.getBlock("kubejs:radiation_proof_lead_casing"))
+            .pattern(definition => FactoryBlockPattern.start()
+            .aisle('    BBB    ','    LLL    ','    LLL    ','    LLL    ','    LLL    ','    BBB    ') 
+            .aisle('  BBAAABB  ','  LLA ALL  ','  LLA ALL  ','  LLA ALL  ','  LLA ALL  ','  BBAAABB  ') 
+            .aisle(' BAAAAAAAB ',' LA     AL ',' LA     AL ',' LA     AL ',' LA     AL ',' BAAAAAAAB ') 
+            .aisle(' BAAAAAAAB ',' L       L ',' L       L ',' L       L ',' L       L ',' BAAAAAAAB ') 
+            .aisle('BAAABBBAAAB','LA   T   AL','LA   T   AL','LA   T   AL','LA   T   AL','BAAABBBAAAB') 
+            .aisle('BAAABFBAAAB','L   T T   L','L   T T   L','L   T T   L','L   T T   L','BAAABFBAAAB') 
+            .aisle('BAAABBBAAAB','LA   T   AL','LA   T   AL','LA   T   AL','LA   T   AL','BAAABBBAAAB') 
+            .aisle(' BAAAAAAAB ',' L       L ',' L       L ',' L       L ',' L       L ',' BAAAAAAAB ') 
+            .aisle(' BAAAAAAAB ',' LA     AL ',' LA     AL ',' LA     AL ',' LA     AL ',' BAAAAAAAB ') 
+            .aisle('  BBAAABB  ','  LLA ALL  ','  LLA ALL  ','  LLA ALL  ','  LLA ALL  ','  BBAAABB  ') 
+            .aisle('    B@B    ','    LLL    ','    LLL    ','    LLL    ','    LLL    ','    BPB    ')
+                .where('B', Predicates.blocks('kubejs:radiation_proof_lead_casing')
+                    .or(Predicates.abilities(PartAbility.IMPORT_ITEMS).setPreviewCount(1))
+                    .or(Predicates.abilities(PartAbility.EXPORT_ITEMS).setPreviewCount(1))
+                    // .or(Predicates.abilities(PartAbility.IMPORT_FLUIDS).setPreviewCount(1))
+                    .or(Predicates.abilities(PartAbility.EXPORT_FLUIDS).setPreviewCount(1))
+                    .or(Predicates.abilities(PartAbility.MAINTENANCE).setExactLimit(1).setPreviewCount(1))
+                    .or(Predicates.abilities(PartAbility.INPUT_ENERGY).setMaxGlobalLimited(2).setPreviewCount(1)))
+                .where('A', Predicates.blocks('kubejs:radiation_conducting_titanex_casing'))
+                .where('L', Predicates.blocks('gtceu:laminated_glass'))
+                .where('T', Predicates.blocks('gtceu:tungstensteel_pipe_casing'))
+                .where('F', Predicates.abilities(PartAbility.IMPORT_FLUIDS))
+                .where('P', Predicates.blocks('gtceu:iv_parallel_hatch'))
+                .where('@', Predicates.controller(Predicates.blocks(definition.get())))
+                .build())
+            .workableCasingModel('kubejs:block/casing/radiation_proof_lead_casing',
+                'kubejs:block/multiblock/radiation_chamber');
 });

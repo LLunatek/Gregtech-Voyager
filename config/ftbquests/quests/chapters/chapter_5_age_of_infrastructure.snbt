@@ -1397,9 +1397,9 @@
 			description: ["add a new glue or something, a chemical line"]
 			id: "0A561E6A1254E7EB"
 			tasks: [{
-				id: "063B3E942673A2D6"
-				title: "iv parts need to be more expensiove"
-				type: "checkmark"
+				id: "450789C8CA656C06"
+				item: "gtceu:component_polymer_bucket"
+				type: "item"
 			}]
 			x: -8.5d
 			y: 2.5d

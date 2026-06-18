@@ -20,6 +20,7 @@ StartupEvents.registry('block', event => {
     casing('atmospheric_filter');
     casing('condensation_resistant_tungsten')
     casing('heat_resistant_refined_fluxed_electrum')
+    casing('radiation_conducting_titanex')
 
     function metalblock(name)
     {
