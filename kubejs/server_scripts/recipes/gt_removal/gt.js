@@ -20,17 +20,6 @@ event.remove({output: 'gtceu:alloy_blast_smelter'})
 event.remove({type: 'minecraft:crafting_shaped' ,output: 'gtceu:phenolic_printed_circuit_board'})
 event.remove({type: 'gtceu:rock_breaker' ,output: 'minecraft:obsidian'})
 
-function removeTieredComponents(tier)
-{
-
-    const pre = 'gtceu:' + tier
-
-    event.remove({type: 'minecraft:crafting_shaped' ,output: [`${pre}_electric_motor`, `${pre}_electric_pump`,`${pre}_conveyor_module`,`${pre}_electric_piston`,`${pre}_robot_arm`,`${pre}_sensor`, `${pre}_emitter`, ]})
-}
-
-  const tiers = ['mv','hv','ev','iv','luv','zpm','uv','uhv','uev','uiv','max'];
-
-// tiers.forEach(tier => removeTieredComponents(tier));
 
 
 // event.remove({type: 'minecraft:crafting_shaped' ,output: ['gtceu:mv_electric_motor', 'gtceu:mv_electric_pump', 'gtceu:mv_conveyor_module', 'gtceu_mv_electric_piston', 'gtceu:mv_robot_arm']})

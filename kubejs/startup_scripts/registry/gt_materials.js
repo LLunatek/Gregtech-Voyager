@@ -238,6 +238,97 @@ function register_nosmelt_elem_metal(name, ingredients, ebf, color, blasting, ge
     });
 }
 
+function darkenAndSaturateHex(hex, darkenFactor, saturationBoost) {
+    // Parse hex string
+    const color = parseInt(hex.replace(/^#|^0x/, ""), 16);
+
+    // Extract RGB and darken
+    let r = ((color >> 16) & 0xFF) / 255 * darkenFactor;
+    let g = ((color >> 8) & 0xFF) / 255 * darkenFactor;
+    let b = (color & 0xFF) / 255 * darkenFactor;
+
+    // RGB -> HSL
+    const max = Math.max(r, g, b);
+    const min = Math.min(r, g, b);
+    let h, s;
+    const l = (max + min) / 2;
+
+    if (max === min) {
+        h = s = 0;
+    } else {
+        const d = max - min;
+        s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
+
+        switch (max) {
+            case r:
+                h = (g - b) / d + (g < b ? 6 : 0);
+                break;
+            case g:
+                h = (b - r) / d + 2;
+                break;
+            default:
+                h = (r - g) / d + 4;
+        }
+
+        h /= 6;
+    }
+
+    // Boost saturation
+    s = Math.min(1, s * (1 + saturationBoost));
+
+    // HSL -> RGB
+    function hue2rgb(p, q, t) {
+        if (t < 0) t += 1;
+        if (t > 1) t -= 1;
+        if (t < 1 / 6) return p + (q - p) * 6 * t;
+        if (t < 1 / 2) return q;
+        if (t < 2 / 3) return p + (q - p) * (2 / 3 - t) * 6;
+        return p;
+    }
+
+    if (s !== 0) {
+        const q = l < 0.5 ? l * (1 + s) : l + s - l * s;
+        const p = 2 * l - q;
+
+        r = hue2rgb(p, q, h + 1 / 3);
+        g = hue2rgb(p, q, h);
+        b = hue2rgb(p, q, h - 1 / 3);
+    }
+
+    const result =
+        ((Math.round(r * 255) & 0xFF) << 16) |
+        ((Math.round(g * 255) & 0xFF) << 8) |
+        (Math.round(b * 255) & 0xFF);
+
+    return "0x" + result.toString(16).padStart(6, "0");
+}
+
+
+function abs_mat(name, color, genrotor)
+{
+    GTCEuStartupEvents.registry('gtceu:material', event => {
+        const mat = event.create(name)
+            .ingot()
+            .fluid()
+            .color(color)
+            .iconSet('bright')
+            .flags(foil, gear, long_rod, plates, rod, rotor, small_gear, ring, frame, fine_wire, no_smelt)
+        if(genrotor)
+        {
+            // power, efficiency, damage, durability
+            mat.rotorStats(genrotor[0], genrotor[1], genrotor[2], genrotor[3])
+        }
+
+    });
+
+    GTCEuStartupEvents.registry('gtceu:material', event => {
+        const mat = event.create("molten_" + name)
+            .fluid()
+            .color(darkenHex(color, 0.7, 0.2))
+
+    });
+}
+
 function register_dust(name, ingredients, color, flags)
 {
     GTCEuStartupEvents.registry('gtceu:material', event => {
@@ -343,7 +434,7 @@ register_metal('perfected_electrum_base', [], false, '0x5f692a', [])
 register_nosmelt_metal('industrial_perfected_electrum', [], true, '0xf5ffdb', [3600, 'mid', voltTier('ev'), 20*64], [901, 601, 1, 1000000], voltTier('zpm'))
 
 register_dust('fluxed_titanium_electrum_compound', [], '0x2c2e16', no_decomp);
-register_nosmelt_elem_metal('titanite', [], true, '0x75008c', [5400, 'mid', voltTier('iv'), 20*64], [450, 450, 1, 1000000], voltTier('luv'))
+register_nosmelt_elem_metal('titanite', [], true, '0x75008c', [5400, 'mid', voltTier('iv'), 20*64], [350, 250, 1, 1000000], voltTier('luv'))
 register_nosmelt_elem_metal('ostrum', [], true, '0xc785a2', [5400, 'mid', voltTier('iv'), 20*64], false, voltTier('luv'))
 
 register_superconductor('tin_silver_alloy',['3x silver ', '4x tin'], false, '0xbfcdd6', 32, 1, [0, null, voltTier('lv'), 0]);
@@ -431,8 +522,14 @@ StartupEvents.registry('item', event => {
         .displayName('TPU Pellet')
 })
 
-
+// iv compounds
+abs_mat('titanex-594-ht-a', '0x2e2736')
+abs_mat('titanex-879-ht-b', '0x799e6c', [601, 500, 1, 1000000])
+abs_mat('titanex-901-ht-b', '0xffd4de')
 // naq
+
+// component polymer
+register_fluid('component_polymer', '0xc9bd9b', ['1x epoxy', '2x carbon', '1x borosilicate_glass'], no_decomp)
 
 
 /*
