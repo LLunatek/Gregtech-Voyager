@@ -224,6 +224,21 @@ ServerEvents.recipes(event => {
         .duration(20 * 32)                              
         .EUt(7860)
 
+    create_recipe_lcr('htba-s', ['2x gtceu:sulfuria_dust', '3x gtceu:borax_dust'], ['gtceu:argon 1250', 'gtceu:vanadium_gallium 1152'],
+        [], 'kubejs:high_temp_binding_agent_s 1152', 40, 7860*1.5
+    )
+    create_recipe_lcr('htba-s', ['2x gtceu:sulfuria_dust', '3x gtceu:borax_dust'], ['gtceu:argon 1000', 'gtceu:vanadium_gallium 1152'],
+        [], 'kubejs:high_temp_binding_agent_s 1440', 30, 7860, 'advanced_chemist_helper'
+    )
+
+
+    event.recipes.gtceu
+        .canner('kubejs:ht-ba_s')   
+        .inputFluids('kubejs:high_temp_binding_agent_s 2400') 
+        .itemInputs('3x gtceu:enriched_naquadah_rod')
+        .itemOutputs('3x kubejs:high_temp_binding_agent_rod_s')
+        .duration(20 * 32)                              
+        .EUt(7860)
     
 
 

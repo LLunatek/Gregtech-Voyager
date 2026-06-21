@@ -59,6 +59,12 @@ StartupEvents.registry('fluid', event => {
     .displayName('HT-BA (S)')
     .noBlock() 
 
+  event.create('helperade_br')
+    .thinTexture(0x00ffff)
+    .bucketColor(0x00ffff)
+    .displayName('Helperade (Blue Rasberry)')
+    .noBlock() 
+
     
 
 

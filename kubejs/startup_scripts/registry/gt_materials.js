@@ -325,6 +325,32 @@ function abs_mat(name, color, genrotor)
     GTCEuStartupEvents.registry('gtceu:material', event => {
         const mat = event.create("molten_" + name)
             .fluid()
+            .color(darkenAndSaturateHex(color, 0.7, 0.8))
+
+    });
+}
+
+function abs_mat_sec(name, color, c2, genrotor)
+{
+    GTCEuStartupEvents.registry('gtceu:material', event => {
+        const mat = event.create(name)
+            .ingot()
+            .fluid()
+            .color(color)
+            .secondaryColor(c2)
+            .iconSet('bright')
+            .flags(foil, gear, long_rod, plates, rod, rotor, small_gear, ring, frame, fine_wire, no_smelt)
+        if(genrotor)
+        {
+            // power, efficiency, damage, durability
+            mat.rotorStats(genrotor[0], genrotor[1], genrotor[2], genrotor[3])
+        }
+
+    });
+
+    GTCEuStartupEvents.registry('gtceu:material', event => {
+        const mat = event.create("molten_" + name)
+            .fluid()
             .color(darkenAndSaturateHex(color, 0.7, 0.4))
 
     });
@@ -405,11 +431,11 @@ GTCEuStartupEvents.registry('gtceu:material', event => {
 
 register_gem("source", '0xd745ff', [], )
 
-GTCEuStartupEvents.materialModification(event => {
-	TagPrefix.gem["setIgnored(com.gregtechceu.gtceu.api.data.chemical.material.Material,java.util.function.Supplier[])"](GTMaterialRegistry.getMaterial('source'), () => Item.getItem('ars_nouveau:source_gem'))
-	TagPrefix.block["setIgnored(com.gregtechceu.gtceu.api.data.chemical.material.Material,java.util.function.Supplier[])"](GTMaterialRegistry.getMaterial('source'), () => Item.getItem('ars_nouveau:source_gem_block'))
-	TagPrefix.block.modifyMaterialAmount(GTMaterialRegistry.getMaterial('source'),4)
-})
+// GTCEuStartupEvents.materialModification(event => {
+// 	TagPrefix.gem["setIgnored(com.gregtechceu.gtceu.api.data.chemical.material.Material,java.util.function.Supplier[])"](GTMaterialRegistry.getMaterial('source'), () => Item.getItem('ars_nouveau:source_gem'))
+// 	TagPrefix.block["setIgnored(com.gregtechceu.gtceu.api.data.chemical.material.Material,java.util.function.Supplier[])"](GTMaterialRegistry.getMaterial('source'), () => Item.getItem('ars_nouveau:source_gem_block'))
+// 	TagPrefix.block.modifyMaterialAmount(GTMaterialRegistry.getMaterial('source'),4)
+// })
 
 
 
@@ -533,8 +559,11 @@ StartupEvents.registry('item', event => {
 
 // abs compounds
 abs_mat('titanex-594-hta', '0x2e2736')
-abs_mat('titanex-879-htb', '0x799e6c', [601, 500, 1, 1000000])
+abs_mat_sec('titanex-879-htb', '0x799e6c', '0x00ffba', [601, 500, 1, 1000000])
 abs_mat('titanex-901-htc', '0xffd4de')
+
+abs_mat_sec('aluminex_202_a', '0x96fffd', '0x0080ff')
+
 // naq
 
 // component polymer

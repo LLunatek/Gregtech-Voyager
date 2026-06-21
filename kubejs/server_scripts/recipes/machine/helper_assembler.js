@@ -191,7 +191,7 @@ ServerEvents.recipes(event => {
 
     helper('embassy', 7680, ['4x #gtceu:circuits/zpm', '16x gtceu:lunarium_frame', '4x kubejs:iv_helper_computation_array', 'kubejs:celestial_radio', '8x gtceu:iv_sensor', '8x gtceu:iv_emitter', '64x gtceu:fine_titanite_alloy_wire', 'gtceu:luv_robot_arm'], 'gtceu:soldering_alloy 1000')
 
-    helper('advanced_chemist', 7680, ['4x #gtceu:circuits/zpm', '16x gtceu:titanite_alloy_frame', '4x kubejs:iv_helper_computation_array', '2x gtceu:luv_robot_arm', '2x gtceu:luv_electric_motor', '2x gtceu:titanite_alloy_rod'], 'gtceu:soldering_alloy 1000')
+    helper('advanced_chemist', 7680, ['4x #gtceu:circuits/zpm', '16x gtceu:titanex-901-htc_frame', '4x kubejs:iv_helper_computation_array', '2x gtceu:luv_robot_arm', '2x gtceu:luv_electric_motor', '2x gtceu:titanex-901-htc_rod'], 'gtceu:soldering_alloy 1000')
     helper('iv_technician', 7680, ['1x kubejs:iv_helper_computation_array', 'gtceu:tungsten_steel_frame', '8x gtceu:titanite_plate', '2x gtceu:iv_robot_arm', '2x gtceu:iv_electric_motor', '2x gtceu:titanite_rod', '#gtceu:circuits/iv'], 'gtceu:soldering_alloy 1000')
 
 });

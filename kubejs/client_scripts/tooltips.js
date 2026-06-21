@@ -40,4 +40,11 @@ ItemEvents.tooltip(event => {
   cubeTooltip('oven');
   cubeTooltip('centrifuge')
 
+  event.add(`gtceu:radiation_chamber`, ['§aFocuses radioactive decay particles into a central chamber§r','§6Can only use 4x parallel hatches§r'])
+  event.add(`gtceu:power_rectangle_hyper_helper_calorie_converter`, ['§aHyper Helper Calorie Converter§r','=====================', 'Uses §aAdvanced Helper Calorie Conversion§r recipes', '§6Only takes IV Tier helpers/cookies and above§r','=====================', 'Consumes distilled water, milk, or helperade', 'Distilled water (15mb/t):\n §60x§r EU/t Multiplier | §60x§r Recipe Duration Multiplier','Milk (3mb/t):\n §a2x§r EU/t Multiplier | §a1.5x§r Recipe Duration Multiplier'
+    ,'§bHelperade (Blue Rasberry)§r (5mb/t):\n §a4x§r EU/t Multiplier | §a4x§r Recipe Duration Multiplier','=====================', '§8For now, you can find this information in the actual recipes in JEI, but in future it will just be machine logic.'
+  ])
+  event.add(`gtceu:advanced_gas_turbine_xl_turbine`, ['§aAdvanced Gas Turbine XL§r','=====================', 'Uses §aGas Turbine§r recipes', '§6Only takes LuV rotor holders and above§r','=====================', 'Makes the same amount of power as 4 Large Gas Turbines', 'while using significantly less fuel'
+  ])
+
 })

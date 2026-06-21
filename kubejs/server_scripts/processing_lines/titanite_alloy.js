@@ -53,6 +53,37 @@ ServerEvents.recipes(event => {
        
     }
 
+    function radiation_chamber(name, inputItems, inputFluids, outputItems, outputFluids, duration, eut, helper)
+    {
+      if(!helper)
+      {
+        event.recipes.gtceu.radiation_chamber("kubejs:radiation_chamber_" + name)
+        .itemInputs(inputItems)
+        .itemOutputs(outputItems)
+        .perTick(true)
+        .inputFluids(inputFluids)
+        .perTick(false)
+        .outputFluids(outputFluids)
+        .duration(duration * 20) 
+        .EUt(eut) 
+      }
+      else
+      {
+        event.recipes.gtceu.radiation_chamber("kubejs:radiation_chamber_helper_" + name)
+          .itemInputs(inputItems)
+          .notConsumable('kubejs:' + helper)
+          .itemOutputs(outputItems)
+          .perTick(true)
+          .inputFluids(inputFluids)
+          .perTick(false)
+          .circuit(3)
+          .outputFluids(outputFluids)
+          .duration(duration * 20) 
+          .EUt(eut) 
+      }
+       
+    }
+
     create_recipe_lcr('lunarium_slurry', ['3x gtceu:lunarium_dust', 'gtceu:carbon_dust'],
         ['gtceu:chlorine 4000', 'gtceu:fluorine 2000'], [], 'gtceu:lunarium_growth_slurry 1000', 30, 7680
     )
@@ -61,15 +92,11 @@ ServerEvents.recipes(event => {
         ['gtceu:chlorine 4000', 'gtceu:fluorine 2000'], [], 'gtceu:lunarium_growth_slurry 1500', 25, 6520, 'advanced_chemist_helper'
     )
 
-    event.recipes.gtceu.chemical_bath("kubejs:titanichite_spores")
-        .itemInputs('gtceu:small_titanite_dust')
-        .itemOutputs('kubejs:titanichite_bud')
-        .inputFluids('gtceu:lunarium_growth_slurry 250')
-        .duration(60 * 20) 
-        .EUt(480) 
+    radiation_chamber('titanichite_spores', 'gtceu:small_titanite_dust', 'gtceu:lunarium_growth_slurry 5', 'kubejs:titanichite_bud', [], 60, 480)
+    radiation_chamber('titanichite_spores', '2x gtceu:small_titanite_dust', 'gtceu:lunarium_growth_slurry 2', '3x kubejs:titanichite_bud', [], 45, 400, 'advanced_chemist_helper')
 
-    create_recipe_lcr('titanichite', ['kubejs:titanichite_bud', '4x kubejs:crystalline_titanium_electrum'], 'gtceu:uranium 1000', '4x gtceu:raw_titanichite', [], 45, 7680)
-    create_recipe_lcr('titanichite_plut241', ['kubejs:titanichite_bud', '4x kubejs:crystalline_titanium_electrum'], 'gtceu:plutonium_241 200', '12x gtceu:raw_titanichite', [], 45, 7680)
+    radiation_chamber('titanichite', ['kubejs:titanichite_bud', '4x kubejs:crystalline_titanium_electrum'], 'gtceu:uranium 5', '4x gtceu:raw_titanichite', [], 25, 7680)
+    radiation_chamber('titanichite_plut241', ['kubejs:titanichite_bud', '4x kubejs:crystalline_titanium_electrum'], 'gtceu:plutonium_241 2', '12x gtceu:raw_titanichite', [], 25, 7680)
 
 
     create_mixer_recipe('titanite_alloy', ['4x gtceu:titanichite_dust', '2x gtceu:tungsten_dust', '2x gtceu:graphene_dust', 'gtceu:electrotine_dust'], [], '9x gtceu:titanite_alloy_dust', [], 7680, 9*5)

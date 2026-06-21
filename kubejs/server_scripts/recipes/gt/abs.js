@@ -1,70 +1,99 @@
 
 ServerEvents.recipes(event => {
 
-    function abs(alloy, amount, inputItems, fluid, duration, eut, temp, helpertier, circuit)
+    function abs(alloy, amount, inputItems, fluidOut, fluidIn, duration, eut, temp, helpertier, circuit)
     {
-        event.recipes.gtceu.alloy_blast_furnace("kubejs:hot_" + alloy)
+        event.recipes.gtceu.alloy_blast_smelter(`kubejs:${alloy}`)
             .itemInputs(inputItems)
+            .outputFluids(`${fluidOut} ${amount}`)
+            .duration(duration * 20)
+            .EUt(eut)
+            .blastFurnaceTemp(temp)
             .circuit(circuit)
-            .outputFluids(fluid + ' ' + amount)
-            .duration(duration * 20) 
-            .EUt(eut)
-            .blastFurnaceTemp(temp);
-
-        event.recipes.gtceu.alloy_blast_furnace("kubejs:hot_" + alloy)
+            
+        event.recipes.gtceu.alloy_blast_smelter(`kubejs:${alloy}_fluid`)
             .itemInputs(inputItems)
-            .inputFluids(fluid + ' ' + (amount / 2.88))
+            .inputFluids(`${fluidIn} ${Math.floor(amount/2.88)}`)
+            .outputFluids(`${fluidOut} ${amount}`)
+            .duration(duration * 20 * .66)
+            .EUt(eut)
+            .blastFurnaceTemp(temp)
             .circuit(circuit + 1)
-            .outputFluids(fluid + ' ' + amount)
-            .duration(duration * 20) 
-            .EUt(eut)
-            .blastFurnaceTemp(temp);
 
-        event.recipes.gtceu.alloy_blast_furnace("kubejs:hot_" + input + '_helper')
+        event.recipes.gtceu.alloy_blast_smelter(`kubejs:${alloy}_helper`)
             .itemInputs(inputItems)
-            .inputFluids(fluid + ' ' + ((amount / 2.88) * .85))
-            .circuit(circuit + 2)
-            .outputFluids(fluid + ' ' + amount)
-            .duration(duration * 20 * .85) 
-            .EUt(eut * .85)
-            .blastFurnaceTemp(temp);
+            .inputFluids(`${fluidIn} ${Math.floor((amount/2.88) * .85)}`)
+            .notConsumable(`kubejs:${helpertier}_ebf_helper`)
+            .outputFluids(`${fluidOut} ${amount}`)
+            .duration(Math.floor(duration * 20 * 0.85 * .66))
+            .EUt(Math.floor(eut * 0.85))
+            .blastFurnaceTemp(temp)
+            .circuit(circuit + 2);
 
-        if(!do_helium_cooling)
-        {
-            event.recipes.gtceu.vacuum_freezer("kubejs:"+ alloy +"_cooling")
-                .inputFluids("gtceu:" + alloy + ' 144')
-                .itemOutputs("gtceu:" + alloy + "_ingot")
-                .duration(20 * 6) 
-                .EUt(ebfeut / 4) 
-        }
-        else
-        {
-            event.recipes.gtceu.vacuum_freezer("kubejs:"+ alloy +"_cooling")
-                .itemInputs("gtceu:hot_"+ alloy +"_ingot")
-                .itemOutputs("gtceu:" + alloy + "_ingot")
-                .inputFluids('gtceu:liquid_helium 500')
-                .outputFluids('gtceu:helium 250')
-                .duration((duration * 20) / 10) 
-                .EUt((20 * duration) / 4) 
-        }
+        event.recipes.gtceu.vacuum_freezer(`kubejs:${alloy}_vacuum_freezer`)
+            .inputFluids(`gtceu:molten_${alloy} 144`)
+            .notConsumable(`gtceu:ingot_casting_mold`)
+            .itemOutputs(`gtceu:${alloy}_ingot`)
+            .duration((duration * 20 * .5) / (amount / 144))
+            .EUt(eut / 2);
+
     }
 
+function abs_strict(alloy, amount, inputItems, fluidOut, fluidIn, duration, eut, temp, helpertier, circuit) {
 
-    event.shaped(
-        Item.of('gtceu:alloy_blast_smelter', 1), // arg 1: output
-        [
-            'ADA',
-            'CBC', // arg 2: the shape (array of strings)
-            'ADA'
-        ],
-        {
-            A: 'gtceu:double_ostrum_plate',
-            B: 'gtceu:iv_alloy_smelter',  //arg 3: the mapping object
-            C: 'gtceu:uranium_triplatinum_double_wire',
-            D: '#gtceu:circuits/luv'
-        }
+    event.recipes.gtceu.alloy_blast_smelter(`kubejs:${alloy}`)
+        .itemInputs(inputItems)
+        .inputFluids(`${fluidIn} ${Math.floor(amount/2.88)}`)
+        .outputFluids(`${fluidOut} ${amount}`)
+        .duration(duration * 20)
+        .EUt(eut)
+        .blastFurnaceTemp(temp)
+        .circuit(circuit + 1)
+
+    event.recipes.gtceu.alloy_blast_smelter(`kubejs:${alloy}_helper`)
+        .itemInputs(inputItems)
+        .inputFluids(`${fluidIn} ${Math.floor((amount/2.88) * .85)}`)
+        .notConsumable(`kubejs:${helpertier}_ebf_helper`)
+        .outputFluids(`${fluidOut} ${amount}`)
+        .duration(Math.floor(duration * 20 * 0.85))
+        .EUt(Math.floor(eut * 0.85))
+        .blastFurnaceTemp(temp)
+        .circuit(circuit + 2);
+
+    event.recipes.gtceu.vacuum_freezer(`kubejs:${alloy}_vacuum_freezer`)
+        .inputFluids(`gtceu:molten_${alloy} 144`)
+        .notConsumable(`gtceu:ingot_casting_mold`)
+        .itemOutputs(`gtceu:${alloy}_ingot`)
+        .duration((duration * 20 * .5) / (amount / 144))
+        .EUt(eut / 2);
+
+}
+// ????????????
+
+
+
+    abs('titanex-594-hta', 14 * 144, ['5x gtceu:titanite_dust', '3x gtceu:graphene_dust', '2x gtceu:palladium_dust', '2x gtceu:ostrum_dust', '2x gtceu:tungsten_dust'],
+        'gtceu:molten_titanex-594-hta', 'gtceu:argon', 14 * 33, 7680, 4000, 'ev', 0
     )
+    abs_strict('titanex-879-htb', 17 * 144, ['7x gtceu:titanite_alloy_dust', '5x gtceu:iridium_dust', '5x gtceu:plutonium_dust', '2x gtceu:lunarium_dust', '2x gtceu:lanthanum_dust'],
+        'gtceu:molten_titanex-879-htb', 'kubejs:high_temp_binding_agent_s', 17 * 33, 7680, 5200, 'iv', 0
+    )
+    abs_strict('aluminex_202_a', 28 * 144, ['12x gtceu:aluminium_dust', '6x gtceu:zinc_dust','4x gtceu:cobalt_brass_dust', '3x gtceu:incoloy_ma_956_dust', '3x gtceu:indium_dust'],
+        'gtceu:molten_aluminex_202_a', 'kubejs:high_temp_binding_agent_s', 28 * 22, 7680 * 4, 5200, 'iv', 0
+    )
+    
 
+
+    // event.recipes.gtceu.alloy_blast_smelter("bioalloy_base")
+    //     .itemInputs('5x gtceu:titanite_dust', '3x gtceu:graphene_dust', '2x gtceu:palladium_dust', '2x gtceu:ostrum_dust', '2x gtceu:tungsten_dust')
+    //     .outputFluids('gtceu:molten_titanex-594-hta')
+    //     .inputFluids('kubejs:high_temp_binding_agent_s 1000')
+    //     .notConsumable('kubejs:iv_ebf_helper')
+    //     .duration(100 * 20)
+    //     .EUt(1000)
+    //     .blastFurnaceTemp(11900)
+    //     .cleanroom(CleanroomType.STERILE_CLEANROOM)
+    //     .circuit(3)
 
 });
 

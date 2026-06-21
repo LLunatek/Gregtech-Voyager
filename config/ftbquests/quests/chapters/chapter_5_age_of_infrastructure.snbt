@@ -116,7 +116,7 @@
 				item: "kubejs:martian_scrap"
 				type: "item"
 			}]
-			x: 4.5d
+			x: 7.0d
 			y: 4.0d
 		}
 		{
@@ -129,8 +129,8 @@
 				type: "item"
 			}]
 			title: "Martian Scrap Recovery"
-			x: 3.5d
-			y: 6.0d
+			x: 7.0d
+			y: 7.5d
 		}
 		{
 			dependencies: ["6EE539D525D3D685"]
@@ -141,7 +141,7 @@
 				item: "gtceu:titanite_ingot"
 				type: "item"
 			}]
-			x: 3.5d
+			x: 7.0d
 			y: 9.0d
 		}
 		{
@@ -189,8 +189,8 @@
 		}
 		{
 			dependencies: [
-				"6EE539D525D3D685"
 				"217C34D6507A431D"
+				"313893E537CA5B6C"
 			]
 			id: "5BC888D3C0918F81"
 			tasks: [{
@@ -241,7 +241,7 @@
 				item: "kubejs:shredded_martian_scrap"
 				type: "item"
 			}]
-			x: 4.5d
+			x: 7.0d
 			y: 6.0d
 		}
 		{
@@ -279,7 +279,7 @@
 				type: "item"
 			}]
 			title: "Better Multiblocks"
-			x: 6.0d
+			x: 5.5d
 			y: 1.5d
 		}
 		{
@@ -355,6 +355,7 @@
 		}
 		{
 			dependencies: ["4DEDB2FEC0301981"]
+			hide_dependent_lines: true
 			id: "1B5DC7564288B03C"
 			size: 1.5d
 			tasks: [{
@@ -1077,7 +1078,6 @@
 				""
 				"Assembly lines are interesting in the fact that they need ordered input. I recommend just patterning a recipe thru AE2, and then setting priorities on storage buses in a sub-net to accomplish easy crafting in these. Front of the assembly line should have most priority, going down all the way to the back."
 			]
-			hide_dependency_lines: true
 			id: "436220F63DCFFB5D"
 			shape: "gear"
 			size: 2.0d
@@ -1151,10 +1151,23 @@
 			y: 15.0d
 		}
 		{
-			dependencies: ["50A265E32ADDD82E"]
-			description: ["&5Titanite&r is a great rotor option. For only a &c50% loss&r of efficiency (compared to the &1Lunarium&r rotors), you &again 250% more power&r output."]
+			dependencies: ["48A67162760139FC"]
+			description: ["&5Titanitex&r is a great rotor option, you &again 301% more power&r output compared to your previous &1lunarium rotors&r."]
 			hide_dependency_lines: true
 			id: "0F070E1FA2BB4374"
+			tasks: [{
+				id: "03FB0577CBF32482"
+				item: {
+					Count: 1
+					id: "gtceu:turbine_rotor"
+					tag: {
+						GT.PartStats: {
+							Material: "gtceu:titanex-879-htb"
+						}
+					}
+				}
+				type: "item"
+			}]
 			title: "Titanex 879-HT B Rotors"
 			x: -2.0d
 			y: 16.5d
@@ -1383,17 +1396,6 @@
 			y: 11.5d
 		}
 		{
-			description: ["new multi, some more steps"]
-			id: "28F6A549D92272A6"
-			tasks: [{
-				id: "256215D0C4AFF1EF"
-				title: "add more here"
-				type: "checkmark"
-			}]
-			x: 6.0d
-			y: 6.0d
-		}
-		{
 			description: ["add a new glue or something, a chemical line"]
 			id: "0A561E6A1254E7EB"
 			tasks: [{
@@ -1435,14 +1437,91 @@
 			y: 8.5d
 		}
 		{
-			id: "28BB5D5BCA8CA65B"
+			dependencies: ["313893E537CA5B6C"]
+			id: "014935D33AD9697A"
+			tasks: [
+				{
+					id: "49488F119E9F41FE"
+					item: "gtceu:sulfuria_dust"
+					type: "item"
+				}
+				{
+					id: "29C55F8AF2ED1C91"
+					item: "gtceu:martian_sand_dust"
+					type: "item"
+				}
+			]
+			title: "Martian Sand Processing"
+			x: 3.5d
+			y: 12.0d
+		}
+		{
+			dependencies: [
+				"503A07BAB88F1732"
+				"17B8AC9F71D82B41"
+			]
+			id: "48A67162760139FC"
 			tasks: [{
-				id: "10F5E3BFA33B70F5"
-				title: "new cookie gen"
-				type: "checkmark"
+				id: "0CA5B38579C4ABEA"
+				item: "gtceu:titanex-879-htb_ingot"
+				type: "item"
 			}]
-			x: -14.0d
-			y: 6.5d
+			x: 7.0d
+			y: 12.0d
+		}
+		{
+			dependencies: ["5417BBFB6E67273E"]
+			id: "313893E537CA5B6C"
+			size: 1.5d
+			tasks: [{
+				id: "3C523BA3C5188AE1"
+				item: "gtceu:radiation_chamber"
+				type: "item"
+			}]
+			x: 3.5d
+			y: 6.0d
+		}
+		{
+			dependencies: [
+				"6EE539D525D3D685"
+				"11ED1C714EE1EB79"
+			]
+			id: "5417BBFB6E67273E"
+			tasks: [{
+				id: "4310DBD5C6455E7B"
+				item: "gtceu:titanex-594-hta_ingot"
+				type: "item"
+			}]
+			x: 5.5d
+			y: 6.0d
+		}
+		{
+			dependencies: ["014935D33AD9697A"]
+			id: "17B8AC9F71D82B41"
+			tasks: [{
+				id: "13B776C4BD2EF9B5"
+				item: "kubejs:high_temp_binding_agent_s_bucket"
+				type: "item"
+			}]
+			title: "High-Temp Binding Agent S"
+			x: 5.0d
+			y: 12.0d
+		}
+		{
+			dependencies: ["48A67162760139FC"]
+			description: ["Now that you are in &9IV&r, the &aHyper Helper Calorie Converter&r is a &ephenomenal&r option for power. It is a bit of a rabbit hole, but it will be worth it."]
+			hide_dependency_lines: true
+			id: "36C332F72378DDFB"
+			shape: "gear"
+			size: 1.5d
+			tasks: [{
+				id: "1E3D0167A4101D84"
+				item: "gtceu:power_rectangle_hyper_helper_calorie_converter"
+				type: "item"
+			}]
+			title: "Hyper Helper Calorie Converter"
+			x: -2.0d
+			y: 18.0d
 		}
 	]
 	title: "Chapter 5: Age of Infrastructure (IV)"
