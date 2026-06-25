@@ -1,3 +1,5 @@
+
+
 GTCEuStartupEvents.registry("gtceu:recipe_type", event => {
 
     event.create("steam_blast_furnace")
@@ -293,26 +295,27 @@ GTCEuStartupEvents.registry("gtceu:machine", event => {
              // core mod incoming!!
 
         event.create('titanite_blast_furnace', 'multiblock')
+        .machine((holder) => new $CoilWorkableElectricMultiblockMachine(holder))
         .rotationState(RotationState.NON_Y_AXIS)
         .recipeType('electric_blast_furnace')
-        .recipeModifiers([GTRecipeModifiers.PARALLEL_HATCH, GTRecipeModifiers.OC_PERFECT])
+        .recipeModifiers([
+            (machine, recipe) => $GTRecipeModifiers.ebfOverclock(machine, recipe),
+            $VoyagerCoreRecipeModifiers.HEAT_BOOSTING
+        ])
         .appearanceBlock(() => Block.getBlock("kubejs:titanite_casing"))
         .pattern(definition => FactoryBlockPattern.start()
             .aisle('AAA', 'CCC', 'CCC', 'AAA') 
-            .aisle('AEA', 'C C', 'C C', 'AMA') 
-            .aisle('A@A', 'CCC', 'CCC', 'APA') 
+            .aisle('APA', 'C C', 'C C', 'AMA') 
+            .aisle('A@A', 'CCC', 'CCC', 'AAA') 
             .where('A', Predicates.blocks('kubejs:titanite_casing')
                 .or(Predicates.abilities(PartAbility.IMPORT_ITEMS).setPreviewCount(1))
                 .or(Predicates.abilities(PartAbility.EXPORT_ITEMS).setPreviewCount(1))
                 .or(Predicates.abilities(PartAbility.IMPORT_FLUIDS).setPreviewCount(1))
                 .or(Predicates.abilities(PartAbility.EXPORT_FLUIDS).setPreviewCount(1))
                 .or(Predicates.abilities(PartAbility.MAINTENANCE).setExactLimit(1)))
-            .where('C', Predicates.blocks('gtceu:hssg_coil_block'))
+            .where('C', Predicates.heatingCoils())
             .where('M', Predicates.abilities(PartAbility.MUFFLER))
-            .where('P', Predicates.blocks('gtceu:iv_parallel_hatch'))
-            .where('E', Predicates.blocks('gtceu:iv_energy_input_hatch')
-                .or(Predicates.blocks('gtceu:iv_energy_input_hatch_4a'))
-                .or(Predicates.blocks('gtceu:iv_energy_input_hatch_16a')))
+            .where('P', Predicates.abilities(PartAbility.INPUT_ENERGY))
             .where('@', Predicates.controller(Predicates.blocks(definition.get())))
             .build())
         .workableCasingModel('kubejs:block/casing/titanite_casing',

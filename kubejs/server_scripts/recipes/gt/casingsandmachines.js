@@ -101,7 +101,7 @@ ServerEvents.recipes(event => {
     event.recipes.gtceu.assembler('kubejs:radiation_conducting_titanex_casing')
         .itemInputs(
             '1x kubejs:radiation_proof_lead_casing',
-            '10x gtceu:double_titanex-594-hta_plate',
+            '6x gtceu:double_titanex-594-hta_plate',
             'gtceu:ev_field_generator'
         )
         .circuit(6)

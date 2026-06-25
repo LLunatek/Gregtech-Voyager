@@ -84,12 +84,12 @@ ServerEvents.recipes(event => {
        
     }
 
-    create_recipe_lcr('lunarium_slurry', ['3x gtceu:lunarium_dust', 'gtceu:carbon_dust'],
-        ['gtceu:chlorine 4000', 'gtceu:fluorine 2000'], [], 'gtceu:lunarium_growth_slurry 1000', 30, 7680
+    create_recipe_lcr('lunarium_slurry', ['2x gtceu:lunarium_dust', 'gtceu:carbon_dust'],
+        ['gtceu:chlorine 450', 'gtceu:fluorine 300'], [], 'gtceu:lunarium_growth_slurry 3000', 30, 7680
     )
 
     create_recipe_lcr('lunarium_slurry', ['2x gtceu:lunarium_dust', 'gtceu:carbon_dust'],
-        ['gtceu:chlorine 4000', 'gtceu:fluorine 2000'], [], 'gtceu:lunarium_growth_slurry 1500', 25, 6520, 'advanced_chemist_helper'
+        ['gtceu:chlorine 300', 'gtceu:fluorine 200'], [], 'gtceu:lunarium_growth_slurry 4000', 25, 6520, 'advanced_chemist_helper'
     )
 
     radiation_chamber('titanichite_spores', 'gtceu:small_titanite_dust', 'gtceu:lunarium_growth_slurry 5', 'kubejs:titanichite_bud', [], 60, 480)

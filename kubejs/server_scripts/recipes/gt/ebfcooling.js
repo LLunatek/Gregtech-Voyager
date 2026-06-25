@@ -153,5 +153,7 @@ ServerEvents.recipes(event => {
     ebf_recipe('perfected_electrum', 200*20, 7860*4, 6100, 'gtceu:rocket_fuel', 'iv', true)
     ebf_recipe('industrial_perfected_electrum', 150*20, 7860*4, 6100, 'gtceu:rocket_fuel', 'iv', true)
 
+    ebf_recipe('test', 20, 100, 1000, 'kubejs:helperade_br', 'lv', false)
+
 
 });

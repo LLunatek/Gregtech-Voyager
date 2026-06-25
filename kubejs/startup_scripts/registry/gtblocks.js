@@ -3,7 +3,8 @@ GTCEuStartupEvents.registry('gtceu:recipe_type', event => {
     event.create('helper_wheel')
         .category('generator')                        // category shown in JEI/REI
         .setEUIO('out')                                
-        .setMaxIOSize(2, 2, 1, 1);      
+        .setMaxIOSize(2, 2, 1, 1)
+        .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW, FillDirection.LEFT_TO_RIGHT);
         
     event.create('helper_assembler')
         .category('simple')                        // category shown in JEI/REI

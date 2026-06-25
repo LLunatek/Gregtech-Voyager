@@ -139,6 +139,27 @@ function register_superconductor(name, ingredients, ebf, color, volts, amp, blas
     });
 }
 
+function register_superconductor_sec(name, ingredients, ebf, color, c2, volts, amp, blasting) {
+    GTCEuStartupEvents.registry('gtceu:material', event => {
+
+        const mat = event.create(name)
+            .ingot()
+            .dust()
+            .fluid()
+            .components(ingredients)
+            .color(color)
+            .secondaryColor(c2)
+            .iconSet('shiny')
+            .cableProperties(volts, amp, 0, true)
+            .flags(foil, gear, long_rod, plates, rod, rotor, small_gear, ring, frame, fine_wire, no_decomp, no_smelt);
+
+        if (ebf) {
+            mat.blastTemp(blasting[0], blasting[1], blasting[2], blasting[3]);
+        }
+
+    });
+}
+
 function register_metal(name, ingredients, ebf, color, blasting)
 {
     GTCEuStartupEvents.registry('gtceu:material', event => {
@@ -356,16 +377,32 @@ function abs_mat_sec(name, color, c2, genrotor)
     });
 }
 
-function register_dust(name, ingredients, color, flags)
+function register_dust(name, ingredients, color, flags, c2)
 {
-    GTCEuStartupEvents.registry('gtceu:material', event => {
+    if (!c2)
+    {
+        GTCEuStartupEvents.registry('gtceu:material', event => {
         const mat = event.create(name)
             .dust()
             .components(ingredients)
             .color(color)
             .iconSet('dull')
             .flags(flags)
-    });
+        });
+    }
+    else
+    {
+       GTCEuStartupEvents.registry('gtceu:material', event => {
+        const mat = event.create(name)
+            .dust()
+            .components(ingredients)
+            .color(color)
+            .secondaryColor(c2)
+            .iconSet('dull')
+            .flags(flags)
+        }); 
+    }
+    
 }
 
 function register_gem(name, color, ingredients) 
@@ -469,7 +506,7 @@ register_superconductor('fluxed_electrum',[], true, '0xfcad03', 128, 1, [0, null
 register_superconductor('fluxed_cobalt_electrum', [], true, '0x006387', 512, 1, [0, null, voltTier('lv'), 0]);
 register_superconductor('refined_fluxed_electrum', [], true, '0xdbff66', 2048, 4, [3600, 'mid', voltTier('ev'), 20*64]);
 register_superconductor('titanite_alloy',['4x titanite', '2x tungsten', '3x lunarium', '2x graphene', '3x refined_fluxed_electrum', '2x fluorine', 'electrotine'], true, '0xff1284', 8192, 8, [4500, 'mid', voltTier('iv'), 1]);
-register_superconductor('perfected_electrum', [], true, '0xfffef7', 32768, 8, [7200, 'high', voltTier('luv'), 1]);
+register_superconductor_sec('perfected_electrum', [], true, '0xfffef7', '0xfcff69', 32768, 8, [7200, 'high', voltTier('luv'), 1]);
 
 
 register_fluid('lunarium_growth_slurry','0x1fff1a', ['3x lunarium', '4x chlorine', '2x fluorine', '1x carbon'], no_decomp)
@@ -506,7 +543,7 @@ register_ore_metal('dalumite', ['3x oxygen', '8x desh'], '0xad7600', [electrolyz
 register_dust('inert_sulfur', ['sulfur'], '0x948243', no_decomp)
 // radiation chamber
 register_dust('excited_sulfur', ['sulfur'], '0xffca69', no_decomp)
-register_dust('sulfuria', [], '0xffae00', no_decomp)
+register_dust('sulfuria', [], '0xffdd00', no_decomp, '0xff7b00')
 register_dust('copper_sulfuriate', ['2x sulfuria', 'copper'], '0xffaeff', electrolyze)
 register_fluid('carbon_tetrachloride', '0x22292b', ['carbon', '4x chlorine'], no_decomp)
 register_fluid('sulfuria_solution', '0xffa500', ['carbon', '4x chlorine', 'sulfur', 'copper'], no_decomp)
@@ -524,6 +561,9 @@ register_dust('dense_metal_mixture', ['lunarium', 'tungsten', 'water', '4x oxyge
 register_dust('lunarium_metal_sludge', ['lunarium', 'water'], '0x360d1c', no_decomp)
 register_dust('dewatered_lunarium_metal_mixture', ['lunarium', 'desh', 'titanium', '3x glowstone', '2x gold', '2x carbon', '3x hydrogen', 'zinc', 'barium'], '0x657e9c', no_decomp)
 register_dust('impure_lunarium', ['lunarium', 'desh', '1x carbon', 'calcium'], '0x7fa9b0', electrolyze)
+
+register_nosmelt_metal('test', [], true, '0xffffff', [3600, 'mid', voltTier('ev'), 20*64], [901, 601, 1, 1000000], voltTier('zpm'))
+
 
 // titanite
 

@@ -1,3 +1,4 @@
+
 GTCEuStartupEvents.registry("gtceu:recipe_type", event => {
 
 
@@ -11,7 +12,7 @@ GTCEuStartupEvents.registry("gtceu:machine", event => {
         event.create(`cube_${type}`, 'multiblock')
             .rotationState(RotationState.NON_Y_AXIS)
             .recipeType(type)
-            .recipeModifiers([GTRecipeModifiers.OC_PERFECT, GTRecipeModifiers.BATCH_MODE])
+            .recipeModifiers([GTRecipeModifiers.OC_PERFECT, GTRecipeModifiers.BATCH_MODE, $VoyagerCoreRecipeModifiers.CUBE_BOOSTING])
             .appearanceBlock(() => Block.getBlock(`kubejs:${casing}_casing`))
             .pattern(definition => FactoryBlockPattern.start()
                 .aisle('CCC', 'CCC', 'CCC')
@@ -38,7 +39,7 @@ GTCEuStartupEvents.registry("gtceu:machine", event => {
         event.create(`cube_${type}`, 'multiblock')
             .rotationState(RotationState.NON_Y_AXIS)
             .recipeType(type)
-            .recipeModifiers([GTRecipeModifiers.OC_PERFECT, GTRecipeModifiers.BATCH_MODE])
+            .recipeModifiers([GTRecipeModifiers.OC_PERFECT, GTRecipeModifiers.BATCH_MODE, $VoyagerCoreRecipeModifiers.CUBE_BOOSTING])
             .appearanceBlock(() => Block.getBlock(`kubejs:${casing}_casing`))
             .pattern(definition => FactoryBlockPattern.start()
                 .aisle('CCC', 'CCC', 'CCC')

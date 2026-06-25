@@ -1181,11 +1181,12 @@
 				"5A6CCE713C1D1143"
 			]
 			description: [
-				"The &4Titanite blast furnace&r is your next tier of EBF. This is going to be super useful for on-demand blasting, just keep in mind it can only run &9IV&r and below recipes, but it has &l4x parallels&r"
+				"The &4Titanite Foundry&r is your next tier of EBF. This is going to be super useful for on-demand blasting."
 				""
-				"&7In future, this will be updated for future voltage tiers, but bear with us as we need to make a core mod first. It is in the works"
 				""
-				"&7-GregTech: Voyager team&r&r"
+				"It has a normal &eEBF Overclocks&r, but also &l&6Heat Boosting&r."
+				""
+				"For more information about modifiers, go to the &nModifiers&r tab in your questbook. It will also say on the machine controller."
 			]
 			hide_dependency_lines: true
 			id: "319C5A7733086A0D"

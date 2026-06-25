@@ -6,6 +6,7 @@ GTCEuStartupEvents.registry("gtceu:recipe_type", event => {
         .category("multiblock")
         .setEUIO("out")
         .setMaxIOSize(4, 1, 2, 1)
+        .setProgressBar(GuiTextures.PROGRESS_BAR_RECYCLER, FillDirection.LEFT_TO_RIGHT)
         .setSlotOverlay(false, false, GuiTextures.ARROW_INPUT_OVERLAY)
         .setSound(GTSoundEntries.CHEMICAL);
 
@@ -13,6 +14,7 @@ GTCEuStartupEvents.registry("gtceu:recipe_type", event => {
         .category("multiblock")
         .setEUIO("out")
         .setMaxIOSize(4, 2, 2, 1)
+        .setProgressBar(GuiTextures.PROGRESS_BAR_RECYCLER, FillDirection.LEFT_TO_RIGHT)
         .setSlotOverlay(false, false, GuiTextures.ARROW_INPUT_OVERLAY)
         .setSound(GTSoundEntries.CHEMICAL);
 
