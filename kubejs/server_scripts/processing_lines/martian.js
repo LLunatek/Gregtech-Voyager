@@ -239,6 +239,14 @@ ServerEvents.recipes(event => {
         .itemOutputs('3x kubejs:high_temp_binding_agent_rod_s')
         .duration(20 * 32)                              
         .EUt(7860)
+
+    event.recipes.gtceu
+        .mixer('kubejs:pyrotheum')   
+        .inputFluids('gtceu:blaze 1000') 
+        .itemInputs('gtceu:sulfuria_dust')
+        .outputFluids('kubejs:pyrotheum 1000')
+        .duration(20 * 15)                              
+        .EUt(400)
     
 
 

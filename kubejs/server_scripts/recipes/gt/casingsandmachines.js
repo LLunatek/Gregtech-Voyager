@@ -109,7 +109,7 @@ ServerEvents.recipes(event => {
         .duration(30)
         .EUt(1920);
 
-    event.recipes.gtceu.assembler('kubejs:titanite_blast_furnace')
+    event.recipes.gtceu.assembler('kubejs:magmatic_foundry')
         .itemInputs(
             '16x kubejs:titanite_casing',
             '4x #gtceu:circuits/zpm',
@@ -122,7 +122,7 @@ ServerEvents.recipes(event => {
 
         )
         .circuit(2)
-        .itemOutputs('gtceu:titanite_blast_furnace')
+        .itemOutputs('gtceu:magmatic_foundry')
         .duration(60 * 20)
         .EUt(7680); 
 

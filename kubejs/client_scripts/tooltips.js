@@ -42,8 +42,8 @@ ItemEvents.tooltip(event => {
   event.add(`gtceu:power_rectangle_helper_calorie_converter`, '\n§6Can run helper calorie conversion recipes')
   event.add(`gtceu:beam_of_teus`, '§6Can use parallel hatches')
 
-  event.add(`gtceu:titanite_blast_furnace`, [
-    `${gr}Titanite Foundry`,
+  event.add(`gtceu:magmatic_foundry`, [
+    `${or}Magmatic Foundry`,
     nl,
     `Uses ${gr}Electric Blast Furnace${x} recipes`,
     `Has ${or}Heat Boosting${x} and ${ye}EBF Overclocks${x}`,
@@ -52,7 +52,7 @@ ItemEvents.tooltip(event => {
     `For every ${re}500K${x} above recipe temperature, gain ${gr}an additional parallel${x}`,
     `For every ${re}1000K${x} above recipe temperature, reduce recipe time by ${gr}10% multiplicatively${x}`,
     nl,
-    `Consumes ${or}10mb/t${x} of ${ye}Blasting Gas${x} in order to run recipes`,
+    `Consumes ${or}10mb/t${x} of ${or}Pyrotheum${x} in order to run recipes`,
     `Can only have ${re}one energy hatch`
 ])
   event.add(`gtceu:atmospheric_collector`, '§6Collects gas and dust from the surrounding atmosphere and freezes it§r\n§6Can use parallel hatches§r')

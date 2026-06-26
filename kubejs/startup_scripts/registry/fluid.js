@@ -65,6 +65,11 @@ StartupEvents.registry('fluid', event => {
     .displayName('Helperade (Blue Rasberry)')
     .noBlock() 
 
+  event.create('pyrotheum')
+  .thinTexture(0xff5900)
+    .bucketColor(0xff5900)
+    .displayName('Pyrotheum')
+    .noBlock() 
     
 
 

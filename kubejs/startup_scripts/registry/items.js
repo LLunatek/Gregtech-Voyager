@@ -217,7 +217,8 @@ StartupEvents.registry('item', event => {
 
 
     event.create('high_temp_binding_agent_rod_s').texture('kubejs:item/high_temp_binding_agent_rod_s').displayName('HT-BA (S) Rod')
-
+    event.create('heat_accelerator').texture('kubejs:item/heat_accelerator').displayName('Heat Accelerator')
+    event.create('heat_sheild').texture('kubejs:item/heat_sheild').displayName('Heat Sheild')
     // cookies
 
     event.create('grandmas_baking_sheet').texture('kubejs:item/grandmas_baking_sheet').maxStackSize(1).displayName('Grandma\'s Super Durable Baking Sheet');

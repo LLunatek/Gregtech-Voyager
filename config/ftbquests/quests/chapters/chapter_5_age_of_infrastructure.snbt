@@ -1179,9 +1179,10 @@
 				"58BF847DADB89C2E"
 				"73B07062397A7AB7"
 				"5A6CCE713C1D1143"
+				"2475AF86E29B26F3"
 			]
 			description: [
-				"The &4Titanite Foundry&r is your next tier of EBF. This is going to be super useful for on-demand blasting."
+				"The &4Magmatic Foundry&r is your next tier of EBF. This is going to be super useful for on-demand blasting."
 				""
 				""
 				"It has a normal &eEBF Overclocks&r, but also &l&6Heat Boosting&r."
@@ -1194,8 +1195,8 @@
 			size: 2.0d
 			subtitle: "To meet all of your autocrafting needs"
 			tasks: [{
-				id: "2D901A71AEB093DE"
-				item: "gtceu:titanite_blast_furnace"
+				id: "14F678C9103F0D57"
+				item: "gtceu:magmatic_foundry"
 				type: "item"
 			}]
 			title: "Better Blasting"
@@ -1213,8 +1214,8 @@
 				item: "gtceu:iv_large_miner"
 				type: "item"
 			}]
-			x: -11.25d
-			y: 1.5d
+			x: -9.75d
+			y: 0.0d
 		}
 		{
 			dependencies: [
@@ -1408,26 +1409,6 @@
 			y: 2.5d
 		}
 		{
-			id: "1749596C4A6731DE"
-			tasks: [{
-				id: "4C0D8B04D13AFB62"
-				title: "add the coil modifier., check gtceu docs"
-				type: "checkmark"
-			}]
-			x: -13.5d
-			y: 3.0d
-		}
-		{
-			id: "53EE7E9B7385C0F1"
-			tasks: [{
-				id: "2F5721E98431B52B"
-				title: "new turbine"
-				type: "checkmark"
-			}]
-			x: -14.0d
-			y: 7.5d
-		}
-		{
 			id: "6DAAD97C5FB922C8"
 			tasks: [{
 				id: "05581D2F4A804129"
@@ -1522,7 +1503,48 @@
 			}]
 			title: "Hyper Helper Calorie Converter"
 			x: -2.0d
+			y: 19.75d
+		}
+		{
+			dependencies: ["014935D33AD9697A"]
+			id: "2475AF86E29B26F3"
+			tasks: [{
+				id: "425AE5C89B2F4DD8"
+				item: "minecraft:oak_wood"
+				type: "item"
+			}]
+			x: 3.5d
+			y: 13.5d
+		}
+		{
+			dependencies: [
+				"7A3CD112368FA9B2"
+				"47732A84A5E27361"
+				"17B8AC9F71D82B41"
+			]
+			description: ["Now that you are in &9IV&r, the ECEs are a superb option for power. Check out &6High-Octane Gasoline&r (or HOG for short)."]
+			hide_dependency_lines: true
+			id: "020017DDCD7BCB20"
+			shape: "gear"
+			size: 1.5d
+			tasks: [{
+				id: "4E64CFA5909EB144"
+				item: "gtceu:advanced_gas_turbine_xl_turbine"
+				type: "item"
+			}]
+			x: -2.0d
 			y: 18.0d
+		}
+		{
+			dependencies: ["17B8AC9F71D82B41"]
+			id: "56E64E745168F87B"
+			tasks: [{
+				id: "5BD994E90CC3B4C1"
+				item: "gtceu:aluminex_202_a_ingot"
+				type: "item"
+			}]
+			x: 7.0d
+			y: 13.5d
 		}
 	]
 	title: "Chapter 5: Age of Infrastructure (IV)"

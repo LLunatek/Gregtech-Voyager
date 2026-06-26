@@ -24,6 +24,7 @@ StartupEvents.registry('block', event => {
     casing('radiant_titanex')
     casing('radiant_titanex_vent')
     casing('frost_conducting')
+    casing('foundry')
 
     function metalblock(name)
     {
