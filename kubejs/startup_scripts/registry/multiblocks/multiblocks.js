@@ -293,26 +293,17 @@ GTCEuStartupEvents.registry("gtceu:machine", event => {
 
 
              // core mod incoming!!
-
-        event.create('magmatic_foundry', 'multiblock')
-        .machine((holder) => {
-            let machine = new $FluidCoilMulti(holder)
-
-            let lava = Fluid.of('kubejs:pyrotheum', 50)
-
-            machine.setFluidConsumption(
-                lava,
-                100,   // amount per cycle
-                20     // interval ticks
-            )
-
-            return machine
-        })
+        console.log("Poss Error in Multis")
+        const $FluidStack = Java.loadClass("net.minecraftforge.fluids.FluidStack")
+        const pyro = GTMaterials.Water.getFluid(200)
+       /* event.create('magmatic_foundry', 'multiblock')
+        .machine((holder) => new $FluidCoilMulti(holder))
         .rotationState(RotationState.NON_Y_AXIS)
         .recipeType('electric_blast_furnace')
-        .recipeModifiers([
+        .recipeModifiers(true, [
             (machine, recipe) => $GTRecipeModifiers.ebfOverclock(machine, recipe),
-            $VoyagerCoreRecipeModifiers.HEAT_BOOSTING
+            $VoyagerCoreRecipeModifiers.HEAT_BOOSTING,
+            (machine, recipe) => $FluidCoilMulti.recipeModifier(machine, recipe)
         ])
         .appearanceBlock(GCYMBlocks.CASING_HIGH_TEMPERATURE_SMELTING)
         .pattern(definition => FactoryBlockPattern.start()
@@ -338,7 +329,7 @@ GTCEuStartupEvents.registry("gtceu:machine", event => {
             .build())
         .workableCasingModel('gtceu:block/casings/gcym/high_temperature_smelting_casing',
             'kubejs:block/multiblock/magmatic_foundry'
-        );
+        );*/
 
 
     event.create('atmospheric_collector', 'multiblock')
@@ -446,3 +437,4 @@ GTCEuStartupEvents.registry("gtceu:machine", event => {
             .workableCasingModel('kubejs:block/casing/radiation_proof_lead_casing',
                 'kubejs:block/multiblock/radiation_chamber');
 });
+console.log("No Error in Multis")

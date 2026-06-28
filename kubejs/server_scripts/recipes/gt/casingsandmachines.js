@@ -122,7 +122,7 @@ ServerEvents.recipes(event => {
 
         )
         .circuit(2)
-        .itemOutputs('gtceu:magmatic_foundry')
+        .itemOutputs('voyagercore:magmatic_foundry')
         .duration(60 * 20)
         .EUt(7680); 
 

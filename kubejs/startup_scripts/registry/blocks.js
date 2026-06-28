@@ -21,8 +21,8 @@ StartupEvents.registry('block', event => {
     casing('condensation_resistant_tungsten')
     casing('heat_resistant_refined_fluxed_electrum')
     casing('radiation_conducting_titanex')
-    casing('radiant_titanex')
-    casing('radiant_titanex_vent')
+    //casing('radiant_titanex')
+    //casing('radiant_titanex_vent')
     casing('frost_conducting')
     casing('foundry')
 
@@ -53,7 +53,7 @@ StartupEvents.registry('block', event => {
 
     metalblock('teus_beam_block')
     metalblock('ruined_beam_block')
-    metalblock('cooling_lamp')
+    //metalblock('cooling_lamp')
 
     metalblock('hungry_helper_housing')
 
