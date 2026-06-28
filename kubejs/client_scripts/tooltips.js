@@ -42,7 +42,7 @@ ItemEvents.tooltip(event => {
   event.add(`gtceu:power_rectangle_helper_calorie_converter`, '\n§6Can run helper calorie conversion recipes')
   event.add(`gtceu:beam_of_teus`, '§6Can use parallel hatches')
 
-  event.add(`gtceu:magmatic_foundry`, [
+  event.add(`voyagercore:magmatic_foundry`, [
     `${or}Magmatic Foundry`,
     nl,
     `Uses ${gr}Electric Blast Furnace${x} recipes`,
