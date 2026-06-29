@@ -468,11 +468,11 @@ GTCEuStartupEvents.registry('gtceu:material', event => {
 
 register_gem("source", '0xd745ff', [], )
 
-// GTCEuStartupEvents.materialModification(event => {
+//GTCEuStartupEvents.materialModification(event => {
 // 	TagPrefix.gem["setIgnored(com.gregtechceu.gtceu.api.data.chemical.material.Material,java.util.function.Supplier[])"](GTMaterialRegistry.getMaterial('source'), () => Item.getItem('ars_nouveau:source_gem'))
 // 	TagPrefix.block["setIgnored(com.gregtechceu.gtceu.api.data.chemical.material.Material,java.util.function.Supplier[])"](GTMaterialRegistry.getMaterial('source'), () => Item.getItem('ars_nouveau:source_gem_block'))
 // 	TagPrefix.block.modifyMaterialAmount(GTMaterialRegistry.getMaterial('source'),4)
-// })
+//})
 
 
 
@@ -480,6 +480,7 @@ register_gem("source", '0xd745ff', [], )
 register_fluid('acetylene','0xfff2f2', ['2x carbon', '2x hydrogen'], electrolyze)
 register_fluid('ilmenite_slurry','0x1a1818', [], no_decomp)
 register_fluid('ilmenite_residue','0x1a1616', [], no_decomp)
+//register_fluid('pyrotheuma','0xff5900',[],no_decomp)
 
 register_dust('calcium_carbide', ['calcium', '2x carbon'], '0xffcfff', electrolyze)
 register_dust('calorite_carbide', ['4x calorite', '2x carbon'], '0x3d304d', no_decomp)

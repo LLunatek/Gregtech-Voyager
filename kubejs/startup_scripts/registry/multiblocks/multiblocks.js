@@ -446,3 +446,4 @@ GTCEuStartupEvents.registry("gtceu:machine", event => {
             .workableCasingModel('kubejs:block/casing/radiation_proof_lead_casing',
                 'kubejs:block/multiblock/radiation_chamber');
 });
+console.log("No Error in Multis")
