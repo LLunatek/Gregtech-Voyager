@@ -10,13 +10,14 @@ GTCEuStartupEvents.registry("gtceu:recipe_type", event => {
         .setSlotOverlay(false, false, GuiTextures.ARROW_INPUT_OVERLAY)
         .setSound(GTSoundEntries.CHEMICAL);
 
-    event.create("hyper_helper_calorie_conversion")
-        .category("multiblock")
-        .setEUIO("out")
-        .setMaxIOSize(4, 2, 2, 1)
-        .setProgressBar(GuiTextures.PROGRESS_BAR_RECYCLER, FillDirection.LEFT_TO_RIGHT)
-        .setSlotOverlay(false, false, GuiTextures.ARROW_INPUT_OVERLAY)
-        .setSound(GTSoundEntries.CHEMICAL);
+    // Moved to core mod
+    // event.create("hyper_helper_calorie_conversion")
+    //     .category("multiblock")
+    //     .setEUIO("out")
+    //     .setMaxIOSize(4, 2, 2, 1)
+    //     .setProgressBar(GuiTextures.PROGRESS_BAR_RECYCLER, FillDirection.LEFT_TO_RIGHT)
+    //     .setSlotOverlay(false, false, GuiTextures.ARROW_INPUT_OVERLAY)
+    //     .setSound(GTSoundEntries.CHEMICAL);
 
     event.create("super_gas_turbine")
         .category("multiblock")
@@ -167,7 +168,8 @@ GTCEuStartupEvents.registry("gtceu:machine", event => {
     }
 
     powerRectangle('helper_calorie_converter', 'radiation_proof_lead', 'gtceu:titanium_gearbox', 'helper_calorie_conversion')
-    powerRectangleC('hyper_helper_calorie_converter', 'radiant_titanex', 'kubejs:cooling_lamp', 'kubejs:radiant_titanex_vent_casing', 'hyper_helper_calorie_conversion')
+    // moved to core mod
+    // powerRectangleC('hyper_helper_calorie_converter', 'radiant_titanex', 'kubejs:cooling_lamp', 'kubejs:radiant_titanex_vent_casing', 'hyper_helper_calorie_conversion')
     XlargeTurbine('advanced_gas_turbine', 'ostrum', 'gtceu:tungstensteel_gearbox', 'gtceu:aluminex_202_a_frame', 'gas_turbine', gtVals.luv)
 
 });

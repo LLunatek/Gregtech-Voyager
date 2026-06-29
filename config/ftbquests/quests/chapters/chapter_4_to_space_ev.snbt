@@ -1057,7 +1057,7 @@
 		{
 			dependencies: ["6D599070FCBCD71C"]
 			description: [
-				"I would recommend completing &eplat-line&r before &6desh-line&r so that you can make the &basic chemist helper&r for desh and plat line."
+				"I would recommend completing &eplat-line&r before &6desh-line&r so that you can make the &bBasic chemist helper&r for desh and plat line."
 				""
 				"For more information on &eplat-line&r, see the &nProcessing Lines Chapter&r"
 			]
@@ -1546,11 +1546,7 @@
 			description: [
 				"These multiblocks aren't quite as strong as the &9IV+&r ones, but they are much much stronger than singleblocks."
 				""
-				"They can batch recipes (process ALL of an input at once), and have &l&eperfect overclocking&r. They are similar to multis found in &1Star Technology&r. That being said, they can also only have one energy hatch, and only &8normal maintenance&r hatches."
-				""
-				"In future, these will be nerfed to only use the 2A hatches. But for now, have fun while it lasts"
-				""
-				"&8&o- GregTech: Voyager Dev Team"
+				"They have &l&6Cube Boosting&r. That being said, they can also only have one energy hatch, and only &8normal maintenance&r hatches."
 			]
 			id: "25C99D6AAE7C5436"
 			rewards: [{
@@ -1575,6 +1571,16 @@
 				{
 					id: "74D6D7E3DD504DFB"
 					item: "gtceu:cube_macerator"
+					type: "item"
+				}
+				{
+					id: "3F9D59A885A7BA55"
+					item: "gtceu:cube_thermal_centrifuge"
+					type: "item"
+				}
+				{
+					id: "23C273E2F339F0E2"
+					item: "gtceu:cube_autoclave"
 					type: "item"
 				}
 			]

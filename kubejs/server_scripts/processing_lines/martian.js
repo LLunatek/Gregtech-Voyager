@@ -244,7 +244,15 @@ ServerEvents.recipes(event => {
         .mixer('kubejs:pyrotheum')   
         .inputFluids('gtceu:blaze 1000') 
         .itemInputs('gtceu:sulfuria_dust')
-        .outputFluids('kubejs:pyrotheum 1000')
+        .outputFluids('voyagercore:pyrotheum 1000')
+        .duration(20 * 15)                              
+        .EUt(400)
+
+    event.recipes.gtceu
+        .mixer('kubejs:cryotheum')   
+        .inputFluids('gtceu:ice 2000') 
+        .itemInputs('gtceu:sulfuria_dust')
+        .outputFluids('voyagercore:cryotheum 1000')
         .duration(20 * 15)                              
         .EUt(400)
     

@@ -182,7 +182,7 @@ ServerEvents.recipes(event => {
             '3x kubejs:rocket_hull_plate',
             '2x gtceu:hv_sensor',
             '2x gtceu:hv_field_generator',
-            '16x #gtceu:circuits/iv',
+            '4x #gtceu:circuits/iv',
             '24x gtceu:aluminium_lithium_compound_foil'
         )
         .itemOutputs('ad_astra:rocket_nose_cone')
@@ -263,7 +263,7 @@ ServerEvents.recipes(event => {
             '4x gtceu:hv_robot_arm',
             '4x gtceu:hv_sensor',
             '4x gtceu:hv_field_generator',
-            '8x #gtceu:circuits/iv',
+            '2x #gtceu:circuits/iv',
             '8x gtceu:steel_frame',
             '64x gtceu:fine_fluxed_cobalt_electrum_wire',
             '16x gtceu:double_black_steel_plate',
@@ -289,7 +289,7 @@ ServerEvents.recipes(event => {
 
     event.recipes.gtceu.assembler('kubejs:rocket_hull')
     .itemInputs(
-        '24x gtceu:double_stainless_steel_plate',
+        '20x gtceu:double_stainless_steel_plate',
         '32x gtceu:aluminium_lithium_compound_foil',
         '32x gtceu:carbon_fiber_mesh',
         '24x gtceu:steel_bolt'
@@ -302,9 +302,10 @@ ServerEvents.recipes(event => {
 
     event.recipes.gtceu.assembler('kubejs:desh_rocket_hull')
     .itemInputs(
-        '36x gtceu:double_desh_plate',
+        '20x gtceu:double_desh_plate',
         '32x gtceu:lunarium_foil',
         '16x gtceu:ruthenium_foil',
+        '32x gtceu:aluminium_lithium_compound_foil',
         '24x gtceu:steel_bolt'
     )
     .itemOutputs('kubejs:desh_rocket_hull_plate')
@@ -314,15 +315,16 @@ ServerEvents.recipes(event => {
 
     event.recipes.gtceu.assembler('kubejs:titanite_rocket_hull')
     .itemInputs(
-        '36x gtceu:double_titanite_alloy_plate',
-        '48x gtceu:hsss_foil',
-        '32x gtceu:osmium_foil',
+        '12x kubejs:advanced_martian_plating',
+        '48x gtceu:titanite_alloy_foil',
+        '32x gtceu:titanex-594-hta_foil',
+        '32x gtceu:aluminium_lithium_compound_foil',
         '24x gtceu:tungsten_steel_bolt',
         'gtceu:iv_field_generator'
     )
     // .notConsumable('kubejs:lv_technician_helper')
     .itemOutputs('kubejs:titanite_rocket_hull_plate')
-    .inputFluids('gtceu:soldering_alloy 4000')
+    .inputFluids('gtceu:component_polymer 2000')
     .duration(20 * 90)
     .EUt(7680);
 
@@ -417,20 +419,20 @@ ServerEvents.recipes(event => {
     .EUt(1980);
 
     assembly_no_research('titanite_interplanetary_coordinatal_calculator', 'kubejs', 
-        ['32x gtceu:double_titanite_plate', '8x gtceu:luv_sensor', '8x gtceu:luv_emitter', '4x gtceu:iv_field_generator', '4x #gtceu:circuits/zpm', '32x gtceu:titanite_alloy_double_wire'],
+        ['32x gtceu:double_titanite_plate', '8x gtceu:iv_sensor', '8x gtceu:iv_emitter', '4x gtceu:iv_field_generator', '4x #gtceu:circuits/zpm', '32x gtceu:titanite_alloy_double_wire'],
         ['gtceu:soldering_alloy 1200', 'gtceu:tungsten 800'], 7680, 100
     )
-    assembly_no_research('titanite_rocket_fin', 'kubejs', ['8x kubejs:titanite_rocket_hull_plate', '32x gtceu:double_osmium_plate', '32x gtceu:hsss_foil', '2x #gtceu:circuits/luv'], ['gtceu:polybenzimidazole 4500'],
+    assembly_no_research('titanite_rocket_fin', 'kubejs', ['8x kubejs:titanite_rocket_hull_plate', '32x gtceu:double_tungsten_steel_plate', '32x gtceu:hsse_plate', '2x #gtceu:circuits/luv'], ['gtceu:polybenzimidazole 4500'],
         7680, 300
     )
     assembly_no_research('titanite_rocket_nose_cone', 'kubejs',
-        ['12x kubejs:titanite_rocket_hull_plate', 'kubejs:titanite_interplanetary_coordinatal_calculator', '16x #gtceu:circuits/zpm', '64x gtceu:hsss_foil'],
+        ['12x kubejs:titanite_rocket_hull_plate', 'kubejs:titanite_interplanetary_coordinatal_calculator', '16x #gtceu:circuits/luv', '64x gtceu:hsse_plate'],
         ['gtceu:polybenzimidazole 8000', 'gtceu:tungsten 4000'], 7680, 300
     )
-    assembly_no_research('ostrum_engine', 'ad_astra', ['10x kubejs:titanite_rocket_hull_plate', '32x gtceu:ruridit_frame', '48x gtceu:osmium_foil', '8x gtceu:tungsten_steel_fluid_cell', 'gtceu:extreme_combustion_engine'],
+    assembly_no_research('ostrum_engine', 'ad_astra', ['10x kubejs:titanite_rocket_hull_plate', '32x gtceu:martian-composite_frame', '48x gtceu:hsse_plate', '8x gtceu:tungsten_steel_fluid_cell', 'gtceu:extreme_combustion_engine'],
         ['gtceu:polybenzimidazole 8000', 'gtceu:tungsten 4000'], 7680, 180
     )
-    assembly_no_research('ostrum_tank', 'ad_astra', ['6x kubejs:titanite_rocket_hull_plate', '32x gtceu:tungsten_steel_fluid_cell', '64x gtceu:osmium_foil', '2x #gtceu:circuits/luv'],
+    assembly_no_research('ostrum_tank', 'ad_astra', ['6x kubejs:titanite_rocket_hull_plate', '32x gtceu:tungsten_steel_fluid_cell', '64x gtceu:hsse_plate', '2x #gtceu:circuits/luv'],
         ['gtceu:polybenzimidazole 8000', 'gtceu:tungsten 4000'], 7680, 300
     )
     

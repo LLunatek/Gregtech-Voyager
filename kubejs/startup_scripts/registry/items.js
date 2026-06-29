@@ -211,6 +211,9 @@ StartupEvents.registry('item', event => {
 
     event.create('compressed_grout').texture('kubejs:item/compressed_grout').displayName('Compressed Grout');
 
+    event.create('raw_advanced_martian_plating').texture('kubejs:item/raw_advanced_martian_plating').displayName('Raw Advanced Martian Plating')
+    event.create('advanced_martian_plating').texture('kubejs:item/advanced_martian_plating').displayName('Advanced Martian Plating')
+
     event.create('small_naquadah_meteorite').texture('kubejs:item/small_naquadah_meteorite').displayName('Small Naquadah Meteorite')
     event.create('medium_naquadah_meteorite').texture('kubejs:item/medium_naquadah_meteorite').displayName('Medium Naquadah Meteorite')
     event.create('large_naquadah_meteorite').texture('kubejs:item/large_naquadah_meteorite').displayName('Large Naquadah Meteorite')

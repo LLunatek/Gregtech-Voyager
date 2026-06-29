@@ -129,8 +129,8 @@
 				type: "item"
 			}]
 			title: "Martian Scrap Recovery"
-			x: 7.0d
-			y: 7.5d
+			x: 5.5d
+			y: 8.0d
 		}
 		{
 			dependencies: ["6EE539D525D3D685"]
@@ -141,7 +141,7 @@
 				item: "gtceu:titanite_ingot"
 				type: "item"
 			}]
-			x: 7.0d
+			x: 5.5d
 			y: 9.0d
 		}
 		{
@@ -242,7 +242,7 @@
 				type: "item"
 			}]
 			x: 7.0d
-			y: 6.0d
+			y: 8.0d
 		}
 		{
 			id: "1D5E8B2CAF0DF4F6"
@@ -868,7 +868,7 @@
 		}
 		{
 			dependencies: ["0D398D8FE47F9B67"]
-			description: ["After you get your first assembly line and &4ZPM&r circuits, you are going to want to make this. This multiblock is the solution to all of your power storage needs, and you will learn to love it (as you will have it until the end of the pack!)"]
+			description: ["You are going to want to make this. This multiblock is the solution to all of your power storage needs, and you will learn to love it (as you will have it until the end of the pack!)"]
 			id: "3AA061D9096EA590"
 			shape: "gear"
 			size: 2.0d
@@ -877,7 +877,7 @@
 				item: "gtceu:power_substation"
 				type: "item"
 			}]
-			x: -2.0d
+			x: -1.5d
 			y: 13.0d
 		}
 		{
@@ -900,7 +900,7 @@
 				item: "gtceu:ev_substation_input_hatch_64a"
 				type: "item"
 			}]
-			x: -0.5d
+			x: 0.5d
 			y: 13.0d
 		}
 		{
@@ -923,7 +923,7 @@
 				item: "gtceu:ev_substation_output_hatch_64a"
 				type: "item"
 			}]
-			x: 0.5d
+			x: 1.5d
 			y: 13.0d
 		}
 		{
@@ -947,8 +947,8 @@
 				item: "gtceu:helper_software_installation_unit"
 				type: "item"
 			}]
-			x: -12.0d
-			y: 6.0d
+			x: -6.5d
+			y: 12.0d
 		}
 		{
 			dependencies: ["7D03DD080C4A9C7F"]
@@ -958,8 +958,8 @@
 				item: "kubejs:iv_helper_computation_array"
 				type: "item"
 			}]
-			x: -12.0d
-			y: 7.5d
+			x: -8.0d
+			y: 13.5d
 		}
 		{
 			dependencies: ["17EC186948CB00B9"]
@@ -969,37 +969,30 @@
 				item: "kubejs:ev_ebf_helper"
 				type: "item"
 			}]
-			x: -9.5d
-			y: 5.5d
+			x: -6.5d
+			y: 13.5d
 		}
 		{
-			dependencies: [
-				"17EC186948CB00B9"
-				"15C88C01C7723480"
-			]
+			dependencies: ["17EC186948CB00B9"]
 			id: "43C04EEFAC435F2A"
 			tasks: [{
 				id: "37EF7244F7644BD6"
 				item: "kubejs:embassy_helper"
 				type: "item"
 			}]
-			x: -9.5d
-			y: 7.5d
+			x: -6.5d
+			y: 15.5d
 		}
 		{
-			dependencies: [
-				"17EC186948CB00B9"
-				"5B7B2720BBCF9C1E"
-				"15C88C01C7723480"
-			]
+			dependencies: ["17EC186948CB00B9"]
 			id: "2D4AC4935C3C57DB"
 			tasks: [{
 				id: "3AB085EA73BCCEAA"
 				item: "kubejs:advanced_chemist_helper"
 				type: "item"
 			}]
-			x: -9.5d
-			y: 8.5d
+			x: -6.5d
+			y: 16.5d
 		}
 		{
 			dependencies: ["17EC186948CB00B9"]
@@ -1009,8 +1002,8 @@
 				item: "kubejs:iv_technician_helper"
 				type: "item"
 			}]
-			x: -9.5d
-			y: 6.5d
+			x: -6.5d
+			y: 14.5d
 		}
 		{
 			dependencies: ["7764E1FF769BDCB6"]
@@ -1021,8 +1014,8 @@
 				item: "kubejs:iv_stomach_unit"
 				type: "item"
 			}]
-			x: -10.5d
-			y: 4.5d
+			x: -1.5d
+			y: 17.5d
 		}
 		{
 			dependencies: [
@@ -1030,43 +1023,15 @@
 				"17EC186948CB00B9"
 			]
 			description: ["Can consume &auranium cookies only&r, but produces &a&l2x the power&r of the normal hungry helper."]
+			hide_dependency_lines: true
 			id: "1A250E50BC201DDE"
 			tasks: [{
 				id: "2B6FD176BAB1AB98"
 				item: "kubejs:hungry_hungry_helper"
 				type: "item"
 			}]
-			x: -9.5d
-			y: 4.5d
-		}
-		{
-			dependencies: [
-				"436220F63DCFFB5D"
-				"08A96C5C32906F28"
-				"42BC4E3F67D12EC6"
-			]
-			id: "15C88C01C7723480"
-			tasks: [{
-				id: "23B6747B4FD61148"
-				item: "gtceu:luv_robot_arm"
-				type: "item"
-			}]
-			x: -7.5d
-			y: 6.5d
-		}
-		{
-			dependencies: [
-				"436220F63DCFFB5D"
-				"42BC4E3F67D12EC6"
-			]
-			id: "5B7B2720BBCF9C1E"
-			tasks: [{
-				id: "646887A65558028D"
-				item: "gtceu:luv_electric_motor"
-				type: "item"
-			}]
-			x: -7.5d
-			y: 8.5d
+			x: -1.5d
+			y: 16.5d
 		}
 		{
 			dependencies: [
@@ -1108,20 +1073,6 @@
 		}
 		{
 			dependencies: [
-				"5B7B2720BBCF9C1E"
-				"42BC4E3F67D12EC6"
-			]
-			id: "08A96C5C32906F28"
-			tasks: [{
-				id: "1B7D7EA08CD47777"
-				item: "gtceu:luv_electric_piston"
-				type: "item"
-			}]
-			x: -7.5d
-			y: 7.5d
-		}
-		{
-			dependencies: [
 				"50A265E32ADDD82E"
 				"1B5DC7564288B03C"
 			]
@@ -1147,7 +1098,7 @@
 				item: "gtceu:extreme_combustion_engine"
 				type: "item"
 			}]
-			x: -2.0d
+			x: -4.5d
 			y: 15.0d
 		}
 		{
@@ -1169,39 +1120,48 @@
 				type: "item"
 			}]
 			title: "Titanex 879-HT B Rotors"
-			x: -2.0d
+			x: -3.5d
 			y: 16.5d
 		}
 		{
 			dependencies: [
 				"3FB4F231181DD428"
-				"64B5D866D92BA6C4"
-				"58BF847DADB89C2E"
-				"73B07062397A7AB7"
-				"5A6CCE713C1D1143"
 				"2475AF86E29B26F3"
+				"50A265E32ADDD82E"
+				"7764E1FF769BDCB6"
+				"56E64E745168F87B"
 			]
 			description: [
-				"The &4Magmatic Foundry&r is your next tier of EBF. This is going to be super useful for on-demand blasting."
+				"The &6Magmatic Foundry&r is your next tier of EBF. This is going to be super useful for on-demand blasting."
 				""
 				""
 				"It has a normal &eEBF Overclocks&r, but also &l&6Heat Boosting&r."
 				""
 				"For more information about modifiers, go to the &nModifiers&r tab in your questbook. It will also say on the machine controller."
+				""
+				"The description under the &6Magmatic Foundry&r describes &l&6heat boosting."
 			]
 			hide_dependency_lines: true
 			id: "319C5A7733086A0D"
 			shape: "gear"
 			size: 2.0d
 			subtitle: "To meet all of your autocrafting needs"
-			tasks: [{
-				id: "14F678C9103F0D57"
-				item: "gtceu:magmatic_foundry"
-				type: "item"
-			}]
+			tasks: [
+				{
+					id: "37CF9306E4C3DB78"
+					item: "voyagercore:magmatic_foundry"
+					type: "item"
+				}
+				{
+					count: 35L
+					id: "4C2047B1FA47810F"
+					item: { Count: 35, id: "voyagercore:foundry_casing" }
+					type: "item"
+				}
+			]
 			title: "Better Blasting"
-			x: -12.0d
-			y: 3.0d
+			x: 7.0d
+			y: 13.5d
 		}
 		{
 			dependencies: ["1EA011566D0AF90B"]
@@ -1214,8 +1174,8 @@
 				item: "gtceu:iv_large_miner"
 				type: "item"
 			}]
-			x: -9.75d
-			y: 0.0d
+			x: 5.25d
+			y: 13.5d
 		}
 		{
 			dependencies: [
@@ -1229,7 +1189,7 @@
 				item: "gtceu:iv_rotor_holder"
 				type: "item"
 			}]
-			x: -3.5d
+			x: -2.5d
 			y: 16.5d
 		}
 		{
@@ -1252,10 +1212,15 @@
 				type: "item"
 			}]
 			x: -9.5d
-			y: 14.5d
+			y: 11.0d
 		}
 		{
-			dependencies: ["3FB4F231181DD428"]
+			dependencies: [
+				"33063EB46A6BB3B6"
+				"503A07BAB88F1732"
+				"3FB4F231181DD428"
+				"0A561E6A1254E7EB"
+			]
 			hide_dependency_lines: true
 			id: "6355712EF473596B"
 			tasks: [{
@@ -1265,7 +1230,7 @@
 				type: "item"
 			}]
 			x: -9.5d
-			y: 12.0d
+			y: 8.5d
 		}
 		{
 			dependencies: [
@@ -1281,7 +1246,7 @@
 				type: "item"
 			}]
 			x: -10.5d
-			y: 12.5d
+			y: 9.0d
 		}
 		{
 			dependencies: [
@@ -1297,7 +1262,7 @@
 				type: "item"
 			}]
 			x: -8.5d
-			y: 12.5d
+			y: 9.0d
 		}
 		{
 			dependencies: [
@@ -1312,7 +1277,7 @@
 				type: "item"
 			}]
 			x: -11.5d
-			y: 13.0d
+			y: 9.5d
 		}
 		{
 			dependencies: [
@@ -1327,14 +1292,12 @@
 				type: "item"
 			}]
 			x: -7.5d
-			y: 13.0d
+			y: 9.5d
 		}
 		{
 			dependencies: [
 				"436220F63DCFFB5D"
 				"3FB4F231181DD428"
-				"62F0A9F0D43C6A93"
-				"018E2CADB624481A"
 				"64B5D866D92BA6C4"
 				"7764E1FF769BDCB6"
 			]
@@ -1345,47 +1308,8 @@
 				item: "kubejs:titanite_interplanetary_coordinatal_calculator"
 				type: "item"
 			}]
-			x: -7.5d
-			y: 11.5d
-		}
-		{
-			dependencies: [
-				"436220F63DCFFB5D"
-				"42BC4E3F67D12EC6"
-			]
-			id: "62F0A9F0D43C6A93"
-			tasks: [{
-				id: "54FCD7BE1B2E3FE1"
-				item: "gtceu:luv_emitter"
-				type: "item"
-			}]
-			x: -7.5d
-			y: 9.5d
-		}
-		{
-			dependencies: [
-				"436220F63DCFFB5D"
-				"42BC4E3F67D12EC6"
-			]
-			id: "018E2CADB624481A"
-			tasks: [{
-				id: "13710DC84A76EE2D"
-				item: "gtceu:luv_sensor"
-				type: "item"
-			}]
-			x: -8.5d
-			y: 9.5d
-		}
-		{
-			hide_dependent_lines: true
-			id: "42BC4E3F67D12EC6"
-			tasks: [{
-				id: "1BE819D47DE5FFCA"
-				item: "gtceu:ev_scanner"
-				type: "item"
-			}]
-			x: -7.5d
-			y: 5.5d
+			x: -8.0d
+			y: 7.5d
 		}
 		{
 			id: "6302DE04901E29D5"
@@ -1409,16 +1333,6 @@
 			y: 2.5d
 		}
 		{
-			id: "6DAAD97C5FB922C8"
-			tasks: [{
-				id: "05581D2F4A804129"
-				title: "new steam"
-				type: "checkmark"
-			}]
-			x: -14.0d
-			y: 8.5d
-		}
-		{
 			dependencies: ["313893E537CA5B6C"]
 			id: "014935D33AD9697A"
 			tasks: [
@@ -1435,7 +1349,7 @@
 			]
 			title: "Martian Sand Processing"
 			x: 3.5d
-			y: 12.0d
+			y: 10.0d
 		}
 		{
 			dependencies: [
@@ -1449,7 +1363,7 @@
 				type: "item"
 			}]
 			x: 7.0d
-			y: 12.0d
+			y: 10.0d
 		}
 		{
 			dependencies: ["5417BBFB6E67273E"]
@@ -1486,8 +1400,8 @@
 				type: "item"
 			}]
 			title: "High-Temp Binding Agent S"
-			x: 5.0d
-			y: 12.0d
+			x: 5.5d
+			y: 10.0d
 		}
 		{
 			dependencies: ["48A67162760139FC"]
@@ -1497,30 +1411,30 @@
 			shape: "gear"
 			size: 1.5d
 			tasks: [{
-				id: "1E3D0167A4101D84"
-				item: "gtceu:power_rectangle_hyper_helper_calorie_converter"
+				id: "75C3CB85F49D18E3"
+				item: "voyagercore:hyper_helper_calorie_converter"
 				type: "item"
 			}]
 			title: "Hyper Helper Calorie Converter"
-			x: -2.0d
-			y: 19.75d
+			x: -1.5d
+			y: 15.0d
 		}
 		{
 			dependencies: ["014935D33AD9697A"]
 			id: "2475AF86E29B26F3"
 			tasks: [{
-				id: "425AE5C89B2F4DD8"
-				item: "minecraft:oak_wood"
+				id: "67BE9550F9D40C4B"
+				item: "voyagercore:pyrotheum_bucket"
 				type: "item"
 			}]
-			x: 3.5d
-			y: 13.5d
+			x: 3.0d
+			y: 11.5d
 		}
 		{
 			dependencies: [
 				"7A3CD112368FA9B2"
 				"47732A84A5E27361"
-				"17B8AC9F71D82B41"
+				"56E64E745168F87B"
 			]
 			description: ["Now that you are in &9IV&r, the ECEs are a superb option for power. Check out &6High-Octane Gasoline&r (or HOG for short)."]
 			hide_dependency_lines: true
@@ -1532,8 +1446,8 @@
 				item: "gtceu:advanced_gas_turbine_xl_turbine"
 				type: "item"
 			}]
-			x: -2.0d
-			y: 18.0d
+			x: -3.0d
+			y: 15.0d
 		}
 		{
 			dependencies: ["17B8AC9F71D82B41"]
@@ -1544,7 +1458,105 @@
 				type: "item"
 			}]
 			x: 7.0d
-			y: 13.5d
+			y: 11.0d
+		}
+		{
+			dependencies: [
+				"47732A84A5E27361"
+				"50A265E32ADDD82E"
+				"17B8AC9F71D82B41"
+			]
+			hide_dependency_lines: true
+			id: "33063EB46A6BB3B6"
+			tasks: [{
+				id: "0C48576563FBB194"
+				item: "kubejs:advanced_martian_plating"
+				type: "item"
+			}]
+			x: -9.5d
+			y: 7.5d
+		}
+		{
+			dependencies: [
+				"3FB4F231181DD428"
+				"50A265E32ADDD82E"
+				"7764E1FF769BDCB6"
+				"56E64E745168F87B"
+				"3AC668253B538B4C"
+			]
+			description: [
+				"The &bEverfrost Chiller&r is your next tier of Vacuum Freezer. This is going to be super useful for on-demand blasting/cooling."
+				""
+				""
+				"It has a normal &eOverclocks&r, but also &l&6Basic Boosting&r."
+				""
+				"For more information about modifiers, go to the &nModifiers&r tab in your questbook. It will also say on the machine controller."
+				""
+				"The description under the &bEverfrost Chiller&r describes &l&6basic boosting."
+			]
+			hide_dependency_lines: true
+			id: "28EC5A1E23929B2F"
+			shape: "gear"
+			size: 2.0d
+			subtitle: "To meet all of your autocrafting needs"
+			tasks: [
+				{
+					id: "4A8DC4FA7082D283"
+					item: "voyagercore:everfrost_chiller"
+					type: "item"
+				}
+				{
+					count: 35L
+					id: "3DA24CA3AF0A7698"
+					item: "voyagercore:frost_conducting_casing"
+					type: "item"
+				}
+			]
+			title: "Better Freezing"
+			x: 7.0d
+			y: 15.5d
+		}
+		{
+			dependencies: ["014935D33AD9697A"]
+			id: "3AC668253B538B4C"
+			tasks: [{
+				id: "67B352B25725272E"
+				item: "voyagercore:cryotheum_bucket"
+				type: "item"
+			}]
+			x: 4.0d
+			y: 11.5d
+		}
+		{
+			id: "28E36222D99A71A7"
+			tasks: [{
+				id: "32C08960355AC036"
+				title: "Future Addition: Steam Turbine"
+				type: "checkmark"
+			}]
+			x: 0.0d
+			y: 15.0d
+		}
+		{
+			id: "57C8960BA624E4D9"
+			tasks: [{
+				id: "504617012AB5A354"
+				title: "Future addition: new power"
+				type: "checkmark"
+			}]
+			x: 1.5d
+			y: 15.0d
+		}
+		{
+			dependencies: ["50A265E32ADDD82E"]
+			id: "4A3F739F237D619A"
+			tasks: [{
+				id: "1D5C6AFA2DE3C1C3"
+				item: "kubejs:titanite_coil_block"
+				type: "item"
+			}]
+			x: 8.0d
+			y: 9.0d
 		}
 	]
 	title: "Chapter 5: Age of Infrastructure (IV)"

@@ -564,6 +564,8 @@ register_dust('impure_lunarium', ['lunarium', 'desh', '1x carbon', 'calcium'], '
 
 register_nosmelt_metal('test', [], true, '0xffffff', [3600, 'mid', voltTier('ev'), 20*64], [901, 601, 1, 1000000], voltTier('zpm'))
 
+abs_mat_sec('martian-composite', '0xbd0921', '0xa30054')
+
 
 // titanite
 

@@ -30,6 +30,16 @@ ServerEvents.recipes(event => {
             .duration(time)
             .EUt(tier);
     }
+
+    function implosion_compressor_recipe(name, ingredientsItem, fluidIngredients, itemOutputs, tier, time)
+    {
+        event.recipes.gtceu.implosion_compressor(fullName(name))
+            .itemInputs(ingredientsItem)
+            .inputFluids(fluidIngredients)
+            .itemOutputs(itemOutputs)
+            .duration(time)
+            .EUt(tier);
+    }
     
 
     create_mixer_recipe('tin_silver_alloy_mix',['3x gtceu:silver_dust', '4x gtceu:tin_dust'], [], ['7x gtceu:tin_silver_alloy_dust'], voltTier('lv'), 900);
@@ -48,6 +58,8 @@ ServerEvents.recipes(event => {
     create_mixer_recipe('fluxed_cobalt_electrum_mix',['3x gtceu:fluxed_electrum_dust', '2x gtceu:cobalt_dust', '1x gtceu:ruby_dust'], [], ['6x gtceu:fluxed_cobalt_electrum_dust'], voltTier('hv'), 300);
 
     create_mixer_recipe('fluxed_titanium_electrum_compound',['3x gtceu:fluxed_electrum_dust', '2x gtceu:titanium_dust', '4x gtceu:electrotine_dust'], ['gtceu:mercury 1000'], ['6x gtceu:fluxed_titanium_electrum_compound_dust'], voltTier('ev'), 300);
+
+    create_mixer_recipe('graphene', ['2x gtceu:graphite_dust', '2x gtceu:silicon_wafer', '5x gtceu:carbon_dust'], 'gtceu:acetone 500', '6x gtceu:graphene_dust', voltTier('ev'), 20)
 
     // create_mixer_recipe('refined_fluxed_electrum_mix',['8x gtceu:refined_fluxed_electrum', '2x gtceu:cobalt_dust', '1x gtceu:ruby_dust'], [], ['6x gtceu:fluxed_cobalt_electrum_dust'], voltTier('ev'), 300);
 

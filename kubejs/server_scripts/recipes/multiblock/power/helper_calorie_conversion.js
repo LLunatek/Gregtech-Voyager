@@ -40,39 +40,47 @@ ServerEvents.recipes(event => {
         {
             outF = []
         }
-        event.recipes.gtceu.hyper_helper_calorie_conversion("kubejs:grandmas_" + cookie + "_" + helper + '_distilled_water')
+        event.recipes.gtceu.advanced_calorie_conversion("kubejs:grandmas_" + cookie + "_" + helper)
                 .itemInputs("kubejs:grandmas_" + cookie)
                 .notConsumable("kubejs:"+ helper +"_helper")
                 .itemOutputs(output)
                 .perTick(true)
-                .inputFluids('gtceu:distilled_water 15')
                 .outputFluids(outF)
                 .perTick(false)
                 .duration(20 * time)
                 .EUt(-eut)
-
-        event.recipes.gtceu.hyper_helper_calorie_conversion("kubejs:grandmas_" + cookie + "_" + helper + '_milk')
-                .itemInputs("kubejs:grandmas_" + cookie)
-                .notConsumable("kubejs:"+ helper +"_helper")
-                .itemOutputs(output)
-                .perTick(true)
-                .inputFluids('minecraft:milk 3')
-                .outputFluids(outF)
-                .perTick(false)
-                .duration(20 * time * 1.5)
-                .EUt(-eut * 2)
-
-        event.recipes.gtceu.hyper_helper_calorie_conversion("kubejs:grandmas_" + cookie + "_" + helper + '_helperade')
-                .itemInputs("kubejs:grandmas_" + cookie)
-                .notConsumable("kubejs:"+ helper +"_helper")
-                .itemOutputs(output)
-                .perTick(true)
-                .inputFluids('kubejs:helperade_br 5')
-                .outputFluids(outF)
-                .perTick(false)
-                .duration(20 * time * 4)
-                .EUt(-eut * 4)
     }
+
+        
+    event.shaped(
+    Item.of('voyagercore:hyper_helper_calorie_converter', 1), // arg 1: output
+    [
+        'ADA',
+        'CBC', // arg 2: the shape (array of strings)
+        'ADA'
+    ],
+    {
+        A: 'gtceu:double_titanex-879-htb_plate',
+        B: 'gtceu:power_rectangle_helper_calorie_converter',  //arg 3: the mapping object
+        C: 'kubejs:heat_sheild',
+        D: '#gtceu:circuits/luv'
+    }
+    )
+
+    event.shaped(
+    Item.of('voyagercore:radiant_titanite_vent_casing', 2), // arg 1: output
+    [
+        'ACA',
+        'BDB', // arg 2: the shape (array of strings)
+        'ACA'
+    ],
+    {
+        A: 'gtceu:titanex-879-htb_plate',
+        B: 'gtceu:tungsten_steel_rotor',  //arg 3: the mapping object
+        C: 'gtceu:double_titanex-594-hta_plate',
+        D: 'gtceu:long_titanex-594-hta_rod'
+    }
+    )
 
     calorie_conversion('uranium_cookies', 'hungry', 'gtceu:thorium_dust', 15, 8192, 'gtceu:steam 500')
     calorie_conversion('uranium_cookies', 'lcptr' ,'gtceu:thorium_dust', 60, 4096,'gtceu:steam 100')

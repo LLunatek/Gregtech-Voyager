@@ -33,11 +33,15 @@ ServerEvents.recipes(event => {
         
     }
 
+
+
     casing_recipe('desh', 'durable_desh')
     casing_recipe('ultimet', 'firm_ultimet')
     casing_recipe('ostrum', 'ostrum')
     // casing_recipe('frost_conducting', 'aluminex_202_a')
     casing_recipe('titanite_alloy', 'titanite', ['#gtceu:circuits/iv'])
+    casing_recipe('refined_fluxed_electrum', 'heat_resistant_refined_fluxed_electrum')
+    casing_recipe('tungsten', 'condensation_resistant_tungsten')
     event.shaped(
     Item.of('gtceu:alloy_blast_smelter', 1), // arg 1: output
     [
@@ -71,20 +75,22 @@ ServerEvents.recipes(event => {
             .itemInputs(
                 '6x gtceu:aluminex_202_a_plate',
                 '1x gtceu:aluminex_202_a_frame',
+                '2x kubejs:heat_sheild',
+                '#gtceu:circuits/iv'
             )
             .circuit(6)
-            .itemOutputs('2x kubejs:frost_conducting_casing')
+            .itemOutputs('2x voyagercore:frost_conducting_casing')
             .duration(30)
             .EUt(7680);
 
     event.recipes.gtceu.assembler('kubejs:cooling_lamp')
             .itemInputs(
-                '8x kubejs:frost_conducting_casing',
+                '8x voyagercore:frost_conducting_casing',
                 '1x gtceu:iv_emitter',
             )
             .inputFluids('gtceu:pcb_coolant 8000')
             .circuit(1)
-            .itemOutputs('2x kubejs:cooling_lamp')
+            .itemOutputs('2x voyagercore:cooling_lamp')
             .duration(30)
             .EUt(7860);
 
@@ -109,22 +115,7 @@ ServerEvents.recipes(event => {
         .duration(30)
         .EUt(1920);
 
-    event.recipes.gtceu.assembler('kubejs:magmatic_foundry')
-        .itemInputs(
-            '16x kubejs:titanite_casing',
-            '4x #gtceu:circuits/zpm',
-            '8x kubejs:desh_coil_block',
-            '8x gtceu:electric_blast_furnace',
-            '4x gtceu:lunarium_gear',
-            '4x gtceu:iv_electric_pump',
-            '4x gtceu:iv_electric_motor',
-            '4x gtceu:iv_conveyor_module'
 
-        )
-        .circuit(2)
-        .itemOutputs('gtceu:magmatic_foundry')
-        .duration(60 * 20)
-        .EUt(7680); 
 
     // fuck it ill put these here too
 
@@ -169,4 +160,6 @@ ServerEvents.recipes(event => {
     cube_multi('titanium_carbide', 'macerator')
     cube_multi('ultimet', 'electrolyzer')
     cube_multi('lead', 'oven', 'molybdenum_disilicide_coil_block')
+    cube_multi('tungsten', 'autoclave')
+    cube_multi('refined_fluxed_electrum', 'thermal_centrifuge')
 });

@@ -294,51 +294,51 @@ GTCEuStartupEvents.registry("gtceu:machine", event => {
 
              // core mod incoming!!
 
-        event.create('magmatic_foundry', 'multiblock')
-        .machine((holder) => {
-            let machine = new $FluidCoilMulti(holder)
+        // event.create('magmatic_foundry', 'multiblock')
+        // .machine((holder) => {
+        //     let machine = new $FluidCoilMulti(holder)
 
-            let lava = Fluid.of('kubejs:pyrotheum', 50)
+        //     let lava = Fluid.of('kubejs:pyrotheum', 50)
 
-            machine.setFluidConsumption(
-                lava,
-                100,   // amount per cycle
-                20     // interval ticks
-            )
+        //     machine.setFluidConsumption(
+        //         lava,
+        //         100,   // amount per cycle
+        //         20     // interval ticks
+        //     )
 
-            return machine
-        })
-        .rotationState(RotationState.NON_Y_AXIS)
-        .recipeType('electric_blast_furnace')
-        .recipeModifiers([
-            (machine, recipe) => $GTRecipeModifiers.ebfOverclock(machine, recipe),
-            $VoyagerCoreRecipeModifiers.HEAT_BOOSTING
-        ])
-        .appearanceBlock(GCYMBlocks.CASING_HIGH_TEMPERATURE_SMELTING)
-        .pattern(definition => FactoryBlockPattern.start()
-            .aisle('HHTHH', 'F   F', 'FAAAF', 'F   F', 'F   F', 'F   F', 'FAAAF', 'F   F', 'HHTHH')
-            .aisle('HHHHH', ' VVV ', 'AAAAA', ' CCC ', ' CCC ', ' CCC ', 'AAAAA', ' VVV ', 'HHHHH')
-            .aisle('THHHT', ' V V ', 'AAAAA', ' C C ', ' C C ', ' C C ', 'AAAAA', ' V V ', 'THHHT')
-            .aisle('HHHHH', ' VVV ', 'AAAAA', ' CCC ', ' CCC ', ' CCC ', 'AAAAA', ' VVV ', 'HHHHH')
-            .aisle('HH@HH', 'F   F', 'FAAAF', 'F   F', 'F   F', 'F   F', 'FAAAF', 'F   F', 'HHTHH')
-            .where('A', Predicates.blocks('kubejs:foundry_casing'))
-            .where('T', Predicates.blocks('gtceu:steel_pipe_casing'))
-            .where('V', Predicates.blocks('gtceu:heat_vent'))
-            .where('F', Predicates.blocks('gtceu:tungsten_frame'))
-            .where('H', Predicates.blocks('gtceu:high_temperature_smelting_casing')                
-                .or(Predicates.abilities(PartAbility.IMPORT_ITEMS).setPreviewCount(1))
-                .or(Predicates.abilities(PartAbility.EXPORT_ITEMS).setPreviewCount(1))
-                .or(Predicates.abilities(PartAbility.IMPORT_FLUIDS).setPreviewCount(1))
-                .or(Predicates.abilities(PartAbility.EXPORT_FLUIDS).setPreviewCount(1))
-                .or(Predicates.abilities(PartAbility.MAINTENANCE).setExactLimit(1))
-                .or(Predicates.abilities(PartAbility.INPUT_ENERGY).setExactLimit(1)))
-            .where('C', Predicates.heatingCoils())
-            .where('M', Predicates.abilities(PartAbility.MUFFLER))
-            .where('@', Predicates.controller(Predicates.blocks(definition.get())))
-            .build())
-        .workableCasingModel('gtceu:block/casings/gcym/high_temperature_smelting_casing',
-            'kubejs:block/multiblock/magmatic_foundry'
-        );
+        //     return machine
+        // })
+        // .rotationState(RotationState.NON_Y_AXIS)
+        // .recipeType('electric_blast_furnace')
+        // .recipeModifiers([
+        //     (machine, recipe) => $GTRecipeModifiers.ebfOverclock(machine, recipe),
+        //     $VoyagerCoreRecipeModifiers.HEAT_BOOSTING
+        // ])
+        // .appearanceBlock(GCYMBlocks.CASING_HIGH_TEMPERATURE_SMELTING)
+        // .pattern(definition => FactoryBlockPattern.start()
+        //     .aisle('HHTHH', 'F   F', 'FAAAF', 'F   F', 'F   F', 'F   F', 'FAAAF', 'F   F', 'HHTHH')
+        //     .aisle('HHHHH', ' VVV ', 'AAAAA', ' CCC ', ' CCC ', ' CCC ', 'AAAAA', ' VVV ', 'HHHHH')
+        //     .aisle('THHHT', ' V V ', 'AAAAA', ' C C ', ' C C ', ' C C ', 'AAAAA', ' V V ', 'THHHT')
+        //     .aisle('HHHHH', ' VVV ', 'AAAAA', ' CCC ', ' CCC ', ' CCC ', 'AAAAA', ' VVV ', 'HHHHH')
+        //     .aisle('HH@HH', 'F   F', 'FAAAF', 'F   F', 'F   F', 'F   F', 'FAAAF', 'F   F', 'HHTHH')
+        //     .where('A', Predicates.blocks('kubejs:foundry_casing'))
+        //     .where('T', Predicates.blocks('gtceu:steel_pipe_casing'))
+        //     .where('V', Predicates.blocks('gtceu:heat_vent'))
+        //     .where('F', Predicates.blocks('gtceu:tungsten_frame'))
+        //     .where('H', Predicates.blocks('gtceu:high_temperature_smelting_casing')                
+        //         .or(Predicates.abilities(PartAbility.IMPORT_ITEMS).setPreviewCount(1))
+        //         .or(Predicates.abilities(PartAbility.EXPORT_ITEMS).setPreviewCount(1))
+        //         .or(Predicates.abilities(PartAbility.IMPORT_FLUIDS).setPreviewCount(1))
+        //         .or(Predicates.abilities(PartAbility.EXPORT_FLUIDS).setPreviewCount(1))
+        //         .or(Predicates.abilities(PartAbility.MAINTENANCE).setExactLimit(1))
+        //         .or(Predicates.abilities(PartAbility.INPUT_ENERGY).setExactLimit(1)))
+        //     .where('C', Predicates.heatingCoils())
+        //     .where('M', Predicates.abilities(PartAbility.MUFFLER))
+        //     .where('@', Predicates.controller(Predicates.blocks(definition.get())))
+        //     .build())
+        // .workableCasingModel('gtceu:block/casings/gcym/high_temperature_smelting_casing',
+        //     'kubejs:block/multiblock/magmatic_foundry'
+        // );
 
 
     event.create('atmospheric_collector', 'multiblock')
