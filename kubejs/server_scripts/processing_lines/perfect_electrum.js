@@ -5,7 +5,7 @@ ServerEvents.recipes(event => {
 function teus_laser(output, ns, inputItems, nonconsumed, inputFluid, outFluid, eut, time)  
 {
     event.recipes.gtceu
-        .beam_of_teus(`kubejs:${output}_teus_laser`)   // recipe ID
+        .beam_heating(`kubejs:${output}_teus_laser`)   // recipe ID
         .itemInputs(inputItems)
         .notConsumable(nonconsumed)
         .inputFluids(inputFluid)

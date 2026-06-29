@@ -17,6 +17,7 @@ event.remove({type: 'gtceu:assembler',output: 'gtceu:diode'})
 event.remove({output: 'gtceu:micro_processor_computer'})
 event.remove({output: 'gtceu:alloy_blast_smelter'})
 event.remove({output: 'gtceu:graphene_dust'})
+event.remove({type: 'gtceu:chemical_reactor', output: 'gtceu:nitrobenzene'})
 
 event.remove({type: 'minecraft:crafting_shaped' ,output: 'gtceu:phenolic_printed_circuit_board'})
 event.remove({type: 'gtceu:rock_breaker' ,output: 'minecraft:obsidian'})
