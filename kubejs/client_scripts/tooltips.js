@@ -4,7 +4,37 @@ ItemEvents.tooltip(event => {
 
   event.add('kubejs:basic_chemist_helper', '§7Lab coat for optimal aura farming\n§r§4Recipes using this helper are on circuit 3\n(even if JEI doesn\'t say so)')
 
+function convertToRoman(num) {
+  // Map standard Roman numeral values and their subtractive combinations
+  const lookup = [
+    { value: 1000, numeral: "M" },
+    { value: 900, numeral: "CM" },
+    { value: 500, numeral: "D" },
+    { value: 400, numeral: "CD" },
+    { value: 100, numeral: "C" },
+    { value: 90, numeral: "XC" },
+    { value: 50, numeral: "L" },
+    { value: 40, numeral: "XL" },
+    { value: 10, numeral: "X" },
+    { value: 9, numeral: "IX" },
+    { value: 5, numeral: "V" },
+    { value: 4, numeral: "IV" },
+    { value: 1, numeral: "I" }
+  ];
 
+  let result = "";
+
+  // Loop through each value-numeral pair
+  for (const item of lookup) {
+    // Check if the current value can be subtracted from the number
+    while (num >= item.value) {
+      result += item.numeral; // Append the Roman symbol
+      num -= item.value;      // Subtract the value
+    }
+  }
+
+  return result;
+}
 
   function rectangleTooltip(name)
   {
@@ -105,6 +135,37 @@ event.add(`voyagercore:everfrost_chiller`, [
     `${gre}Can only have ${re}one energy hatch`
 ])
 
+function donut(tierNum, tierVol, acceptedHatches)
+{
+  event.add(`voyagercore:${tierVol}_super_donut`, [
+    `${b}Supermassive Fusion Array Mk ${convertToRoman(tierNum)} ${gre}(Super Donut ${convertToRoman(tierNum)})`,
+    nl,
+    `${gre}Uses ${gr}Fusion${x}${gre} recipes`,
+    `${gre}Has ${or}Advanced Boosting${x}${gre} and ${ye}Fusion Overclocking${x}`,
+    nl,
+    `${gre}Has base ${gr}4 parallels${x}`,
+    ``,
+    `${gre}Gain ${gr}2× parallels${x}${gre} and reduce recipe duration by ${gr}10%${x}${gre} multiplicatively`,
+    `${gre}for each ${ye}voltage overclock${x}`,
+    nl,
+    `${gre}Every Fusion Array tier above the recipe tier provides a ${gr}2-2 overclock${x}`,
+    `${gre}Accepts ${ye}${acceptedHatches}${x}${gre} Energy Input Hatches`,
+    `${gre}Can be boosted up to ${ye}${acceptedHatches.split(", ").pop().replace("and ", "")}${x}${gre} Energy Hatch tier`,
+    `${gre}Can run ${or}Mk ${convertToRoman(tierNum)}${x}${gre} and below ${ye}Fusion recipes`
+  ])
+}
+
+const tiermap = {
+  luv: "luv",
+  zpm: "zpm",
+  uv: "uv"
+}
+
+donut(1, tiermap.luv, "LuV, ZPM, and UV")
+donut(2, tiermap.zpm, "ZPM and UV")
+donut(3, tiermap.uv, "UV")
+
+
 event.add(`voyagercore:beam_of_teus`, [
     `${re}Beam of Teus`,
     nl,
@@ -116,6 +177,7 @@ event.add(`voyagercore:beam_of_teus`, [
     `${gre}For every ${re}1% lens heat${x} above ${re}90%${gre}, ${re}decrease beam concentration by 7%${gre}, down to base%`,
     nl,
     `${gre}For every ${or}10s${gre} of machine running, ${or}increase lens heat by 2% (up to 110%)`,
+    `${gre}For every ${or}10s${gre} of machine idling, ${or}decrease lens heat by 2% (down to base %)`,
     `${gre}Providing ${b}100mb of Cryotheum${gre} will decrease ${re}heat${gre} by 2% (in 10s intervals)`,
     `${gre}Lens heat will not increase if coolant is provided`,
     `${gre}If heat reaches ${re}above 105%, recipe will be voided`,

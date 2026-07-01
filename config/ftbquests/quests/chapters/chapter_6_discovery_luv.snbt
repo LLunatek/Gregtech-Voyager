@@ -172,11 +172,18 @@
 			id: "45BB502B1D42EEC3"
 			shape: "gear"
 			size: 2.0d
-			tasks: [{
-				id: "29024044EBFDE98A"
-				item: "gtceu:beam_of_teus"
-				type: "item"
-			}]
+			tasks: [
+				{
+					id: "17F5E56925976CFF"
+					item: "voyagercore:beam_of_teus"
+					type: "item"
+				}
+				{
+					id: "261F7A16694BFE30"
+					item: "voyagercore:heat_redstone_cover"
+					type: "item"
+				}
+			]
 			x: 10.5d
 			y: 1.0d
 		}
