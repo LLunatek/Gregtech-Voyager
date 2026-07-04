@@ -116,8 +116,7 @@ function convertToRoman(num) {
     `${gre}For every ${re}1000K${x} ${gre}above recipe temperature, reduce recipe time by ${gr}10% multiplicatively${x}`,
     nl,
     `${gre}Since ${gr}Chemical Reactor${gre} Recipes do not have temperature requirements,`,
-    `a ${re}1000K temperature${gre} will be added for ${or}each voltage tier${gre} of recipe for`,
-    `${or}heat boosting calculation${gre}`
+    `a ${re}1000K temperature${gre} will be added for ${or}each voltage tier${gre} of recipe for ${or}heat boosting calculation${gre}`,
 ])
 
 event.add(`voyagercore:everfrost_chiller`, [
@@ -149,8 +148,9 @@ function donut(tierNum, tierVol, acceptedHatches)
     `${gre}for each ${ye}voltage overclock${x}`,
     nl,
     `${gre}Every Fusion Array tier above the recipe tier provides a ${gr}2-2 overclock${x}`,
-    `${gre}Accepts ${ye}${acceptedHatches}${x}${gre} Energy Input Hatches`,
+    `${gre}Accepts ${ye}${acceptedHatches}${x}${gre} Energy Hatches`,
     `${gre}Can be boosted up to ${ye}${acceptedHatches.split(", ").pop().replace("and ", "")}${x}${gre} Energy Hatch tier`,
+    `${gre}Can use ${ye}multi-amp hatches${x}${gre} for boosting`,
     `${gre}Can run ${or}Mk ${convertToRoman(tierNum)}${x}${gre} and below ${ye}Fusion recipes`
   ])
 }
@@ -171,18 +171,19 @@ event.add(`voyagercore:beam_of_teus`, [
     nl,
     `${gre}Uses ${gr}Beam Heating${x} ${gre}recipes`,
     `${gre}Has base${or} 10% beam concentration${x} ${gre}and ${ye}10% lens heat${x}`,
+    `${gre}Effective beam concentration = base +${or} beam provided ${gre}concentration % + ${ye}overclock ${gre}concentration`,
     nl,
     `${gre}For every ${gr}5% beam concentration${x} above ${or}10%${gre}, ${gr}decrease recipe time by 15% ${gre}multiplicatively`,
     `${gre}For every ${re}10% lens heat${x} above ${re}10%${gre}, ${gr}decrease EU/t by 8%${gre}, up to 90% lens heat`,
     `${gre}For every ${re}1% lens heat${x} above ${re}90%${gre}, ${re}decrease beam concentration by 7%${gre}, down to base%`,
     nl,
-    `${gre}For every ${or}10s${gre} of machine running, ${or}increase lens heat by 2% (up to 110%)`,
+    `${gre}For every ${or}10s${gre} of machine running, ${or}increase lens heat by 1% (up to 110%)`,
     `${gre}For every ${or}10s${gre} of machine idling, ${or}decrease lens heat by 2% (down to base %)`,
     `${gre}Providing ${b}100mb of Cryotheum${gre} will decrease ${re}heat${gre} by 2% (in 10s intervals)`,
     `${gre}Lens heat will not increase if coolant is provided`,
     `${gre}If heat reaches ${re}above 105%, recipe will be voided`,
     nl,
-    `${gre}Voltage overclocks ${gr}increase beam concentration by 30%`
+    `${gre}For every voltage tier above ${b}IV, ${gr}increase beam concentration by 5%`
 ])
   event.add(`gtceu:atmospheric_collector`, '§6Collects gas and dust from the surrounding atmosphere and freezes it§r\n§6Can use parallel hatches§r')
   

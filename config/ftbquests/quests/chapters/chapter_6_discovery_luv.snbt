@@ -97,6 +97,7 @@
 			y: -0.5d
 		}
 		{
+			dependencies: ["0D398D8FE47F9B67"]
 			id: "26FF13E27F3A8265"
 			tasks: [{
 				id: "608BF047DC035D8F"
@@ -169,9 +170,11 @@
 				"67F739703BB20F3B"
 				"02985E1D7E8A2570"
 			]
+			description: ["The &d&lBeam of Teus&r is your first of many machine/automation \"puzzles\". You can choose to have coolant always provided to the beam, and run at higher &eEU/t&r, or you can overclock for &n&o&esignificantly&r cheaper than it would be normally by solving the heat puzzle."]
 			id: "45BB502B1D42EEC3"
 			shape: "gear"
 			size: 2.0d
+			subtitle: "Automation Puzzles Begin"
 			tasks: [
 				{
 					id: "17F5E56925976CFF"
@@ -256,6 +259,7 @@
 			y: -2.5d
 		}
 		{
+			dependencies: ["4FE2969202BEB308"]
 			id: "37AD8E087B73E6DB"
 			tasks: [{
 				id: "019C3C01B74A2E6D"
@@ -282,6 +286,7 @@
 			y: -2.5d
 		}
 		{
+			dependencies: ["0D398D8FE47F9B67"]
 			id: "7C26CF7C1A4D467A"
 			tasks: [{
 				id: "6C01DEDD9B802BBE"
@@ -397,6 +402,389 @@
 			}]
 			x: 3.5d
 			y: 7.0d
+		}
+		{
+			dependencies: ["791AD7CB5EA8563F"]
+			id: "493EBFADBA1E65EF"
+			tasks: [{
+				id: "45F26B54669CA34A"
+				item: "kubejs:small_naquadah_meteorite"
+				type: "item"
+			}]
+			x: 7.5d
+			y: 7.0d
+		}
+		{
+			dependencies: [
+				"0B2EB745BF840C33"
+				"077ECFCA4E7702E9"
+			]
+			description: ["The &l&epulverizer&r is your first step into better ore processing (that, and you must have it for &0Naquadah&r."]
+			id: "1BF0535134680930"
+			shape: "gear"
+			size: 2.0d
+			tasks: [{
+				id: "724CBA0DE01412A7"
+				item: "voyagercore:pulverizer"
+				type: "item"
+			}]
+			x: 13.5d
+			y: 7.0d
+		}
+		{
+			dependencies: ["0BDF5A6B87E667D3"]
+			description: ["Congrats! You convinced the martians to give you some useless (seemingly to them) rocks!"]
+			id: "791AD7CB5EA8563F"
+			shape: "octagon"
+			size: 1.5d
+			tasks: [{
+				id: "48D37D5491BFD6B6"
+				item: "kubejs:martian_contract_t2"
+				type: "item"
+			}]
+			x: 6.0d
+			y: 8.0d
+		}
+		{
+			dependencies: [
+				"0B2EB745BF840C33"
+				"02985E1D7E8A2570"
+				"114B8AE23CC5C757"
+			]
+			hide_dependency_lines: true
+			id: "0BDF5A6B87E667D3"
+			tasks: [{
+				id: "720B64D3591ACBDD"
+				item: "kubejs:galactic_radio"
+				type: "item"
+			}]
+			x: 6.0d
+			y: 6.0d
+		}
+		{
+			dependencies: [
+				"32AAC816CA82DA84"
+				"56806B204816C344"
+				"4391A585C3AFAE5C"
+			]
+			id: "114B8AE23CC5C757"
+			tasks: [{
+				id: "295C48F73419E976"
+				item: "kubejs:dial_device"
+				type: "item"
+			}]
+			x: 6.0d
+			y: 5.0d
+		}
+		{
+			dependencies: [
+				"077ECFCA4E7702E9"
+				"1BF0535134680930"
+				"493EBFADBA1E65EF"
+			]
+			id: "3E2FA39332D16E35"
+			size: 1.5d
+			tasks: [{
+				id: "35C1D9BE4500AFA8"
+				item: "gtceu:raw_naquadah"
+				type: "item"
+			}]
+			x: 10.5d
+			y: 7.0d
+		}
+		{
+			dependencies: ["0B2EB745BF840C33"]
+			hide_dependency_lines: true
+			hide_dependent_lines: true
+			id: "077ECFCA4E7702E9"
+			tasks: [{
+				id: "489878DC4338AF7F"
+				item: "voyagercore:luv_crushing_wheel"
+				type: "item"
+			}]
+			x: 15.0d
+			y: 7.0d
+		}
+		{
+			dependencies: [
+				"45BB502B1D42EEC3"
+				"3E2FA39332D16E35"
+			]
+			id: "3CAAEFF8D76A58C4"
+			size: 2.0d
+			tasks: [
+				{
+					id: "165110D49535600F"
+					item: "gtceu:trinium_sulfide_dust"
+					type: "item"
+				}
+				{
+					id: "5C08DEDB5924F00A"
+					item: "gtceu:enriched_naquadah_sulfate_dust"
+					type: "item"
+				}
+				{
+					id: "761CA97182CC16FE"
+					item: "gtceu:naquadria_sulfate_dust"
+					type: "item"
+				}
+				{
+					id: "710AB5F57149C214"
+					item: "gtceu:dilithium_dust"
+					type: "item"
+				}
+				{
+					id: "1F580D6C0AFBD82B"
+					item: "gtceu:trellium_dust"
+					type: "item"
+				}
+			]
+			title: "Naq-line Byproducts"
+			x: 10.5d
+			y: 5.0d
+		}
+		{
+			dependencies: ["3E2FA39332D16E35"]
+			id: "34989E9CB01E0E2C"
+			tasks: [{
+				count: 16L
+				id: "45C85D00AD042CFD"
+				item: "gtceu:naquadah_coil_block"
+				type: "item"
+			}]
+			x: 10.5d
+			y: 8.5d
+		}
+		{
+			dependencies: ["34989E9CB01E0E2C"]
+			id: "3E1CAA91D88C6287"
+			tasks: [{
+				id: "199F71080F331504"
+				item: "gtceu:indium_tin_barium_titanium_cuprate_ingot"
+				type: "item"
+			}]
+			x: 10.5d
+			y: 10.0d
+		}
+		{
+			dependencies: ["3E1CAA91D88C6287"]
+			id: "2EB60C9BC9077678"
+			shape: "gear"
+			size: 1.5d
+			tasks: [{
+				id: "5F1D9E4C870BE962"
+				item: "gtceu:luv_fusion_reactor"
+				type: "item"
+			}]
+			x: 8.5d
+			y: 10.0d
+		}
+		{
+			dependencies: ["2EB60C9BC9077678"]
+			id: "3B52572CC993D5DD"
+			size: 2.0d
+			tasks: [{
+				id: "1C043A419EA68BAF"
+				item: "gtceu:europium_ingot"
+				type: "item"
+			}]
+			x: 6.0d
+			y: 10.0d
+		}
+		{
+			dependencies: ["36921E139EF0945F"]
+			id: "3249E6B69D7105B9"
+			tasks: [{
+				id: "601D623DB684D4AB"
+				title: "beam2"
+				type: "checkmark"
+			}]
+			x: 4.0d
+			y: 12.0d
+		}
+		{
+			dependencies: ["3249E6B69D7105B9"]
+			id: "4FF0920F70C0B72A"
+			tasks: [{
+				id: "7157111516136A70"
+				item: "gtceu:trellium_ingot"
+				type: "item"
+			}]
+			x: 2.5d
+			y: 12.0d
+		}
+		{
+			dependencies: ["3B52572CC993D5DD"]
+			id: "768AC7BAAF1EBC78"
+			tasks: [{
+				id: "2EF21228CB5379BD"
+				item: "gtceu:raw_crystal_chip"
+				type: "item"
+			}]
+			x: 6.0d
+			y: 12.0d
+		}
+		{
+			dependencies: ["768AC7BAAF1EBC78"]
+			id: "29F0DAAB23530050"
+			tasks: [{
+				id: "5FC0D99BD3BBB8EA"
+				item: "gtceu:raw_crystal_chip_parts"
+				type: "item"
+			}]
+			x: 5.0d
+			y: 12.0d
+		}
+		{
+			id: "5C2392FBF5A26A24"
+			tasks: [{
+				id: "2D91094A052A44A4"
+				item: "gtceu:crystal_cpu"
+				type: "item"
+			}]
+			x: 6.0d
+			y: 13.5d
+		}
+		{
+			dependencies: ["5C2392FBF5A26A24"]
+			id: "36921E139EF0945F"
+			tasks: [{
+				id: "4187A60E0F2EC290"
+				item: "gtceu:crystal_soc"
+				type: "item"
+			}]
+			x: 4.0d
+			y: 13.5d
+		}
+		{
+			dependencies: ["5C2392FBF5A26A24"]
+			id: "26E20EE18046086C"
+			tasks: [{
+				id: "6B8900E6B0B5D845"
+				item: "gtceu:crystal_processor"
+				type: "item"
+			}]
+			x: 7.5d
+			y: 13.5d
+		}
+		{
+			dependencies: ["26E20EE18046086C"]
+			id: "21BDB88E3DD4D2FF"
+			tasks: [{
+				id: "5181E52E2DF6B92F"
+				item: "gtceu:crystal_processor_assembly"
+				type: "item"
+			}]
+			x: 9.0d
+			y: 13.5d
+		}
+		{
+			dependencies: ["21BDB88E3DD4D2FF"]
+			id: "5E20455E8A5CD0C5"
+			tasks: [{
+				id: "0C8FD211CAEF58B9"
+				item: "gtceu:crystal_processor_computer"
+				type: "item"
+			}]
+			x: 10.5d
+			y: 13.5d
+		}
+		{
+			dependencies: ["5E20455E8A5CD0C5"]
+			id: "64295428187BB45E"
+			size: 1.5d
+			tasks: [{
+				id: "32E670F68630B4DB"
+				item: "gtceu:crystal_processor_mainframe"
+				type: "item"
+			}]
+			x: 12.0d
+			y: 13.5d
+		}
+		{
+			dependencies: ["34989E9CB01E0E2C"]
+			id: "436739A439402B78"
+			tasks: [{
+				id: "295688FAE0DCD15E"
+				item: "gtceu:industrial_perfected_electrum_ingot"
+				type: "item"
+			}]
+			x: 13.5d
+			y: 8.5d
+		}
+		{
+			dependencies: ["436739A439402B78"]
+			id: "05EA543328F43F82"
+			tasks: [{
+				id: "31051C6226F4D6A7"
+				title: "new abs"
+				type: "checkmark"
+			}]
+			x: 13.5d
+			y: 10.0d
+		}
+		{
+			dependencies: ["436739A439402B78"]
+			id: "67DE1F8DDB417B97"
+			tasks: [{
+				id: "1560DAFF76D55EBA"
+				title: "energy hatch crafter"
+				type: "checkmark"
+			}]
+			x: 14.5d
+			y: 10.0d
+		}
+		{
+			dependencies: ["436739A439402B78"]
+			id: "6A8342695EB74116"
+			subtitle: "Fusion... on demand?"
+			tasks: [{
+				id: "4AFC7C43C51B4625"
+				item: "voyagercore:luv_super_donut"
+				type: "item"
+			}]
+			x: 12.5d
+			y: 10.0d
+		}
+		{
+			id: "32FBC43DF5CE0AEA"
+			tasks: [{
+				id: "7BFC825E999AAC91"
+				title: "mining outposts"
+				type: "checkmark"
+			}]
+			x: -1.0d
+			y: 10.5d
+		}
+		{
+			id: "5F0620937478BBEE"
+			tasks: [{
+				id: "698402457FA32BC1"
+				title: "fluid pump outpost"
+				type: "checkmark"
+			}]
+			x: -1.0d
+			y: 11.5d
+		}
+		{
+			id: "2E80D4DB789A1A02"
+			tasks: [{
+				id: "3E35A9F1CB62B045"
+				title: "satellite post-box"
+				type: "checkmark"
+			}]
+			x: -1.0d
+			y: 12.5d
+		}
+		{
+			id: "6E8EFC2BB7B5C207"
+			tasks: [{
+				id: "1DA1847C70AC2AEB"
+				title: "rocks"
+				type: "checkmark"
+			}]
+			x: -2.0d
+			y: 10.5d
 		}
 	]
 	title: "Chapter 6: Discovery (LuV)"

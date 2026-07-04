@@ -267,7 +267,7 @@ StartupEvents.registry('item', event => {
     event.create('grandmas_cookie').texture('kubejs:item/grandmas_cookies').displayName('Grandma\'s cookies').food(food => {
     food
       .hunger(6)
-      .saturation(6) // This value does not directly translate to saturation points gained
+      .saturation(1) // This value does not directly translate to saturation points gained
       // The real value can be assumed to be:
       // min(hunger * saturation * 2 + saturation, foodAmountAfterEating)
       .effect('minecraft:speed', 600, 0, 1)
@@ -285,25 +285,39 @@ StartupEvents.registry('item', event => {
     event.create('refined_fluxed_electrum_crystal').texture('kubejs:item/refined_fluxed_electrum_crystal').displayName('Refined Fluxed Electrum Crystal').tooltip('§eRefined Capacitance');
     event.create('titanichite_bud').texture('kubejs:item/titanichite_bud').displayName('Titanichite Bud').tooltip('§eGlimmering Capacitance');
 
+    event.create('dilithium_crystals').texture('kubejs:item/dilithium_crystals').displayName('Dilithium Crystals').tooltip('§7§oEngage');
+
+
     // perfect electrum
     event.create('atomic_lattice').texture('kubejs:item/atomic_lattice').displayName('Atomic Lattice').tooltip('§eActs as a mold for atoms to fill');
 
     // misc
-    event.create('explosive_heart').texture('kubejs:item/explosive_heart').displayName('Explosive Heart').tooltip('§8Rare Creeper Drop');
+    event.create('explosive_heart').texture('kubejs:item/explosive_heart').displayName('Explosive Heart').tooltip('§7§oRare Creeper Drop');
     event.create('heart_of_destruction').texture('kubejs:item/heart_of_destruction').displayName('Heart of Destruction');
 
     // venus
-    event.create('venus_capsule').texture('kubejs:item/venus_capsule').displayName('§6Sandy Capsule').tooltip('§8What is inside?');
+    event.create('venus_capsule').texture('kubejs:item/venus_capsule').displayName('§6Sandy Capsule').tooltip('§7§oWhat is inside?');
 
     function ancient_tech(name, dn)
     {
-        event.create(`eroded_${name}`).texture(`kubejs:item/eroded_${name}`).displayName(`§6Eroded §r${dn}`).tooltip('§8Ancient secrets yet to be discovered');
-        event.create(`${name}`).texture(`kubejs:item/${name}`).displayName(`${dn}`).tooltip('§8Ancient secrets revealed');
+        event.create(`eroded_${name}`).texture(`kubejs:item/eroded_${name}`).displayName(`§7§oEroded §r${dn}`).tooltip('§7§oAncient secrets yet to be discovered');
+        event.create(`${name}`).texture(`kubejs:item/${name}`).displayName(`${dn}`).tooltip('§7§oAncient secrets revealed');
+    }
+
+    function rocks(planet, dn)
+    {
+        event.create(`small_${planet}_rock`).texture(`kubejs:item/small_${planet}_rock`);
+        event.create(`medium_${planet}_rock`).texture(`kubejs:item/medium_${planet}_rock`);
+        event.create(`large_${planet}_rock`).texture(`kubejs:item/large_${planet}_rock`);
     }
 
     ancient_tech('light_refractor', 'Light Refractor');
     ancient_tech('atomic_magnet', 'Atomic Magnet');
     ancient_tech('dial_device', 'Dial Device');
     ancient_tech('bio_filter', 'Bio Filter');
+
+    rocks('moon')
+    rocks('mars')
+    rocks('venus')
 
 })

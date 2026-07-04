@@ -398,10 +398,7 @@
 			y: 4.0d
 		}
 		{
-			dependencies: [
-				"307B3D1F044D7B30"
-				"54AFAD9BA7314100"
-			]
+			dependencies: ["307B3D1F044D7B30"]
 			hide_dependency_lines: true
 			id: "1D18348492546BAE"
 			rewards: [{
@@ -418,10 +415,7 @@
 			y: 3.0d
 		}
 		{
-			dependencies: [
-				"54AFAD9BA7314100"
-				"307B3D1F044D7B30"
-			]
+			dependencies: ["307B3D1F044D7B30"]
 			hide_dependency_lines: true
 			id: "28DAF2CF9571AF5A"
 			rewards: [{
@@ -1746,7 +1740,6 @@
 			y: 12.5d
 		}
 		{
-			dependencies: ["6D93BFC5D02B22D0"]
 			description: [
 				"Remember this fella? Feel like he didn't do much in &6HV&r? Turns out he is &4&lextremely efficient&r at turning calories into EU inside of a &oHelper Calorie Converter&r."
 				""

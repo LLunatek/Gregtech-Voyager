@@ -313,7 +313,6 @@
 				"52BDFD2A8FC3FC07"
 			]
 			id: "47B86AAAB18C918E"
-			subtitle: "YOU'RE BLUE NOW! THAT'S MY ATTACK."
 			tasks: [{
 				id: "0740DB43E61FA776"
 				item: "gtceu:blue_steel_ingot"
@@ -431,7 +430,6 @@
 			dependencies: ["6E68356E319A0B43"]
 			hide_dependent_lines: true
 			id: "6164D33ACEB4E515"
-			subtitle: "Freakin' SWEET"
 			tasks: [{
 				count: 16L
 				id: "757465E4C4C1087A"
@@ -486,7 +484,7 @@
 					type: "item"
 				}
 			]
-			x: 5.5d
+			x: 5.0d
 			y: -0.5d
 		}
 		{
@@ -507,7 +505,6 @@
 				"4C1ED02854ED8430"
 			]
 			id: "2AE7DA758A20BE61"
-			subtitle: "YOU'RE RED NOW!! THAT'S MY ATTACK."
 			tasks: [{
 				id: "0C7D92A18CB3F71B"
 				item: "gtceu:red_steel_ingot"
@@ -536,7 +533,6 @@
 		{
 			dependencies: ["60EE20B7892B97D1"]
 			id: "3D72D9E5632CF26E"
-			subtitle: "🥊 You chibis SUCK!!"
 			tasks: [{
 				id: "14458B64F552FF52"
 				item: "gtceu:orange_glass_lens"
@@ -560,7 +556,6 @@
 		{
 			dependencies: ["3104D9631DC6C740"]
 			id: "4F367E1F9CD2499E"
-			subtitle: "I can sense your GENOCIDES"
 			tasks: [{
 				id: "2B0D18B20EFC8554"
 				item: "gtceu:hv_sensor"
@@ -704,7 +699,7 @@
 		{
 			dependencies: ["75BCB22E498512DF"]
 			id: "63882A36B041A9DC"
-			subtitle: "What could this be?"
+			subtitle: "Coolant"
 			tasks: [{
 				id: "0A1BE9E07FBE520A"
 				item: "gtceu:sodium_potassium_bucket"
@@ -794,7 +789,7 @@
 		{
 			dependencies: ["59EC433F2CFDAB44"]
 			id: "6284704349652601"
-			subtitle: "Remeber kids, radiation is only fun in gregtech!"
+			subtitle: "Remember kids, radiation is only fun in gregtech!"
 			tasks: [{
 				id: "52B126BF929BDCF6"
 				item: "gtceu:radon_bucket"
@@ -870,6 +865,7 @@
 		}
 		{
 			dependencies: ["02C13DE221613C60"]
+			hide_dependent_lines: true
 			id: "6F52CAEE5B38FA90"
 			subtitle: "Didn't think it would go all the way to IV, huh?"
 			tasks: [{
@@ -884,6 +880,7 @@
 			dependencies: [
 				"7E4802F4F9362BE2"
 				"7EB09327FA89F0D6"
+				"6F52CAEE5B38FA90"
 			]
 			id: "5E9CC61CA2932088"
 			size: 1.5d
@@ -990,7 +987,10 @@
 			y: 5.5d
 		}
 		{
-			dependencies: ["6288C98A9894B00A"]
+			dependencies: [
+				"6288C98A9894B00A"
+				"6F52CAEE5B38FA90"
+			]
 			id: "0ADD7EB03BFB24D6"
 			rewards: [{
 				count: 2
@@ -1154,7 +1154,6 @@
 			y: 6.0d
 		}
 		{
-			dependencies: ["23ACBAD769C66576"]
 			id: "7A11C3062B307765"
 			rewards: [{
 				id: "4663161313787E50"
@@ -1604,6 +1603,24 @@
 			}]
 			x: 11.0d
 			y: -8.0d
+		}
+		{
+			description: ["You can get &4plutonium&r either from the &eEnd,&r the &bTwilight Forest&r, or &6Uraninite&r processing"]
+			id: "14881CA373AFE85A"
+			tasks: [
+				{
+					id: "458E16176389EE5F"
+					title: "How do I get plutonium?"
+					type: "checkmark"
+				}
+				{
+					id: "39CEA5AB1CE2DD20"
+					item: "gtceu:plutonium_ingot"
+					type: "item"
+				}
+			]
+			x: 13.0d
+			y: 1.5d
 		}
 	]
 	title: "Chapter 3: High Voltage"

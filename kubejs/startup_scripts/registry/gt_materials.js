@@ -260,6 +260,32 @@ function register_nosmelt_elem_metal(name, ingredients, ebf, color, blasting, ge
     });
 }
 
+function register_nosmelt_elem_metal_sec(name, ingredients, ebf, color, color2, blasting, genrotor, tier)
+{
+    GTCEuStartupEvents.registry('gtceu:material', event => {
+        const mat = event.create(name)
+            .ingot()
+            .dust()
+            .fluid()
+            .element(GTElements.get(name))
+            .color(color)
+            .secondaryColor(color2)
+            .iconSet('metallic')
+            .cableProperties(tier, 1, 4, false)
+            .flags(foil, gear, long_rod, plates, rod, rotor, small_gear, ring, frame, fine_wire, no_smelt);
+
+        if (ebf) {
+            mat.blastTemp(blasting[0], blasting[1], blasting[2], blasting[3]);
+        }
+        if(genrotor)
+        {
+            // power, efficiency, damage, durability
+            mat.rotorStats(genrotor[0], genrotor[1], genrotor[2], genrotor[3])
+        }
+
+    });
+}
+
 function darkenAndSaturateHex(hex, darkenFactor, saturationBoost) {
     // Parse hex string
     let color = parseInt(hex.replace(/^#|^0x/, ""), 16);
@@ -404,6 +430,8 @@ function register_dust(name, ingredients, color, flags, c2)
     }
     
 }
+
+
 
 function register_gem(name, color, ingredients) 
 {
@@ -574,7 +602,7 @@ abs_mat_sec('martian-composite', '0xbd0921', '0xa30054')
 
 // venus
 register_dust('venus_sand', [], '0xb38930', no_decomp)
-register_nosmelt_elem_metal('calorite', [], true, '0xa10030', [3600, 'mid', voltTier('ev'), 20*64], false, voltTier('zpm'));
+// register_nosmelt_elem_metal('calorite', [], true, '0xa10030', [3600, 'mid', voltTier('ev'), 20*64], false, voltTier('zpm'));
 register_plasma('degenerate_electrum_light_matter', '0xfffef7', 'electrum', no_decomp)
 register_gas('venus_air', '0xb3721d', [], [no_decomp])
 register_fluid('liquid_venus_air', '0xcf892d', [], [no_decomp])
@@ -608,6 +636,9 @@ abs_mat('titanex-901-htc', '0xffd4de')
 abs_mat_sec('aluminex_202_a', '0x96fffd', '0x0080ff')
 
 // naq
+register_fluid('sulfuraic_fluoroantimonic_acid', '0xbcd490', ['1x sulfuria', '2x fluoroanitmonic_acid'], no_decomp)
+register_nosmelt_elem_metal_sec('trellium', [], true, '0x7d7d7d', '0x78ddff', [4500, 'mid', voltTier('iv'), 20*64], false, voltTier('uv'))
+register_dust('dilithium', [], '0xffa6e9', no_decomp, '0xffcff3')
 
 // component polymer
 register_fluid('component_polymer', '0xc9bd9b', ['1x epoxy', '2x carbon', '1x borosilicate_glass'], no_decomp)

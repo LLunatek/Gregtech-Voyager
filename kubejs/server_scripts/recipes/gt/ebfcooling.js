@@ -151,7 +151,7 @@ ServerEvents.recipes(event => {
     ebf_recipe('ostrum', 46*20, 7860, 4300, 'kubejs:blasting_gas', 'ev', true)
     ebf_recipe('calorite', 120*20, 7860 * 4, 5300, 'gtceu:rocket_fuel', 'iv', true)
     ebf_recipe('perfected_electrum', 200*20, 7860*4, 6100, 'gtceu:rocket_fuel', 'iv', true)
-    ebf_recipe('industrial_perfected_electrum', 150*20, 7860*4, 6100, 'gtceu:rocket_fuel', 'iv', true)
+    ebf_recipe('industrial_perfected_electrum', 150*20, 7860*4, 7200, 'gtceu:rocket_fuel', 'iv', true)
 
     ebf_recipe('test', 20, 100, 1000, 'kubejs:helperade_br', 'lv', false)
 

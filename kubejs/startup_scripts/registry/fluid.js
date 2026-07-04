@@ -1,4 +1,3 @@
-// priority:1000
 StartupEvents.registry('fluid', event => {
 //   // Basic "thick" (looks like lava) fluid with red tint
 //   event.create('thick_fluid')
@@ -60,17 +59,20 @@ StartupEvents.registry('fluid', event => {
     .displayName('HT-BA (S)')
     .noBlock() 
 
+  event.create('sulfuraic_')
+    .thickTexture(0xdbaa40)
+    .bucketColor(0xdbaa40)
+    .displayName('HT-BA (S)')
+    .noBlock() 
+
   event.create('helperade_br')
     .thinTexture(0x00ffff)
     .bucketColor(0x00ffff)
     .displayName('Helperade (Blue Rasberry)')
     .noBlock() 
 
-  event.create('pyrotheum')
-  .thinTexture(0xff5900)
-    .bucketColor(0xff5900)
-    .displayName('Pyrotheum')
-    .noBlock() 
+
+  
     
 
 

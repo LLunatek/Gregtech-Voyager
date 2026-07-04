@@ -17,13 +17,14 @@ event.remove({type: 'gtceu:assembler',output: 'gtceu:diode'})
 event.remove({output: 'gtceu:micro_processor_computer'})
 event.remove({output: 'gtceu:alloy_blast_smelter'})
 event.remove({output: 'gtceu:graphene_dust'})
-event.remove({type: 'gtceu:chemical_reactor', output: 'gtceu:nitrobenzene'})
+
 
 event.remove({type: 'minecraft:crafting_shaped' ,output: 'gtceu:phenolic_printed_circuit_board'})
 event.remove({type: 'gtceu:rock_breaker' ,output: 'minecraft:obsidian'})
 
 
-
+event.remove({id: 'gtceu:chemical_reactor/nitrobenzene'})
+event.remove({id: 'gtceu:large_chemical_reactor/nitrobenzene'})
 // event.remove({type: 'minecraft:crafting_shaped' ,output: ['gtceu:mv_electric_motor', 'gtceu:mv_electric_pump', 'gtceu:mv_conveyor_module', 'gtceu_mv_electric_piston', 'gtceu:mv_robot_arm']})
 
 event.replaceInput(

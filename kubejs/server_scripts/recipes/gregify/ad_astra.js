@@ -374,7 +374,7 @@ ServerEvents.recipes(event => {
     .itemInputs(
         '6x kubejs:desh_rocket_hull_plate',
         'kubejs:desh_interplanetary_coordinatal_calculator',
-        '16x #gtceu:circuits/luv',
+        '16x #gtceu:circuits/iv',
         '24x gtceu:lunarium_foil'
     )
     .itemOutputs('kubejs:desh_rocket_nose_cone')
@@ -409,7 +409,7 @@ ServerEvents.recipes(event => {
         '4x gtceu:iv_sensor',
         '4x gtceu:iv_emitter',
         '4x gtceu:ev_field_generator',
-        '4x #gtceu:circuits/luv',
+        '4x #gtceu:circuits/iv',
         '2x gtceu:double_desh_plate',
         '32x gtceu:fine_refined_fluxed_electrum_wire'
     )

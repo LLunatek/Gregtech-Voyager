@@ -103,6 +103,35 @@ ServerEvents.recipes(event => {
        
     }
 
+    function create_recipe_chem_plant(name, inputItems, inputFluids, outputItems, outputFluids, duration, eut, temp, helper)
+    {
+      if(!helper)
+      {
+        event.recipes.gtceu.chemical_plant("kubejs:lcr_" + name)
+        .itemInputs(inputItems)
+        .itemOutputs(outputItems)
+        .inputFluids(inputFluids)
+        .addData("ebf_temp", temp)
+        .outputFluids(outputFluids)
+        .duration(duration * 20) 
+        .EUt(eut) 
+      }
+      else
+      {
+        event.recipes.gtceu.chemical_plant("kubejs:lcr_helper_" + name)
+          .itemInputs(inputItems)
+          .notConsumable('kubejs:' + helper)
+          .itemOutputs(outputItems)
+          .inputFluids(inputFluids)
+          .addData("ebf_temp", temp)
+          .circuit(3)
+          .outputFluids(outputFluids)
+          .duration(duration * 20) 
+          .EUt(eut) 
+      }
+       
+    }
+
     function c_postbox_bad(output, trade_deal, inputs, time, eut, helper)
     {
         if(!helper)
@@ -224,11 +253,11 @@ ServerEvents.recipes(event => {
         .duration(20 * 32)                              
         .EUt(7860)
 
-    create_recipe_lcr('htba-s', ['2x gtceu:sulfuria_dust', '3x gtceu:borax_dust'], ['gtceu:argon 1250', 'gtceu:vanadium_gallium 1152'],
-        [], 'kubejs:high_temp_binding_agent_s 1152', 40, 7860*1.5
+    create_recipe_chem_plant('htba-s', ['2x gtceu:sulfuria_dust', '3x gtceu:borax_dust'], ['gtceu:argon 1250', 'gtceu:vanadium_gallium 1152'],
+        [], 'kubejs:high_temp_binding_agent_s 1152', 40, 7860*1.5, 5000
     )
-    create_recipe_lcr('htba-s', ['2x gtceu:sulfuria_dust', '3x gtceu:borax_dust'], ['gtceu:argon 1000', 'gtceu:vanadium_gallium 1152'],
-        [], 'kubejs:high_temp_binding_agent_s 1440', 30, 7860, 'advanced_chemist_helper'
+    create_recipe_chem_plant('htba-s', ['2x gtceu:sulfuria_dust', '3x gtceu:borax_dust'], ['gtceu:argon 1000', 'gtceu:vanadium_gallium 1152'],
+        [], 'kubejs:high_temp_binding_agent_s 1440', 30, 7860, 5000, 'advanced_chemist_helper'
     )
 
 

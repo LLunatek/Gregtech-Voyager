@@ -2,7 +2,7 @@ ServerEvents.recipes(event => {
  
     event.recipes.gtceu
         .assembler('kubejs:helper_software_installation_unit')   
-        .itemInputs('16x gtceu:titanite_gear', '2x #gtceu:circuits/zpm', '4x gtceu:ostrum_frame', '4x gtceu:iv_robot_arm', '4x gtceu:data_orb', 'gtceu:iv_machine_hull')
+        .itemInputs('4x gtceu:titanite_gear', '2x #gtceu:circuits/zpm', '4x gtceu:titanex-901-htc_frame', '4x gtceu:iv_robot_arm', '4x gtceu:data_orb', 'gtceu:iv_scanner')
         .itemOutputs('gtceu:helper_software_installation_unit')
         .duration(2400)                               
         .EUt(1980) 

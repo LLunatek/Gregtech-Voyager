@@ -19,7 +19,10 @@
 			y: 3.5d
 		}
 		{
-			dependencies: ["58BF847DADB89C2E"]
+			dependencies: [
+				"58BF847DADB89C2E"
+				"185E7D62706F17F6"
+			]
 			id: "47732A84A5E27361"
 			tasks: [{
 				id: "36BEA7E6F730BC8B"
@@ -64,7 +67,7 @@
 				type: "item"
 			}]
 			x: -4.5d
-			y: 3.5d
+			y: 1.5d
 		}
 		{
 			dependencies: [
@@ -427,7 +430,7 @@
 				type: "item"
 			}]
 			x: -3.5d
-			y: 0.5d
+			y: 1.5d
 		}
 		{
 			dependencies: [
@@ -643,8 +646,8 @@
 				item: "gtceu:graphene_dust"
 				type: "item"
 			}]
-			x: -0.5d
-			y: 4.5d
+			x: -1.0d
+			y: 3.5d
 		}
 		{
 			dependencies: ["11ED1C714EE1EB79"]
@@ -713,15 +716,18 @@
 			y: 0.5d
 		}
 		{
-			dependencies: ["11ED1C714EE1EB79"]
+			dependencies: [
+				"11ED1C714EE1EB79"
+				"51E5DD3A4B30CF75"
+			]
 			id: "19473E74C4EA8908"
 			tasks: [{
 				id: "17369DEA35D65AA7"
 				item: "gtceu:large_assembler"
 				type: "item"
 			}]
-			x: 11.0d
-			y: 0.5d
+			x: 8.0d
+			y: 3.5d
 		}
 		{
 			dependencies: ["11ED1C714EE1EB79"]
@@ -819,7 +825,7 @@
 				item: "gtceu:large_distillery"
 				type: "item"
 			}]
-			x: 8.0d
+			x: 11.0d
 			y: 3.5d
 		}
 		{
@@ -853,7 +859,7 @@
 				type: "item"
 			}]
 			x: 11.0d
-			y: 3.5d
+			y: 0.5d
 		}
 		{
 			dependencies: ["11ED1C714EE1EB79"]
@@ -938,8 +944,10 @@
 			y: -1.0d
 		}
 		{
-			dependencies: ["64B5D866D92BA6C4"]
-			hide_dependency_lines: true
+			dependencies: [
+				"64B5D866D92BA6C4"
+				"51E5DD3A4B30CF75"
+			]
 			id: "7D03DD080C4A9C7F"
 			size: 1.5d
 			tasks: [{
@@ -984,7 +992,10 @@
 			y: 15.5d
 		}
 		{
-			dependencies: ["17EC186948CB00B9"]
+			dependencies: [
+				"17EC186948CB00B9"
+				"51E5DD3A4B30CF75"
+			]
 			id: "2D4AC4935C3C57DB"
 			tasks: [{
 				id: "3AB085EA73BCCEAA"
@@ -1022,7 +1033,7 @@
 				"2120793652BC1F0D"
 				"17EC186948CB00B9"
 			]
-			description: ["Can consume &auranium cookies only&r, but produces &a&l2x the power&r of the normal hungry helper."]
+			description: ["Can consume &auranium cookies only&r"]
 			hide_dependency_lines: true
 			id: "1A250E50BC201DDE"
 			tasks: [{
@@ -1394,6 +1405,7 @@
 		{
 			dependencies: ["014935D33AD9697A"]
 			id: "17B8AC9F71D82B41"
+			subtitle: "The ultimate alloying assistant"
 			tasks: [{
 				id: "13B776C4BD2EF9B5"
 				item: "kubejs:high_temp_binding_agent_s_bucket"
@@ -1465,6 +1477,7 @@
 				"47732A84A5E27361"
 				"50A265E32ADDD82E"
 				"17B8AC9F71D82B41"
+				"6FCDF4FD93D5B80D"
 			]
 			hide_dependency_lines: true
 			id: "33063EB46A6BB3B6"
@@ -1548,15 +1561,95 @@
 			y: 15.0d
 		}
 		{
-			dependencies: ["50A265E32ADDD82E"]
+			dependencies: [
+				"50A265E32ADDD82E"
+				"3FB4F231181DD428"
+			]
+			hide_dependency_lines: true
 			id: "4A3F739F237D619A"
 			tasks: [{
 				id: "1D5C6AFA2DE3C1C3"
 				item: "kubejs:titanite_coil_block"
 				type: "item"
 			}]
-			x: 8.0d
+			x: 7.0d
 			y: 9.0d
+		}
+		{
+			dependencies: ["3EB2AED9E53B3F2F"]
+			id: "47F271D5BF669B84"
+			shape: "gear"
+			size: 1.5d
+			tasks: [{
+				id: "14C4CA26F4AF2756"
+				item: "voyagercore:chemical_plant"
+				type: "item"
+			}]
+			x: -2.5d
+			y: 11.0d
+		}
+		{
+			dependencies: ["47F271D5BF669B84"]
+			hide_dependency_lines: true
+			id: "5336212D1C3B588F"
+			tasks: [{
+				id: "26F4A3F7F3860DFF"
+				item: "gtceu:nitrobenzene_bucket"
+				type: "item"
+			}]
+			x: -2.5d
+			y: 17.5d
+		}
+		{
+			dependencies: [
+				"4A3F739F237D619A"
+				"6FCDF4FD93D5B80D"
+				"48A67162760139FC"
+			]
+			description: [""]
+			hide_dependent_lines: true
+			id: "51E5DD3A4B30CF75"
+			subtitle: "Engineered to be perfect"
+			tasks: [{
+				id: "4E702094BCB58824"
+				item: "gtceu:titanex-901-htc_ingot"
+				type: "item"
+			}]
+			x: 8.0d
+			y: 10.0d
+		}
+		{
+			dependencies: ["17B8AC9F71D82B41"]
+			id: "6FCDF4FD93D5B80D"
+			tasks: [{
+				id: "26C922A4ED52F3D7"
+				item: "gtceu:martian-composite_ingot"
+				type: "item"
+			}]
+			x: 8.0d
+			y: 11.0d
+		}
+		{
+			description: ["If you haven't already, you may want to set up an array of multiple ABS's. Some of the chains get long for titanex, so it's a good idea to pipeline it as much as possible."]
+			id: "09E3659647AAC681"
+			size: 2.0d
+			tasks: [{
+				id: "7FCD30F3E7CF2C32"
+				title: "ABS Alloy Chains"
+				type: "checkmark"
+			}]
+			x: 9.5d
+			y: 10.5d
+		}
+		{
+			id: "185E7D62706F17F6"
+			tasks: [{
+				id: "2CA9EB4D048FE76D"
+				item: "gtceu:raw_ostrite"
+				type: "item"
+			}]
+			x: 1.5d
+			y: 0.5d
 		}
 	]
 	title: "Chapter 5: Age of Infrastructure (IV)"

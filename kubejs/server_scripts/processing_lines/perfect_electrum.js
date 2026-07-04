@@ -2,13 +2,14 @@
 
 ServerEvents.recipes(event => {
 
-function teus_laser(output, ns, inputItems, nonconsumed, inputFluid, outFluid, eut, time)  
+function teus_laser(output, ns, inputItems, nonconsumed, inputFluid, outFluid, eut, time, concentration)  
 {
     event.recipes.gtceu
         .beam_heating(`kubejs:${output}_teus_laser`)   // recipe ID
         .itemInputs(inputItems)
         .notConsumable(nonconsumed)
         .inputFluids(inputFluid)
+        .addData("beam_concentration", concentration)
         .itemOutputs(`${ns}:${output}`)
         .outputFluids(outFluid)
         .duration(time * 20)                                 // in ticks
@@ -27,6 +28,8 @@ function chem_bath(output, ns, inputItems, inputFluid, eut, time)
 
     chem_bath('perfected_electrum_base_dust', 'gtceu', '4x gtceu:graphene_dust', 'gtceu:refined_fluxed_electrum 288', 1024, 30)
 
-    teus_laser('hot_perfected_electrum_ingot', 'gtceu', 'gtceu:perfected_electrum_base_dust', 'kubejs:atomic_lattice', 'gtceu:electrum ' + 144*8, 'gtceu:degenerate_electrum_light_matter_plasma 288', 7777, 100)
+    teus_laser('hot_perfected_electrum_ingot', 'gtceu', 'gtceu:perfected_electrum_base_dust', 'kubejs:atomic_lattice', 'gtceu:electrum ' + 144*8, 'gtceu:degenerate_electrum_light_matter_plasma 288', 7777, 100, .1)
 
+
+    teus_laser('hot_naquadah_ingot', 'gtceu', 'gtceu:naquadah_dust', 'kubejs:atomic_lattice', 'gtceu:helium 2000', 'gtceu:helium_plasma 1000', 32786, 120, .2)
 });
