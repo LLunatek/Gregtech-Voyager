@@ -61,6 +61,9 @@ ServerEvents.recipes(event => {
 
     create_mixer_recipe('graphene', ['2x gtceu:graphite_dust', '2x gtceu:silicon_wafer', '5x gtceu:carbon_dust'], 'gtceu:acetone 500', '6x gtceu:graphene_dust', voltTier('ev'), 20)
 
+    create_mixer_recipe('trellium_base_dust', ['2x gtceu:trellium_dust', '2x gtceu:duranium_dust', '2x gtceu:sulfuria_dust'], 'gtceu:radon 500', '6x gtceu:trellium_base_dust', voltTier('luv'), 20)
+
+
     // create_mixer_recipe('refined_fluxed_electrum_mix',['8x gtceu:refined_fluxed_electrum', '2x gtceu:cobalt_dust', '1x gtceu:ruby_dust'], [], ['6x gtceu:fluxed_cobalt_electrum_dust'], voltTier('ev'), 300);
 
     // refined_fluxed_electrum

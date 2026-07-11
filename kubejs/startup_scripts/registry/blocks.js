@@ -21,7 +21,7 @@ StartupEvents.registry('block', event => {
     casing('condensation_resistant_tungsten')
     casing('heat_resistant_refined_fluxed_electrum')
     casing('radiation_conducting_titanex')
-    casing('space_faring')
+    // casing('space_faring')
     // casing('radiant_titanex')
     // casing('radiant_titanex_vent')
     // casing('frost_conducting')

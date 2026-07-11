@@ -59,16 +59,48 @@ StartupEvents.registry('fluid', event => {
     .displayName('HT-BA (S)')
     .noBlock() 
 
-  event.create('sulfuraic_')
-    .thickTexture(0xdbaa40)
-    .bucketColor(0xdbaa40)
-    .displayName('HT-BA (S)')
-    .noBlock() 
-
   event.create('helperade_br')
     .thinTexture(0x00ffff)
     .bucketColor(0x00ffff)
     .displayName('Helperade (Blue Rasberry)')
+    .noBlock() 
+
+  // Highstress lubricant
+  event.create('igp_lubricant_base')
+    .thinTexture(0x90915d)
+    .bucketColor(0x90915d)
+    .displayName('IGP Lubricant Base')
+    .noBlock() 
+
+  event.create('gallium_lubricant_residue')
+    .thickTexture(0x445e63)
+    .bucketColor(0x445e63)
+    .displayName('Gallium Lubricant Residue')
+    .noBlock() 
+
+  event.create('indium_binded_phospho_lubricant_sludge')
+    .thickTexture(0x56476b)
+    .bucketColor(0x56476b)
+    .displayName('Indium Binded Phospho Lubricant Sludge')
+    .noBlock() 
+
+
+  event.create('acidic_phospho_lubricant')
+    .thinTexture(0x381212)
+    .bucketColor(0x381212)
+    .displayName('Acidic Phospo-Lubricant')
+    .noBlock() 
+
+  event.create('phospho_lubricant_residue')
+    .thinTexture(0x381111)
+    .bucketColor(0x381111)
+    .displayName('Phospo-Lubricant Residue')
+    .noBlock() 
+
+  event.create('phospho_indium_molybdenum_binded_lubricant')
+    .thinTexture(0x82698c)
+    .bucketColor(0x82698c)
+    .displayName('Phospho-Indium-Molybdenum Binded Lubricant')
     .noBlock() 
 
 

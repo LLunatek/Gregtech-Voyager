@@ -108,6 +108,9 @@ ServerEvents.recipes(event => {
     create_recipe_lcr('desh_group_sludge_socochalamite', 'gtceu:purified_socochalamite_ore', 'gtceu:formic_acid 100', ['2x gtceu:desh_group_sludge_dust'], [], 10, 32)
     create_recipe_lcr('desh_group_sludge_glunite', 'gtceu:purified_glunite_ore', 'gtceu:formic_acid 100', ['2x gtceu:desh_group_sludge_dust'], [], 10, 32)
 
+    create_recipe_lcr('desh_group_sludge_desh', 'gtceu:purified_desh_ore', 'gtceu:formic_acid 100', ['8x gtceu:desh_group_sludge_dust'], [], 10, 32)
+
+
     create_recipe_centrifuge('dsg_processing', '6x gtceu:desh_group_sludge_dust', 'gtceu:aqua_regia 800', ['6x gtceu:lunar_metal_residue_dust', '4x gtceu:dense_metal_mixture_dust'], [], 30, 480)
     create_recipe_centrifuge('dsg_processing', '5x gtceu:desh_group_sludge_dust', 'gtceu:aqua_regia 600', ['8x gtceu:lunar_metal_residue_dust', '7x gtceu:dense_metal_mixture_dust'], [], 20, 390, 'basic_chemist_helper')
 

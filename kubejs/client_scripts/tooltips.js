@@ -127,11 +127,22 @@ event.add(`voyagercore:everfrost_chiller`, [
     nl,
     `${gre}Consumes ${gr}85% EU/t${x} ${gre}of base recipe`,
     `${gre}Gain ${gr}+2 parallels${x} ${gre}and reduce the recipe duration by ${gr}10% multiplicatively${gre} `,
-    `${gre}for each ${ye}4× multiplier step from recipe EU/t${gre} up to machine EU/t${x}`,
-    `${gre}(inclusive of incomplete step)`,
+    `${gre}for each ${ye}voltage overclock`,
     nl,
     `${gre}Consumes ${or}10mb/s${x} ${gre}of ${b}Cryotheum${x} ${gre}in order to run recipes`,
     `${gre}Can only have ${re}one energy hatch`
+])
+
+event.add(`voyagercore:pulverizer`, [
+    `${ye}Pulverizer`,
+    nl,
+    `${gre}Uses ${gr}Pulverizer${x} ${gre}recipes`,
+    `${gre}Can use ${or}Parallel Hatches${x} ${gre}and has ${ye}Non-Perfect Overclocks${x}`,
+    nl,
+    `${gre}For each ${ye}crushing wheel tier${gre} above recipe crushing wheel tier,${x}`,
+    `${gre}increase yield of all outputs by 1`,
+    nl,
+    `${gre}Consumes ${or}250mb/s${x} ${gre}of ${ye}High Stress Lubricant${x} ${gre}in order to run recipes`,
 ])
 
 function donut(tierNum, tierVol, acceptedHatches)
@@ -173,7 +184,7 @@ event.add(`voyagercore:beam_of_teus`, [
     `${gre}Has base${or} 10% beam concentration${x} ${gre}and ${ye}10% lens heat${x}`,
     `${gre}Effective beam concentration = base +${or} beam provided ${gre}concentration % + ${ye}overclock ${gre}concentration`,
     nl,
-    `${gre}For every ${gr}5% beam concentration${x} above ${or}10%${gre}, ${gr}decrease recipe time by 15% ${gre}multiplicatively`,
+    `${gre}For every ${gr}5% beam concentration${x} above ${or}10%${gre}, ${gr}decrease recipe time by 25% ${gre}multiplicatively`,
     `${gre}For every ${re}10% lens heat${x} above ${re}10%${gre}, ${gr}decrease EU/t by 8%${gre}, up to 90% lens heat`,
     `${gre}For every ${re}1% lens heat${x} above ${re}90%${gre}, ${re}decrease beam concentration by 7%${gre}, down to base%`,
     nl,
@@ -183,7 +194,8 @@ event.add(`voyagercore:beam_of_teus`, [
     `${gre}Lens heat will not increase if coolant is provided`,
     `${gre}If heat reaches ${re}above 105%, recipe will be voided`,
     nl,
-    `${gre}For every voltage tier above ${b}IV, ${gr}increase beam concentration by 5%`
+    `${gre}For every voltage tier above ${b}IV, ${gr}increase beam concentration by 5%`,
+    `${gre}Can use ${ye}multi-amp hatches${x}${gre}`,
 ])
   event.add(`gtceu:atmospheric_collector`, '§6Collects gas and dust from the surrounding atmosphere and freezes it§r\n§6Can use parallel hatches§r')
   

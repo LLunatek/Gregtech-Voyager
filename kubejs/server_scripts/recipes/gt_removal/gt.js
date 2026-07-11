@@ -19,6 +19,7 @@ event.remove({output: 'gtceu:alloy_blast_smelter'})
 event.remove({output: 'gtceu:graphene_dust'})
 
 
+
 event.remove({type: 'minecraft:crafting_shaped' ,output: 'gtceu:phenolic_printed_circuit_board'})
 event.remove({type: 'gtceu:rock_breaker' ,output: 'minecraft:obsidian'})
 
@@ -83,5 +84,7 @@ event.replaceInput(
   'gtceu:double_titanite_plate'         // Arg 3: the item to replace it with
   // Note: tagged fluid ingredients do not work on Fabric, but tagged items do.
 )
+
+
 
 })

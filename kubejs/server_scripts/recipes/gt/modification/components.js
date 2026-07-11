@@ -334,6 +334,19 @@ sensor("iv")
 
 const tiers = ['iv','luv','zpm','uv','uhv','uev','uiv','max'];
 
+const components = ['electric_motor', 'electric_pump', 'conveyor_module', 'electric_piston', 'robot_arm']
+
+components.forEach(component =>
+    
+        event.replaceInput(
+            { output: `gtceu:luv_${component}`}, 
+            Fluid.of('gtceu:lubricant'),           
+            Fluid.of('voyagercore:high_stress_lubricant')        
+
+        )
+    
+)
+
 // tiers.forEach(tier => removeTieredComponents(tier));
 
 function replaceRecipeTiered(tier)

@@ -10,7 +10,7 @@ ServerEvents.recipes(event => {
 
     const tiers = ['ulv', 'lv','mv','hv','ev','iv','luv','zpm','uv','uhv','uev','uiv','max'];
 
-    function venus_assembly_research(output, namespace, inputs, fluidInputs, eut, time, scanItem)
+    function assembly_research(output, namespace, inputs, fluidInputs, eut, time, scanItem)
     {
         event.recipes.gtceu.assembly_line(`gtceu:${output}`)
             .itemInputs(inputs)
@@ -25,6 +25,11 @@ ServerEvents.recipes(event => {
             .duration(time * 20)
             .EUt(eut);
     }
+
+    assembly_research('crystal_calculated_beam', 'voyagercore', 
+        ['gtceu:luv_machine_hull', 'gtceu:perfected_electrum_frame','64x gtceu:crystal_soc', '12x gtceu:double_duranium_plate', '8x kubejs:light_refractor', '8x gtceu:luv_field_generator', '8x #gtceu:circuits/zpm', '64x gtceu:fine_europium_wire'],
+        ['gtceu:lunarium 32000', 'gtceu:naquadah 8000', 'voyagercore:high_stress_lubricant 16000'], 32000, 60, 'voyagercore:nether_star_beam'
+    )
 
 
 

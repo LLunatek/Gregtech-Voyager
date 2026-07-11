@@ -418,6 +418,23 @@ ServerEvents.recipes(event => {
     .duration(20*60*5)
     .EUt(1980);
 
+        
+    event.recipes.gtceu.forming_press("kubejs:raw_advanced_martian_plate")
+        .itemInputs("2x gtceu:martian-composite_ingot", '2x gtceu:hssg_ingot', '2x gtceu:tungsten_steel_ingot')
+        .itemOutputs('kubejs:raw_advanced_martian_plating')
+        .duration(20*200)
+        .EUt(480)
+
+
+    event.recipes.gtceu.electric_blast_furnace("kubejs:advanced_martian_plate")
+        .itemInputs("kubejs:raw_advanced_martian_plating", '2x gtceu:aluminex_202_a_plate')
+        .itemOutputs("kubejs:advanced_martian_plating")
+        .circuit(1)
+        .duration(20 * 400) 
+        .EUt(480)
+        .blastFurnaceTemp(4000);
+
+
     assembly_no_research('titanite_interplanetary_coordinatal_calculator', 'kubejs', 
         ['32x gtceu:double_titanite_plate', '8x gtceu:iv_sensor', '8x gtceu:iv_emitter', '4x gtceu:iv_field_generator', '4x #gtceu:circuits/zpm', '32x gtceu:titanite_alloy_double_wire'],
         ['gtceu:soldering_alloy 1200', 'gtceu:tungsten 800'], 7680, 100

@@ -515,7 +515,7 @@ register_dust('calorite_carbide', ['4x calorite', '2x carbon'], '0x3d304d', no_d
 
 register_metal('metallic_mica', ['3x mica', '1x silver'], false, '0xaba376', [0, null, voltTier('lv'), 0]);
 
-register_nosmelt_elem_metal('desh', [], true, '0xd44e06', [3600, 'mid', voltTier('ev'), 20*64], [300, 150, 1, 100000], voltTier('iv'));
+// register_nosmelt_elem_metal('desh', [], true, '0xd44e06', [3600, 'mid', voltTier('ev'), 20*64], [300, 150, 1, 100000], voltTier('iv'));
 
 register_dust('desh_dioxide', ['desh', '2x oxygen'], '0xff4000', electrolyze); 
 
@@ -536,6 +536,7 @@ register_superconductor('fluxed_cobalt_electrum', [], true, '0x006387', 512, 1, 
 register_superconductor('refined_fluxed_electrum', [], true, '0xdbff66', 2048, 4, [3600, 'mid', voltTier('ev'), 20*64]);
 register_superconductor('titanite_alloy',['4x titanite', '2x tungsten', '3x lunarium', '2x graphene', '3x refined_fluxed_electrum', '2x fluorine', 'electrotine'], true, '0xff1284', 8192, 8, [4500, 'mid', voltTier('iv'), 1]);
 register_superconductor_sec('perfected_electrum', [], true, '0xfffef7', '0xfcff69', 32768, 8, [7200, 'high', voltTier('luv'), 1]);
+// register_superconductor_sec('perfected_electrum', [], true, '0xfffef7', '0xfcff69', 32768, 8, [7200, 'high', voltTier('luv'), 1]);
 
 
 register_fluid('lunarium_growth_slurry','0x1fff1a', ['3x lunarium', '4x chlorine', '2x fluorine', '1x carbon'], no_decomp)
@@ -567,6 +568,24 @@ register_ore_gem('glunite', ['1x amethyst', '5x glowstone', '1x hydrogen'], '0xf
 register_ore_gem('titanichite', ['2x titanite', 'fluorine'], '0xff0055', [no_decomp], [])
 register_ore_metal('ostrite', ['3x oxygen', '12x chlorine', '8x ostrum'], '0xc785a2', [electrolyze]);
 register_ore_metal('dalumite', ['3x oxygen', '8x desh'], '0xad7600', [electrolyze]);
+
+// venus stuff
+register_ore_metal('xastinite', ['3x uranium', '2x tungsten', '8x copper'], '0x34523e', [centrifuge]);
+register_ore_metal('fluorite', ['8x fluorine', '2x glowstone'], '0xa9d6cf', [electrolyze]);
+register_ore_metal('chlorite', ['8x chlorine', '2x ruby'], '0x2e184a', [electrolyze]);
+register_dust('venus_group_sludge', [], '0x4f4300', no_decomp, '0xffd800')
+// register_dust('naquadah_base_dust', ['naquadah', 'duranium'], '0x080006', no_decomp, '0x0f0000')
+register_nosmelt_elem_metal_sec('bluponium', [], true, '0xba32cf', '0xd91c5e', [3600, 'mid', voltTier('ev'), 20*64], false, GTValues.UV)
+GTCEuStartupEvents.registry('gtceu:material', event => {
+    event.create('trellium_base')
+        .ingot()
+        .components(['duranium', 'sulfur', 'trellium'])
+        .color('0x080006')
+        .secondaryColor('0x0f0000')
+        .iconSet('metallic')
+        .flags(no_decomp);
+})
+
 
 // mars precious mats
 register_dust('inert_sulfur', ['sulfur'], '0x948243', no_decomp)

@@ -9,6 +9,9 @@ ServerEvents.recipes(event => {
 
     function ebf_recipe(input, ebfduration, ebfeut, ebftemp, blastfluid, helpertier, do_helium_cooling)
     {
+        event.remove({type: "gtceu:electric_blast_furnace", output: `gtceu:hot_${input}_ingot`})
+        event.remove({type: "gtceu:electric_blast_furnace", output: `gtceu:${input}_ingot`})
+        event.remove({type: "gtceu:vacuum_freezer", output: `gtceu:${input}_ingot`})
         event.recipes.gtceu.electric_blast_furnace("kubejs:hot_" + input)
             .itemInputs("gtceu:" + input + '_dust')
             .itemOutputs("gtceu:hot_" + input + '_ingot')
@@ -153,7 +156,7 @@ ServerEvents.recipes(event => {
     ebf_recipe('perfected_electrum', 200*20, 7860*4, 6100, 'gtceu:rocket_fuel', 'iv', true)
     ebf_recipe('industrial_perfected_electrum', 150*20, 7860*4, 7200, 'gtceu:rocket_fuel', 'iv', true)
 
-    ebf_recipe('test', 20, 100, 1000, 'kubejs:helperade_br', 'lv', false)
+    ebf_recipe('naquadah_alloy', 20 * 60, 30720, 7800, 'gtceu:argon', 'iv', false)
 
 
 });

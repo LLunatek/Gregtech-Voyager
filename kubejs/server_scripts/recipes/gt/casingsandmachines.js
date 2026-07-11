@@ -117,6 +117,36 @@ ServerEvents.recipes(event => {
 
 
 
+    // crushing wheels
+
+    event.recipes.gtceu.assembler('kubejs:luv_crushing_wheel')
+        .itemInputs(
+            '1x gtceu:luv_machine_hull',
+            '3x gtceu:hsse_buzz_saw_blade',
+            '5x gtceu:hssg_gear',
+            '16x gtceu:fine_perfected_electrum_wire',
+            '#gtceu:circuits/luv'
+        )
+        .circuit(6)
+        .itemOutputs('4x voyagercore:luv_crushing_wheel')
+        .duration(10*20)
+        .EUt(32000);
+
+
+    event.recipes.gtceu.assembler('kubejs:zpm_crushing_wheel')
+        .itemInputs(
+            '1x gtceu:zpm_machine_hull',
+            '3x gtceu:duranium_buzz_saw_blade',
+            '5x gtceu:calorite_gear',
+            '16x gtceu:fine_europium_wire',
+            '#gtceu:circuits/zpm'
+        )
+        .circuit(6)
+        .itemOutputs('4x voyagercore:zpm_crushing_wheel')
+        .duration(10*20)
+        .EUt(32000);
+
+
     // fuck it ill put these here too
 
     function cube_multi(mat, output, input)

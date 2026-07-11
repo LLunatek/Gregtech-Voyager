@@ -30,6 +30,4 @@ function chem_bath(output, ns, inputItems, inputFluid, eut, time)
 
     teus_laser('hot_perfected_electrum_ingot', 'gtceu', 'gtceu:perfected_electrum_base_dust', 'kubejs:atomic_lattice', 'gtceu:electrum ' + 144*8, 'gtceu:degenerate_electrum_light_matter_plasma 288', 7777, 100, .1)
 
-
-    teus_laser('hot_naquadah_ingot', 'gtceu', 'gtceu:naquadah_dust', 'kubejs:atomic_lattice', 'gtceu:helium 2000', 'gtceu:helium_plasma 1000', 32786, 120, .2)
 });

@@ -1,0 +1,5 @@
+{
+  "ldlib": {
+    "connection": "kubejs:block/coil/industrial_perfected_electrum/coil_ctm"
+  }
+}

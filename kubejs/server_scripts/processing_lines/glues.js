@@ -15,7 +15,7 @@ ServerEvents.recipes(event => {
 
 
     create_mixer_recipe('component_polymer', ['2x gtceu:carbon_fiber_mesh', 'gtceu:borosilicate_glass_dust'], 'gtceu:epoxy 1000', [], 
-        'gtceu:component_polymer 750', 240, 30
+        'gtceu:component_polymer 2000', 240, 30
     )
 
 });

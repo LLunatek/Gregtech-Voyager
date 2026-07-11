@@ -194,6 +194,16 @@ StartupEvents.registry('item', event => {
     event.create('titanite_rocket_nose_cone').texture('kubejs:item/titanite_rocket_nose_cone').maxStackSize(16).displayName('Titanite Rocket Nose Cone');
     event.create('titanite_interplanetary_coordinatal_calculator').texture('kubejs:item/titanite_interplanetary_coordinatal_calculator').maxStackSize(16).displayName('Titanite Interplanetary Coordinatal Calculator');
 
+    event.create('calorite_rocket_hull_plate').texture('kubejs:item/calorite_rocket_hull_plate').maxStackSize(16).displayName('Calorite Rocket Hull Plate');
+    event.create('calorite_rocket_fin').texture('kubejs:item/calorite_rocket_fin').maxStackSize(16).displayName('Calorite Rocket Fin');
+    event.create('calorite_rocket_nose_cone').texture('kubejs:item/calorite_rocket_nose_cone').maxStackSize(16).displayName('Calorite Rocket Nose Cone');
+    event.create('calorite_interplanetary_coordinatal_calculator').texture('kubejs:item/calorite_interplanetary_coordinatal_calculator').maxStackSize(16).displayName('Calorite Interplanetary Coordinatal Calculator');
+
+    event.create('cosmic_ray_repellant_plating').texture('kubejs:item/cosmic_ray_repellant_plating').maxStackSize(16).displayName('Cosmic Ray Repellant Plating');
+    event.create('cosmic_resistant_plating').texture('kubejs:item/cosmic_resistant_plating').displayName('Cosmic Resistant Plating')
+    event.create('raw_cosmic_resistant_plating').texture('kubejs:item/raw_cosmic_resistant_plating').displayName('Raw Cosmic Resistant Plating')
+
+
 
     event.create('martian_scrap').texture('kubejs:item/martian_scrap').displayName('Martian Scrap').tooltip('§4Remnants of martian ships\n§r§8Contains materials that can not yet be synthesized without 0G');
     event.create('shredded_martian_scrap').texture('kubejs:item/shredded_martian_scrap').displayName('Shredded Martian Scrap').tooltip('§4Remnants of martian ships\n§r§8Contains materials that can not yet be synthesized without 0G');
@@ -221,7 +231,7 @@ StartupEvents.registry('item', event => {
 
     event.create('high_temp_binding_agent_rod_s').texture('kubejs:item/high_temp_binding_agent_rod_s').displayName('HT-BA (S) Rod')
     event.create('heat_accelerator').texture('kubejs:item/heat_accelerator').displayName('Heat Accelerator')
-    event.create('heat_sheild').texture('kubejs:item/heat_sheild').displayName('Heat Sheild')
+    event.create('heat_sheild').texture('kubejs:item/heat_sheild').displayName('Heat Shield')
     // cookies
 
     event.create('grandmas_baking_sheet').texture('kubejs:item/grandmas_baking_sheet').maxStackSize(1).displayName('Grandma\'s Super Durable Baking Sheet');
