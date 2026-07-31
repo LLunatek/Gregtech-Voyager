@@ -18,9 +18,10 @@ StartupEvents.registry('block', event => {
     casing('titanite');
     casing('ostrum');
     casing('atmospheric_filter');
-    casing('condensation_resistant_tungsten')
+    // casing('condensation_resistant_tungsten')
     casing('heat_resistant_refined_fluxed_electrum')
-    casing('radiation_conducting_titanex')
+    // casing('radiation_conducting_titanex')
+    // casing('platinum')
     // casing('space_faring')
     // casing('radiant_titanex')
     // casing('radiant_titanex_vent')

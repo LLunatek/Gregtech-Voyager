@@ -1065,6 +1065,11 @@
 					item: "gtceu:sulfuria_dust"
 					type: "item"
 				}
+				{
+					id: "651DE6CCC64CEB77"
+					item: "gtceu:calorite_dust"
+					type: "item"
+				}
 			]
 			title: "Venus-line Byproducts"
 			x: 6.0d

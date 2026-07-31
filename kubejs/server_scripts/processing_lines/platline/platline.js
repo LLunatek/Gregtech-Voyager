@@ -44,6 +44,20 @@ event.remove({output: 'gtceu:ruthenium_tetroxide' })
        
     }
 
+    function create_recipe_chem_plant(name, inputItems, inputFluids, outputItems, outputFluids, duration, eut, temp, specialized)
+    {
+        event.recipes.gtceu.chemical_plant("kubejs:chemical_plant" + name)
+        .itemInputs(inputItems)
+        .itemOutputs(outputItems)
+        .inputFluids(inputFluids)
+        .outputFluids(outputFluids)
+        .addData("ebf_temp", temp)
+        .addData("specialized", specialized)
+        .duration(duration * 20) 
+        .EUt(eut) 
+       
+    }
+
     /**
      * Create a centrifuge recipe
      * @param {*} name - recipe name (dont include kubejs:)
@@ -87,11 +101,15 @@ event.remove({output: 'gtceu:ruthenium_tetroxide' })
         '6x gtceu:plat_palladium_metal_residue_dust'],
         [], 30, 480
     )
-    create_recipe_centrifuge('pgs', '6x gtceu:platinum_group_sludge_dust', 'gtceu:aqua_regia 900'
-      , ['3x gtceu:rarest_metal_mixture_dust', '3x gtceu:inert_metal_mixture_dust', '2x gtceu:platinum_sludge_residue_dust', 
-        '8x gtceu:plat_palladium_metal_residue_dust'],
-        [], 30, 480 * .66, 'basic_chemist_helper'
-    )
+    // create_recipe_centrifuge('pgs', '6x gtceu:platinum_group_sludge_dust', 'gtceu:aqua_regia 900'
+    //   , ['3x gtceu:rarest_metal_mixture_dust', '3x gtceu:inert_metal_mixture_dust', '2x gtceu:platinum_sludge_residue_dust', 
+    //     '8x gtceu:plat_palladium_metal_residue_dust'],
+    //     [], 30, 480 * .66, 'basic_chemist_helper'
+    // )
+
+    create_recipe_chem_plant('pgs', '6x gtceu:platinum_group_sludge_dust', 'gtceu:aqua_regia 1200', 
+      ['3x gtceu:rarest_metal_mixture_dust', '3x gtceu:inert_metal_mixture_dust', '2x gtceu:platinum_sludge_residue_dust', '8x gtceu:plat_palladium_metal_residue_dust'],
+    [], 30, 480, 4500, "plat_line")
 
     create_recipe_centrifuge('pgs_adv', '4x gtceu:platinum_group_sludge_dust', 'gtceu:aqua_regia 600'
       , ['5x gtceu:rarest_metal_mixture_dust', '5x gtceu:inert_metal_mixture_dust', '6x gtceu:platinum_sludge_residue_dust', 

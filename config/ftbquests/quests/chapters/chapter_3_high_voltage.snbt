@@ -5,7 +5,7 @@
 	group: "3E515D2B3A8DFC29"
 	icon: "gtceu:micro_processor_assembly"
 	id: "5E4D0B5FD2E053AE"
-	order_index: 4
+	order_index: 5
 	quest_links: [ ]
 	quests: [
 		{
@@ -1430,7 +1430,6 @@
 		{
 			dependencies: ["5EBF23DF26D245F8"]
 			id: "4096940C1B57987A"
-			subtitle: "A Bo'uh 'o Wo'uh"
 			tasks: [{
 				id: "5482EB7EDAD36FAC"
 				item: "gtceu:infinite_water_cover"

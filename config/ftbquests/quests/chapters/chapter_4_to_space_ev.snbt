@@ -878,7 +878,7 @@
 				""
 				"These multiblocks aren't quite as strong as the &9IV+&r ones, but they are much much stronger than singleblocks."
 				""
-				"They can batch recipes (process ALL of an input at once), and have &l&eperfect overclocking&r. They are similar to multis found in &1Star Technology&r. That being said, they can also only have one energy hatch, and only &8normal maintenance&r hatches."
+				"They can batch recipes (process ALL of an input at once), and have &l&eCube Boosting&r. That being said, they can also only have one energy hatch, and only &8normal maintenance&r hatches."
 			]
 			icon: "gtceu:cube_macerator"
 			id: "652839F632E42BF0"
@@ -1575,6 +1575,16 @@
 				{
 					id: "23C273E2F339F0E2"
 					item: "gtceu:cube_autoclave"
+					type: "item"
+				}
+				{
+					id: "31ED974011B54CA9"
+					item: "gtceu:cube_assembler"
+					type: "item"
+				}
+				{
+					id: "68EACE04046A6B20"
+					item: "gtceu:cube_oven"
 					type: "item"
 				}
 			]

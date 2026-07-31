@@ -19,17 +19,15 @@ function convertToRoman(num) {
     { value: 9, numeral: "IX" },
     { value: 5, numeral: "V" },
     { value: 4, numeral: "IV" },
-    { value: 1, numeral: "I" }
+    { value: 1, numeral: "I" },
   ];
 
   let result = "";
 
-  // Loop through each value-numeral pair
   for (const item of lookup) {
-    // Check if the current value can be subtracted from the number
     while (num >= item.value) {
-      result += item.numeral; // Append the Roman symbol
-      num -= item.value;      // Subtract the value
+      result += item.numeral; 
+      num -= item.value;     
     }
   }
 
@@ -64,6 +62,25 @@ function convertToRoman(num) {
   const wh = ""
   const b = "§r§b"
 
+  function helperMultiToolTip(name, special)
+  {
+    const displayName = name.replace(/_/g, " ").replace(/^./, c => c.toUpperCase());
+
+    event.add(`gtceu:helper_${name}`, [
+        `${gr}Helper ${displayName}`,
+        nl,
+        `${gre}Uses ${gr}${displayName}${x} ${gre}recipes`,
+        `${gre}Has ${or}Cube Boosting${x} ${gre}and ${ye}Non-Perfect Overclocks${x}`,
+        nl,
+        `${gre}Consumes ${gr}75% EU/t${x} ${gre}of base recipe`,
+        `${gre}Runs recipes at ${gr}125% speed${x}`,
+        `${gre}Runs ${gr}2 parallels${x}`,
+        nl,
+        `${gre}Can only use ${re}normal maintenance hatches`,
+        `${gre}Can only have ${re}one energy hatch`
+    ]);
+  }
+
   function cubeTooltip(name)
   {
     const displayName = name.replace(/_/g, " ").replace(/^./, c => c.toUpperCase());
@@ -84,18 +101,30 @@ function convertToRoman(num) {
   }
 
 
-  addHelperTooltip('advanced_chemist', 'Recipes using this helper are on circuit 3\n(even if JEI doesn\'t say so)')
-  addHelperTooltip('ev_technician', 'Recipes using this helper are on circuit 3\n(even if JEI doesn\'t say so)')
-  addHelperTooltip('hv_technician', 'Recipes using this helper are on circuit 3\n(even if JEI doesn\'t say so)')
+  // addHelperTooltip('advanced_chemist', 'Recipes using this helper are on circuit 3\n(even if JEI doesn\'t say so)')
+  // addHelperTooltip('ev_technician', 'Recipes using this helper are on circuit 3\n(even if JEI doesn\'t say so)')
+  // addHelperTooltip('hv_technician', 'Recipes using this helper are on circuit 3\n(even if JEI doesn\'t say so)')
 
   event.add(`gtceu:power_rectangle_helper_calorie_converter`, '\n§6Can run helper calorie conversion recipes')
-  event.add(`gtceu:beam_of_teus`, '§6Can use parallel hatches')
+  // event.add(`gtceu:beam_of_teus`, '§6Can use parallel hatches')
+
+  event.add(`voyagercore:helper_electric_blast_furnace`, [
+        `${gr}Helper Electric Blast Furnace [HEBF]`,
+        nl,
+        `${gre}Uses ${gr}EBF${x} ${gre}recipes`,
+        `${gre}Has ${or}Helper Compatibility${x} ${gre}and ${ye}EBF Overclocks${x}`,
+        nl,
+        `${gre}Must have a ${gr}helper holder${x} ${gre}installed`,
+    ]);
 
   event.add(`voyagercore:magmatic_foundry`, [
     `${or}Magmatic Foundry`,
     nl,
     `${gre}Uses ${gr}Electric Blast Furnace${x} ${gre}recipes`,
     `${gre}Has ${or}Heat Boosting${x} ${gre}and ${ye}EBF Overclocks${x}`,
+    nl,
+    `${gre}Has base ${gr}4 parallels`,
+    `${gre}Runs recipes at ${gr}125% speed`,
     nl,
     `${gre}Consumes ${gr}85% EU/t${x} ${gre}of base recipe`,
     `${gre}For every ${re}500K${x} ${gre}above recipe temperature, gain ${gr}an additional parallel${x}`,
@@ -155,6 +184,7 @@ function donut(tierNum, tierVol, acceptedHatches)
     nl,
     `${gre}Has base ${gr}4 parallels${x}`,
     ``,
+    `${gre}Uses ${x}all amperage given ${gre}unlike normal fusion reactors${x}`,
     `${gre}Gain ${gr}2× parallels${x}${gre} and reduce recipe duration by ${gr}10%${x}${gre} multiplicatively`,
     `${gre}for each ${ye}voltage overclock${x}`,
     nl,
@@ -204,13 +234,14 @@ event.add(`voyagercore:beam_of_teus`, [
   addHelperTooltip('hungry', 'Can consume a LOT of calories')
 
   event.add(`gtceu:perfected_electrum_ingot`, '§bCold to the touch')
-  event.add(`kubejs:teus_beam_block`, '§7Fabricated by Teus, of clan GitHubbus Contributus of planet Venus')
+  // event.add(`kubejs:teus_beam_block`, '§7Fabricated by Teus, of clan GitHubbus Contributus of planet Venus')
   cubeTooltip('macerator');
   cubeTooltip('electrolyzer')
   cubeTooltip('oven');
   cubeTooltip('centrifuge')
   cubeTooltip('thermal_centrifuge')
   cubeTooltip('autoclave')
+  cubeTooltip('assembler')
 
   event.add(`gtceu:radiation_chamber`, ['§aFocuses radioactive decay particles into a central chamber§r','§6Can only use 4x parallel hatches§r'])
   event.add(`voyagercore:hyper_helper_calorie_converter`, [
@@ -231,22 +262,5 @@ event.add(`voyagercore:beam_of_teus`, [
     nl,
     `${gre}If no drink is provided, the helper will eat your cookies, and generate ${re}10% EU/t${gre}`
 ])
-  event.add(`gtceu:advanced_gas_turbine_xl_turbine`, ['§aAdvanced Gas Turbine XL§r','=====================', 'Uses §aGas Turbine§r recipes', '§6Only takes LuV rotor holders and above§r','=====================', 'Makes the same amount of power as 4 Large Gas Turbines', 'while using significantly less fuel'
-  ])
 
 })
-
-.aisle("aaaaa", "cdddc", "cdddc", "efefe", "cdddc", "cdddc", "aaaaa")
-.aisle("aaaaa", "dgggd", "dhhhd", "fhhhf", "dhhhd", "dgggd", "aaaaa")
-.aisle("aaaaa", "dgdgd", "dhdhd", "ehdhe", "dhdhd", "dgdgd", "aaaaa")
-.aisle("aaaaa", "dgggd", "dhhhd", "fhhhf", "dhhhd", "dgggd", "aaaaa")
-.aisle("aabaa", "cdddc", "cdddc", "efefe", "cdddc", "cdddc", "aaaaa")
-
-.where("a", Predicates.blocks("kubejs:foundry_casing"))
-.where("b", Predicates.blocks("gtceu:magmatic_foundry"))
-.where("c", Predicates.blocks("gtceu:tungsten_frame"))
-.where("d", Predicates.blocks("minecraft:air"))
-.where("e", Predicates.blocks("gtceu:steel_firebox_casing"))
-.where("f", Predicates.blocks("gtceu:high_temperature_smelting_casing"))
-.where("g", Predicates.blocks("gtceu:heat_vent"))
-.where("h", Predicates.blocks("gtceu:cupronickel_coil_block"))

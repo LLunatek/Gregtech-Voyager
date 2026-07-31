@@ -41,7 +41,8 @@ ServerEvents.recipes(event => {
     // casing_recipe('frost_conducting', 'aluminex_202_a')
     casing_recipe('titanite_alloy', 'titanite', ['#gtceu:circuits/iv'])
     casing_recipe('refined_fluxed_electrum', 'heat_resistant_refined_fluxed_electrum')
-    casing_recipe('tungsten', 'condensation_resistant_tungsten')
+    // casing_recipe('tungsten', 'condensation_resistant_tungsten')
+    // casing_recipe('titanium', 'platinum', '2x #gtceu:circuits/ev')
     event.shaped(
     Item.of('gtceu:alloy_blast_smelter', 1), // arg 1: output
     [
@@ -59,7 +60,17 @@ ServerEvents.recipes(event => {
     event.replaceInput(
     { output: 'gtceu:large_assembler' }, 
     'gtceu:platinum_single_cable',            
-    'gtceu:titanex-901-htc_gear')        
+    'gtceu:titanex-901-htc_gear')     
+    
+    event.recipes.gtceu.assembler('kubejs:condensation_resistant_tungsten_casing')
+            .itemInputs(
+                '6x gtceu:tungsten_plate',
+                '1x gtceu:tungsten_frame',
+            )
+            .circuit(6)
+            .itemOutputs('2x voyagercore:condensation_resistant_tungsten_casing')
+            .duration(30)
+            .EUt(16);
     
     event.recipes.gtceu.assembler('kubejs:stout_titanium_carbide_casing')
             .itemInputs(
@@ -68,6 +79,17 @@ ServerEvents.recipes(event => {
             )
             .circuit(6)
             .itemOutputs('2x kubejs:stout_titanium_carbide_casing')
+            .duration(30)
+            .EUt(16);
+
+    event.recipes.gtceu.assembler('kubejs:platinum_casing')
+            .itemInputs(
+                '6x gtceu:platinum_plate',
+                '1x gtceu:titanium_frame',
+                '2x #gtceu:circuits/ev'
+            )
+            .circuit(6)
+            .itemOutputs('2x voyagercore:platinum_casing')
             .duration(30)
             .EUt(16);
 
@@ -111,7 +133,7 @@ ServerEvents.recipes(event => {
             'gtceu:ev_field_generator'
         )
         .circuit(6)
-        .itemOutputs('4x kubejs:radiation_conducting_titanex_casing')
+        .itemOutputs('4x voyagercore:radiant_titanex_casing')
         .duration(30)
         .EUt(1920);
 
@@ -192,4 +214,5 @@ ServerEvents.recipes(event => {
     cube_multi('lead', 'oven', 'molybdenum_disilicide_coil_block')
     cube_multi('tungsten', 'autoclave')
     cube_multi('refined_fluxed_electrum', 'thermal_centrifuge')
+    cube_multi('platinum', 'assembler')
 });
