@@ -135,7 +135,19 @@ ServerEvents.recipes(event => {
         .circuit(6)
         .itemOutputs('4x voyagercore:radiant_titanex_casing')
         .duration(30)
-        .EUt(1920);
+        .EUt(16);
+
+    event.recipes.gtceu.assembler('kubejs:clean_assembly_casing')
+        .itemInputs(
+            '1x gtceu:blue_steel_frame',
+            '6x gtceu:double_blue_steel_plate',
+            '6x gtceu:hv_robot_arm',
+            '8x gtceu:nichrome_double_wire'
+        )
+        .circuit(6)
+        .itemOutputs('1x voyagercore:clean_assembly_casing')
+        .duration(30)
+        .EUt(480);
 
 
 

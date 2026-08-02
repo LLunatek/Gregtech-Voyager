@@ -11,15 +11,15 @@
 	quests: [
 		{
 			dependencies: ["76633C5616D9BE3B"]
-			description: ["Circuits are very important in gregtech, so making 16 of them will hold you over until you need to make more, and then, they will be much cheaper and faster to make!"]
+			description: ["Circuits are very important in gregtech, so making 4 of them will hold you over until you need to make more, and then, they will be much cheaper and faster to make!"]
 			id: "0B4A6B9B95DFA2B4"
 			shape: "gear"
 			size: 3.0d
 			subtitle: "Oh yeah, you need more of these"
 			tasks: [{
-				count: 16L
+				count: 4L
 				id: "576FE5C01D682153"
-				item: { Count: 16, id: "gtceu:basic_electronic_circuit" }
+				item: "gtceu:basic_electronic_circuit"
 				type: "item"
 			}]
 			x: 0.0d
@@ -74,15 +74,15 @@
 		}
 		{
 			dependencies: ["0B4A6B9B95DFA2B4"]
-			description: ["Gregtech requires a lot of 'microparts,' items that don't have a use on their own for anything but craftong other things. This your first, the motor. You need a lot of these, so start with making 16 of them."]
+			description: ["Gregtech requires a lot of 'microparts,' items that don't have a use on their own for anything but craftong other things. This your first, the motor. You need a lot of these, so start with making 4 of them."]
 			id: "5CD3D0225E984D8A"
 			shape: "gear"
 			size: 2.0d
 			subtitle: "The first micropart"
 			tasks: [{
-				count: 16L
+				count: 4L
 				id: "3CE090821F6691A9"
-				item: { Count: 16, id: "gtceu:lv_electric_motor" }
+				item: "gtceu:lv_electric_motor"
 				type: "item"
 			}]
 			title: "You're gonna hate this in LV I"

@@ -81,7 +81,7 @@ function abs_strict(alloy, amount, inputItems, fluidOut, fluidIn, duration, eut,
     abs_strict('aluminex_202_a', 28 * 144, ['12x gtceu:aluminium_dust', '6x gtceu:zinc_dust','4x gtceu:cobalt_brass_dust', '3x gtceu:incoloy_ma_956_dust', '3x gtceu:indium_dust'],
         'gtceu:molten_aluminex_202_a', 'kubejs:high_temp_binding_agent_s', 28 * 22, 7680 * 4, 5200, 'iv', 0
     )
-    abs_strict('martian-composite', 31 * 144, ['12x gtceu:ostrum_dust','8x gtceu:titanite_dust', '5x gtceu:lunarium_dust', '3x gtceu:tungsten_dust', '3x gtceu:gold_dust'],
+    abs_strict('martian-composite', 31 * 144, ['12x gtceu:ostrum_dust','8x gtceu:titanex-901-htc_dust', '5x gtceu:lunarium_dust', '3x gtceu:tungsten_dust', '3x gtceu:gold_dust'],
         'gtceu:molten_martian-composite', 'kubejs:high_temp_binding_agent_s', 45 * 31, 7680, 5000, 'ev', 1
     )
     abs_strict('titanex-901-htc', 18 * 144, ['8x gtceu:hsss_dust', '4x gtceu:titanex-594-hta_dust', '3x gtceu:martian-composite_dust', '3x gtceu:titanex-879-htb_dust'], 

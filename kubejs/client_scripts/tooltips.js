@@ -62,25 +62,6 @@ function convertToRoman(num) {
   const wh = ""
   const b = "§r§b"
 
-  function helperMultiToolTip(name, special)
-  {
-    const displayName = name.replace(/_/g, " ").replace(/^./, c => c.toUpperCase());
-
-    event.add(`gtceu:helper_${name}`, [
-        `${gr}Helper ${displayName}`,
-        nl,
-        `${gre}Uses ${gr}${displayName}${x} ${gre}recipes`,
-        `${gre}Has ${or}Cube Boosting${x} ${gre}and ${ye}Non-Perfect Overclocks${x}`,
-        nl,
-        `${gre}Consumes ${gr}75% EU/t${x} ${gre}of base recipe`,
-        `${gre}Runs recipes at ${gr}125% speed${x}`,
-        `${gre}Runs ${gr}2 parallels${x}`,
-        nl,
-        `${gre}Can only use ${re}normal maintenance hatches`,
-        `${gre}Can only have ${re}one energy hatch`
-    ]);
-  }
-
   function cubeTooltip(name)
   {
     const displayName = name.replace(/_/g, " ").replace(/^./, c => c.toUpperCase());
@@ -122,6 +103,7 @@ function convertToRoman(num) {
     nl,
     `${gre}Uses ${gr}Electric Blast Furnace${x} ${gre}recipes`,
     `${gre}Has ${or}Heat Boosting${x} ${gre}and ${ye}EBF Overclocks${x}`,
+    `${gre}Has ${ye}Helper Compatibility${x}`,
     nl,
     `${gre}Has base ${gr}4 parallels`,
     `${gre}Runs recipes at ${gr}125% speed`,
@@ -139,6 +121,7 @@ function convertToRoman(num) {
     nl,
     `${gre}Uses ${gr}Chemical Reactor and Chemical Plant${x} ${gre}recipes`,
     `${gre}Has ${or}Heat Boosting${x} ${gre}and ${ye}Perfect Overclocks${x}`,
+    `${gre}Has ${ye}Helper Compatibility${x}`,
     nl,
     `${gre}Consumes ${gr}85% EU/t${x} ${gre}of base recipe`,
     `${gre}For every ${re}500K${x} ${gre}above recipe temperature, gain ${gr}an additional parallel${x}`,
@@ -153,6 +136,7 @@ event.add(`voyagercore:everfrost_chiller`, [
     nl,
     `${gre}Uses ${gr}Vacuum Freezer${x} ${gre}recipes`,
     `${gre}Has ${or}Basic Boosting${x} ${gre}and ${ye}Non-Perfect Overclocks${x}`,
+    `${gre}Has ${ye}Helper Compatibility${x}`,
     nl,
     `${gre}Consumes ${gr}85% EU/t${x} ${gre}of base recipe`,
     `${gre}Gain ${gr}+2 parallels${x} ${gre}and reduce the recipe duration by ${gr}10% multiplicatively${gre} `,
@@ -167,6 +151,7 @@ event.add(`voyagercore:pulverizer`, [
     nl,
     `${gre}Uses ${gr}Pulverizer${x} ${gre}recipes`,
     `${gre}Can use ${or}Parallel Hatches${x} ${gre}and has ${ye}Non-Perfect Overclocks${x}`,
+    `${gre}Has ${ye}Helper Compatibility${x}`,
     nl,
     `${gre}For each ${ye}crushing wheel tier${gre} above recipe crushing wheel tier,${x}`,
     `${gre}increase yield of all outputs by 1`,
@@ -211,6 +196,7 @@ event.add(`voyagercore:beam_of_teus`, [
     `${re}Beam of Teus`,
     nl,
     `${gre}Uses ${gr}Beam Heating${x} ${gre}recipes`,
+    `${gre}Has ${ye}Helper Compatibility${x}`,
     `${gre}Has base${or} 10% beam concentration${x} ${gre}and ${ye}10% lens heat${x}`,
     `${gre}Effective beam concentration = base +${or} beam provided ${gre}concentration % + ${ye}overclock ${gre}concentration`,
     nl,

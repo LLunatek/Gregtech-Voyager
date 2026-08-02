@@ -98,7 +98,7 @@ ServerEvents.recipes(event => {
         .EUt(120)
 
     event.recipes.gtceu
-        .helper_assembler('kubejs:gmahelper')   // recipe ID
+        .helper_factory('kubejs:gmahelper')   // recipe ID
         .itemInputs('1x kubejs:heart_of_gold', '1x gtceu:fluxed_electrum_frame', '4x gtceu:rose_gold_rod', '2x gtceu:hv_electric_motor', '64x minecraft:cookie')
         .itemOutputs('1x kubejs:grandma_helper')
         .inputFluids('kubejs:melted_butter 2000')
@@ -127,12 +127,12 @@ ServerEvents.recipes(event => {
 
     event.recipes.gtceu
         .oven('kubejs:gmacookies')   // recipe ID
-        .notConsumable('kubejs:grandma_helper')
-        .notConsumable('kubejs:grandmas_baking_sheet')
         .itemInputs('16x kubejs:cookie_dough')
         .itemOutputs('16x kubejs:grandmas_cookie')
+        .addData("paramount", "grandma")
+        .addData("paramount_level", 1)
         .duration(20*60)                                 // in ticks
-        .EUt(120)  
+        .EUt(28)  
 
 
 

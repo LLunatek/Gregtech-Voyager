@@ -1454,8 +1454,8 @@
 			shape: "gear"
 			size: 1.5d
 			tasks: [{
-				id: "4E64CFA5909EB144"
-				item: "gtceu:advanced_gas_turbine_xl_turbine"
+				id: "0AB0794F78DDD209"
+				item: "voyagercore:xl_turbine"
 				type: "item"
 			}]
 			x: -3.0d

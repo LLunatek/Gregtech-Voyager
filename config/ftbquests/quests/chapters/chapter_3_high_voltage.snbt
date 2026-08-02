@@ -20,7 +20,7 @@
 				type: "item"
 			}]
 			x: -3.0d
-			y: -1.0d
+			y: -2.5d
 		}
 		{
 			dependencies: ["6A65D57C567806CB"]
@@ -152,80 +152,26 @@
 			y: -0.5d
 		}
 		{
-			dependencies: ["766E1DAC44A29637"]
-			id: "07B6D208E316E813"
-			subtitle: "Better helper power"
-			tasks: [{
-				id: "487F9432EB583BDF"
-				item: "gtceu:hv_helper_wheel"
-				type: "item"
-			}]
-			x: 2.5d
-			y: 0.5d
-		}
-		{
-			dependencies: [
-				"47B86AAAB18C918E"
-				"2331F01276C17711"
-				"15641EDDE751887F"
-			]
-			description: ["&oComes from a long line of T. Nicians"]
-			id: "4F2AADB1AE2B5273"
-			rewards: [{
-				count: 16
-				id: "088A91750379F3E3"
-				item: "kubejs:hv_tech_coin"
-				type: "item"
-			}]
-			subtitle: "T. Nician III"
-			tasks: [{
-				id: "44FC6CA8EF7D2BFF"
-				item: "kubejs:hv_technician_helper"
-				type: "item"
-			}]
-			x: -2.0d
-			y: 1.5d
-		}
-		{
-			dependencies: [
-				"15641EDDE751887F"
-				"2331F01276C17711"
-				"71581BDB8B00B26A"
-			]
-			description: [
-				"Reduces time of certain &6HV&r EBF recipes by &l15%&r"
-				""
-				"&oThey say, \"They say let him cook for a reason\" for a reason."
-			]
-			id: "22AF0BDAEC854575"
-			rewards: [
-				{
-					count: 16
-					id: "58EB89125D28DEB2"
-					item: "kubejs:hv_tech_coin"
-					type: "item"
-				}
-				{
-					id: "57CEAB0F8C214E50"
-					item: "kubejs:hv_loot_bag"
-					type: "item"
-				}
-			]
-			subtitle: "George"
-			tasks: [{
-				id: "127C0E418A882349"
-				item: "kubejs:mv_ebf_helper"
-				type: "item"
-			}]
-			x: -3.0d
-			y: 1.0d
-		}
-		{
 			dependencies: [
 				"15641EDDE751887F"
 				"7E5A1832ABFA9D2B"
 			]
-			description: ["&oThinking of the one from Cookie Clicker? That's her sister."]
+			description: [
+				"&oThinking of the one from Cookie Clicker? That's her sister."
+				""
+				"Welcome to &l&dParamount Helpers&r, one of the core mechanics of Gregtech: Voyager. Paramount helpers are unique in that they actually are needed to &ounlock&r certain recipes. Not all of them are needed for progression, but all of them are needed for their specific progression."
+				""
+				"Paramount helpers can &nonly take their specified modules&r"
+				""
+				"The &6Grandma Helper&r is needed for &ecookie power&r."
+				""
+				"Every level on a Paramount helper gives it an additional module slot"
+				""
+				""
+				"{@pagebreak}"
+				""
+				"In order to unlock more and more tiers of cookies, you will have to use your &6Grandma Helper&r to level her up."
+			]
 			id: "3599C7EE03A66551"
 			rewards: [{
 				id: "779EEC4C86B9FB76"
@@ -233,11 +179,24 @@
 				type: "item"
 			}]
 			subtitle: "Edith"
-			tasks: [{
-				id: "5B97D2E5B1F8EED2"
-				item: "kubejs:grandma_helper"
-				type: "item"
-			}]
+			tasks: [
+				{
+					id: "5B97D2E5B1F8EED2"
+					item: "voyagercore:grandma_paramount_helper"
+					type: "item"
+				}
+				{
+					id: "6B6C5D56EFFEB7B7"
+					item: "voyagercore:grandma_paramount_helper_hull"
+					type: "item"
+				}
+				{
+					id: "0CFA30EE22C4BC12"
+					item: "voyagercore:heart_grandma_helper_module_1"
+					type: "item"
+				}
+			]
+			title: "Paramount Helpers"
 			x: 0.5d
 			y: 1.0d
 		}
@@ -271,18 +230,6 @@
 			}]
 			x: 3.0d
 			y: 2.0d
-		}
-		{
-			dependencies: ["2D57D4AE7CCA8A96"]
-			id: "641781BE8161DF8E"
-			subtitle: "Stronger than even naquadah based metals"
-			tasks: [{
-				id: "7778E6D4AEC54349"
-				item: "kubejs:grandmas_baking_sheet"
-				type: "item"
-			}]
-			x: 1.0d
-			y: 0.0d
 		}
 		{
 			dependencies: [
@@ -320,7 +267,7 @@
 				type: "item"
 			}]
 			x: -2.5d
-			y: 2.5d
+			y: 3.0d
 		}
 		{
 			dependencies: [
@@ -374,7 +321,7 @@
 			description: [
 				"SMDs will &lmassively&r increase the yield of circuits per resource. Batch craft TONS of these and watch your early circuit problems go away!"
 				""
-				"If you want to further increase your yield, consider making an HV Technician Helper"
+				"If you want to further increase your yield, consider making the &1SMD Assembler&r, and a &6Specialized HV Helper&r with output modifier modules"
 			]
 			id: "32CC96C76446AC68"
 			rewards: [
@@ -425,6 +372,7 @@
 			dependencies: [
 				"6E68356E319A0B43"
 				"09B6469ED6468EEA"
+				"1B3A152821B0B2D2"
 			]
 			hide_dependency_lines: false
 			id: "6164D33ACEB4E515"
@@ -464,7 +412,6 @@
 				}
 			]
 			size: 2.0d
-			subtitle: "Reddit user's bane"
 			tasks: [
 				{
 					id: "2A723AB40D21BCCD"
@@ -504,6 +451,7 @@
 				"0A90A77024E6430C"
 				"4C1ED02854ED8430"
 			]
+			hide_dependent_lines: true
 			id: "2AE7DA758A20BE61"
 			subtitle: "YOU'RE RED NOW!! THAT'S MY ATTACK."
 			tasks: [{
@@ -823,13 +771,14 @@
 				"6164D33ACEB4E515"
 			]
 			hide_dependency_lines: true
+			hide_dependent_lines: true
 			id: "49826526BFC9255D"
 			tasks: [{
 				id: "4F3862D3227F56E3"
 				item: "gtceu:mercury_barium_calcium_cuprate_ingot"
 				type: "item"
 			}]
-			x: 12.0d
+			x: 11.5d
 			y: 2.5d
 		}
 		{
@@ -872,6 +821,7 @@
 		}
 		{
 			dependencies: ["02C13DE221613C60"]
+			hide_dependent_lines: true
 			id: "6F52CAEE5B38FA90"
 			subtitle: "Didn't think it would go all the way to IV, huh?"
 			tasks: [{
@@ -1439,10 +1389,7 @@
 			y: -1.5d
 		}
 		{
-			dependencies: [
-				"3599C7EE03A66551"
-				"641781BE8161DF8E"
-			]
+			dependencies: ["3599C7EE03A66551"]
 			id: "766E1DAC44A29637"
 			rewards: [
 				{
@@ -1466,21 +1413,6 @@
 			}]
 			x: 1.5d
 			y: 1.5d
-		}
-		{
-			dependencies: [
-				"09B6469ED6468EEA"
-				"6164D33ACEB4E515"
-			]
-			hide_dependency_lines: true
-			id: "71581BDB8B00B26A"
-			tasks: [{
-				id: "043BCFF98DC73421"
-				item: "gtceu:mercury_barium_calcium_cuprate_ingot"
-				type: "item"
-			}]
-			x: -3.5d
-			y: 2.0d
 		}
 		{
 			dependencies: [
@@ -1683,7 +1615,10 @@
 			y: -7.0d
 		}
 		{
-			dependencies: ["59EC433F2CFDAB44"]
+			dependencies: [
+				"59EC433F2CFDAB44"
+				"084337D3DABDD960"
+			]
 			description: ["See the &cprocessing lines &rchapter for more details on how to make this"]
 			id: "7B20E43BF3A0FB6D"
 			size: 1.5d
@@ -1695,6 +1630,192 @@
 			}]
 			x: 13.5d
 			y: 1.5d
+		}
+		{
+			dependencies: [
+				"2331F01276C17711"
+				"15641EDDE751887F"
+				"47B86AAAB18C918E"
+				"53E1E1523013DC56"
+			]
+			id: "4CFCDA131CC5888F"
+			shape: "gear"
+			size: 1.5d
+			tasks: [
+				{
+					id: "1269CDD3C404233E"
+					item: "voyagercore:hv_generic_helper_hull"
+					type: "item"
+				}
+				{
+					id: "72F791438678D17D"
+					item: "voyagercore:hv_helper_module"
+					type: "item"
+				}
+				{
+					id: "383AA16340A52ECE"
+					item: "voyagercore:hv_generic_helper"
+					type: "item"
+				}
+			]
+			title: "Modular Helpers - HV"
+			x: -2.5d
+			y: 1.0d
+		}
+		{
+			dependencies: [
+				"477F006BF784C7E4"
+				"4CFCDA131CC5888F"
+			]
+			hide_dependency_lines: true
+			id: "13FCD3511A8A2970"
+			tasks: [{
+				id: "7075238D6C49833C"
+				item: "voyagercore:hv_efficiency_helper_module"
+				type: "item"
+			}]
+			x: -2.5d
+			y: -1.0d
+		}
+		{
+			dependencies: ["6164D33ACEB4E515"]
+			hide_dependent_lines: true
+			id: "2C28AD52F3ECAFD2"
+			tasks: [{
+				id: "1E78C089EE4D758B"
+				item: "gtceu:niobium_nitride_ingot"
+				type: "item"
+			}]
+			x: 1.0d
+			y: -9.0d
+		}
+		{
+			dependencies: [
+				"2C28AD52F3ECAFD2"
+				"4CFCDA131CC5888F"
+			]
+			id: "6473C71B3C7203A8"
+			tasks: [{
+				id: "27585E32C5D4AEF1"
+				item: "voyagercore:hv_speed_helper_module"
+				type: "item"
+			}]
+			x: -3.5d
+			y: -0.5d
+		}
+		{
+			dependencies: [
+				"1B3A152821B0B2D2"
+				"4CFCDA131CC5888F"
+			]
+			id: "63D902D751FE8D07"
+			tasks: [{
+				id: "7AC9033EA7F0373D"
+				item: "voyagercore:hv_basic_helper_module"
+				type: "item"
+			}]
+			x: -4.0d
+			y: 0.5d
+		}
+		{
+			dependencies: ["69300B12EF8F4E2A"]
+			hide_dependent_lines: true
+			id: "1B3A152821B0B2D2"
+			tasks: [{
+				id: "362D8A821D88B36D"
+				item: "gtceu:nichrome_ingot"
+				type: "item"
+			}]
+			x: 5.5d
+			y: 3.0d
+		}
+		{
+			dependencies: [
+				"49826526BFC9255D"
+				"4CFCDA131CC5888F"
+			]
+			id: "5577065B4783780E"
+			tasks: [{
+				id: "1D4A59AC644501B7"
+				item: "voyagercore:hv_parallel_helper_module"
+				type: "item"
+			}]
+			x: -3.5d
+			y: 2.5d
+		}
+		{
+			dependencies: [
+				"4CFCDA131CC5888F"
+				"6F52CAEE5B38FA90"
+			]
+			id: "4ACE0308C4E722C9"
+			tasks: [{
+				id: "2B1FCC871E59CC5F"
+				item: "voyagercore:hv_output_helper_module"
+				type: "item"
+			}]
+			x: -4.0d
+			y: 1.5d
+		}
+		{
+			dependencies: [
+				"4ACE0308C4E722C9"
+				"2AE7DA758A20BE61"
+			]
+			id: "1534FF61E3073987"
+			shape: "gear"
+			size: 1.5d
+			tasks: [
+				{
+					id: "19F7FE24752E0BFE"
+					item: "voyagercore:hv_specialized_helper_hull"
+					type: "item"
+				}
+				{
+					id: "47C9CDCB9E95BDA8"
+					item: "voyagercore:hv_specialized_helper"
+					type: "item"
+				}
+				{
+					id: "7243E4DD349651D6"
+					item: "voyagercore:hv_output_helper_module"
+					type: "item"
+				}
+			]
+			title: "Specialized Helpers"
+			x: -5.5d
+			y: 1.0d
+		}
+		{
+			dependencies: [
+				"1CEA4D97B26FBE16"
+				"477F006BF784C7E4"
+			]
+			hide_dependency_lines: true
+			id: "53E1E1523013DC56"
+			tasks: [{
+				id: "4592329106D06321"
+				item: "gtceu:hv_helper_factory"
+				type: "item"
+			}]
+			x: -1.5d
+			y: 2.5d
+		}
+		{
+			dependencies: [
+				"47B86AAAB18C918E"
+				"1B3A152821B0B2D2"
+			]
+			id: "06664D37742C6F43"
+			shape: "gear"
+			size: 1.5d
+			tasks: [{
+				id: "3FDB1F86B5F39BEB"
+				item: "voyagercore:smd_assembler"
+				type: "item"
+			}]
+			x: -2.5d
+			y: 5.0d
 		}
 	]
 	title: "Chapter 3: High Voltage"

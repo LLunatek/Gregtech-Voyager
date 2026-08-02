@@ -274,55 +274,6 @@
 		}
 		{
 			dependencies: [
-				"3778C068660FCD61"
-				"719F6D1B75209AD8"
-				"34256B5B77FAF597"
-				"432590144B64AB10"
-			]
-			description: ["&oDosen't exactly know what he's doing, but we love him anyways"]
-			id: "42FC8A4E03960F10"
-			rewards: [{
-				id: "1619A6847239A649"
-				item: "kubejs:mv_loot_bag"
-				type: "item"
-			}]
-			subtitle: "Biff"
-			tasks: [{
-				id: "558EAE8E3E23FC63"
-				item: "kubejs:mv_technician_helper"
-				type: "item"
-			}]
-			x: -4.5d
-			y: 2.0d
-		}
-		{
-			dependencies: [
-				"3778C068660FCD61"
-				"719F6D1B75209AD8"
-				"34256B5B77FAF597"
-			]
-			description: [
-				"Reduces the time on certain MV level EBF recipes by &l15%&r (check JEI for more info)"
-				""
-				"&oThey say let him cook for a reason"
-			]
-			id: "093BADDDF8149E8E"
-			rewards: [{
-				id: "574F27F482124910"
-				item: "kubejs:mv_loot_bag"
-				type: "item"
-			}]
-			subtitle: "D'Quanda"
-			tasks: [{
-				id: "54F391B2BC7E4D5C"
-				item: "kubejs:lv_ebf_helper"
-				type: "item"
-			}]
-			x: -6.0d
-			y: 1.5d
-		}
-		{
-			dependencies: [
 				"68CEAD8ABAED6196"
 				"538EC8442BCC6589"
 			]
@@ -639,7 +590,7 @@
 				item: "gtceu:black_bronze_ingot"
 				type: "item"
 			}]
-			x: -4.5d
+			x: -4.0d
 			y: 3.5d
 		}
 		{
@@ -730,7 +681,7 @@
 				item: "gtceu:polyethylene_ingot"
 				type: "item"
 			}]
-			x: -10.0d
+			x: -9.0d
 			y: 2.0d
 		}
 		{
@@ -744,8 +695,8 @@
 				item: "gtceu:polyvinyl_chloride_ingot"
 				type: "item"
 			}]
-			x: -8.5d
-			y: 2.0d
+			x: -10.0d
+			y: -0.5d
 		}
 		{
 			dependencies: ["31386F98AE94D575"]
@@ -770,8 +721,8 @@
 				item: "gtceu:mv_hermetic_casing"
 				type: "item"
 			}]
-			x: -7.5d
-			y: 1.5d
+			x: -12.0d
+			y: -0.5d
 		}
 		{
 			dependencies: ["34E27193A1178686"]
@@ -798,8 +749,8 @@
 				item: "gtceu:mv_super_tank"
 				type: "item"
 			}]
-			x: -7.0d
-			y: 2.625d
+			x: -14.0d
+			y: -0.5d
 		}
 		{
 			dependencies: ["7B351CBB336D5129"]
@@ -842,8 +793,8 @@
 				item: "gtceu:pyrolyse_oven"
 				type: "item"
 			}]
-			x: -7.5d
-			y: -1.5d
+			x: -7.0d
+			y: -1.0d
 		}
 		{
 			dependencies: ["6ECAE141D27C5E82"]
@@ -997,6 +948,160 @@
 			title: "Clay Electrolysis"
 			x: 3.5d
 			y: -2.5d
+		}
+		{
+			dependencies: [
+				"719F6D1B75209AD8"
+				"34256B5B77FAF597"
+				"3778C068660FCD61"
+				"31386F98AE94D575"
+				"5C9FE6B7CCF1654F"
+			]
+			dependency_requirement: "one_completed"
+			description: [
+				"Now that you are in MV, you have unlocked &l&bmodular helpers&r. Helpers now are crafted from helper hulls, and slotted with modules of your choosing inside of a &6helper assembler."
+				""
+				"These generic helpers must have recipe modules installed in order to work."
+			]
+			id: "62201BC7050CB208"
+			rewards: [
+				{
+					exclude_from_claim_all: true
+					id: "0F8F4305C8262F66"
+					table_id: 8704670346528962277L
+					type: "choice"
+				}
+				{
+					id: "1A40D276540F44B2"
+					item: "kubejs:mv_loot_bag"
+					type: "item"
+				}
+			]
+			shape: "gear"
+			size: 1.5d
+			subtitle: "They never said making friends was easy..."
+			tasks: [
+				{
+					id: "3C8C020C043C599C"
+					item: "voyagercore:mv_generic_helper_hull"
+					type: "item"
+				}
+				{
+					id: "0B2D9B4680B93E16"
+					item: "voyagercore:mv_helper_module"
+					type: "item"
+				}
+				{
+					id: "1E6D4568F01470C1"
+					item: "voyagercore:mv_generic_helper"
+					type: "item"
+				}
+			]
+			title: "Modular Helpers"
+			x: -5.0d
+			y: 2.0d
+		}
+		{
+			dependencies: [
+				"1B78AE56EB953517"
+				"62201BC7050CB208"
+			]
+			hide_dependency_lines: true
+			id: "262F73B3227772C7"
+			tasks: [{
+				id: "5D23D00DDFF97808"
+				item: "voyagercore:mv_efficiency_helper_module"
+				type: "item"
+			}]
+			x: -6.5d
+			y: 1.5d
+		}
+		{
+			dependencies: [
+				"3778C068660FCD61"
+				"62201BC7050CB208"
+			]
+			id: "3D72EE5E9A0E24B8"
+			tasks: [{
+				id: "394A16AE1EC29192"
+				item: "voyagercore:mv_speed_helper_module"
+				type: "item"
+			}]
+			x: -6.0d
+			y: 3.5d
+		}
+		{
+			dependencies: ["62201BC7050CB208"]
+			id: "0756A5FF4EA647D9"
+			tasks: [{
+				id: "481A476B471146B0"
+				item: "voyagercore:mv_basic_helper_module"
+				type: "item"
+			}]
+			x: -6.0d
+			y: 0.5d
+		}
+		{
+			dependencies: ["0A90A77024E6430C"]
+			id: "79BA4D9E13470F93"
+			tasks: [{
+				id: "430271F8D8E160D3"
+				item: "gtceu:magnesium_diboride_ingot"
+				type: "item"
+			}]
+			x: -3.5d
+			y: 2.5d
+		}
+		{
+			dependencies: [
+				"79BA4D9E13470F93"
+				"62201BC7050CB208"
+			]
+			id: "0B2A42CD3C913D9B"
+			tasks: [{
+				id: "76EF77EDA3562CC1"
+				item: "voyagercore:mv_parallel_helper_module"
+				type: "item"
+			}]
+			x: -3.5d
+			y: 1.5d
+		}
+		{
+			dependencies: [
+				"7A2ABD419B2FB9E0"
+				"62201BC7050CB208"
+			]
+			id: "42EE53E235AE139A"
+			tasks: [{
+				id: "77F61F0A0D828B55"
+				item: "voyagercore:helper_holder"
+				type: "item"
+			}]
+			x: -5.0d
+			y: 4.0d
+		}
+		{
+			dependencies: ["42EE53E235AE139A"]
+			id: "356A5D0CB68CEB41"
+			tasks: [{
+				id: "3E2EA442BD134EEA"
+				item: "voyagercore:helper_electric_blast_furnace"
+				type: "item"
+			}]
+			x: -5.0d
+			y: 6.0d
+		}
+		{
+			dependencies: ["5036ABCE601C92A6"]
+			hide_dependency_lines: true
+			id: "5C9FE6B7CCF1654F"
+			tasks: [{
+				id: "4725394D39610137"
+				item: "gtceu:mv_helper_factory"
+				type: "item"
+			}]
+			x: -6.5d
+			y: 2.5d
 		}
 	]
 	title: "Chapter 2: Medium Voltage"

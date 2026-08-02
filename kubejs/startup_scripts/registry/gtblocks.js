@@ -5,18 +5,16 @@ GTCEuStartupEvents.registry('gtceu:recipe_type', event => {
         .setEUIO('out')                                
         .setMaxIOSize(2, 2, 1, 1)
         .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW, FillDirection.LEFT_TO_RIGHT);
-        
-    event.create('helper_assembler')
-        .category('simple')                        // category shown in JEI/REI
-        .setEUIO('in')                                
-        .setMaxIOSize(9, 2, 1, 1)
-        .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW, FillDirection.LEFT_TO_RIGHT);
 
-    event.create('oven')
-        .category('simple')                        // category shown in JEI/REI
-        .setEUIO('in')                                
-        .setMaxIOSize(9, 9, 0, 0)
-        .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW, FillDirection.LEFT_TO_RIGHT);
+
+        // ported to core mod
+    // event.create('oven')
+    //     .category('simple')                        // category shown in JEI/REI
+    //     .setEUIO('in')                                
+    //     .setMaxIOSize(9, 9, 0, 0)
+    //     .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW, FillDirection.LEFT_TO_RIGHT);
+
+
 
     event.create('voucher_claimer')
         .category('simple')                        // category shown in JEI/REI
@@ -39,12 +37,23 @@ GTCEuStartupEvents.registry("gtceu:machine", event => {
 
     event.create('helper_assembler', 'simple')
     .tiers(GTValues.LV, GTValues.MV, GTValues.HV)
-    .tankScalingFunction(tier => tier * 1600)
+    .tankScalingFunction(tier => tier * 8192)
     .definition((tier, builder) =>
         builder
             .langValue(`${GTValues.VLVH[tier]} Helper Assembler`)
-            .recipeType('helper_assembler')
+            .recipeType('helper_assembly')
             .workableTieredHullModel("kubejs:block/overlay/helper_assembler")
+            
+    )
+
+    event.create('helper_factory', 'simple')
+    .tiers(GTValues.MV, GTValues.HV)
+    .tankScalingFunction(tier => tier * 8192)
+    .definition((tier, builder) =>
+        builder
+            .langValue(`${GTValues.VLVH[tier]} Helper Factory`)
+            .recipeType('helper_factory')
+            .workableTieredHullModel("kubejs:block/overlay/helper_factory")
             
     )
 

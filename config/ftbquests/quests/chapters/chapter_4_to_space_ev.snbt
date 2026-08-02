@@ -895,32 +895,6 @@
 		{
 			dependencies: [
 				"7BD63E2D4B804A69"
-				"5D1E251B9F28C8B4"
-				"5943DC5F54ED9F40"
-				"6154764CC312BD4E"
-				"0536C639840A0927"
-			]
-			description: ["Can run helper assembler recipes &dEV+"]
-			hide_dependency_lines: true
-			id: "6DF19110DCF8CB62"
-			rewards: [{
-				count: 2
-				id: "7C9628E471B59607"
-				item: "kubejs:ev_loot_bag"
-				type: "item"
-			}]
-			size: 1.5d
-			tasks: [{
-				id: "589DF1B5A69720C1"
-				item: "gtceu:large_helper_factory"
-				type: "item"
-			}]
-			x: -1.5d
-			y: 9.5d
-		}
-		{
-			dependencies: [
-				"7BD63E2D4B804A69"
 				"6EB67BA7F00DC419"
 			]
 			hide_dependency_lines: true
@@ -940,98 +914,8 @@
 			y: 9.5d
 		}
 		{
-			dependencies: [
-				"66D61F15E0CAD74A"
-				"6DF19110DCF8CB62"
-			]
-			description: [
-				"Increases yield of plastic and epoxy circuit board recipes by 1.5x while also reducing the time it takes to craft."
-				""
-				"Note: You have to use an LCR to use this helper, as a single-block chemical reactor does not have the item slot for this helper to go."
-			]
-			hide_dependency_lines: true
-			id: "19A453F951604D8D"
-			rewards: [{
-				id: "37FE124124F49796"
-				item: "kubejs:ev_loot_bag"
-				type: "item"
-			}]
-			tasks: [{
-				id: "5BB30C8CF37F3862"
-				item: "kubejs:ev_technician_helper"
-				type: "item"
-			}]
-			x: -3.0d
-			y: 10.5d
-		}
-		{
-			dependencies: [
-				"66D61F15E0CAD74A"
-				"6154764CC312BD4E"
-				"6EB67BA7F00DC419"
-				"6DF19110DCF8CB62"
-			]
-			description: [
-				"Reduces time of certain &dEV/IV&r EBF recipes by &l15%&r"
-				""
-				"NOTE: Recipe must use the gas required to speed up the base recipe."
-			]
-			hide_dependency_lines: true
-			id: "49A011D6C4410155"
-			rewards: [{
-				id: "4B19D17DFFB2FA1F"
-				item: "kubejs:ev_loot_bag"
-				type: "item"
-			}]
-			tasks: [{
-				id: "7638DABA4BACB901"
-				item: "kubejs:hv_ebf_helper"
-				type: "item"
-			}]
-			x: -3.0d
-			y: 9.5d
-		}
-		{
-			dependencies: [
-				"5D1E251B9F28C8B4"
-				"66D61F15E0CAD74A"
-				"0D398D8FE47F9B67"
-				"6DF19110DCF8CB62"
-			]
-			description: [
-				"The &bbasic chemist helper&r is the &dEV&r tier chemistry helper."
-				""
-				"What exactly does he help out with? &l&dEV&r &lProcessing Lines&r including:"
-				""
-				"&ePlat-line&r (increases yield of PGS processing)"
-				"&6Desh-line&r (decreases time needed for desh processing, and increases yield)"
-				"&aRefined-Fluxed-Electrum&r (increases yield of crystals from compound)"
-				""
-				"It also reduces EU/t by 15-33% depending on the recipe"
-			]
-			hide_dependency_lines: true
-			id: "6E325CF121E77BE5"
-			rewards: [{
-				count: 2
-				id: "3423BC5234C3A7A6"
-				item: "kubejs:ev_loot_bag"
-				type: "item"
-			}]
-			tasks: [{
-				id: "394967A2068BD56C"
-				item: "kubejs:basic_chemist_helper"
-				type: "item"
-			}]
-			x: -1.5d
-			y: 7.5d
-		}
-		{
 			dependencies: ["6D599070FCBCD71C"]
-			description: [
-				"I would recommend completing &eplat-line&r before &6desh-line&r so that you can make the &bbasic chemist helper&r for desh and plat line."
-				""
-				"For more information on &eplat-line&r, see the &nProcessing Lines Chapter&r"
-			]
+			description: [""]
 			id: "70E27B7B4AECA72C"
 			rewards: [{
 				id: "68ECDBD365C9C7AD"
@@ -1051,9 +935,9 @@
 		{
 			dependencies: ["6D599070FCBCD71C"]
 			description: [
-				"I would recommend completing &eplat-line&r before &6desh-line&r so that you can make the &bBasic chemist helper&r for desh and plat line."
 				""
-				"For more information on &eplat-line&r, see the &nProcessing Lines Chapter&r"
+				""
+				""
 			]
 			id: "34CBE97EDD370F39"
 			rewards: [{
@@ -1750,26 +1634,6 @@
 			y: 12.5d
 		}
 		{
-			description: [
-				"Remember this fella? Feel like he didn't do much in &6HV&r? Turns out he is &4&lextremely efficient&r at turning calories into EU inside of a &oHelper Calorie Converter&r."
-				""
-				""
-				"The &bLCPTR Helper&r consumes calories at a &l&cvery slow rate&r. This also means he can convert the calories into more EU than a &2Hungry helper&r can. This option is similar to the &1lunarium rotors&r in the LGT (except it is actually cheaper than the alternative)."
-				""
-				"&aGrandma's Ultra-Calorie Dense Uranium Cookies&r however, while they may take more time to set up, require less progression than &6desh rotors&r and &1lunarium rotors&r."
-				""
-				"You can optionally also use &6Grandma's Cookies&r for less EU/t if you don't have the infrastructure to set up anything else."
-			]
-			id: "0036488735CD2DFE"
-			tasks: [{
-				id: "6BD8D4EA30FAD7FB"
-				item: "kubejs:lcptr_helper"
-				type: "item"
-			}]
-			x: -3.0d
-			y: 12.5d
-		}
-		{
 			dependencies: [
 				"4FE2969202BEB308"
 				"66D61F15E0CAD74A"
@@ -1945,6 +1809,120 @@
 			}]
 			x: -3.0d
 			y: 17.0d
+		}
+		{
+			dependencies: ["5D1E251B9F28C8B4"]
+			id: "227A5610AE1E56BE"
+			tasks: [{
+				id: "3F4FBFC6E803800C"
+				item: "voyagercore:helper_factory"
+				type: "item"
+			}]
+			x: 4.5d
+			y: 13.0d
+		}
+		{
+			dependencies: [
+				"227A5610AE1E56BE"
+				"011785EFAD617602"
+			]
+			id: "396E16AC6204F73A"
+			shape: "gear"
+			size: 1.5d
+			tasks: [
+				{
+					id: "48D73B44223EF984"
+					item: "voyagercore:ev_generic_helper_hull"
+					type: "item"
+				}
+				{
+					id: "5804AEB249562479"
+					item: "voyagercore:ev_generic_helper"
+					type: "item"
+				}
+				{
+					id: "4372065AF5AE792E"
+					item: "voyagercore:ev_helper_module"
+					type: "item"
+				}
+			]
+			title: "Modular Helpers - EV"
+			x: 4.5d
+			y: 15.0d
+		}
+		{
+			dependencies: ["5D1E251B9F28C8B4"]
+			id: "011785EFAD617602"
+			tasks: [{
+				id: "77AF0BFCBEF20CAD"
+				item: "voyagercore:helper_assembler"
+				type: "item"
+			}]
+			x: 3.5d
+			y: 13.5d
+		}
+		{
+			dependencies: [
+				"04BD5101521DF8BC"
+				"0A24BE1EE0ABBACF"
+			]
+			hide_dependency_lines: true
+			id: "38B3BC15FB1AB591"
+			tasks: [{
+				id: "0B25A39FF8A96F11"
+				item: "voyagercore:ev_plat_line_helper_recipe_module"
+				type: "item"
+			}]
+			x: 5.5d
+			y: 19.0d
+		}
+		{
+			dependencies: [
+				"0D398D8FE47F9B67"
+				"0A24BE1EE0ABBACF"
+			]
+			hide_dependency_lines: true
+			id: "5EF1C5F7C7F79866"
+			tasks: [{
+				id: "0EE22BC13846E9AE"
+				item: "voyagercore:ev_desh_line_helper_recipe_module"
+				type: "item"
+			}]
+			x: 3.5d
+			y: 19.0d
+		}
+		{
+			dependencies: ["04BD5101521DF8BC"]
+			hide_dependency_lines: true
+			id: "0A24BE1EE0ABBACF"
+			shape: "gear"
+			size: 1.5d
+			tasks: [
+				{
+					id: "133ACC9B02D8303B"
+					item: "voyagercore:ev_specialized_helper"
+					type: "item"
+				}
+				{
+					id: "1DCB03543DDFFF1D"
+					item: "voyagercore:ev_specialized_helper_hull"
+					type: "item"
+				}
+			]
+			title: "Specialized Helpers - EV"
+			x: 4.5d
+			y: 18.0d
+		}
+		{
+			dependencies: ["0A24BE1EE0ABBACF"]
+			id: "35E78CA6463888CE"
+			tasks: [{
+				id: "3DB19DF017431C4E"
+				item: "voyagercore:ev_output_helper_module"
+				type: "item"
+			}]
+			x: 4.5d
+			y: 19.5d
 		}
 	]
 	title: "Chapter 4: To Space! (EV)"

@@ -528,7 +528,7 @@ register_nosmelt_metal('industrial_perfected_electrum', [], true, '0xf5ffdb', [3
 
 register_dust('fluxed_titanium_electrum_compound', [], '0x2c2e16', no_decomp);
 register_nosmelt_elem_metal('titanite', [], true, '0x75008c', [5400, 'mid', voltTier('iv'), 20*64], [350, 250, 1, 1000000], voltTier('luv'))
-register_nosmelt_elem_metal('ostrum', [], true, '0xc785a2', [5400, 'mid', voltTier('iv'), 20*64], false, voltTier('luv'))
+// register_nosmelt_elem_metal('ostrum', [], true, '0xc785a2', [5400, 'mid', voltTier('iv'), 20*64], false, voltTier('luv'))
 
 register_superconductor('tin_silver_alloy',['3x silver ', '4x tin'], false, '0xbfcdd6', 32, 1, [0, null, voltTier('lv'), 0]);
 register_superconductor('fluxed_electrum',[], true, '0xfcad03', 128, 1, [0, null, voltTier('lv'), 0]);
@@ -652,7 +652,7 @@ abs_mat('titanex-594-hta', '0x2e2736')
 abs_mat_sec('titanex-879-htb', '0x799e6c', '0x00ffba', [601, 500, 1, 1000000])
 abs_mat('titanex-901-htc', '0xffd4de')
 
-abs_mat_sec('aluminex_202_a', '0x96fffd', '0x0080ff')
+// abs_mat_sec('aluminex_202_a', '0x96fffd', '0x0080ff')
 
 // naq
 register_fluid('sulfuraic_fluoroantimonic_acid', '0xbcd490', ['1x sulfuria', '2x fluoroanitmonic_acid'], no_decomp)

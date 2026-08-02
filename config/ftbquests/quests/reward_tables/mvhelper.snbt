@@ -1,0 +1,11 @@
+{
+	id: "78CD338F93BC36E5"
+	loot_size: 1
+	order_index: 33
+	rewards: [
+		{ item: "voyagercore:helper_holder" }
+		{ item: "voyagercore:mv_ebf_helper_recipe_module" }
+		{ item: "voyagercore:mv_basic_helper_module" }
+	]
+	title: "mvhelper"
+}
