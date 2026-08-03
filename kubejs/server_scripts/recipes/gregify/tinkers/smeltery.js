@@ -56,9 +56,72 @@ ServerEvents.recipes(event => {
             temperature: temp
             });
     }
+
+    function casting_table(result, fluid, cooling_time, cast) {
+
+        if (cast) {
+            event.custom({
+                type: 'tconstruct:casting_table',
+                cast: {
+                    tag: cast
+                },
+                cooling_time: cooling_time,
+                fluid: {
+                    amount: fluid.amount,
+                    fluid: fluid.fluid
+                },
+                result: {
+                    item: result
+                }
+            }).id(`kjs:casting_table/${cast.replace('tconstruct:casts/', '')}/${result.replace(/.*:/, '')}`)
+        } else {
+            event.custom({
+                type: 'tconstruct:casting_table',
+                cooling_time: cooling_time,
+                fluid: {
+                    fluid: fluid.fluid,
+                    amount: fluid.amount
+                },
+                result: result
+            }).id(`kjs:casting_table/${result.replace(/.*:/, '')}_no_cast`)
+        }
+    }
+
+    function casting_basin(result, fluid, cooling_time, optitem) {
+        if (optitem) {
+            event.custom({
+                type: 'tconstruct:casting_basin',
+                cast: {
+                    item: optitem
+                },
+                cast_consumed: true,
+                cooling_time: cooling_time,
+                fluid: {
+                    fluid: fluid.fluid,
+                    amount: fluid.amount
+                },
+                result: {
+                    item: result
+                }
+            }).id(`kjs:casting_basing/${result.replace(/.*:/, '')}`)
+        } else {
+            event.custom({
+                type: 'tconstruct:casting_basin',
+                fluid: {
+                    fluid: fluid.fluid,
+                    amount: fluid.amount
+                },
+                cooling_time: cooling_time,
+                result: {
+                    item: result
+                }
+            }).id(`kjs:casting_basing/${result.replace(/.*:/, '')}`)
+        }
+    }
     
-    tconstruct.casting_table(Item.of("gtceu:firebrick"), Fluid.of("kubejs:molten_fireclay", 125)).cooling_time(80);
-    tconstruct.casting_basin(Item.of("gtceu:steel_block"), Fluid.of("tconstruct:molten_steel", 90*9)).cooling_time(100);
+    casting_table("gtceu:firebrick", {fluid:'kubejs:molten_fireclay', amount: 125}, 80, 'tconstruct:casts/multi_use/ingot')
+    casting_table("gtceu:firebrick", {fluid:'kubejs:molten_fireclay', amount: 125}, 80, 'tconstruct:casts/single_use/ingot')
+    event.remove({type: 'tconstruct:casting_basin', id: /tconstruct:smeltery\/casting\/metal\/.*\/block/})
 
     // alloys
 
