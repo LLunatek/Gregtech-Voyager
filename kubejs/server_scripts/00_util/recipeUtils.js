@@ -107,16 +107,28 @@ export function recipe_electrolyzer(event, name, inputItems, inputFluids, output
  */
 
 export function recipe_chem_plant(event, name, inputItems, inputFluids, outputItems, outputFluids, duration, eut, temp, specialized) {
-    event.recipes.gtceu
-        .chemical_plant("kubejs:chemical_plant" + name)
-        .itemInputs(inputItems)
-        .itemOutputs(outputItems)
-        .inputFluids(inputFluids)
-        .outputFluids(outputFluids)
-        .addData("ebf_temp", temp)
-        .addData("specialized", specialized)
-        .duration(duration * 20)
-        .EUt(eut)
+    if (specialized) {
+        event.recipes.gtceu
+            .chemical_plant("kubejs:chemical_plant_" + name + "_" + specialized)
+            .itemInputs(inputItems)
+            .itemOutputs(outputItems)
+            .inputFluids(inputFluids)
+            .outputFluids(outputFluids)
+            .addData("ebf_temp", temp)
+            .addData("specialized", specialized)
+            .duration(duration * 20)
+            .EUt(eut)
+    } else {
+        event.recipes.gtceu
+            .chemical_plant("kubejs:chemical_plant_" + name)
+            .itemInputs(inputItems)
+            .itemOutputs(outputItems)
+            .inputFluids(inputFluids)
+            .outputFluids(outputFluids)
+            .addData("ebf_temp", temp)
+            .duration(duration * 20)
+            .EUt(eut)
+    }
 }
 
 /**
@@ -171,9 +183,9 @@ export function recipe_distillation(event, input, amt, itemOutput, fluidOutputs,
  */
 export function recipe_macerator(event, inputItem, outputItem, eut, time) {
     event.recipes.gtceu
-        .macerator("kubejs:macerator_" + outputItem)
+        .macerator(outputItem + "_macerator")
         .itemInputs(inputItem)
-        .itemOutputs(`kubejs:${outputItem}`)
+        .itemOutputs(outputItem)
         .duration(time * 20)
         .EUt(eut)
 }
@@ -192,7 +204,7 @@ export function recipe_macerator(event, inputItem, outputItem, eut, time) {
  */
 export function recipe_radiation_chamber(event, name, inputItems, inputFluids, pt, outputItems, outputFluids, eut, duration) {
     event.recipes.gtceu
-        .radiation_chamber(fullName(name))
+        .radiation_chamber("kubejs:" + name)
         .itemInputs(inputItems)
         .perTick(true)
         .inputFluids(`gtceu:${inputFluids} ${pt}`)
@@ -218,12 +230,12 @@ export function recipe_radiation_chamber(event, name, inputItems, inputFluids, p
 
 export function recipe_teus_laser(event, output, inputItems, nonconsumed, inputFluids, outputFluids, eut, duration, concentration) {
     event.recipes.gtceu
-        .beam_heating(`kubejs:${output}_teus_laser`) // recipe ID
+        .beam_heating(`${output}_teus_laser`) // recipe ID
         .itemInputs(inputItems)
         .notConsumable(nonconsumed)
         .inputFluids(inputFluids)
         .addData("beam_concentration", concentration)
-        .itemOutputs(`kubejs:${output}`)
+        .itemOutputs(output)
         .outputFluids(outputFluids)
         .duration(duration * 20) // in ticks
         .EUt(eut)
@@ -240,10 +252,10 @@ export function recipe_teus_laser(event, output, inputItems, nonconsumed, inputF
  */
 export function recipe_chem_bath(event, output, inputItems, inputFluids, eut, duration) {
     event.recipes.gtceu
-        .chemical_bath(`kubejs:${output}_chem_bath`) // recipe ID
+        .chemical_bath(`${output}_chem_bath`) // recipe ID
         .itemInputs(inputItems)
         .inputFluids(inputFluids)
-        .itemOutputs(`kubejs:${output}`)
+        .itemOutputs(output)
         .duration(duration * 20) // in ticks
         .EUt(eut)
 }

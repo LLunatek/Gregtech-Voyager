@@ -52,7 +52,7 @@ GTCEuServerEvents.oreVeins((event) => {
         //@ts-expect-error Kube shenanigans
         vein.layer(layer)
         vein.dimensions(dimension)
-        vein.heightRangeUniform(...heightRange)
+        vein.heightRangeUniform(heightRange[0], heightRange[1])
     }
 
     /**
@@ -78,16 +78,7 @@ GTCEuServerEvents.oreVeins((event) => {
             setupVein(vein, cfg)
             vein.layeredVeinGenerator((/** @type {$LayeredVeinGenerator_} */ generator) =>
                 generator.buildLayerPattern((/** @type {$GTLayerPattern$Builder_} */ pattern) =>
-                    cfg.layers.reduce(
-                        (p, [w, mat, size]) =>
-                            p.layer((/** @type {*} */ l) =>
-                                l
-                                    .weight(w)
-                                    .mat(mat)
-                                    .size(...size)
-                            ),
-                        pattern
-                    )
+                    cfg.layers.reduce((p, [w, mat, size]) => p.layer((/** @type {*} */ l) => l.weight(w).mat(mat).size(size[0], size[1])), pattern)
                 )
             )
             applySurfaceRock(vein, cfg)
@@ -109,7 +100,7 @@ GTCEuServerEvents.oreVeins((event) => {
                                 l
                                     .weight(w)
                                     .state(() => Block.getBlock(blockId).defaultBlockState())
-                                    .size(...size)
+                                    .size(size[0], size[1])
                             ),
                         pattern
                     )
@@ -161,7 +152,10 @@ GTCEuServerEvents.oreVeins((event) => {
     /**
      * @param {MarsOreConfig} cfg
      */
-    function addMarsVein({ material, weight, density, clusterSize, mats, dense, heightRange = [-64, 200] }) {
+    function addMarsVein({ material, weight, density, clusterSize, mats, dense, heightRange }) {
+        if (!heightRange) {
+            heightRange = [-64, 200]
+        }
         const dimension = "ad_astra:mars"
         const layer = dimToLayer[dimension]
         const gt = (/** @type {string} */ m) => `gtceu:${m}`
@@ -194,23 +188,23 @@ GTCEuServerEvents.oreVeins((event) => {
         const buildLayers = (sizes) => matIndex.map((mi, i) => [weights[i], gt(mats[mi]), sizes[i]])
 
         addMatVein(`mars/${material}`, {
-            weight,
-            density,
-            clusterSize,
-            layer,
-            dimension,
-            heightRange,
+            weight: weight,
+            density: density,
+            clusterSize: clusterSize,
+            layer: layer,
+            dimension: dimension,
+            heightRange: heightRange,
             layers: buildLayers(standardSizes)
         })
 
         if (dense) {
             addMatVein(`mars/${material}/dense`, {
                 weight: Math.floor(weight / 10),
-                density,
+                density: density,
                 clusterSize: Math.floor(clusterSize * 1.75),
-                layer,
-                dimension,
-                heightRange,
+                layer: layer,
+                dimension: dimension,
+                heightRange: heightRange,
                 layers: buildLayers(denseSizes)
             })
         }

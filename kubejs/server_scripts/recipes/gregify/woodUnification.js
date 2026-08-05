@@ -28,9 +28,9 @@ ServerEvents.recipes((event) => {
     const cuttingMachine = (/** @type {string} */ output, /** @type {string} */ input, /** @type {string} */ custom, /** @type {string} */ mod) => {
         cuttingfluid.forEach((cf) => {
             event.recipes.gtceu
-                .cutter(`gtceu:cutter/${mod}_${custom}_${cuttingfluid[0]}`)
+                .cutter(`gtceu:cutter_${mod}_${custom}_${cf[0]}`)
                 .itemInputs(input)
-                .inputFluids(cuttingfluid[1] + " " + cuttingfluid[2])
+                .inputFluids(cf[1] + " " + cf[2])
                 .itemOutputs(Item.of(output, 6))
                 .itemOutputs(Item.of("gtceu:wood_dust", 2))
                 .EUt(7)
@@ -175,6 +175,7 @@ ServerEvents.recipes((event) => {
 
     // @ts-ignore
     event.forEachRecipe(
+        // @ts-ignore
         { type: "minecraft:crafting_shapeless", input: "#minecraft:logs", output: "#minecraft:planks" },
         (/** @type {{ originalRecipeIngredients: any; originalRecipeResult: any; getId: () => any; }} */ r) => {
             let logtype = r.originalRecipeIngredients

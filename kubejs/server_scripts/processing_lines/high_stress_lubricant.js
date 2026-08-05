@@ -12,7 +12,7 @@ ServerEvents.recipes((event) => {
 
     recipe_mixer(event, "igp_lubricant_base", "gtceu:indium_gallium_phosphide_dust", "gtceu:lubricant 2000", [], "kubejs:igp_lubricant_base 1000", 7680, 20)
 
-    recipe_distillation(event, "igp_lubricant_base", 1000, ["kubejs:gallium_lubricant_residue 1000", "kubejs:indium_binded_phospho_lubricant_sludge 1000"], "gtceu:carbon_dust", 7860, 10)
+    recipe_distillation(event, "igp_lubricant_base", 1000, "gtceu:carbon_dust", ["kubejs:gallium_lubricant_residue 1000", "kubejs:indium_binded_phospho_lubricant_sludge 1000"], 7860, 10)
 
     recipe_electrolyzer(event, "gallium_lubricant_residue_byproduct", [], ["kubejs:gallium_lubricant_residue 1000"], ["gtceu:gallium_dust"], ["gtceu:creosote 500"], 10, 30)
 
@@ -31,8 +31,8 @@ ServerEvents.recipes((event) => {
         event,
         "acidic_phospho_lubricant",
         1000,
-        ["kubejs:phospho_lubricant_residue 250", "kubejs:phospho_indium_molybdenum_binded_lubricant 1000", "gtceu:hydrogen_sulfide 1000"],
         [],
+        ["kubejs:phospho_lubricant_residue 250", "kubejs:phospho_indium_molybdenum_binded_lubricant 1000", "gtceu:hydrogen_sulfide 1000"],
         7680,
         45
     )
