@@ -4,7 +4,7 @@
   "material.gtceu.refined_fluxed_electrum": "Refined Fluxed Electrum",
   "material.gtceu.source": "Source",
   "material.gtceu.source_steel": "Source Steel",
-    "material.gtceu.shadow_steel": "Shadow Steel",
+  "material.gtceu.shadow_steel": "Shadow Steel",
   "material.gtceu.fluxed_cobalt_electrum": "Fluxed Cobalt Electrum",
   "material.gtceu.aluminium_lithium_compound": "Aluminium-Lithium Compound",
   "material.gtceu.fluxed_titanium_electrum_compound": "Fluxed Titanium Electrum Compound",
@@ -31,6 +31,26 @@
   "material.gtceu.lunarium": "Lunarium",
   "material.gtceu.titanite": "Titanite",
   "material.gtceu.titanite_alloy": "§dTitanite Alloy",
+  "material.gtceu.inert_sulfur":"Inert Sulfur",
+  "material.gtceu.excited_sulfur":"Excited Sulfur",
+  "material.gtceu.copper_sulfuriate":"Copper-Suspended Sulfuria",
+  "material.gtceu.sulfuria":"Sulfuria",
+  "material.gtceu.sulfuria_solution":"Sulfuria Mixture",
+  "material.gtceu.titanichite":"Titanichite",
+  "material.gtceu.fluorite":"Fluorite",
+  "material.gtceu.martian-composite":"Martian-Composite",
+  "material.gtceu.bluponium":"Bluponium",
+  "material.gtceu.titanex-594-hta":"Titanex 594-HTa",
+  "material.gtceu.titanex-879-htb":"Titanex 879-HTb",
+  "material.gtceu.titanex-901-htc":"Titanex 901-HTc",
+  "material.gtceu.perfected_electrum":"Perfected Electrum",
+  "material.gtceu.trellium":"Trellium",
+  "material.gtceu.industrial_perfected_electrum":"Industrial Perfected Electrum",
+  "material.gtceu.perfected_electrum_base":"Perfected Electrum Base",
+  "material.gtceu.ostrite":"Ostrite",
+  "material.gtceu.xastinite":"Xastinite",
+  "material.gtceu.chlorite":"Chlorite",
+  "material.gtceu.metallic_mica":"Metallic Mica",
 
   "material.gtceu.acetylene": "Acetylene",
   "material.gtceu.calcium_carbide": "Calcium Carbide",
@@ -40,6 +60,13 @@
 
   "material.gtceu.lunarium_growth_slurry": "Lunarium Growth Slurry",
   "material.gtceu.uranium_ethanol_solution": "Uranium Ethanol Solution",
+
+  "tagprefix.moon":"Lunar %s Ore",
+  "tagprefix.venus":"Venusian %s Ore",
+  "tagprefix.mercury":"Mercurian %s Ore",
+  "tagprefix.mars":"Martian %s Ore",
+  "tagprefix.glacio":"Glacian %s Ore",
+  
 
   "material.gtceu.ilmenite_residue": "Ilmenite Residue",
   "block.gtceu.steam_blast_furnace": "Steel Blast Furnace",
@@ -88,8 +115,9 @@
   "gtceu.large_helper_wheel": "Large Helper Wheel",
   "gtceu.micro_farm": "Micro Farm",
   "gtceu.helper_assembler": "Helper Assembler",
-  "gtceu.oven": "Oven"
+  "gtceu.oven": "Oven",
 
+  "gtceu.radiation_chamber":"Radiation Chamber"
 
 
 }
