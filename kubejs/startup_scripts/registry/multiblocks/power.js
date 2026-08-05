@@ -132,7 +132,36 @@ GTCEuStartupEvents.registry("gtceu:machine", event => {
             `kubejs:block/multiblock/${type}`);
     }
 
+    event.create(`large_helper_wheel`, 'multiblock')
+            .rotationState(RotationState.ALL)
+            .recipeType('large_helper_wheel')
+            .generator(true)
+            .recipeModifiers($VoyagerCoreRecipeModifiers.HELPER_COMPATABILITY)
+            .appearanceBlock(() => Block.getBlock(`gtceu:frostproof_machine_casing`))
+            .pattern(definition => FactoryBlockPattern.start()
+                .aisle("aba", "ccc", "bcb", "bbb", "bbb")
+                .aisle("bbb", "ccc", "efe", "fgf", "efe")
+                .aisle("aba", "ccc", "b@b", "bbb", "bbb")
+
+                .where("a", Predicates.blocks("gtceu:fluxed_cobalt_electrum_frame"))
+                .where("b", Predicates.any())
+                .where("c", Predicates.blocks("gtceu:frostproof_machine_casing")
+                    .or(Predicates.abilities(PartAbility.IMPORT_ITEMS).setExactLimit(1).setPreviewCount(1))
+                    .or(Predicates.abilities(PartAbility.IMPORT_FLUIDS).setExactLimit(1).setPreviewCount(1))
+                    .or(Predicates.abilities($VoyagerPartAbilities.HELPER_HOLDER).setExactLimit(1))
+                    .or(Predicates.abilities(PartAbility.OUTPUT_ENERGY).setMaxGlobalLimited(2,1))
+                )
+                .where('@', Predicates.controller(Predicates.blocks(definition.get())))
+                .where("e", Predicates.blocks("gtceu:stainless_steel_turbine_casing"))
+                .where("f", Predicates.blocks("gtceu:clean_machine_casing"))
+                .where("g", Predicates.blocks("gtceu:tempered_glass"))
+            .build())
+            .workableCasingModel(`gtceu:block/casings/solid/machine_casing_frost_proof`,
+            `kubejs:block/overlay/helper_wheel`);
+
 
     powerRectangle('helper_calorie_converter', 'radiation_proof_lead', 'gtceu:titanium_gearbox', 'helper_calorie_conversion')
+
+
 
 });

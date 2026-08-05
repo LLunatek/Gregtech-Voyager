@@ -18,7 +18,7 @@ GTCEuStartupEvents.registry("gtceu:recipe_type", event => {
     event.create("large_helper_wheel")
         .category("multiblock")
         // .setEUIO("in")
-        .setMaxIOSize(5, 1, 1, 1)
+        .setMaxIOSize(1, 0, 1, 0)
         .setSlotOverlay(false, false, GuiTextures.ARROW_INPUT_OVERLAY)
         .setSound(GTSoundEntries.CHEMICAL);
 
@@ -137,43 +137,7 @@ GTCEuStartupEvents.registry("gtceu:machine", event => {
         )
 
 
-    event.create("large_helper_wheel", "multiblock")
-        .rotationState(RotationState.NON_Y_AXIS)
-        .recipeTypes("large_helper_wheel")
-        // .recipeModifiers([GTRecipeModifiers.PERFECT_OC])
-
-        // base block appearance
-        .appearanceBlock(() => Block.getBlock("gtceu:treated_wood_planks"))
-
-        .pattern(definition => FactoryBlockPattern.start()
-
-            .aisle("AAA", "ABA", "AAA")
-            .aisle("AAA", "BCB", "ATA")
-            .aisle("AAA", "A@A", "AAA")
-
-
-
-            .where("@", Predicates.controller(Predicates.blocks(definition.get())))
-
-            .where("A", Predicates.blocks("gtceu:frostproof_machine_casing")
-        
-                .or(Predicates.abilities(PartAbility.IMPORT_ITEMS).setMaxGlobalLimited(2).setPreviewCount(1))
-                .or(Predicates.abilities(PartAbility.EXPORT_ITEMS).setMaxGlobalLimited(2).setPreviewCount(1))
-                .or(Predicates.abilities(PartAbility.IMPORT_FLUIDS).setMaxGlobalLimited(2).setPreviewCount(1))
-                .or(Predicates.abilities(PartAbility.OUTPUT_ENERGY).setMaxGlobalLimited(4).setPreviewCount(4)))  // make sure this is inside the .where, otherwise it will break shit
-
-            .where("B", Predicates.blocks("gtceu:steel_firebox_casing"))
-            .where("T", Predicates.blocks("gtceu:tempered_glass"))
-            .where("C", Predicates.blocks("gtceu:fluxed_electrum_frame"))
-
-            .where(" ", Predicates.air())
-
-            .build())
-
-            .workableCasingModel(
-            "gtceu:block/casings/solid/machine_casing_frost_proof",       
-            "kubejs:block/overlay/helper_wheel"
-        )
+    
 
 
         event.create("large_helper_factory", "multiblock")

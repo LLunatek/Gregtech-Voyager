@@ -910,8 +910,8 @@
 				item: "kubejs:ev_helper_computation_array"
 				type: "item"
 			}]
-			x: 0.0d
-			y: 9.5d
+			x: 4.5d
+			y: 16.5d
 		}
 		{
 			dependencies: ["6D599070FCBCD71C"]
@@ -1425,8 +1425,15 @@
 				"These multiblocks aren't quite as strong as the &9IV+&r ones, but they are much much stronger than singleblocks."
 				""
 				"They have &l&6Cube Boosting&r. That being said, they can also only have one energy hatch, and only &8normal maintenance&r hatches."
+				""
+				"More imortantly, the &6Cube Multis&r can use your &ahelpers&r. They dont &ohave&r to, but it is strongly advised, as it will speed up a lot of your passive processes."
+				""
+				"Every single cube multi has a helper recipe module in &5EV&r except for the assembler."
+				""
+				"This will be very useful for ore processing"
 			]
 			id: "25C99D6AAE7C5436"
+			min_required_tasks: 1
 			rewards: [{
 				count: 3
 				id: "0E261DDF67EF5734"
@@ -1435,6 +1442,7 @@
 			}]
 			shape: "gear"
 			size: 1.25d
+			subtitle: "You only have to craft one multi to finish this quest"
 			tasks: [
 				{
 					id: "46FB61DF6AC076C5"
@@ -1543,7 +1551,7 @@
 				item: "gtceu:gas_large_turbine"
 				type: "item"
 			}]
-			x: -1.5d
+			x: -3.0d
 			y: 14.0d
 		}
 		{
@@ -1569,7 +1577,7 @@
 				}
 				type: "item"
 			}]
-			x: 0.0d
+			x: -1.5d
 			y: 14.0d
 		}
 		{
@@ -1596,13 +1604,14 @@
 				}
 				type: "item"
 			}]
-			x: -3.0d
+			x: -4.5d
 			y: 14.0d
 		}
 		{
 			dependencies: [
 				"307B3D1F044D7B30"
 				"4FE2969202BEB308"
+				"58F2F4DFC5C4E690"
 			]
 			description: [
 				"The &o&5Large Helper Calorie Converter&r is the next step up from the Large Helper Wheel."
@@ -1630,41 +1639,15 @@
 				type: "item"
 			}]
 			title: "Large Helper Calorie Converter"
-			x: -1.5d
-			y: 12.5d
+			x: 1.5d
+			y: 18.0d
 		}
 		{
 			dependencies: [
-				"4FE2969202BEB308"
-				"66D61F15E0CAD74A"
+				"7C59AB67C9EA3C41"
+				"0C382CC77CE3E286"
+				"322A6C5A9CE52178"
 			]
-			description: [
-				"Did you wonder why the oven and &oHelper Calorie Converter&r took radiation proof casings?"
-				""
-				"Him. He is why."
-				""
-				"The &2Hungry Helper&r consumes calories at an &l&calarming rate&r. This also means he can convert the calories into EU faster than a LCPTR helper can. This option is similar to the &6desh rotors&r in the LGT."
-				""
-				"&aGrandma's Ultra-Calorie Dense Uranium Cookies&r however, while they may take more time to set up, require less progression than &6desh rotors&r and &1lunarium rotors&r."
-				""
-				"You can optionally also use &6Grandma's Cookies&r for less EU/t if you don't have the infrastructure to set up anything else."
-			]
-			id: "7D98A160A7C451FC"
-			rewards: [{
-				id: "1F63D019BF000769"
-				item: "kubejs:ev_loot_bag"
-				type: "item"
-			}]
-			tasks: [{
-				id: "7332538B82B562E4"
-				item: "kubejs:hungry_helper"
-				type: "item"
-			}]
-			x: 0.0d
-			y: 12.5d
-		}
-		{
-			dependencies: ["68740E4834A99581"]
 			id: "6D9ED1720FC44C3D"
 			rewards: [{
 				id: "551FAD13E8D5DEDF"
@@ -1676,24 +1659,8 @@
 				item: "kubejs:grandmas_uranium_cookies"
 				type: "item"
 			}]
-			x: 1.0d
-			y: 12.5d
-		}
-		{
-			dependencies: ["7C59AB67C9EA3C41"]
-			id: "68740E4834A99581"
-			rewards: [{
-				id: "20E95C040EC91910"
-				item: "kubejs:ev_loot_bag"
-				type: "item"
-			}]
-			tasks: [{
-				id: "677DF334D963BE16"
-				item: "kubejs:radiation_resistant_grandma_helper"
-				type: "item"
-			}]
-			x: 1.0d
-			y: 11.5d
+			x: 1.5d
+			y: 13.5d
 		}
 		{
 			description: ["&dRad-away&r SUCKS to craft, but when you do eventually craft it you use very little of it. You wont need to worry about this being a bottleneck"]
@@ -1717,8 +1684,8 @@
 				item: "gtceu:rad_away_dust"
 				type: "item"
 			}]
-			x: 1.0d
-			y: 10.5d
+			x: 1.5d
+			y: 12.5d
 		}
 		{
 			description: [
@@ -1761,7 +1728,7 @@
 				item: "gtceu:ev_rotor_holder"
 				type: "item"
 			}]
-			x: -1.5d
+			x: -3.0d
 			y: 15.5d
 		}
 		{
@@ -1787,7 +1754,7 @@
 				item: "gtceu:large_combustion_engine"
 				type: "item"
 			}]
-			x: -1.5d
+			x: -3.0d
 			y: 17.0d
 		}
 		{
@@ -1797,7 +1764,7 @@
 				item: "gtceu:lubricant_bucket"
 				type: "item"
 			}]
-			x: 0.0d
+			x: -1.5d
 			y: 17.0d
 		}
 		{
@@ -1807,12 +1774,18 @@
 				item: "gtceu:oxygen_bucket"
 				type: "item"
 			}]
-			x: -3.0d
+			x: -4.5d
 			y: 17.0d
 		}
 		{
 			dependencies: ["5D1E251B9F28C8B4"]
+			description: [
+				"You may notice that there is no &5EV&r helper assembler. It is replaced by this multiblock."
+				""
+				"In order to run a recipe, the &eprecise robot arms&r inside must all be &cat least the tier&r of the recipe."
+			]
 			id: "227A5610AE1E56BE"
+			subtitle: "For making friends, but better"
 			tasks: [{
 				id: "3F4FBFC6E803800C"
 				item: "voyagercore:helper_factory"
@@ -1825,6 +1798,7 @@
 			dependencies: [
 				"227A5610AE1E56BE"
 				"011785EFAD617602"
+				"66D61F15E0CAD74A"
 			]
 			id: "396E16AC6204F73A"
 			shape: "gear"
@@ -1853,6 +1827,7 @@
 		{
 			dependencies: ["5D1E251B9F28C8B4"]
 			id: "011785EFAD617602"
+			subtitle: "For applying modules past HV"
 			tasks: [{
 				id: "77AF0BFCBEF20CAD"
 				item: "voyagercore:helper_assembler"
@@ -1868,6 +1843,7 @@
 			]
 			hide_dependency_lines: true
 			id: "38B3BC15FB1AB591"
+			subtitle: "Can only be used in a Chemical Plant"
 			tasks: [{
 				id: "0B25A39FF8A96F11"
 				item: "voyagercore:ev_plat_line_helper_recipe_module"
@@ -1883,6 +1859,7 @@
 			]
 			hide_dependency_lines: true
 			id: "5EF1C5F7C7F79866"
+			subtitle: "Can only be used in a Chemical Plant"
 			tasks: [{
 				id: "0EE22BC13846E9AE"
 				item: "voyagercore:ev_desh_line_helper_recipe_module"
@@ -1892,7 +1869,10 @@
 			y: 19.0d
 		}
 		{
-			dependencies: ["04BD5101521DF8BC"]
+			dependencies: [
+				"04BD5101521DF8BC"
+				"66D61F15E0CAD74A"
+			]
 			hide_dependency_lines: true
 			id: "0A24BE1EE0ABBACF"
 			shape: "gear"
@@ -1914,7 +1894,15 @@
 			y: 18.0d
 		}
 		{
-			dependencies: ["0A24BE1EE0ABBACF"]
+			dependencies: [
+				"0A24BE1EE0ABBACF"
+				"1E76B42857AC04C9"
+				"6E3917BFB3097501"
+				"740BCEB32F933294"
+				"5D1E251B9F28C8B4"
+				"520DE2E59431D715"
+			]
+			hide_dependency_lines: true
 			id: "35E78CA6463888CE"
 			tasks: [{
 				id: "3DB19DF017431C4E"
@@ -1923,6 +1911,273 @@
 			}]
 			x: 4.5d
 			y: 19.5d
+		}
+		{
+			dependencies: [
+				"66D61F15E0CAD74A"
+				"0C382CC77CE3E286"
+				"5B6739036C267EC4"
+			]
+			description: [
+				"The &2Hungry Helper&r is &cgrandma's favorite&r. As a consquence, he is always hungry, and only getting &lhungrier&r."
+				""
+				"As this helper levels up, he will eat &6grandma's cookies faster and faster&r, but also generate &amore EU/t&r"
+				""
+				"You may install satiation modules, but they will never fully satiate him. He will always consume more cookies."
+				""
+				"You can also make him hungrier for more EU later down the line"
+			]
+			id: "58F2F4DFC5C4E690"
+			shape: "octagon"
+			size: 1.5d
+			subtitle: "Grandma's Favorite Grandchild"
+			tasks: [
+				{
+					id: "35DF666EB4D87562"
+					item: {
+						Count: 1
+						id: "voyagercore:hungry_paramount_helper"
+						tag: {
+							paramount_helper_data: {
+								current_xp: 0L
+								eat_time_mod: 1.0f
+								eut_gen_mod: 1.0f
+								level: 1
+								level_up_xp: 256L
+								max_module_count: 3
+							}
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "024EA961D2C0B570"
+					item: {
+						Count: 1
+						id: "voyagercore:hungry_paramount_helper_hull"
+						tag: {
+							paramount_helper_data: {
+								current_xp: 0L
+								eat_time_mod: 1.0f
+								eut_gen_mod: 1.0f
+								level: 1
+								level_up_xp: 256L
+								max_module_count: 3
+							}
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "435853CB5AAA43D2"
+					item: "voyagercore:lv_stomach_hungry_helper_module"
+					type: "item"
+				}
+			]
+			x: 2.5d
+			y: 16.5d
+		}
+		{
+			dependencies: ["0A24BE1EE0ABBACF"]
+			id: "5A2B0A249E000D3B"
+			tasks: [{
+				id: "623A4127CE8E8E91"
+				item: "voyagercore:ev_petrochem_helper_recipe_module"
+				type: "item"
+			}]
+			x: 3.0d
+			y: 18.0d
+		}
+		{
+			dependencies: [
+				"6154764CC312BD4E"
+				"5B6739036C267EC4"
+			]
+			description: [
+				"&oThinking of the one from Cookie Clicker? That's her sister."
+				""
+				"Welcome to &l&dParamount Helpers&r, one of the core mechanics of Gregtech: Voyager. Paramount helpers are unique in that they actually are needed to &ounlock&r certain recipes. Not all of them are needed for progression, but all of them are needed for their specific progression."
+				""
+				"Paramount helpers can &nonly take their specified modules&r"
+				""
+				"The &6Grandma Helper&r is needed for &ecookie power&r."
+				""
+				"Every level on a Paramount helper gives it an additional module slot"
+				""
+				""
+				"{@pagebreak}"
+				""
+				"In order to unlock more and more tiers of cookies, you will have to use your &6Grandma Helper&r to level her up."
+			]
+			id: "0C382CC77CE3E286"
+			shape: "octagon"
+			size: 1.5d
+			tasks: [
+				{
+					id: "05C78EB5CD87FDD5"
+					item: {
+						Count: 1
+						id: "voyagercore:grandma_paramount_helper"
+						tag: {
+							paramount_helper_data: {
+								current_xp: 0L
+								level: 1
+								level_up_xp: 512L
+								max_module_count: 3
+							}
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "739E876B987CB98D"
+					item: {
+						Count: 1
+						id: "voyagercore:grandma_paramount_helper_hull"
+						tag: {
+							paramount_helper_data: {
+								current_xp: 0L
+								level: 1
+								level_up_xp: 512L
+								max_module_count: 3
+							}
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "1D7B282D56027ED3"
+					item: "voyagercore:baking_sheet_grandma_helper_module_1"
+					type: "item"
+				}
+			]
+			x: 1.5d
+			y: 15.0d
+		}
+		{
+			id: "322A6C5A9CE52178"
+			tasks: [{
+				id: "2669D0DF97964F21"
+				item: "kubejs:cookie_dough"
+				type: "item"
+			}]
+			x: 0.5d
+			y: 13.5d
+		}
+		{
+			dependencies: ["0D398D8FE47F9B67"]
+			hide_dependency_lines: true
+			id: "5B6739036C267EC4"
+			tasks: [{
+				id: "06AB378913300144"
+				item: "kubejs:heart_of_gold"
+				type: "item"
+			}]
+			x: 1.0d
+			y: 16.5d
+		}
+		{
+			dependencies: ["396E16AC6204F73A"]
+			id: "740BCEB32F933294"
+			tasks: [
+				{
+					id: "207FC68EB4A23D87"
+					item: "voyagercore:ev_basic_helper_module"
+					type: "item"
+				}
+				{
+					id: "36E49FF9632CC493"
+					item: "voyagercore:ev_efficiency_helper_module"
+					type: "item"
+				}
+				{
+					id: "10DA36C2E1EBAA02"
+					item: "voyagercore:ev_speed_helper_module"
+					type: "item"
+				}
+			]
+			title: "Generic Modules EV"
+			x: 5.5d
+			y: 16.0d
+		}
+		{
+			dependencies: ["396E16AC6204F73A"]
+			id: "520DE2E59431D715"
+			tasks: [{
+				id: "39A823B4B76FD48A"
+				item: "voyagercore:ev_parallel_helper_module"
+				type: "item"
+			}]
+			x: 6.0d
+			y: 15.0d
+		}
+		{
+			dependencies: ["25C99D6AAE7C5436"]
+			id: "3A8B1D8FFF1932AE"
+			tasks: [{
+				id: "2D2EEB109C36BC50"
+				item: "voyagercore:ev_centrifuge_helper_recipe_module"
+				type: "item"
+			}]
+			x: 8.0d
+			y: 11.0d
+		}
+		{
+			dependencies: ["25C99D6AAE7C5436"]
+			id: "2A35D5547F1D5E54"
+			tasks: [{
+				id: "742136B5304B7ACC"
+				item: "voyagercore:ev_thermal_centrifuge_helper_recipe_module"
+				type: "item"
+			}]
+			x: 7.5d
+			y: 12.0d
+		}
+		{
+			dependencies: ["25C99D6AAE7C5436"]
+			id: "410504A971C57773"
+			tasks: [{
+				id: "13C94EC256AB9138"
+				item: "voyagercore:ev_macerator_helper_recipe_module"
+				type: "item"
+			}]
+			x: 7.0d
+			y: 13.0d
+		}
+		{
+			dependencies: ["25C99D6AAE7C5436"]
+			id: "2384CEED0DA5EE4F"
+			tasks: [{
+				id: "70469E90382E37AD"
+				item: "voyagercore:ev_electrolyzer_helper_recipe_module"
+				type: "item"
+			}]
+			x: 7.0d
+			y: 11.0d
+		}
+		{
+			dependencies: ["25C99D6AAE7C5436"]
+			id: "7930565634278153"
+			tasks: [{
+				id: "445F5081F832DD6F"
+				item: "voyagercore:ev_oven_helper_recipe_module"
+				type: "item"
+			}]
+			x: 8.0d
+			y: 13.0d
+		}
+		{
+			dependencies: ["0C382CC77CE3E286"]
+			description: ["All grandma recipes are done in her stove top oven. Maybe for her birthday... you could get her a new one?"]
+			id: "5D20EF3A3994FB8B"
+			subtitle: "It smells like cookies in your base"
+			tasks: [{
+				id: "4E6F673B252AA64E"
+				item: "voyagercore:grandmas_stovetop_oven"
+				type: "item"
+			}]
+			x: 2.5d
+			y: 14.0d
 		}
 	]
 	title: "Chapter 4: To Space! (EV)"

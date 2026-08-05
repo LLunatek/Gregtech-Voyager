@@ -52,3 +52,4 @@ config/embeddium-options.json
 config/embeddium-mixins.properties
 config/embeddium-fingerprint.json
 config/fml.toml
+user-prefs.json

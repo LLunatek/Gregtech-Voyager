@@ -78,6 +78,7 @@ ServerEvents.recipes(event => {
         .itemInputs(
             inputItems
         )
+        .addData("specialized", "smd_assembly")
         .itemOutputs(`${outputCount}x gtceu:smd_${output}`)
         .inputFluids("#forge:polyethylene 288")
         .duration(20 * 60)

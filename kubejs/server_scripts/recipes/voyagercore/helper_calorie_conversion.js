@@ -34,7 +34,7 @@ ServerEvents.recipes(event => {
                 .EUt(-eut)
     }
 
-    function advanced_calorie_conversion(cookie, helper, output, time, eut, outF)
+    function advanced_calorie_conversion(cookie, helper, output, time, eut, outF, helperLevel)
     {
         if (!outF)
         {
@@ -42,7 +42,8 @@ ServerEvents.recipes(event => {
         }
         event.recipes.gtceu.advanced_calorie_conversion("kubejs:grandmas_" + cookie + "_" + helper)
                 .itemInputs("kubejs:grandmas_" + cookie)
-                .notConsumable("kubejs:"+ helper +"_helper")
+                .addData("paramount", "hungry")
+                .addData("paramount_level", helperLevel)
                 .itemOutputs(output)
                 .perTick(true)
                 .outputFluids(outF)
@@ -88,7 +89,9 @@ ServerEvents.recipes(event => {
     calorie_conversion('cookie', 'hungry', 'gtceu:carbon_dust', 3.75, 2048)
     calorie_conversion('cookie', 'lcptr', 'gtceu:carbon_dust', 15, 1024)
 
-    advanced_calorie_conversion('uranium_cookies', 'hungry_hungry', 'gtceu:uranium_dust', 10, 16384 * 2, 'gtceu:steam 500')
+    advanced_calorie_conversion('uranium_cookies', 'hungry_hungry', 'gtceu:uranium_dust', 10, 16384 * 2, 'gtceu:steam 500', 5)
+
+    advanced_calorie_conversion('cookie', 'hungry_hungry', 'gtceu:uranium_dust', 3, 4096 * 1, 'gtceu:steam 500', 1)
 
 
     // calorie_conversion('cookie', 'hungry_hungry', 'gtceu:graphite_dust', 3, 4096)

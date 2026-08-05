@@ -61,6 +61,7 @@ function convertToRoman(num) {
   const gre = "§r§7"
   const wh = ""
   const b = "§r§b"
+  const cy = "§r§3"
 
   function cubeTooltip(name)
   {
@@ -71,6 +72,7 @@ function convertToRoman(num) {
         nl,
         `${gre}Uses ${gr}${displayName}${x} ${gre}recipes`,
         `${gre}Has ${or}Cube Boosting${x} ${gre}and ${ye}Non-Perfect Overclocks${x}`,
+        `${gre}Has ${or}Helper Compatibility${x}`,
         nl,
         `${gre}Consumes ${gr}75% EU/t${x} ${gre}of base recipe`,
         `${gre}Runs recipes at ${gr}125% speed${x}`,
@@ -87,6 +89,8 @@ function convertToRoman(num) {
   // addHelperTooltip('hv_technician', 'Recipes using this helper are on circuit 3\n(even if JEI doesn\'t say so)')
 
   event.add(`gtceu:power_rectangle_helper_calorie_converter`, '\n§6Can run helper calorie conversion recipes')
+
+  event.add(`voyagercore:hungry_helper`, '§x§6Grandma\'s favorite')
   // event.add(`gtceu:beam_of_teus`, '§6Can use parallel hatches')
 
   event.add(`voyagercore:helper_electric_blast_furnace`, [
@@ -153,10 +157,65 @@ event.add(`voyagercore:pulverizer`, [
     `${gre}Can use ${or}Parallel Hatches${x} ${gre}and has ${ye}Non-Perfect Overclocks${x}`,
     `${gre}Has ${ye}Helper Compatibility${x}`,
     nl,
-    `${gre}For each ${ye}crushing wheel tier${gre} above recipe crushing wheel tier,${x}`,
+    `${gre}For each ${ye}crushing wheel tier${gre} above recipe crushing wheel tier${x}`,
     `${gre}increase yield of all outputs by 1`,
     nl,
     `${gre}Consumes ${or}250mb/s${x} ${gre}of ${ye}High Stress Lubricant${x} ${gre}in order to run recipes`,
+])
+
+event.add(`voyagercore:large_industrial_oven`, [
+    `${ye}Large Industrial Oven`,
+     `${gre}Uses ${gr}Oven${x} ${gre}recipes`,
+    nl,
+    `${gre}Uses ${gr}Oven${x} ${gre}recipes`,
+    `${gre}Has ${ye}Non-Perfect Overclocks${x}`,
+    `${gre}Has ${or}Helper Compatibility${x}`,
+])
+
+event.add(`voyagercore:grandmas_stovetop_oven`, [
+    `${or}Grandma's Stovetop Oven`,
+    `${gre}Home for ${or}Grandma`,
+    nl,
+    `${gre}Uses ${gr}Grandma's Baking${x} ${gre}recipes`,
+    `${gre}Has ${ye}Non-Perfect Overclocks${x}, and ${ye}Heat Boosting`,
+    nl,
+    `${gre}Consumes ${gr}85% EU/t${x} ${gre}of base recipe`,
+    `${gre}For every ${re}500K${x} ${gre}above recipe temperature, gain ${gr}an additional parallel${x}`,
+    `${gre}For every ${re}1000K${x} ${gre}above recipe temperature, reduce recipe time by ${gr}10% multiplicatively${x}`,
+    nl,
+    `${gre}Requires a ${or}Grandma Helper${x} for all recipes`,
+    `${gre}Must have a ${ye}helper hatch${gre} to form${x}`,
+])
+
+event.add(`voyagercore:smd_assembler`, [
+    `${cy}SMD Assembler`,
+    nl,
+    `${gre}Uses ${gr}SMD Assembly${x} ${gre}recipes`,
+    `${gre}Has ${ye}Non-Perfect Overclocks${x}`,
+    `${gre}Has ${ye}Helper Compatibility${x}`,
+    nl,
+    `${gre}All ${gr}SMD Assembly${x} recipes ${ye}have helper specializations${gre}${x}`,
+    `${gre}Can only have ${re}one energy hatch`
+])
+
+event.add(`voyagercore:helper_assembler`, [
+    `${gr}Helper Assembler`,
+    nl,
+    `${gre}Applies ${gr}Helper Modules${x} ${gre}to helpers`,
+    nl,
+    `${gre}A helper can only take modules of their tier or lower${x}`,
+    `${or}Specialized helpers ${gre}can take all ${x}non-paramount ${gre}modules of their tier or lower${x}`,
+    `${ye}Paramount helpers ${gre}can only take their specific modules of their level or lower${x}`,
+])
+
+event.add(`voyagercore:helper_factory`, [
+    `${gr}Helper Factory`,
+    nl,
+    `${gre}Uses ${gr}Helper Factory${x} ${gre}recipes`,
+    `${gre}Has ${ye}Non-Perfect Overclocks${x}`,
+    nl,
+    `${gre}Assembles Helper Hulls${x}`,
+    `All ${or}Precise robot arm boxes ${x}must be ${ye}at least the tier ${gre}of the recipe${x} for it to run`,
 ])
 
 function donut(tierNum, tierVol, acceptedHatches)
@@ -229,24 +288,42 @@ event.add(`voyagercore:beam_of_teus`, [
   cubeTooltip('autoclave')
   cubeTooltip('assembler')
 
+  event.add(/^kubejs:(?!.*computation).*helper.*$/, `${re}Deprecated - Check crafting recipe to swap for new helper`)
+
   event.add(`gtceu:radiation_chamber`, ['§aFocuses radioactive decay particles into a central chamber§r','§6Can only use 4x parallel hatches§r'])
   event.add(`voyagercore:hyper_helper_calorie_converter`, [
     `${gr}Hyper Helper Calorie Converter`,
     nl,
     `${gre}Uses ${gr}Advanced Helper Calorie Conversion${x}${gre} recipes`,
-    `${ye}Only accepts IV-tier Helpers/Cookies and above${x}`,
+    `${gre}Only accepts a level ${gr}5${gre} and above ${gr}Hungry Helper${x}`,
     `${gre}Certain helper drinks provide ${gr}bonuses`,
     nl,
     `${or}Distilled Water${x}${gre} (1000mb/5s)`,
     `${ye}100% EU/t${x}${gre} | ${ye}100% Recipe Duration${x}`,
     `${wh}Milk${x}${gre} (350mb/5s)`,
-    `${gr}200% EU/t${x}${gre} | ${gr}150% Recipe Duration${x}`,
+    `${gr}125% EU/t${x}${gre} | ${gr}150% Recipe Duration${x}`,
     `${b}Helperade (Blue Raspberry)${x}${gre} (50mb/5s)`,
-    `${gr}400% EU/t${x}${gre} | ${gr}400% Recipe Duration${x}`,
+    `${gr}225% EU/t${x}${gre} | ${gr}400% Recipe Duration${x}`,
     `${gre}Water (5000mb/5s)`,
     `${re}50% EU/t${x}${gre} | ${re}50% Recipe Duration${x}`,
     nl,
-    `${gre}If no drink is provided, the helper will eat your cookies, and generate ${re}10% EU/t${gre}`
+    `${gre}If no drink is provided, the helper will eat your cookies, and generate ${re}10% EU/t${gre}`,
+    ``,
+    `${gre}Inspired by: ${cy}webal`
+])
+
+  event.add(`gtceu:large_helper_wheel`, [
+    `${cy}Large Helper Wheel`,
+    nl,
+    `${gre}Uses ${gr}Large Helper Wheel${x}${gre} recipes`,
+    `${gre}Has ${ye}Helper Compatibility${x}`,
+    nl,
+    `${gre}Generates 1 amp of ${or}HV${gre} power (512 EU/t)`,
+    `${gre}Requires a ${ye}helper holder${gre} to form`,
+    nl,
+    `${ye}Speed modules${x} are most effective${gre} in this multiblock${gre}`,
+    nl,
+    `${gre}Created by: ${cy}webal`
 ])
 
 })

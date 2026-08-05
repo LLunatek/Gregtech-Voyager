@@ -6,11 +6,10 @@ ServerEvents.recipes(event => {
     
     event.recipes.gtceu
         .large_helper_wheel('kubejs:large_helper_wheel')   // recipe ID
-        .itemInputs([{item: 'kubejs:grandmas_cookie'}])
-        .inputFluids("kubejs:melted_butter 100")
-        .notConsumable('kubejs:lcptr_helper')
-        .duration(500)                                 // in ticks
-        .EUt(-128 * 6)     
+        .itemInputs('minecraft:cookie')
+        .inputFluids("kubejs:melted_butter 5")
+        .duration(20)                                 // in ticks
+        .EUt(-128 * 4)     
 
 
     event.shaped(

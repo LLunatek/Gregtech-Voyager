@@ -153,56 +153,6 @@
 		}
 		{
 			dependencies: [
-				"15641EDDE751887F"
-				"7E5A1832ABFA9D2B"
-			]
-			description: [
-				"&oThinking of the one from Cookie Clicker? That's her sister."
-				""
-				"Welcome to &l&dParamount Helpers&r, one of the core mechanics of Gregtech: Voyager. Paramount helpers are unique in that they actually are needed to &ounlock&r certain recipes. Not all of them are needed for progression, but all of them are needed for their specific progression."
-				""
-				"Paramount helpers can &nonly take their specified modules&r"
-				""
-				"The &6Grandma Helper&r is needed for &ecookie power&r."
-				""
-				"Every level on a Paramount helper gives it an additional module slot"
-				""
-				""
-				"{@pagebreak}"
-				""
-				"In order to unlock more and more tiers of cookies, you will have to use your &6Grandma Helper&r to level her up."
-			]
-			id: "3599C7EE03A66551"
-			rewards: [{
-				id: "779EEC4C86B9FB76"
-				item: "kubejs:hv_loot_bag"
-				type: "item"
-			}]
-			subtitle: "Edith"
-			tasks: [
-				{
-					id: "5B97D2E5B1F8EED2"
-					item: "voyagercore:grandma_paramount_helper"
-					type: "item"
-				}
-				{
-					id: "6B6C5D56EFFEB7B7"
-					item: "voyagercore:grandma_paramount_helper_hull"
-					type: "item"
-				}
-				{
-					id: "0CFA30EE22C4BC12"
-					item: "voyagercore:heart_grandma_helper_module_1"
-					type: "item"
-				}
-			]
-			title: "Paramount Helpers"
-			x: 0.5d
-			y: 1.0d
-		}
-		{
-			dependencies: [
-				"766E1DAC44A29637"
 				"4627AEED5BEF3133"
 				"477F006BF784C7E4"
 			]
@@ -228,15 +178,14 @@
 				item: "gtceu:large_helper_wheel"
 				type: "item"
 			}]
-			x: 3.0d
-			y: 2.0d
+			x: 2.0d
+			y: 1.0d
 		}
 		{
 			dependencies: [
 				"47B86AAAB18C918E"
 				"2331F01276C17711"
 				"15641EDDE751887F"
-				"7E5A1832ABFA9D2B"
 			]
 			description: ["Yeah, this one dosen't get a name (he HATES Nicknames [pronounced Nicknames])"]
 			id: "4627AEED5BEF3133"
@@ -291,30 +240,6 @@
 			title: "More Maintence Hatches"
 			x: 0.5d
 			y: -6.0d
-		}
-		{
-			dependencies: ["27FA9D679397209A"]
-			id: "7E5A1832ABFA9D2B"
-			subtitle: "The bravery soul"
-			tasks: [{
-				id: "4EABE700EA224AEE"
-				item: "kubejs:heart_of_gold"
-				type: "item"
-			}]
-			x: 0.0d
-			y: 2.5d
-		}
-		{
-			dependencies: ["72BCD56BAC6F1E57"]
-			id: "27FA9D679397209A"
-			subtitle: "Gold with a crush"
-			tasks: [{
-				id: "07DB59D79974237C"
-				item: "gtceu:rose_gold_ingot"
-				type: "item"
-			}]
-			x: 1.0d
-			y: 2.5d
 		}
 		{
 			dependencies: ["6E68356E319A0B43"]
@@ -1103,7 +1028,7 @@
 			}]
 			title: "To The Moon!"
 			x: 3.0d
-			y: 6.0d
+			y: 4.5d
 		}
 		{
 			id: "7A11C3062B307765"
@@ -1119,8 +1044,8 @@
 				item: "ad_astra:launch_pad"
 				type: "item"
 			}]
-			x: 6.0d
-			y: 6.75d
+			x: 3.75d
+			y: 7.25d
 		}
 		{
 			hide_dependency_lines: true
@@ -1144,8 +1069,8 @@
 				type: "item"
 			}]
 			title: "Swagged out 1"
-			x: 1.0d
-			y: 5.5d
+			x: 0.5d
+			y: 4.5d
 		}
 		{
 			hide_dependency_lines: true
@@ -1169,8 +1094,8 @@
 				type: "item"
 			}]
 			title: "Swagged out 2"
-			x: 1.0d
-			y: 6.5d
+			x: 0.5d
+			y: 5.5d
 		}
 		{
 			hide_dependency_lines: true
@@ -1194,8 +1119,8 @@
 				type: "item"
 			}]
 			title: "Swagged out 3"
-			x: 1.5d
-			y: 7.5d
+			x: 1.0d
+			y: 6.5d
 		}
 		{
 			hide_dependency_lines: true
@@ -1219,8 +1144,8 @@
 				type: "item"
 			}]
 			title: "Swagged out 4"
-			x: 2.5d
-			y: 8.0d
+			x: 2.0d
+			y: 7.0d
 		}
 		{
 			dependencies: [
@@ -1387,32 +1312,6 @@
 			}]
 			x: 3.5d
 			y: -1.5d
-		}
-		{
-			dependencies: ["3599C7EE03A66551"]
-			id: "766E1DAC44A29637"
-			rewards: [
-				{
-					id: "362FF88A6040B375"
-					item: "kubejs:hv_loot_bag"
-					type: "item"
-				}
-				{
-					id: "07F97C55D6795861"
-					item: "kubejs:heart_of_gold"
-					type: "item"
-				}
-			]
-			subtitle: "Tastier than even the finest of meals"
-			tasks: [{
-				consume_items: true
-				count: 64L
-				id: "45A710A6B26DA839"
-				item: { Count: 64, id: "kubejs:grandmas_cookie" }
-				type: "item"
-			}]
-			x: 1.5d
-			y: 1.5d
 		}
 		{
 			dependencies: [

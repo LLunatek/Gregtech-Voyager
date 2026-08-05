@@ -92,8 +92,8 @@ ServerEvents.recipes(event => {
         '16x kubejs:uranium_cookie_dough', [], 3.6 * 9 * .33, 1280, 'advanced_chemist_helper'
     )
 
-    oven('grandmas_uranium_cookies', 16, '16x kubejs:uranium_cookie_dough', 'grandmas_baking_sheet', 'radiation_resistant', 1980, 60)
-    oven('grandmas_uranium_cookies', 32, '32x kubejs:uranium_cookie_dough', 'grandmas_tungsten_baking_sheet', 'radiation_resistant', 1520, 60 *.66)
+    // oven('grandmas_uranium_cookies', 16, '16x kubejs:uranium_cookie_dough', 'grandmas_baking_sheet', 'radiation_resistant', 1980, 60)
+    // oven('grandmas_uranium_cookies', 32, '32x kubejs:uranium_cookie_dough', 'grandmas_tungsten_baking_sheet', 'radiation_resistant', 1520, 60 *.66)
 
 
 });

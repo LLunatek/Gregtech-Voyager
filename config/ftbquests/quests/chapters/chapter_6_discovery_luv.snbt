@@ -3,6 +3,7 @@
 	default_quest_shape: ""
 	filename: "chapter_6_discovery_luv"
 	group: "3E515D2B3A8DFC29"
+	icon: "voyagercore:luv_super_donut"
 	id: "4F3954708077CDB3"
 	order_index: 8
 	quest_links: [ ]
@@ -978,7 +979,6 @@
 			dependencies: [
 				"67DE1F8DDB417B97"
 				"3B52572CC993D5DD"
-				"3873A68F9FBFA5EA"
 			]
 			hide_dependency_lines: false
 			id: "47964DFA4D228FAA"
@@ -1107,16 +1107,6 @@
 			}]
 			x: 4.0d
 			y: 15.5d
-		}
-		{
-			id: "3873A68F9FBFA5EA"
-			tasks: [{
-				id: "45006DAF992B60CF"
-				item: "kubejs:luv_technician_helper"
-				type: "item"
-			}]
-			x: 11.5d
-			y: 12.5d
 		}
 	]
 	title: "Chapter 6: Discovery (LuV)"

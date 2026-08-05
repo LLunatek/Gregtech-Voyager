@@ -944,105 +944,14 @@
 			y: -1.0d
 		}
 		{
-			dependencies: [
-				"64B5D866D92BA6C4"
-				"51E5DD3A4B30CF75"
-			]
-			id: "7D03DD080C4A9C7F"
-			size: 1.5d
-			tasks: [{
-				id: "066B711EA727BB91"
-				item: "gtceu:helper_software_installation_unit"
-				type: "item"
-			}]
-			x: -6.5d
-			y: 12.0d
-		}
-		{
-			dependencies: ["7D03DD080C4A9C7F"]
 			id: "17EC186948CB00B9"
 			tasks: [{
 				id: "7B2ADCC51C7A4F31"
 				item: "kubejs:iv_helper_computation_array"
 				type: "item"
 			}]
-			x: -8.0d
-			y: 13.5d
-		}
-		{
-			dependencies: ["17EC186948CB00B9"]
-			id: "2EF0F4EBCA6457AA"
-			tasks: [{
-				id: "278CC51ADAAD50C5"
-				item: "kubejs:ev_ebf_helper"
-				type: "item"
-			}]
-			x: -6.5d
-			y: 13.5d
-		}
-		{
-			dependencies: ["17EC186948CB00B9"]
-			id: "43C04EEFAC435F2A"
-			tasks: [{
-				id: "37EF7244F7644BD6"
-				item: "kubejs:embassy_helper"
-				type: "item"
-			}]
-			x: -6.5d
-			y: 15.5d
-		}
-		{
-			dependencies: [
-				"17EC186948CB00B9"
-				"51E5DD3A4B30CF75"
-			]
-			id: "2D4AC4935C3C57DB"
-			tasks: [{
-				id: "3AB085EA73BCCEAA"
-				item: "kubejs:advanced_chemist_helper"
-				type: "item"
-			}]
-			x: -6.5d
-			y: 16.5d
-		}
-		{
-			dependencies: ["17EC186948CB00B9"]
-			id: "642144DEB46A48DF"
-			tasks: [{
-				id: "2F5E327BD51E97A0"
-				item: "kubejs:iv_technician_helper"
-				type: "item"
-			}]
-			x: -6.5d
-			y: 14.5d
-		}
-		{
-			dependencies: ["7764E1FF769BDCB6"]
-			hide_dependency_lines: true
-			id: "2120793652BC1F0D"
-			tasks: [{
-				id: "000BA987DEE6EF04"
-				item: "kubejs:iv_stomach_unit"
-				type: "item"
-			}]
-			x: -1.5d
-			y: 17.5d
-		}
-		{
-			dependencies: [
-				"2120793652BC1F0D"
-				"17EC186948CB00B9"
-			]
-			description: ["Can consume &auranium cookies only&r"]
-			hide_dependency_lines: true
-			id: "1A250E50BC201DDE"
-			tasks: [{
-				id: "2B6FD176BAB1AB98"
-				item: "kubejs:hungry_hungry_helper"
-				type: "item"
-			}]
-			x: -1.5d
-			y: 16.5d
+			x: -5.5d
+			y: 13.0d
 		}
 		{
 			dependencies: [
@@ -1171,8 +1080,8 @@
 				}
 			]
 			title: "Better Blasting"
-			x: 7.0d
-			y: 13.5d
+			x: 5.0d
+			y: 16.0d
 		}
 		{
 			dependencies: ["1EA011566D0AF90B"]
@@ -1185,8 +1094,8 @@
 				item: "gtceu:iv_large_miner"
 				type: "item"
 			}]
-			x: 5.25d
-			y: 13.5d
+			x: 3.25d
+			y: 16.0d
 		}
 		{
 			dependencies: [
@@ -1210,6 +1119,10 @@
 				"2597FEAE670B7E8C"
 				"0BAE4AAE70DB71F2"
 				"0DC7B262CFD55FB5"
+				"4DDA4D6B442E88B9"
+				"7B3081714D2F0978"
+				"49B15AD0941BEE9F"
+				"6A1DDF4D3C428FFD"
 			]
 			id: "57273F946436DC4C"
 			size: 3.0d
@@ -1329,8 +1242,8 @@
 				item: "gtceu:fiber_reinforced_printed_circuit_board"
 				type: "item"
 			}]
-			x: 0.5d
-			y: 11.5d
+			x: 0.0d
+			y: 12.0d
 		}
 		{
 			description: ["add a new glue or something, a chemical line"]
@@ -1373,7 +1286,7 @@
 				item: "gtceu:titanex-879-htb_ingot"
 				type: "item"
 			}]
-			x: 7.0d
+			x: 8.5d
 			y: 10.0d
 		}
 		{
@@ -1403,7 +1316,10 @@
 			y: 6.0d
 		}
 		{
-			dependencies: ["014935D33AD9697A"]
+			dependencies: [
+				"014935D33AD9697A"
+				"47F271D5BF669B84"
+			]
 			id: "17B8AC9F71D82B41"
 			subtitle: "The ultimate alloying assistant"
 			tasks: [{
@@ -1412,8 +1328,8 @@
 				type: "item"
 			}]
 			title: "High-Temp Binding Agent S"
-			x: 5.5d
-			y: 10.0d
+			x: 6.0d
+			y: 11.0d
 		}
 		{
 			dependencies: ["48A67162760139FC"]
@@ -1469,8 +1385,8 @@
 				item: "gtceu:aluminex_202_a_ingot"
 				type: "item"
 			}]
-			x: 7.0d
-			y: 11.0d
+			x: 5.0d
+			y: 14.0d
 		}
 		{
 			dependencies: [
@@ -1526,8 +1442,8 @@
 				}
 			]
 			title: "Better Freezing"
-			x: 7.0d
-			y: 15.5d
+			x: 5.0d
+			y: 18.0d
 		}
 		{
 			dependencies: ["014935D33AD9697A"]
@@ -1572,11 +1488,12 @@
 				item: "kubejs:titanite_coil_block"
 				type: "item"
 			}]
-			x: 7.0d
+			x: 7.5d
 			y: 9.0d
 		}
 		{
 			dependencies: ["3EB2AED9E53B3F2F"]
+			hide_dependency_lines: true
 			id: "47F271D5BF669B84"
 			shape: "gear"
 			size: 1.5d
@@ -1585,8 +1502,8 @@
 				item: "voyagercore:chemical_plant"
 				type: "item"
 			}]
-			x: -2.5d
-			y: 11.0d
+			x: 7.5d
+			y: 14.0d
 		}
 		{
 			dependencies: ["47F271D5BF669B84"]
@@ -1603,8 +1520,8 @@
 		{
 			dependencies: [
 				"4A3F739F237D619A"
-				"6FCDF4FD93D5B80D"
 				"48A67162760139FC"
+				"5417BBFB6E67273E"
 			]
 			description: [""]
 			hide_dependent_lines: true
@@ -1615,19 +1532,22 @@
 				item: "gtceu:titanex-901-htc_ingot"
 				type: "item"
 			}]
-			x: 8.0d
-			y: 10.0d
+			x: 8.5d
+			y: 6.0d
 		}
 		{
-			dependencies: ["17B8AC9F71D82B41"]
+			dependencies: [
+				"17B8AC9F71D82B41"
+				"51E5DD3A4B30CF75"
+			]
 			id: "6FCDF4FD93D5B80D"
 			tasks: [{
 				id: "26C922A4ED52F3D7"
 				item: "gtceu:martian-composite_ingot"
 				type: "item"
 			}]
-			x: 8.0d
-			y: 11.0d
+			x: 8.5d
+			y: 12.0d
 		}
 		{
 			description: ["If you haven't already, you may want to set up an array of multiple ABS's. Some of the chains get long for titanex, so it's a good idea to pipeline it as much as possible."]
@@ -1638,8 +1558,8 @@
 				title: "ABS Alloy Chains"
 				type: "checkmark"
 			}]
-			x: 9.5d
-			y: 10.5d
+			x: 10.0d
+			y: 11.0d
 		}
 		{
 			id: "185E7D62706F17F6"
@@ -1650,6 +1570,70 @@
 			}]
 			x: 1.5d
 			y: 0.5d
+		}
+		{
+			id: "4DDA4D6B442E88B9"
+			tasks: [{
+				id: "412327C7A2F0A7E1"
+				item: {
+					Count: 1
+					id: "ad_astra:netherite_space_helmet"
+					tag: {
+						Damage: 0
+					}
+				}
+				type: "item"
+			}]
+			x: -11.5d
+			y: 11.5d
+		}
+		{
+			id: "7B3081714D2F0978"
+			tasks: [{
+				id: "43469E44DD919568"
+				item: {
+					Count: 1
+					id: "ad_astra:netherite_space_suit"
+					tag: {
+						Damage: 0
+					}
+				}
+				type: "item"
+			}]
+			x: -11.0d
+			y: 12.5d
+		}
+		{
+			id: "49B15AD0941BEE9F"
+			tasks: [{
+				id: "40BD0D558050D0FC"
+				item: {
+					Count: 1
+					id: "ad_astra:netherite_space_pants"
+					tag: {
+						Damage: 0
+					}
+				}
+				type: "item"
+			}]
+			x: -10.0d
+			y: 13.0d
+		}
+		{
+			id: "6A1DDF4D3C428FFD"
+			tasks: [{
+				id: "5CA73673F873E13D"
+				item: {
+					Count: 1
+					id: "ad_astra:space_boots"
+					tag: {
+						Damage: 0
+					}
+				}
+				type: "item"
+			}]
+			x: -9.0d
+			y: 13.0d
 		}
 	]
 	title: "Chapter 5: Age of Infrastructure (IV)"

@@ -196,7 +196,7 @@ ServerEvents.recipes(event => {
     c_postbox_bad('martian_shipment_t1', 'martian_contract', '64x gtceu:desh_ingot', 60 * 10, 13000, 'embassy')
 
     event.recipes.gtceu.assembler("kubejs:radio")
-        .itemInputs('12x gtceu:double_ostrum_plate', '32x gtceu:lunarium_ring', '16x gtceu:uranium_triplatinum_single_wire', '32x gtceu:qbit_cpu_chip', '8x #gtceu:circuits/luv', '2x gtceu:iv_emitter', '2x gtceu:iv_sensor')
+        .itemInputs('2x gtceu:double_ostrum_plate', '4x gtceu:lunarium_ring', '4x gtceu:uranium_triplatinum_single_wire', '2x gtceu:qbit_cpu_chip', '2x #gtceu:circuits/iv', '1x gtceu:iv_emitter', '1x gtceu:iv_sensor')
         .inputFluids('gtceu:soldering_alloy 1000')
         .itemOutputs({type: "minecraft:item_nbt", item: "kubejs:celestial_radio", nbt: {message:1}})
         .duration(1000) 

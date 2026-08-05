@@ -378,7 +378,7 @@ event.recipes.gtceu.assembler('kubejs:deshcoil')
     .itemInputs(
         '8x gtceu:desh_double_wire',
         '8x gtceu:tungsten_carbide_foil',
-        '32x gtceu:polytetrafluoroethylene_foil',
+        '32x gtceu:metallic_mica_foil',
     )
     // .notConsumable('kubejs:lv_technician_helper')
     .itemOutputs('1x kubejs:desh_coil_block')
@@ -389,14 +389,14 @@ event.recipes.gtceu.assembler('kubejs:deshcoil')
 event.recipes.gtceu.assembler('kubejs:titanite_coil')
     .itemInputs(
         '8x gtceu:titanite_double_wire',
-        '8x gtceu:tungsten_carbide_foil',
-        '32x gtceu:polytetrafluoroethylene_foil',
+        '16x gtceu:titanite_alloy_foil',
+        '64x gtceu:metallic_mica_foil',
     )
     // .notConsumable('kubejs:lv_technician_helper')
     .itemOutputs('1x kubejs:titanite_coil_block')
-    .inputFluids('gtceu:desh 144')
+    .inputFluids('gtceu:hssg 144')
     .duration(40*20)
-    .EUt(1980);
+    .EUt(7680);
 
 // misc
 

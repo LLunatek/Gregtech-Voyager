@@ -279,9 +279,9 @@ ServerEvents.recipes(event => {
     event.shaped(
         Item.of('ae2:color_applicator', 1), 
         [
-            '   ',
+            ' C ',
             'BAD', 
-            '   '
+            ' C '
         ],
         {
             A: 'gtceu:empty_spray_can',
@@ -290,6 +290,7 @@ ServerEvents.recipes(event => {
             D: 'gtceu:aluminium_plate'
         }
     )
+
 
      event.recipes.gtceu
         .assembler('kubejs:pattern')  
