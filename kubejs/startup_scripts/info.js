@@ -1,1 +1,1 @@
-Platform.mods.kubejs.name = 'Gregtech: Voyager'
+Platform.mods.kubejs.name = "Gregtech: Voyager"

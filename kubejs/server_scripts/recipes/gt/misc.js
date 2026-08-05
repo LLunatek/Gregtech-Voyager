@@ -1,71 +1,65 @@
-ServerEvents.recipes(event => {
-
-    const mcTiers = ['stone', 'iron', 'gold', 'diamond', 'netherite']
-    function removeTools(tier)
-    {
-        event.remove({output : `minecraft:${tier}_pickaxe`})
-        event.remove({output : `minecraft:${tier}_axe`})
-        event.remove({output : `minecraft:${tier}_shovel`})
-        event.remove({output : `minecraft:${tier}_sword`})
-        event.remove({output : `minecraft:${tier}_hoe`})
+ServerEvents.recipes((event) => {
+    const mcTiers = ["stone", "iron", "gold", "diamond", "netherite"]
+    function removeTools(tier) {
+        event.remove({ output: `minecraft:${tier}_pickaxe` })
+        event.remove({ output: `minecraft:${tier}_axe` })
+        event.remove({ output: `minecraft:${tier}_shovel` })
+        event.remove({ output: `minecraft:${tier}_sword` })
+        event.remove({ output: `minecraft:${tier}_hoe` })
     }
 
-    mcTiers.forEach(tier => removeTools(tier));
+    mcTiers.forEach((tier) => removeTools(tier))
 
-
-    event.recipes.gtceu.rock_breaker("kubejs:obisidan_redstone")
+    event.recipes.gtceu
+        .rock_breaker("kubejs:obisidan_redstone")
         .itemInputs("minecraft:redstone")
         .itemOutputs("minecraft:obsidian")
-        .duration(10*20) // 60 sec
+        .duration(10 * 20) // 60 sec
         .EUt(256)
 
     event.shaped(
-        Item.of('gtceu:concrete_bucket', 1), // arg 1: output
+        Item.of("gtceu:concrete_bucket", 1), // arg 1: output
         [
-            'A B',
-            'ACB', // arg 2: the shape (array of strings)
-            ' D '
+            "A B",
+            "ACB", // arg 2: the shape (array of strings)
+            " D "
         ],
         {
-            A: 'gtceu:clay_dust',
-            B: 'gtceu:quartz_sand_dust',  //arg 3: the mapping object
-            C: 'minecraft:bucket',
-            D: 'gtceu:stone_dust'
+            A: "gtceu:clay_dust",
+            B: "gtceu:quartz_sand_dust", //arg 3: the mapping object
+            C: "minecraft:bucket",
+            D: "gtceu:stone_dust"
         }
     )
 
-        event.shaped(
-        Item.of('minecraft:bricks', 2), // arg 1: output
+    event.shaped(
+        Item.of("minecraft:bricks", 2), // arg 1: output
         [
-            'AAA',
-            'ACA', // arg 2: the shape (array of strings)
-            'AAA'
+            "AAA",
+            "ACA", // arg 2: the shape (array of strings)
+            "AAA"
         ],
         {
-            C: 'gtceu:concrete_bucket',
-            A: 'minecraft:brick',
+            C: "gtceu:concrete_bucket",
+            A: "minecraft:brick"
         }
-        )
+    )
 
-    event.remove({output: 'gtceu:firebricks'})
+    event.remove({ output: "gtceu:firebricks" })
 
-    event.recipes.gtceu.compressor("kubejs:firebricks")
-        .itemInputs('4x gtceu:firebrick')
+    event.recipes.gtceu
+        .compressor("kubejs:firebricks")
+        .itemInputs("4x gtceu:firebrick")
         .EUt(2)
-        .itemOutputs('gtceu:firebricks')
-        .duration(10*20)
+        .itemOutputs("gtceu:firebricks")
+        .duration(10 * 20)
 
-    event.recipes.gtceu.compressor("kubejs:bricks")
-        .itemInputs('4x minecraft:brick')
+    event.recipes.gtceu
+        .compressor("kubejs:bricks")
+        .itemInputs("4x minecraft:brick")
         .EUt(2)
-        .itemOutputs('minecraft:bricks')
-        .duration(10*20)
+        .itemOutputs("minecraft:bricks")
+        .duration(10 * 20)
 
-    event.recipes.gtceu.macerator("kubejs:treated_wood_pulp")
-        .itemInputs('1x gtceu:treated_wood_planks')
-        .EUt(16)
-        .itemOutputs('2x gtceu:treated_wood_dust')
-        .duration(40)
-
-
-});
+    event.recipes.gtceu.macerator("kubejs:treated_wood_pulp").itemInputs("1x gtceu:treated_wood_planks").EUt(16).itemOutputs("2x gtceu:treated_wood_dust").duration(40)
+})

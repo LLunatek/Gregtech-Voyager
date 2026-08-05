@@ -1,6 +1,4 @@
-
-
-ServerEvents.recipes(event => {
+ServerEvents.recipes((event) => {
     // event.recipes.gtceu
     //     .helper_wheel('kubejs:track_runner_helper')   // recipe ID
     //     .itemInputs([{item: 'minecraft:cookie'}])
@@ -9,36 +7,31 @@ ServerEvents.recipes(event => {
     //     .duration(500)                                 // in ticks
     //     .EUt(-32)                                // EU produced total]
 
+    const fullName = (name) => "kubejs:" + name
 
-    const fullName = (name) => 'kubejs:' + name;
-
-    function create_mixer_recipe(name, ingredientsItem, fluidIngredients, itemOutputs, fluidOutputs, eut, time)
-    {
-        event.recipes.gtceu.mixer(fullName(name))
+    function create_mixer_recipe(name, ingredientsItem, fluidIngredients, itemOutputs, fluidOutputs, eut, time) {
+        event.recipes.gtceu
+            .mixer(fullName(name))
             .itemInputs(ingredientsItem)
             .inputFluids(fluidIngredients)
             .itemOutputs(itemOutputs)
             .outputFluids(fluidOutputs)
             .duration(time * 20)
-            .EUt(eut);
+            .EUt(eut)
     }
 
-    function oven(output, count, ingredientsItem, bakingsheet, grandma, eut, time)
-    {
-
-            event.recipes.gtceu.oven('kubejs:' + output + '_' + bakingsheet)
+    function oven(output, count, ingredientsItem, bakingsheet, grandma, eut, time) {
+        event.recipes.gtceu
+            .oven("kubejs:" + output + "_" + bakingsheet)
             .itemInputs(ingredientsItem)
-            .itemOutputs(count + 'x kubejs:' + output)
-            .notConsumable('kubejs:' + grandma + '_grandma_helper')
-            .notConsumable('kubejs:' + bakingsheet)
+            .itemOutputs(count + "x kubejs:" + output)
+            .notConsumable("kubejs:" + grandma + "_grandma_helper")
+            .notConsumable("kubejs:" + bakingsheet)
             .duration(time * 20)
-            .EUt(eut);
-
+            .EUt(eut)
     }
-        
-    
 
-/**
+    /**
      * Create a lcr recipe
      * @param {*} name - recipe name (dont include kubejs:)
      * @param {*} inputItems - array of input items (include amount)
@@ -48,48 +41,71 @@ ServerEvents.recipes(event => {
      * @param {*} duration - time in seconds
      * @param {*} eut - eu/tick
      */
-    function create_recipe_lcr(name, inputItems, inputFluids, outputItems, outputFluids, duration, eut, helper)
-    {
-      if(!helper)
-      {
-        event.recipes.gtceu.large_chemical_reactor("kubejs:lcr_" + name)
-        .itemInputs(inputItems)
-        .itemOutputs(outputItems)
-        .inputFluids(inputFluids)
-        .outputFluids(outputFluids)
-        .duration(duration * 20) 
-        .EUt(eut) 
-      }
-      else
-      {
-        event.recipes.gtceu.large_chemical_reactor("kubejs:lcr_helper_" + name)
-          .itemInputs(inputItems)
-          .notConsumable('kubejs:' + helper)
-          .itemOutputs(outputItems)
-          .inputFluids(inputFluids)
-          .circuit(3)
-          .outputFluids(outputFluids)
-          .duration(duration * 20) 
-          .EUt(eut) 
-      }
-       
+    function create_recipe_lcr(name, inputItems, inputFluids, outputItems, outputFluids, duration, eut, helper) {
+        if (!helper) {
+            event.recipes.gtceu
+                .large_chemical_reactor("kubejs:lcr_" + name)
+                .itemInputs(inputItems)
+                .itemOutputs(outputItems)
+                .inputFluids(inputFluids)
+                .outputFluids(outputFluids)
+                .duration(duration * 20)
+                .EUt(eut)
+        } else {
+            event.recipes.gtceu
+                .large_chemical_reactor("kubejs:lcr_helper_" + name)
+                .itemInputs(inputItems)
+                .notConsumable("kubejs:" + helper)
+                .itemOutputs(outputItems)
+                .inputFluids(inputFluids)
+                .circuit(3)
+                .outputFluids(outputFluids)
+                .duration(duration * 20)
+                .EUt(eut)
+        }
     }
 
-    create_mixer_recipe('uranium_ethanol_solution', [], ['gtceu:ethanol 2000', 'gtceu:uranium_235 100'], [], ['gtceu:uranium_ethanol_solution 2000'], 1980, 50)
-    create_recipe_lcr('radioactive_cookie_dough', ['kubejs:cookie_dough', 'gtceu:tiny_rad_away_dust'], ['gtceu:glycerol 111', 'gtceu:uranium_ethanol_solution 11'],
-        'kubejs:uranium_cookie_dough', [], 3.6, 1980
+    create_mixer_recipe("uranium_ethanol_solution", [], ["gtceu:ethanol 2000", "gtceu:uranium_235 100"], [], ["gtceu:uranium_ethanol_solution 2000"], 1980, 50)
+    create_recipe_lcr(
+        "radioactive_cookie_dough",
+        ["kubejs:cookie_dough", "gtceu:tiny_rad_away_dust"],
+        ["gtceu:glycerol 111", "gtceu:uranium_ethanol_solution 11"],
+        "kubejs:uranium_cookie_dough",
+        [],
+        3.6,
+        1980
     )
 
-    create_recipe_lcr('radioactive_cookie_dough_bulk', ['9x kubejs:cookie_dough', 'gtceu:rad_away_dust'], ['gtceu:glycerol 999', 'gtceu:uranium_ethanol_solution 99'],
-        '9x kubejs:uranium_cookie_dough', [], 3.6 * 9, 1980
+    create_recipe_lcr(
+        "radioactive_cookie_dough_bulk",
+        ["9x kubejs:cookie_dough", "gtceu:rad_away_dust"],
+        ["gtceu:glycerol 999", "gtceu:uranium_ethanol_solution 99"],
+        "9x kubejs:uranium_cookie_dough",
+        [],
+        3.6 * 9,
+        1980
     )
 
-    create_recipe_lcr('radioactive_cookie_dough_bulk', ['12x kubejs:cookie_dough', 'gtceu:rad_away_dust'], ['gtceu:glycerol 667', 'gtceu:uranium_ethanol_solution 67'],
-        '12x kubejs:uranium_cookie_dough', [], 3.6 * 9 * .66, 1520, 'basic_chemist_helper'
+    create_recipe_lcr(
+        "radioactive_cookie_dough_bulk",
+        ["12x kubejs:cookie_dough", "gtceu:rad_away_dust"],
+        ["gtceu:glycerol 667", "gtceu:uranium_ethanol_solution 67"],
+        "12x kubejs:uranium_cookie_dough",
+        [],
+        3.6 * 9 * 0.66,
+        1520,
+        "basic_chemist_helper"
     )
 
-    create_recipe_lcr('radioactive_cookie_dough_bulk_adv', ['8x kubejs:cookie_dough', 'gtceu:rad_away_dust'], ['gtceu:glycerol 333', 'gtceu:uranium_ethanol_solution 33'],
-        '16x kubejs:uranium_cookie_dough', [], 3.6 * 9 * .33, 1280, 'advanced_chemist_helper'
+    create_recipe_lcr(
+        "radioactive_cookie_dough_bulk_adv",
+        ["8x kubejs:cookie_dough", "gtceu:rad_away_dust"],
+        ["gtceu:glycerol 333", "gtceu:uranium_ethanol_solution 33"],
+        "16x kubejs:uranium_cookie_dough",
+        [],
+        3.6 * 9 * 0.33,
+        1280,
+        "advanced_chemist_helper"
     )
 
     // oven('grandmas_uranium_cookies', 16, '16x kubejs:uranium_cookie_dough', 'grandmas_baking_sheet', 'radiation_resistant', 1980, 60)

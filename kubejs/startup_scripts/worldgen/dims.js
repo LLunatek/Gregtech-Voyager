@@ -1,32 +1,39 @@
-GTCEuStartupEvents.registry("gtceu:dimension_marker", event => {
+GTCEuStartupEvents.registry("gtceu:dimension_marker", (event) => {
     // Void Dim
-    event.create("javd:void")
+    event
+        .create("javd:void")
         .iconSupplier(() => Item.of("javd:portal_block").getItem())
         .tier(0)
         .overrideName("Void Dimension")
     // Ad Astra dimensions
-    event.create("ad_astra:moon")
+    event
+        .create("ad_astra:moon")
         .iconSupplier(() => Item.of("ad_astra:moon_globe").getItem())
         .tier(0)
         .overrideName("Moon")
-    event.create("ad_astra:mars")
+    event
+        .create("ad_astra:mars")
         .iconSupplier(() => Item.of("ad_astra:mars_globe").getItem())
         .tier(0)
         .overrideName("Mars")
-    event.create("ad_astra:mercury")
+    event
+        .create("ad_astra:mercury")
         .iconSupplier(() => Item.of("ad_astra:mercury_globe").getItem())
         .tier(0)
         .overrideName("Mercury")
-    event.create("ad_astra:venus")
+    event
+        .create("ad_astra:venus")
         .iconSupplier(() => Item.of("ad_astra:venus_globe").getItem())
         .tier(0)
         .overrideName("Venus")
-    event.create("ad_astra:glacio")
+    event
+        .create("ad_astra:glacio")
         .iconSupplier(() => Item.of("ad_astra:glacio_globe").getItem())
         .tier(0)
         .overrideName("Glacio")
 
-    event.create("twilightforest:twilight_forest")
+    event
+        .create("twilightforest:twilight_forest")
         .iconSupplier(() => Item.of("twilightforest:twilight_portal_miniature_structure").getItem())
         .tier(0)
         .overrideName("Twilight Forest")

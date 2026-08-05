@@ -1,86 +1,84 @@
 //priority: 100
 
 // stole ts STRAIGHT from Star Technology, super useful
-const DULL = GTMaterialIconSet.DULL;
-const METALLIC = GTMaterialIconSet.METALLIC;
-const MAGNETIC = GTMaterialIconSet.MAGNETIC;
-const SHINY = GTMaterialIconSet.SHINY;
-const BRIGHT = GTMaterialIconSet.BRIGHT;
-const DIAMOND = GTMaterialIconSet.DIAMOND;
-const EMERALD = GTMaterialIconSet.EMERALD;
-const GEM_HORIZONTAL = GTMaterialIconSet.GEM_HORIZONTAL;
-const GEM_VERTICAL = GTMaterialIconSet.GEM_VERTICAL;
-const RUBY = GTMaterialIconSet.RUBY;
-const OPAL = GTMaterialIconSet.OPAL;
-const GLASS = GTMaterialIconSet.GLASS;
-const NETHERSTAR = GTMaterialIconSet.NETHERSTAR;
-const FINE = GTMaterialIconSet.FINE;
-const SAND = GTMaterialIconSet.SAND;
-const WOOD = GTMaterialIconSet.WOOD;
-const ROUGH = GTMaterialIconSet.ROUGH;
-const FLINT = GTMaterialIconSet.FLINT;
-const LIGNITE = GTMaterialIconSet.LIGNITE;
-const QUARTZ = GTMaterialIconSet.QUARTZ;
-const CERTUS = GTMaterialIconSet.CERTUS;
-const LAPIS = GTMaterialIconSet.LAPIS;
-const FLUID = GTMaterialIconSet.FLUID;
-const RADIOACTIVE = GTMaterialIconSet.RADIOACTIVE;
+const DULL = GTMaterialIconSet.DULL
+const METALLIC = GTMaterialIconSet.METALLIC
+const MAGNETIC = GTMaterialIconSet.MAGNETIC
+const SHINY = GTMaterialIconSet.SHINY
+const BRIGHT = GTMaterialIconSet.BRIGHT
+const DIAMOND = GTMaterialIconSet.DIAMOND
+const EMERALD = GTMaterialIconSet.EMERALD
+const GEM_HORIZONTAL = GTMaterialIconSet.GEM_HORIZONTAL
+const GEM_VERTICAL = GTMaterialIconSet.GEM_VERTICAL
+const RUBY = GTMaterialIconSet.RUBY
+const OPAL = GTMaterialIconSet.OPAL
+const GLASS = GTMaterialIconSet.GLASS
+const NETHERSTAR = GTMaterialIconSet.NETHERSTAR
+const FINE = GTMaterialIconSet.FINE
+const SAND = GTMaterialIconSet.SAND
+const WOOD = GTMaterialIconSet.WOOD
+const ROUGH = GTMaterialIconSet.ROUGH
+const FLINT = GTMaterialIconSet.FLINT
+const LIGNITE = GTMaterialIconSet.LIGNITE
+const QUARTZ = GTMaterialIconSet.QUARTZ
+const CERTUS = GTMaterialIconSet.CERTUS
+const LAPIS = GTMaterialIconSet.LAPIS
+const FLUID = GTMaterialIconSet.FLUID
+const RADIOACTIVE = GTMaterialIconSet.RADIOACTIVE
 
 // Flags
 // Generic flags
-const no_unify = GTMaterialFlags.NO_UNIFICATION;
-const electrolyze = GTMaterialFlags.DECOMPOSITION_BY_ELECTROLYZING;
-const centrifuge = GTMaterialFlags.DECOMPOSITION_BY_CENTRIFUGING;
-const no_decomp = GTMaterialFlags.DISABLE_DECOMPOSITION;
-const explosive = GTMaterialFlags.EXPLOSIVE;
-const flammable = GTMaterialFlags.FLAMMABLE;
-const sticky = GTMaterialFlags.STICKY;
-const phosphorescent = GTMaterialFlags.PHOSPHORESCENT;
+const no_unify = GTMaterialFlags.NO_UNIFICATION
+const electrolyze = GTMaterialFlags.DECOMPOSITION_BY_ELECTROLYZING
+const centrifuge = GTMaterialFlags.DECOMPOSITION_BY_CENTRIFUGING
+const no_decomp = GTMaterialFlags.DISABLE_DECOMPOSITION
+const explosive = GTMaterialFlags.EXPLOSIVE
+const flammable = GTMaterialFlags.FLAMMABLE
+const sticky = GTMaterialFlags.STICKY
+const phosphorescent = GTMaterialFlags.PHOSPHORESCENT
 // Generation Flags
 // Dust Flags
-const plates = GTMaterialFlags.GENERATE_PLATE;
-const dense_plate = GTMaterialFlags.GENERATE_DENSE;
-const rod = GTMaterialFlags.GENERATE_ROD;
-const bolt_and_screw = GTMaterialFlags.GENERATE_BOLT_SCREW;
-const frame = GTMaterialFlags.GENERATE_FRAME;
-const gear = GTMaterialFlags.GENERATE_GEAR;
-const long_rod = GTMaterialFlags.GENERATE_LONG_ROD;
-const block = GTMaterialFlags.FORCE_GENERATE_BLOCK;
+const plates = GTMaterialFlags.GENERATE_PLATE
+const dense_plate = GTMaterialFlags.GENERATE_DENSE
+const rod = GTMaterialFlags.GENERATE_ROD
+const bolt_and_screw = GTMaterialFlags.GENERATE_BOLT_SCREW
+const frame = GTMaterialFlags.GENERATE_FRAME
+const gear = GTMaterialFlags.GENERATE_GEAR
+const long_rod = GTMaterialFlags.GENERATE_LONG_ROD
+const block = GTMaterialFlags.FORCE_GENERATE_BLOCK
 // Ingot Flags
-const foil = GTMaterialFlags.GENERATE_FOIL;
-const ring = GTMaterialFlags.GENERATE_RING;
-const spring = GTMaterialFlags.GENERATE_SPRING;
-const small_spring = GTMaterialFlags.GENERATE_SPRING_SMALL;
-const small_gear = GTMaterialFlags.GENERATE_SMALL_GEAR;
-const fine_wire = GTMaterialFlags.GENERATE_FINE_WIRE;
-const rotor = GTMaterialFlags.GENERATE_ROTOR;
-const round = GTMaterialFlags.GENERATE_ROUND;
-const magnetic = GTMaterialFlags.IS_MAGNETIC;
+const foil = GTMaterialFlags.GENERATE_FOIL
+const ring = GTMaterialFlags.GENERATE_RING
+const spring = GTMaterialFlags.GENERATE_SPRING
+const small_spring = GTMaterialFlags.GENERATE_SPRING_SMALL
+const small_gear = GTMaterialFlags.GENERATE_SMALL_GEAR
+const fine_wire = GTMaterialFlags.GENERATE_FINE_WIRE
+const rotor = GTMaterialFlags.GENERATE_ROTOR
+const round = GTMaterialFlags.GENERATE_ROUND
+const magnetic = GTMaterialFlags.IS_MAGNETIC
 // Gem Flags
-const crystallizable = GTMaterialFlags.CRYSTALLIZABLE;
-const lens = GTMaterialFlags.GENERATE_LENS;
+const crystallizable = GTMaterialFlags.CRYSTALLIZABLE
+const lens = GTMaterialFlags.GENERATE_LENS
 // Fluid Flags
-const solder_mat = GTMaterialFlags.SOLDER_MATERIAL;
-const solder_mat_bad = GTMaterialFlags.SOLDER_MATERIAL_BAD;
-const solder_mat_good = GTMaterialFlags.SOLDER_MATERIAL_GOOD;
+const solder_mat = GTMaterialFlags.SOLDER_MATERIAL
+const solder_mat_bad = GTMaterialFlags.SOLDER_MATERIAL_BAD
+const solder_mat_good = GTMaterialFlags.SOLDER_MATERIAL_GOOD
 // Ore Flags
-const more_sifter = GTMaterialFlags.HIGH_SIFTER_OUTPUT;
+const more_sifter = GTMaterialFlags.HIGH_SIFTER_OUTPUT
 // Misc
-const no_block_craft = GTMaterialFlags.EXCLUDE_BLOCK_CRAFTING_RECIPES;
-const no_plate_compressor_craft = GTMaterialFlags.EXCLUDE_PLATE_COMPRESSOR_RECIPE;
-const no_hand_craft = GTMaterialFlags.EXCLUDE_BLOCK_CRAFTING_BY_HAND_RECIPES;
-const mortar_grind = GTMaterialFlags.MORTAR_GRINDABLE;
-const no_working = GTMaterialFlags.NO_WORKING;
-const no_smashing = GTMaterialFlags.NO_SMASHING;
-const no_smelt = GTMaterialFlags.NO_SMELTING;
-const blast_furnace_double = GTMaterialFlags.BLAST_FURNACE_CALCITE_DOUBLE;
-const blast_furnace_triple = GTMaterialFlags.BLAST_FURNACE_CALCITE_TRIPLE;
-const no_abs_recipe = GTMaterialFlags.DISABLE_ALLOY_BLAST;
-const not_alloy = GTMaterialFlags.DISABLE_ALLOY_PROPERTY;
+const no_block_craft = GTMaterialFlags.EXCLUDE_BLOCK_CRAFTING_RECIPES
+const no_plate_compressor_craft = GTMaterialFlags.EXCLUDE_PLATE_COMPRESSOR_RECIPE
+const no_hand_craft = GTMaterialFlags.EXCLUDE_BLOCK_CRAFTING_BY_HAND_RECIPES
+const mortar_grind = GTMaterialFlags.MORTAR_GRINDABLE
+const no_working = GTMaterialFlags.NO_WORKING
+const no_smashing = GTMaterialFlags.NO_SMASHING
+const no_smelt = GTMaterialFlags.NO_SMELTING
+const blast_furnace_double = GTMaterialFlags.BLAST_FURNACE_CALCITE_DOUBLE
+const blast_furnace_triple = GTMaterialFlags.BLAST_FURNACE_CALCITE_TRIPLE
+const no_abs_recipe = GTMaterialFlags.DISABLE_ALLOY_BLAST
+const not_alloy = GTMaterialFlags.DISABLE_ALLOY_PROPERTY
 
 // super conductor
-
-
 
 const voltageTable = {
     lv: 32,
@@ -95,552 +93,441 @@ const voltageTable = {
     uev: 8388608,
     uiv: 33554432,
     uxv: 134217728
-};
+}
 
-const voltTier = (tier) => voltageTable[tier];
+const voltTier = (tier) => voltageTable[tier]
 
-const voltTier2A = (tier) => voltageTable[tier] * 2;
+const voltTier2A = (tier) => voltageTable[tier] * 2
 
-const voltTierHalf = (tier) => voltageTable[tier] / 2;
+const voltTierHalf = (tier) => voltageTable[tier] / 2
 
 function register_superconductor(name, ingredients, ebf, color, volts, amp, blasting) {
-    GTCEuStartupEvents.registry('gtceu:material', event => {
-
-        const mat = event.create(name)
+    GTCEuStartupEvents.registry("gtceu:material", (event) => {
+        const mat = event
+            .create(name)
             .ingot()
             .dust()
             .fluid()
             .components(ingredients)
             .color(color)
-            .iconSet('shiny')
+            .iconSet("shiny")
             .cableProperties(volts, amp, 0, true)
-            .flags(foil, gear, long_rod, plates, rod, rotor, small_gear, ring, frame, fine_wire, no_decomp, no_smelt);
+            .flags(foil, gear, long_rod, plates, rod, rotor, small_gear, ring, frame, fine_wire, no_decomp, no_smelt)
 
         if (ebf) {
-            mat.blastTemp(blasting[0], blasting[1], blasting[2], blasting[3]);
+            mat.blastTemp(blasting[0], blasting[1], blasting[2], blasting[3])
         }
-
-    });
+    })
 }
 
 function register_superconductor_sec(name, ingredients, ebf, color, c2, volts, amp, blasting) {
-    GTCEuStartupEvents.registry('gtceu:material', event => {
-
-        const mat = event.create(name)
+    GTCEuStartupEvents.registry("gtceu:material", (event) => {
+        const mat = event
+            .create(name)
             .ingot()
             .dust()
             .fluid()
             .components(ingredients)
             .color(color)
             .secondaryColor(c2)
-            .iconSet('shiny')
+            .iconSet("shiny")
             .cableProperties(volts, amp, 0, true)
-            .flags(foil, gear, long_rod, plates, rod, rotor, small_gear, ring, frame, fine_wire, no_decomp, no_smelt);
+            .flags(foil, gear, long_rod, plates, rod, rotor, small_gear, ring, frame, fine_wire, no_decomp, no_smelt)
 
         if (ebf) {
-            mat.blastTemp(blasting[0], blasting[1], blasting[2], blasting[3]);
+            mat.blastTemp(blasting[0], blasting[1], blasting[2], blasting[3])
         }
-
-    });
+    })
 }
 
-function register_metal(name, ingredients, ebf, color, blasting)
-{
-    GTCEuStartupEvents.registry('gtceu:material', event => {
-        const mat = event.create(name)
+function register_metal(name, ingredients, ebf, color, blasting) {
+    GTCEuStartupEvents.registry("gtceu:material", (event) => {
+        const mat = event
+            .create(name)
             .ingot()
             .dust()
             .fluid()
             .components(ingredients)
             .color(color)
-            .iconSet('metallic')
-            .flags(foil, gear, long_rod, plates, rod, rotor, small_gear, ring, frame, fine_wire);
+            .iconSet("metallic")
+            .flags(foil, gear, long_rod, plates, rod, rotor, small_gear, ring, frame, fine_wire)
 
         if (ebf) {
-            mat.blastTemp(blasting[0], blasting[1], blasting[2], blasting[3]);
+            mat.blastTemp(blasting[0], blasting[1], blasting[2], blasting[3])
         }
-
-    });
+    })
 }
 
-function register_ore_metal(name, ingredients, color, flags, byproducts)
-{
-    GTCEuStartupEvents.registry('gtceu:material', event => {
-        const mat = event.create(name)
-            .dust()
-            .ore()
-            .components(ingredients)
-            .color(color)
-            .iconSet('metallic')
-            .flags(flags);
-
-
-    });
+function register_ore_metal(name, ingredients, color, flags, byproducts) {
+    GTCEuStartupEvents.registry("gtceu:material", (event) => {
+        const mat = event.create(name).dust().ore().components(ingredients).color(color).iconSet("metallic").flags(flags)
+    })
 }
 
-function register_ore_gem(name, ingredients, color, flags, byproducts)
-{
-    GTCEuStartupEvents.registry('gtceu:material', event => {
-        const mat = event.create(name)
-            .gem()
-            .dust()
-            .ore()
-            .components(ingredients)
-            .color(color)
-            .iconSet('gem')
-            .flags(flags);
-
-
-    });
+function register_ore_gem(name, ingredients, color, flags, byproducts) {
+    GTCEuStartupEvents.registry("gtceu:material", (event) => {
+        const mat = event.create(name).gem().dust().ore().components(ingredients).color(color).iconSet("gem").flags(flags)
+    })
 }
 
-function register_nosmelt_metal(name, ingredients, ebf, color, blasting, genrotor, tier)
-{
-    GTCEuStartupEvents.registry('gtceu:material', event => {
-        const mat = event.create(name)
+function register_nosmelt_metal(name, ingredients, ebf, color, blasting, genrotor, tier) {
+    GTCEuStartupEvents.registry("gtceu:material", (event) => {
+        const mat = event
+            .create(name)
             .ingot()
             .dust()
             .fluid()
             .components(ingredients)
             .color(color)
-            .iconSet('metallic')
+            .iconSet("metallic")
             .cableProperties(tier, 1, 4, false)
-            .flags(foil, gear, long_rod, plates, rod, rotor, small_gear, ring, frame, fine_wire, no_smelt);
+            .flags(foil, gear, long_rod, plates, rod, rotor, small_gear, ring, frame, fine_wire, no_smelt)
 
         if (ebf) {
-            mat.blastTemp(blasting[0], blasting[1], blasting[2], blasting[3]);
+            mat.blastTemp(blasting[0], blasting[1], blasting[2], blasting[3])
         }
-        if(genrotor)
-        {
+        if (genrotor) {
             // power, efficiency, damage, durability
             mat.rotorStats(genrotor[0], genrotor[1], genrotor[2], genrotor[3])
         }
-
-    });
+    })
 }
 
-function register_nosmelt_elem_metal(name, ingredients, ebf, color, blasting, genrotor, tier)
-{
-    GTCEuStartupEvents.registry('gtceu:material', event => {
-        const mat = event.create(name)
+function register_nosmelt_elem_metal(name, ingredients, ebf, color, blasting, genrotor, tier) {
+    GTCEuStartupEvents.registry("gtceu:material", (event) => {
+        const mat = event
+            .create(name)
             .ingot()
             .dust()
             .fluid()
             .element(GTElements.get(name))
             .color(color)
-            .iconSet('metallic')
+            .iconSet("metallic")
             .cableProperties(tier, 1, 4, false)
-            .flags(foil, gear, long_rod, plates, rod, rotor, small_gear, ring, frame, fine_wire, no_smelt);
+            .flags(foil, gear, long_rod, plates, rod, rotor, small_gear, ring, frame, fine_wire, no_smelt)
 
         if (ebf) {
-            mat.blastTemp(blasting[0], blasting[1], blasting[2], blasting[3]);
+            mat.blastTemp(blasting[0], blasting[1], blasting[2], blasting[3])
         }
-        if(genrotor)
-        {
+        if (genrotor) {
             // power, efficiency, damage, durability
             mat.rotorStats(genrotor[0], genrotor[1], genrotor[2], genrotor[3])
         }
-
-    });
+    })
 }
 
-function register_nosmelt_elem_metal_sec(name, ingredients, ebf, color, color2, blasting, genrotor, tier)
-{
-    GTCEuStartupEvents.registry('gtceu:material', event => {
-        const mat = event.create(name)
+function register_nosmelt_elem_metal_sec(name, ingredients, ebf, color, color2, blasting, genrotor, tier) {
+    GTCEuStartupEvents.registry("gtceu:material", (event) => {
+        const mat = event
+            .create(name)
             .ingot()
             .dust()
             .fluid()
             .element(GTElements.get(name))
             .color(color)
             .secondaryColor(color2)
-            .iconSet('metallic')
+            .iconSet("metallic")
             .cableProperties(tier, 1, 4, false)
-            .flags(foil, gear, long_rod, plates, rod, rotor, small_gear, ring, frame, fine_wire, no_smelt);
+            .flags(foil, gear, long_rod, plates, rod, rotor, small_gear, ring, frame, fine_wire, no_smelt)
 
         if (ebf) {
-            mat.blastTemp(blasting[0], blasting[1], blasting[2], blasting[3]);
+            mat.blastTemp(blasting[0], blasting[1], blasting[2], blasting[3])
         }
-        if(genrotor)
-        {
+        if (genrotor) {
             // power, efficiency, damage, durability
             mat.rotorStats(genrotor[0], genrotor[1], genrotor[2], genrotor[3])
         }
-
-    });
+    })
 }
 
 function darkenAndSaturateHex(hex, darkenFactor, saturationBoost) {
     // Parse hex string
-    let color = parseInt(hex.replace(/^#|^0x/, ""), 16);
+    let color = parseInt(hex.replace(/^#|^0x/, ""), 16)
 
     // Extract RGB and darken
-    let r = ((color >> 16) & 0xFF) / 255 * darkenFactor;
-    let g = ((color >> 8) & 0xFF) / 255 * darkenFactor;
-    let b = (color & 0xFF) / 255 * darkenFactor;
+    let r = (((color >> 16) & 0xff) / 255) * darkenFactor
+    let g = (((color >> 8) & 0xff) / 255) * darkenFactor
+    let b = ((color & 0xff) / 255) * darkenFactor
 
     // RGB -> HSL
-    let max = Math.max(r, g, b);
-    let min = Math.min(r, g, b);
-    let h, s;
-    let l = (max + min) / 2;
+    let max = Math.max(r, g, b)
+    let min = Math.min(r, g, b)
+    let h, s
+    let l = (max + min) / 2
 
     if (max === min) {
-        h = s = 0;
+        h = s = 0
     } else {
-        let z = max - min;
-        s = l > 0.5 ? z / (2 - max - min) : z / (max + min);
+        let z = max - min
+        s = l > 0.5 ? z / (2 - max - min) : z / (max + min)
 
         switch (max) {
             case r:
-                h = (g - b) / z + (g < b ? 6 : 0);
-                break;
+                h = (g - b) / z + (g < b ? 6 : 0)
+                break
             case g:
-                h = (b - r) / z + 2;
-                break;
+                h = (b - r) / z + 2
+                break
             default:
-                h = (r - g) / z + 4;
+                h = (r - g) / z + 4
         }
 
-        h /= 6;
+        h /= 6
     }
 
     // Boost saturation
-    s = Math.min(1, s * (1 + saturationBoost));
+    s = Math.min(1, s * (1 + saturationBoost))
 
     // HSL -> RGB
     function hue2rgb(p, q, t) {
-        if (t < 0) t += 1;
-        if (t > 1) t -= 1;
-        if (t < 1 / 6) return p + (q - p) * 6 * t;
-        if (t < 1 / 2) return q;
-        if (t < 2 / 3) return p + (q - p) * (2 / 3 - t) * 6;
-        return p;
+        if (t < 0) t += 1
+        if (t > 1) t -= 1
+        if (t < 1 / 6) return p + (q - p) * 6 * t
+        if (t < 1 / 2) return q
+        if (t < 2 / 3) return p + (q - p) * (2 / 3 - t) * 6
+        return p
     }
 
     if (s !== 0) {
-        let q = l < 0.5 ? l * (1 + s) : l + s - l * s;
-        let p = 2 * l - q;
+        let q = l < 0.5 ? l * (1 + s) : l + s - l * s
+        let p = 2 * l - q
 
-        r = hue2rgb(p, q, h + 1 / 3);
-        g = hue2rgb(p, q, h);
-        b = hue2rgb(p, q, h - 1 / 3);
+        r = hue2rgb(p, q, h + 1 / 3)
+        g = hue2rgb(p, q, h)
+        b = hue2rgb(p, q, h - 1 / 3)
     }
 
-    let result =
-        ((Math.round(r * 255) & 0xFF) << 16) |
-        ((Math.round(g * 255) & 0xFF) << 8) |
-        (Math.round(b * 255) & 0xFF);
+    let result = ((Math.round(r * 255) & 0xff) << 16) | ((Math.round(g * 255) & 0xff) << 8) | (Math.round(b * 255) & 0xff)
 
-    return "0x" + result.toString(16).padStart(6, "0");
+    return "0x" + result.toString(16).padStart(6, "0")
 }
 
-
-function abs_mat(name, color, genrotor)
-{
-    GTCEuStartupEvents.registry('gtceu:material', event => {
-        const mat = event.create(name)
-            .ingot()
-            .fluid()
-            .color(color)
-            .iconSet('bright')
-            .flags(foil, gear, long_rod, plates, rod, rotor, small_gear, ring, frame, fine_wire, no_smelt)
-        if(genrotor)
-        {
+function abs_mat(name, color, genrotor) {
+    GTCEuStartupEvents.registry("gtceu:material", (event) => {
+        const mat = event.create(name).ingot().fluid().color(color).iconSet("bright").flags(foil, gear, long_rod, plates, rod, rotor, small_gear, ring, frame, fine_wire, no_smelt)
+        if (genrotor) {
             // power, efficiency, damage, durability
             mat.rotorStats(genrotor[0], genrotor[1], genrotor[2], genrotor[3])
         }
+    })
 
-    });
-
-    GTCEuStartupEvents.registry('gtceu:material', event => {
-        const mat = event.create("molten_" + name)
+    GTCEuStartupEvents.registry("gtceu:material", (event) => {
+        const mat = event
+            .create("molten_" + name)
             .fluid()
             .color(darkenAndSaturateHex(color, 0.7, 0.8))
-
-    });
+    })
 }
 
-function abs_mat_sec(name, color, c2, genrotor)
-{
-    GTCEuStartupEvents.registry('gtceu:material', event => {
-        const mat = event.create(name)
-            .ingot()
-            .fluid()
-            .color(color)
-            .secondaryColor(c2)
-            .iconSet('bright')
-            .flags(foil, gear, long_rod, plates, rod, rotor, small_gear, ring, frame, fine_wire, no_smelt)
-        if(genrotor)
-        {
+function abs_mat_sec(name, color, c2, genrotor) {
+    GTCEuStartupEvents.registry("gtceu:material", (event) => {
+        const mat = event.create(name).ingot().fluid().color(color).secondaryColor(c2).iconSet("bright").flags(foil, gear, long_rod, plates, rod, rotor, small_gear, ring, frame, fine_wire, no_smelt)
+        if (genrotor) {
             // power, efficiency, damage, durability
             mat.rotorStats(genrotor[0], genrotor[1], genrotor[2], genrotor[3])
         }
+    })
 
-    });
-
-    GTCEuStartupEvents.registry('gtceu:material', event => {
-        const mat = event.create("molten_" + name)
+    GTCEuStartupEvents.registry("gtceu:material", (event) => {
+        const mat = event
+            .create("molten_" + name)
             .fluid()
             .color(darkenAndSaturateHex(color, 0.7, 0.4))
-
-    });
+    })
 }
 
-function register_dust(name, ingredients, color, flags, c2)
-{
-    if (!c2)
-    {
-        GTCEuStartupEvents.registry('gtceu:material', event => {
-        const mat = event.create(name)
-            .dust()
-            .components(ingredients)
-            .color(color)
-            .iconSet('dull')
-            .flags(flags)
-        });
+function register_dust(name, ingredients, color, flags, c2) {
+    if (!c2) {
+        GTCEuStartupEvents.registry("gtceu:material", (event) => {
+            const mat = event.create(name).dust().components(ingredients).color(color).iconSet("dull").flags(flags)
+        })
+    } else {
+        GTCEuStartupEvents.registry("gtceu:material", (event) => {
+            const mat = event.create(name).dust().components(ingredients).color(color).secondaryColor(c2).iconSet("dull").flags(flags)
+        })
     }
-    else
-    {
-       GTCEuStartupEvents.registry('gtceu:material', event => {
-        const mat = event.create(name)
-            .dust()
-            .components(ingredients)
-            .color(color)
-            .secondaryColor(c2)
-            .iconSet('dull')
-            .flags(flags)
-        }); 
-    }
-    
 }
 
-
-
-function register_gem(name, color, ingredients) 
-{
-        GTCEuStartupEvents.registry('gtceu:material', event => {
-        const mat = event.create(name)
-            .gem()
-            .dust()
-            .ore(2, 3)
-            .components(ingredients)
-            .color(color)
-            .iconSet('shiny')
-            .flags(foil, long_rod, plates, rod, ring, frame, lens)
-    });
+function register_gem(name, color, ingredients) {
+    GTCEuStartupEvents.registry("gtceu:material", (event) => {
+        const mat = event.create(name).gem().dust().ore(2, 3).components(ingredients).color(color).iconSet("shiny").flags(foil, long_rod, plates, rod, ring, frame, lens)
+    })
 }
 
-function register_fluid(name, color, ingredients, flags)
-{
-    GTCEuStartupEvents.registry('gtceu:material', event => {
-        const mat = event.create(name)
-            .fluid()
-            .components(ingredients)
-            .color(color)
-            .flags(flags)
-    });
+function register_fluid(name, color, ingredients, flags) {
+    GTCEuStartupEvents.registry("gtceu:material", (event) => {
+        const mat = event.create(name).fluid().components(ingredients).color(color).flags(flags)
+    })
 }
 
-function register_gas(name, color, ingredients, flags)
-{
-    GTCEuStartupEvents.registry('gtceu:material', event => {
-        const mat = event.create(name)
-            .gas()
-            .components(ingredients)
-            .color(color)
-            .flags(flags)
-    });
+function register_gas(name, color, ingredients, flags) {
+    GTCEuStartupEvents.registry("gtceu:material", (event) => {
+        const mat = event.create(name).gas().components(ingredients).color(color).flags(flags)
+    })
 }
 
-function register_plasma(name, color, ingredients, flags)
-{
-    GTCEuStartupEvents.registry('gtceu:material', event => {
-        const mat = event.create(name)
-            .plasma()
-            .components(ingredients)
-            .color(color)
-            .flags(flags)
-    });
+function register_plasma(name, color, ingredients, flags) {
+    GTCEuStartupEvents.registry("gtceu:material", (event) => {
+        const mat = event.create(name).plasma().components(ingredients).color(color).flags(flags)
+    })
 }
 
-GTCEuStartupEvents.registry('gtceu:material', event => {
-    event.create('aluminium_lithium_compound')
-        .ingot()
-        .dust()
-        .components(['aluminium', 'lithium'])
-        .color('0x697a82')
-        .iconSet('metal')
-        .flags(foil);
+GTCEuStartupEvents.registry("gtceu:material", (event) => {
+    event.create("aluminium_lithium_compound").ingot().dust().components(["aluminium", "lithium"]).color("0x697a82").iconSet("metal").flags(foil)
+})
 
-});
+register_gem("source", "0xd745ff", [])
 
-
-
-
-register_gem("source", '0xd745ff', [], )
-
-
-
-
-
-register_fluid('acetylene','0xfff2f2', ['2x carbon', '2x hydrogen'], electrolyze)
-register_fluid('ilmenite_slurry','0x1a1818', [], no_decomp)
-register_fluid('ilmenite_residue','0x1a1616', [], no_decomp)
+register_fluid("acetylene", "0xfff2f2", ["2x carbon", "2x hydrogen"], electrolyze)
+register_fluid("ilmenite_slurry", "0x1a1818", [], no_decomp)
+register_fluid("ilmenite_residue", "0x1a1616", [], no_decomp)
 //register_fluid('pyrotheuma','0xff5900',[],no_decomp)
 
-register_dust('calcium_carbide', ['calcium', '2x carbon'], '0xffcfff', electrolyze)
-register_dust('calorite_carbide', ['4x calorite', '2x carbon'], '0x3d304d', no_decomp)
+register_dust("calcium_carbide", ["calcium", "2x carbon"], "0xffcfff", electrolyze)
+register_dust("calorite_carbide", ["4x calorite", "2x carbon"], "0x3d304d", no_decomp)
 
-register_metal('metallic_mica', ['3x mica', '1x silver'], false, '0xaba376', [0, null, voltTier('lv'), 0]);
+register_metal("metallic_mica", ["3x mica", "1x silver"], false, "0xaba376", [0, null, voltTier("lv"), 0])
 
 // register_nosmelt_elem_metal('desh', [], true, '0xd44e06', [3600, 'mid', voltTier('ev'), 20*64], [300, 150, 1, 100000], voltTier('iv'));
 
-register_dust('desh_dioxide', ['desh', '2x oxygen'], '0xff4000', electrolyze); 
+register_dust("desh_dioxide", ["desh", "2x oxygen"], "0xff4000", electrolyze)
 
-register_metal('source_steel', [], false, '0xd745ff', [0, null, voltTier('lv'), 0])
-register_metal('shadow_steel', [], true, '0x10021f', [3600, 'mid', voltTier('ev'), 1800])
+register_metal("source_steel", [], false, "0xd745ff", [0, null, voltTier("lv"), 0])
+register_metal("shadow_steel", [], true, "0x10021f", [3600, "mid", voltTier("ev"), 1800])
 
-register_metal('perfected_electrum_base', [], false, '0x5f692a', [])
+register_metal("perfected_electrum_base", [], false, "0x5f692a", [])
 
-register_nosmelt_metal('industrial_perfected_electrum', [], true, '0xf5ffdb', [3600, 'mid', voltTier('ev'), 20*64], [901, 601, 1, 1000000], voltTier('zpm'))
+register_nosmelt_metal("industrial_perfected_electrum", [], true, "0xf5ffdb", [3600, "mid", voltTier("ev"), 20 * 64], [901, 601, 1, 1000000], voltTier("zpm"))
 
-register_dust('fluxed_titanium_electrum_compound', [], '0x2c2e16', no_decomp);
-register_nosmelt_elem_metal('titanite', [], true, '0x75008c', [5400, 'mid', voltTier('iv'), 20*64], [350, 250, 1, 1000000], voltTier('luv'))
+register_dust("fluxed_titanium_electrum_compound", [], "0x2c2e16", no_decomp)
+register_nosmelt_elem_metal("titanite", [], true, "0x75008c", [5400, "mid", voltTier("iv"), 20 * 64], [350, 250, 1, 1000000], voltTier("luv"))
 // register_nosmelt_elem_metal('ostrum', [], true, '0xc785a2', [5400, 'mid', voltTier('iv'), 20*64], false, voltTier('luv'))
 
-register_superconductor('tin_silver_alloy',['3x silver ', '4x tin'], false, '0xbfcdd6', 32, 1, [0, null, voltTier('lv'), 0]);
-register_superconductor('fluxed_electrum',[], true, '0xfcad03', 128, 1, [0, null, voltTier('lv'), 0]);
-register_superconductor('fluxed_cobalt_electrum', [], true, '0x006387', 512, 1, [0, null, voltTier('lv'), 0]);
-register_superconductor('refined_fluxed_electrum', [], true, '0xdbff66', 2048, 4, [3600, 'mid', voltTier('ev'), 20*64]);
-register_superconductor('titanite_alloy',['4x titanite', '2x tungsten', '3x lunarium', '2x graphene', '3x refined_fluxed_electrum', '2x fluorine', 'electrotine'], true, '0xff1284', 8192, 8, [4500, 'mid', voltTier('iv'), 1]);
-register_superconductor_sec('perfected_electrum', [], true, '0xfffef7', '0xfcff69', 32768, 8, [7200, 'high', voltTier('luv'), 1]);
+register_superconductor("tin_silver_alloy", ["3x silver ", "4x tin"], false, "0xbfcdd6", 32, 1, [0, null, voltTier("lv"), 0])
+register_superconductor("fluxed_electrum", [], true, "0xfcad03", 128, 1, [0, null, voltTier("lv"), 0])
+register_superconductor("fluxed_cobalt_electrum", [], true, "0x006387", 512, 1, [0, null, voltTier("lv"), 0])
+register_superconductor("refined_fluxed_electrum", [], true, "0xdbff66", 2048, 4, [3600, "mid", voltTier("ev"), 20 * 64])
+register_superconductor("titanite_alloy", ["4x titanite", "2x tungsten", "3x lunarium", "2x graphene", "3x refined_fluxed_electrum", "2x fluorine", "electrotine"], true, "0xff1284", 8192, 8, [
+    4500,
+    "mid",
+    voltTier("iv"),
+    1
+])
+register_superconductor_sec("perfected_electrum", [], true, "0xfffef7", "0xfcff69", 32768, 8, [7200, "high", voltTier("luv"), 1])
 // register_superconductor_sec('perfected_electrum', [], true, '0xfffef7', '0xfcff69', 32768, 8, [7200, 'high', voltTier('luv'), 1]);
 
-
-register_fluid('lunarium_growth_slurry','0x1fff1a', ['3x lunarium', '4x chlorine', '2x fluorine', '1x carbon'], no_decomp)
+register_fluid("lunarium_growth_slurry", "0x1fff1a", ["3x lunarium", "4x chlorine", "2x fluorine", "1x carbon"], no_decomp)
 // platline
-register_dust('dewatered_iridium_metal_residue', [], '0x094235', no_decomp);
-register_dust('impure_iridium_metal', [], '0x094235', no_decomp);
+register_dust("dewatered_iridium_metal_residue", [], "0x094235", no_decomp)
+register_dust("impure_iridium_metal", [], "0x094235", no_decomp)
 
-register_fluid('acidic_shiny_metal_mixture','0x4f6cab', [], no_decomp)
-register_fluid('impure_shiny_metal_mixture','0x152536', [], no_decomp)
-register_dust('shiny_metallic_residue', [], '0x3b4724', no_decomp);
+register_fluid("acidic_shiny_metal_mixture", "0x4f6cab", [], no_decomp)
+register_fluid("impure_shiny_metal_mixture", "0x152536", [], no_decomp)
+register_dust("shiny_metallic_residue", [], "0x3b4724", no_decomp)
 
-register_fluid('sulfuric_rhodium_solution','0x6c367a', [], no_decomp)
-register_fluid('sulfuric_inert_metal_solution','0x2b1221', [], no_decomp)
-register_fluid('acidic_ruthenium_solution','0x3a333d', [], no_decomp)
-register_dust('impure_rhodium_sludge','0x3a111a', [], no_decomp)
+register_fluid("sulfuric_rhodium_solution", "0x6c367a", [], no_decomp)
+register_fluid("sulfuric_inert_metal_solution", "0x2b1221", [], no_decomp)
+register_fluid("acidic_ruthenium_solution", "0x3a333d", [], no_decomp)
+register_dust("impure_rhodium_sludge", "0x3a111a", [], no_decomp)
 
-register_dust('plat_palladium_metal_residue','0x44374a', [], no_decomp)
-register_fluid('sulfuric_plat-palladium_metal_solution','0x512e52', [], no_decomp)
+register_dust("plat_palladium_metal_residue", "0x44374a", [], no_decomp)
+register_fluid("sulfuric_plat-palladium_metal_solution", "0x512e52", [], no_decomp)
 
-register_fluid('sulfuric_kerosene','0xaaa22f', [], no_decomp)
-register_fluid('kerosene','0x00000f', ['12x carbon', '26x hydrogen'], electrolyze)
+register_fluid("sulfuric_kerosene", "0xaaa22f", [], no_decomp)
+register_fluid("kerosene", "0x00000f", ["12x carbon", "26x hydrogen"], electrolyze)
 
 // moon ores
-register_ore_metal('lunite', ['2x desh','1x tungsten', '2x silicon','4x oxygen'], '0x5c4e3c', [no_decomp], [])
-register_ore_gem('socochalamite', ['2x amethyst', '1x rutile', '4x glowstone', '6x fluorine', '2x mercury'], '0x7764b0', [electrolyze], [])
-register_ore_gem('glunite', ['1x amethyst', '5x glowstone', '1x hydrogen'], '0xffbf00', [electrolyze], [])
+register_ore_metal("lunite", ["2x desh", "1x tungsten", "2x silicon", "4x oxygen"], "0x5c4e3c", [no_decomp], [])
+register_ore_gem("socochalamite", ["2x amethyst", "1x rutile", "4x glowstone", "6x fluorine", "2x mercury"], "0x7764b0", [electrolyze], [])
+register_ore_gem("glunite", ["1x amethyst", "5x glowstone", "1x hydrogen"], "0xffbf00", [electrolyze], [])
 
 // mars ores
-register_ore_gem('titanichite', ['2x titanite', 'fluorine'], '0xff0055', [no_decomp], [])
-register_ore_metal('ostrite', ['3x oxygen', '12x chlorine', '8x ostrum'], '0xc785a2', [electrolyze]);
-register_ore_metal('dalumite', ['3x oxygen', '8x desh'], '0xad7600', [electrolyze]);
+register_ore_gem("titanichite", ["2x titanite", "fluorine"], "0xff0055", [no_decomp], [])
+register_ore_metal("ostrite", ["3x oxygen", "12x chlorine", "8x ostrum"], "0xc785a2", [electrolyze])
+register_ore_metal("dalumite", ["3x oxygen", "8x desh"], "0xad7600", [electrolyze])
 
 // venus stuff
-register_ore_metal('xastinite', ['3x uranium', '2x tungsten', '8x copper'], '0x34523e', [centrifuge]);
-register_ore_metal('fluorite', ['8x fluorine', '2x glowstone'], '0xa9d6cf', [electrolyze]);
-register_ore_metal('chlorite', ['8x chlorine', '2x ruby'], '0x2e184a', [electrolyze]);
-register_dust('venus_group_sludge', [], '0x4f4300', no_decomp, '0xffd800')
+register_ore_metal("xastinite", ["3x uranium", "2x tungsten", "8x copper"], "0x34523e", [centrifuge])
+register_ore_metal("fluorite", ["8x fluorine", "2x glowstone"], "0xa9d6cf", [electrolyze])
+register_ore_metal("chlorite", ["8x chlorine", "2x ruby"], "0x2e184a", [electrolyze])
+register_dust("venus_group_sludge", [], "0x4f4300", no_decomp, "0xffd800")
 // register_dust('naquadah_base_dust', ['naquadah', 'duranium'], '0x080006', no_decomp, '0x0f0000')
-register_nosmelt_elem_metal_sec('bluponium', [], true, '0xba32cf', '0xd91c5e', [3600, 'mid', voltTier('ev'), 20*64], false, GTValues.UV)
-GTCEuStartupEvents.registry('gtceu:material', event => {
-    event.create('trellium_base')
-        .ingot()
-        .components(['duranium', 'sulfur', 'trellium'])
-        .color('0x080006')
-        .secondaryColor('0x0f0000')
-        .iconSet('metallic')
-        .flags(no_decomp);
+register_nosmelt_elem_metal_sec("bluponium", [], true, "0xba32cf", "0xd91c5e", [3600, "mid", voltTier("ev"), 20 * 64], false, GTValues.UV)
+GTCEuStartupEvents.registry("gtceu:material", (event) => {
+    event.create("trellium_base").ingot().components(["duranium", "sulfur", "trellium"]).color("0x080006").secondaryColor("0x0f0000").iconSet("metallic").flags(no_decomp)
 })
 
-
 // mars precious mats
-register_dust('inert_sulfur', ['sulfur'], '0x948243', no_decomp)
+register_dust("inert_sulfur", ["sulfur"], "0x948243", no_decomp)
 // radiation chamber
-register_dust('excited_sulfur', ['sulfur'], '0xffca69', no_decomp)
-register_dust('sulfuria', [], '0xffdd00', no_decomp, '0xff7b00')
-register_dust('copper_sulfuriate', ['2x sulfuria', 'copper'], '0xffaeff', electrolyze)
-register_fluid('carbon_tetrachloride', '0x22292b', ['carbon', '4x chlorine'], no_decomp)
-register_fluid('sulfuria_solution', '0xffa500', ['carbon', '4x chlorine', 'sulfur', 'copper'], no_decomp)
-register_dust('martian_sand', [], '0x732a22', no_decomp)
+register_dust("excited_sulfur", ["sulfur"], "0xffca69", no_decomp)
+register_dust("sulfuria", [], "0xffdd00", no_decomp, "0xff7b00")
+register_dust("copper_sulfuriate", ["2x sulfuria", "copper"], "0xffaeff", electrolyze)
+register_fluid("carbon_tetrachloride", "0x22292b", ["carbon", "4x chlorine"], no_decomp)
+register_fluid("sulfuria_solution", "0xffa500", ["carbon", "4x chlorine", "sulfur", "copper"], no_decomp)
+register_dust("martian_sand", [], "0x732a22", no_decomp)
 
 // desh line
-register_dust('desh_group_sludge',[],'0x331305', no_decomp)
-register_nosmelt_elem_metal('lunarium', [], true, '0x000d61', [4500, 'mid', voltTier('iv'), 20*64], [200, 500, 1, 100000], voltTier('iv'))
+register_dust("desh_group_sludge", [], "0x331305", no_decomp)
+register_nosmelt_elem_metal("lunarium", [], true, "0x000d61", [4500, "mid", voltTier("iv"), 20 * 64], [200, 500, 1, 100000], voltTier("iv"))
 
+register_dust("lunar_metal_residue", ["desh", "titanium", "3x glowstone", "2x gold"], "0x634d21", no_decomp)
+register_fluid("sulfuric_lunar_metal_residue", "0x634d21", [], no_decomp)
 
-register_dust('lunar_metal_residue', ['desh', 'titanium', '3x glowstone', '2x gold'], '0x634d21', no_decomp)
-register_fluid('sulfuric_lunar_metal_residue','0x634d21', [], no_decomp)
+register_dust("dense_metal_mixture", ["lunarium", "tungsten", "water", "4x oxygen"], "0x200e42", no_decomp)
+register_dust("lunarium_metal_sludge", ["lunarium", "water"], "0x360d1c", no_decomp)
+register_dust("dewatered_lunarium_metal_mixture", ["lunarium", "desh", "titanium", "3x glowstone", "2x gold", "2x carbon", "3x hydrogen", "zinc", "barium"], "0x657e9c", no_decomp)
+register_dust("impure_lunarium", ["lunarium", "desh", "1x carbon", "calcium"], "0x7fa9b0", electrolyze)
 
-register_dust('dense_metal_mixture', ['lunarium', 'tungsten', 'water', '4x oxygen'], '0x200e42', no_decomp)
-register_dust('lunarium_metal_sludge', ['lunarium', 'water'], '0x360d1c', no_decomp)
-register_dust('dewatered_lunarium_metal_mixture', ['lunarium', 'desh', 'titanium', '3x glowstone', '2x gold', '2x carbon', '3x hydrogen', 'zinc', 'barium'], '0x657e9c', no_decomp)
-register_dust('impure_lunarium', ['lunarium', 'desh', '1x carbon', 'calcium'], '0x7fa9b0', electrolyze)
+register_nosmelt_metal("test", [], true, "0xffffff", [3600, "mid", voltTier("ev"), 20 * 64], [901, 601, 1, 1000000], voltTier("zpm"))
 
-register_nosmelt_metal('test', [], true, '0xffffff', [3600, 'mid', voltTier('ev'), 20*64], [901, 601, 1, 1000000], voltTier('zpm'))
-
-abs_mat_sec('martian-composite', '0xbd0921', '0xa30054')
-
+abs_mat_sec("martian-composite", "0xbd0921", "0xa30054")
 
 // titanite
 
 // misc
 
 // venus
-register_dust('venus_sand', [], '0xb38930', no_decomp)
+register_dust("venus_sand", [], "0xb38930", no_decomp)
 // register_nosmelt_elem_metal('calorite', [], true, '0xa10030', [3600, 'mid', voltTier('ev'), 20*64], false, voltTier('zpm'));
-register_plasma('degenerate_electrum_light_matter', '0xfffef7', 'electrum', no_decomp)
-register_gas('venus_air', '0xb3721d', [], [no_decomp])
-register_fluid('liquid_venus_air', '0xcf892d', [], [no_decomp])
+register_plasma("degenerate_electrum_light_matter", "0xfffef7", "electrum", no_decomp)
+register_gas("venus_air", "0xb3721d", [], [no_decomp])
+register_fluid("liquid_venus_air", "0xcf892d", [], [no_decomp])
 
-register_fluid('uranium_ethanol_solution','0x91e600', ['uranium_235', 'ethanol'], no_decomp)
+register_fluid("uranium_ethanol_solution", "0x91e600", ["uranium_235", "ethanol"], no_decomp)
 
-register_gas('martian_air', '0x4a140e', [], [no_decomp])
-register_fluid('liquid_martian_air', '0x732a22', [], [no_decomp])
+register_gas("martian_air", "0x4a140e", [], [no_decomp])
+register_fluid("liquid_martian_air", "0x732a22", [], [no_decomp])
 
 // shock glass
-register_fluid('4-4-methylenediphenyl-diisocyanate', '0xd1bab6', ['15x carbon', '10x hydrogen', '2x nitrogen', '2x oxygen'], no_decomp)
+register_fluid("4-4-methylenediphenyl-diisocyanate", "0xd1bab6", ["15x carbon", "10x hydrogen", "2x nitrogen", "2x oxygen"], no_decomp)
 // register_fluid('nitrosyl_chloride', '0xffe3a6', ['nitrogen', 'oxygen', 'chlorine'], no_decomp)
-register_fluid('aromatic_feedstock', '0xffd06b', [], no_decomp)
-register_fluid('boron_trichloride', '0xbcffad',['boron', '3x chlorine'], no_decomp)
-register_fluid('nitro_aromatic_compound', '0xffd0aa', [], no_decomp)
-register_fluid('aromatic_amine', '0xeed0aa', [], no_decomp)
-register_fluid('diamine_intermediate', '0xded0aa', [], no_decomp)
-register_fluid('crude_4-4-methylenediphenyl-diisocyanate', '0xfed0bb', ['15x carbon', '10x hydrogen', '2x nitrogen', '2x oxygen'], no_decomp)
-register_fluid('polymeric_4-4-methylenediphenyl-diisocyanate', '0xdffab6', ['15x carbon', '10x hydrogen', '2x nitrogen', '2x oxygen'], no_decomp)
-register_fluid('molten_tpu', '0x1c1c00', ['15x carbon', '10x hydrogen', '2x nitrogen', '2x oxygen'], no_decomp)
-StartupEvents.registry('item', event => {
-    event.create('tpu_pellet')
-        .displayName('TPU Pellet')
+register_fluid("aromatic_feedstock", "0xffd06b", [], no_decomp)
+register_fluid("boron_trichloride", "0xbcffad", ["boron", "3x chlorine"], no_decomp)
+register_fluid("nitro_aromatic_compound", "0xffd0aa", [], no_decomp)
+register_fluid("aromatic_amine", "0xeed0aa", [], no_decomp)
+register_fluid("diamine_intermediate", "0xded0aa", [], no_decomp)
+register_fluid("crude_4-4-methylenediphenyl-diisocyanate", "0xfed0bb", ["15x carbon", "10x hydrogen", "2x nitrogen", "2x oxygen"], no_decomp)
+register_fluid("polymeric_4-4-methylenediphenyl-diisocyanate", "0xdffab6", ["15x carbon", "10x hydrogen", "2x nitrogen", "2x oxygen"], no_decomp)
+register_fluid("molten_tpu", "0x1c1c00", ["15x carbon", "10x hydrogen", "2x nitrogen", "2x oxygen"], no_decomp)
+StartupEvents.registry("item", (event) => {
+    event.create("tpu_pellet").displayName("TPU Pellet")
 })
 
 // abs compounds
-abs_mat('titanex-594-hta', '0x2e2736')
-abs_mat_sec('titanex-879-htb', '0x799e6c', '0x00ffba', [601, 500, 1, 1000000])
-abs_mat('titanex-901-htc', '0xffd4de')
+abs_mat("titanex-594-hta", "0x2e2736")
+abs_mat_sec("titanex-879-htb", "0x799e6c", "0x00ffba", [601, 500, 1, 1000000])
+abs_mat("titanex-901-htc", "0xffd4de")
 
 // abs_mat_sec('aluminex_202_a', '0x96fffd', '0x0080ff')
 
 // naq
-register_fluid('sulfuraic_fluoroantimonic_acid', '0xbcd490', ['1x sulfuria', '2x fluoroanitmonic_acid'], no_decomp)
-register_nosmelt_elem_metal_sec('trellium', [], true, '0x7d7d7d', '0x78ddff', [4500, 'mid', voltTier('iv'), 20*64], false, voltTier('uv'))
-register_dust('dilithium', [], '0xffa6e9', no_decomp, '0xffcff3')
+register_fluid("sulfuraic_fluoroantimonic_acid", "0xbcd490", ["1x sulfuria", "2x fluoroanitmonic_acid"], no_decomp)
+register_nosmelt_elem_metal_sec("trellium", [], true, "0x7d7d7d", "0x78ddff", [4500, "mid", voltTier("iv"), 20 * 64], false, voltTier("uv"))
+register_dust("dilithium", [], "0xffa6e9", no_decomp, "0xffcff3")
 
 // component polymer
-register_fluid('component_polymer', '0xc9bd9b', ['1x epoxy', '2x carbon', '1x borosilicate_glass'], no_decomp)
-
+register_fluid("component_polymer", "0xc9bd9b", ["1x epoxy", "2x carbon", "1x borosilicate_glass"], no_decomp)
 
 /*
     Materials are in-game items or fluids. They can be dusts, ingots, gems, fluids and all their derivatives.
