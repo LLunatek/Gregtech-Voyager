@@ -10,10 +10,10 @@ ServerEvents.recipes(event => {
                     'BDB'
                 ],
                 {
-                    D: 'gtceu:bronze_frame',
+                    D: 'gtceu:aluminium_frame',
                     C: 'gtceu:rubber_plate',
                     A: 'gtceu:lv_machine_hull',
-                    B: 'gtceu:copper_single_cable'
+                    B: 'gtceu:gold_single_cable'
                 }
     );
 
@@ -25,10 +25,10 @@ ServerEvents.recipes(event => {
                     'FFF'
                 ],
                 {
-                    D: 'gtceu:lv_electric_pump',
-                    C: 'gtceu:lv_robot_arm',
+                    D: 'gtceu:mv_electric_pump',
+                    C: 'gtceu:mv_robot_arm',
                     A: 'industrialforegoing:machine_frame_pity',
-                    B: '#gtceu:circuits/lv',
+                    B: '#gtceu:circuits/mv',
                     E: 'kubejs:farmer_helper',
                     F: 'gtceu:steel_plate',
                     // G: 'minecraft:bucket'
@@ -43,12 +43,12 @@ ServerEvents.recipes(event => {
                     'FFF'
                 ],
                 {
-                    D: 'gtceu:lv_electric_pump',
-                    C: 'gtceu:lv_robot_arm',
+                    D: 'gtceu:mv_electric_pump',
+                    C: 'gtceu:mv_robot_arm',
                     A: 'industrialforegoing:machine_frame_pity',
-                    B: '#gtceu:circuits/lv',
+                    B: '#gtceu:circuits/mv',
                     // E: 'minecraft:bucket',
-                    F: 'gtceu:bronze_plate',
+                    F: 'gtceu:aluminium_plate',
                     G: '#forge:seeds'
                 }
     );

@@ -104,8 +104,8 @@ ServerEvents.recipes(event => {
         ['gtceu:chlorine 300', 'gtceu:fluorine 200'], [], 'gtceu:lunarium_growth_slurry 4000', 25, 6520, 'advanced_chemist_helper'
     )
 
-    radiation_chamber('titanichite_spores', 'gtceu:small_titanite_dust', 'gtceu:lunarium_growth_slurry 5', 'kubejs:titanichite_bud', [], 60, 480)
-    radiation_chamber('titanichite_spores', '2x gtceu:small_titanite_dust', 'gtceu:lunarium_growth_slurry 2', '3x kubejs:titanichite_bud', [], 45, 400, 'advanced_chemist_helper')
+    radiation_chamber('titanichite_spores', 'gtceu:small_titanite_dust', 'gtceu:lunarium_growth_slurry 3', 'kubejs:titanichite_bud', [], 60, 480)
+    radiation_chamber('titanichite_spores', '4x gtceu:small_titanite_dust', 'gtceu:lunarium_growth_slurry 2', '7x kubejs:titanichite_bud', [], 45, 400, 'advanced_chemist_helper')
 
     autoclave('titanichite', ['kubejs:titanichite_bud', '4x kubejs:crystalline_titanium_electrum'], 'gtceu:uranium 2000', '4x gtceu:raw_titanichite', [], 25, 7680)
     autoclave('titanichite_plut241', ['kubejs:titanichite_bud', '4x kubejs:crystalline_titanium_electrum'], 'gtceu:plutonium_241 600', '12x gtceu:raw_titanichite', [], 25, 7680)

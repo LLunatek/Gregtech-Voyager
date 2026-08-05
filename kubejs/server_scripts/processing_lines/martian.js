@@ -239,7 +239,7 @@ ServerEvents.recipes(event => {
     centrifuge('martian_sand', '92x gtceu:martian_sand_dust', 'gtceu:toluene 350', ['32x gtceu:salt_dust','9x gtceu:magnetite_dust','7x gtceu:magnesium_dust', '12x gtceu:phosphorus_dust', '8x gtceu:inert_sulfur_dust'],
     [], 48, 1200
     ,'advanced_chemist_helper')
-    radiation_chamber('excited_sulfur', 'gtceu:inert_sulfur_dust', 'uranium', 3, 'gtceu:excited_sulfur_dust', 'gtceu:radon 5000', 7860, 48)
+    radiation_chamber('excited_sulfur', '2x gtceu:inert_sulfur_dust', 'uranium', 1, '2x gtceu:excited_sulfur_dust', 'gtceu:radon 2000', 7860, 48)
 
     create_recipe_lcr('carb_tetrach', 'gtceu:carbon_dust', 'gtceu:chlorine 4000', [], 'gtceu:carbon_tetrachloride 1000', 20, 480)
 

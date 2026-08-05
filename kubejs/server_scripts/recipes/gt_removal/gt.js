@@ -19,6 +19,7 @@ event.remove({output: 'gtceu:alloy_blast_smelter'})
 event.remove({output: 'gtceu:graphene_dust'})
 
 
+event.remove({ id: /gtceu:.*mining_hammer/ }) // Going with this one since it works. IDFK. Other option is using ==> /.*mining_hammer.*/ <== but has the exact same outcome, even though it *really* shouldn't
 
 event.remove({type: 'minecraft:crafting_shaped' ,output: 'gtceu:phenolic_printed_circuit_board'})
 event.remove({type: 'gtceu:rock_breaker' ,output: 'minecraft:obsidian'})
