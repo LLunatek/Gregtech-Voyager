@@ -155,6 +155,15 @@ ServerEvents.recipes((event) => {
         }
     })
 
+    /**
+     *
+     * @param {*} output
+     * @param {*} namespace
+     * @param {*} inputs
+     * @param {*} fluidInputs
+     * @param {*} eut
+     * @param {*} time
+     */
     function assembly_no_research(output, namespace, inputs, fluidInputs, eut, time) {
         event.remove({ output: `${namespace}:${output}` })
         event.recipes.gtceu

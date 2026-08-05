@@ -1,4 +1,10 @@
 ServerEvents.recipes((event) => {
+    /**
+     *
+     * @param {*} mat
+     * @param {*} output
+     * @param {*} [additionalInputs]
+     */
     function casing_recipe(mat, output, additionalInputs) {
         if (additionalInputs) {
             event.recipes.gtceu
@@ -27,6 +33,7 @@ ServerEvents.recipes((event) => {
     casing_recipe("refined_fluxed_electrum", "heat_resistant_refined_fluxed_electrum")
     // casing_recipe('tungsten', 'condensation_resistant_tungsten')
     // casing_recipe('titanium', 'platinum', '2x #gtceu:circuits/ev')
+    // @ts-ignore
     event.shaped(
         Item.of("gtceu:alloy_blast_smelter", 1), // arg 1: output
         [
@@ -131,8 +138,15 @@ ServerEvents.recipes((event) => {
 
     // fuck it ill put these here too
 
+    /**
+     *
+     * @param {*} mat
+     * @param {*} output
+     * @param {*} [input]
+     */
     function cube_multi(mat, output, input) {
         if (!input) {
+            // @ts-ignore
             event.shaped(
                 Item.of("gtceu:cube_" + output, 1), // arg 1: output
                 [
@@ -147,6 +161,7 @@ ServerEvents.recipes((event) => {
                 }
             )
         } else {
+            // @ts-ignore
             event.shaped(
                 Item.of("gtceu:cube_" + output, 1), // arg 1: output
                 [

@@ -9,6 +9,10 @@ ServerEvents.recipes((event) => {
 
     const tiers = ["ulv", "lv", "mv", "hv", "ev", "iv", "luv", "zpm", "uv", "uhv", "uev", "uiv", "max"]
 
+    /**
+     *
+     * @param {*} tier
+     */
     function univ_circuit(tier) {
         event.recipes.gtceu.polarizer(`kubejs:${tier}_universal_circuit`).itemInputs(`#gtceu:circuits/${tier}`).itemOutputs(`kubejs:${tier}_universal_circuit`).duration(1).EUt(1)
     }
@@ -147,23 +151,6 @@ ServerEvents.recipes((event) => {
                 .EUt(eut)
                 .cleanroom(CleanroomType.CLEANROOM)
         }
-    }
-
-    function circuit_assembly_no_research(output, namespace, inputs, fluidInputs, eut, time) {
-        event.remove({ output: `${namespace}:${output}` })
-        event.recipes.gtceu
-            .assembly_line(`gtceu:${output}`)
-            .itemInputs(inputs)
-            .inputFluids(fluidInputs)
-            .itemOutputs(`${namespace}:${output}`)
-            // ["scannerResearch(java.util.function.UnaryOperator)"](
-            //     researchRecipeBuilder => researchRecipeBuilder
-            //         .researchStack(Item.of(toScan))
-            //         .duration(dura * 2)
-            //         .EUt(eut/4)
-            //     )
-            .duration(time * 20)
-            .EUt(eut)
     }
 
     //

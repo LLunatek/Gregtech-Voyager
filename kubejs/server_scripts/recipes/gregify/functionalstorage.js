@@ -3,7 +3,12 @@ ServerEvents.recipes((event) => {
 
     const woodtypes = ["oak", "spruce", "birch", "acacia", "jungle", "dark_oak", "crimson", "warped", "mangrove", "cherry"]
 
+    /**
+     *
+     * @param {*} type
+     */
     function createDrawerRecipes(type) {
+        // @ts-ignore
         event.shaped(
             Item.of("functionalstorage:" + type + "_1", 1), // arg 1: output
             [
@@ -17,6 +22,7 @@ ServerEvents.recipes((event) => {
                 D: "gtceu:wrought_iron_screw"
             }
         )
+        // @ts-ignore
         event.shaped(
             Item.of("functionalstorage:" + type + "_2", 2), // arg 1: output
             [
@@ -30,6 +36,7 @@ ServerEvents.recipes((event) => {
                 D: "gtceu:wrought_iron_screw"
             }
         )
+        // @ts-ignore
         event.shaped(
             Item.of("functionalstorage:" + type + "_4", 4), // arg 1: output
             [
@@ -46,6 +53,7 @@ ServerEvents.recipes((event) => {
     }
 
     // treated and rubber
+    // @ts-ignore
     event.shaped(
         Item.of("functionalstorage:rubber_1", 1), // arg 1: output
         [
@@ -59,6 +67,7 @@ ServerEvents.recipes((event) => {
             D: "gtceu:wrought_iron_screw"
         }
     )
+    // @ts-ignore
     event.shaped(
         Item.of("functionalstorage:rubber_2", 2), // arg 1: output
         [
@@ -72,6 +81,7 @@ ServerEvents.recipes((event) => {
             D: "gtceu:wrought_iron_screw"
         }
     )
+    // @ts-ignore
     event.shaped(
         Item.of("functionalstorage:rubber_4", 4), // arg 1: output
         [
@@ -85,6 +95,7 @@ ServerEvents.recipes((event) => {
             D: "gtceu:wrought_iron_screw"
         }
     )
+    // @ts-ignore
     event.shaped(
         Item.of("functionalstorage:treated_1", 1), // arg 1: output
         [
@@ -98,6 +109,7 @@ ServerEvents.recipes((event) => {
             D: "gtceu:wrought_iron_screw"
         }
     )
+    // @ts-ignore
     event.shaped(
         Item.of("functionalstorage:treated_2", 2), // arg 1: output
         [
@@ -111,6 +123,7 @@ ServerEvents.recipes((event) => {
             D: "gtceu:wrought_iron_screw"
         }
     )
+    // @ts-ignore
     event.shaped(
         Item.of("functionalstorage:treated_4", 4), // arg 1: output
         [
@@ -126,6 +139,7 @@ ServerEvents.recipes((event) => {
     )
 
     //framed
+    // @ts-ignore
     event.shaped(
         Item.of("functionalstorage:framed_1", 1), // arg 1: output
         [
@@ -139,6 +153,7 @@ ServerEvents.recipes((event) => {
         }
     )
 
+    // @ts-ignore
     event.shaped(
         Item.of("functionalstorage:framed_2", 2), // arg 1: output
         [
@@ -151,6 +166,7 @@ ServerEvents.recipes((event) => {
             C: "gtceu:iron_plate"
         }
     )
+    // @ts-ignore
     event.shaped(
         Item.of("functionalstorage:framed_4", 4), // arg 1: output
         [

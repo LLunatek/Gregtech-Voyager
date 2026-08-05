@@ -1,4 +1,5 @@
 ServerEvents.recipes((event) => {
+    // @ts-ignore
     event.shaped(
         Item.of("voyagercore:magmatic_foundry"), // arg 1: output
         [
@@ -15,6 +16,7 @@ ServerEvents.recipes((event) => {
         }
     )
 
+    // @ts-ignore
     event.shaped(
         Item.of("voyagercore:everfrost_chiller"), // arg 1: output
         [

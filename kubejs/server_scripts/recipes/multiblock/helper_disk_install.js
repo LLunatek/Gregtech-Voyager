@@ -6,6 +6,14 @@ ServerEvents.recipes((event) => {
         .duration(2400)
         .EUt(1980)
 
+    /**
+     *
+     * @param {*} inputs
+     * @param {*} output
+     * @param {*} cnt
+     * @param {*} time
+     * @param {*} eut
+     */
     function disk_installation(inputs, output, cnt, time, eut) {
         event.recipes.gtceu
             .helper_software_installation_unit("kubejs:helper_software_installation_unit_" + output)

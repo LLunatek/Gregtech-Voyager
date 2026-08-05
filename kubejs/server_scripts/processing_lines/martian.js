@@ -1,123 +1,15 @@
+import { recipe_centrifuge, recipe_chem_plant, recipe_lcr, recipe_radiation_chamber } from "../00_util/recipeUtils"
+
 ServerEvents.recipes((event) => {
-    const fullName = (name) => "kubejs:" + name
-
-    function centrifuge(name, inputItems, inputFluids, outputItems, outputFluids, duration, eut, helper) {
-        if (helper) {
-            event.recipes.gtceu
-                .centrifuge("kubejs:centrifuge_helper_" + name)
-                .itemInputs(inputItems)
-                .notConsumable("kubejs:" + helper)
-                .itemOutputs(outputItems)
-                .inputFluids(inputFluids)
-                .circuit(3)
-                .outputFluids(outputFluids)
-                .duration(duration * 20 * 0.85)
-                .EUt(eut)
-        } else {
-            event.recipes.gtceu
-                .centrifuge("kubejs:centrifuge_" + name)
-                .itemInputs(inputItems)
-                .itemOutputs(outputItems)
-                .inputFluids(inputFluids)
-                .outputFluids(outputFluids)
-                .duration(duration * 20)
-                .EUt(eut)
-        }
-    }
-
-    function macerator(outputItem, ns, inputItem, time, eut) {
-        event.recipes.gtceu
-            .macerator("kubejs:macerator_" + outputItem)
-            .itemInputs(inputItem)
-            .itemOutputs(`${ns}:${outputItem}`)
-            .duration(time * 20)
-            .EUt(eut)
-    }
-
-    function create_mixer_recipe(name, ingredientsItem, fluidIngredients, itemOutputs, fluidOutputs, eut, time) {
-        event.recipes.gtceu
-            .mixer(fullName(name))
-            .itemInputs(ingredientsItem)
-            .inputFluids(fluidIngredients)
-            .itemOutputs(itemOutputs)
-            .outputFluids(fluidOutputs)
-            .duration(time * 20)
-            .EUt(eut)
-    }
-
-    function radiation_chamber(name, ingredientsItem, fluidIngredients, pt, itemOutputs, fluidOutputs, eut, time) {
-        event.recipes.gtceu
-            .radiation_chamber(fullName(name))
-            .itemInputs(ingredientsItem)
-            .perTick(true)
-            .inputFluids(`gtceu:${fluidIngredients} ${pt}`)
-            .perTick(false)
-            .itemOutputs(itemOutputs)
-            .outputFluids(fluidOutputs)
-            .duration(time * 20)
-            .EUt(eut)
-    }
-
     /**
-     * Create a lcr recipe
-     * @param {*} name - recipe name (dont include kubejs:)
-     * @param {*} inputItems - array of input items (include amount)
-     * @param {*} inputFluids - array of input fluids (include amount)
-     * @param {*} outputItems - array of output items (include amount)
-     * @param {*} outputFluids - array of output fluids (include amount)
-     * @param {*} duration - time in seconds
-     * @param {*} eut - eu/tick
+     *
+     * @param {*} output
+     * @param {*} trade_deal
+     * @param {*} inputs
+     * @param {*} time
+     * @param {*} eut
+     * @param {*} [helper]
      */
-    function create_recipe_lcr(name, inputItems, inputFluids, outputItems, outputFluids, duration, eut, helper) {
-        if (!helper) {
-            event.recipes.gtceu
-                .large_chemical_reactor("kubejs:lcr_" + name)
-                .itemInputs(inputItems)
-                .itemOutputs(outputItems)
-                .inputFluids(inputFluids)
-                .outputFluids(outputFluids)
-                .duration(duration * 20)
-                .EUt(eut)
-        } else {
-            event.recipes.gtceu
-                .large_chemical_reactor("kubejs:lcr_helper_" + name)
-                .itemInputs(inputItems)
-                .notConsumable("kubejs:" + helper)
-                .itemOutputs(outputItems)
-                .inputFluids(inputFluids)
-                .circuit(3)
-                .outputFluids(outputFluids)
-                .duration(duration * 20)
-                .EUt(eut)
-        }
-    }
-
-    function create_recipe_chem_plant(name, inputItems, inputFluids, outputItems, outputFluids, duration, eut, temp, helper) {
-        if (!helper) {
-            event.recipes.gtceu
-                .chemical_plant("kubejs:lcr_" + name)
-                .itemInputs(inputItems)
-                .itemOutputs(outputItems)
-                .inputFluids(inputFluids)
-                .addData("ebf_temp", temp)
-                .outputFluids(outputFluids)
-                .duration(duration * 20)
-                .EUt(eut)
-        } else {
-            event.recipes.gtceu
-                .chemical_plant("kubejs:lcr_helper_" + name)
-                .itemInputs(inputItems)
-                .notConsumable("kubejs:" + helper)
-                .itemOutputs(outputItems)
-                .inputFluids(inputFluids)
-                .addData("ebf_temp", temp)
-                .circuit(3)
-                .outputFluids(outputFluids)
-                .duration(duration * 20)
-                .EUt(eut)
-        }
-    }
-
     function c_postbox_bad(output, trade_deal, inputs, time, eut, helper) {
         if (!helper) {
             event.recipes.gtceu
@@ -140,6 +32,15 @@ ServerEvents.recipes((event) => {
         }
     }
 
+    /**
+     *
+     * @param {*} output
+     * @param {*} trade_deal
+     * @param {*} inputs
+     * @param {*} time
+     * @param {*} eut
+     * @param {*} [helper]
+     */
     function c_postbox_good(output, trade_deal, inputs, time, eut, helper) {
         if (!helper) {
             event.recipes.gtceu
@@ -189,8 +90,8 @@ ServerEvents.recipes((event) => {
         .duration(96 * 2 * 20)
         .EUt(1980)
 
-    create_recipe_lcr("dissolved_martian", "16x kubejs:shredded_martian_scrap", "gtceu:aqua_regia 9000", [], "kubejs:dissolved_martian_mineral_solution 1000", 240, 1980)
-    create_recipe_lcr("dissolved_martian", "16x kubejs:shredded_martian_scrap", "gtceu:aqua_regia 6000", [], "kubejs:dissolved_martian_mineral_solution 1666", 180, 1560, "advanced_chemist_helper")
+    recipe_lcr(event, "dissolved_martian", "16x kubejs:shredded_martian_scrap", "gtceu:aqua_regia 9000", [], "kubejs:dissolved_martian_mineral_solution 1000", 240, 1980)
+    recipe_lcr(event, "dissolved_martian", "16x kubejs:shredded_martian_scrap", "gtceu:aqua_regia 6000", [], "kubejs:dissolved_martian_mineral_solution 1666", 180, 1560, "advanced_chemist_helper")
 
     event.recipes.gtceu
         .electrolyzer("kubejs:elec_martian_soup")
@@ -202,7 +103,8 @@ ServerEvents.recipes((event) => {
 
     // sulfuria
 
-    centrifuge(
+    recipe_centrifuge(
+        event,
         "martian_sand",
         "64x gtceu:martian_sand_dust",
         "gtceu:toluene 500",
@@ -211,7 +113,8 @@ ServerEvents.recipes((event) => {
         60,
         1920
     )
-    centrifuge(
+    recipe_centrifuge(
+        event,
         "martian_sand",
         "92x gtceu:martian_sand_dust",
         "gtceu:toluene 350",
@@ -221,11 +124,11 @@ ServerEvents.recipes((event) => {
         1200,
         "advanced_chemist_helper"
     )
-    radiation_chamber("excited_sulfur", "2x gtceu:inert_sulfur_dust", "uranium", 1, "2x gtceu:excited_sulfur_dust", "gtceu:radon 2000", 7860, 48)
+    recipe_radiation_chamber(event, "excited_sulfur", "2x gtceu:inert_sulfur_dust", "uranium", 1, "2x gtceu:excited_sulfur_dust", "gtceu:radon 2000", 7860, 48)
 
-    create_recipe_lcr("carb_tetrach", "gtceu:carbon_dust", "gtceu:chlorine 4000", [], "gtceu:carbon_tetrachloride 1000", 20, 480)
+    recipe_lcr(event, "carb_tetrach", "gtceu:carbon_dust", "gtceu:chlorine 4000", [], "gtceu:carbon_tetrachloride 1000", 20, 480)
 
-    create_recipe_lcr("sulfuria_sol", ["2x gtceu:excited_sulfur_dust", "gtceu:copper_dust"], "gtceu:carbon_tetrachloride 1000", [], "gtceu:sulfuria_solution 1000", 30, 1920)
+    recipe_lcr(event, "sulfuria_sol", ["2x gtceu:excited_sulfur_dust", "gtceu:copper_dust"], "gtceu:carbon_tetrachloride 1000", [], "gtceu:sulfuria_solution 1000", 30, 1920)
 
     event.recipes.gtceu
         .distillation_tower("kubejs:sulfuria")
@@ -235,7 +138,8 @@ ServerEvents.recipes((event) => {
         .duration(20 * 32)
         .EUt(7860)
 
-    create_recipe_chem_plant(
+    recipe_chem_plant(
+        event,
         "htba-s",
         ["2x gtceu:sulfuria_dust", "3x gtceu:borax_dust"],
         ["gtceu:argon 1250", "gtceu:vanadium_gallium 1152"],
@@ -245,7 +149,8 @@ ServerEvents.recipes((event) => {
         7860 * 1.5,
         5000
     )
-    create_recipe_chem_plant(
+    recipe_chem_plant(
+        event,
         "htba-s",
         ["2x gtceu:sulfuria_dust", "3x gtceu:borax_dust"],
         ["gtceu:argon 1000", "gtceu:vanadium_gallium 1152"],

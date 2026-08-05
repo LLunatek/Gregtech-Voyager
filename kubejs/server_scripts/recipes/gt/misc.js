@@ -1,5 +1,6 @@
 ServerEvents.recipes((event) => {
     const mcTiers = ["stone", "iron", "gold", "diamond", "netherite"]
+    // @ts-ignore
     function removeTools(tier) {
         event.remove({ output: `minecraft:${tier}_pickaxe` })
         event.remove({ output: `minecraft:${tier}_axe` })
@@ -17,6 +18,7 @@ ServerEvents.recipes((event) => {
         .duration(10 * 20) // 60 sec
         .EUt(256)
 
+    // @ts-ignore
     event.shaped(
         Item.of("gtceu:concrete_bucket", 1), // arg 1: output
         [
@@ -32,6 +34,7 @@ ServerEvents.recipes((event) => {
         }
     )
 
+    // @ts-ignore
     event.shaped(
         Item.of("minecraft:bricks", 2), // arg 1: output
         [

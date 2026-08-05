@@ -1,6 +1,7 @@
 ServerEvents.recipes((event) => {
     event.remove({ mod: "industrialforegoing" })
 
+    // @ts-ignore
     event.shaped(
         Item.of("industrialforegoing:machine_frame_pity", 1), // arg 1: output
         [
@@ -16,6 +17,7 @@ ServerEvents.recipes((event) => {
         }
     )
 
+    // @ts-ignore
     event.shaped(
         Item.of("industrialforegoing:plant_gatherer", 1), // arg 1: output
         [
@@ -34,6 +36,7 @@ ServerEvents.recipes((event) => {
         }
     )
 
+    // @ts-ignore
     event.shaped(
         Item.of("industrialforegoing:plant_sower", 1), // arg 1: output
         [

@@ -1,4 +1,16 @@
 ServerEvents.recipes((event) => {
+    /**
+     *
+     * @param {*} output
+     * @param {*} ns
+     * @param {*} inputItems
+     * @param {*} nonconsumed
+     * @param {*} inputFluid
+     * @param {*} outFluid
+     * @param {*} eut
+     * @param {*} time
+     * @param {*} concentration
+     */
     function beam_heating(output, ns, inputItems, nonconsumed, inputFluid, outFluid, eut, time, concentration) {
         event.recipes.gtceu
             .beam_heating(`kubejs:${output}_teus_laser`) // recipe ID

@@ -5,9 +5,11 @@ ServerEvents.recipes((event) => {
     event.remove({ type: "minecraft:smelting", output: "tconstruct:seared_brick" })
     event.remove({ type: "minecraft:blasting", output: "tconstruct:seared_brick" })
 
+    // @ts-ignore
     event.smelting("tconstruct:seared_brick", "kubejs:compressed_grout")
 
     event
+        // @ts-ignore
         .shapeless(
             Item.of("kubejs:compressed_grout", 1), // arg 1: output
             [

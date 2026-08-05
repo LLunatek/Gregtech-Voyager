@@ -1,3 +1,4 @@
+// @ts-nocheck
 ServerEvents.recipes((event) => {
     event.remove({ output: "gtceu:diode" })
     event.remove({ type: "minecraft:crafting_shaped", output: "gtceu:lv_energy_input_hatch" })

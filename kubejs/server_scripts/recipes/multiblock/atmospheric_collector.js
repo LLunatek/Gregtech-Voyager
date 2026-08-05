@@ -1,6 +1,18 @@
 ServerEvents.recipes((event) => {
     event.recipes.gtceu.assembler("kubejs:atmospheric_collector").itemInputs("16x gtceu:steel_ingot").itemOutputs("gtceu:atmospheric_collector").duration(2400).EUt(1980)
 
+    /**
+     *
+     * @param {*} circuit
+     * @param {*} ns
+     * @param {*} itemOutput
+     * @param {*} cntI
+     * @param {*} fluidOutput
+     * @param {*} cntF
+     * @param {*} time
+     * @param {*} eut
+     * @param {*} dimension
+     */
     function atm_collect(circuit, ns, itemOutput, cntI, fluidOutput, cntF, time, eut, dimension) {
         event.recipes.gtceu
             .atmospheric_collector("kubejs:atmospheric_collector_" + itemOutput + "_circuit_" + circuit)

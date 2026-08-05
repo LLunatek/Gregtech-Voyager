@@ -1,4 +1,5 @@
 ServerEvents.recipes((event) => {
+    // @ts-ignore
     event.shaped(
         Item.of("voyagercore:smd_assembler", 1), // arg 1: output
         [
@@ -54,6 +55,12 @@ ServerEvents.recipes((event) => {
         .duration(160)
         .EUt(480)
 
+    /**
+     *
+     * @param {*} output
+     * @param {*} outputCount
+     * @param {*} inputItems
+     */
     function smd(output, outputCount, inputItems)
     {
         event.recipes.gtceu.smd_assembly(`kubejs:smd_assembler_smd_${output}`)

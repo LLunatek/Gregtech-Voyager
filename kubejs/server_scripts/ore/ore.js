@@ -1,15 +1,12 @@
 const WorldGenLayers = Java.loadClass("com.gregtechceu.gtceu.api.data.worldgen.WorldGenLayers")
 GTCEuServerEvents.oreVeins((event) => {
-    // event.modify('gtceu:ilmenite_vein', vein => {
-    //     vein.dimensions(['ad_astra:moon']); // only spawns in moon now
-    // });
-
     event.remove("gtceu:bauxite_vein")
     event.remove("gtceu:mica_vein")
     event.remove("gtceu:naquadah_vein")
     event.remove("gtceu:scheelite_vein")
     event.remove("gtceu:sheldonite_vein")
 
+    /** @type {Record<string, $IWorldGenLayer_ | string>} */
     const dimToLayer = {
         "minecraft:overworld": "stone",
         "minecraft:the_end": WorldGenLayers.ENDSTONE,
@@ -20,1238 +17,754 @@ GTCEuServerEvents.oreVeins((event) => {
         "ad_astra:mercury": "mercury"
     }
 
-    function oreVein3(material, dimension, ns, weight, density, cSize, lRange, hRange, mats, addDense) {
-        if (!addDense) {
-            event.add(`${dimension}/${material}`, (vein) => {
-                vein.weight(weight)
-                vein.density(density)
-                vein.clusterSize(cSize)
-                vein.layer(dimToLayer[`${ns}:${dimension}`])
-                vein.dimensions(`${ns}:${dimension}`)
-                vein.heightRangeUniform(lRange, hRange)
-                vein.layeredVeinGenerator((generator) =>
-                    generator.buildLayerPattern((pattern) =>
-                        pattern
-                            .layer((l) => l.weight(1).mat(`gtceu:${mats[0]}`).size(1, 1))
-                            .layer((l) => l.weight(2).mat(`gtceu:${mats[1]}`).size(1, 3))
-                            .layer((l) => l.weight(3).mat(`gtceu:${mats[2]}`).size(1, 1))
-                            .layer((l) => l.weight(3).mat(`gtceu:${mats[0]}`).size(1, 2))
-                    )
-                )
-            })
-        } else {
-            event.add(`${dimension}/${material}`, (vein) => {
-                vein.weight(weight)
-                vein.density(density)
-                vein.clusterSize(cSize)
-                vein.layer(dimToLayer[`${ns}:${dimension}`])
-                vein.dimensions(`${ns}:${dimension}`)
-                vein.heightRangeUniform(lRange, hRange)
-                vein.layeredVeinGenerator((generator) =>
-                    generator.buildLayerPattern((pattern) =>
-                        pattern
-                            .layer((l) => l.weight(1).mat(`gtceu:${mats[0]}`).size(1, 1))
-                            .layer((l) => l.weight(2).mat(`gtceu:${mats[1]}`).size(1, 3))
-                            .layer((l) => l.weight(3).mat(`gtceu:${mats[2]}`).size(1, 1))
-                            .layer((l) => l.weight(3).mat(`gtceu:${mats[0]}`).size(1, 2))
-                    )
-                )
-            })
+    /** @typedef {[number, string, [number, number]]} LayerTuple */
 
-            event.add(`${dimension}/${material}/dense`, (vein) => {
-                vein.weight(Math.floor(weight / 10))
-                vein.density(density)
-                vein.clusterSize(Math.floor(cSize * 1.75))
-                vein.layer(dimToLayer[`${ns}:${dimension}`])
-                vein.dimensions(`${ns}:${dimension}`)
-                vein.heightRangeUniform(lRange, hRange)
-                vein.layeredVeinGenerator((generator) =>
-                    generator.buildLayerPattern((pattern) =>
-                        pattern
-                            .layer((l) => l.weight(1).mat(`gtceu:${mats[0]}`).size(3, 5))
-                            .layer((l) => l.weight(2).mat(`gtceu:${mats[1]}`).size(3, 5))
-                            .layer((l) => l.weight(3).mat(`gtceu:${mats[2]}`).size(2, 6))
-                            .layer((l) => l.weight(3).mat(`gtceu:${mats[0]}`).size(3, 5))
-                    )
-                )
-            })
-        }
+    /**
+     * @typedef {Object} VeinConfig
+     * @property {number} weight
+     * @property {number} density
+     * @property {number} clusterSize
+     * @property {string|$IWorldGenLayer_} layer
+     * @property {string} dimension
+     * @property {[number, number]} heightRange
+     * @property {string|$Material_} [surfaceRock]
+     * @property {"above"|"below"} [surfacePlacement] - defaults to above
+     */
+
+    /**  @typedef {VeinConfig & { layers: LayerTuple[] }} LayeredVeinConfig */
+
+    /**
+     * @typedef {Object} CuboidFace
+     * @property {string|$Material_} mat
+     * @property {number} [size]
+     */
+
+    /** @typedef {VeinConfig & { top: CuboidFace, middle: CuboidFace, bottom: CuboidFace, spread: CuboidFace }} CuboidVeinConfig */
+
+    /**
+     * @param {$GTOreDefinition_} vein
+     * @param {VeinConfig} cfg
+     */
+    function setupVein(vein, { weight, density, clusterSize, layer, dimension, heightRange }) {
+        vein.weight(weight)
+        vein.density(density)
+        vein.clusterSize(clusterSize)
+        //@ts-expect-error Kube shenanigans
+        vein.layer(layer)
+        vein.dimensions(dimension)
+        vein.heightRangeUniform(...heightRange)
     }
-    function oreVein4(material, dimension, ns, weight, density, cSize, lRange, hRange, mats, addDense) {
-        if (!addDense) {
-            event.add(`${dimension}/${material}`, (vein) => {
-                vein.weight(weight)
-                vein.density(density)
-                vein.clusterSize(cSize)
-                vein.layer(dimToLayer[`${ns}:${dimension}`])
-                vein.dimensions(`${ns}:${dimension}`)
-                vein.heightRangeUniform(lRange, hRange)
-                vein.layeredVeinGenerator((generator) =>
-                    generator.buildLayerPattern((pattern) =>
-                        pattern
-                            .layer((l) => l.weight(1).mat(`gtceu:${mats[0]}`).size(1, 2))
-                            .layer((l) => l.weight(2).mat(`gtceu:${mats[1]}`).size(1, 3))
-                            .layer((l) => l.weight(3).mat(`gtceu:${mats[2]}`).size(1, 2))
-                            .layer((l) => l.weight(3).mat(`gtceu:${mats[3]}`).size(1, 3))
-                    )
-                )
-            })
-        } else {
-            event.add(`${dimension}/${material}`, (vein) => {
-                vein.weight(weight)
-                vein.density(density)
-                vein.clusterSize(cSize)
-                vein.layer(dimToLayer[`${ns}:${dimension}`])
-                vein.dimensions(`${ns}:${dimension}`)
-                vein.heightRangeUniform(lRange, hRange)
-                vein.layeredVeinGenerator((generator) =>
-                    generator.buildLayerPattern((pattern) =>
-                        pattern
-                            .layer((l) => l.weight(1).mat(`gtceu:${mats[0]}`).size(1, 1))
-                            .layer((l) => l.weight(2).mat(`gtceu:${mats[1]}`).size(1, 2))
-                            .layer((l) => l.weight(3).mat(`gtceu:${mats[2]}`).size(1, 1))
-                            .layer((l) => l.weight(3).mat(`gtceu:${mats[3]}`).size(1, 3))
-                    )
-                )
-            })
 
-            event.add(`${dimension}/${material}/dense`, (vein) => {
-                vein.weight(Math.floor(weight / 10))
-                vein.density(density)
-                vein.clusterSize(Math.floor(cSize * 1.75))
-                vein.layer(dimToLayer[`${ns}:${dimension}`])
-                vein.dimensions(`${ns}:${dimension}`)
-                vein.heightRangeUniform(lRange, hRange)
-                vein.layeredVeinGenerator((generator) =>
-                    generator.buildLayerPattern((pattern) =>
+    /**
+     * Does nothing if cfg.surfaceRock is fasly
+     * @param {$GTOreDefinition_} vein
+     * @param {VeinConfig} cfg
+     */
+    function applySurfaceRock(vein, cfg) {
+        if (!cfg.surfaceRock) return
+        vein.surfaceIndicatorGenerator((/** @type {$SurfaceIndicatorGenerator_} */ ind) =>
+            // @ts-expect-error idk why it doesnt catch the undefined check (undefined is falsy)
+            ind.surfaceRock(cfg.surfaceRock).placement(cfg.surfacePlacement ?? "above")
+        )
+    }
+
+    /**
+     * @param {string} key
+     * @param {LayeredVeinConfig} cfg
+     */
+    function addMatVein(key, cfg) {
+        // indredibly nested buy idunno
+        event.add(key, (/** @type {$GTOreDefinition_} */ vein) => {
+            setupVein(vein, cfg)
+            vein.layeredVeinGenerator((/** @type {$LayeredVeinGenerator_} */ generator) =>
+                generator.buildLayerPattern((/** @type {$GTLayerPattern$Builder_} */ pattern) =>
+                    cfg.layers.reduce(
+                        (p, [w, mat, size]) =>
+                            p.layer((/** @type {*} */ l) =>
+                                l
+                                    .weight(w)
+                                    .mat(mat)
+                                    .size(...size)
+                            ),
                         pattern
-                            .layer((l) => l.weight(1).mat(`gtceu:${mats[0]}`).size(3, 5))
-                            .layer((l) => l.weight(2).mat(`gtceu:${mats[1]}`).size(3, 5))
-                            .layer((l) => l.weight(3).mat(`gtceu:${mats[2]}`).size(2, 6))
-                            .layer((l) => l.weight(3).mat(`gtceu:${mats[3]}`).size(3, 5))
                     )
                 )
+            )
+            applySurfaceRock(vein, cfg)
+        })
+    }
+
+    /**
+     * @param {string} key
+     * @param {LayeredVeinConfig} cfg
+     */
+    function addBlockVein(key, cfg) {
+        event.add(key, (/** @type {$GTOreDefinition_} */ vein) => {
+            setupVein(vein, cfg)
+            vein.layeredVeinGenerator((/** @type {$LayeredVeinGenerator_} */ generator) =>
+                generator.buildLayerPattern((/** @type {$GTLayerPattern$Builder_} */ pattern) =>
+                    cfg.layers.reduce(
+                        (p, [w, blockId, size]) =>
+                            p.layer((/** @type {*} */ l) =>
+                                l
+                                    .weight(w)
+                                    .state(() => Block.getBlock(blockId).defaultBlockState())
+                                    .size(...size)
+                            ),
+                        pattern
+                    )
+                )
+            )
+            applySurfaceRock(vein, cfg)
+        })
+    }
+
+    /**
+     * @param {string} key
+     * @param {CuboidVeinConfig} cfg
+     */
+    function addCuboidVein(key, cfg) {
+        event.add(
+            key,
+            /** @param {$GTOreDefinition_} vein */
+            (vein) => {
+                setupVein(vein, cfg)
+                vein.cuboidVeinGenerator(
+                    /** @param {$CuboidVeinGenerator_} generator */
+                    (generator) =>
+                        generator
+                            //@ts-expect-error
+                            .top((b) => b.mat(cfg.top.mat).size(cfg.top.size))
+                            //@ts-expect-error
+                            .middle((b) => b.mat(cfg.middle.mat).size(cfg.middle.size))
+                            //@ts-expect-error
+                            .bottom((b) => b.mat(cfg.bottom.mat).size(cfg.bottom.size))
+                            //@ts-expect-error
+                            .spread((b) => b.mat(cfg.spread.mat))
+                )
+                applySurfaceRock(vein, cfg)
+            }
+        )
+    }
+
+    /**
+     * @typedef {Object} MarsOreConfig
+     * @property {string} material
+     * @property {number} weight
+     * @property {number} density
+     * @property {number} clusterSize
+     * @property {string[]} mats - 3 or 4 long
+     * @property {boolean} dense
+     * @property {[number, number]} [heightRange] - default [-64, 200]
+     */
+
+    /**
+     * @param {MarsOreConfig} cfg
+     */
+    function addMarsVein({ material, weight, density, clusterSize, mats, dense, heightRange = [-64, 200] }) {
+        const dimension = "ad_astra:mars"
+        const layer = dimToLayer[dimension]
+        const gt = (/** @type {string} */ m) => `gtceu:${m}`
+        const matIndex = mats.length == 3 ? [0, 1, 2, 0] : [0, 1, 2, 3]
+        const weights = [1, 2, 3, 3]
+        /** @type {[number,number][]}*/
+        const standardSizes =
+            mats.length == 3
+                ? [
+                      [1, 1],
+                      [1, 3],
+                      [1, 1],
+                      [1, 2]
+                  ]
+                : [
+                      [1, 2],
+                      [1, 3],
+                      [1, 2],
+                      [1, 3]
+                  ]
+        /** @type {[number,number][]}*/
+        const denseSizes = [
+            [3, 5],
+            [3, 5],
+            [2, 6],
+            [3, 5]
+        ]
+
+        /** @param {[number, number][]} sizes @returns {LayerTuple[]} */
+        const buildLayers = (sizes) => matIndex.map((mi, i) => [weights[i], gt(mats[mi]), sizes[i]])
+
+        addMatVein(`mars/${material}`, {
+            weight,
+            density,
+            clusterSize,
+            layer,
+            dimension,
+            heightRange,
+            layers: buildLayers(standardSizes)
+        })
+
+        if (dense) {
+            addMatVein(`mars/${material}/dense`, {
+                weight: Math.floor(weight / 10),
+                density,
+                clusterSize: Math.floor(clusterSize * 1.75),
+                layer,
+                dimension,
+                heightRange,
+                layers: buildLayers(denseSizes)
             })
         }
     }
 
     // mars ores
 
-    oreVein4("ostrite", "mars", "ad_astra", 10, 0.3, 25, -64, 200, ["ostrite", "scheelite", "amethyst", "palladium"], true)
-    oreVein3("tungstate", "mars", "ad_astra", 10, 0.4, 30, -64, 200, ["tungstate", "scheelite", "tungstate"], true)
-    oreVein3("bauxite", "mars", "ad_astra", 35, 0.7, 35, -64, 200, ["bauxite", "aluminium", "bauxite"], false)
-    oreVein3("ilmenite", "mars", "ad_astra", 15, 0.3, 35, -64, 200, ["ilmenite", "ilmenite", "ilmenite"], true)
-    oreVein4("magnetite", "mars", "ad_astra", 45, 0.7, 45, -64, 200, ["hematite", "hematite", "gold", "hematite"], false)
-    oreVein3("garnierite", "mars", "ad_astra", 35, 0.7, 35, -64, 200, ["pentlandite", "cobaltite", "garnierite"], false)
-    oreVein3("sulfur", "mars", "ad_astra", 20, 0.8, 45, -64, 200, ["sulfur", "sphalerite", "pyrite"], false)
-    oreVein3("uraninite", "mars", "ad_astra", 25, 0.4, 25, -64, 200, ["uraninite", "pitchblende", "uraninite"], false)
-    oreVein3("plutonium", "mars", "ad_astra", 10, 0.4, 30, -64, 200, ["uraninite", "plutonium", "uraninite"], true)
-    oreVein4("electrotine", "mars", "ad_astra", 35, 0.9, 30, -64, 200, ["electrotine", "gold", "redstone", "silver"], false)
-    oreVein4("cooperite", "mars", "ad_astra", 15, 0.4, 40, -64, 200, ["cooperite", "cooperite", "platinum", "palladium"], true)
-    oreVein3("dalumite", "mars", "ad_astra", 15, 0.3, 45, -64, 100, ["dalumite", "ilmenite", "graphite"], true)
+    /** @type {MarsOreConfig[]} */
+    const marsOres = [
+        { material: "ostrite", weight: 10, density: 0.3, clusterSize: 25, mats: ["ostrite", "scheelite", "amethyst", "palladium"], dense: true },
+        { material: "tungstate", weight: 10, density: 0.4, clusterSize: 30, mats: ["tungstate", "scheelite", "tungstate"], dense: true },
+        { material: "bauxite", weight: 35, density: 0.7, clusterSize: 35, mats: ["bauxite", "aluminium", "bauxite"], dense: false },
+        { material: "ilmenite", weight: 15, density: 0.3, clusterSize: 35, mats: ["ilmenite", "ilmenite", "ilmenite"], dense: true },
+        { material: "magnetite", weight: 45, density: 0.7, clusterSize: 45, mats: ["hematite", "hematite", "gold", "hematite"], dense: false },
+        { material: "garnierite", weight: 35, density: 0.7, clusterSize: 35, mats: ["pentlandite", "cobaltite", "garnierite"], dense: false },
+        { material: "sulfur", weight: 20, density: 0.8, clusterSize: 45, mats: ["sulfur", "sphalerite", "pyrite"], dense: false },
+        { material: "uraninite", weight: 25, density: 0.4, clusterSize: 25, mats: ["uraninite", "pitchblende", "uraninite"], dense: false },
+        { material: "plutonium", weight: 10, density: 0.4, clusterSize: 30, mats: ["uraninite", "plutonium", "uraninite"], dense: true },
+        { material: "electrotine", weight: 35, density: 0.9, clusterSize: 30, mats: ["electrotine", "gold", "redstone", "silver"], dense: false },
+        { material: "cooperite", weight: 15, density: 0.4, clusterSize: 40, mats: ["cooperite", "cooperite", "platinum", "palladium"], dense: true },
+        { material: "dalumite", weight: 15, density: 0.3, clusterSize: 45, heightRange: [-64, 100], mats: ["dalumite", "ilmenite", "graphite"], dense: true }
+    ]
 
-    // venus ores
+    marsOres.forEach(addMarsVein)
 
     // overworld ores
 
-    event.add("overworld/mica", (vein) => {
-        vein.weight(5)
-        vein.density(0.3)
-        vein.clusterSize(45)
-        vein.layer("stone")
-        vein.dimensions("minecraft:overworld")
-        vein.heightRangeUniform(20, 90)
-        vein.cuboidVeinGenerator((generator) =>
-            generator
-                .top((b) => b.mat(GTMaterials.Kyanite).size(1))
-                .middle((b) => b.mat(GTMaterials.Mica).size(3))
-                .bottom((b) => b.mat(GTMaterials.Lepidolite).size(2))
-                .spread((b) => b.mat(GTMaterials.Mica))
-        )
-        vein.surfaceIndicatorGenerator((indicator) => indicator.surfaceRock(GTMaterials.Mica).placement("above"))
+    addCuboidVein("overworld/mica", {
+        weight: 5,
+        density: 0.3,
+        clusterSize: 45,
+        layer: "stone",
+        dimension: "minecraft:overworld",
+        heightRange: [20, 90],
+        top: { mat: GTMaterials.Kyanite, size: 1 },
+        middle: { mat: GTMaterials.Mica, size: 3 },
+        bottom: { mat: GTMaterials.Lepidolite, size: 2 },
+        spread: { mat: GTMaterials.Mica },
+        surfaceRock: GTMaterials.Mica
     })
 
-    event.add("overworld/dense/mica", (vein) => {
-        vein.weight(2)
-        vein.density(0.8)
-        vein.clusterSize(45)
-        vein.layer("stone")
-        vein.dimensions("minecraft:overworld")
-        vein.heightRangeUniform(-45, 5)
-        vein.layeredVeinGenerator((generator) =>
-            generator.buildLayerPattern((pattern) =>
-                pattern
-                    .layer((l) =>
-                        l
-                            .weight(2)
-                            .state(() => Block.getBlock("gtceu:mica_ore").defaultBlockState())
-                            .size(3, 6)
-                    )
-                    .layer((l) =>
-                        l
-                            .weight(2)
-                            .state(() => Block.getBlock("gtceu:kyanite_ore").defaultBlockState())
-                            .size(2, 4)
-                    )
-                    .layer((l) =>
-                        l
-                            .weight(1)
-                            .state(() => Block.getBlock("gtceu:mica_ore").defaultBlockState())
-                            .size(2, 4)
-                    )
-            )
-        )
+    addBlockVein("overworld/dense/mica", {
+        weight: 2,
+        density: 0.8,
+        clusterSize: 45,
+        layer: "stone",
+        dimension: "minecraft:overworld",
+        heightRange: [-45, 5],
+        layers: [
+            [2, "gtceu:mica_ore", [3, 6]],
+            [2, "gtceu:kyanite_ore", [2, 4]],
+            [1, "gtceu:mica_ore", [2, 4]]
+        ]
     })
 
     // twilight ores
 
-    event.add("twilight/source", (vein) => {
-        vein.weight(5)
-        vein.density(0.3)
-        vein.clusterSize(40)
-        vein.layer("twilightforest")
-        vein.dimensions("twilightforest:twilight_forest")
-        vein.heightRangeUniform(-45, 5)
-        vein.layeredVeinGenerator((generator) =>
-            generator.buildLayerPattern((pattern) =>
-                pattern
-                    .layer((l) =>
-                        l
-                            .weight(2)
-                            .state(() => Block.getBlock("gtceu:source_ore").defaultBlockState())
-                            .size(1, 2)
-                    )
-                    .layer((l) =>
-                        l
-                            .weight(2)
-                            .state(() => Block.getBlock("gtceu:lapis_ore").defaultBlockState())
-                            .size(1, 2)
-                    )
-                    .layer((l) =>
-                        l
-                            .weight(1)
-                            .state(() => Block.getBlock("gtceu:lazurite_ore").defaultBlockState())
-                            .size(1, 2)
-                    )
-            )
-        )
-    })
+    /** @type {(LayeredVeinConfig & { key: string })[]} */
+    const twilightOres = [
+        {
+            key: "twilight/source",
+            weight: 5,
+            density: 0.3,
+            clusterSize: 40,
+            heightRange: [-45, 5],
+            layers: [
+                [2, "gtceu:source_ore", [1, 2]],
+                [2, "gtceu:lapis_ore", [1, 2]],
+                [1, "gtceu:lazurite_ore", [1, 2]]
+            ],
+            layer: "twilightforest",
+            dimension: "twilightforest:twilight_forest"
+        },
+        {
+            key: "twilight/dense/source",
+            weight: 1,
+            density: 0.7,
+            clusterSize: 40,
+            heightRange: [-45, 5],
+            layers: [
+                [2, "gtceu:source_ore", [3, 6]],
+                [2, "gtceu:lapis_ore", [1, 2]],
+                [1, "gtceu:lazurite_ore", [1, 2]]
+            ],
+            layer: "twilightforest",
+            dimension: "twilightforest:twilight_forest"
+        },
+        {
+            key: "twilight/nickel",
+            weight: 15,
+            density: 0.3,
+            clusterSize: 45,
+            heightRange: [-45, 5],
+            layers: [
+                [2, "gtceu:nickel_ore", [1, 3]],
+                [2, "gtceu:magnesite_ore", [1, 3]],
+                [1, "gtceu:nickel_ore", [1, 2]]
+            ],
+            layer: "twilightforest",
+            dimension: "twilightforest:twilight_forest"
+        },
+        {
+            key: "twilight/dense/nickel",
+            weight: 1,
+            density: 0.8,
+            clusterSize: 40,
+            heightRange: [-45, 5],
+            layers: [
+                [2, "gtceu:nickel_ore", [3, 6]],
+                [2, "gtceu:magnesite_ore", [2, 3]],
+                [2, "gtceu:nickel_ore", [2, 2]],
+                [1, "gtceu:chromite_ore", [1, 3]]
+            ],
+            layer: "twilightforest",
+            dimension: "twilightforest:twilight_forest"
+        },
+        {
+            key: "twilight/cobalt",
+            weight: 25,
+            density: 0.3,
+            clusterSize: 45,
+            heightRange: [-45, 5],
+            layers: [
+                [2, "gtceu:cobalt_ore", [1, 3]],
+                [2, "gtceu:cobaltite_ore", [1, 2]],
+                [1, "gtceu:garnierite_ore", [1, 2]],
+                [2, "gtceu:cobalt_ore", [1, 3]]
+            ],
+            layer: "twilightforest",
+            dimension: "twilightforest:twilight_forest"
+        },
+        {
+            key: "twilight/dense/cobalt",
+            weight: 1,
+            density: 0.7,
+            clusterSize: 45,
+            heightRange: [-45, 5],
+            layers: [
+                [2, "gtceu:cobalt_ore", [2, 4]],
+                [2, "gtceu:cobaltite_ore", [3, 6]],
+                [1, "gtceu:garnierite_ore", [1, 2]],
+                [2, "gtceu:cobalt_ore", [1, 3]]
+            ],
+            layer: "twilightforest",
+            dimension: "twilightforest:twilight_forest"
+        },
+        {
+            key: "twilight/silver",
+            weight: 30,
+            density: 0.3,
+            clusterSize: 45,
+            heightRange: [-45, 5],
+            layers: [
+                [2, "gtceu:silver_ore", [1, 3]],
+                [2, "gtceu:galena_ore", [1, 2]],
+                [1, "gtceu:lead_ore", [1, 2]],
+                [2, "gtceu:gold_ore", [1, 3]]
+            ],
+            layer: "twilightforest",
+            dimension: "twilightforest:twilight_forest"
+        },
+        {
+            key: "twilight/dense/silver",
+            weight: 2,
+            density: 0.7,
+            clusterSize: 45,
+            heightRange: [-45, 5],
+            layers: [
+                [2, "gtceu:silver_ore", [3, 6]],
+                [2, "gtceu:galena_ore", [2, 4]],
+                [1, "gtceu:lead_ore", [1, 2]],
+                [2, "gtceu:gold_ore", [1, 3]]
+            ],
+            layer: "twilightforest",
+            dimension: "twilightforest:twilight_forest"
+        },
+        {
+            key: "twilight/gem",
+            weight: 15,
+            density: 0.3,
+            clusterSize: 35,
+            heightRange: [-45, 5],
+            layers: [
+                [2, "gtceu:emerald_ore", [1, 3]],
+                [2, "gtceu:diamond_ore", [1, 2]],
+                [1, "gtceu:ruby_ore", [1, 2]],
+                [2, "gtceu:sapphire_ore", [1, 3]],
+                [2, "gtceu:realgar_ore", [1, 3]]
+            ],
+            layer: "twilightforest",
+            dimension: "twilightforest:twilight_forest"
+        },
+        {
+            key: "twilight/dense/gem",
+            weight: 1,
+            density: 0.7,
+            clusterSize: 45,
+            heightRange: [-45, 5],
+            layers: [
+                [2, "gtceu:emerald_ore", [2, 4]],
+                [2, "gtceu:diamond_ore", [2, 4]],
+                [1, "gtceu:ruby_ore", [2, 4]],
+                [2, "gtceu:sapphire_ore", [2, 4]],
+                [2, "gtceu:realgar_ore", [2, 4]]
+            ],
+            layer: "twilightforest",
+            dimension: "twilightforest:twilight_forest"
+        },
+        {
+            key: "twilight/pitchblende",
+            weight: 15,
+            density: 0.2,
+            clusterSize: 45,
+            heightRange: [-45, 5],
+            layers: [
+                [2, "gtceu:pitchblende_ore", [1, 2]],
+                [2, "gtceu:pitchblende_ore", [1, 2]],
+                [1, "gtceu:pitchblende_ore", [1, 2]],
+                [2, "gtceu:uraninite_ore", [1, 2]]
+            ],
+            layer: "twilightforest",
+            dimension: "twilightforest:twilight_forest"
+        },
+        {
+            key: "twilight/dense/pitchblende",
+            weight: 1,
+            density: 0.8,
+            clusterSize: 45,
+            heightRange: [-45, 5],
+            layers: [
+                [2, "gtceu:pitchblende_ore", [3, 6]],
+                [2, "gtceu:pitchblende_ore", [2, 2]],
+                [1, "gtceu:pitchblende_ore", [2, 2]],
+                [2, "gtceu:uraninite_ore", [3, 6]]
+            ],
+            layer: "twilightforest",
+            dimension: "twilightforest:twilight_forest"
+        },
+        {
+            key: "twilight/magnetite",
+            weight: 40,
+            density: 0.4,
+            clusterSize: 45,
+            heightRange: [-45, 5],
+            layers: [
+                [2, "gtceu:magnetite_ore", [2, 3]],
+                [2, "gtceu:vanadium_magnetite_ore", [2, 3]],
+                [1, "gtceu:gold_ore", [1, 2]],
+                [2, "gtceu:magnetite_ore", [1, 3]]
+            ],
+            layer: "twilightforest",
+            dimension: "twilightforest:twilight_forest"
+        },
+        {
+            key: "twilight/dense/magnetite",
+            weight: 3,
+            density: 1,
+            clusterSize: 40,
+            heightRange: [-45, 5],
+            layers: [
+                [2, "gtceu:magnetite_ore", [3, 6]],
+                [2, "gtceu:vanadium_magnetite_ore", [2, 2]],
+                [1, "gtceu:gold_ore", [2, 2]],
+                [2, "gtceu:magnetite_ore", [3, 6]]
+            ],
+            layer: "twilightforest",
+            dimension: "twilightforest:twilight_forest"
+        },
+        {
+            key: "twilight/red",
+            weight: 25,
+            density: 0.3,
+            clusterSize: 45,
+            heightRange: [-45, 5],
+            layers: [
+                [2, "gtceu:ruby_ore", [1, 2]],
+                [2, "gtceu:redstone_ore", [2, 3]],
+                [1, "gtceu:realgar_ore", [1, 2]],
+                [2, "gtceu:redstone_ore", [1, 3]]
+            ],
+            layer: "twilightforest",
+            dimension: "twilightforest:twilight_forest"
+        },
+        {
+            key: "twilight/dense/red",
+            weight: 1,
+            density: 0.9,
+            clusterSize: 45,
+            heightRange: [-64, 5],
+            layers: [
+                [12, "gtceu:ruby_ore", [2, 3]],
+                [12, "gtceu:redstone_ore", [3, 6]],
+                [8, "gtceu:realgar_ore", [2, 2]],
+                [4, "gtceu:plutonium_ore", [1, 1]]
+            ],
+            layer: "twilightforest",
+            dimension: "twilightforest:twilight_forest"
+        },
+        {
+            key: "twilight/blue",
+            weight: 25,
+            density: 0.3,
+            clusterSize: 45,
+            heightRange: [-45, 5],
+            layers: [
+                [2, "gtceu:lazurite_ore", [1, 2]],
+                [2, "gtceu:lapis_ore", [2, 3]],
+                [1, "gtceu:sodalite_ore", [1, 2]],
+                [2, "gtceu:sapphire_ore", [1, 3]]
+            ],
+            layer: "twilightforest",
+            dimension: "twilightforest:twilight_forest"
+        },
+        {
+            key: "twilight/dense/blue",
+            weight: 1,
+            density: 0.9,
+            clusterSize: 45,
+            heightRange: [-45, 5],
+            layers: [
+                [2, "gtceu:lazurite_ore", [2, 3]],
+                [2, "gtceu:lapis_ore", [3, 6]],
+                [1, "gtceu:sodalite_ore", [2, 2]],
+                [1, "gtceu:sapphire_ore", [3, 6]],
+                [1, "gtceu:tantalite_ore", [2, 4]]
+            ],
+            layer: "twilightforest",
+            dimension: "twilightforest:twilight_forest"
+        },
+        {
+            key: "twilight/green",
+            weight: 25,
+            density: 0.3,
+            clusterSize: 45,
+            heightRange: [-45, 5],
+            layers: [
+                [2, "gtceu:beryllium_ore", [1, 2]],
+                [2, "gtceu:emerald_ore", [2, 3]],
+                [1, "gtceu:olivine_ore", [1, 2]],
+                [1, "gtceu:thorium_ore", [1, 2]]
+            ],
+            layer: "twilightforest",
+            dimension: "twilightforest:twilight_forest"
+        },
+        {
+            key: "twilight/dense/green",
+            weight: 1,
+            density: 0.9,
+            clusterSize: 45,
+            heightRange: [-45, 5],
+            layers: [
+                [2, "gtceu:beryllium_ore", [2, 3]],
+                [2, "gtceu:emerald_ore", [3, 6]],
+                [1, "gtceu:olivine_ore", [2, 2]],
+                [1, "gtceu:thorium_ore", [3, 6]]
+            ],
+            layer: "twilightforest",
+            dimension: "twilightforest:twilight_forest"
+        },
+        {
+            key: "twilight/yellow",
+            weight: 25,
+            density: 0.3,
+            clusterSize: 45,
+            heightRange: [-45, 5],
+            layers: [
+                [2, "gtceu:sphalerite_ore", [1, 2]],
+                [2, "gtceu:gold_ore", [2, 3]],
+                [1, "gtceu:topaz_ore", [1, 2]],
+                [1, "gtceu:sulfur_ore", [2, 3]]
+            ],
+            layer: "twilightforest",
+            dimension: "twilightforest:twilight_forest"
+        },
+        {
+            key: "twilight/dense/yellow",
+            weight: 3,
+            density: 0.9,
+            clusterSize: 40,
+            heightRange: [-45, 5],
+            layers: [
+                [2, "gtceu:sphalerite_ore", [2, 3]],
+                [2, "gtceu:gold_ore", [3, 6]],
+                [1, "gtceu:topaz_ore", [2, 2]],
+                [1, "gtceu:sulfur_ore", [3, 6]]
+            ],
+            layer: "twilightforest",
+            dimension: "twilightforest:twilight_forest"
+        }
+    ]
 
-    event.add("twilight/dense/source", (vein) => {
-        vein.weight(1)
-        vein.density(0.7)
-        vein.clusterSize(40)
-        vein.layer("twilightforest")
-        vein.dimensions("twilightforest:twilight_forest")
-        vein.heightRangeUniform(-45, 5)
-        vein.layeredVeinGenerator((generator) =>
-            generator.buildLayerPattern((pattern) =>
-                pattern
-                    .layer((l) =>
-                        l
-                            .weight(2)
-                            .state(() => Block.getBlock("gtceu:source_ore").defaultBlockState())
-                            .size(3, 6)
-                    )
-                    .layer((l) =>
-                        l
-                            .weight(2)
-                            .state(() => Block.getBlock("gtceu:lapis_ore").defaultBlockState())
-                            .size(1, 2)
-                    )
-                    .layer((l) =>
-                        l
-                            .weight(1)
-                            .state(() => Block.getBlock("gtceu:lazurite_ore").defaultBlockState())
-                            .size(1, 2)
-                    )
-            )
-        )
-    })
-
-    event.add("twilight/nickel", (vein) => {
-        vein.weight(15)
-        vein.density(0.3)
-        vein.clusterSize(45)
-        vein.layer("twilightforest")
-        vein.dimensions("twilightforest:twilight_forest")
-        vein.heightRangeUniform(-45, 5)
-        vein.layeredVeinGenerator((generator) =>
-            generator.buildLayerPattern((pattern) =>
-                pattern
-                    .layer((l) =>
-                        l
-                            .weight(2)
-                            .state(() => Block.getBlock("gtceu:nickel_ore").defaultBlockState())
-                            .size(1, 3)
-                    )
-                    .layer((l) =>
-                        l
-                            .weight(2)
-                            .state(() => Block.getBlock("gtceu:magnesite_ore").defaultBlockState())
-                            .size(1, 3)
-                    )
-                    .layer((l) =>
-                        l
-                            .weight(1)
-                            .state(() => Block.getBlock("gtceu:nickel_ore").defaultBlockState())
-                            .size(1, 2)
-                    )
-            )
-        )
-    })
-
-    event.add("twilight/dense/nickel", (vein) => {
-        vein.weight(1)
-        vein.density(0.8)
-        vein.clusterSize(40)
-        vein.layer("twilightforest")
-        vein.dimensions("twilightforest:twilight_forest")
-        vein.heightRangeUniform(-45, 5)
-        vein.layeredVeinGenerator((generator) =>
-            generator.buildLayerPattern((pattern) =>
-                pattern
-                    .layer((l) =>
-                        l
-                            .weight(2)
-                            .state(() => Block.getBlock("gtceu:nickel_ore").defaultBlockState())
-                            .size(3, 6)
-                    )
-                    .layer((l) =>
-                        l
-                            .weight(2)
-                            .state(() => Block.getBlock("gtceu:magnesite_ore").defaultBlockState())
-                            .size(2, 3)
-                    )
-                    .layer((l) =>
-                        l
-                            .weight(2)
-                            .state(() => Block.getBlock("gtceu:nickel_ore").defaultBlockState())
-                            .size(2, 2)
-                    )
-                    .layer((l) =>
-                        l
-                            .weight(1)
-                            .state(() => Block.getBlock("gtceu:chromite_ore").defaultBlockState())
-                            .size(1, 3)
-                    )
-            )
-        )
-    })
-
-    event.add("twilight/cobalt", (vein) => {
-        vein.weight(25)
-        vein.density(0.3)
-        vein.clusterSize(45)
-        vein.layer("twilightforest")
-        vein.dimensions("twilightforest:twilight_forest")
-        vein.heightRangeUniform(-45, 5)
-        vein.layeredVeinGenerator((generator) =>
-            generator.buildLayerPattern((pattern) =>
-                pattern
-                    .layer((l) =>
-                        l
-                            .weight(2)
-                            .state(() => Block.getBlock("gtceu:cobalt_ore").defaultBlockState())
-                            .size(1, 3)
-                    )
-                    .layer((l) =>
-                        l
-                            .weight(2)
-                            .state(() => Block.getBlock("gtceu:cobaltite_ore").defaultBlockState())
-                            .size(1, 2)
-                    )
-                    .layer((l) =>
-                        l
-                            .weight(1)
-                            .state(() => Block.getBlock("gtceu:garnierite_ore").defaultBlockState())
-                            .size(1, 2)
-                    )
-                    .layer((l) =>
-                        l
-                            .weight(2)
-                            .state(() => Block.getBlock("gtceu:cobalt_ore").defaultBlockState())
-                            .size(1, 3)
-                    )
-            )
-        )
-    })
-
-    event.add("twilight/dense/cobalt", (vein) => {
-        vein.weight(1)
-        vein.density(0.7)
-        vein.clusterSize(45)
-        vein.layer("twilightforest")
-        vein.dimensions("twilightforest:twilight_forest")
-        vein.heightRangeUniform(-45, 5)
-        vein.layeredVeinGenerator((generator) =>
-            generator.buildLayerPattern((pattern) =>
-                pattern
-                    .layer((l) =>
-                        l
-                            .weight(2)
-                            .state(() => Block.getBlock("gtceu:cobalt_ore").defaultBlockState())
-                            .size(2, 4)
-                    )
-                    .layer((l) =>
-                        l
-                            .weight(2)
-                            .state(() => Block.getBlock("gtceu:cobaltite_ore").defaultBlockState())
-                            .size(3, 6)
-                    )
-                    .layer((l) =>
-                        l
-                            .weight(1)
-                            .state(() => Block.getBlock("gtceu:garnierite_ore").defaultBlockState())
-                            .size(1, 2)
-                    )
-                    .layer((l) =>
-                        l
-                            .weight(2)
-                            .state(() => Block.getBlock("gtceu:cobalt_ore").defaultBlockState())
-                            .size(1, 3)
-                    )
-            )
-        )
-    })
-
-    event.add("twilight/silver", (vein) => {
-        vein.weight(30)
-        vein.density(0.3)
-        vein.clusterSize(45)
-        vein.layer("twilightforest")
-        vein.dimensions("twilightforest:twilight_forest")
-        vein.heightRangeUniform(-45, 5)
-        vein.layeredVeinGenerator((generator) =>
-            generator.buildLayerPattern((pattern) =>
-                pattern
-                    .layer((l) =>
-                        l
-                            .weight(2)
-                            .state(() => Block.getBlock("gtceu:silver_ore").defaultBlockState())
-                            .size(1, 3)
-                    )
-                    .layer((l) =>
-                        l
-                            .weight(2)
-                            .state(() => Block.getBlock("gtceu:galena_ore").defaultBlockState())
-                            .size(1, 2)
-                    )
-                    .layer((l) =>
-                        l
-                            .weight(1)
-                            .state(() => Block.getBlock("gtceu:lead_ore").defaultBlockState())
-                            .size(1, 2)
-                    )
-                    .layer((l) =>
-                        l
-                            .weight(2)
-                            .state(() => Block.getBlock("gtceu:gold_ore").defaultBlockState())
-                            .size(1, 3)
-                    )
-            )
-        )
-    })
-
-    event.add("twilight/dense/silver", (vein) => {
-        vein.weight(2)
-        vein.density(0.7)
-        vein.clusterSize(45)
-        vein.layer("twilightforest")
-        vein.dimensions("twilightforest:twilight_forest")
-        vein.heightRangeUniform(-45, 5)
-        vein.layeredVeinGenerator((generator) =>
-            generator.buildLayerPattern((pattern) =>
-                pattern
-                    .layer((l) =>
-                        l
-                            .weight(2)
-                            .state(() => Block.getBlock("gtceu:silver_ore").defaultBlockState())
-                            .size(3, 6)
-                    )
-                    .layer((l) =>
-                        l
-                            .weight(2)
-                            .state(() => Block.getBlock("gtceu:galena_ore").defaultBlockState())
-                            .size(2, 4)
-                    )
-                    .layer((l) =>
-                        l
-                            .weight(1)
-                            .state(() => Block.getBlock("gtceu:lead_ore").defaultBlockState())
-                            .size(1, 2)
-                    )
-                    .layer((l) =>
-                        l
-                            .weight(2)
-                            .state(() => Block.getBlock("gtceu:gold_ore").defaultBlockState())
-                            .size(1, 3)
-                    )
-            )
-        )
-    })
-
-    event.add("twilight/gem", (vein) => {
-        vein.weight(15)
-        vein.density(0.3)
-        vein.clusterSize(35)
-        vein.layer("twilightforest")
-        vein.dimensions("twilightforest:twilight_forest")
-        vein.heightRangeUniform(-45, 5)
-        vein.layeredVeinGenerator((generator) =>
-            generator.buildLayerPattern((pattern) =>
-                pattern
-                    .layer((l) =>
-                        l
-                            .weight(2)
-                            .state(() => Block.getBlock("gtceu:emerald_ore").defaultBlockState())
-                            .size(1, 3)
-                    )
-                    .layer((l) =>
-                        l
-                            .weight(2)
-                            .state(() => Block.getBlock("gtceu:diamond_ore").defaultBlockState())
-                            .size(1, 2)
-                    )
-                    .layer((l) =>
-                        l
-                            .weight(1)
-                            .state(() => Block.getBlock("gtceu:ruby_ore").defaultBlockState())
-                            .size(1, 2)
-                    )
-                    .layer((l) =>
-                        l
-                            .weight(2)
-                            .state(() => Block.getBlock("gtceu:sapphire_ore").defaultBlockState())
-                            .size(1, 3)
-                    )
-                    .layer((l) =>
-                        l
-                            .weight(2)
-                            .state(() => Block.getBlock("gtceu:realgar_ore").defaultBlockState())
-                            .size(1, 3)
-                    )
-            )
-        )
-    })
-
-    event.add("twilight/dense/gem", (vein) => {
-        vein.weight(1)
-        vein.density(0.7)
-        vein.clusterSize(45)
-        vein.layer("twilightforest")
-        vein.dimensions("twilightforest:twilight_forest")
-        vein.heightRangeUniform(-45, 5)
-        vein.layeredVeinGenerator((generator) =>
-            generator.buildLayerPattern((pattern) =>
-                pattern
-                    .layer((l) =>
-                        l
-                            .weight(2)
-                            .state(() => Block.getBlock("gtceu:emerald_ore").defaultBlockState())
-                            .size(2, 4)
-                    )
-                    .layer((l) =>
-                        l
-                            .weight(2)
-                            .state(() => Block.getBlock("gtceu:diamond_ore").defaultBlockState())
-                            .size(2, 4)
-                    )
-                    .layer((l) =>
-                        l
-                            .weight(1)
-                            .state(() => Block.getBlock("gtceu:ruby_ore").defaultBlockState())
-                            .size(2, 4)
-                    )
-                    .layer((l) =>
-                        l
-                            .weight(2)
-                            .state(() => Block.getBlock("gtceu:sapphire_ore").defaultBlockState())
-                            .size(2, 4)
-                    )
-                    .layer((l) =>
-                        l
-                            .weight(2)
-                            .state(() => Block.getBlock("gtceu:realgar_ore").defaultBlockState())
-                            .size(2, 4)
-                    )
-            )
-        )
-    })
-
-    event.add("twilight/pitchblende", (vein) => {
-        vein.weight(15)
-        vein.density(0.2)
-        vein.clusterSize(45)
-        vein.layer("twilightforest")
-        vein.dimensions("twilightforest:twilight_forest")
-        vein.heightRangeUniform(-45, 5)
-        vein.layeredVeinGenerator((generator) =>
-            generator.buildLayerPattern((pattern) =>
-                pattern
-                    .layer((l) =>
-                        l
-                            .weight(2)
-                            .state(() => Block.getBlock("gtceu:pitchblende_ore").defaultBlockState())
-                            .size(1, 2)
-                    )
-                    .layer((l) =>
-                        l
-                            .weight(2)
-                            .state(() => Block.getBlock("gtceu:pitchblende_ore").defaultBlockState())
-                            .size(1, 2)
-                    )
-                    .layer((l) =>
-                        l
-                            .weight(1)
-                            .state(() => Block.getBlock("gtceu:pitchblende_ore").defaultBlockState())
-                            .size(1, 2)
-                    )
-                    .layer((l) =>
-                        l
-                            .weight(2)
-                            .state(() => Block.getBlock("gtceu:uraninite_ore").defaultBlockState())
-                            .size(1, 2)
-                    )
-            )
-        )
-    })
-
-    event.add("twilight/dense/pitchblende", (vein) => {
-        vein.weight(1)
-        vein.density(0.8)
-        vein.clusterSize(45)
-        vein.layer("twilightforest")
-        vein.dimensions("twilightforest:twilight_forest")
-        vein.heightRangeUniform(-45, 5)
-        vein.layeredVeinGenerator((generator) =>
-            generator.buildLayerPattern((pattern) =>
-                pattern
-                    .layer((l) =>
-                        l
-                            .weight(2)
-                            .state(() => Block.getBlock("gtceu:pitchblende_ore").defaultBlockState())
-                            .size(3, 6)
-                    )
-                    .layer((l) =>
-                        l
-                            .weight(2)
-                            .state(() => Block.getBlock("gtceu:pitchblende_ore").defaultBlockState())
-                            .size(2, 2)
-                    )
-                    .layer((l) =>
-                        l
-                            .weight(1)
-                            .state(() => Block.getBlock("gtceu:pitchblende_ore").defaultBlockState())
-                            .size(2, 2)
-                    )
-                    .layer((l) =>
-                        l
-                            .weight(2)
-                            .state(() => Block.getBlock("gtceu:uraninite_ore").defaultBlockState())
-                            .size(3, 6)
-                    )
-            )
-        )
-    })
-
-    event.add("twilight/magnetite", (vein) => {
-        vein.weight(40)
-        vein.density(0.4)
-        vein.clusterSize(45)
-        vein.layer("twilightforest")
-        vein.dimensions("twilightforest:twilight_forest")
-        vein.heightRangeUniform(-45, 5)
-        vein.layeredVeinGenerator((generator) =>
-            generator.buildLayerPattern((pattern) =>
-                pattern
-                    .layer((l) =>
-                        l
-                            .weight(2)
-                            .state(() => Block.getBlock("gtceu:magnetite_ore").defaultBlockState())
-                            .size(2, 3)
-                    )
-                    .layer((l) =>
-                        l
-                            .weight(2)
-                            .state(() => Block.getBlock("gtceu:vanadium_magnetite_ore").defaultBlockState())
-                            .size(2, 3)
-                    )
-                    .layer((l) =>
-                        l
-                            .weight(1)
-                            .state(() => Block.getBlock("gtceu:gold_ore").defaultBlockState())
-                            .size(1, 2)
-                    )
-                    .layer((l) =>
-                        l
-                            .weight(2)
-                            .state(() => Block.getBlock("gtceu:magnetite_ore").defaultBlockState())
-                            .size(1, 3)
-                    )
-            )
-        )
-    })
-
-    event.add("twilight/dense/magnetite", (vein) => {
-        vein.weight(3)
-        vein.density(1)
-        vein.clusterSize(40)
-        vein.layer("twilightforest")
-        vein.dimensions("twilightforest:twilight_forest")
-        vein.heightRangeUniform(-45, 5)
-        vein.layeredVeinGenerator((generator) =>
-            generator.buildLayerPattern((pattern) =>
-                pattern
-                    .layer((l) =>
-                        l
-                            .weight(2)
-                            .state(() => Block.getBlock("gtceu:magnetite_ore").defaultBlockState())
-                            .size(3, 6)
-                    )
-                    .layer((l) =>
-                        l
-                            .weight(2)
-                            .state(() => Block.getBlock("gtceu:vanadium_magnetite_ore").defaultBlockState())
-                            .size(2, 2)
-                    )
-                    .layer((l) =>
-                        l
-                            .weight(1)
-                            .state(() => Block.getBlock("gtceu:gold_ore").defaultBlockState())
-                            .size(2, 2)
-                    )
-                    .layer((l) =>
-                        l
-                            .weight(2)
-                            .state(() => Block.getBlock("gtceu:magnetite_ore").defaultBlockState())
-                            .size(3, 6)
-                    )
-            )
-        )
-    })
-
-    event.add("twilight/red", (vein) => {
-        vein.weight(25)
-        vein.density(0.3)
-        vein.clusterSize(45)
-        vein.layer("twilightforest")
-        vein.dimensions("twilightforest:twilight_forest")
-        vein.heightRangeUniform(-45, 5)
-        vein.layeredVeinGenerator((generator) =>
-            generator.buildLayerPattern((pattern) =>
-                pattern
-                    .layer((l) =>
-                        l
-                            .weight(2)
-                            .state(() => Block.getBlock("gtceu:ruby_ore").defaultBlockState())
-                            .size(1, 2)
-                    )
-                    .layer((l) =>
-                        l
-                            .weight(2)
-                            .state(() => Block.getBlock("gtceu:redstone_ore").defaultBlockState())
-                            .size(2, 3)
-                    )
-                    .layer((l) =>
-                        l
-                            .weight(1)
-                            .state(() => Block.getBlock("gtceu:realgar_ore").defaultBlockState())
-                            .size(1, 2)
-                    )
-                    .layer((l) =>
-                        l
-                            .weight(2)
-                            .state(() => Block.getBlock("gtceu:redstone_ore").defaultBlockState())
-                            .size(1, 3)
-                    )
-            )
-        )
-    })
-
-    event.add("twilight/dense/red", (vein) => {
-        vein.weight(1)
-        vein.density(0.9)
-        vein.clusterSize(45)
-        vein.layer("twilightforest")
-        vein.dimensions("twilightforest:twilight_forest")
-        vein.heightRangeUniform(-64, 5)
-        vein.layeredVeinGenerator((generator) =>
-            generator.buildLayerPattern((pattern) =>
-                pattern
-                    .layer((l) =>
-                        l
-                            .weight(12)
-                            .state(() => Block.getBlock("gtceu:ruby_ore").defaultBlockState())
-                            .size(2, 3)
-                    )
-                    .layer((l) =>
-                        l
-                            .weight(12)
-                            .state(() => Block.getBlock("gtceu:redstone_ore").defaultBlockState())
-                            .size(3, 6)
-                    )
-                    .layer((l) =>
-                        l
-                            .weight(8)
-                            .state(() => Block.getBlock("gtceu:realgar_ore").defaultBlockState())
-                            .size(2, 2)
-                    )
-                    .layer((l) =>
-                        l
-                            .weight(4)
-                            .state(() => Block.getBlock("gtceu:plutonium_ore").defaultBlockState())
-                            .size(1, 1)
-                    )
-            )
-        )
-    })
-
-    event.add("twilight/blue", (vein) => {
-        vein.weight(25)
-        vein.density(0.3)
-        vein.clusterSize(45)
-        vein.layer("twilightforest")
-        vein.dimensions("twilightforest:twilight_forest")
-        vein.heightRangeUniform(-45, 5)
-        vein.layeredVeinGenerator((generator) =>
-            generator.buildLayerPattern((pattern) =>
-                pattern
-                    .layer((l) =>
-                        l
-                            .weight(2)
-                            .state(() => Block.getBlock("gtceu:lazurite_ore").defaultBlockState())
-                            .size(1, 2)
-                    )
-                    .layer((l) =>
-                        l
-                            .weight(2)
-                            .state(() => Block.getBlock("gtceu:lapis_ore").defaultBlockState())
-                            .size(2, 3)
-                    )
-                    .layer((l) =>
-                        l
-                            .weight(1)
-                            .state(() => Block.getBlock("gtceu:sodalite_ore").defaultBlockState())
-                            .size(1, 2)
-                    )
-                    .layer((l) =>
-                        l
-                            .weight(2)
-                            .state(() => Block.getBlock("gtceu:sapphire_ore").defaultBlockState())
-                            .size(1, 3)
-                    )
-            )
-        )
-    })
-
-    event.add("twilight/dense/blue", (vein) => {
-        vein.weight(1)
-        vein.density(0.9)
-        vein.clusterSize(45)
-        vein.layer("twilightforest")
-        vein.dimensions("twilightforest:twilight_forest")
-        vein.heightRangeUniform(-45, 5)
-        vein.layeredVeinGenerator((generator) =>
-            generator.buildLayerPattern((pattern) =>
-                pattern
-                    .layer((l) =>
-                        l
-                            .weight(2)
-                            .state(() => Block.getBlock("gtceu:lazurite_ore").defaultBlockState())
-                            .size(2, 3)
-                    )
-                    .layer((l) =>
-                        l
-                            .weight(2)
-                            .state(() => Block.getBlock("gtceu:lapis_ore").defaultBlockState())
-                            .size(3, 6)
-                    )
-                    .layer((l) =>
-                        l
-                            .weight(1)
-                            .state(() => Block.getBlock("gtceu:sodalite_ore").defaultBlockState())
-                            .size(2, 2)
-                    )
-                    .layer((l) =>
-                        l
-                            .weight(1)
-                            .state(() => Block.getBlock("gtceu:sapphire_ore").defaultBlockState())
-                            .size(3, 6)
-                    )
-                    .layer((l) =>
-                        l
-                            .weight(1)
-                            .state(() => Block.getBlock("gtceu:tantalite_ore").defaultBlockState())
-                            .size(2, 4)
-                    )
-            )
-        )
-    })
-
-    event.add("twilight/green", (vein) => {
-        vein.weight(25)
-        vein.density(0.3)
-        vein.clusterSize(45)
-        vein.layer("twilightforest")
-        vein.dimensions("twilightforest:twilight_forest")
-        vein.heightRangeUniform(-45, 5)
-        vein.layeredVeinGenerator((generator) =>
-            generator.buildLayerPattern((pattern) =>
-                pattern
-                    .layer((l) =>
-                        l
-                            .weight(2)
-                            .state(() => Block.getBlock("gtceu:beryllium_ore").defaultBlockState())
-                            .size(1, 2)
-                    )
-                    .layer((l) =>
-                        l
-                            .weight(2)
-                            .state(() => Block.getBlock("gtceu:emerald_ore").defaultBlockState())
-                            .size(2, 3)
-                    )
-                    .layer((l) =>
-                        l
-                            .weight(1)
-                            .state(() => Block.getBlock("gtceu:olivine_ore").defaultBlockState())
-                            .size(1, 2)
-                    )
-                    .layer((l) =>
-                        l
-                            .weight(1)
-                            .state(() => Block.getBlock("gtceu:thorium_ore").defaultBlockState())
-                            .size(1, 2)
-                    )
-            )
-        )
-    })
-
-    event.add("twilight/dense/green", (vein) => {
-        vein.weight(1)
-        vein.density(0.9)
-        vein.clusterSize(45)
-        vein.layer("twilightforest")
-        vein.dimensions("twilightforest:twilight_forest")
-        vein.heightRangeUniform(-45, 5)
-        vein.layeredVeinGenerator((generator) =>
-            generator.buildLayerPattern((pattern) =>
-                pattern
-                    .layer((l) =>
-                        l
-                            .weight(2)
-                            .state(() => Block.getBlock("gtceu:beryllium_ore").defaultBlockState())
-                            .size(2, 3)
-                    )
-                    .layer((l) =>
-                        l
-                            .weight(2)
-                            .state(() => Block.getBlock("gtceu:emerald_ore").defaultBlockState())
-                            .size(3, 6)
-                    )
-                    .layer((l) =>
-                        l
-                            .weight(1)
-                            .state(() => Block.getBlock("gtceu:olivine_ore").defaultBlockState())
-                            .size(2, 2)
-                    )
-                    .layer((l) =>
-                        l
-                            .weight(1)
-                            .state(() => Block.getBlock("gtceu:thorium_ore").defaultBlockState())
-                            .size(3, 6)
-                    )
-            )
-        )
-    })
-
-    event.add("twilight/yellow", (vein) => {
-        vein.weight(25)
-        vein.density(0.3)
-        vein.clusterSize(45)
-        vein.layer("twilightforest")
-        vein.dimensions("twilightforest:twilight_forest")
-        vein.heightRangeUniform(-45, 5)
-        vein.layeredVeinGenerator((generator) =>
-            generator.buildLayerPattern((pattern) =>
-                pattern
-                    .layer((l) =>
-                        l
-                            .weight(2)
-                            .state(() => Block.getBlock("gtceu:sphalerite_ore").defaultBlockState())
-                            .size(1, 2)
-                    )
-                    .layer((l) =>
-                        l
-                            .weight(2)
-                            .state(() => Block.getBlock("gtceu:gold_ore").defaultBlockState())
-                            .size(2, 3)
-                    )
-                    .layer((l) =>
-                        l
-                            .weight(1)
-                            .state(() => Block.getBlock("gtceu:topaz_ore").defaultBlockState())
-                            .size(1, 2)
-                    )
-                    .layer((l) =>
-                        l
-                            .weight(1)
-                            .state(() => Block.getBlock("gtceu:sulfur_ore").defaultBlockState())
-                            .size(2, 3)
-                    )
-            )
-        )
-    })
-
-    event.add("twilight/dense/yellow", (vein) => {
-        vein.weight(3)
-        vein.density(0.9)
-        vein.clusterSize(40)
-        vein.layer("twilightforest")
-        vein.dimensions("twilightforest:twilight_forest")
-        vein.heightRangeUniform(-45, 5)
-        vein.layeredVeinGenerator((generator) =>
-            generator.buildLayerPattern((pattern) =>
-                pattern
-                    .layer((l) =>
-                        l
-                            .weight(2)
-                            .state(() => Block.getBlock("gtceu:sphalerite_ore").defaultBlockState())
-                            .size(2, 3)
-                    )
-                    .layer((l) =>
-                        l
-                            .weight(2)
-                            .state(() => Block.getBlock("gtceu:gold_ore").defaultBlockState())
-                            .size(3, 6)
-                    )
-                    .layer((l) =>
-                        l
-                            .weight(1)
-                            .state(() => Block.getBlock("gtceu:topaz_ore").defaultBlockState())
-                            .size(2, 2)
-                    )
-                    .layer((l) =>
-                        l
-                            .weight(1)
-                            .state(() => Block.getBlock("gtceu:sulfur_ore").defaultBlockState())
-                            .size(3, 6)
-                    )
-            )
-        )
-    })
+    twilightOres.forEach((cfg) => addBlockVein(cfg.key, cfg))
 
     // moon ores
-    event.add("moon/bauxite", (vein) => {
-        vein.weight(15)
-        vein.density(0.8)
-        vein.clusterSize(50)
-        vein.layer("moon")
-        vein.dimensions("ad_astra:moon")
-        vein.heightRangeUniform(0, 200)
-        vein.cuboidVeinGenerator((generator) =>
-            generator
-                // .top(b => b.mat(GTMaterials.Bauxite).size(1))
-                .top((b) => b.mat("gtceu:bauxite").size(5))
-                .middle((b) => b.mat(GTMaterials.Bauxite).size(5))
-                .bottom((b) => b.mat(GTMaterials.Aluminium).size(2))
-                .spread((b) => b.mat(GTMaterials.Bauxite))
-        )
-        vein.surfaceIndicatorGenerator((indicator) => indicator.surfaceRock(GTMaterials.Bauxite).placement("above"))
+
+    addCuboidVein("moon/bauxite", {
+        weight: 15,
+        density: 0.8,
+        clusterSize: 50,
+        layer: "moon",
+        dimension: "ad_astra:moon",
+        heightRange: [0, 200],
+        top: { mat: "gtceu:bauxite", size: 5 },
+        middle: { mat: GTMaterials.Bauxite, size: 5 },
+        bottom: { mat: GTMaterials.Aluminium, size: 2 },
+        spread: { mat: GTMaterials.Bauxite },
+        surfaceRock: GTMaterials.Bauxite
     })
 
-    event.add("moon/ilmenite", (vein) => {
-        vein.weight(15)
-        vein.density(0.8)
-        vein.clusterSize(55)
-        vein.layer("moon")
-        vein.dimensions("ad_astra:moon")
-        vein.heightRangeUniform(0, 200)
-        vein.cuboidVeinGenerator((generator) =>
-            generator
-                // .top(b => b.mat(GTMaterials.Bauxite).size(1))
-                .top((b) => b.mat("gtceu:bauxite").size(5))
-                .middle((b) => b.mat(GTMaterials.Ilmenite).size(5))
-                .bottom((b) => b.mat(GTMaterials.Ilmenite).size(7))
-                .spread((b) => b.mat(GTMaterials.Bauxite))
-        )
-        vein.surfaceIndicatorGenerator((indicator) => indicator.surfaceRock(GTMaterials.Ilmenite).placement("above"))
+    addCuboidVein("moon/ilmenite", {
+        weight: 15,
+        density: 0.8,
+        clusterSize: 55,
+        layer: "moon",
+        dimension: "ad_astra:moon",
+        heightRange: [0, 200],
+        top: { mat: "gtceu:bauxite", size: 5 },
+        middle: { mat: GTMaterials.Ilmenite, size: 5 },
+        bottom: { mat: GTMaterials.Ilmenite, size: 7 },
+        spread: { mat: GTMaterials.Bauxite },
+        surfaceRock: GTMaterials.Ilmenite
     })
 
-    event.add("moon/neodymium", (vein) => {
-        vein.weight(25)
-        vein.density(0.8)
-        vein.clusterSize(45)
-        vein.layer("moon")
-        vein.dimensions("ad_astra:moon")
-        vein.heightRangeUniform(0, 200)
-        vein.cuboidVeinGenerator((generator) =>
-            generator
-                .top((b) => b.mat(GTMaterials.Neodymium).size(5))
-                .middle((b) => b.mat(GTMaterials.Bastnasite).size(3))
-                .bottom((b) => b.mat(GTMaterials.Monazite).size(2))
-                .spread((b) => b.mat(GTMaterials.Neodymium))
-        )
-        vein.surfaceIndicatorGenerator((indicator) => indicator.surfaceRock(GTMaterials.Neodymium).placement("above"))
+    addCuboidVein("moon/neodymium", {
+        weight: 25,
+        density: 0.8,
+        clusterSize: 45,
+        layer: "moon",
+        dimension: "ad_astra:moon",
+        heightRange: [0, 200],
+        top: { mat: GTMaterials.Neodymium, size: 5 },
+        middle: { mat: GTMaterials.Bastnasite, size: 3 },
+        bottom: { mat: GTMaterials.Monazite, size: 2 },
+        spread: { mat: GTMaterials.Neodymium },
+        surfaceRock: GTMaterials.Neodymium
     })
 
-    event.add("moon/glunite", (vein) => {
-        vein.weight(30)
-        vein.density(0.3)
-        vein.clusterSize(30)
-        vein.layer("moon")
-        vein.dimensions("ad_astra:moon")
-        vein.heightRangeUniform(0, 200)
-        vein.layeredVeinGenerator((generator) =>
-            generator.buildLayerPattern((pattern) =>
-                pattern
-                    .layer((l) => l.weight(1).mat("gtceu:glunite").size(1, 2))
-                    .layer((l) => l.weight(3).mat("gtceu:lapis").size(1, 4))
-                    .layer((l) => l.weight(3).mat("gtceu:glunite").size(1, 2))
-                    .layer((l) => l.weight(2).mat("gtceu:lunite").size(1, 1))
-            )
-        )
-        vein.surfaceIndicatorGenerator((indicator) => indicator.surfaceRock("gtceu:glunite").placement("above"))
-    })
+    /** @type {(LayeredVeinConfig & { key: string })[]} */
+    const moonMatOres = [
+        {
+            key: "moon/glunite",
+            weight: 30,
+            density: 0.3,
+            clusterSize: 30,
+            heightRange: [0, 200],
+            layers: [
+                [1, "gtceu:glunite", [1, 2]],
+                [3, "gtceu:lapis", [1, 4]],
+                [3, "gtceu:glunite", [1, 2]],
+                [2, "gtceu:lunite", [1, 1]]
+            ],
+            surfaceRock: "gtceu:glunite",
+            layer: "moon",
+            dimension: "ad_astra:moon"
+        },
+        {
+            // Note: reuses the glunite surface rock, matching the original script.
+            key: "moon/chromite",
+            weight: 10,
+            density: 0.3,
+            clusterSize: 30,
+            heightRange: [0, 200],
+            layers: [
+                [1, "gtceu:magnetite", [1, 2]],
+                [3, "gtceu:chromite", [1, 4]],
+                [3, "gtceu:gold", [1, 2]],
+                [2, "gtceu:chromite", [1, 1]]
+            ],
+            surfaceRock: "gtceu:glunite",
+            layer: "moon",
+            dimension: "ad_astra:moon"
+        },
+        {
+            key: "moon/dense/magnetite",
+            weight: 20,
+            density: 1,
+            clusterSize: 50,
+            heightRange: [-45, 200],
+            layers: [
+                [1, "gtceu:magnetite", [3, 4]],
+                [3, "gtceu:vanadium_magnetite", [1, 4]],
+                [3, "gtceu:gold", [3, 4]],
+                [2, "gtceu:silver", [2, 4]]
+            ],
+            layer: "moon",
+            dimension: "ad_astra:moon"
+        },
+        {
+            key: "moon/magnesite",
+            weight: 20,
+            density: 0.3,
+            clusterSize: 40,
+            heightRange: [-45, 200],
+            layers: [
+                [1, "gtceu:iron", [1, 2]],
+                [3, "gtceu:magnesite", [1, 4]],
+                [3, "gtceu:calcite", [1, 3]],
+                [2, "gtceu:bentonite", [1, 3]]
+            ],
+            layer: "moon",
+            dimension: "ad_astra:moon"
+        },
+        {
+            key: "moon/bornite",
+            weight: 15,
+            density: 0.3,
+            clusterSize: 30,
+            heightRange: [0, 200],
+            layers: [
+                [3, "gtceu:platinum", [1, 2]],
+                [2, "gtceu:bornite", [1, 1]],
+                [1, "gtceu:bornite", [1, 1]],
+                [2, "gtceu:platinum", [1, 1]]
+            ],
+            surfaceRock: "gtceu:bornite",
+            layer: "moon",
+            dimension: "ad_astra:moon"
+        },
+        {
+            key: "moon/socochalamite",
+            weight: 25,
+            density: 0.3,
+            clusterSize: 30,
+            heightRange: [0, 200],
+            layers: [
+                [1, "gtceu:socochalamite", [1, 2]],
+                [3, "gtceu:amethyst", [1, 2]],
+                [3, "gtceu:socochalamite", [1, 2]],
+                [2, "gtceu:glunite", [1, 1]]
+            ],
+            surfaceRock: "gtceu:socochalamite",
+            layer: "moon",
+            dimension: "ad_astra:moon"
+        }
+    ]
 
-    event.add("moon/chromite", (vein) => {
-        vein.weight(10)
-        vein.density(0.3)
-        vein.clusterSize(30)
-        vein.layer("moon")
-        vein.dimensions("ad_astra:moon")
-        vein.heightRangeUniform(0, 200)
-        vein.layeredVeinGenerator((generator) =>
-            generator.buildLayerPattern((pattern) =>
-                pattern
-                    .layer((l) => l.weight(1).mat("gtceu:magnetite").size(1, 2))
-                    .layer((l) => l.weight(3).mat("gtceu:chromite").size(1, 4))
-                    .layer((l) => l.weight(3).mat("gtceu:gold").size(1, 2))
-                    .layer((l) => l.weight(2).mat("gtceu:chromite").size(1, 1))
-            )
-        )
-        vein.surfaceIndicatorGenerator((indicator) => indicator.surfaceRock("gtceu:glunite").placement("above"))
-    })
-    event.add("moon/dense/magnetite", (vein) => {
-        vein.weight(20)
-        vein.density(1)
-        vein.clusterSize(50)
-        vein.layer("moon")
-        vein.dimensions("ad_astra:moon")
-        vein.heightRangeUniform(-45, 200)
-        vein.layeredVeinGenerator((generator) =>
-            generator.buildLayerPattern((pattern) =>
-                pattern
-                    .layer((l) => l.weight(1).mat("gtceu:magnetite").size(3, 4))
-                    .layer((l) => l.weight(3).mat("gtceu:vanadium_magnetite").size(1, 4))
-                    .layer((l) => l.weight(3).mat("gtceu:gold").size(3, 4))
-                    .layer((l) => l.weight(2).mat("gtceu:silver").size(2, 4))
-            )
-        )
-    })
-
-    event.add("moon/magnesite", (vein) => {
-        vein.weight(20)
-        vein.density(0.3)
-        vein.clusterSize(40)
-        vein.layer("moon")
-        vein.dimensions("ad_astra:moon")
-        vein.heightRangeUniform(-45, 200)
-        vein.layeredVeinGenerator((generator) =>
-            generator.buildLayerPattern((pattern) =>
-                pattern
-                    .layer((l) => l.weight(1).mat("gtceu:iron").size(1, 2))
-                    .layer((l) => l.weight(3).mat("gtceu:magnesite").size(1, 4))
-                    .layer((l) => l.weight(3).mat("gtceu:calcite").size(1, 3))
-                    .layer((l) => l.weight(2).mat("gtceu:bentonite").size(1, 3))
-            )
-        )
-    })
-
-    event.add("moon/bornite", (vein) => {
-        vein.weight(15)
-        vein.density(0.3)
-        vein.clusterSize(30)
-        vein.layer("moon")
-        vein.dimensions("ad_astra:moon")
-        vein.heightRangeUniform(0, 200)
-        vein.layeredVeinGenerator((generator) =>
-            generator.buildLayerPattern((pattern) =>
-                pattern
-                    .layer((l) => l.weight(3).mat("gtceu:platinum").size(1, 2))
-                    .layer((l) => l.weight(2).mat("gtceu:bornite").size(1, 1))
-                    .layer((l) => l.weight(1).mat("gtceu:bornite").size(1, 1))
-                    .layer((l) => l.weight(2).mat("gtceu:platinum").size(1, 1))
-            )
-        )
-        vein.surfaceIndicatorGenerator((indicator) => indicator.surfaceRock("gtceu:bornite").placement("above"))
-    })
-
-    event.add("moon/socochalamite", (vein) => {
-        vein.weight(25)
-        vein.density(0.3)
-        vein.clusterSize(30)
-        vein.layer("moon")
-        vein.dimensions("ad_astra:moon")
-        vein.heightRangeUniform(0, 200)
-        vein.layeredVeinGenerator((generator) =>
-            generator.buildLayerPattern((pattern) =>
-                pattern
-                    .layer((l) => l.weight(1).mat("gtceu:socochalamite").size(1, 2))
-                    .layer((l) => l.weight(3).mat("gtceu:amethyst").size(1, 2))
-                    .layer((l) => l.weight(3).mat("gtceu:socochalamite").size(1, 2))
-                    .layer((l) => l.weight(2).mat("gtceu:glunite").size(1, 1))
-            )
-        )
-        vein.surfaceIndicatorGenerator((indicator) => indicator.surfaceRock("gtceu:socochalamite").placement("above"))
-    })
+    moonMatOres.forEach((cfg) => addMatVein(cfg.key, cfg))
 
     // end ores
-    event.add("end/plutonium", (vein) => {
-        vein.weight(10)
-        vein.density(0.1)
-        vein.clusterSize(60)
-        vein.layer(WorldGenLayers.ENDSTONE)
-        vein.dimensions("minecraft:the_end")
-        vein.heightRangeUniform(20, 60)
-        vein.layeredVeinGenerator((generator) =>
-            generator.buildLayerPattern((pattern) =>
-                pattern
-                    .layer((l) => l.weight(1).mat("gtceu:plutonium").size(1, 2))
-                    .layer((l) => l.weight(5).mat("gtceu:chromite").size(2, 4))
-                    .layer((l) => l.weight(2).mat("gtceu:plutonium").size(1, 2))
-                    .layer((l) => l.weight(5).mat("gtceu:chromite").size(2, 5))
-            )
-        )
-        vein.surfaceIndicatorGenerator((indicator) => indicator.surfaceRock("gtceu:plutonium").placement("above"))
+    addMatVein("end/plutonium", {
+        weight: 10,
+        density: 0.1,
+        clusterSize: 60,
+        layer: WorldGenLayers.ENDSTONE,
+        dimension: "minecraft:the_end",
+        heightRange: [20, 60],
+        layers: [
+            [1, "gtceu:plutonium", [1, 2]],
+            [5, "gtceu:chromite", [2, 4]],
+            [2, "gtceu:plutonium", [1, 2]],
+            [5, "gtceu:chromite", [2, 5]]
+        ],
+        surfaceRock: "gtceu:plutonium"
     })
-
-    // mars ores
-
-    // event.add("moon/olivine", vein => {
-    //     vein.weight(60)
-    //     vein.density(1.0)
-    //     vein.clusterSize(50)
-    //     vein.layer("test")
-    //     // vein.dimensions("ad_astra:moon")
-    //     vein.heightRangeUniform(10, 60)
-    //     vein.veinedVeinGenerator(generator => generator
-    //         .oreBlock(GTMaterials.Olivine, 2)
-    //         .oreBlock(GTMaterials.Chromite, 2)
-    //         .oreBlock(GTMaterials.Hematite, 1)
-    //         .veininessThreshold(0.01)
-    //         .maxRichnessThreshold(0.75)
-    //         .minRichness(0.6)
-    //         .maxRichness(1.0)
-    //     )
-    //     vein.surfaceIndicatorGenerator(indicator => indicator
-    //         .surfaceRock(GTMaterials.Olivine)
-    //         .placement("above")
-    //     )
-    // })
-    // event.modify('gtceu:aluminium_vein', vein => {
-    //     vein.dimensions(['ad_astra:moon']); // only spawns in moon now
-    // });
 })
 
 ServerEvents.tags("block", (event) => {

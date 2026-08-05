@@ -1,3 +1,4 @@
+// @ts-nocheck
 GTCEuStartupEvents.registry("gtceu:recipe_type", (event) => {
     event
         .create("helper_wheel")

@@ -7,38 +7,42 @@ ServerEvents.recipes((event) => {
 
     // event.remove({ type: "gtceu:circuit_assembler" })
 
-    const tiers = ["ulv", "lv", "mv", "hv", "ev", "iv", "luv", "zpm", "uv", "uhv", "uev", "uiv", "max"]
-
+    /**
+     *
+     * @param {*} output
+     * @param {*} namespace
+     * @param {*} inputs
+     * @param {*} fluidInputs
+     * @param {*} eut
+     * @param {*} time
+     * @param {*} scanItem
+     */
     function venus_assembly_research(output, namespace, inputs, fluidInputs, eut, time, scanItem) {
-        event.recipes.gtceu
-            .assembly_line(`gtceu:${output}`)
-            .itemInputs(inputs)
-            .inputFluids(fluidInputs)
-            .itemOutputs(`${namespace}:${output}`)
-            ["scannerResearch(java.util.function.UnaryOperator)"]((researchRecipeBuilder) =>
-                researchRecipeBuilder
-                    .researchStack(Item.of(scanItem))
-                    .duration(time * 20 * 2)
-                    .EUt(eut / 2)
-            )
+        let r = event.recipes.gtceu.assembly_line(`gtceu:${output}`).itemInputs(inputs).inputFluids(fluidInputs).itemOutputs(`${namespace}:${output}`)
+        // @ts-ignore
+        r["scannerResearch(java.util.function.UnaryOperator)"]((researchRecipeBuilder) =>
+            researchRecipeBuilder
+                .researchStack(Item.of(scanItem))
+                .duration(time * 20 * 2)
+                .EUt(eut / 2)
+        )
             .duration(time * 20)
             .EUt(eut)
     }
 
+    /**
+     *
+     * @param {*} output
+     * @param {*} namespace
+     * @param {*} inputs
+     * @param {*} eut
+     * @param {*} time
+     */
     function laser_engraver_c(output, namespace, inputs, eut, time) {
         event.recipes.gtceu
             .laser_engraver(`gtceu:${output}`)
             .itemInputs(inputs)
             .itemOutputs(`${namespace}:${output}`)
-            .duration(time * 20)
-            .EUt(eut)
-    }
-    function laser_engraver_nc(output, namespace, input, inputsNc, eut, time) {
-        event.recipes.gtceu
-            .laser_engraver(`gtceu:${output}`)
-            .itemInputs(input)
-            .itemOutputs(`${namespace}:${output}`)
-            .notConsumable(inputsNc)
             .duration(time * 20)
             .EUt(eut)
     }

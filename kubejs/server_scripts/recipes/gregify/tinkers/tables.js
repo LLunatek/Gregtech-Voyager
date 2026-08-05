@@ -6,6 +6,7 @@ ServerEvents.recipes((event) => {
     event.remove({ output: "tconstruct:part_chest" })
     event.remove({ output: "tconstruct:pattern" })
 
+    // @ts-ignore
     event.shaped(
         Item.of("tconstruct:pattern", 1), // arg 1: output
         [
@@ -20,6 +21,7 @@ ServerEvents.recipes((event) => {
         }
     )
 
+    // @ts-ignore
     event.shaped(
         Item.of("tconstruct:tinker_station", 1), // arg 1: output
         [
@@ -34,6 +36,7 @@ ServerEvents.recipes((event) => {
         }
     )
 
+    // @ts-ignore
     event.shaped(
         Item.of("tconstruct:part_builder", 1), // arg 1: output
         [
@@ -47,6 +50,7 @@ ServerEvents.recipes((event) => {
         }
     )
 
+    // @ts-ignore
     event.shaped(
         Item.of("tconstruct:part_chest", 1), // arg 1: output
         [
@@ -82,6 +86,7 @@ ServerEvents.recipes((event) => {
         nbt: '{texture:"twilightforest:steeleaf_block"}'
     }
 
+    // @ts-ignore
     event.shaped(
         Item.of(steel_anvil, 1), // arg 1: output
         [
@@ -101,6 +106,7 @@ ServerEvents.recipes((event) => {
         }
     )
 
+    // @ts-ignore
     event.shaped(
         Item.of(pig_iron_anvil, 1), // arg 1: output
         [
@@ -120,6 +126,7 @@ ServerEvents.recipes((event) => {
         }
     )
 
+    // @ts-ignore
     event.shaped(
         Item.of(steeleaf_anvil, 1), // arg 1: output
         [

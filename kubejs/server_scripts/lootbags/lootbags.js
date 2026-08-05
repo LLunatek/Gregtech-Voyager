@@ -303,6 +303,10 @@ LootJS.modifiers((event) => {
         ])
 })
 
+/**
+ *
+ * @param {*} tier
+ */
 function lootbag_drop_event(tier) {
     ItemEvents.rightClicked(`kubejs:${tier}_loot_bag`, (event) => {
         const player = event.player

@@ -1,3 +1,5 @@
+// @ts-nocheck
+/* eslint-disable no-unused-vars */
 //priority: 100
 
 // stole ts STRAIGHT from Star Technology, super useful

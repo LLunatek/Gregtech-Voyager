@@ -1,4 +1,5 @@
 ServerEvents.recipes((event) => {
+    // @ts-ignore
     event.shaped(
         Item.of("gtceu:steam_blast_furnace", 1), // arg 1: output
         [

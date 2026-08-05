@@ -1,5 +1,4 @@
-GTCEuStartupEvents.registry("gtceu:recipe_type", (event) => {})
-
+// @ts-nocheck
 GTCEuStartupEvents.registry("gtceu:machine", (event) => {
     function cubeMulti(type, casing) {
         // note to self -> clean up the rest of the code so it looks like this. good lord this codebase is a MESS rn

@@ -1,5 +1,5 @@
+// @ts-nocheck
 // stole from monifactory, ty ty pansmith, dont know why it doesnt work tho!!!
-const BlockTags = Java.loadClass("net.minecraft.tags.BlockTags")
 
 GTCEuStartupEvents.registry("gtceu:world_gen_layer", (event) => {
     event

@@ -6,6 +6,7 @@ ServerEvents.recipes((event) => {
         .duration(20)                                 // in ticks
         .EUt(-128 * 4)     
 
+    // @ts-ignore
     event.shaped(
         Item.of("gtceu:large_helper_wheel", 1), // arg 1: output
         [

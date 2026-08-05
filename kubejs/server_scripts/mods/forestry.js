@@ -3,6 +3,7 @@ ServerEvents.recipes((event) => {
     event.remove({ output: "forestry:foresters_manual" })
     event.remove({ output: "forestry:ingot_bronze" })
 
+    // @ts-expect-error this is cursed (its defined as a function but not callable, thanks probe)
     event.shapeless(
         Item.of("forestry:foresters_manual", 1), // arg 1: output
         [

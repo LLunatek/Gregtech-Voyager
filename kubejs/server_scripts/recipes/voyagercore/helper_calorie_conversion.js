@@ -1,4 +1,5 @@
 ServerEvents.recipes((event) => {
+    // @ts-ignore
     event.shaped(
         Item.of("gtceu:power_rectangle_helper_calorie_converter", 1), // arg 1: output
         [
@@ -14,6 +15,7 @@ ServerEvents.recipes((event) => {
         }
     )
 
+    // @ts-ignore
     function calorie_conversion(cookie, helper, output, time, eut, outF) {
         if (!outF) {
             outF = []
@@ -31,6 +33,7 @@ ServerEvents.recipes((event) => {
             .EUt(-eut)
     }
 
+    // @ts-ignore
     function advanced_calorie_conversion(cookie, helper, output, time, eut, outF, helperLevel)
     {
         if (!outF)
@@ -49,6 +52,7 @@ ServerEvents.recipes((event) => {
                 .EUt(-eut)
     }
 
+    // @ts-ignore
     event.shaped(
         Item.of("voyagercore:hyper_helper_calorie_converter", 1), // arg 1: output
         [
@@ -64,6 +68,7 @@ ServerEvents.recipes((event) => {
         }
     )
 
+    // @ts-ignore
     event.shaped(
         Item.of("voyagercore:radiant_titanite_vent_casing", 2), // arg 1: output
         [

@@ -1,4 +1,7 @@
 StartupEvents.registry("block", (event) => {
+    /**
+     * @param {string} name
+     */
     function casing(name) {
         event.create(`${name}_casing`).textureAll(`kubejs:block/casing/${name}_casing`).hardness(2).resistance(3).lightLevel(0).soundType("metal").requiresTool(true).tagBlock("mineable/wrench")
     }
@@ -19,10 +22,16 @@ StartupEvents.registry("block", (event) => {
     // casing('frost_conducting')
     // casing('foundry')
 
+    /**
+     * @param {string} name
+     */
     function metalblock(name) {
         event.create(name).textureAll(`kubejs:block/${name}`).hardness(2).resistance(3).lightLevel(0).soundType("metal").requiresTool(true).tagBlock("mineable/wrench")
     }
 
+    /**
+     * @param {string} name
+     */
     function glassblock(name) {
         event.create(name).textureAll(`kubejs:block/${name}`).hardness(2).resistance(3).lightLevel(0).soundType("glass").requiresTool(true).renderType("translucent").tagBlock("mineable/wrench")
     }

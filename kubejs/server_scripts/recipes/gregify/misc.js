@@ -19,6 +19,7 @@ ServerEvents.recipes((event) => {
 
     event.recipes.gtceu.assembler("kubejs:framed_cube").itemInputs("4x gtceu:wood_screw", "4x minecraft:stick").itemOutputs("8x framedblocks:framed_cube").duration(20).EUt(2)
 
+    // @ts-ignore
     event.shaped(
         Item.of("framedblocks:framed_cube", 2), // arg 1: output
         [

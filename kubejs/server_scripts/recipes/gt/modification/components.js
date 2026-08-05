@@ -1,4 +1,14 @@
 ServerEvents.recipes((event) => {
+    /**
+     *
+     * @param {*} output
+     * @param {*} ns
+     * @param {*} itemInputs
+     * @param {*} fluidInputs
+     * @param {*} seconds
+     * @param {*} eut
+     * @param {*} [circuit]
+     */
     function assembler(output, ns, itemInputs, fluidInputs, seconds, eut, circuit) {
         if (circuit) {
             event.recipes.gtceu
@@ -21,6 +31,16 @@ ServerEvents.recipes((event) => {
                 .EUt(eut)
         }
     }
+    /**
+     *
+     * @param {*} output
+     * @param {*} ns
+     * @param {*} itemInputs
+     * @param {*} fluidInputs
+     * @param {*} seconds
+     * @param {*} eut
+     * @param {*} [circuit]
+     */
     function assembler2(output, ns, itemInputs, fluidInputs, seconds, eut, circuit) {
         if (circuit) {
             event.recipes.gtceu
@@ -60,7 +80,12 @@ ServerEvents.recipes((event) => {
         }
     }
 
+    /**
+     *
+     * @param {*} tier
+     */
     function motor(tier) {
+        // @ts-ignore
         const { main_mat, wire_mat_1, cable_mat, magnet_mat, fluid } = tier_mapping[tier]
 
         assembler(
@@ -73,8 +98,12 @@ ServerEvents.recipes((event) => {
         )
     }
 
+    /**
+     * @param {string} tier
+     */
     function pump(tier) {
-        const { main_mat, wire_mat_1, cable_mat, magnet_mat, fluid, rubber1, rubber2, tierVoltage } = tier_mapping[tier]
+        // @ts-ignore
+        const { main_mat, cable_mat, fluid, rubber1, rubber2, tierVoltage } = tier_mapping[tier]
 
         assembler(
             `${tier}_electric_pump`,
@@ -108,15 +137,19 @@ ServerEvents.recipes((event) => {
         )
     }
 
+    // @ts-ignore
     function conveyor(tier) {
-        const { main_mat, wire_mat_1, cable_mat, magnet_mat, fluid, rubber1, rubber2, tierVoltage } = tier_mapping[tier]
+        // @ts-ignore
+        const { cable_mat, rubber1, rubber2, tierVoltage } = tier_mapping[tier]
 
         assembler(`${tier}_conveyor_module`, "gtceu", [`1x gtceu:${cable_mat}_single_cable`, `2x gtceu:${tierVoltage}_electric_motor`], `gtceu:${rubber1} 864`, 5, 480, 1)
         assembler2(`${tier}_conveyor_module`, "gtceu", [`1x gtceu:${cable_mat}_single_cable`, `2x gtceu:${tierVoltage}_electric_motor`], `gtceu:${rubber2} 432`, 5, 480, 1)
     }
 
+    // @ts-ignore
     function piston(tier) {
-        const { main_mat, wire_mat_1, cable_mat, magnet_mat, fluid, tierVoltage } = tier_mapping[tier]
+        // @ts-ignore
+        const { main_mat, cable_mat, fluid, tierVoltage } = tier_mapping[tier]
 
         assembler(
             `${tier}_electric_piston`,
@@ -128,8 +161,10 @@ ServerEvents.recipes((event) => {
         )
     }
 
+    // @ts-ignore
     function robot_arm(tier) {
-        const { main_mat, wire_mat_1, cable_mat, magnet_mat, fluid, tierVoltage } = tier_mapping[tier]
+        // @ts-ignore
+        const { main_mat, cable_mat, fluid, tierVoltage } = tier_mapping[tier]
 
         assembler(
             `${tier}_robot_arm`,
@@ -141,8 +176,10 @@ ServerEvents.recipes((event) => {
         )
     }
 
+    // @ts-ignore
     function field_generator(tier) {
-        const { main_mat, wire_mat_1, cable_mat, magnet_mat, fluid, tierVoltage, precious, second_mat, supercon } = tier_mapping[tier]
+        // @ts-ignore
+        const { main_mat, fluid, tierVoltage, precious, supercon } = tier_mapping[tier]
 
         assembler(
             `${tier}_field_generator`,
@@ -154,8 +191,10 @@ ServerEvents.recipes((event) => {
         )
     }
 
+    // @ts-ignore
     function emitter(tier) {
-        const { main_mat, wire_mat_1, cable_mat, magnet_mat, fluid, tierVoltage, precious, second_mat, supercon } = tier_mapping[tier]
+        // @ts-ignore
+        const { cable_mat, fluid, tierVoltage, precious, second_mat } = tier_mapping[tier]
 
         assembler(
             `${tier}_emitter`,
@@ -168,12 +207,15 @@ ServerEvents.recipes((event) => {
         )
     }
 
+    // @ts-ignore
     function sensor(tier) {
-        const { main_mat, wire_mat_1, cable_mat, magnet_mat, fluid, tierVoltage, precious, second_mat, supercon } = tier_mapping[tier]
+        // @ts-ignore
+        const { main_mat, fluid, tierVoltage, precious, second_mat } = tier_mapping[tier]
 
         assembler(`${tier}_sensor`, "gtceu", [`gtceu:${second_mat}_rod`, `4x gtceu:${main_mat}_plate`, `#gtceu:circuits/${tierVoltage}`, `gtceu:${precious}`], `gtceu:${fluid} 750`, 5, 480)
     }
 
+    // @ts-ignore
     function removeTieredComponents(tier) {
         const pre = "gtceu:" + tier
 
@@ -202,17 +244,11 @@ ServerEvents.recipes((event) => {
     emitter("iv")
     sensor("iv")
 
-    const tiers = ["iv", "luv", "zpm", "uv", "uhv", "uev", "uiv", "max"]
+    // @ts-ignore
 
     const components = ["electric_motor", "electric_pump", "conveyor_module", "electric_piston", "robot_arm"]
 
     components.forEach((component) => event.replaceInput({ output: `gtceu:luv_${component}` }, Fluid.of("gtceu:lubricant"), Fluid.of("voyagercore:high_stress_lubricant")))
 
     // tiers.forEach(tier => removeTieredComponents(tier));
-
-    function replaceRecipeTiered(tier) {
-        const pre = "gtceu:" + tier
-
-        event.remove({ output: [`${pre}_electric_motor`, `${pre}_electric_pump`, `${pre}_conveyor_module`, `${pre}_electric_piston`, `${pre}_robot_arm`, `${pre}_sensor`, `${pre}_emitter`] })
-    }
 })

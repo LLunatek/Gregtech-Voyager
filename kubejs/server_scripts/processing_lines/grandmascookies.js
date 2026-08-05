@@ -1,3 +1,5 @@
+import { recipe_mixer } from "../00_util/recipeUtils"
+
 ServerEvents.recipes((event) => {
     // event.recipes.gtceu
     //     .helper_wheel('kubejs:track_runner_helper')   // recipe ID
@@ -7,12 +9,7 @@ ServerEvents.recipes((event) => {
     //     .duration(500)                                 // in ticks
     //     .EUt(-32)                                // EU produced total]
 
-    const fullName = (name) => "kubejs:" + name
-
-    function create_mixer_recipe(name, ingredientsItem, fluidIngredients, itemOutputs, fluidOutputs, tier, time) {
-        event.recipes.gtceu.mixer(fullName(name)).itemInputs(ingredientsItem).inputFluids(fluidIngredients).itemOutputs(itemOutputs).outputFluids(fluidOutputs).duration(time).EUt(tier)
-    }
-
+    // @ts-ignore
     event.shaped(
         Item.of("gtceu:lv_oven", 1), // arg 1: output
         [
@@ -28,6 +25,7 @@ ServerEvents.recipes((event) => {
         }
     )
 
+    // @ts-ignore
     event.shaped(
         Item.of("gtceu:mv_oven", 1), // arg 1: output
         [
@@ -43,6 +41,7 @@ ServerEvents.recipes((event) => {
         }
     )
 
+    // @ts-ignore
     event.shaped(
         Item.of("gtceu:hv_oven", 1), // arg 1: output
         [
@@ -109,11 +108,10 @@ ServerEvents.recipes((event) => {
         .duration(200) // in ticks
         .EUt(16)
 
-    create_mixer_recipe("baking_chocolate", ["kubejs:cacao_powder", "minecraft:sugar"], ["minecraft:milk 1000"], ["4x kubejs:baking_chocolate"], [], 30, 200)
+    recipe_mixer(event, "baking_chocolate", ["kubejs:cacao_powder", "minecraft:sugar"], ["minecraft:milk 1000"], ["4x kubejs:baking_chocolate"], [], 30, 200)
 
-    // create_mixer_recipe('butter', [], ['minecraft:milk 1000'], ['4x kubejs:butter'], ['minecraft:milk 250'], 30, 200)
-
-    create_mixer_recipe(
+    recipe_mixer(
+        event,
         "cookiedough",
         ["2x minecraft:egg", "2x kubejs:butter", "2x kubejs:baking_chocolate", "kubejs:baking_flour", "2x minecraft:sugar"],
         [],

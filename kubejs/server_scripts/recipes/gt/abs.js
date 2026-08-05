@@ -1,4 +1,17 @@
 ServerEvents.recipes((event) => {
+    /**
+     *
+     * @param {*} alloy
+     * @param {*} amount
+     * @param {*} inputItems
+     * @param {*} fluidOut
+     * @param {*} fluidIn
+     * @param {*} duration
+     * @param {*} eut
+     * @param {*} temp
+     * @param {*} helpertier
+     * @param {*} circuit
+     */
     function abs(alloy, amount, inputItems, fluidOut, fluidIn, duration, eut, temp, helpertier, circuit) {
         event.recipes.gtceu
             .alloy_blast_smelter(`kubejs:${alloy}`)
@@ -39,6 +52,19 @@ ServerEvents.recipes((event) => {
             .EUt(eut / 2)
     }
 
+    /**
+     *
+     * @param {*} alloy
+     * @param {*} amount
+     * @param {*} inputItems
+     * @param {*} fluidOut
+     * @param {*} fluidIn
+     * @param {*} duration
+     * @param {*} eut
+     * @param {*} temp
+     * @param {*} helpertier
+     * @param {*} circuit
+     */
     function abs_strict(alloy, amount, inputItems, fluidOut, fluidIn, duration, eut, temp, helpertier, circuit) {
         event.recipes.gtceu
             .alloy_blast_smelter(`kubejs:${alloy}`)

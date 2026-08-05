@@ -1,10 +1,12 @@
 ServerEvents.recipes((event) => {
+    // @ts-ignore
     event.shaped(Item.of("ae2:controller", 1), ["CDC", "DAD", "CDC"], {
         A: "gtceu:ev_machine_hull",
         C: "gtceu:titanium_plate",
         D: "ae2:engineering_processor"
     })
 
+    // @ts-ignore
     event.shaped(Item.of("ae2:drive", 1), ["CDC", "BAB", "CDC"], {
         A: "gtceu:titanium_frame",
         B: "ae2:engineering_processor",
@@ -69,6 +71,7 @@ ServerEvents.recipes((event) => {
         .duration(200)
         .EUt(480)
 
+    // @ts-ignore
     event.shaped(Item.of("ae2:interface", 1), [" D ", "BAC", " E "], {
         A: "gtceu:titanium_frame",
         B: "ae2:formation_core",
@@ -77,6 +80,7 @@ ServerEvents.recipes((event) => {
         E: "gtceu:ev_electric_piston"
     })
 
+    // @ts-ignore
     event.shaped(Item.of("ae2:me_p2p_tunnel", 2), [" A ", "ABA", "CCC"], {
         A: "gtceu:titanium_plate",
         B: "ae2:engineering_processor",
@@ -87,35 +91,45 @@ ServerEvents.recipes((event) => {
 
     event.recipes.gtceu.alloy_smelter("kubejs:quartz_glass").itemInputs("2x gtceu:glass_dust", "2x gtceu:certus_quartz_dust").itemOutputs("ae2:quartz_glass").duration(100).EUt(30)
 
+    // @ts-ignore
     event.shaped(Item.of("ae2:energy_acceptor", 1), [" B ", " A ", " E "], {
         A: "gtceu:ev_machine_hull",
         B: "gtceu:ev_voltage_coil",
         E: "ae2:fluix_glass_cable"
     })
 
+    // @ts-ignore
     event.shaped(Item.of("ae2:import_bus", 1), [" B ", " A ", " E "], {
         A: "ae2:annihilation_core",
         B: "gtceu:ev_electric_piston",
         E: "gtceu:ev_electric_pump"
     })
 
+    // @ts-ignore
     event.shaped(Item.of("ae2:export_bus", 1), [" B ", " A ", " E "], {
         A: "ae2:formation_core",
         B: "gtceu:ev_electric_piston",
         E: "gtceu:ev_electric_pump"
     })
 
+    // @ts-ignore
     event.shapeless(Item.of("ae2:cable_interface", 1), ["ae2:interface", "ae2:cable_anchor"])
 
+    // @ts-ignore
     event.shapeless(Item.of("ae2:toggle_bus", 1), ["ae2:cable_anchor", "ae2:level_emitter", "ae2:calculation_processor"])
+    // @ts-ignore
     event.shapeless(Item.of("ae2:inverted_toggle_bus", 1), ["ae2:toggle_bus"])
 
+    // @ts-ignore
     event.shapeless(Item.of("ae2:level_emitter", 1), ["minecraft:redstone_torch", "ae2:calculation_processor"])
 
+    // @ts-ignore
     event.shapeless(Item.of("ae2:energy_level_emitter", 1), ["ae2:fluix_crystal", "ae2:level_emitter"])
 
+    // @ts-ignore
     event.shapeless(Item.of("ae2:certus_quartz_cutting_knife", 1), ["gtceu:certus_quartz_gem", "minecraft:stick"])
 
+    // @ts-ignore
     event.shapeless(Item.of("ae2:nether_quartz_cutting_knife", 1), ["minecraft:quartz", "minecraft:stick"])
 
     const colors = ["white", "light_gray", "gray", "black", "brown", "red", "orange", "yellow", "lime", "green", "cyan", "light_blue", "blue", "purple", "magenta", "pink"]
@@ -162,6 +176,7 @@ ServerEvents.recipes((event) => {
             .EUt(8)
     })
 
+    // @ts-ignore
     event.shaped(Item.of("ae2:terminal", 1), ["ABA", "CDC", " E "], {
         A: "ae2:quartz_glass",
         B: "ae2:logic_processor",
@@ -170,8 +185,10 @@ ServerEvents.recipes((event) => {
         E: "ae2:fluix_glass_cable"
     })
 
+    // @ts-ignore
     event.shapeless(Item.of("ae2:crafting_terminal", 1), ["ae2:terminal", "ae2:engineering_processor", "#gtceu:circuits/ev"])
 
+    // @ts-ignore
     event.shapeless(Item.of("ae2:pattern_encoding_terminal", 1), ["ae2:terminal", "ae2:engineering_processor", "ae2:formation_core"])
 
     // event.shaped(
@@ -189,18 +206,21 @@ ServerEvents.recipes((event) => {
     //     }
     // )
 
+    // @ts-ignore
     event.shaped(Item.of("ae2:storage_monitor", 4), [" A ", " CB", " A "], {
         A: "ae2:fluix_glass_cable",
         B: "ae2:calculation_processor",
         C: "gtceu:computer_monitor_cover"
     })
 
+    // @ts-ignore
     event.shaped(Item.of("ae2:cell_workbench", 1), ["AAA", "BCB", "AAA"], {
         A: "gtceu:steel_plate",
         B: "ae2:calculation_processor",
         C: "ae2:item_cell_housing"
     })
 
+    // @ts-ignore
     event.shaped(Item.of("ae2:pattern_provider", 1), [" E ", "BAC", " D "], {
         A: "gtceu:titanium_frame",
         B: "ae2:formation_core",
@@ -216,6 +236,7 @@ ServerEvents.recipes((event) => {
         .duration(300)
         .EUt(1980)
 
+    // @ts-ignore
     event.shaped(Item.of("ae2:crafting_unit", 1), ["ABA", "BCB", "ABA"], {
         A: "gtceu:titanium_plate",
         B: "ae2:fluix_glass_cable",

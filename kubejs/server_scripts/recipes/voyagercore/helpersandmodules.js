@@ -1,4 +1,7 @@
 ServerEvents.recipes((event) => {
+    /**
+     * @type {Record<string, number>}
+     */
     const tiermap = {
         lv: 28,
         mv: 120,
@@ -13,6 +16,9 @@ ServerEvents.recipes((event) => {
     const tiers = ["mv", "hv", "ev", "iv", "luv"]
     const s_tiers = ["hv", "ev", "iv", "luv"]
 
+    /**
+     * @type {Record<string, string>}
+     */
     const tierBaseGearMap = {
         lv: "tin_silver_alloy",
         mv: "fluxed_electrum",
@@ -24,6 +30,9 @@ ServerEvents.recipes((event) => {
         // "uv": ""
     }
 
+    /**
+     * @type {Record<string, string>}
+     */
     const tierBaseMatMap = {
         lv: "steel",
         mv: "aluminium",
@@ -35,6 +44,9 @@ ServerEvents.recipes((event) => {
         // "uv": ""
     }
 
+    /**
+     * @type {Record<string, string>}
+     */
     const tierSpecialMatMap = {
         mv: "magnesium_diboride",
         hv: "red_steel",
@@ -45,6 +57,9 @@ ServerEvents.recipes((event) => {
         // "uv": ""
     }
 
+    /**
+     * @type {Record<string, string>}
+     */
     const tierCoilMatMap = {
         mv: "gtceu:kanthal",
         hv: "gtceu:nichrome",
@@ -55,6 +70,9 @@ ServerEvents.recipes((event) => {
         // "uv": ""
     }
 
+    /**
+     * @type {Record<string, string>}
+     */
     const tierMaxCircuitTierMap = {
         mv: "hv",
         hv: "iv",
@@ -65,6 +83,7 @@ ServerEvents.recipes((event) => {
         // "uv": ""
     }
 
+    // @ts-ignore
     function generic_helper_hull_recipe(tier, frame_mat, platemat, fluids) {
         event.recipes.gtceu
             .helper_factory(`kubejs:${tier}_generic_helper_hull`)
@@ -75,6 +94,7 @@ ServerEvents.recipes((event) => {
             .EUt(tiermap[tier])
     }
 
+    // @ts-ignore
     function specialized_helper_hull_recipe(tier, frame_mat, platemat, fluids)
     {
  
@@ -101,6 +121,7 @@ ServerEvents.recipes((event) => {
         
     }
 
+    // @ts-ignore
     function base_module_recipe(tier, gearmat, platemat, fluids, extra_inputs) {
         if (extra_inputs) {
             event.recipes.gtceu
@@ -122,7 +143,8 @@ ServerEvents.recipes((event) => {
         }
     }
 
-    function output_module_recipe(tier, ctier, coilMat, platemat) {
+    // @ts-ignore
+    function output_module_recipe(tier, ctier, coilMat, _platemat) {
         event.recipes.gtceu
             .assembler(`kubejs:${tier}_output_helper_module`)
             .itemInputs(
@@ -137,6 +159,7 @@ ServerEvents.recipes((event) => {
             .duration(20 * 30)
     }
 
+    // @ts-ignore
     function speed_module_recipe(tier, ctier, wiremat, platemat, extra_inputs) {
         if (extra_inputs) {
             event.recipes.gtceu
@@ -170,6 +193,7 @@ ServerEvents.recipes((event) => {
         }
     }
 
+    // @ts-ignore
     function efficiency_module_recipe(tier, ctier, wiremat, platemat, fluids, extra_inputs) {
         if (extra_inputs) {
             event.recipes.gtceu
@@ -205,6 +229,7 @@ ServerEvents.recipes((event) => {
         }
     }
 
+    // @ts-ignore
     function basic_module_recipe(tier, ctier, wiremat, platemat, extra_inputs) {
         if (extra_inputs) {
             event.recipes.gtceu
@@ -239,6 +264,7 @@ ServerEvents.recipes((event) => {
         }
     }
 
+    // @ts-ignore
     function parallel_module_recipe(tier, ctier, wiremat, wiremat2, extra_inputs) {
         if (extra_inputs) {
             event.recipes.gtceu
@@ -456,6 +482,7 @@ ServerEvents.recipes((event) => {
         }
     )
 
+    // @ts-ignore
     event.shaped(
         Item.of('gtceu:mv_helper_factory', 1), // arg 1: output
         [
@@ -472,6 +499,7 @@ ServerEvents.recipes((event) => {
         }
     )
 
+    // @ts-ignore
     event.shaped(
         Item.of('gtceu:hv_helper_factory', 1), // arg 1: output
         [

@@ -1,4 +1,5 @@
 ServerEvents.recipes((event) => {
+    // @ts-ignore
     event.shaped(
         Item.of("gtceu:micro_farm", 1), // arg 1: output
         [

@@ -3,6 +3,16 @@ ServerEvents.recipes((event) => {
     event.remove({ type: "minecraft:smelting", output: "gtceu:fluxed_cobalt_electrum_ingot" })
     event.remove({ output: "gtceu:hot_tungsten_steel_ingot" })
 
+    /**
+     *
+     * @param {*} input
+     * @param {*} ebfduration
+     * @param {*} ebfeut
+     * @param {*} ebftemp
+     * @param {*} blastfluid
+     * @param {*} helpertier
+     * @param {*} do_helium_cooling
+     */
     function ebf_recipe(input, ebfduration, ebfeut, ebftemp, blastfluid, helpertier, do_helium_cooling) {
         event.remove({ type: "gtceu:electric_blast_furnace", output: `gtceu:hot_${input}_ingot` })
         event.remove({ type: "gtceu:electric_blast_furnace", output: `gtceu:${input}_ingot` })

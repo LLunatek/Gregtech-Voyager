@@ -1,7 +1,7 @@
 ServerEvents.recipes((event) => {
-    const { tconstruct } = event.recipes
     event.remove({ output: "tconstruct:seared_fuel_gauge" })
 
+    // @ts-ignore
     event.shaped(
         Item.of("tconstruct:seared_fuel_gauge", 1), // arg 1: output
         [
@@ -15,6 +15,7 @@ ServerEvents.recipes((event) => {
         }
     )
 
+    // @ts-ignore
     event.shaped(
         Item.of("tconstruct:seared_ingot_gauge", 1), // arg 1: output
         [
@@ -39,10 +40,16 @@ ServerEvents.recipes((event) => {
         temp: temp
 
     */
+    /**
+     *
+     * @param {*} result
+     * @param {*} inputs
+     * @param {*} temp
+     */
     function tconstruct_alloy(result, inputs, temp) {
         event.custom({
             type: "tconstruct:alloy",
-            inputs: inputs.map((input) => ({
+            inputs: inputs.map((/** @type {{ fluid: any; amount: any; }} */ input) => ({
                 fluid: input.fluid,
                 amount: input.amount
             })),
@@ -54,6 +61,13 @@ ServerEvents.recipes((event) => {
         })
     }
 
+    /**
+     *
+     * @param {*} result
+     * @param {*} fluid
+     * @param {*} cooling_time
+     * @param {*} cast
+     */
     function casting_table(result, fluid, cooling_time, cast) {
         if (cast) {
             event
@@ -87,7 +101,15 @@ ServerEvents.recipes((event) => {
         }
     }
 
-    function casting_basin(result, fluid, cooling_time, optitem) {
+    /**
+     *
+     * @param {*} result
+     * @param {*} fluid
+     * @param {*} cooling_time
+     * @param {*} optitem
+     */
+    // @ts-ignore
+    function _casting_basin(result, fluid, cooling_time, optitem) {
         if (optitem) {
             event
                 .custom({
@@ -125,6 +147,7 @@ ServerEvents.recipes((event) => {
 
     casting_table("gtceu:firebrick", { fluid: "kubejs:molten_fireclay", amount: 125 }, 80, "tconstruct:casts/multi_use/ingot")
     casting_table("gtceu:firebrick", { fluid: "kubejs:molten_fireclay", amount: 125 }, 80, "tconstruct:casts/single_use/ingot")
+    // @ts-expect-error arghhhhh
     event.remove({ type: "tconstruct:casting_basin", id: /tconstruct:smeltery\/casting\/metal\/.*\/block/ })
 
     // alloys

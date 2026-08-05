@@ -1,4 +1,15 @@
 ServerEvents.recipes((event) => {
+    /**
+     *
+     * @param {*} name
+     * @param {*} input
+     * @param {*} fluid
+     * @param {*} output
+     * @param {*} helper
+     * @param {*} ogtime
+     * @param {*} ogeut
+     * @param {*} temp
+     */
     function add_helper_recipe(name, input, fluid, output, helper, ogtime, ogeut, temp) {
         event.recipes.gtceu
             .electric_blast_furnace("kubejs:" + name + "_" + helper)

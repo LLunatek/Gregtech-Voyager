@@ -1,9 +1,10 @@
+/** @type {[string, string, string, number][]} */
 const cuttingfluid = [
     ["lubricant", "gtceu:lubricant", "1", 10],
     ["distilled", "gtceu:distilled_water", "3", 15],
     ["water", "minecraft:water", "4", 20]
 ]
-const vanillaWood = ["oak", "birch", "dark_oak", "jungle", "mangrove", "spruce", "acacia", "cherry"]
+const _vanillaWood = ["oak", "birch", "dark_oak", "jungle", "mangrove", "spruce", "acacia", "cherry"]
 
 ServerEvents.tags("item", (event) => {
     //I hate it when mods don't tag things properly
@@ -13,7 +14,7 @@ ServerEvents.tags("item", (event) => {
 })
 
 ServerEvents.recipes((event) => {
-    const sawShaped = (output, input, mod, itemName) => {
+    const sawShaped = (/** @type {string} */ output, /** @type {string} */ input, /** @type {string} */ mod, /** @type {string} */ itemName) => {
         let pref = ""
         if (mod != "minecraft") pref = mod + "_"
         event.recipes.gtceu
@@ -24,8 +25,8 @@ ServerEvents.recipes((event) => {
             .id(`gtceu:shaped/${pref + itemName}_saw`)
     }
 
-    const cuttingMachine = (output, input, custom, mod) => {
-        cuttingfluid.forEach((cuttingfluid) => {
+    const cuttingMachine = (/** @type {string} */ output, /** @type {string} */ input, /** @type {string} */ custom, /** @type {string} */ mod) => {
+        cuttingfluid.forEach((cf) => {
             event.recipes.gtceu
                 .cutter(`gtceu:cutter/${mod}_${custom}_${cuttingfluid[0]}`)
                 .itemInputs(input)
@@ -33,10 +34,13 @@ ServerEvents.recipes((event) => {
                 .itemOutputs(Item.of(output, 6))
                 .itemOutputs(Item.of("gtceu:wood_dust", 2))
                 .EUt(7)
-                .duration(cuttingfluid[3] * 20)
+                .duration(cf[3] * 20)
         })
     }
 
+    /**
+     * @param {string} input
+     */
     function doorRecipe(input) {
         let mod = input.replace(/:.*/, "")
         let pref = ""
@@ -47,6 +51,7 @@ ServerEvents.recipes((event) => {
         if (mod == "botania") return
         if (mod == "minecraft") planks = [wood + "_planks", wood.replace("minecraft", "forestry") + "_fireproof_planks"]
 
+        // @ts-ignore
         event.remove({ output: `${wood}_door`, type: "minecraft:crafting_shaped" })
 
         event.recipes.gtceu
@@ -61,6 +66,9 @@ ServerEvents.recipes((event) => {
             .id(`gtceu:shaped/${pref + input.replace(/.*:/, "").replace("_planks", "_door")}`)
     }
 
+    /**
+     * @param {string} input
+     */
     function trapdoorRecipe(input) {
         let mod = input.replace(/:.*/, "")
         let pref = ""
@@ -71,6 +79,7 @@ ServerEvents.recipes((event) => {
         if (mod == "botania") return
         if (mod == "minecraft") planks = [wood + "_planks", wood.replace("minecraft", "forestry") + "_fireproof_planks"]
 
+        // @ts-ignore
         event.remove({ output: `${wood}_trapdoor`, type: "minecraft:crafting_shaped" }) //Easiest code of my life: Only spent 3 Hours on this one line
 
         event.recipes.gtceu
@@ -110,6 +119,9 @@ ServerEvents.recipes((event) => {
             .EUt(4)
     }
 
+    /**
+     * @param {string} input
+     */
     function slabRecipe(input) {
         let mod = input.replace(/:.*/, "")
         let pref = ""
@@ -120,6 +132,7 @@ ServerEvents.recipes((event) => {
         if (mod == "minecraft") planks = [wood + "_planks", wood.replace("minecraft", "forestry") + "_fireproof_planks"]
         if (mod == "tconstruct") wood = input
 
+        // @ts-ignore
         event.remove({ type: "minecraft:crafting_shaped", output: `${wood}_slab` })
 
         event.recipes.gtceu
@@ -150,29 +163,37 @@ ServerEvents.recipes((event) => {
         })
     }
 
+    // @ts-ignore
     event.remove({ type: "minecraft:crafting_shapeless", output: "minecraft:oak_planks", mod: "vinery" }) //Nuclear Option, This wouldn't work correctly the other ways I tried
+    // @ts-ignore
     event.remove({ type: "minecraft:crafting_shapeless", output: "vinery:dark_cherry_planks" })
 
+    // @ts-ignore
     event.shapeless("2x vinery:dark_cherry_planks", "#vinery:dark_cherry_logs").id("vinery:dark_cherry_planks")
     sawShaped("vinery:dark_cherry_planks", "#vinery:dark_cherry_logs", "vinery", "dark_cherry_planks")
     cuttingMachine("vinery:dark_cherry_planks", "#vinery:dark_cherry_logs", "dark_cherry_planks", "vinery")
 
-    event.forEachRecipe({ type: "minecraft:crafting_shapeless", input: "#minecraft:logs", output: "#minecraft:planks" }, (r) => {
-        let logtype = r.originalRecipeIngredients
-        let outputIS = r.originalRecipeResult
-        let output = outputIS.id
-        let mod = outputIS.getMod()
-        let itemName = outputIS.getItem()
+    // @ts-ignore
+    event.forEachRecipe(
+        { type: "minecraft:crafting_shapeless", input: "#minecraft:logs", output: "#minecraft:planks" },
+        (/** @type {{ originalRecipeIngredients: any; originalRecipeResult: any; getId: () => any; }} */ r) => {
+            let logtype = r.originalRecipeIngredients
+            let outputIS = r.originalRecipeResult
+            let output = outputIS.id
+            let mod = outputIS.getMod()
+            let itemName = outputIS.getItem()
 
-        event.shapeless(Item.of(outputIS.id, 2), logtype[0]).id(r.getId())
-        sawShaped(output, logtype[0], mod, itemName)
-        if (mod != "minecraft") cuttingMachine(output, logtype[0], itemName, mod)
-        if (`${output}` == `${output}`.replace("_fireproof", "")) {
-            doorRecipe(`${output}`)
-            trapdoorRecipe(`${output}`)
-            slabRecipe(`${output}`)
+            // @ts-ignore
+            event.shapeless(Item.of(outputIS.id, 2), logtype[0]).id(r.getId())
+            sawShaped(output, logtype[0], mod, itemName)
+            if (mod != "minecraft") cuttingMachine(output, logtype[0], itemName, mod)
+            if (`${output}` == `${output}`.replace("_fireproof", "")) {
+                doorRecipe(`${output}`)
+                trapdoorRecipe(`${output}`)
+                slabRecipe(`${output}`)
+            }
         }
-    })
+    )
 })
 
 ForestryEvents

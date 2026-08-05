@@ -67,6 +67,7 @@ ServerEvents.recipes((event) => {
     })
 
     // upgrades !!!!!
+    // @ts-ignore
     event.shaped(
         Item.of("sophisticatedbackpacks:upgrade_base", 2), // arg 1: output
         [
@@ -81,6 +82,7 @@ ServerEvents.recipes((event) => {
         }
     )
 
+    // @ts-ignore
     event.shaped(
         Item.of("sophisticatedbackpacks:advanced_pickup_upgrade", 1), // arg 1: output
         [
@@ -94,6 +96,7 @@ ServerEvents.recipes((event) => {
         }
     )
 
+    // @ts-ignore
     event.shaped(
         Item.of("sophisticatedbackpacks:advanced_filter_upgrade", 1), // arg 1: output
         [
@@ -107,6 +110,7 @@ ServerEvents.recipes((event) => {
         }
     )
 
+    // @ts-ignore
     event.shaped(
         Item.of("sophisticatedbackpacks:advanced_magnet_upgrade", 1), // arg 1: output
         [
@@ -120,6 +124,7 @@ ServerEvents.recipes((event) => {
         }
     )
 
+    // @ts-ignore
     event.shaped(
         Item.of("sophisticatedbackpacks:advanced_void_upgrade", 1), // arg 1: output
         [
@@ -133,6 +138,7 @@ ServerEvents.recipes((event) => {
         }
     )
 
+    // @ts-ignore
     event.shaped(
         Item.of("sophisticatedbackpacks:advanced_restock_upgrade", 1), // arg 1: output
         [
@@ -146,6 +152,7 @@ ServerEvents.recipes((event) => {
         }
     )
 
+    // @ts-ignore
     event.shaped(
         Item.of("sophisticatedbackpacks:advanced_deposit_upgrade", 1), // arg 1: output
         [
@@ -159,6 +166,7 @@ ServerEvents.recipes((event) => {
         }
     )
 
+    // @ts-ignore
     event.shaped(
         Item.of("sophisticatedbackpacks:advanced_refill_upgrade", 1), // arg 1: output
         [
@@ -172,6 +180,7 @@ ServerEvents.recipes((event) => {
         }
     )
 
+    // @ts-ignore
     event.shaped(
         Item.of("sophisticatedbackpacks:stack_upgrade_starter_tier", 1), // arg 1: output
         [
@@ -185,6 +194,7 @@ ServerEvents.recipes((event) => {
         }
     )
 
+    // @ts-ignore
     event.shaped(
         Item.of("sophisticatedbackpacks:stack_upgrade_tier_1", 1), // arg 1: output
         [
@@ -199,6 +209,7 @@ ServerEvents.recipes((event) => {
         }
     )
 
+    // @ts-ignore
     event.shaped(
         Item.of("sophisticatedbackpacks:stack_upgrade_tier_2", 1), // arg 1: output
         [
@@ -213,6 +224,7 @@ ServerEvents.recipes((event) => {
         }
     )
 
+    // @ts-ignore
     event.shaped(
         Item.of("sophisticatedbackpacks:advanced_tool_swapper_upgrade", 1), // arg 1: output
         [

@@ -1,4 +1,14 @@
 ServerEvents.recipes((event) => {
+    /**
+     *
+     * @param {*} input
+     * @param {*} ns
+     * @param {*} amt
+     * @param {*} fluidOutputs
+     * @param {*} itemOutput
+     * @param {*} eut
+     * @param {*} seconds
+     */
     function distill(input, ns, amt, fluidOutputs, itemOutput, eut, seconds) {
         event.recipes.gtceu
             .distillation_tower(`kubejs:${input}_distilling`) // recipe ID
@@ -9,6 +19,15 @@ ServerEvents.recipes((event) => {
             .EUt(eut)
     }
 
+    /**
+     *
+     * @param {*} input
+     * @param {*} ns
+     * @param {*} amt
+     * @param {*} fluidOutputs
+     * @param {*} eut
+     * @param {*} seconds
+     */
     function freeze(input, ns, amt, fluidOutputs, eut, seconds) {
         event.recipes.gtceu
             .vacuum_freezer(`kubejs:${input}_vacuum_freezer`) // recipe ID

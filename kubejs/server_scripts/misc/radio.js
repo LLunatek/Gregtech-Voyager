@@ -1,11 +1,20 @@
+/**
+ *
+ * @param {*} radio
+ * @param {*} i_nbt
+ * @param {*} i_message
+ * @param {'in' | 'out'} direction
+ */
 function radio(radio, i_nbt, i_message, direction) {
     ItemEvents.rightClicked(`kubejs:${radio}_radio`, (event) => {
         const player = event.player
         let text
 
         if (direction == "in") {
+            // @ts-expect-error Defaulted to DOM types ¯\_(ツ)_/¯
             text = Text.red(i_message)
         } else if (direction == "out") {
+            // @ts-expect-error
             text = Text.green(i_message)
         }
 
@@ -29,4 +38,4 @@ function radio(radio, i_nbt, i_message, direction) {
         event.server.runCommandSilent(`/playsound gtceu:computation player ${player.username}`)
     })
 }
-radio("celestial", 1, "Put this into a celestial post box to get a trade contract")
+radio("celestial", 1, "Put this into a celestial post box to get a trade contract", "in")

@@ -15,6 +15,7 @@ ServerEvents.recipes((event) => {
     //     .duration(300)                                 
     //     .EUt(-32)   
 
+    // @ts-ignore
     event.shaped(
         Item.of("gtceu:lv_helper_wheel", 1), // arg 1: output
         [
@@ -30,6 +31,7 @@ ServerEvents.recipes((event) => {
         }
     )
 
+    // @ts-ignore
     event.shaped(
         Item.of("gtceu:mv_helper_wheel", 1), // arg 1: output
         [

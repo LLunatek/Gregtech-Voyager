@@ -1,5 +1,4 @@
-const $LargeTurbineMachine = Java.loadClass("com.gregtechceu.gtceu.common.machine.multiblock.generator.LargeTurbineMachine")
-
+// @ts-nocheck
 GTCEuStartupEvents.registry("gtceu:recipe_type", (event) => {
     event
         .create("helper_calorie_conversion")
@@ -47,90 +46,6 @@ GTCEuStartupEvents.registry("gtceu:machine", (event) => {
                             .or(Predicates.abilities(PartAbility.MAINTENANCE).setExactLimit(1))
                     )
                     .where("B", Predicates.blocks(block2))
-                    .where("D", Predicates.abilities(PartAbility.OUTPUT_ENERGY))
-                    .build()
-            )
-            .workableCasingModel(`kubejs:block/casing/${casing}_casing`, `kubejs:block/multiblock/${type}`)
-    }
-
-    function powerRectangleC(type, casing, block2, b3, recipe) {
-        event
-            .create(`power_rectangle_${type}`, "multiblock")
-            .rotationState(RotationState.NON_Y_AXIS)
-            .recipeType(recipe)
-            .generator(true)
-            .recipeModifiers()
-            .appearanceBlock(() => Block.getBlock(`kubejs:${casing}_casing`))
-            .pattern((definition) =>
-                FactoryBlockPattern.start()
-                    .aisle("CCC", "CDC", "CCC")
-                    .aisle("CCC", "CBC", "CCC")
-                    .aisle("CCC", "CBC", "CCC")
-                    .aisle("III", "I@I", "III")
-                    .where("@", Predicates.controller(Predicates.blocks(definition.get())))
-                    .where(
-                        "C",
-                        Predicates.blocks(`kubejs:${casing}_casing`)
-                            .setMinGlobalLimited(5)
-                            .or(Predicates.abilities(PartAbility.IMPORT_ITEMS).setExactLimit(1).setPreviewCount(1))
-                            .or(Predicates.abilities(PartAbility.EXPORT_ITEMS).setExactLimit(1).setPreviewCount(1))
-                            .or(Predicates.abilities(PartAbility.IMPORT_FLUIDS).setExactLimit(1).setPreviewCount(1))
-                            .or(Predicates.abilities(PartAbility.EXPORT_FLUIDS).setExactLimit(1).setPreviewCount(1))
-                            .or(Predicates.abilities(PartAbility.MAINTENANCE).setExactLimit(1))
-                    )
-                    .where("B", Predicates.blocks(block2))
-                    .where("I", Predicates.blocks(b3))
-                    .where("D", Predicates.abilities(PartAbility.OUTPUT_ENERGY))
-                    .build()
-            )
-            .workableCasingModel(`kubejs:block/casing/${casing}_casing`, `kubejs:block/multiblock/${type}`)
-    }
-
-    const gtVals = {
-        ulv: GTValues.ULV,
-        lv: GTValues.LV,
-        mv: GTValues.MV,
-        hv: GTValues.HV,
-        ev: GTValues.EV,
-        iv: GTValues.IV,
-        luv: GTValues.LuV,
-        zpm: GTValues.ZPM,
-        uv: GTValues.UV,
-        uhv: GTValues.UHV,
-        uev: GTValues.UEV,
-        uiv: GTValues.UIV,
-        uxv: GTValues.UXV,
-        opv: GTValues.OpV,
-        max: GTValues.MAX
-    }
-
-    function powerRectangleTurbine(type, casing, block2, recipe, rotorTierMin) {
-        event
-            .create(`${type}_turbine`, "multiblock")
-            .machine((holder) => new $LargeTurbineMachine(holder, rotorTierMin)) // The value shows one rotor holder tier above the recommended minimum rotor holder. The tier of rotor holder provides a boost based on the efficiency stat.
-            .rotationState(RotationState.NON_Y_AXIS)
-            .recipeTypes(recipe)
-            .recipeModifiers([GTRecipeModifiers.OC_NON_PERFECT_SUBTICK, GTRecipeModifiers.BATCH_MODE, (machine, recipe) => $LargeTurbineMachine.recipeModifier(machine, recipe)])
-            .appearanceBlock(() => Block.getBlock(`kubejs:${casing}_casing`))
-            .pattern((definition) =>
-                FactoryBlockPattern.start()
-                    .aisle("CCC", "CDC", "CCC")
-                    .aisle("CCC", "CBC", "CCC")
-                    .aisle("CCC", "CBC", "C@C")
-                    .aisle("CCC", "CRC", "CCC")
-                    .where("@", Predicates.controller(Predicates.blocks(definition.get())))
-                    .where(
-                        "C",
-                        Predicates.blocks(`kubejs:${casing}_casing`)
-                            .setMinGlobalLimited(5)
-                            .or(Predicates.abilities(PartAbility.IMPORT_ITEMS).setExactLimit(1).setPreviewCount(1))
-                            .or(Predicates.abilities(PartAbility.EXPORT_ITEMS).setExactLimit(1).setPreviewCount(1))
-                            .or(Predicates.abilities(PartAbility.IMPORT_FLUIDS).setExactLimit(1).setPreviewCount(1))
-                            .or(Predicates.abilities(PartAbility.EXPORT_FLUIDS).setExactLimit(1).setPreviewCount(1))
-                            .or(Predicates.abilities(PartAbility.MAINTENANCE).setExactLimit(1))
-                    )
-                    .where("B", Predicates.blocks(block2))
-                    .where("R", Predicates.ability(PartAbility.ROTOR_HOLDER).setExactLimit(1))
                     .where("D", Predicates.abilities(PartAbility.OUTPUT_ENERGY))
                     .build()
             )

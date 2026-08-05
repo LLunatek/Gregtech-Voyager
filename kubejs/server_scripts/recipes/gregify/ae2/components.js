@@ -1,6 +1,12 @@
 ServerEvents.recipes((event) => {
     event.remove({ mod: "ae2" })
 
+    /**
+     *
+     * @param {*} name
+     * @param {*} mat
+     * @param {*} foil_mat
+     */
     function make_base_circuit(name, mat, foil_mat) {
         event.recipes.gtceu
             .forming_press("kubejs:" + name + "circuit") // recipe ID
@@ -31,6 +37,12 @@ ServerEvents.recipes((event) => {
             .EUt(4096)
     }
 
+    /**
+     *
+     * @param {*} name
+     * @param {*} circuit_tier
+     * @param {*} bolt_mat
+     */
     function make_processor(name, circuit_tier, bolt_mat) {
         event.recipes.gtceu
             .circuit_assembler("kubejs:" + name)
@@ -96,6 +108,7 @@ ServerEvents.recipes((event) => {
     make_processor("logic_processor", "hv", "fluxed_cobalt_electrum")
     make_processor("engineering_processor", "ev", "refined_fluxed_electrum")
 
+    // @ts-ignore
     event.shaped(Item.of("ae2:formation_core", 2), [" D ", "BAC", " D "], {
         A: "ae2:logic_processor",
         B: "gtceu:glowstone_plate",
@@ -103,6 +116,7 @@ ServerEvents.recipes((event) => {
         D: "gtceu:certus_quartz_plate"
     })
 
+    // @ts-ignore
     event.shaped(Item.of("ae2:annihilation_core", 2), [" D ", "BAC", " D "], {
         A: "ae2:logic_processor",
         B: "gtceu:redstone_plate",
@@ -110,18 +124,21 @@ ServerEvents.recipes((event) => {
         D: "gtceu:nether_quartz_plate"
     })
 
+    // @ts-ignore
     event.shaped(Item.of("ae2:item_cell_housing", 1), ["CDC", "DAD", "   "], {
         A: "ae2:fluix_crystal",
         C: "ae2:quartz_glass",
         D: "gtceu:titanium_plate"
     })
 
+    // @ts-ignore
     event.shaped(Item.of("ae2:fluid_cell_housing", 1), ["CDC", "DAD", "   "], {
         A: "ae2:fluix_crystal",
         C: "ae2:quartz_glass",
         D: "gtceu:polyvinyl_chloride_plate"
     })
 
+    // @ts-ignore
     event.shaped(Item.of("ae2:basic_card", 1), ["CD ", "BAD", "CD "], {
         A: "ae2:calculation_processor",
         B: "gtceu:fine_red_alloy_wire",
@@ -129,14 +146,19 @@ ServerEvents.recipes((event) => {
         D: "gtceu:aluminium_plate"
     })
 
+    // @ts-ignore
     event.shapeless(Item.of("ae2:redstone_card", 1), ["ae2:basic_card", "gtceu:redstone_plate"])
 
+    // @ts-ignore
     event.shapeless(Item.of("ae2:capacity_card", 1), ["ae2:basic_card", "gtceu:ram_chip"])
 
+    // @ts-ignore
     event.shapeless(Item.of("ae2:void_card", 1), ["ae2:basic_card", "gtceu:obsidian_plate", "ae2:calculation_processor"])
 
+    // @ts-ignore
     event.shapeless(Item.of("ae2:fuzzy_card", 1), ["ae2:advanced_card", "gtceu:lv_robot_arm"])
 
+    // @ts-ignore
     event.shapeless(Item.of("ae2:inverter_card", 1), ["ae2:advanced_card", "minecraft:redstone_torch"])
 
     event.recipes.gtceu
@@ -166,6 +188,7 @@ ServerEvents.recipes((event) => {
         .duration(40)
         .EUt(1920)
 
+    // @ts-ignore
     event.shaped(Item.of("ae2:advanced_card", 1), ["CD ", "BAD", "CD "], {
         A: "ae2:calculation_processor",
         B: "gtceu:fine_red_alloy_wire",
@@ -173,6 +196,7 @@ ServerEvents.recipes((event) => {
         D: "gtceu:aluminium_plate"
     })
 
+    // @ts-ignore
     event.shaped(Item.of("ae2:color_applicator", 1), ["   ", "BAD", "   "], {
         A: "gtceu:empty_spray_can",
         B: "ae2:cell_component_1k",
@@ -280,6 +304,7 @@ ServerEvents.recipes((event) => {
 
     event.recipes.gtceu.canner("kubejs:256k_cell_fluid").itemInputs("ae2:cell_component_256k", "ae2:fluid_cell_housing").itemOutputs("1x ae2:fluid_storage_cell_256k").duration(100).EUt(120)
 
+    // @ts-ignore
     event.shaped(Item.of("ae2:memory_card", 1), [" B ", "BAB", "EEE"], {
         A: "ae2:logic_processor",
         B: "gtceu:iron_plate",

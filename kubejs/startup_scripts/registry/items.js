@@ -1,12 +1,11 @@
 //priority: 1000
+// @ts-nocheck
 
 StartupEvents.registry("item", (event) => {
     // The texture for this item has to be placed in kubejs/assets/kubejs/textures/item/test_item.png
     // If you want a custom item model, you can create one in Blockbench and put it in kubejs/assets/kubejs/models/item/test_item.json
 
     const tiers = ["ulv", "lv", "mv", "hv", "ev", "iv", "luv", "zpm", "uv", "uhv", "uev", "uiv", "max"]
-
-    const allTiers = ["stone", "ulv", "lv", "mv", "hv", "ev", "iv", "luv", "zpm", "uv", "uhv", "uev", "uiv", "max"]
 
     function register_loot_bag(energy_tier) {
         event
@@ -351,7 +350,7 @@ StartupEvents.registry("item", (event) => {
         event.create(`${name}`).texture(`kubejs:item/${name}`).displayName(`${dn}`).tooltip("§7§oAncient secrets revealed")
     }
 
-    function rocks(planet, dn) {
+    function rocks(planet, _dn) {
         event.create(`small_${planet}_rock`).texture(`kubejs:item/small_${planet}_rock`)
         event.create(`medium_${planet}_rock`).texture(`kubejs:item/medium_${planet}_rock`)
         event.create(`large_${planet}_rock`).texture(`kubejs:item/large_${planet}_rock`)

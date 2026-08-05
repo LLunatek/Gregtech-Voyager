@@ -1,6 +1,6 @@
 //priority: 99
 
-GTCEuStartupEvents.materialModification((event) => {
+GTCEuStartupEvents.materialModification((_event) => {
     GTMaterials.get("desh").setFormula("Ds")
     GTMaterials.get("lunite").setFormula("(Ds)2W(Si)2O4")
     GTMaterials.get("glowstone").setFormula("(Si(FeS2)5(CrAl2O3)Hg3)Au")

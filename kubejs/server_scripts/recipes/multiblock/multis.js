@@ -1,6 +1,5 @@
 ServerEvents.recipes((event) => {
-    const tiers = ["ulv", "lv", "mv", "hv", "ev", "iv", "luv", "zpm", "uv", "uhv", "uev", "uiv", "max"]
-
+    // @ts-ignore
     event.shaped(
         Item.of("gtceu:radiation_chamber", 1), // arg 1: output
         [

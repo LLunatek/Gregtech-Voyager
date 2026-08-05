@@ -1,27 +1,33 @@
-const voltageTable = {
-    lv: 32,
-    mv: 128,
-    hv: 512,
-    ev: 2048,
-    iv: 8192,
-    luv: 32768,
-    zpm: 131072,
-    uv: 524288,
-    uhv: 2097152,
-    uev: 8388608,
-    uiv: 33554432,
-    uxv: 134217728
-}
-
-const voltTier = (tier) => voltageTable[tier]
-
-const fullName = (name) => "kubejs:" + name
-
 ServerEvents.recipes((event) => {
+    /**
+     * @type {Record<string, number>}
+     */
+    const voltageTable = {
+        lv: 32,
+        mv: 128,
+        hv: 512,
+        ev: 2048,
+        iv: 8192,
+        luv: 32768,
+        zpm: 131072,
+        uv: 524288,
+        uhv: 2097152,
+        uev: 8388608,
+        uiv: 33554432,
+        uxv: 134217728
+    }
+
+    // @ts-ignore
+    const voltTier = (tier) => voltageTable[tier]
+
+    // @ts-ignore
+    const fullName = (name) => "kubejs:" + name
+    // @ts-ignore
     function create_mixer_recipe(name, ingredientsItem, fluidIngredients, itemOutputs, tier, time) {
         event.recipes.gtceu.mixer(fullName(name)).itemInputs(ingredientsItem).inputFluids(fluidIngredients).itemOutputs(itemOutputs).duration(time).EUt(tier)
     }
 
+    // @ts-ignore
     function implosion_compressor_recipe(name, ingredientsItem, fluidIngredients, itemOutputs, tier, time) {
         event.recipes.gtceu.implosion_compressor(fullName(name)).itemInputs(ingredientsItem).inputFluids(fluidIngredients).itemOutputs(itemOutputs).duration(time).EUt(tier)
     }
