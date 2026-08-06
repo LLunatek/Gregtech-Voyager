@@ -1073,6 +1073,7 @@
 				"6A65D57C567806CB"
 				"3F19DD981F340045"
 			]
+			description: ["Note: If your multiblock has a helper holder installed, it &l&cwill not run recipes&r unless there is a helper in it. If you do not want/cannot use a helper for a recipe, remove the helper holder."]
 			hide_dependency_lines: true
 			id: "42EE53E235AE139A"
 			tasks: [{

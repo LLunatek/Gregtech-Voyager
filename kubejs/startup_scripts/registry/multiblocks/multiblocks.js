@@ -18,13 +18,13 @@ GTCEuStartupEvents.registry("gtceu:recipe_type", (event) => {
         .setSlotOverlay(false, false, GuiTextures.ARROW_INPUT_OVERLAY)
         .setSound(GTSoundEntries.CHEMICAL)
 
-    event
-        .create("celestial_post_box")
-        .category("multiblock")
-        // .setEUIO("in")
-        .setMaxIOSize(9, 9, 4, 4)
-        .setSlotOverlay(false, false, GuiTextures.ARROW_INPUT_OVERLAY)
-        .setSound(GTSoundEntries.COMPUTATION)
+    // event
+    //     .create("celestial_post_box")
+    //     .category("multiblock")
+    //     // .setEUIO("in")
+    //     .setMaxIOSize(9, 9, 4, 4)
+    //     .setSlotOverlay(false, false, GuiTextures.ARROW_INPUT_OVERLAY)
+    //     .setSound(GTSoundEntries.COMPUTATION)
 
     event
         .create("helper_software_installation_unit")
@@ -182,48 +182,48 @@ GTCEuStartupEvents.registry("gtceu:machine", (event) => {
         .workableCasingModel("gtceu:block/casings/solid/machine_casing_clean_stainless_steel", "kubejs:block/multiblock/large_helper_assembler")
 
     event
-        .create("celestial_post_box", "multiblock")
-        .rotationState(RotationState.NON_Y_AXIS)
-        .recipeTypes("celestial_post_box")
-        .recipeModifiers([GTRecipeModifiers.OC_NON_PERFECT])
+        // .create("celestial_post_box", "multiblock")
+        // .rotationState(RotationState.NON_Y_AXIS)
+        // .recipeTypes("celestial_post_box")
+        // .recipeModifiers([GTRecipeModifiers.OC_NON_PERFECT])
 
-        // base block appearance
-        .appearanceBlock(() => Block.getBlock("kubejs:ostrum_casing"))
+        // // base block appearance
+        // .appearanceBlock(() => Block.getBlock("kubejs:ostrum_casing"))
 
-        .pattern((definition) =>
-            FactoryBlockPattern.start()
+        // .pattern((definition) =>
+        //     FactoryBlockPattern.start()
 
-                .aisle("AAAAA", "ABBBA", "ABBBA", "ABBBA", "AAAAA")
-                .aisle("ABBBA", "TECET", "TECET", "TECET", "ACCCA")
-                .aisle("ABBBA", "TCDCT", "TCDCT", "TCDCT", "ACCCA")
-                .aisle("ABBBA", "TECET", "TECET", "TECET", "ACCCA")
-                .aisle("AA@AA", "ATTTA", "ATTTA", "ATTTA", "AAAAA")
+        //         .aisle("AAAAA", "ABBBA", "ABBBA", "ABBBA", "AAAAA")
+        //         .aisle("ABBBA", "TECET", "TECET", "TECET", "ACCCA")
+        //         .aisle("ABBBA", "TCDCT", "TCDCT", "TCDCT", "ACCCA")
+        //         .aisle("ABBBA", "TECET", "TECET", "TECET", "ACCCA")
+        //         .aisle("AA@AA", "ATTTA", "ATTTA", "ATTTA", "AAAAA")
 
-                .where("@", Predicates.controller(Predicates.blocks(definition.get())))
+        //         .where("@", Predicates.controller(Predicates.blocks(definition.get())))
 
-                .where(
-                    "A",
-                    Predicates.blocks("kubejs:ostrum_casing")
+        //         .where(
+        //             "A",
+        //             Predicates.blocks("kubejs:ostrum_casing")
 
-                        .or(Predicates.abilities(PartAbility.IMPORT_ITEMS).setMaxGlobalLimited(2).setPreviewCount(1))
-                        .or(Predicates.abilities(PartAbility.MAINTENANCE).setExactLimit(1))
-                        .or(Predicates.abilities(PartAbility.EXPORT_ITEMS).setMaxGlobalLimited(2).setPreviewCount(1))
-                        .or(Predicates.abilities(PartAbility.IMPORT_FLUIDS).setMaxGlobalLimited(2).setPreviewCount(1))
-                        .or(Predicates.abilities(PartAbility.INPUT_ENERGY).setMaxGlobalLimited(2).setPreviewCount(1))
-                ) // make sure this is inside the .where, otherwise it will break shit
+        //                 .or(Predicates.abilities(PartAbility.IMPORT_ITEMS).setMaxGlobalLimited(2).setPreviewCount(1))
+        //                 .or(Predicates.abilities(PartAbility.MAINTENANCE).setExactLimit(1))
+        //                 .or(Predicates.abilities(PartAbility.EXPORT_ITEMS).setMaxGlobalLimited(2).setPreviewCount(1))
+        //                 .or(Predicates.abilities(PartAbility.IMPORT_FLUIDS).setMaxGlobalLimited(2).setPreviewCount(1))
+        //                 .or(Predicates.abilities(PartAbility.INPUT_ENERGY).setMaxGlobalLimited(2).setPreviewCount(1))
+        //         ) // make sure this is inside the .where, otherwise it will break shit
 
-                .where("B", Predicates.blocks("gtceu:assembly_line_grating"))
-                .where("T", Predicates.blocks("gtceu:laminated_glass"))
-                .where("C", Predicates.blocks("gtceu:high_power_casing"))
-                .where("D", Predicates.blocks("gtceu:lunarium_block"))
-                .where("E", Predicates.blocks("gtceu:assembly_line_unit"))
+        //         .where("B", Predicates.blocks("gtceu:assembly_line_grating"))
+        //         .where("T", Predicates.blocks("gtceu:laminated_glass"))
+        //         .where("C", Predicates.blocks("gtceu:high_power_casing"))
+        //         .where("D", Predicates.blocks("gtceu:lunarium_block"))
+        //         .where("E", Predicates.blocks("gtceu:assembly_line_unit"))
 
-                .where(" ", Predicates.air())
+        //         .where(" ", Predicates.air())
 
-                .build()
-        )
+        //         .build()
+        // )
 
-        .workableCasingModel(`kubejs:block/casing/ostrum_casing`, `gtceu:block/machines/electrolyzer`)
+        // .workableCasingModel(`kubejs:block/casing/ostrum_casing`, `gtceu:block/machines/electrolyzer`)
 
     event
         .create("helper_software_installation_unit", "multiblock")
