@@ -158,19 +158,9 @@ StartupEvents.registry("item", (event) => {
     }
 
     function universalCircuitCreation(tier, colorExtra, displayName) {
-        if (colorExtra.match(/#[A-Fa-f0-9]{6,8}/)) {
-            event
-                .create(`${tier}_universal_circuit`)
-                .textureJson({ layer0: "kubejs:item/universal_circuit/circuit_base", layer1: "kubejs:item/universal_circuit/circuit_overlay" })
-                .color(1, colorExtra)
-                .displayName(displayName + " Universal Circuit")
-        } else {
-            event
-                .create(`${tier}_universal_circuit`)
-                .textureJson({ layer0: "kubejs:item/universal_circuit/circuit_base", layer1: "kubejs:item/universal_circuit/circuit_overlay" })
-                .color((itemstack, tintIndex) => (itemstack.nbt && itemstack.nbt[`color` + tintIndex] ? itemstack.nbt[`color` + tintIndex] : -1)) //Testin
-                .displayName(displayName + " Universal Circuit")
-        }
+        event
+        .create(`${tier}_universal_circuit`)
+        .displayName(displayName + " Universal Circuit")
     }
 
     //Test Circuit
