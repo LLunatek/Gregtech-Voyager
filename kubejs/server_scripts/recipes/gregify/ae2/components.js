@@ -204,13 +204,6 @@ ServerEvents.recipes((event) => {
         D: "gtceu:aluminium_plate"
     })
 
-    event.recipes.gtceu
-        .assembler('kubejs:dense_energy_cell')  
-        .itemInputs('1x ae2:engineering_processor', '8x ae2:energy_cell', 'gtceu:iv_machine_casing')
-        .itemOutputs('ae2:dense_energy_cell')
-        .duration(40)                                 
-        .EUt(1920)
-
     event.shaped(
         Item.of('ae2:advanced_card', 1), 
         [

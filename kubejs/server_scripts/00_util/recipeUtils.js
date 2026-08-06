@@ -10,7 +10,7 @@
  * @param {number} eut - eu/tick
  * @param {string} [helper] - helper to use
  */
-export function recipe_lcr(event, name, inputItems, inputFluids, outputItems, outputFluids, duration, eut, helper) {
+function recipe_lcr(event, name, inputItems, inputFluids, outputItems, outputFluids, duration, eut, helper) {
     if (!helper) {
         // cannot use $GTRecipeSchema$GTRecipeJS_ type here because it's all fucked up
         event.recipes.gtceu
@@ -47,7 +47,7 @@ export function recipe_lcr(event, name, inputItems, inputFluids, outputItems, ou
  * @param {number} eut - eu/tick
  * @param {string} [helper] - helper to use
  */
-export function recipe_centrifuge(event, name, inputItems, inputFluids, outputItems, outputFluids, duration, eut, helper) {
+function recipe_centrifuge(event, name, inputItems, inputFluids, outputItems, outputFluids, duration, eut, helper) {
     if (helper) {
         event.recipes.gtceu
             .centrifuge("kubejs:centrifuge_helper_" + name)
@@ -82,7 +82,7 @@ export function recipe_centrifuge(event, name, inputItems, inputFluids, outputIt
  * @param {number} duration - time in seconds
  * @param {number} eut - eu/tick
  */
-export function recipe_electrolyzer(event, name, inputItems, inputFluids, outputItems, outputFluids, duration, eut) {
+function recipe_electrolyzer(event, name, inputItems, inputFluids, outputItems, outputFluids, duration, eut) {
     event.recipes.gtceu
         .electrolyzer("kubejs:electrolyzer_" + name)
         .itemInputs(inputItems)
@@ -106,7 +106,7 @@ export function recipe_electrolyzer(event, name, inputItems, inputFluids, output
  * @param {string} [specialized] - specialization
  */
 
-export function recipe_chem_plant(event, name, inputItems, inputFluids, outputItems, outputFluids, duration, eut, temp, specialized) {
+function recipe_chem_plant(event, name, inputItems, inputFluids, outputItems, outputFluids, duration, eut, temp, specialized) {
     if (specialized) {
         event.recipes.gtceu
             .chemical_plant("kubejs:chemical_plant_" + name + "_" + specialized)
@@ -142,7 +142,7 @@ export function recipe_chem_plant(event, name, inputItems, inputFluids, outputIt
  * @param {*} eut
  * @param {*} time
  */
-export function recipe_mixer(event, name, ingredientsItem, fluidIngredients, itemOutputs, fluidOutputs, eut, time) {
+function recipe_mixer(event, name, ingredientsItem, fluidIngredients, itemOutputs, fluidOutputs, eut, time) {
     event.recipes.gtceu
         .mixer("kubejs:mixer_" + name)
         .itemInputs(ingredientsItem)
@@ -163,7 +163,7 @@ export function recipe_mixer(event, name, ingredientsItem, fluidIngredients, ite
  * @param {*} eut
  * @param {*} time
  */
-export function recipe_distillation(event, input, amt, itemOutput, fluidOutputs, eut, time) {
+function recipe_distillation(event, input, amt, itemOutput, fluidOutputs, eut, time) {
     event.recipes.gtceu
         .distillation_tower(`kubejs:${input}_distilling`)
         .inputFluids(`kubejs:${input} ${amt}`)
@@ -181,7 +181,7 @@ export function recipe_distillation(event, input, amt, itemOutput, fluidOutputs,
  * @param {*} eut
  * @param {*} time
  */
-export function recipe_macerator(event, inputItem, outputItem, eut, time) {
+function recipe_macerator(event, inputItem, outputItem, eut, time) {
     event.recipes.gtceu
         .macerator(outputItem + "_macerator")
         .itemInputs(inputItem)
@@ -202,7 +202,7 @@ export function recipe_macerator(event, inputItem, outputItem, eut, time) {
  * @param {number} duration - time in seconds
  * @param {number} eut - eu/tick
  */
-export function recipe_radiation_chamber(event, name, inputItems, inputFluids, pt, outputItems, outputFluids, eut, duration) {
+function recipe_radiation_chamber(event, name, inputItems, inputFluids, pt, outputItems, outputFluids, eut, duration) {
     event.recipes.gtceu
         .radiation_chamber("kubejs:" + name)
         .itemInputs(inputItems)
@@ -228,7 +228,7 @@ export function recipe_radiation_chamber(event, name, inputItems, inputFluids, p
  * @param {number} eut - eu/tick
  */
 
-export function recipe_teus_laser(event, output, inputItems, nonconsumed, inputFluids, outputFluids, eut, duration, concentration) {
+function recipe_teus_laser(event, output, inputItems, nonconsumed, inputFluids, outputFluids, eut, duration, concentration) {
     event.recipes.gtceu
         .beam_heating(`${output}_teus_laser`) // recipe ID
         .itemInputs(inputItems)
@@ -250,7 +250,7 @@ export function recipe_teus_laser(event, output, inputItems, nonconsumed, inputF
  * @param {number} duration - time in seconds
  * @param {number} eut - eu/tick
  */
-export function recipe_chem_bath(event, output, inputItems, inputFluids, eut, duration) {
+function recipe_chem_bath(event, output, inputItems, inputFluids, eut, duration) {
     event.recipes.gtceu
         .chemical_bath(`${output}_chem_bath`) // recipe ID
         .itemInputs(inputItems)

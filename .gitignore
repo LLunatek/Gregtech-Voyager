@@ -60,3 +60,9 @@ config/fml.toml
 /kubejs/config/probe-settings.json
 **/node_modules
 .vscode/probe.code-snippets
+user-prefs.json
+user-prefs.json
+kubejs/config/probejs.json
+*vscode*
+
+
