@@ -1,1 +1,2 @@
-Platform.mods.kubejs.name = 'Gregtech: Voyager'
+// @ts-nocheck
+Platform.mods.kubejs.name = "Gregtech: Voyager"

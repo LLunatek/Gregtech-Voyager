@@ -1,33 +1,34 @@
-
-StartupEvents.registry('block', event => {
-
-    event.create('desh_coil_block', 'gtceu:coil')
+StartupEvents.registry("block", (event) => {
+    event
+        .create("desh_coil_block", "gtceu:coil")
         .temperature(4500)
         .level(4)
         .energyDiscount(30)
         .tier(4)
-        .coilMaterial(() => GTMaterials.get('desh'))
+        .coilMaterial(() => GTMaterials.get("desh"))
         .hardness(5)
-        .soundType('metal')
-        .requiresTool(true);
+        .soundType("metal")
+        .requiresTool(true)
 
-    event.create('titanite_coil_block', 'gtceu:coil')
+    event
+        .create("titanite_coil_block", "gtceu:coil")
         .temperature(6500)
         .level(6)
         .energyDiscount(40)
         .tier(6)
-        .coilMaterial(() => GTMaterials.get('titanite'))
+        .coilMaterial(() => GTMaterials.get("titanite"))
         .hardness(5)
-        .soundType('metal')
-        .requiresTool(true);
+        .soundType("metal")
+        .requiresTool(true)
 
-    event.create('industrial_perfected_electrum_coil_block', 'gtceu:coil')
+    event
+        .create("industrial_perfected_electrum_coil_block", "gtceu:coil")
         .temperature(8100)
         .level(8)
         .energyDiscount(50)
         .tier(8)
-        .coilMaterial(() => GTMaterials.get('titanite'))
+        .coilMaterial(() => GTMaterials.get("titanite"))
         .hardness(5)
-        .soundType('metal')
-        .requiresTool(true);
-});
+        .soundType("metal")
+        .requiresTool(true)
+})

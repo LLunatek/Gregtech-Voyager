@@ -43,6 +43,8 @@ TrashSlotSaveState.json
 
 usercache.json
 
+user-prefs.json
+
 usernamecache.json
 *.zip
 config/oculus.properties
@@ -52,4 +54,15 @@ config/embeddium-options.json
 config/embeddium-mixins.properties
 config/embeddium-fingerprint.json
 config/fml.toml
+
+.probe
+/kubejs/**/jsconfig.json
+/kubejs/config/probe-settings.json
+**/node_modules
+.vscode/probe.code-snippets
 user-prefs.json
+user-prefs.json
+kubejs/config/probejs.json
+*vscode*
+
+

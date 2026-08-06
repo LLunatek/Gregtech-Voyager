@@ -1,90 +1,100 @@
-ServerEvents.recipes(event => {
-
-    const tiermap = 
-    {
-        "lv": 28,
-        "mv": 120,
-        "hv": 480,
-        "ev": 1920,
-        "iv": 7680,
-        "luv": 32768 * .9,
-        "zpm": 32768 * 4 * .9,
-        "uv": 32768 * 16 * .9
+ServerEvents.recipes((event) => {
+    /**
+     * @type {Record<string, number>}
+     */
+    const tiermap = {
+        lv: 28,
+        mv: 120,
+        hv: 480,
+        ev: 1920,
+        iv: 7680,
+        luv: 32768 * 0.9,
+        zpm: 32768 * 4 * 0.9,
+        uv: 32768 * 16 * 0.9
     }
 
     const tiers = ["mv", "hv", "ev", "iv", "luv"]
     const s_tiers = ["hv", "ev", "iv", "luv"]
 
-    const tierBaseGearMap = 
-    {
-        "lv": "tin_silver_alloy",
-        "mv": "fluxed_electrum",
-        "hv": "fluxed_cobalt_electrum",
-        "ev": "refined_fluxed_electrum",
-        "iv": "titanite_alloy",
-        "luv": "perfected_electrum",
+    /**
+     * @type {Record<string, string>}
+     */
+    const tierBaseGearMap = {
+        lv: "tin_silver_alloy",
+        mv: "fluxed_electrum",
+        hv: "fluxed_cobalt_electrum",
+        ev: "refined_fluxed_electrum",
+        iv: "titanite_alloy",
+        luv: "perfected_electrum"
         // "zpm": "",
         // "uv": ""
     }
 
-    const tierBaseMatMap =
-    {
-        "lv": "steel",
-        "mv": "aluminium",
-        "hv": "stainless_steel",
-        "ev": "titanium",
-        "iv": "tungsten_steel",
-        "luv": "hsss",
+    /**
+     * @type {Record<string, string>}
+     */
+    const tierBaseMatMap = {
+        lv: "steel",
+        mv: "aluminium",
+        hv: "stainless_steel",
+        ev: "titanium",
+        iv: "tungsten_steel",
+        luv: "hsss"
         // "zpm": "",
         // "uv": ""
     }
 
-    const tierSpecialMatMap =
-    {
-        "mv": "magnesium_diboride",
-        "hv": "red_steel",
-        "ev": "lunarium",
-        "iv": "titanex-879-htb",
-        "luv": "trellium",
+    /**
+     * @type {Record<string, string>}
+     */
+    const tierSpecialMatMap = {
+        mv: "magnesium_diboride",
+        hv: "red_steel",
+        ev: "lunarium",
+        iv: "titanex-879-htb",
+        luv: "trellium"
         // "zpm": "",
         // "uv": ""
     }
 
-    const tierCoilMatMap =
-    {
-        "mv": "gtceu:kanthal",
-        "hv": "gtceu:nichrome",
-        "ev": "kubejs:desh",
-        "iv": "kubejs:titanite",
-        "luv": "kubejs:industrial_perfected_electrum",
+    /**
+     * @type {Record<string, string>}
+     */
+    const tierCoilMatMap = {
+        mv: "gtceu:kanthal",
+        hv: "gtceu:nichrome",
+        ev: "kubejs:desh",
+        iv: "kubejs:titanite",
+        luv: "kubejs:industrial_perfected_electrum"
         // "zpm": "",
         // "uv": ""
     }
 
-    const tierMaxCircuitTierMap =
-    {
-        "mv": "hv",
-        "hv": "iv",
-        "ev": "luv",
-        "iv": "zpm",
-        "luv": "uv",
+    /**
+     * @type {Record<string, string>}
+     */
+    const tierMaxCircuitTierMap = {
+        mv: "hv",
+        hv: "iv",
+        ev: "luv",
+        iv: "zpm",
+        luv: "uv"
         // "zpm": "",
         // "uv": ""
     }
 
-    function generic_helper_hull_recipe(tier, frame_mat, platemat, fluids)
-    {
- 
-            event.recipes.gtceu.helper_factory(`kubejs:${tier}_generic_helper_hull`)
-                .itemInputs(`4x gtceu:${frame_mat}_frame`,`kubejs:${tier}_helper_computation_array`, `8x gtceu:double_${platemat}_plate`,`2x gtceu:${tier}_robot_arm`)
-                .inputFluids(fluids)
-                .itemOutputs(`voyagercore:${tier}_generic_helper_hull`)
-                .duration(20 * 120)
-                .EUt(tiermap[tier])
-        
-        
+    // @ts-ignore
+    function generic_helper_hull_recipe(tier, frame_mat, platemat, fluids) {
+        event.recipes.gtceu
+            .helper_factory(`kubejs:${tier}_generic_helper_hull`)
+            .itemInputs(`4x gtceu:${frame_mat}_frame`, `kubejs:${tier}_helper_computation_array`, `8x gtceu:double_${platemat}_plate`, `2x gtceu:${tier}_robot_arm`)
+            .inputFluids(fluids)
+            .itemOutputs(`voyagercore:${tier}_generic_helper_hull`)
+            .duration(20 * 120)
+            .EUt(tiermap[tier])
     }
 
+    // @ts-ignore
     function specialized_helper_hull_recipe(tier, frame_mat, platemat, fluids)
     {
  
@@ -111,115 +121,162 @@ ServerEvents.recipes(event => {
         
     }
 
-    function base_module_recipe(tier, gearmat, platemat, fluids, extra_inputs)
-    {
-        if(extra_inputs)
-        {
-            event.recipes.gtceu.assembler(`kubejs:${tier}_helper_module`)
+    // @ts-ignore
+    function base_module_recipe(tier, gearmat, platemat, fluids, extra_inputs) {
+        if (extra_inputs) {
+            event.recipes.gtceu
+                .assembler(`kubejs:${tier}_helper_module`)
                 .itemInputs(`4x gtceu:${platemat}_plate`, `4x gtceu:small_${gearmat}_gear`, `2x #gtceu:circuits/${tier}`, `2x gtceu:${tier}_emitter`)
                 .itemInputs(extra_inputs)
                 .inputFluids(fluids)
                 .itemOutputs(`voyagercore:${tier}_helper_module`)
                 .duration(20 * 30)
                 .EUt(tiermap[tier])
-        }
-        else
-        {
-            event.recipes.gtceu.assembler(`kubejs:${tier}_helper_module`)
+        } else {
+            event.recipes.gtceu
+                .assembler(`kubejs:${tier}_helper_module`)
                 .itemInputs(`4x gtceu:${platemat}_plate`, `4x gtceu:small_${gearmat}_gear`, `2x #gtceu:circuits/${tier}`, `2x gtceu:${tier}_emitter`)
                 .inputFluids(fluids)
                 .itemOutputs(`voyagercore:${tier}_helper_module`)
                 .duration(20 * 30)
                 .EUt(tiermap[tier]) // trolol
         }
-        
     }
 
-    function output_module_recipe(tier, ctier, coilMat, platemat)
-    {
-        event.recipes.gtceu.assembler(`kubejs:${tier}_output_helper_module`)
-            .itemInputs(`voyagercore:${tier}_speed_helper_module`,
-                        `voyagercore:${tier}_efficiency_helper_module`,
-                        `voyagercore:${tier}_parallel_helper_module`, `8x ${coilMat}_coil_block`, `2x #gtceu:circuits/${ctier}`, `2x gtceu:${tier}_field_generator`)
+    // @ts-ignore
+    function output_module_recipe(tier, ctier, coilMat, _platemat) {
+        event.recipes.gtceu
+            .assembler(`kubejs:${tier}_output_helper_module`)
+            .itemInputs(
+                `voyagercore:${tier}_speed_helper_module`,
+                `voyagercore:${tier}_efficiency_helper_module`,
+                `voyagercore:${tier}_parallel_helper_module`,
+                `8x ${coilMat}_coil_block`,
+                `2x #gtceu:circuits/${ctier}`,
+                `2x gtceu:${tier}_field_generator`
+            )
             .itemOutputs(`voyagercore:${tier}_output_helper_module`)
             .duration(20 * 30)
-        
     }
 
-    function speed_module_recipe(tier, ctier, wiremat, platemat, extra_inputs)
-    {
-        if(extra_inputs)
-        {
-            event.recipes.gtceu.assembler(`kubejs:${tier}_speed_helper_module`)
-                .itemInputs(`voyagercore:${tier}_helper_module`, `8x gtceu:${platemat}_plate`, `32x gtceu:fine_${wiremat}_wire`, `4x #gtceu:circuits/${ctier}`, `2x gtceu:${tier}_electric_piston`, `gtceu:${tier}_transformer_1a`)
+    // @ts-ignore
+    function speed_module_recipe(tier, ctier, wiremat, platemat, extra_inputs) {
+        if (extra_inputs) {
+            event.recipes.gtceu
+                .assembler(`kubejs:${tier}_speed_helper_module`)
+                .itemInputs(
+                    `voyagercore:${tier}_helper_module`,
+                    `8x gtceu:${platemat}_plate`,
+                    `32x gtceu:fine_${wiremat}_wire`,
+                    `4x #gtceu:circuits/${ctier}`,
+                    `2x gtceu:${tier}_electric_piston`,
+                    `gtceu:${tier}_transformer_1a`
+                )
                 .itemInputs(extra_inputs)
                 .itemOutputs(`voyagercore:${tier}_speed_helper_module`)
                 .duration(20 * 30)
                 .EUt(tiermap[tier]) // trolol
-        }
-        else
-        {
-            event.recipes.gtceu.assembler(`kubejs:${tier}_speed_helper_module`)
-                .itemInputs(`voyagercore:${tier}_helper_module`, `8x gtceu:${platemat}_plate`, `32x gtceu:fine_${wiremat}_wire`, `4x #gtceu:circuits/${ctier}`, `2x gtceu:${tier}_electric_piston`, `gtceu:${tier}_transformer_1a`)
+        } else {
+            event.recipes.gtceu
+                .assembler(`kubejs:${tier}_speed_helper_module`)
+                .itemInputs(
+                    `voyagercore:${tier}_helper_module`,
+                    `8x gtceu:${platemat}_plate`,
+                    `32x gtceu:fine_${wiremat}_wire`,
+                    `4x #gtceu:circuits/${ctier}`,
+                    `2x gtceu:${tier}_electric_piston`,
+                    `gtceu:${tier}_transformer_1a`
+                )
                 .itemOutputs(`voyagercore:${tier}_speed_helper_module`)
                 .duration(20 * 30)
                 .EUt(tiermap[tier]) // trolol
         }
-        
     }
 
-    function efficiency_module_recipe(tier, ctier, wiremat, platemat, fluids, extra_inputs)
-    {
-        if(extra_inputs)
-        {
-            event.recipes.gtceu.assembler(`kubejs:${tier}_efficiency_helper_module`)
-                .itemInputs(`voyagercore:${tier}_helper_module`, `4x gtceu:long_${platemat}_rod`, `32x gtceu:fine_${wiremat}_wire`, `2x #gtceu:circuits/${ctier}`, `2x gtceu:${tier}_electric_pump`, `gtceu:${tier}_transformer_1a`)
+    // @ts-ignore
+    function efficiency_module_recipe(tier, ctier, wiremat, platemat, fluids, extra_inputs) {
+        if (extra_inputs) {
+            event.recipes.gtceu
+                .assembler(`kubejs:${tier}_efficiency_helper_module`)
+                .itemInputs(
+                    `voyagercore:${tier}_helper_module`,
+                    `4x gtceu:long_${platemat}_rod`,
+                    `32x gtceu:fine_${wiremat}_wire`,
+                    `2x #gtceu:circuits/${ctier}`,
+                    `2x gtceu:${tier}_electric_pump`,
+                    `gtceu:${tier}_transformer_1a`
+                )
                 .itemInputs(extra_inputs)
                 .inputFluids(fluids)
                 .itemOutputs(`voyagercore:${tier}_efficiency_helper_module`)
                 .duration(20 * 30)
                 .EUt(tiermap[tier]) // trolol
-        }
-        else
-        {
-            event.recipes.gtceu.assembler(`kubejs:${tier}_efficiency_helper_module`)
-                .itemInputs(`voyagercore:${tier}_helper_module`, `4x gtceu:long_${platemat}_rod`, `32x gtceu:fine_${wiremat}_wire`, `2x #gtceu:circuits/${ctier}`, `2x gtceu:${tier}_electric_pump`, `gtceu:${tier}_transformer_1a`)
+        } else {
+            event.recipes.gtceu
+                .assembler(`kubejs:${tier}_efficiency_helper_module`)
+                .itemInputs(
+                    `voyagercore:${tier}_helper_module`,
+                    `4x gtceu:long_${platemat}_rod`,
+                    `32x gtceu:fine_${wiremat}_wire`,
+                    `2x #gtceu:circuits/${ctier}`,
+                    `2x gtceu:${tier}_electric_pump`,
+                    `gtceu:${tier}_transformer_1a`
+                )
                 .inputFluids(fluids)
                 .itemOutputs(`voyagercore:${tier}_efficiency_helper_module`)
                 .duration(20 * 30)
                 .EUt(tiermap[tier]) // trolol
         }
-        
     }
 
-    function basic_module_recipe(tier, ctier, wiremat, platemat, extra_inputs)
-    {
-        if(extra_inputs)
-        {
-            event.recipes.gtceu.assembler(`kubejs:${tier}_basic_helper_module`)
-                .itemInputs(`voyagercore:${tier}_helper_module`, `4x gtceu:${platemat}_plate`, `32x gtceu:fine_${wiremat}_wire`, `2x #gtceu:circuits/${ctier}`, `1x gtceu:${tier}_electric_pump`, `1x gtceu:${tier}_electric_piston`)
+    // @ts-ignore
+    function basic_module_recipe(tier, ctier, wiremat, platemat, extra_inputs) {
+        if (extra_inputs) {
+            event.recipes.gtceu
+                .assembler(`kubejs:${tier}_basic_helper_module`)
+                .itemInputs(
+                    `voyagercore:${tier}_helper_module`,
+                    `4x gtceu:${platemat}_plate`,
+                    `32x gtceu:fine_${wiremat}_wire`,
+                    `2x #gtceu:circuits/${ctier}`,
+                    `1x gtceu:${tier}_electric_pump`,
+                    `1x gtceu:${tier}_electric_piston`
+                )
                 .itemInputs(extra_inputs)
                 .itemOutputs(`voyagercore:${tier}_basic_helper_module`)
                 .duration(20 * 30)
                 .EUt(tiermap[tier]) // trolol
-        }
-        else
-        {
-            event.recipes.gtceu.assembler(`kubejs:${tier}_basic_helper_module`)
-                .itemInputs(`voyagercore:${tier}_helper_module`, `4x gtceu:${platemat}_plate`, `32x gtceu:fine_${wiremat}_wire`, `2x #gtceu:circuits/${ctier}`, `1x gtceu:${tier}_electric_pump`, `1x gtceu:${tier}_electric_piston`, `2x gtceu:${tier}_electric_motor`)
+        } else {
+            event.recipes.gtceu
+                .assembler(`kubejs:${tier}_basic_helper_module`)
+                .itemInputs(
+                    `voyagercore:${tier}_helper_module`,
+                    `4x gtceu:${platemat}_plate`,
+                    `32x gtceu:fine_${wiremat}_wire`,
+                    `2x #gtceu:circuits/${ctier}`,
+                    `1x gtceu:${tier}_electric_pump`,
+                    `1x gtceu:${tier}_electric_piston`,
+                    `2x gtceu:${tier}_electric_motor`
+                )
                 .itemOutputs(`voyagercore:${tier}_basic_helper_module`)
                 .duration(20 * 30)
                 .EUt(tiermap[tier]) // trolol
         }
-        
     }
 
-    function parallel_module_recipe(tier, ctier, wiremat, wiremat2, extra_inputs)
-    {
-        if(extra_inputs)
-        {
-            event.recipes.gtceu.assembler(`kubejs:${tier}_parallel_helper_module`)
-                .itemInputs(`voyagercore:${tier}_helper_module`, `2x gtceu:${wiremat2}_octal_wire`, `32x gtceu:fine_${wiremat}_wire`, `2x #gtceu:circuits/${ctier}`, `1x gtceu:${tier}_electric_pump`, `1x gtceu:${tier}_electric_piston`)
+    // @ts-ignore
+    function parallel_module_recipe(tier, ctier, wiremat, wiremat2, extra_inputs) {
+        if (extra_inputs) {
+            event.recipes.gtceu
+                .assembler(`kubejs:${tier}_parallel_helper_module`)
+                .itemInputs(
+                    `voyagercore:${tier}_helper_module`,
+                    `2x gtceu:${wiremat2}_octal_wire`,
+                    `32x gtceu:fine_${wiremat}_wire`,
+                    `2x #gtceu:circuits/${ctier}`,
+                    `1x gtceu:${tier}_electric_pump`,
+                    `1x gtceu:${tier}_electric_piston`
+                )
                 .itemInputs(extra_inputs)
                 .itemOutputs(`voyagercore:${tier}_parallel_helper_module`)
                 .duration(20 * 30)
@@ -302,7 +359,7 @@ ServerEvents.recipes(event => {
 
     tiers.forEach(tier => {
         base_module_recipe(tier, tierBaseGearMap[tier], tierBaseMatMap[tier], "gtceu:polyethylene 1000")
-    });
+    })
 
     tiers.forEach(tier => generic_helper_hull_recipe(tier, tierBaseMatMap[tier], tierBaseMatMap[tier], "gtceu:soldering_alloy 288"))
     s_tiers.forEach(tier => specialized_helper_hull_recipe(tier, tierBaseMatMap[tier], tierSpecialMatMap[tier], "gtceu:soldering_alloy 576"))
@@ -425,6 +482,7 @@ ServerEvents.recipes(event => {
         }
     )
 
+    // @ts-ignore
     event.shaped(
         Item.of('gtceu:mv_helper_factory', 1), // arg 1: output
         [
@@ -441,6 +499,7 @@ ServerEvents.recipes(event => {
         }
     )
 
+    // @ts-ignore
     event.shaped(
         Item.of('gtceu:hv_helper_factory', 1), // arg 1: output
         [
@@ -456,6 +515,4 @@ ServerEvents.recipes(event => {
             E: '#gtceu:circuits/hv'
         }
     )
-
-    
 })

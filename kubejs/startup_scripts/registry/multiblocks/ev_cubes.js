@@ -1,15 +1,9 @@
-
-GTCEuStartupEvents.registry("gtceu:recipe_type", event => {
-
-
-});
-
-GTCEuStartupEvents.registry("gtceu:machine", event => {
-
-    function cubeMulti(type, casing) // note to self -> clean up the rest of the code so it looks like this. good lord this codebase is a MESS rn
-    {
-
-        event.create(`cube_${type}`, 'multiblock')
+// @ts-nocheck
+GTCEuStartupEvents.registry("gtceu:machine", (event) => {
+    function cubeMulti(type, casing) {
+        // note to self -> clean up the rest of the code so it looks like this. good lord this codebase is a MESS rn
+        event
+            .create(`cube_${type}`, "multiblock")
             .rotationState(RotationState.NON_Y_AXIS)
             .recipeType(type)
             .recipeModifiers([GTRecipeModifiers.OC_NON_PERFECT, GTRecipeModifiers.BATCH_MODE, $VoyagerCoreRecipeModifiers.CUBE_BOOSTING])
@@ -34,10 +28,10 @@ GTCEuStartupEvents.registry("gtceu:machine", event => {
 
     }
 
-    function cubeVMulti(type, casing) // note to self -> clean up the rest of the code so it looks like this. good lord this codebase is a MESS rn
-    {
-
-        event.create(`cube_${type}`, 'multiblock')
+    function cubeVMulti(type, casing) {
+        // note to self -> clean up the rest of the code so it looks like this. good lord this codebase is a MESS rn
+        event
+            .create(`cube_${type}`, "multiblock")
             .rotationState(RotationState.NON_Y_AXIS)
             .recipeType(type)
             .recipeModifiers([GTRecipeModifiers.OC_NON_PERFECT, GTRecipeModifiers.BATCH_MODE, $VoyagerCoreRecipeModifiers.CUBE_BOOSTING])
@@ -62,10 +56,10 @@ GTCEuStartupEvents.registry("gtceu:machine", event => {
 
     }
 
-    function cubeMultiCustom(type, casing) // note to self -> clean up the rest of the code so it looks like this. good lord this codebase is a MESS rn
-    {
-
-        event.create(`cube_${type}`, 'multiblock')
+    function cubeMultiCustom(type, casing) {
+        // note to self -> clean up the rest of the code so it looks like this. good lord this codebase is a MESS rn
+        event
+            .create(`cube_${type}`, "multiblock")
             .rotationState(RotationState.NON_Y_AXIS)
             .recipeType(type)
             .recipeModifiers([GTRecipeModifiers.BATCH_MODE, $VoyagerCoreRecipeModifiers.CUBE_BOOSTING, GTRecipeModifiers.OC_NON_PERFECT])
@@ -90,12 +84,12 @@ GTCEuStartupEvents.registry("gtceu:machine", event => {
 
     }
 
-    cubeMulti('centrifuge', 'durable_desh')
-    cubeMulti('electrolyzer', 'firm_ultimet')
-    cubeMulti('macerator', 'stout_titanium_carbide')
-    cubeMultiCustom('oven', 'radiation_proof_lead')
-    cubeMulti('thermal_centrifuge', 'heat_resistant_refined_fluxed_electrum')
-    cubeVMulti('autoclave', 'condensation_resistant_tungsten')
-    cubeVMulti('assembler', 'platinum')
+    cubeMulti("centrifuge", "durable_desh")
+    cubeMulti("electrolyzer", "firm_ultimet")
+    cubeMulti("macerator", "stout_titanium_carbide")
+    cubeMultiCustom("oven", "radiation_proof_lead")
+    cubeMulti("thermal_centrifuge", "heat_resistant_refined_fluxed_electrum")
+    cubeVMulti("autoclave", "condensation_resistant_tungsten")
+    cubeVMulti("assembler", "platinum")
     // cubeMulti('radiation_chamber', 'radiation_proof_lead')
-});
+})

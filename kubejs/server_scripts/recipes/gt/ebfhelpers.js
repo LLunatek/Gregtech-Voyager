@@ -1,115 +1,128 @@
-ServerEvents.recipes(event => {
-
-
-    function add_helper_recipe(name, input, fluid, output, helper, ogtime, ogeut, temp)
-    {
-       event.recipes.gtceu.electric_blast_furnace("kubejs:" + name + '_' + helper)
-        .itemInputs(input)
-        .notConsumable('kubejs:' + helper)
-        .itemOutputs(output)
-        .inputFluids(fluid)
-        .circuit(3)
-        .duration((ogtime * 20)*.85) // 60 sec
-        .EUt(ogeut * .85)
-        .blastFurnaceTemp(temp); 
+ServerEvents.recipes((event) => {
+    /**
+     *
+     * @param {*} name
+     * @param {*} input
+     * @param {*} fluid
+     * @param {*} output
+     * @param {*} helper
+     * @param {*} ogtime
+     * @param {*} ogeut
+     * @param {*} temp
+     */
+    function add_helper_recipe(name, input, fluid, output, helper, ogtime, ogeut, temp) {
+        event.recipes.gtceu
+            .electric_blast_furnace("kubejs:" + name + "_" + helper)
+            .itemInputs(input)
+            .notConsumable("kubejs:" + helper)
+            .itemOutputs(output)
+            .inputFluids(fluid)
+            .circuit(3)
+            .duration(ogtime * 20 * 0.85) // 60 sec
+            .EUt(ogeut * 0.85)
+            .blastFurnaceTemp(temp)
     }
 
-    add_helper_recipe('iridium', 'gtceu:iridium_dust', 'gtceu:argon 50', 'gtceu:hot_iridium_ingot', 'hv_ebf_helper', 36.85, 7680, 4500)
-    add_helper_recipe('titanium', '2x gtceu:magnesium_dust', 'gtceu:titanium_tetrachloride 800', ['gtceu:hot_titanium_ingot', '5x gtceu:magnesium_chloride_dust'], 'mv_ebf_helper', 40, 480, 2141)
-    add_helper_recipe('titanium_carbide', 'gtceu:titanium_carbide_dust', 'gtceu:helium 100', 'gtceu:hot_titanium_carbide_ingot', 'hv_ebf_helper', 33.85, 1920, 3430)
-    add_helper_recipe('titanium_dust', 'gtceu:titanium_dust', 'gtceu:helium 100', 'gtceu:hot_titanium_ingot', 'hv_ebf_helper', 50.25, 480, 1941)
-    add_helper_recipe('tungsten', 'gtceu:tungsten_dust', 'gtceu:helium 100', 'gtceu:hot_tungsten_ingot', 'hv_ebf_helper', 60.3, 1920, 3600)
-    add_helper_recipe('osmium', 'gtceu:osmium_dust', 'gtceu:argon 50', 'gtceu:hot_osmium_ingot', 'ev_ebf_helper', 33.5, 30720, 4500)
+    add_helper_recipe("iridium", "gtceu:iridium_dust", "gtceu:argon 50", "gtceu:hot_iridium_ingot", "hv_ebf_helper", 36.85, 7680, 4500)
+    add_helper_recipe("titanium", "2x gtceu:magnesium_dust", "gtceu:titanium_tetrachloride 800", ["gtceu:hot_titanium_ingot", "5x gtceu:magnesium_chloride_dust"], "mv_ebf_helper", 40, 480, 2141)
+    add_helper_recipe("titanium_carbide", "gtceu:titanium_carbide_dust", "gtceu:helium 100", "gtceu:hot_titanium_carbide_ingot", "hv_ebf_helper", 33.85, 1920, 3430)
+    add_helper_recipe("titanium_dust", "gtceu:titanium_dust", "gtceu:helium 100", "gtceu:hot_titanium_ingot", "hv_ebf_helper", 50.25, 480, 1941)
+    add_helper_recipe("tungsten", "gtceu:tungsten_dust", "gtceu:helium 100", "gtceu:hot_tungsten_ingot", "hv_ebf_helper", 60.3, 1920, 3600)
+    add_helper_recipe("osmium", "gtceu:osmium_dust", "gtceu:argon 50", "gtceu:hot_osmium_ingot", "ev_ebf_helper", 33.5, 30720, 4500)
 
-    event.recipes.gtceu.electric_blast_furnace("kubejs:aluminum_helper")
+    event.recipes.gtceu
+        .electric_blast_furnace("kubejs:aluminum_helper")
         .itemInputs("gtceu:aluminium_dust")
-        .notConsumable('kubejs:lv_ebf_helper')
+        .notConsumable("kubejs:lv_ebf_helper")
         .itemOutputs("gtceu:aluminium_ingot")
         .circuit(3)
-        .duration((44.2*20)*.85) // 60 sec
+        .duration(44.2 * 20 * 0.85) // 60 sec
         .EUt(102)
-        .blastFurnaceTemp(1700);
+        .blastFurnaceTemp(1700)
 
-    event.recipes.gtceu.electric_blast_furnace("kubejs:aluminum_fluid_helper")
+    event.recipes.gtceu
+        .electric_blast_furnace("kubejs:aluminum_fluid_helper")
         .itemInputs("gtceu:aluminium_dust")
-        .notConsumable('kubejs:lv_ebf_helper')
+        .notConsumable("kubejs:lv_ebf_helper")
         .itemOutputs("gtceu:aluminium_ingot")
         .inputFluids("gtceu:nitrogen 820")
-        .duration((29.6*20)*.85) // 60 sec
+        .duration(29.6 * 20 * 0.85) // 60 sec
         .circuit(4)
         .EUt(102)
-        .blastFurnaceTemp(1700);
+        .blastFurnaceTemp(1700)
 
-    event.recipes.gtceu.electric_blast_furnace("kubejs:ssteel_helper")
+    event.recipes.gtceu
+        .electric_blast_furnace("kubejs:ssteel_helper")
         .itemInputs("gtceu:stainless_steel_dust")
-        .notConsumable('kubejs:mv_ebf_helper')
+        .notConsumable("kubejs:mv_ebf_helper")
         .itemOutputs("gtceu:stainless_steel_ingot")
-        .duration((55*20)*.85) // 60 sec
+        .duration(55 * 20 * 0.85) // 60 sec
         .circuit(3)
         .EUt(480)
-        .blastFurnaceTemp(1700);
+        .blastFurnaceTemp(1700)
 
-    event.recipes.gtceu.electric_blast_furnace("kubejs:ssteel_fluid_helper")
+    event.recipes.gtceu
+        .electric_blast_furnace("kubejs:ssteel_fluid_helper")
         .itemInputs("gtceu:stainless_steel_dust")
-        .notConsumable('kubejs:mv_ebf_helper')
+        .notConsumable("kubejs:mv_ebf_helper")
         .itemOutputs("gtceu:stainless_steel_ingot")
         .inputFluids("gtceu:nitrogen 820")
         .circuit(4)
-        .duration((36.85*20)*.85) // 60 sec
-        .EUt(480 * .85)
-        .blastFurnaceTemp(1700);
+        .duration(36.85 * 20 * 0.85) // 60 sec
+        .EUt(480 * 0.85)
+        .blastFurnaceTemp(1700)
 
-        event.recipes.gtceu.electric_blast_furnace("kubejs:fluxed_electrum_helper")
+    event.recipes.gtceu
+        .electric_blast_furnace("kubejs:fluxed_electrum_helper")
         .itemInputs("gtceu:fluxed_electrum_dust")
         .itemOutputs("gtceu:fluxed_electrum_ingot")
-        .notConsumable('kubejs:lv_ebf_helper')
+        .notConsumable("kubejs:lv_ebf_helper")
         .circuit(3)
         // .inputFluids("gtceu:nitrogen 1000")
-        .duration(.85 * (20 * 56)) 
-        .EUt(120 * .85)
-        .blastFurnaceTemp(1200);
+        .duration(0.85 * (20 * 56))
+        .EUt(120 * 0.85)
+        .blastFurnaceTemp(1200)
 
-    event.recipes.gtceu.electric_blast_furnace("kubejs:fluxed_electrum_c2_helper")
+    event.recipes.gtceu
+        .electric_blast_furnace("kubejs:fluxed_electrum_c2_helper")
         .itemInputs("gtceu:fluxed_electrum_dust")
         .itemOutputs("gtceu:fluxed_electrum_ingot")
-        .notConsumable('kubejs:lv_ebf_helper')
+        .notConsumable("kubejs:lv_ebf_helper")
         .circuit(4)
         .inputFluids("gtceu:nitrogen 1000")
-        .duration((20 * 56) * .67 * .85) 
-        .EUt(120 * .85)
-        .blastFurnaceTemp(1200);
+        .duration(20 * 56 * 0.67 * 0.85)
+        .EUt(120 * 0.85)
+        .blastFurnaceTemp(1200)
 
-    event.recipes.gtceu.electric_blast_furnace("kubejs:fluxed_cobalt_electrum_helper")
+    event.recipes.gtceu
+        .electric_blast_furnace("kubejs:fluxed_cobalt_electrum_helper")
         .itemInputs("gtceu:fluxed_cobalt_electrum_dust")
         .itemOutputs("gtceu:fluxed_cobalt_electrum_ingot")
-        .notConsumable('kubejs:mv_ebf_helper')
+        .notConsumable("kubejs:mv_ebf_helper")
         .circuit(3)
-        .duration(.85 * (20 * 66)) 
-        .EUt(480 * .85)
-        .blastFurnaceTemp(2000);
+        .duration(0.85 * (20 * 66))
+        .EUt(480 * 0.85)
+        .blastFurnaceTemp(2000)
 
-    event.recipes.gtceu.electric_blast_furnace("kubejs:fluxed_cobalt_electrum_ingot_c2_helper")
+    event.recipes.gtceu
+        .electric_blast_furnace("kubejs:fluxed_cobalt_electrum_ingot_c2_helper")
         .itemInputs("gtceu:fluxed_cobalt_electrum_dust")
         .itemOutputs("gtceu:fluxed_cobalt_electrum_ingot")
-        .notConsumable('kubejs:mv_ebf_helper')
+        .notConsumable("kubejs:mv_ebf_helper")
         .circuit(4)
         .inputFluids("gtceu:nitrogen 1000")
-        .duration((20 * 66) * .67 * .85) 
+        .duration(20 * 66 * 0.67 * 0.85)
         .EUt(480)
-        .blastFurnaceTemp(2000);
+        .blastFurnaceTemp(2000)
 
-    event.recipes.gtceu.electric_blast_furnace("kubejs:refined_fluxed_electrum_helper")
+    event.recipes.gtceu
+        .electric_blast_furnace("kubejs:refined_fluxed_electrum_helper")
         .itemInputs("2x kubejs:refined_fluxed_electrum_crystal")
         .itemOutputs("1x gtceu:hot_refined_fluxed_electrum_ingot")
-        .notConsumable('kubejs:hv_ebf_helper')
+        .notConsumable("kubejs:hv_ebf_helper")
         .circuit(2)
         .inputFluids("kubejs:blasting_gas 85")
-        .duration(20 * 50 * .85) 
-        .EUt(1925 * .85)
-        .blastFurnaceTemp(3600);
-
-
-
-
-
-});
+        .duration(20 * 50 * 0.85)
+        .EUt(1925 * 0.85)
+        .blastFurnaceTemp(3600)
+})
