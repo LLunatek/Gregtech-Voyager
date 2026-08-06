@@ -22,6 +22,21 @@ ServerEvents.recipes((event) => {
     )
 
     // @ts-ignore
+        event.shaped(
+                Item.of('tconstruct:pattern', 8), // arg 1: output
+                [
+                    'ABA',
+                    'CDC', // arg 2: the shape (array of strings)
+                    'ABA'
+                ],
+                {
+                    A: 'gtceu:wood_screw',
+                    B: 'minecraft:stick',
+                    C: 'gtceu:wood_bolt',
+                    D: '#minecraft:planks'
+                }
+    );
+
     event.shaped(
         Item.of("tconstruct:tinker_station", 1), // arg 1: output
         [
