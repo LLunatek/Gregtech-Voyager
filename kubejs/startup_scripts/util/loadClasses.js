@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 // priority: 1000000
 
 const $VoyagerCoreRecipeModifiers = Java.loadClass("com.jzells.voyagercore.common.data.VoyagerCoreRecipeModifiers")

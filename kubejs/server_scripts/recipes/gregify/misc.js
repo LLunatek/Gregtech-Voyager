@@ -1,5 +1,4 @@
-ServerEvents.recipes(event => {
-
+ServerEvents.recipes((event) => {
     // event.remove({output: 'paraglider:paraglider'})
 
     // event.shaped(
@@ -16,29 +15,22 @@ ServerEvents.recipes(event => {
     //             }
     // );
 
-    event.remove({output: 'framedblocks:framed_cube'})
+    event.remove({ output: "framedblocks:framed_cube" })
 
-    event.recipes.gtceu.assembler('kubejs:framed_cube')
-        .itemInputs(
-            '4x gtceu:wood_screw',
-            '4x minecraft:stick'
-        )
-        .itemOutputs('8x framedblocks:framed_cube')
-        .duration(20)
-        .EUt(2);
+    event.recipes.gtceu.assembler("kubejs:framed_cube").itemInputs("4x gtceu:wood_screw", "4x minecraft:stick").itemOutputs("8x framedblocks:framed_cube").duration(20).EUt(2)
 
+    // @ts-ignore
     event.shaped(
-                Item.of('framedblocks:framed_cube', 2), // arg 1: output
-                [
-                    'ACA',
-                    'CDC', // arg 2: the shape (array of strings)
-                    'ACA'
-                ],
-                {
-                    A: 'gtceu:wood_screw',
-                    C: 'minecraft:stick',
-                    D: '#minecraft:planks'
-                }
-    );
-
-});
+        Item.of("framedblocks:framed_cube", 2), // arg 1: output
+        [
+            "ACA",
+            "CDC", // arg 2: the shape (array of strings)
+            "ACA"
+        ],
+        {
+            A: "gtceu:wood_screw",
+            C: "minecraft:stick",
+            D: "#minecraft:planks"
+        }
+    )
+})

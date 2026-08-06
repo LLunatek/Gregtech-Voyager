@@ -1,0 +1,8 @@
+{
+  "recommendations": [
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "Prunoideae.probejs",
+    "rvest.vs-code-prettier-eslint"
+  ]
+}

@@ -1,333 +1,367 @@
 //priority: 1000
+// @ts-nocheck
 
-StartupEvents.registry('item', event => {
-  // The texture for this item has to be placed in kubejs/assets/kubejs/textures/item/test_item.png
-  // If you want a custom item model, you can create one in Blockbench and put it in kubejs/assets/kubejs/models/item/test_item.json
+StartupEvents.registry("item", (event) => {
+    // The texture for this item has to be placed in kubejs/assets/kubejs/textures/item/test_item.png
+    // If you want a custom item model, you can create one in Blockbench and put it in kubejs/assets/kubejs/models/item/test_item.json
 
+    const tiers = ["ulv", "lv", "mv", "hv", "ev", "iv", "luv", "zpm", "uv", "uhv", "uev", "uiv", "max"]
 
-    const tiers = ['ulv', 'lv','mv','hv','ev','iv','luv','zpm','uv','uhv','uev','uiv','max'];
-
-    const allTiers = ['stone', 'ulv', 'lv','mv','hv','ev','iv','luv','zpm','uv','uhv','uev','uiv','max'];
-
-
-    function register_loot_bag(energy_tier)
-    {
-        event.create(energy_tier + '_loot_bag').texture('kubejs:item/' + energy_tier + '_loot_bag').tooltip('Right click to open me! Will contain ' + energy_tier + ' level rewards').displayName(energy_tier.toUpperCase() + ' Loot Bag')
+    function register_loot_bag(energy_tier) {
+        event
+            .create(energy_tier + "_loot_bag")
+            .texture("kubejs:item/" + energy_tier + "_loot_bag")
+            .tooltip("Right click to open me! Will contain " + energy_tier + " level rewards")
+            .displayName(energy_tier.toUpperCase() + " Loot Bag")
     }
-    
-    tiers.forEach(tier => register_loot_bag(tier));
+
+    tiers.forEach((tier) => register_loot_bag(tier))
     //tiers.forEach(tier => register_universal_circuit(tier));
 
-    const helpers = ['brick', 'track_runner', 'farmer', 'grandma', 'radiation_resistant_grandma', 'hungry', 'hungry_hungry', 'embassy', 'basic_chemist', 'advanced_chemist']
+    const helpers = ["brick", "track_runner", "farmer", "grandma", "radiation_resistant_grandma", "hungry", "hungry_hungry", "embassy", "basic_chemist", "advanced_chemist"]
 
-    function register_helper_item(name)
-    {
-        event.create(name + '_helper').texture('kubejs:item/helpers/' + name + '_helper').maxStackSize(4).rarity('uncommon').tag('kubejs:helpers');
+    function register_helper_item(name) {
+        event
+            .create(name + "_helper")
+            .texture("kubejs:item/helpers/" + name + "_helper")
+            .maxStackSize(4)
+            .rarity("uncommon")
+            .tag("kubejs:helpers")
     }
 
-    function register_tiered_helper_item(tier, name)
-    {
-
-        const formattedName = name
-            .toLowerCase()
-            .replace(/\b\w/g, char => char.toUpperCase());
-            event.create(tier + '_' + name + '_helper').texture('kubejs:item/helpers/' + tier + '_' + name + '_helper').maxStackSize(4).rarity('uncommon').displayName(tier.toUpperCase() + " " + formattedName + ' Helper')
-            .tag('forge:helpers')
+    function register_tiered_helper_item(tier, name) {
+        const formattedName = name.toLowerCase().replace(/\b\w/g, (char) => char.toUpperCase())
+        event
+            .create(tier + "_" + name + "_helper")
+            .texture("kubejs:item/helpers/" + tier + "_" + name + "_helper")
+            .maxStackSize(4)
+            .rarity("uncommon")
+            .displayName(tier.toUpperCase() + " " + formattedName + " Helper")
+            .tag("forge:helpers")
     }
 
-    tiers.forEach(tier => register_tiered_helper_item(tier, 'technician'));
-    tiers.forEach(tier => register_tiered_helper_item(tier, 'ebf'));
+    tiers.forEach((tier) => register_tiered_helper_item(tier, "technician"))
+    tiers.forEach((tier) => register_tiered_helper_item(tier, "ebf"))
 
-    helpers.forEach(name => register_helper_item(name));
+    helpers.forEach((name) => register_helper_item(name))
 
-    function register_universal_coin(tier)
-    {
-        event.create(tier + '_universal_coin').texture('kubejs:item/' + tier + '_universal_coin').displayName(tier.toUpperCase() + ' Universal Coin');
+    function register_universal_coin(tier) {
+        event
+            .create(tier + "_universal_coin")
+            .texture("kubejs:item/" + tier + "_universal_coin")
+            .displayName(tier.toUpperCase() + " Universal Coin")
     }
 
-    function register_tech_coin(tier)
-    {
-        event.create(tier + '_tech_coin').texture('kubejs:item/' + tier + '_tech_coin').displayName(tier.toUpperCase() + ' Tech Coin');
+    function register_tech_coin(tier) {
+        event
+            .create(tier + "_tech_coin")
+            .texture("kubejs:item/" + tier + "_tech_coin")
+            .displayName(tier.toUpperCase() + " Tech Coin")
     }
-    function register_explorer_coin(tier)
-    {
-        event.create('explorer_coin_' + tier).texture('kubejs:item/'+'explorer_coin_' + tier).displayName('Explorer Coin ' + tier);
-    }
-
-
-    const levels = ['1', '2', '3']
-
-    levels.forEach(tier => register_explorer_coin(tier));
-
-    function register_magic_coin(tier)
-    {
-        event.create(tier + '_magic_coin').texture('kubejs:item/' + tier + '_magic_coin').displayName(tier.toUpperCase() + ' Magic Coin');
+    function register_explorer_coin(tier) {
+        event
+            .create("explorer_coin_" + tier)
+            .texture("kubejs:item/" + "explorer_coin_" + tier)
+            .displayName("Explorer Coin " + tier)
     }
 
-    function register_bag(level, name)
-    {
-        event.create(name + '_bag_' + level).texture('kubejs:item/' + name + '_bag_' + level).displayName(name.toUpperCase() + ' Bag ' + level).tooltip("Not yet implemented");
+    const levels = ["1", "2", "3"]
+
+    levels.forEach((tier) => register_explorer_coin(tier))
+
+    function register_magic_coin(tier) {
+        event
+            .create(tier + "_magic_coin")
+            .texture("kubejs:item/" + tier + "_magic_coin")
+            .displayName(tier.toUpperCase() + " Magic Coin")
     }
 
+    function register_bag(level, name) {
+        event
+            .create(name + "_bag_" + level)
+            .texture("kubejs:item/" + name + "_bag_" + level)
+            .displayName(name.toUpperCase() + " Bag " + level)
+            .tooltip("Not yet implemented")
+    }
 
+    //const tiers = [ulv, lv, mv, hv, ev, iv, luv, zpm, uv, uhv, uev, uiv, max] //PROBABLY NOT NEEDED
 
-	//const tiers = [ulv, lv, mv, hv, ev, iv, luv, zpm, uv, uhv, uev, uiv, max] //PROBABLY NOT NEEDED
+    const tierData = {
+        //This is so dumb that this works, pulled from the GTMaterial stack, check if the material has a .color in the ElementMaterials.java, PrimaryMaterials.java, or SecondaryMaterials on the GTCEU github
+        ulv: { colorPrimary: "#bcbcbc", colorSecondary: "#521c0b", colorExtra: "#AA0000", displayName: "ULV" }, //Wrought Iron
+        lv: { colorPrimary: "#ffc370", colorSecondary: "#806752", colorExtra: "#fd9e3f", displayName: "LV" }, //Bronze, can add secondary ingot coloring for steel, as long as it's still in the lv object
+        mv: { colorPrimary: "#8cb4c9", colorSecondary: "#0756ac9c", colorExtra: "#8ec9e9", displayName: "MV" }, //Aluminium
+        hv: { colorPrimary: "#ededfd", colorSecondary: "#19191d", colorExtra: "#d0d31b", displayName: "HV" }, //Stainless
+        ev: { colorPrimary: "#ed8eea", colorSecondary: "#ff64bc", colorExtra: "#ed8eea", displayName: "EV" }, //Titanium
+        iv: { colorPrimary: "#687ece", colorSecondary: "#03192f", colorExtra: "#5040e6", displayName: " IV" }, //Tungsten Steel
+        luv: { colorPrimary: "#d1d1d1", colorSecondary: "#000000", colorExtra: "#48d660", displayName: "LuV" }, //Rhodium Plated Palladium
+        zpm: { colorPrimary: "#323232", colorSecondary: "#301131", colorExtra: "", displayName: "ZPM" }, //Naquahda Alloy
+        uv: { colorPrimary: "#578062", colorSecondary: "#308030F0", colorExtra: "", displayName: "UV" }, //Darmstadium at Home, I'm not making a radioactive texture set overlay as part of the functions
+        uhv: { colorPrimary: "#FFFFFF", colorSecondary: "#000000", colorExtra: "", displayName: "UHV" }, //Neutronium
+        uev: { colorPrimary: "", colorSecondary: "", colorExtra: "", displayName: "UEV" }, //NYI
+        uiv: { colorPrimary: "", colorSecondary: "", colorExtra: "", displayName: "UIV" }, //NYI
+        max: { colorPrimary: "", colorSecondary: "", colorExtra: "", displayName: "MAX" } //NYI
+    }
 
-	const tierData = { //This is so dumb that this works, pulled from the GTMaterial stack, check if the material has a .color in the ElementMaterials.java, PrimaryMaterials.java, or SecondaryMaterials on the GTCEU github
-		ulv: { colorPrimary: '#bcbcbc', colorSecondary: '#521c0b', colorExtra: '#AA0000',displayName: 'ULV' },	//Wrought Iron
-		lv: { colorPrimary: '#ffc370', colorSecondary: '#806752', colorExtra: '#fd9e3f', displayName: 'LV' },	//Bronze, can add secondary ingot coloring for steel, as long as it's still in the lv object
-		mv: { colorPrimary: '#8cb4c9', colorSecondary: '#0756ac9c', colorExtra: '#8ec9e9', displayName: 'MV' },	//Aluminium
-		hv: { colorPrimary: '#ededfd', colorSecondary: '#19191d', colorExtra: '#d0d31b', displayName: 'HV' },	//Stainless
-		ev: { colorPrimary: '#ed8eea', colorSecondary: '#ff64bc', colorExtra: '#ed8eea', displayName: 'EV' },	//Titanium
-		iv: { colorPrimary: '#687ece', colorSecondary: '#03192f', colorExtra: '#5040e6', displayName: ' IV' },	//Tungsten Steel
-		luv: { colorPrimary: '#d1d1d1', colorSecondary: '#000000', colorExtra: '#48d660', displayName: 'LuV' },	//Rhodium Plated Palladium
-		zpm: { colorPrimary: '#323232', colorSecondary: '#301131', colorExtra: '', displayName: 'ZPM' },	//Naquahda Alloy
-		uv: { colorPrimary: '#578062', colorSecondary: '#308030F0', colorExtra: '', displayName: 'UV' },	//Darmstadium at Home, I'm not making a radioactive texture set overlay as part of the functions
-		uhv: { colorPrimary: '#FFFFFF', colorSecondary: '#000000', colorExtra: '', displayName: 'UHV' },	//Neutronium
-		uev: { colorPrimary: '', colorSecondary: '', colorExtra: '', displayName: 'UEV' },	//NYI
-		uiv: { colorPrimary: '', colorSecondary: '', colorExtra: '', displayName: 'UIV' },	//NYI
-		max: { colorPrimary: '', colorSecondary: '', colorExtra: '', displayName: 'MAX' }	//NYI
-	}
+    //IMPORTANT: Secondary textures need some transparency to blend with the primary. See item/helper_computation_array/* for examples
 
-	//IMPORTANT: Secondary textures need some transparency to blend with the primary. See item/helper_computation_array/* for examples
+    /**
+     * @param {String}tier Is voltage tier
+     * @param {String}colorPrimary Is the primary color of the tier ingot
+     * @param {String}colorSecondary Is the secondary/edge color of the tier ingot
+     **/
+    function helperComputationCreation(tier, colorPrimary, colorSecondary, displayName) {
+        if (colorPrimary.match(/#[A-Fa-f0-9]{6,8}/) && colorSecondary.match(/#[A-Fa-f0-9]{6,8}/)) {
+            event
+                .create(`${tier}_helper_computation_array`)
+                .textureJson({
+                    layer0: "kubejs:item/helper_computation_array/base",
+                    layer1: "kubejs:item/helper_computation_array/color_primary",
+                    layer2: "kubejs:item/helper_computation_array/color_secondary"
+                })
+                .color(1, colorPrimary)
+                .color(2, colorSecondary)
+                .displayName(displayName + " Helper Computation Array")
+        } else {
+            colorPrimary = "#FFFFFF"
+            colorSecondary = "#505050"
+            event
+                .create(`${tier}_helper_computation_array`)
+                .textureJson({
+                    layer0: "kubejs:item/helper_computation_array/base",
+                    layer1: "kubejs:item/helper_computation_array/color_primary",
+                    layer2: "kubejs:item/helper_computation_array/color_secondary"
+                })
+                .color(1, colorPrimary)
+                .color(2, colorSecondary)
+                .displayName(displayName + " Helper Computation Array")
+        }
+    }
 
+    function voucherCreation(tier, colorPrimary, colorSecondary, displayName) {
+        if (colorPrimary.match(/#[A-Fa-f0-9]{6,8}/) && colorSecondary.match(/#[A-Fa-f0-9]{6,8}/)) {
+            event
+                .create(`${tier}_voucher`)
+                .textureJson({ layer0: "kubejs:item/voucher/color_primary", layer1: "kubejs:item/voucher/color_secondary" })
+                .color(0, colorPrimary)
+                .color(1, colorSecondary)
+                .displayName(displayName + " Voucher")
+                .tooltip("Can be claimed for loot rewards")
+        } else {
+            event
+                .create(`${tier}_voucher`)
+                .textureJson({ layer0: "kubejs:item/voucher/color_primary", layer1: "kubejs:item/voucher/color_secondary" })
+                .color((itemstack, tintIndex) => (itemstack.nbt && itemstack.nbt[`color` + tintIndex] ? itemstack.nbt[`color` + tintIndex] : -1)) // This saves so much time closing/reopening lol
+                .displayName(displayName + " Voucher")
+                .tooltip("Can be claimed for loot rewards")
+        }
+    }
 
+    function universalCircuitCreation(tier, colorExtra, displayName) {
+        if (colorExtra.match(/#[A-Fa-f0-9]{6,8}/)) {
+            event
+                .create(`${tier}_universal_circuit`)
+                .textureJson({ layer0: "kubejs:item/universal_circuit/circuit_base", layer1: "kubejs:item/universal_circuit/circuit_overlay" })
+                .color(1, colorExtra)
+                .displayName(displayName + " Universal Circuit")
+        } else {
+            event
+                .create(`${tier}_universal_circuit`)
+                .textureJson({ layer0: "kubejs:item/universal_circuit/circuit_base", layer1: "kubejs:item/universal_circuit/circuit_overlay" })
+                .color((itemstack, tintIndex) => (itemstack.nbt && itemstack.nbt[`color` + tintIndex] ? itemstack.nbt[`color` + tintIndex] : -1)) //Testin
+                .displayName(displayName + " Universal Circuit")
+        }
+    }
 
+    //Test Circuit
+    //	universalCircuitCreation('test',tierData.lv.colorExtra)
 
-	/**
-	* @param {String}tier Is voltage tier
-	* @param {String}colorPrimary Is the primary color of the tier ingot
-	* @param {String}colorSecondary Is the secondary/edge color of the tier ingot
-	**/
-	function helperComputationCreation(tier, colorPrimary, colorSecondary, displayName) {
-		if (colorPrimary.match(/#[A-Fa-f0-9]{6,8}/) && colorSecondary.match(/#[A-Fa-f0-9]{6,8}/)) {
-			event.create(`${tier}_helper_computation_array`)
-				.textureJson({ layer0: 'kubejs:item/helper_computation_array/base', layer1: 'kubejs:item/helper_computation_array/color_primary', layer2: 'kubejs:item/helper_computation_array/color_secondary'})
-				.color(1, colorPrimary)
-				.color(2, colorSecondary)
-				.displayName(displayName+' Helper Computation Array')
-		} else {
-			colorPrimary = '#FFFFFF'
-			colorSecondary = '#505050'
-			event.create(`${tier}_helper_computation_array`)
-				.textureJson({ layer0: 'kubejs:item/helper_computation_array/base', layer1: 'kubejs:item/helper_computation_array/color_primary', layer2: 'kubejs:item/helper_computation_array/color_secondary'})
-				.color(1, colorPrimary)
-				.color(2, colorSecondary)
-				.displayName(displayName + ' Helper Computation Array')
+    //Add the restructured function in a copy of this
 
-		}
-	}
+    for (let key in tierData) {
+        helperComputationCreation(key, tierData[key].colorPrimary, tierData[key].colorSecondary, tierData[key].displayName)
+    }
+    for (let key in tierData) {
+        voucherCreation(key, tierData[key].colorPrimary, tierData[key].colorSecondary, tierData[key].displayName)
+    }
+    for (let key in tierData) {
+        universalCircuitCreation(key, tierData[key].colorExtra, tierData[key].displayName)
+    }
 
-	function voucherCreation(tier, colorPrimary, colorSecondary, displayName) {
-		if (colorPrimary.match(/#[A-Fa-f0-9]{6,8}/) && colorSecondary.match(/#[A-Fa-f0-9]{6,8}/)) {
-			event.create(`${tier}_voucher`)
-				.textureJson({ layer0: 'kubejs:item/voucher/color_primary', layer1: 'kubejs:item/voucher/color_secondary' })
-				.color(0, colorPrimary)
-				.color(1, colorSecondary)
-				.displayName(displayName + ' Voucher')
-				.tooltip("Can be claimed for loot rewards")
-		} else {
-			event.create(`${tier}_voucher`)
-				.textureJson({ layer0: 'kubejs:item/voucher/color_primary', layer1: 'kubejs:item/voucher/color_secondary' })
-				.color((itemstack, tintIndex) => itemstack.nbt && itemstack.nbt[`color` + tintIndex] ? itemstack.nbt[`color` + tintIndex] : -1) // This saves so much time closing/reopening lol
-				.displayName(displayName + ' Voucher')
-				.tooltip("Can be claimed for loot rewards")
-		}
-	}
+    register_bag(1, "ars")
+    register_bag(2, "ars")
+    register_bag(3, "ars")
 
-	function universalCircuitCreation(tier, colorExtra, displayName) {
-		if (colorExtra.match(/#[A-Fa-f0-9]{6,8}/)) {
-			event.create(`${tier}_universal_circuit`)
-				.textureJson({ layer0: 'kubejs:item/universal_circuit/circuit_base', layer1: 'kubejs:item/universal_circuit/circuit_overlay' })
-				.color(1, colorExtra)
-				.displayName(displayName + ' Universal Circuit')
-		} else {
-			event.create(`${tier}_universal_circuit`)
-				.textureJson({ layer0: 'kubejs:item/universal_circuit/circuit_base', layer1: 'kubejs:item/universal_circuit/circuit_overlay' })
-				.color((itemstack, tintIndex) => itemstack.nbt && itemstack.nbt[`color` + tintIndex] ? itemstack.nbt[`color` + tintIndex] : -1) //Testin
-				.displayName(displayName + ' Universal Circuit')
-				
-				
-		}
-	}
+    event.create("stone_bag").texture("kubejs:item/stone_bag").displayName("Stone Bag")
 
-
-//Test Circuit
-//	universalCircuitCreation('test',tierData.lv.colorExtra)
-
-
-
-
-
-
-	//Add the restructured function in a copy of this
-
-	for (let key in tierData) { helperComputationCreation(key, tierData[key].colorPrimary, tierData[key].colorSecondary, tierData[key].displayName) }
-	for (let key in tierData) { voucherCreation(key, tierData[key].colorPrimary, tierData[key].colorSecondary,tierData[key].displayName) }
-	for (let key in tierData) { universalCircuitCreation(key, tierData[key].colorExtra,tierData[key].displayName) }
-
-
-
-    
-
-    register_bag(1, 'ars')
-    register_bag(2, 'ars')
-    register_bag(3, 'ars')
-
-    event.create('stone_bag').texture('kubejs:item/stone_bag').displayName('Stone Bag');
-
-
-    tiers.forEach(tier => register_magic_coin(tier));
-    tiers.forEach(tier => register_universal_coin(tier));
-    tiers.forEach(tier => register_tech_coin(tier));
+    tiers.forEach((tier) => register_magic_coin(tier))
+    tiers.forEach((tier) => register_universal_coin(tier))
+    tiers.forEach((tier) => register_tech_coin(tier))
     //tiers.forEach(tier => register_computation_array(tier));
     //tiers.forEach(tier => register_voucher(tier));
 
-    event.create('rocket_hull_plate').texture('kubejs:item/rocket_hull_plate').maxStackSize(16).displayName('Rocket Hull Plate');
-    event.create('desh_rocket_hull_plate').texture('kubejs:item/desh_rocket_hull_plate').maxStackSize(16).displayName('Desh Rocket Hull Plate');
-    event.create('desh_rocket_fin').texture('kubejs:item/desh_rocket_fin').maxStackSize(16).displayName('Desh Rocket Fin');
-    event.create('desh_rocket_nose_cone').texture('kubejs:item/desh_rocket_nose_cone').maxStackSize(16).displayName('Desh Rocket Nose Cone');
-    event.create('desh_interplanetary_coordinatal_calculator').texture('kubejs:item/desh_interplanetary_coordinatal_calculator').maxStackSize(16).displayName('Desh Interplanetary Coordinatal Calculator');
+    event.create("rocket_hull_plate").texture("kubejs:item/rocket_hull_plate").maxStackSize(16).displayName("Rocket Hull Plate")
+    event.create("desh_rocket_hull_plate").texture("kubejs:item/desh_rocket_hull_plate").maxStackSize(16).displayName("Desh Rocket Hull Plate")
+    event.create("desh_rocket_fin").texture("kubejs:item/desh_rocket_fin").maxStackSize(16).displayName("Desh Rocket Fin")
+    event.create("desh_rocket_nose_cone").texture("kubejs:item/desh_rocket_nose_cone").maxStackSize(16).displayName("Desh Rocket Nose Cone")
+    event
+        .create("desh_interplanetary_coordinatal_calculator")
+        .texture("kubejs:item/desh_interplanetary_coordinatal_calculator")
+        .maxStackSize(16)
+        .displayName("Desh Interplanetary Coordinatal Calculator")
 
-    event.create('titanite_rocket_hull_plate').texture('kubejs:item/titanite_rocket_hull_plate').maxStackSize(16).displayName('Titanite Rocket Hull Plate');
-    event.create('titanite_rocket_fin').texture('kubejs:item/titanite_rocket_fin').maxStackSize(16).displayName('Titanite Rocket Fin');
-    event.create('titanite_rocket_nose_cone').texture('kubejs:item/titanite_rocket_nose_cone').maxStackSize(16).displayName('Titanite Rocket Nose Cone');
-    event.create('titanite_interplanetary_coordinatal_calculator').texture('kubejs:item/titanite_interplanetary_coordinatal_calculator').maxStackSize(16).displayName('Titanite Interplanetary Coordinatal Calculator');
+    event.create("titanite_rocket_hull_plate").texture("kubejs:item/titanite_rocket_hull_plate").maxStackSize(16).displayName("Titanite Rocket Hull Plate")
+    event.create("titanite_rocket_fin").texture("kubejs:item/titanite_rocket_fin").maxStackSize(16).displayName("Titanite Rocket Fin")
+    event.create("titanite_rocket_nose_cone").texture("kubejs:item/titanite_rocket_nose_cone").maxStackSize(16).displayName("Titanite Rocket Nose Cone")
+    event
+        .create("titanite_interplanetary_coordinatal_calculator")
+        .texture("kubejs:item/titanite_interplanetary_coordinatal_calculator")
+        .maxStackSize(16)
+        .displayName("Titanite Interplanetary Coordinatal Calculator")
 
-    event.create('calorite_rocket_hull_plate').texture('kubejs:item/calorite_rocket_hull_plate').maxStackSize(16).displayName('Calorite Rocket Hull Plate');
-    event.create('calorite_rocket_fin').texture('kubejs:item/calorite_rocket_fin').maxStackSize(16).displayName('Calorite Rocket Fin');
-    event.create('calorite_rocket_nose_cone').texture('kubejs:item/calorite_rocket_nose_cone').maxStackSize(16).displayName('Calorite Rocket Nose Cone');
-    event.create('calorite_interplanetary_coordinatal_calculator').texture('kubejs:item/calorite_interplanetary_coordinatal_calculator').maxStackSize(16).displayName('Calorite Interplanetary Coordinatal Calculator');
+    event.create("calorite_rocket_hull_plate").texture("kubejs:item/calorite_rocket_hull_plate").maxStackSize(16).displayName("Calorite Rocket Hull Plate")
+    event.create("calorite_rocket_fin").texture("kubejs:item/calorite_rocket_fin").maxStackSize(16).displayName("Calorite Rocket Fin")
+    event.create("calorite_rocket_nose_cone").texture("kubejs:item/calorite_rocket_nose_cone").maxStackSize(16).displayName("Calorite Rocket Nose Cone")
+    event
+        .create("calorite_interplanetary_coordinatal_calculator")
+        .texture("kubejs:item/calorite_interplanetary_coordinatal_calculator")
+        .maxStackSize(16)
+        .displayName("Calorite Interplanetary Coordinatal Calculator")
 
-    event.create('cosmic_ray_repellant_plating').texture('kubejs:item/cosmic_ray_repellant_plating').maxStackSize(16).displayName('Cosmic Ray Repellant Plating');
-    event.create('cosmic_resistant_plating').texture('kubejs:item/cosmic_resistant_plating').displayName('Cosmic Resistant Plating')
-    event.create('raw_cosmic_resistant_plating').texture('kubejs:item/raw_cosmic_resistant_plating').displayName('Raw Cosmic Resistant Plating')
+    event.create("cosmic_ray_repellant_plating").texture("kubejs:item/cosmic_ray_repellant_plating").maxStackSize(16).displayName("Cosmic Ray Repellant Plating")
+    event.create("cosmic_resistant_plating").texture("kubejs:item/cosmic_resistant_plating").displayName("Cosmic Resistant Plating")
+    event.create("raw_cosmic_resistant_plating").texture("kubejs:item/raw_cosmic_resistant_plating").displayName("Raw Cosmic Resistant Plating")
 
+    event
+        .create("martian_scrap")
+        .texture("kubejs:item/martian_scrap")
+        .displayName("Martian Scrap")
+        .tooltip("§4Remnants of martian ships\n§r§8Contains materials that can not yet be synthesized without 0G")
+    event
+        .create("shredded_martian_scrap")
+        .texture("kubejs:item/shredded_martian_scrap")
+        .displayName("Shredded Martian Scrap")
+        .tooltip("§4Remnants of martian ships\n§r§8Contains materials that can not yet be synthesized without 0G")
 
+    event.create("martian_contract").texture("kubejs:item/martian_contract").displayName("Martian Trade Contract").tooltip("§4Place inside of a celestial post box to recieve shipments\n")
+    event.create("martian_contract_t2").texture("kubejs:item/martian_contract_t2").displayName("New Martian Trade Contract").tooltip("§4Place inside of a celestial post box to recieve shipments\n")
 
-    event.create('martian_scrap').texture('kubejs:item/martian_scrap').displayName('Martian Scrap').tooltip('§4Remnants of martian ships\n§r§8Contains materials that can not yet be synthesized without 0G');
-    event.create('shredded_martian_scrap').texture('kubejs:item/shredded_martian_scrap').displayName('Shredded Martian Scrap').tooltip('§4Remnants of martian ships\n§r§8Contains materials that can not yet be synthesized without 0G');
-    
-    event.create('martian_contract').texture('kubejs:item/martian_contract').displayName('Martian Trade Contract').tooltip('§4Place inside of a celestial post box to recieve shipments\n');
-    event.create('martian_contract_t2').texture('kubejs:item/martian_contract_t2').displayName('New Martian Trade Contract').tooltip('§4Place inside of a celestial post box to recieve shipments\n');
-    
-    event.create('martian_shipment_t1').texture('kubejs:item/martian_shipment_t1').displayName('Martian Shipment').tooltip('§7Tier 1 Shipment§r\n§4Contains scrap from martian junkyards\n§r');
-    event.create('martian_shipment_t2').texture('kubejs:item/martian_shipment_t2').displayName('Martian Shipment').tooltip('§bTier 2 Shipment§r\n§4Contains unsythesized martian compounds\n§r');
-    event.create('martian_shipment_t3').texture('kubejs:item/martian_shipment_t3').displayName('Martian Shipment').tooltip('§cTier 3 Shipment§r\n§4Contains precious martian artifacts\n§r');
-    event.create('celestial_radio').texture('kubejs:item/celestial_radio').displayName('Celestial Radio').tooltip('§cIs anyone out there?§r\nRight click to send a radio signal');
+    event.create("martian_shipment_t1").texture("kubejs:item/martian_shipment_t1").displayName("Martian Shipment").tooltip("§7Tier 1 Shipment§r\n§4Contains scrap from martian junkyards\n§r")
+    event.create("martian_shipment_t2").texture("kubejs:item/martian_shipment_t2").displayName("Martian Shipment").tooltip("§bTier 2 Shipment§r\n§4Contains unsythesized martian compounds\n§r")
+    event.create("martian_shipment_t3").texture("kubejs:item/martian_shipment_t3").displayName("Martian Shipment").tooltip("§cTier 3 Shipment§r\n§4Contains precious martian artifacts\n§r")
+    event.create("celestial_radio").texture("kubejs:item/celestial_radio").displayName("Celestial Radio").tooltip("§cIs anyone out there?§r\nRight click to send a radio signal")
 
-    event.create('galactic_radio').texture('kubejs:item/galactic_radio').displayName('Galactic Radio').tooltip('§cIs anyone out there?§r\nRight click to send a radio signal');
+    event.create("galactic_radio").texture("kubejs:item/galactic_radio").displayName("Galactic Radio").tooltip("§cIs anyone out there?§r\nRight click to send a radio signal")
 
+    event.create("compressed_grout").texture("kubejs:item/compressed_grout").displayName("Compressed Grout")
 
-    event.create('compressed_grout').texture('kubejs:item/compressed_grout').displayName('Compressed Grout');
+    event.create("raw_advanced_martian_plating").texture("kubejs:item/raw_advanced_martian_plating").displayName("Raw Advanced Martian Plating")
+    event.create("advanced_martian_plating").texture("kubejs:item/advanced_martian_plating").displayName("Advanced Martian Plating")
 
-    event.create('raw_advanced_martian_plating').texture('kubejs:item/raw_advanced_martian_plating').displayName('Raw Advanced Martian Plating')
-    event.create('advanced_martian_plating').texture('kubejs:item/advanced_martian_plating').displayName('Advanced Martian Plating')
+    event.create("small_naquadah_meteorite").texture("kubejs:item/small_naquadah_meteorite").displayName("Small Naquadah Meteorite")
+    event.create("medium_naquadah_meteorite").texture("kubejs:item/medium_naquadah_meteorite").displayName("Medium Naquadah Meteorite")
+    event.create("large_naquadah_meteorite").texture("kubejs:item/large_naquadah_meteorite").displayName("Large Naquadah Meteorite")
 
-    event.create('small_naquadah_meteorite').texture('kubejs:item/small_naquadah_meteorite').displayName('Small Naquadah Meteorite')
-    event.create('medium_naquadah_meteorite').texture('kubejs:item/medium_naquadah_meteorite').displayName('Medium Naquadah Meteorite')
-    event.create('large_naquadah_meteorite').texture('kubejs:item/large_naquadah_meteorite').displayName('Large Naquadah Meteorite')
-
-
-    event.create('high_temp_binding_agent_rod_s').texture('kubejs:item/high_temp_binding_agent_rod_s').displayName('HT-BA (S) Rod')
-    event.create('heat_accelerator').texture('kubejs:item/heat_accelerator').displayName('Heat Accelerator')
-    event.create('heat_sheild').texture('kubejs:item/heat_sheild').displayName('Heat Shield')
+    event.create("high_temp_binding_agent_rod_s").texture("kubejs:item/high_temp_binding_agent_rod_s").displayName("HT-BA (S) Rod")
+    event.create("heat_accelerator").texture("kubejs:item/heat_accelerator").displayName("Heat Accelerator")
+    event.create("heat_sheild").texture("kubejs:item/heat_sheild").displayName("Heat Shield")
     // cookies
 
-    event.create('grandmas_baking_sheet').texture('kubejs:item/grandmas_baking_sheet').maxStackSize(1).displayName('Grandma\'s Super Durable Baking Sheet');
-    event.create('grandmas_tungsten_baking_sheet').texture('kubejs:item/grandmas_tungsten_baking_sheet').maxStackSize(1).displayName('Grandma\'s Super Durable Radiation Proof Baking Sheet');
-    event.create('baking_chocolate').texture('kubejs:item/baking_chocolate').displayName('Baking Chocolate');
-    event.create('baking_flour').texture('kubejs:item/baking_flour').displayName('Baking Flour');
-    event.create('cacao_powder').texture('kubejs:item/cacao_powder').displayName('Cacao Powder');
-    event.create('butter').texture('kubejs:item/butter').displayName('Butter');
-    event.create('roasted_cacao_beans').texture('kubejs:item/roasted_cacao_beans').displayName('Roasted Cacao Beans');
-    event.create('cookie_dough').texture('kubejs:item/cookie_dough').displayName('Cookie Dough');
+    event.create("grandmas_baking_sheet").texture("kubejs:item/grandmas_baking_sheet").maxStackSize(1).displayName("Grandma's Super Durable Baking Sheet")
+    event.create("grandmas_tungsten_baking_sheet").texture("kubejs:item/grandmas_tungsten_baking_sheet").maxStackSize(1).displayName("Grandma's Super Durable Radiation Proof Baking Sheet")
+    event.create("baking_chocolate").texture("kubejs:item/baking_chocolate").displayName("Baking Chocolate")
+    event.create("baking_flour").texture("kubejs:item/baking_flour").displayName("Baking Flour")
+    event.create("cacao_powder").texture("kubejs:item/cacao_powder").displayName("Cacao Powder")
+    event.create("butter").texture("kubejs:item/butter").displayName("Butter")
+    event.create("roasted_cacao_beans").texture("kubejs:item/roasted_cacao_beans").displayName("Roasted Cacao Beans")
+    event.create("cookie_dough").texture("kubejs:item/cookie_dough").displayName("Cookie Dough")
 
-    event.create('ev_stomach_unit').texture('kubejs:item/ev_stomach_unit').displayName('EV Stomach Unit');
-    event.create('iv_stomach_unit').texture('kubejs:item/iv_stomach_unit').displayName('IV Stomach Unit');
+    event.create("ev_stomach_unit").texture("kubejs:item/ev_stomach_unit").displayName("EV Stomach Unit")
+    event.create("iv_stomach_unit").texture("kubejs:item/iv_stomach_unit").displayName("IV Stomach Unit")
 
-    event.create('uranium_cookie_dough').texture('kubejs:item/uranium_cookie_dough').displayName('§aUltra-Calorie Dense Uranium Cookie Dough');
+    event.create("uranium_cookie_dough").texture("kubejs:item/uranium_cookie_dough").displayName("§aUltra-Calorie Dense Uranium Cookie Dough")
 
-    event.create('heart_of_gold').texture('kubejs:item/heart_of_gold').displayName('Heart of Gold');
+    event.create("heart_of_gold").texture("kubejs:item/heart_of_gold").displayName("Heart of Gold")
 
-    event.create('grandmas_uranium_cookies').texture('kubejs:item/grandmas_uranium_cookies').displayName('§aGrandma\'s Ultra-Calorie Dense Uranium Cookies')
-    .tooltip(
-        "§2Contains millions of calories. Optimal for bulking."
-      )
-    .food(food => {
-    food
-      .hunger(8)
-      .saturation(6) // This value does not directly translate to saturation points gained
-      // The real value can be assumed to be:
-      // min(hunger * saturation * 2 + saturation, foodAmountAfterEating)
-      .effect('minecraft:speed', 600, 0, 1)
-      .alwaysEdible() // Like golden apples
-      .fastToEat() // Like dried kelp
-      
-      .eaten(ctx => {
-        ctx.player.tell(Text.gold('Grandma thanks you for eating her cookies! She invites you over for more.'))
-      });
-    });
-    
+    event
+        .create("grandmas_uranium_cookies")
+        .texture("kubejs:item/grandmas_uranium_cookies")
+        .displayName("§aGrandma's Ultra-Calorie Dense Uranium Cookies")
+        .tooltip("§2Contains millions of calories. Optimal for bulking.")
+        .food((food) => {
+            food.hunger(8)
+                .saturation(6) // This value does not directly translate to saturation points gained
+                // The real value can be assumed to be:
+                // min(hunger * saturation * 2 + saturation, foodAmountAfterEating)
+                .effect("minecraft:speed", 600, 0, 1)
+                .alwaysEdible() // Like golden apples
+                .fastToEat() // Like dried kelp
 
-    event.create('lcptr_helper').texture('kubejs:item/helpers/lcptr_helper').maxStackSize(1).displayName('Large Cookie-Powered Track Runner Helper').tooltip(
-        "Has the digestive capacity to consume millions of calories in a short amount of time"
-    );
+                .eaten((ctx) => {
+                    ctx.player.tell(Text.gold("Grandma thanks you for eating her cookies! She invites you over for more."))
+                })
+        })
 
-    event.create('grandmas_cookie').texture('kubejs:item/grandmas_cookies').displayName('Grandma\'s cookies').food(food => {
-    food
-      .hunger(6)
-      .saturation(1) // This value does not directly translate to saturation points gained
-      // The real value can be assumed to be:
-      // min(hunger * saturation * 2 + saturation, foodAmountAfterEating)
-      .effect('minecraft:speed', 600, 0, 1)
-      .alwaysEdible() // Like golden apples
-      .fastToEat() // Like dried kelp
-      .eaten(ctx => {
-        ctx.player.tell(Text.gold('Grandma thanks you for eating her cookies! She invites you over for more.'))
-      });
-    });
+    event
+        .create("lcptr_helper")
+        .texture("kubejs:item/helpers/lcptr_helper")
+        .maxStackSize(1)
+        .displayName("Large Cookie-Powered Track Runner Helper")
+        .tooltip("Has the digestive capacity to consume millions of calories in a short amount of time")
+
+    event
+        .create("grandmas_cookie")
+        .texture("kubejs:item/grandmas_cookies")
+        .displayName("Grandma's cookies")
+        .food((food) => {
+            food.hunger(6)
+                .saturation(1) // This value does not directly translate to saturation points gained
+                // The real value can be assumed to be:
+                // min(hunger * saturation * 2 + saturation, foodAmountAfterEating)
+                .effect("minecraft:speed", 600, 0, 1)
+                .alwaysEdible() // Like golden apples
+                .fastToEat() // Like dried kelp
+                .eaten((ctx) => {
+                    ctx.player.tell(Text.gold("Grandma thanks you for eating her cookies! She invites you over for more."))
+                })
+        })
 
     //
 
-    event.create('crystalline_titanium_electrum').texture('kubejs:item/crystalline_titanium_electrum').displayName('Crystalline Titanium Electrum').tooltip('§4Pure Capacitance');
-//refined_fluxed_electrum_crystal
-    event.create('refined_fluxed_electrum_crystal').texture('kubejs:item/refined_fluxed_electrum_crystal').displayName('Refined Fluxed Electrum Crystal').tooltip('§eRefined Capacitance');
-    event.create('titanichite_bud').texture('kubejs:item/titanichite_bud').displayName('Titanichite Bud').tooltip('§eGlimmering Capacitance');
+    event.create("crystalline_titanium_electrum").texture("kubejs:item/crystalline_titanium_electrum").displayName("Crystalline Titanium Electrum").tooltip("§4Pure Capacitance")
+    //refined_fluxed_electrum_crystal
+    event.create("refined_fluxed_electrum_crystal").texture("kubejs:item/refined_fluxed_electrum_crystal").displayName("Refined Fluxed Electrum Crystal").tooltip("§eRefined Capacitance")
+    event.create("titanichite_bud").texture("kubejs:item/titanichite_bud").displayName("Titanichite Bud").tooltip("§eGlimmering Capacitance")
 
-    event.create('dilithium_crystals').texture('kubejs:item/dilithium_crystals').displayName('Dilithium Crystals').tooltip('§7§oEngage');
-
+    event.create("dilithium_crystals").texture("kubejs:item/dilithium_crystals").displayName("Dilithium Crystals").tooltip("§7§oEngage")
 
     // perfect electrum
-    event.create('atomic_lattice').texture('kubejs:item/atomic_lattice').displayName('Atomic Lattice').tooltip('§eActs as a mold for atoms to fill');
+    event.create("atomic_lattice").texture("kubejs:item/atomic_lattice").displayName("Atomic Lattice").tooltip("§eActs as a mold for atoms to fill")
 
     // misc
-    event.create('explosive_heart').texture('kubejs:item/explosive_heart').displayName('Explosive Heart').tooltip('§7§oRare Creeper Drop');
-    event.create('heart_of_destruction').texture('kubejs:item/heart_of_destruction').displayName('Heart of Destruction');
+    event.create("explosive_heart").texture("kubejs:item/explosive_heart").displayName("Explosive Heart").tooltip("§7§oRare Creeper Drop")
+    event.create("heart_of_destruction").texture("kubejs:item/heart_of_destruction").displayName("Heart of Destruction")
 
     // venus
-    event.create('venus_capsule').texture('kubejs:item/venus_capsule').displayName('§6Sandy Capsule').tooltip('§7§oWhat is inside?');
+    event.create("venus_capsule").texture("kubejs:item/venus_capsule").displayName("§6Sandy Capsule").tooltip("§7§oWhat is inside?")
 
-    function ancient_tech(name, dn)
-    {
-        event.create(`eroded_${name}`).texture(`kubejs:item/eroded_${name}`).displayName(`§7§oEroded §r${dn}`).tooltip('§7§oAncient secrets yet to be discovered');
-        event.create(`${name}`).texture(`kubejs:item/${name}`).displayName(`${dn}`).tooltip('§7§oAncient secrets revealed');
+    function ancient_tech(name, dn) {
+        event.create(`eroded_${name}`).texture(`kubejs:item/eroded_${name}`).displayName(`§7§oEroded §r${dn}`).tooltip("§7§oAncient secrets yet to be discovered")
+        event.create(`${name}`).texture(`kubejs:item/${name}`).displayName(`${dn}`).tooltip("§7§oAncient secrets revealed")
     }
 
-    function rocks(planet, dn)
-    {
-        event.create(`small_${planet}_rock`).texture(`kubejs:item/small_${planet}_rock`);
-        event.create(`medium_${planet}_rock`).texture(`kubejs:item/medium_${planet}_rock`);
-        event.create(`large_${planet}_rock`).texture(`kubejs:item/large_${planet}_rock`);
+    function rocks(planet, _dn) {
+        event.create(`small_${planet}_rock`).texture(`kubejs:item/small_${planet}_rock`)
+        event.create(`medium_${planet}_rock`).texture(`kubejs:item/medium_${planet}_rock`)
+        event.create(`large_${planet}_rock`).texture(`kubejs:item/large_${planet}_rock`)
     }
 
-    ancient_tech('light_refractor', 'Light Refractor');
-    ancient_tech('atomic_magnet', 'Atomic Magnet');
-    ancient_tech('dial_device', 'Dial Device');
-    ancient_tech('bio_filter', 'Bio Filter');
+    ancient_tech("light_refractor", "Light Refractor")
+    ancient_tech("atomic_magnet", "Atomic Magnet")
+    ancient_tech("dial_device", "Dial Device")
+    ancient_tech("bio_filter", "Bio Filter")
 
-    rocks('moon')
-    rocks('mars')
-    rocks('venus')
-
+    rocks("moon")
+    rocks("mars")
+    rocks("venus")
 })

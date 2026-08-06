@@ -1,9 +1,5 @@
-LootJS.modifiers(event => {
-    event
-        .addLootTableModifier("minecraft:entities/creeper")
-        .addWeightedLoot([
-            Item.of("1x kubejs:explosive_heart").withChance(.1),
-        ]);
+LootJS.modifiers((event) => {
+    event.addLootTableModifier("minecraft:entities/creeper").addWeightedLoot([Item.of("1x kubejs:explosive_heart").withChance(0.1)])
 
     // event
     //     .addLootTableModifier("kubejs:venus_obelisk_loot")
@@ -16,5 +12,4 @@ LootJS.modifiers(event => {
     //         Item.of("4x gtceu:small_perfected_electrum_dust").withChance(15),
     //         Item.of("16x gtceu:venus_sand_dust").withChance(85),
     //     ]);
-
-    });
+})

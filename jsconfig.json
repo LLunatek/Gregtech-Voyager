@@ -1,0 +1,22 @@
+{
+  "include": [
+    "kubejs/**/*.js",
+    ".probe/**/global/*.d.ts",
+    ".probe/**/packages/com.gregtechceu.d.ts",
+    ".probe/**/packages/dev.latvian.d.ts",
+  ],
+  "compilerOptions": {
+    "module": "esnext",
+    "target": "es2015",
+    "typeRoots": [
+      ".probe"
+    ],
+    "moduleResolution":"bundler",
+    "checkJs": true,
+    "rootDirs": [
+      "kubejs/server_scripts",
+      "kubejs/startup_scripts",
+      "kubejs/client_scripts"
+    ],
+  },
+}
