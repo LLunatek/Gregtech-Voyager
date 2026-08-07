@@ -10,7 +10,7 @@ ServerEvents.recipes((event) => {
     event.remove({ output: "gtceu:rhodium_sulfate" })
     event.remove({ output: "gtceu:ruthenium_tetroxide" })
 
-    recipe_centrifuge(
+    global.recipe_centrifuge(
         event,
         "pgs",
         ["6x gtceu:platinum_group_sludge_dust"],
@@ -21,7 +21,7 @@ ServerEvents.recipes((event) => {
         480
     )
 
-    recipe_chem_plant(
+    global.recipe_chem_plant(
         event,
         "pgs",
         ["6x gtceu:platinum_group_sludge_dust"],
@@ -34,24 +34,9 @@ ServerEvents.recipes((event) => {
         "plat_line"
     )
 
-    recipe_centrifuge(
-        event,
-        "pgs_adv",
-        ["4x gtceu:platinum_group_sludge_dust"],
-        ["gtceu:aqua_regia 600"],
-        ["5x gtceu:rarest_metal_mixture_dust", "5x gtceu:inert_metal_mixture_dust", "6x gtceu:platinum_sludge_residue_dust", "12x gtceu:plat_palladium_metal_residue_dust"],
-        [],
-        30,
-        480 * 0.33,
-        "advanced_chemist_helper"
-    )
-
-    recipe_lcr(event, "dewatering_fluid", ["2x gtceu:barium_dust", "gtceu:zinc_dust"], ["gtceu:kerosene 2000"], [], ["kubejs:dewatering_fluid 5000"], 40, 480)
-
-    recipe_lcr(event, "dewatering_fluid", ["2x gtceu:barium_dust", "gtceu:zinc_dust"], ["gtceu:kerosene 1200"], [], ["kubejs:dewatering_fluid 6000"], 30, 400, "basic_chemist_helper")
-
+    global.recipe_lcr(event, "dewatering_fluid", ["2x gtceu:barium_dust", "gtceu:zinc_dust"], ["gtceu:kerosene 2000"], [], ["kubejs:dewatering_fluid 5000"], 40, 480)
     // iridium
-    recipe_lcr(
+    global.recipe_lcr(
         event,
         "dewatered_iridium_metal_residue",
         ["5x gtceu:iridium_metal_residue_dust"],
@@ -62,7 +47,7 @@ ServerEvents.recipes((event) => {
         120
     )
 
-    recipe_lcr(
+    global.recipe_lcr(
         event,
         "impure_iridium",
         ["4x gtceu:dewatered_iridium_metal_residue_dust"],
@@ -73,7 +58,7 @@ ServerEvents.recipes((event) => {
         30
     )
 
-    recipe_centrifuge(
+    global.recipe_centrifuge(
         event,
         "iridium_chloride",
         ["3x gtceu:impure_iridium_metal_dust"],
@@ -85,7 +70,7 @@ ServerEvents.recipes((event) => {
     )
 
     //osmium
-    recipe_lcr(
+    global.recipe_lcr(
         event,
         "rarest_metal_mixture_dust_processing",
         ["7x gtceu:rarest_metal_mixture_dust"],
@@ -95,7 +80,7 @@ ServerEvents.recipes((event) => {
         20,
         7680
     )
-    recipe_lcr(
+    global.recipe_lcr(
         event,
         "impure_shiny_metal_mixture",
         [],
@@ -106,7 +91,7 @@ ServerEvents.recipes((event) => {
         480
     )
 
-    recipe_lcr(
+    global.recipe_lcr(
         event,
         "acidic_osmium_solution",
         [],
@@ -118,7 +103,7 @@ ServerEvents.recipes((event) => {
     )
 
     // plat and palladium
-    recipe_lcr(
+    global.recipe_lcr(
         event,
         "sulfuric_plat_palladium_residue",
         ["6x gtceu:plat_palladium_metal_residue_dust"],
@@ -128,7 +113,7 @@ ServerEvents.recipes((event) => {
         20,
         120
     )
-    recipe_centrifuge(
+    global.recipe_centrifuge(
         event,
         "palladium_and_platinum",
         [],
@@ -140,7 +125,7 @@ ServerEvents.recipes((event) => {
     )
 
     // ruthenium/rhodium
-    recipe_lcr(
+    global.recipe_lcr(
         event,
         "sulfuric_inert_metal_solution",
         ["6x gtceu:inert_metal_mixture_dust"],
@@ -151,7 +136,7 @@ ServerEvents.recipes((event) => {
         1980
     )
 
-    recipe_centrifuge(
+    global.recipe_centrifuge(
         event,
         "sulfuric_inert_metal_solution_processing",
         [],
@@ -162,7 +147,7 @@ ServerEvents.recipes((event) => {
         480
     )
 
-    recipe_lcr(
+    global.recipe_lcr(
         event,
         "ruthen_tetroxide",
         ["gtceu:calcium_hydroxide_dust"],
@@ -173,9 +158,9 @@ ServerEvents.recipes((event) => {
         120
     )
 
-    recipe_lcr(event, "impure_rhodium_sludge", ["gtceu:calcium_hydroxide_dust"], ["gtceu:sulfuric_rhodium_solution 1000"], ["3x gtceu:impure_rhodium_sludge_dust"], [], 5, 120)
+    global.recipe_lcr(event, "impure_rhodium_sludge", ["gtceu:calcium_hydroxide_dust"], ["gtceu:sulfuric_rhodium_solution 1000"], ["3x gtceu:impure_rhodium_sludge_dust"], [], 5, 120)
 
-    recipe_centrifuge(
+    global.recipe_centrifuge(
         event,
         "rhodium_sulfate",
         ["9x gtceu:impure_rhodium_sludge_dust"],

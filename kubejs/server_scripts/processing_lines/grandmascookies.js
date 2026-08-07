@@ -108,9 +108,9 @@ ServerEvents.recipes((event) => {
         .duration(200) // in ticks
         .EUt(16)
 
-    recipe_mixer(event, "baking_chocolate", ["kubejs:cacao_powder", "minecraft:sugar"], ["minecraft:milk 1000"], ["4x kubejs:baking_chocolate"], [], 30, 200)
+    global.recipe_mixer(event, "baking_chocolate", ["kubejs:cacao_powder", "minecraft:sugar"], ["minecraft:milk 1000"], ["4x kubejs:baking_chocolate"], [], 30, 200)
 
-    recipe_mixer(
+    global.recipe_mixer(
         event,
         "cookiedough",
         ["2x minecraft:egg", "2x kubejs:butter", "2x kubejs:baking_chocolate", "kubejs:baking_flour", "2x minecraft:sugar"],

@@ -1,53 +1,15 @@
-/**
- * Create a LCR recipe
- * @param {$RecipesEventJS_} event - recipe event
- * @param {string} name - recipe name (dont include kubejs:)
- * @param {string[] | string} inputItems - array of input items (include amount)
- * @param {string[] | string} inputFluids - array of input fluids (include amount)
- * @param {string[] | string} outputItems - array of output items (include amount)
- * @param {string[] | string} outputFluids - array of output fluids (include amount)
- * @param {number} duration - time in seconds
- * @param {number} eut - eu/tick
- * @param {string} [helper] - helper to use
- */
-function recipe_lcr(event, name, inputItems, inputFluids, outputItems, outputFluids, duration, eut, helper) {
-    if (!helper) {
-        // cannot use $GTRecipeSchema$GTRecipeJS_ type here because it's all fucked up
-        event.recipes.gtceu
-            .large_chemical_reactor("kubejs:lcr_" + name)
-            .itemInputs(inputItems)
-            .itemOutputs(outputItems)
-            .inputFluids(inputFluids)
-            .outputFluids(outputFluids)
-            .duration(duration * 20)
-            .EUt(eut)
-    } else {
-        event.recipes.gtceu
-            .large_chemical_reactor("kubejs:lcr_helper_" + name)
-            .itemInputs(inputItems)
-            .notConsumable("kubejs:" + helper)
-            .itemOutputs(outputItems)
-            .inputFluids(inputFluids)
-            .circuit(3)
-            .outputFluids(outputFluids)
-            .duration(duration * 20)
-            .EUt(eut)
-    }
+global.recipe_lcr = function(event, name, inputItems, inputFluids, outputItems, outputFluids, duration, eut, helper) {
+    event.recipes.gtceu
+        .large_chemical_reactor("kubejs:lcr_" + name)
+        .itemInputs(inputItems)
+        .itemOutputs(outputItems)
+        .inputFluids(inputFluids)
+        .outputFluids(outputFluids)
+        .duration(duration * 20)
+        .EUt(eut)
 }
 
-/**
- * Create a Centrifuge recipe
- * @param {$RecipesEventJS_} event - recipe event
- * @param {string} name - recipe name (dont include kubejs:)
- * @param {string[] | string} inputItems - array of input items (include amount)
- * @param {string[] | string} inputFluids - array of input fluids (include amount)
- * @param {string[] | string} outputItems - array of output items (include amount)
- * @param {string[] | string} outputFluids - array of output fluids (include amount)
- * @param {number} duration - time in seconds
- * @param {number} eut - eu/tick
- * @param {string} [helper] - helper to use
- */
-function recipe_centrifuge(event, name, inputItems, inputFluids, outputItems, outputFluids, duration, eut, helper) {
+global.recipe_centrifuge = function(event, name, inputItems, inputFluids, outputItems, outputFluids, duration, eut, helper) {
     if (helper) {
         event.recipes.gtceu
             .centrifuge("kubejs:centrifuge_helper_" + name)
@@ -71,18 +33,7 @@ function recipe_centrifuge(event, name, inputItems, inputFluids, outputItems, ou
     }
 }
 
-/**
- * Create an Electrolyzer recipe
- * @param {$RecipesEventJS_} event - recipe event
- * @param {string} name - recipe name (dont include kubejs:)
- * @param {string[] | string} inputItems - array of input items (include amount)
- * @param {string[] | string} inputFluids - array of input fluids (include amount)
- * @param {string[] | string} outputItems - array of output items (include amount)
- * @param {string[] | string} outputFluids - array of output fluids (include amount)
- * @param {number} duration - time in seconds
- * @param {number} eut - eu/tick
- */
-function recipe_electrolyzer(event, name, inputItems, inputFluids, outputItems, outputFluids, duration, eut) {
+global.recipe_electrolyzer = function(event, name, inputItems, inputFluids, outputItems, outputFluids, duration, eut) {
     event.recipes.gtceu
         .electrolyzer("kubejs:electrolyzer_" + name)
         .itemInputs(inputItems)
@@ -92,21 +43,8 @@ function recipe_electrolyzer(event, name, inputItems, inputFluids, outputItems, 
         .duration(duration * 20)
         .EUt(eut)
 }
-/**
- * Create a Chemical Plant recipe
- * @param {$RecipesEventJS_} event - recipe event
- * @param {string} name - recipe name (dont include kubejs:)
- * @param {string[] | string} inputItems - array of input items (include amount)
- * @param {string[] | string} inputFluids - array of input fluids (include amount)
- * @param {string[] | string} outputItems - array of output items (include amount)
- * @param {string[] | string} outputFluids - array of output fluids (include amount)
- * @param {number} duration - time in seconds
- * @param {number} eut - eu/tick
- * @param {number} temp - temperature
- * @param {string} [specialized] - specialization
- */
 
-function recipe_chem_plant(event, name, inputItems, inputFluids, outputItems, outputFluids, duration, eut, temp, specialized) {
+global.recipe_chem_plant = function(event, name, inputItems, inputFluids, outputItems, outputFluids, duration, eut, temp, specialized) {
     if (specialized) {
         event.recipes.gtceu
             .chemical_plant("kubejs:chemical_plant_" + name + "_" + specialized)
@@ -131,18 +69,7 @@ function recipe_chem_plant(event, name, inputItems, inputFluids, outputItems, ou
     }
 }
 
-/**
- * Create a Mixer recipe
- * @param {$RecipesEventJS_} event - recipe event
- * @param {*} name
- * @param {*} ingredientsItem
- * @param {*} fluidIngredients
- * @param {*} itemOutputs
- * @param {*} fluidOutputs
- * @param {*} eut
- * @param {*} time
- */
-function recipe_mixer(event, name, ingredientsItem, fluidIngredients, itemOutputs, fluidOutputs, eut, time) {
+global.recipe_mixer = function(event, name, ingredientsItem, fluidIngredients, itemOutputs, fluidOutputs, eut, time) {
     event.recipes.gtceu
         .mixer("kubejs:mixer_" + name)
         .itemInputs(ingredientsItem)
@@ -153,17 +80,7 @@ function recipe_mixer(event, name, ingredientsItem, fluidIngredients, itemOutput
         .EUt(eut)
 }
 
-/**
- * Create a Distillation recipe
- * @param {$RecipesEventJS_} event - recipe event
- * @param {*} input
- * @param {*} amt
- * @param {*} itemOutput
- * @param {*} fluidOutputs
- * @param {*} eut
- * @param {*} time
- */
-function recipe_distillation(event, input, amt, itemOutput, fluidOutputs, eut, time) {
+global.recipe_distillation = function(event, input, amt, itemOutput, fluidOutputs, eut, time) {
     event.recipes.gtceu
         .distillation_tower(`kubejs:${input}_distilling`)
         .inputFluids(`kubejs:${input} ${amt}`)
@@ -173,15 +90,7 @@ function recipe_distillation(event, input, amt, itemOutput, fluidOutputs, eut, t
         .EUt(eut)
 }
 
-/**
- * Create a Macerator recipe
- * @param {$RecipesEventJS_} event - recipe event
- * @param {*} inputItem
- * @param {*} outputItem
- * @param {*} eut
- * @param {*} time
- */
-function recipe_macerator(event, inputItem, outputItem, eut, time) {
+global.recipe_macerator = function(event, inputItem, outputItem, eut, time) {
     event.recipes.gtceu
         .macerator(outputItem + "_macerator")
         .itemInputs(inputItem)
@@ -190,19 +99,7 @@ function recipe_macerator(event, inputItem, outputItem, eut, time) {
         .EUt(eut)
 }
 
-/**
- * Create a Radiation Chamber Recipe
- * @param {$RecipesEventJS_} event - recipe event
- * @param {string} name - recipe name (dont include kubejs:)
- * @param {string[] | string} inputItems - array of input items (include amount)
- * @param {string[] | string} inputFluids - array of input fluids (include amount)
- * @param {*} pt
- * @param {string[] | string} outputItems - array of output items (include amount)
- * @param {string[] | string} outputFluids - array of output fluids (include amount)
- * @param {number} duration - time in seconds
- * @param {number} eut - eu/tick
- */
-function recipe_radiation_chamber(event, name, inputItems, inputFluids, pt, outputItems, outputFluids, eut, duration) {
+global.recipe_radiation_chamber = function(event, name, inputItems, inputFluids, pt, outputItems, outputFluids, eut, duration) {
     event.recipes.gtceu
         .radiation_chamber("kubejs:" + name)
         .itemInputs(inputItems)
@@ -215,47 +112,25 @@ function recipe_radiation_chamber(event, name, inputItems, inputFluids, pt, outp
         .EUt(eut)
 }
 
-/**
- * Create a Teus Laser Recipe (I totally know what the Teus Laser does)
- * @param {$RecipesEventJS_} event - recipe event
- * @param {*} output
- * @param {string[] | string} inputItems - array of input items (include amount)
- * @param {*} concentration
- * @param {*} nonconsumed
- * @param {string[] | string} inputFluids - array of input fluids (include amount)
- * @param {string[] | string} outputFluids - array of output fluids (include amount)
- * @param {number} duration - time in seconds
- * @param {number} eut - eu/tick
- */
-
-function recipe_teus_laser(event, output, inputItems, nonconsumed, inputFluids, outputFluids, eut, duration, concentration) {
+global.recipe_teus_laser = function(event, output, inputItems, nonconsumed, inputFluids, outputFluids, eut, duration, concentration) {
     event.recipes.gtceu
-        .beam_heating(`${output}_teus_laser`) // recipe ID
+        .beam_heating(`${output}_teus_laser`)
         .itemInputs(inputItems)
         .notConsumable(nonconsumed)
         .inputFluids(inputFluids)
         .addData("beam_concentration", concentration)
         .itemOutputs(output)
         .outputFluids(outputFluids)
-        .duration(duration * 20) // in ticks
+        .duration(duration * 20)
         .EUt(eut)
 }
 
-/**
- * Create a Chemical Bath
- * @param {$RecipesEventJS_} event - recipe event
- * @param {*} output
- * @param {string[] | string} inputItems - array of input items (include amount)
- * @param {string[] | string} inputFluids - array of input fluids (include amount)
- * @param {number} duration - time in seconds
- * @param {number} eut - eu/tick
- */
-function recipe_chem_bath(event, output, inputItems, inputFluids, eut, duration) {
+global.recipe_chem_bath = function(event, output, inputItems, inputFluids, eut, duration) {
     event.recipes.gtceu
-        .chemical_bath(`${output}_chem_bath`) // recipe ID
+        .chemical_bath(`${output}_chem_bath`)
         .itemInputs(inputItems)
         .inputFluids(inputFluids)
         .itemOutputs(output)
-        .duration(duration * 20) // in ticks
+        .duration(duration * 20)
         .EUt(eut)
 }

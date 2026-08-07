@@ -306,24 +306,39 @@ event.add(`voyagercore:helper_factory`, [
 
   event.add(`gtceu:radiation_chamber`, ['§aFocuses radioactive decay particles into a central chamber§r','§6Can only use 4x parallel hatches§r'])
   event.add(`voyagercore:hyper_helper_calorie_converter`, [
-    `${gr}Hyper Helper Calorie Converter`,
+    `${cy}Hyper Helper Calorie Converter`,
     nl,
     `${gre}Uses ${gr}Advanced Helper Calorie Conversion${x}${gre} recipes`,
-    `${gre}Only accepts a level ${gr}5${gre} and above ${gr}Hungry Helper${x}`,
     `${gre}Certain helper drinks provide ${gr}bonuses`,
     nl,
     `${or}Distilled Water${x}${gre} (1000mb/5s)`,
-    `${ye}100% EU/t${x}${gre} | ${ye}100% Recipe Duration${x}`,
+    `${ye}150% EU/t${x}${gre} | ${ye}100% Recipe Duration${x}`,
     `${wh}Milk${x}${gre} (350mb/5s)`,
-    `${gr}125% EU/t${x}${gre} | ${gr}150% Recipe Duration${x}`,
+    `${gr}225% EU/t${x}${gre} | ${gr}150% Recipe Duration${x}`,
     `${b}Helperade (Blue Raspberry)${x}${gre} (50mb/5s)`,
-    `${gr}225% EU/t${x}${gre} | ${gr}400% Recipe Duration${x}`,
+    `${gr}300% EU/t${x}${gre} | ${gr}400% Recipe Duration${x}`,
     `${gre}Water (5000mb/5s)`,
     `${re}50% EU/t${x}${gre} | ${re}50% Recipe Duration${x}`,
     nl,
     `${gre}If no drink is provided, the helper will eat your cookies, and generate ${re}10% EU/t${gre}`,
     ``,
     `${gre}Inspired by: ${cy}webal`
+])
+
+  event.add(`voyagercore:helper_calorie_converter`, [
+    `${gr}Helper Calorie Converter`,
+    nl,
+    `${gre}Uses ${gr}Advanced Helper Calorie Conversion${x}${gre} recipes`,
+    `${gre}Certain helper drinks provide ${gr}bonuses`,
+    nl,
+    `${or}Distilled Water${x}${gre} (1000mb/5s)`,
+    `${ye}100% EU/t${x}${gre} | ${ye}100% Recipe Duration${x}`,
+    `${wh}Milk${x}${gre} (350mb/5s)`,
+    `${gr}125% EU/t${x}${gre} | ${gr}150% Recipe Duration${x}`,
+    `${gre}Water (5000mb/5s)`,
+    `${re}50% EU/t${x}${gre} | ${re}50% Recipe Duration${x}`,
+    nl,
+    `${gre}If no drink is provided, the helper will eat your cookies, and generate ${re}10% EU/t${gre}`
 ])
 
   event.add(`gtceu:large_helper_wheel`, [

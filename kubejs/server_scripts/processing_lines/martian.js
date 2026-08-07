@@ -90,8 +90,7 @@ ServerEvents.recipes((event) => {
         .duration(96 * 2 * 20)
         .EUt(1980)
 
-    recipe_lcr(event, "dissolved_martian", "16x kubejs:shredded_martian_scrap", "gtceu:aqua_regia 9000", [], "kubejs:dissolved_martian_mineral_solution 1000", 240, 1980)
-    recipe_lcr(event, "dissolved_martian", "16x kubejs:shredded_martian_scrap", "gtceu:aqua_regia 6000", [], "kubejs:dissolved_martian_mineral_solution 1666", 180, 1560, "advanced_chemist_helper")
+    global.recipe_lcr(event, "dissolved_martian", "16x kubejs:shredded_martian_scrap", "gtceu:aqua_regia 9000", [], "kubejs:dissolved_martian_mineral_solution 1000", 240, 1980)
 
     event.recipes.gtceu
         .electrolyzer("kubejs:elec_martian_soup")
@@ -103,7 +102,7 @@ ServerEvents.recipes((event) => {
 
     // sulfuria
 
-    recipe_centrifuge(
+    global.recipe_centrifuge(
         event,
         "martian_sand",
         "64x gtceu:martian_sand_dust",
@@ -113,22 +112,11 @@ ServerEvents.recipes((event) => {
         60,
         1920
     )
-    recipe_centrifuge(
-        event,
-        "martian_sand",
-        "92x gtceu:martian_sand_dust",
-        "gtceu:toluene 350",
-        ["32x gtceu:salt_dust", "9x gtceu:magnetite_dust", "7x gtceu:magnesium_dust", "12x gtceu:phosphorus_dust", "8x gtceu:inert_sulfur_dust"],
-        [],
-        48,
-        1200,
-        "advanced_chemist_helper"
-    )
-    recipe_radiation_chamber(event, "excited_sulfur", "2x gtceu:inert_sulfur_dust", "uranium", 1, "2x gtceu:excited_sulfur_dust", "gtceu:radon 2000", 7860, 48)
+    global.recipe_radiation_chamber(event, "excited_sulfur", "2x gtceu:inert_sulfur_dust", "uranium", 1, "2x gtceu:excited_sulfur_dust", "gtceu:radon 2000", 7860, 48)
 
-    recipe_lcr(event, "carb_tetrach", "gtceu:carbon_dust", "gtceu:chlorine 4000", [], "gtceu:carbon_tetrachloride 1000", 20, 480)
+    global.recipe_lcr(event, "carb_tetrach", "gtceu:carbon_dust", "gtceu:chlorine 4000", [], "gtceu:carbon_tetrachloride 1000", 20, 480)
 
-    recipe_lcr(event, "sulfuria_sol", ["2x gtceu:excited_sulfur_dust", "gtceu:copper_dust"], "gtceu:carbon_tetrachloride 1000", [], "gtceu:sulfuria_solution 1000", 30, 1920)
+    global.recipe_lcr(event, "sulfuria_sol", ["2x gtceu:excited_sulfur_dust", "gtceu:copper_dust"], "gtceu:carbon_tetrachloride 1000", [], "gtceu:sulfuria_solution 1000", 30, 1920)
 
     event.recipes.gtceu
         .distillation_tower("kubejs:sulfuria")
@@ -138,7 +126,7 @@ ServerEvents.recipes((event) => {
         .duration(20 * 32)
         .EUt(7860)
 
-    recipe_chem_plant(
+    global.recipe_chem_plant(
         event,
         "htba-s",
         ["2x gtceu:sulfuria_dust", "3x gtceu:borax_dust"],
@@ -148,18 +136,6 @@ ServerEvents.recipes((event) => {
         40,
         7860 * 1.5,
         5000
-    )
-    recipe_chem_plant(
-        event,
-        "htba-s",
-        ["2x gtceu:sulfuria_dust", "3x gtceu:borax_dust"],
-        ["gtceu:argon 1000", "gtceu:vanadium_gallium 1152"],
-        [],
-        "kubejs:high_temp_binding_agent_s 1440",
-        30,
-        7860,
-        5000,
-        "advanced_chemist_helper"
     )
 
     event.recipes.gtceu

@@ -62,9 +62,24 @@ ServerEvents.recipes((event) => {
         ],
         {
             A: "gtceu:double_titanex-879-htb_plate",
-            B: "gtceu:power_rectangle_helper_calorie_converter", //arg 3: the mapping object
+            B: "voyagercore:helper_calorie_converter", //arg 3: the mapping object
             C: "kubejs:heat_sheild",
             D: "#gtceu:circuits/luv"
+        }
+    )
+
+    event.shaped(
+        Item.of("voyagercore:helper_calorie_converter", 1), // arg 1: output
+        [
+            "ADA",
+            "CBC", // arg 2: the shape (array of strings)
+            "ADA"
+        ],
+        {
+            A: "gtceu:double_lead_plate",
+            B: "gtceu:large_helper_wheel", //arg 3: the mapping object
+            C: "kubejs:heat_sheild",
+            D: "#gtceu:circuits/iv"
         }
     )
 
@@ -84,15 +99,17 @@ ServerEvents.recipes((event) => {
         }
     )
 
-    calorie_conversion("uranium_cookies", "hungry", "gtceu:thorium_dust", 15, 8192, "gtceu:steam 500")
-    calorie_conversion("uranium_cookies", "lcptr", "gtceu:thorium_dust", 60, 4096, "gtceu:steam 100")
+    // calorie_conversion("uranium_cookies", "hungry", "gtceu:thorium_dust", 15, 8192, "gtceu:steam 500")
+    // calorie_conversion("uranium_cookies", "lcptr", "gtceu:thorium_dust", 60, 4096, "gtceu:steam 100")
 
-    calorie_conversion("cookie", "hungry", "gtceu:carbon_dust", 3.75, 2048)
-    calorie_conversion("cookie", "lcptr", "gtceu:carbon_dust", 15, 1024)
+    // calorie_conversion("cookie", "hungry", "gtceu:carbon_dust", 3.75, 2048)
+    // calorie_conversion("cookie", "lcptr", "gtceu:carbon_dust", 15, 1024)
 
-    advanced_calorie_conversion('uranium_cookies', 'hungry_hungry', 'gtceu:uranium_dust', 10, 16384 * 2, 'gtceu:steam 500', 5)
+    advanced_calorie_conversion('uranium_cookies', 'hungry_hungry', 'gtceu:thorium_dust', 10, 16384, 'gtceu:steam 500', 5)
 
-    advanced_calorie_conversion('cookie', 'hungry_hungry', 'gtceu:uranium_dust', 3, 4096 * 1, 'gtceu:steam 500', 1)
+    advanced_calorie_conversion('crystal_cookies', 'hungry_hungry', 'gtceu:tiny_uraninite_dust', 10, 16384, 'gtceu:steam 500', 5)
+
+    advanced_calorie_conversion('cookie', 'hungry_hungry', 'gtceu:carbon_dust', 3, 4096, 'gtceu:steam 500', 1)
 
 
     // calorie_conversion('cookie', 'hungry_hungry', 'gtceu:graphite_dust', 3, 4096)

@@ -91,8 +91,8 @@
 			]
 			id: "4B67FC25B486D10C"
 			tasks: [{
-				id: "353A0DA266B419C3"
-				item: "gtceu:celestial_post_box"
+				id: "628E34DAA970A542"
+				item: "voyagercore:celestial_post_box"
 				type: "item"
 			}]
 			title: "Recieving Mail From the Stars"
@@ -100,7 +100,10 @@
 			y: 4.0d
 		}
 		{
-			dependencies: ["4B67FC25B486D10C"]
+			dependencies: [
+				"4B67FC25B486D10C"
+				"2C0C411C14E69689"
+			]
 			id: "56CB165B0476514F"
 			size: 1.5d
 			tasks: [{
@@ -1467,16 +1470,6 @@
 			y: 15.0d
 		}
 		{
-			id: "57C8960BA624E4D9"
-			tasks: [{
-				id: "504617012AB5A354"
-				title: "Future addition: new power"
-				type: "checkmark"
-			}]
-			x: 1.5d
-			y: 15.0d
-		}
-		{
 			dependencies: [
 				"50A265E32ADDD82E"
 				"3FB4F231181DD428"
@@ -1634,6 +1627,47 @@
 			}]
 			x: -9.0d
 			y: 13.0d
+		}
+		{
+			id: "2C0C411C14E69689"
+			tasks: [
+				{
+					id: "47B33C3D5A0A1C01"
+					item: {
+						Count: 1
+						id: "voyagercore:embassy_paramount_helper_hull"
+						tag: {
+							paramount_helper_data: {
+								current_xp: 0L
+								level: 1
+								level_up_xp: 1024L
+								max_module_count: 3
+								tier: 5
+							}
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "66FA21EDEE0E271C"
+					item: {
+						Count: 1
+						id: "voyagercore:embassy_paramount_helper"
+						tag: {
+							paramount_helper_data: {
+								current_xp: 0L
+								level: 1
+								level_up_xp: 1024L
+								max_module_count: 3
+								tier: 5
+							}
+						}
+					}
+					type: "item"
+				}
+			]
+			x: 2.5d
+			y: 4.0d
 		}
 	]
 	title: "Chapter 5: Age of Infrastructure (IV)"

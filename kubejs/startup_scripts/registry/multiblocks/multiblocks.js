@@ -614,7 +614,7 @@ GTCEuStartupEvents.registry("gtceu:machine", (event) => {
                         .or(Predicates.abilities(PartAbility.MAINTENANCE).setExactLimit(1).setPreviewCount(1))
                         .or(Predicates.abilities(PartAbility.INPUT_ENERGY).setMaxGlobalLimited(2).setPreviewCount(1))
                 )
-                .where("A", Predicates.blocks("kubejs:radiation_conducting_titanex_casing"))
+                .where("A", Predicates.blocks("gtceu:nonconducting_casing"))
                 .where("L", Predicates.blocks("gtceu:laminated_glass"))
                 .where("T", Predicates.blocks("gtceu:tungstensteel_pipe_casing"))
                 .where("F", Predicates.abilities(PartAbility.IMPORT_FLUIDS))
