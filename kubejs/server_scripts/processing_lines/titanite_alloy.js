@@ -61,10 +61,10 @@ ServerEvents.recipes((event) => {
         }
     }
 
-    global.recipe_lcr(event, "lunarium_slurry", ["2x gtceu:lunarium_dust", "gtceu:carbon_dust"], ["gtceu:chlorine 450", "gtceu:fluorine 300"], [], "gtceu:lunarium_growth_slurry 3000", 30, 7680)
+    global.recipe_lcr(event, "lunarium_slurry", ["2x gtceu:lunarium_dust", "gtceu:carbon_dust"], ["gtceu:chlorine 1000", "gtceu:fluorine 1000"], [], "gtceu:lunarium_growth_slurry 4500", 30, 7680)
 
 
-    radiation_chamber("titanichite_spores", "gtceu:small_titanite_dust", "gtceu:lunarium_growth_slurry 3", "kubejs:titanichite_bud", [], 60, 480)
+    radiation_chamber("titanichite_spores", "gtceu:small_titanite_dust", "gtceu:lunarium_growth_slurry 1", "kubejs:titanichite_bud", [], 60, 480)
 
     autoclave("titanichite", ["kubejs:titanichite_bud", "4x kubejs:crystalline_titanium_electrum"], "gtceu:uranium 2000", "4x gtceu:raw_titanichite", [], 25, 7680)
     autoclave("titanichite_plut241", ["kubejs:titanichite_bud", "4x kubejs:crystalline_titanium_electrum"], "gtceu:plutonium_241 600", "12x gtceu:raw_titanichite", [], 25, 7680)

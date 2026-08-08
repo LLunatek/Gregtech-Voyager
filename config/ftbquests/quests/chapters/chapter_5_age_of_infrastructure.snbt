@@ -230,6 +230,7 @@
 			y: 6.0d
 		}
 		{
+			dependencies: ["04BD5101521DF8BC"]
 			id: "78BD9D87CBFA6428"
 			tasks: [{
 				id: "0510ADECCCFE6605"
@@ -947,14 +948,18 @@
 			y: -1.0d
 		}
 		{
+			dependencies: [
+				"503A07BAB88F1732"
+				"245D7901EBA2C1ED"
+			]
 			id: "17EC186948CB00B9"
 			tasks: [{
 				id: "7B2ADCC51C7A4F31"
 				item: "kubejs:iv_helper_computation_array"
 				type: "item"
 			}]
-			x: -5.5d
-			y: 13.0d
+			x: -3.5d
+			y: 0.5d
 		}
 		{
 			dependencies: [
@@ -1021,7 +1026,7 @@
 				item: "gtceu:extreme_combustion_engine"
 				type: "item"
 			}]
-			x: -4.5d
+			x: -3.0d
 			y: 15.0d
 		}
 		{
@@ -1043,7 +1048,7 @@
 				type: "item"
 			}]
 			title: "Titanex 879-HT B Rotors"
-			x: -3.5d
+			x: -2.0d
 			y: 16.5d
 		}
 		{
@@ -1083,8 +1088,8 @@
 				}
 			]
 			title: "Better Blasting"
-			x: 5.0d
-			y: 16.0d
+			x: 3.0d
+			y: 14.0d
 		}
 		{
 			dependencies: ["1EA011566D0AF90B"]
@@ -1097,8 +1102,8 @@
 				item: "gtceu:iv_large_miner"
 				type: "item"
 			}]
-			x: 3.25d
-			y: 16.0d
+			x: -9.75d
+			y: 5.25d
 		}
 		{
 			dependencies: [
@@ -1112,7 +1117,7 @@
 				item: "gtceu:iv_rotor_holder"
 				type: "item"
 			}]
-			x: -2.5d
+			x: -1.0d
 			y: 16.5d
 		}
 		{
@@ -1245,8 +1250,8 @@
 				item: "gtceu:fiber_reinforced_printed_circuit_board"
 				type: "item"
 			}]
-			x: 0.0d
-			y: 12.0d
+			x: 0.5d
+			y: 11.5d
 		}
 		{
 			description: ["add a new glue or something, a chemical line"]
@@ -1319,10 +1324,7 @@
 			y: 6.0d
 		}
 		{
-			dependencies: [
-				"014935D33AD9697A"
-				"47F271D5BF669B84"
-			]
+			dependencies: ["014935D33AD9697A"]
 			id: "17B8AC9F71D82B41"
 			subtitle: "The ultimate alloying assistant"
 			tasks: [{
@@ -1347,7 +1349,7 @@
 				type: "item"
 			}]
 			title: "Hyper Helper Calorie Converter"
-			x: -1.5d
+			x: 0.0d
 			y: 15.0d
 		}
 		{
@@ -1377,7 +1379,7 @@
 				item: "voyagercore:xl_turbine"
 				type: "item"
 			}]
-			x: -3.0d
+			x: -1.5d
 			y: 15.0d
 		}
 		{
@@ -1446,7 +1448,7 @@
 			]
 			title: "Better Freezing"
 			x: 5.0d
-			y: 18.0d
+			y: 16.0d
 		}
 		{
 			dependencies: ["014935D33AD9697A"]
@@ -1458,16 +1460,6 @@
 			}]
 			x: 4.0d
 			y: 11.5d
-		}
-		{
-			id: "28E36222D99A71A7"
-			tasks: [{
-				id: "32C08960355AC036"
-				title: "Future Addition: Steam Turbine"
-				type: "checkmark"
-			}]
-			x: 0.0d
-			y: 15.0d
 		}
 		{
 			dependencies: [
@@ -1485,21 +1477,7 @@
 			y: 9.0d
 		}
 		{
-			dependencies: ["3EB2AED9E53B3F2F"]
-			hide_dependency_lines: true
-			id: "47F271D5BF669B84"
-			shape: "gear"
-			size: 1.5d
-			tasks: [{
-				id: "14C4CA26F4AF2756"
-				item: "voyagercore:chemical_plant"
-				type: "item"
-			}]
-			x: 7.5d
-			y: 14.0d
-		}
-		{
-			dependencies: ["47F271D5BF669B84"]
+			dependencies: ["1588F681D9664CFC"]
 			hide_dependency_lines: true
 			id: "5336212D1C3B588F"
 			tasks: [{
@@ -1507,7 +1485,7 @@
 				item: "gtceu:nitrobenzene_bucket"
 				type: "item"
 			}]
-			x: -2.5d
+			x: -1.5d
 			y: 17.5d
 		}
 		{
@@ -1629,6 +1607,10 @@
 			y: 13.0d
 		}
 		{
+			dependencies: [
+				"2506B3265C31CACB"
+				"0A24BE1EE0ABBACF"
+			]
 			id: "2C0C411C14E69689"
 			tasks: [
 				{
@@ -1668,6 +1650,45 @@
 			]
 			x: 2.5d
 			y: 4.0d
+		}
+		{
+			dependencies: [
+				"168C4348743D0603"
+				"267BE42AF6304F3E"
+			]
+			id: "1588F681D9664CFC"
+			shape: "gear"
+			size: 1.5d
+			tasks: [{
+				id: "0033F68170483840"
+				item: "voyagercore:chemical_plant"
+				type: "item"
+			}]
+			x: -8.5d
+			y: 6.0d
+		}
+		{
+			id: "4D85363D39882AC2"
+			subtitle: "Not yet implemented"
+			tasks: [{
+				id: "73405126D9719ED7"
+				item: "kubejs:grandmas_crystal_cookies"
+				type: "item"
+			}]
+			x: 0.0d
+			y: 16.5d
+		}
+		{
+			dependencies: ["1588F681D9664CFC"]
+			hide_dependency_lines: true
+			id: "5DE49F90D38DDA01"
+			tasks: [{
+				id: "4417D9688E3D318C"
+				item: "gtceu:high_octane_gasoline_bucket"
+				type: "item"
+			}]
+			x: -3.0d
+			y: 16.5d
 		}
 	]
 	title: "Chapter 5: Age of Infrastructure (IV)"

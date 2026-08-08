@@ -78,7 +78,7 @@ ServerEvents.recipes((event) => {
         {
             A: "gtceu:double_lead_plate",
             B: "gtceu:large_helper_wheel", //arg 3: the mapping object
-            C: "kubejs:heat_sheild",
+            C: "gtceu:ev_conveyor_module",
             D: "#gtceu:circuits/iv"
         }
     )

@@ -58,6 +58,13 @@ ServerEvents.recipes((event) => {
     )
 
     event.recipes.gtceu
+        .extractor("kubejs:milk_from_cow_pet") // recipe ID
+        .notConsumable("inventorypets:pet_cow")
+        .outputFluids("minecraft:milk 50")
+        .duration(20 * 10) // in ticks
+        .EUt(30)
+
+    event.recipes.gtceu
         .oven("kubejs:roasted_cacao_beans") // recipe ID
         .itemInputs("32x minecraft:cocoa_beans")
         .itemOutputs("32x kubejs:roasted_cacao_beans")

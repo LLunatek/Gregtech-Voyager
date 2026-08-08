@@ -72,7 +72,7 @@ ServerEvents.recipes((event) => {
         .itemInputs("voyagercore:condensation_resistant_tungsten_casing", "gtceu:lunarium_rotor")
         .inputFluids("gtceu:styrene_butadiene_rubber 576")
         .circuit(6)
-        .itemOutputs("2x voyagercore:condensation_resistant_tungsten_casing")
+        .itemOutputs("2x voyagercore:chemical_plant_casing")
         .duration(30)
         .EUt(16)
 

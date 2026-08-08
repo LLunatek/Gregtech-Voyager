@@ -140,48 +140,7 @@ GTCEuStartupEvents.registry("gtceu:machine", (event) => {
         )
 
 
-    
 
-
-        event.create("large_helper_factory", "multiblock")
-        .rotationState(RotationState.NON_Y_AXIS)
-        .recipeTypes("helper_assembler")
-        .recipeModifiers([GTRecipeModifiers.OC_PERFECT])
-
-        // base block appearance
-        .appearanceBlock(() => Block.getBlock("gtceu:clean_machine_casing"))
-
-        .pattern((definition) =>
-            FactoryBlockPattern.start()
-                .aisle("AABBBBBAA", "AABDDDBAA", "AABBBBBAA", "AA     AA")
-                .aisle("AABBBBBAA", "ACCCCCCCA", "AEBBBBBEA", "AA     AA")
-                .aisle("AABB@BBAA", "AABDDDBAA", "AABBBBBAA", "AA     AA")
-
-                .where("@", Predicates.controller(Predicates.blocks(definition.get())))
-
-                .where(
-                    "A",
-                    Predicates.blocks("gtceu:clean_machine_casing")
-
-                        .or(Predicates.abilities(PartAbility.IMPORT_ITEMS).setMaxGlobalLimited(8).setPreviewCount(1))
-                        .or(Predicates.abilities(PartAbility.MAINTENANCE).setExactLimit(1))
-                        .or(Predicates.abilities(PartAbility.EXPORT_ITEMS).setMaxGlobalLimited(8).setPreviewCount(1))
-                        .or(Predicates.abilities(PartAbility.IMPORT_FLUIDS).setMaxGlobalLimited(8).setPreviewCount(1))
-                        .or(Predicates.abilities(PartAbility.INPUT_ENERGY).setMaxGlobalLimited(1).setPreviewCount(1))
-                ) // make sure this is inside the .where, otherwise it will break shit
-
-                .where("B", Predicates.blocks("gtceu:stable_machine_casing"))
-                .where("C", Predicates.blocks("gtceu:titanium_gearbox"))
-                .where("D", Predicates.blocks("gtceu:laminated_glass"))
-                .where("E", Predicates.blocks("gtceu:titanium_pipe_casing"))
-                .where(" ", Predicates.air())
-
-                .build()
-        )
-
-        .workableCasingModel("gtceu:block/casings/solid/machine_casing_clean_stainless_steel", "kubejs:block/multiblock/large_helper_assembler")
-
-    event
         // .create("celestial_post_box", "multiblock")
         // .rotationState(RotationState.NON_Y_AXIS)
         // .recipeTypes("celestial_post_box")
@@ -232,7 +191,7 @@ GTCEuStartupEvents.registry("gtceu:machine", (event) => {
         .recipeModifiers([GTRecipeModifiers.OC_NON_PERFECT])
 
         // base block appearance
-        .appearanceBlock(() => Block.getBlock("kubejs:ostrum_casing"))
+        .appearanceBlock(() => Block.getBlock("voyagercore:ostrum_casing"))
 
         .pattern((definition) =>
             FactoryBlockPattern.start()
@@ -245,7 +204,7 @@ GTCEuStartupEvents.registry("gtceu:machine", (event) => {
 
                 .where(
                     "A",
-                    Predicates.blocks("kubejs:ostrum_casing")
+                    Predicates.blocks("voyagercore:ostrum_casing")
 
                         .or(Predicates.abilities(PartAbility.IMPORT_ITEMS).setMaxGlobalLimited(2).setPreviewCount(1))
                         .or(Predicates.abilities(PartAbility.MAINTENANCE).setExactLimit(1))
@@ -263,7 +222,7 @@ GTCEuStartupEvents.registry("gtceu:machine", (event) => {
                 .build()
         )
 
-        .workableCasingModel(`kubejs:block/casing/ostrum_casing`, `kubejs:block/multiblock/helper_software_installation_unit`)
+        .workableCasingModel(`voyagercore:block/casing/ostrum_casing`, `kubejs:block/multiblock/helper_software_installation_unit`)
 
     // core mod incoming!!
 
@@ -590,7 +549,7 @@ GTCEuStartupEvents.registry("gtceu:machine", (event) => {
         .langValue("Radiation Chamber")
         .recipeType("radiation_chamber")
         .recipeModifiers([GTRecipeModifiers.PARALLEL_HATCH, GTRecipeModifiers.OC_PERFECT])
-        .appearanceBlock(() => Block.getBlock("kubejs:radiation_proof_lead_casing"))
+        .appearanceBlock(() => Block.getBlock("voyagercore:radiation_proof_lead_casing"))
         .pattern((definition) =>
             FactoryBlockPattern.start()
                 .aisle("    BBB    ", "    LLL    ", "    LLL    ", "    LLL    ", "    LLL    ", "    BBB    ")
@@ -606,7 +565,7 @@ GTCEuStartupEvents.registry("gtceu:machine", (event) => {
                 .aisle("    B@B    ", "    LLL    ", "    LLL    ", "    LLL    ", "    LLL    ", "    BPB    ")
                 .where(
                     "B",
-                    Predicates.blocks("kubejs:radiation_proof_lead_casing")
+                    Predicates.blocks("voyagercore:radiation_proof_lead_casing")
                         .or(Predicates.abilities(PartAbility.IMPORT_ITEMS).setPreviewCount(1))
                         .or(Predicates.abilities(PartAbility.EXPORT_ITEMS).setPreviewCount(1))
                         // .or(Predicates.abilities(PartAbility.IMPORT_FLUIDS).setPreviewCount(1))
@@ -622,5 +581,5 @@ GTCEuStartupEvents.registry("gtceu:machine", (event) => {
                 .where("@", Predicates.controller(Predicates.blocks(definition.get())))
                 .build()
         )
-        .workableCasingModel("kubejs:block/casing/radiation_proof_lead_casing", "kubejs:block/multiblock/radiation_chamber")
+        .workableCasingModel("voyagercore:block/casing/radiation_proof_lead_casing", "kubejs:block/multiblock/radiation_chamber")
 })

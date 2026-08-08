@@ -10,67 +10,26 @@ ServerEvents.recipes((event) => {
      * @param {*} eut
      * @param {*} [helper]
      */
-    function c_postbox_bad(output, trade_deal, inputs, time, eut, helper) {
-        if (!helper) {
+    function c_postbox(output, trade_deal, inputs, time, eut, level) {
             event.recipes.gtceu
-                .celestial_post_box(`kubejs:${trade_deal}_${output}_bad`)
+                .celestial_post_box(`kubejs:${trade_deal}_${output}`)
                 .itemInputs(inputs)
                 .notConsumable(`kubejs:${trade_deal}`)
-                .chancedOutput(`kubejs:${output}`, 5000, 1000)
+                .addData("paramount", "embassy")
+                .addData("paramount_level", level)
+                .chancedOutput(`kubejs:${output}`, 9500, 500)
+                .chancedOutput(`3x kubejs:${output}`, 2000, 1500)
                 .duration(time * 20)
                 .EUt(eut)
-        } else {
-            event.recipes.gtceu
-                .celestial_post_box(`kubejs:${trade_deal}_${output}_helper_bad`)
-                .itemInputs(inputs)
-                .notConsumable(`kubejs:${trade_deal}`)
-                .notConsumable(`kubejs:${helper}_helper`)
-                .chancedOutput(`kubejs:${output}`, 7500, 1000)
-                .chancedOutput(`kubejs:${output}`, 3500, 500)
-                .duration(time * 20 * 0.66)
-                .EUt(eut * 0.66)
-        }
     }
 
-    /**
-     *
-     * @param {*} output
-     * @param {*} trade_deal
-     * @param {*} inputs
-     * @param {*} time
-     * @param {*} eut
-     * @param {*} [helper]
-     */
-    function c_postbox_good(output, trade_deal, inputs, time, eut, helper) {
-        if (!helper) {
-            event.recipes.gtceu
-                .celestial_post_box(`kubejs:${trade_deal}_${output}_good`)
-                .itemInputs(inputs)
-                .notConsumable(`kubejs:${trade_deal}`)
-                .chancedOutput(`kubejs:${output}`, 9000, 1000)
-                .chancedOutput(`2x kubejs:${output}`, 5000, 500)
-                .chancedOutput(`6x kubejs:${output}`, 2500, 250)
-                .duration(time * 20)
-                .EUt(eut)
-        } else {
-            event.recipes.gtceu
-                .celestial_post_box(`kubejs:${trade_deal}_${output}_helper_good`)
-                .itemInputs(inputs)
-                .notConsumable(`kubejs:${trade_deal}`)
-                .notConsumable(`kubejs:${helper}_helper`)
-                .chancedOutput(`kubejs:${output}`, 10000, 1000)
-                .chancedOutput(`3x kubejs:${output}`, 6500, 500)
-                .chancedOutput(`8x kubejs:${output}`, 3500, 250)
-                .duration(time * 20 * 0.66)
-                .EUt(eut * 0.66)
-        }
-    }
 
-    c_postbox_good("martian_shipment_t1", "martian_contract", "64x gtceu:lunarium_ingot", 60 * 10, 13000)
-    c_postbox_good("martian_shipment_t1", "martian_contract", "64x gtceu:lunarium_ingot", 60 * 10, 13000, "embassy")
 
-    c_postbox_bad("martian_shipment_t1", "martian_contract", "64x gtceu:desh_ingot", 60 * 10, 13000)
-    c_postbox_bad("martian_shipment_t1", "martian_contract", "64x gtceu:desh_ingot", 60 * 10, 13000, "embassy")
+    // c_postbox_good("martian_shipment_t1", "martian_contract", "64x gtceu:lunarium_ingot", 60 * 10, 13000)
+    // c_postbox_good("martian_shipment_t1", "martian_contract", "64x gtceu:lunarium_ingot", 60 * 10, 13000, "embassy")
+
+    // c_postbox_bad("martian_shipment_t1", "martian_contract", "64x gtceu:desh_ingot", 60 * 10, 13000)
+    // c_postbox_bad("martian_shipment_t1", "martian_contract", "64x gtceu:desh_ingot", 60 * 10, 13000, "embassy")
 
     event.recipes.gtceu.assembler("kubejs:radio")
         .itemInputs('2x gtceu:double_ostrum_plate', '4x gtceu:lunarium_ring', '4x gtceu:uranium_triplatinum_single_wire', '2x gtceu:qbit_cpu_chip', '2x #gtceu:circuits/iv', '1x gtceu:iv_emitter', '1x gtceu:iv_sensor')
@@ -79,7 +38,9 @@ ServerEvents.recipes((event) => {
         .duration(1000) 
         .EUt(7860) 
 
-    event.recipes.gtceu.celestial_post_box("kubejs:martian_contract").notConsumable("kubejs:celestial_radio").itemOutputs("kubejs:martian_contract").duration(20).EUt(2)
+    event.recipes.gtceu.celestial_post_box("kubejs:martian_contract").notConsumable("kubejs:celestial_radio").itemOutputs("kubejs:martian_contract").addData("paramount", "embassy").addData("paramount_level", 1).duration(100).EUt(2)
+
+    c_postbox("martian_shipment_t1", "martian_contract", "64x gtceu:lunarium_ingot", 60 * 10, 7860, 1)
 
     event.recipes.gtceu.assembler("kubejs:t1_box_open").itemInputs("kubejs:martian_shipment_t1").itemOutputs("64x kubejs:martian_scrap").duration(200).EUt(7860)
 
@@ -135,7 +96,7 @@ ServerEvents.recipes((event) => {
         "kubejs:high_temp_binding_agent_s 1152",
         40,
         7860 * 1.5,
-        5000
+        5000, "chemist"
     )
 
     event.recipes.gtceu
