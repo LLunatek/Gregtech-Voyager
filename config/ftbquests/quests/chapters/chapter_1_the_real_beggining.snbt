@@ -818,6 +818,7 @@
 			dependencies: [
 				"4E18C34ED24D379B"
 				"17B74197E07434BC"
+				"368B5D1609DE4CD7"
 			]
 			id: "56789FF17493784B"
 			shape: "gear"
@@ -923,6 +924,17 @@
 			]
 			x: -25.5d
 			y: 12.0d
+		}
+		{
+			dependencies: ["182D72912E295B5F"]
+			id: "368B5D1609DE4CD7"
+			tasks: [{
+				id: "7E35EA751BB03B7A"
+				item: "gtceu:red_alloy_ingot"
+				type: "item"
+			}]
+			x: -28.5d
+			y: 7.5d
 		}
 	]
 	title: "Chapter 0.5: Ultra Low Voltage (Ft. Steam)"
