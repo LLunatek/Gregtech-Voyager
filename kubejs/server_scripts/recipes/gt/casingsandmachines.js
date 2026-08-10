@@ -27,9 +27,10 @@ ServerEvents.recipes((event) => {
 
     casing_recipe("desh", "durable_desh")
     casing_recipe("ultimet", "firm_ultimet")
-    casing_recipe("ostrum", "ostrum")
+    // casing_recipe("ostrum", "ostrum")
     // casing_recipe('frost_conducting', 'aluminex_202_a')
-    casing_recipe("titanite_alloy", "titanite", ["#gtceu:circuits/iv"])
+    // casing_recipe("titanite_alloy", "titanite", ["#gtceu:circuits/iv"])
+    // casing_recipe("black_bronze", "heatproof_helper")
     casing_recipe("refined_fluxed_electrum", "heat_resistant_refined_fluxed_electrum")
     // casing_recipe('tungsten', 'condensation_resistant_tungsten')
     // casing_recipe('titanium', 'platinum', '2x #gtceu:circuits/ev')
@@ -49,6 +50,31 @@ ServerEvents.recipes((event) => {
         }
     )
     event.replaceInput({ output: "gtceu:large_assembler" }, "gtceu:platinum_single_cable", "gtceu:titanex-901-htc_gear")
+
+    event.recipes.gtceu
+        .assembler("kubejs:heatproof_helper_casing")
+        .itemInputs("6x gtceu:black_bronze_plate", "1x gtceu:heatproof_machine_casing", "gtceu:aluminium_normal_fluid_pipe")
+        .circuit(6)
+        .itemOutputs("2x voyagercore:heatproof_helper_casing")
+        .duration(30)
+        .EUt(16)
+
+    event.recipes.gtceu
+        .assembler("kubejs:ostrum_casing")
+        .itemInputs("6x gtceu:ostrum_plate", "1x gtceu:ostrum_frame")
+        .circuit(6)
+        .itemOutputs("2x voyagercore:ostrum_casing")
+        .duration(30)
+        .EUt(16)
+
+    event.recipes.gtceu
+        .assembler("kubejs:chemical_plant_casing")
+        .itemInputs("voyagercore:condensation_resistant_tungsten_casing", "gtceu:lunarium_rotor")
+        .inputFluids("gtceu:styrene_butadiene_rubber 576")
+        .circuit(6)
+        .itemOutputs("2x voyagercore:chemical_plant_casing")
+        .duration(30)
+        .EUt(16)
 
     event.recipes.gtceu
         .assembler("kubejs:condensation_resistant_tungsten_casing")
@@ -95,13 +121,13 @@ ServerEvents.recipes((event) => {
         .assembler("kubejs:radiation_proof_lead_casing")
         .itemInputs("6x gtceu:lead_plate", "1x gtceu:titanium_frame")
         .circuit(6)
-        .itemOutputs("2x kubejs:radiation_proof_lead_casing")
+        .itemOutputs("2x voyagercore:radiation_proof_lead_casing")
         .duration(30)
         .EUt(16)
 
     event.recipes.gtceu.assembler('kubejs:radiation_conducting_titanex_casing')
         .itemInputs(
-            '1x kubejs:radiation_proof_lead_casing',
+            '1x voyagercore:radiation_proof_lead_casing',
             '6x gtceu:double_titanex-879-htb_plate',
             'gtceu:iv_field_generator'
         )
@@ -112,7 +138,7 @@ ServerEvents.recipes((event) => {
 
     event.recipes.gtceu
         .assembler("kubejs:clean_assembly_casing")
-        .itemInputs("1x gtceu:blue_steel_frame", "6x gtceu:double_blue_steel_plate", "6x gtceu:hv_robot_arm", "8x gtceu:nichrome_double_wire")
+        .itemInputs("1x gtceu:blue_steel_frame", "6x gtceu:double_blue_steel_plate", "3x gtceu:hv_robot_arm", "8x gtceu:nichrome_double_wire")
         .circuit(6)
         .itemOutputs("1x voyagercore:clean_assembly_casing")
         .duration(30)
@@ -185,4 +211,92 @@ ServerEvents.recipes((event) => {
     cube_multi("tungsten", "autoclave")
     cube_multi("refined_fluxed_electrum", "thermal_centrifuge")
     cube_multi("platinum", "assembler")
+
+    event.shaped(
+        Item.of("voyagercore:chemical_plant", 1), // arg 1: output
+        [
+            "DED",
+            "ABC", // arg 2: the shape (array of strings)
+            "FEF"
+        ],
+        {
+            A: "gtceu:iv_mixer",
+            B: "gtceu:large_chemical_reactor", //arg 3: the mapping object
+            C: "gtceu:iv_centrifuge",
+            D: "#gtceu:circuits/luv",
+            E: "gtceu:dense_tungsten_steel_plate",
+            F: "gtceu:styrene_butadiene_rubber_plate"
+        }
+    )
+
+    event.shaped(
+        Item.of("voyagercore:helper_electric_blast_furnace", 1), // arg 1: output
+        [
+            "DDD",
+            "DBD", // arg 2: the shape (array of strings)
+            "FEF"
+        ],
+        {
+            B: "gtceu:electric_blast_furnace", //arg 3: the mapping object
+            D: "gtceu:black_bronze_plate",
+            E: "gtceu:polyvinyl_chloride_normal_item_pipe",
+            F: "#gtceu:circuits/mv"
+        }
+    )
+
+    event.shaped(
+        Item.of("voyagercore:helper_factory", 1), // arg 1: output
+        [
+            "DED",
+            "ABC", // arg 2: the shape (array of strings)
+            "FEF"
+        ],
+        {
+            A: "gtceu:ev_bender",
+            B: "gtceu:ev_machine_hull", //arg 3: the mapping object
+            C: "gtceu:ev_assembler",
+            D: "#gtceu:circuits/luv",
+            E: "gtceu:desh_gear",
+            F: "gtceu:fine_refined_fluxed_electrum_wire"
+        }
+    )
+
+    event.shaped(
+        Item.of("voyagercore:helper_assembler", 1), // arg 1: output
+        [
+            "DED",
+            "CBC", // arg 2: the shape (array of strings)
+            "FEF"
+        ],
+        {
+            B: "gtceu:ev_machine_hull", //arg 3: the mapping object
+            C: "gtceu:ev_robot_arm",
+            D: "#gtceu:circuits/ev",
+            E: "gtceu:tungsten_gear",
+            F: "gtceu:fine_refined_fluxed_electrum_wire"
+        }
+    )
+
+    event.recipes.gtceu
+        .canner("kubejs:ev_precise_robot_arm_box")
+        .itemInputs("1x gtceu:ev_machine_hull", "4x gtceu:ev_robot_arm")
+        .itemOutputs("1x voyagercore:ev_precise_robot_arm_box")
+        .duration(10 * 20)
+        .EUt(1920)
+
+    event.shaped(
+        Item.of("voyagercore:celestial_post_box", 1), // arg 1: output
+        [
+            "DED",
+            "CBC", // arg 2: the shape (array of strings)
+            "FEF"
+        ],
+        {
+            B: "gtceu:large_packer", //arg 3: the mapping object
+            C: "gtceu:iv_conveyor_module",
+            D: "#gtceu:circuits/luv",
+            E: "gtceu:iv_robot_arm",
+            F: "gtceu:iv_sensor"
+        }
+    )
 })

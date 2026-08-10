@@ -58,6 +58,13 @@ ServerEvents.recipes((event) => {
     )
 
     event.recipes.gtceu
+        .extractor("kubejs:milk_from_cow_pet") // recipe ID
+        .notConsumable("inventorypets:pet_cow")
+        .outputFluids("minecraft:milk 50")
+        .duration(20 * 10) // in ticks
+        .EUt(30)
+
+    event.recipes.gtceu
         .oven("kubejs:roasted_cacao_beans") // recipe ID
         .itemInputs("32x minecraft:cocoa_beans")
         .itemOutputs("32x kubejs:roasted_cacao_beans")
@@ -108,9 +115,9 @@ ServerEvents.recipes((event) => {
         .duration(200) // in ticks
         .EUt(16)
 
-    recipe_mixer(event, "baking_chocolate", ["kubejs:cacao_powder", "minecraft:sugar"], ["minecraft:milk 1000"], ["4x kubejs:baking_chocolate"], [], 30, 200)
+    global.recipe_mixer(event, "baking_chocolate", ["kubejs:cacao_powder", "minecraft:sugar"], ["minecraft:milk 1000"], ["4x kubejs:baking_chocolate"], [], 30, 200)
 
-    recipe_mixer(
+    global.recipe_mixer(
         event,
         "cookiedough",
         ["2x minecraft:egg", "2x kubejs:butter", "2x kubejs:baking_chocolate", "kubejs:baking_flour", "2x minecraft:sugar"],

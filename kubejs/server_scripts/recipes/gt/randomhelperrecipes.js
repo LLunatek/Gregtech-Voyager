@@ -1,49 +1,17 @@
-import { recipe_lcr } from "../../00_util/recipeUtils"
+
 
 ServerEvents.recipes((event) => {
-    recipe_lcr(
-        event,
-        "plastic_boards_sodium_persulfate",
-        ["2x gtceu:plastic_circuit_board", "12x gtceu:copper_foil"],
-        ["gtceu:sodium_persulfate 300"],
-        ["3x gtceu:plastic_printed_circuit_board"],
-        [],
-        20,
-        30,
-        "ev_technician_helper"
-    )
-    recipe_lcr(
-        event,
-        "plastic_boards_iron_iii",
-        ["2x gtceu:plastic_circuit_board", "12x gtceu:copper_foil"],
-        ["gtceu:iron_iii_chloride 150"],
-        ["3x gtceu:plastic_printed_circuit_board"],
-        [],
-        20,
-        30,
-        "ev_technician_helper"
-    )
+    // event, name, inputItems, inputFluids, outputItems, outputFluids, duration, eut, temp, specialized
+    global.recipe_chem_plant(event, "polyethylene_helper_specialized", [], ['gtceu:oxygen 1000', 'gtceu:ethylene 144'], [], 'gtceu:polyethylene 288', 8, 30, 1200, "chemist")
+    global.recipe_chem_plant(event, "polyvinyl_helper_specialized", [], ['gtceu:oxygen 1000', 'gtceu:vinyl_chloride 144'], [],'gtceu:polyvinyl_chloride 288', 8, 30, 2400, "chemist")
+    global.recipe_chem_plant(event, "ptfe_helper_specialized", [], ['gtceu:oxygen 1000', 'gtceu:tetrafluoroethylene 144'], [],'gtceu:polytetrafluoroethylene 288', 8, 30, 4500, "chemist")
+    global.recipe_chem_plant(event, "sbr_helper_specialized", [], ['gtceu:butadiene 3000', 'gtceu:benzene 1000', 'gtceu:ethylene 1000', 'gtceu:oxygen 15000'],['54x gtceu:raw_styrene_butadiene_rubber_dust'], ['gtceu:hydrogen 2000'], 24, 480, 4500, "chemist")
+    
 
-    recipe_lcr(
-        event,
-        "epoxy_boards_sodium_persulfate",
-        ["2x gtceu:epoxy_circuit_board", "16x gtceu:electrum_foil"],
-        ["gtceu:sodium_persulfate 750"],
-        ["3x gtceu:epoxy_printed_circuit_board"],
-        [],
-        35,
-        30,
-        "ev_technician_helper"
-    )
-    recipe_lcr(
-        event,
-        "epoxy_boards_iron_iii",
-        ["2x gtceu:epoxy_circuit_board", "16x gtceu:electrum_foil"],
-        ["gtceu:iron_iii_chloride 250"],
-        ["3x gtceu:epoxy_printed_circuit_board"],
-        [],
-        35,
-        30,
-        "ev_technician_helper"
-    )
+    global.recipe_chem_plant(event, "hog_specialized", [], 
+        ['gtceu:gasoline 20000', 'gtceu:octane 2000', 'gtceu:nitrous_oxide 2000', 'gtceu:toluene 1000'],
+        [], ['gtceu:high_octane_gasoline 32000'], 
+        2.5, 1980, 4500, "petrochem")
+    
+
 })

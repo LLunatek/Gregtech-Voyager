@@ -36,17 +36,6 @@ ServerEvents.recipes((event) => {
             .EUt(ebfeut)
             .blastFurnaceTemp(ebftemp)
 
-        event.recipes.gtceu
-            .electric_blast_furnace("kubejs:hot_" + input + "_helper")
-            .itemInputs("gtceu:" + input + "_dust")
-            .notConsumable("kubejs:" + helpertier + "_ebf_helper")
-            .inputFluids(blastfluid + " 85")
-            .itemOutputs("gtceu:hot_" + input + "_ingot")
-            .circuit(3)
-            .duration(ebfduration * 0.67 * 0.85)
-            .EUt(ebfeut * 0.85)
-            .blastFurnaceTemp(ebftemp)
-
         if (!do_helium_cooling) {
             event.recipes.gtceu
                 .vacuum_freezer("kubejs:" + input + "_cooling")

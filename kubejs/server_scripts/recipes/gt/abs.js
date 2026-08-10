@@ -33,17 +33,6 @@ ServerEvents.recipes((event) => {
             .circuit(circuit + 1)
 
         event.recipes.gtceu
-            .alloy_blast_smelter(`kubejs:${alloy}_helper`)
-            .itemInputs(inputItems)
-            .inputFluids(`${fluidIn} ${Math.floor((amount / 2.88) * 0.85)}`)
-            .notConsumable(`kubejs:${helpertier}_ebf_helper`)
-            .outputFluids(`${fluidOut} ${amount}`)
-            .duration(Math.floor(duration * 20 * 0.85 * 0.66))
-            .EUt(Math.floor(eut * 0.85))
-            .blastFurnaceTemp(temp)
-            .circuit(circuit + 2)
-
-        event.recipes.gtceu
             .vacuum_freezer(`kubejs:${alloy}_vacuum_freezer`)
             .inputFluids(`gtceu:molten_${alloy} 144`)
             .notConsumable(`gtceu:ingot_casting_mold`)
@@ -75,17 +64,6 @@ ServerEvents.recipes((event) => {
             .EUt(eut)
             .blastFurnaceTemp(temp)
             .circuit(circuit + 1)
-
-        event.recipes.gtceu
-            .alloy_blast_smelter(`kubejs:${alloy}_helper`)
-            .itemInputs(inputItems)
-            .inputFluids(`${fluidIn} ${Math.floor((amount / 2.88) * 0.85)}`)
-            .notConsumable(`kubejs:${helpertier}_ebf_helper`)
-            .outputFluids(`${fluidOut} ${amount}`)
-            .duration(Math.floor(duration * 20 * 0.85))
-            .EUt(Math.floor(eut * 0.85))
-            .blastFurnaceTemp(temp)
-            .circuit(circuit + 2)
 
         event.recipes.gtceu
             .vacuum_freezer(`kubejs:${alloy}_vacuum_freezer`)
@@ -149,15 +127,4 @@ ServerEvents.recipes((event) => {
         'gtceu:molten_titanex-901-htc', 'kubejs:high_temp_binding_agent_s', 18 * 50, 7680, 6000, 'ev', 1)
     
 
-
-    // event.recipes.gtceu.alloy_blast_smelter("bioalloy_base")
-    //     .itemInputs('5x gtceu:titanite_dust', '3x gtceu:graphene_dust', '2x gtceu:palladium_dust', '2x gtceu:ostrum_dust', '2x gtceu:tungsten_dust')
-    //     .outputFluids('gtceu:molten_titanex-594-hta')
-    //     .inputFluids('kubejs:high_temp_binding_agent_s 1000')
-    //     .notConsumable('kubejs:iv_ebf_helper')
-    //     .duration(100 * 20)
-    //     .EUt(1000)
-    //     .blastFurnaceTemp(11900)
-    //     .cleanroom(CleanroomType.STERILE_CLEANROOM)
-    //     .circuit(3)
 })

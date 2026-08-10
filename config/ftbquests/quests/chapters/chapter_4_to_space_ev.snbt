@@ -1048,8 +1048,8 @@
 				item: "gtceu:laminated_glass"
 				type: "item"
 			}]
-			x: -1.5d
-			y: 11.0d
+			x: 3.0d
+			y: 12.0d
 		}
 		{
 			id: "4CDFDD7B54850B8E"
@@ -1063,8 +1063,8 @@
 				item: "gtceu:polyvinyl_butyral_bucket"
 				type: "item"
 			}]
-			x: -3.0d
-			y: 11.5d
+			x: 1.5d
+			y: 11.0d
 		}
 		{
 			id: "555CAC081A3AE5B0"
@@ -1609,41 +1609,6 @@
 		}
 		{
 			dependencies: [
-				"307B3D1F044D7B30"
-				"4FE2969202BEB308"
-				"58F2F4DFC5C4E690"
-			]
-			description: [
-				"The &o&5Large Helper Calorie Converter&r is the next step up from the Large Helper Wheel."
-				""
-				"Depending on the cookie and the helper eating the cookies, this thing can generate up to 1A &9IV&r (which is really good at this point in the game). While you will need more than 1A of &9IV&r, these generators are cheaper than making &6desh&r and &1lunarium&r rotors."
-				""
-				"Additionally, if you make &aGrandma's Ultra-Calorie Dense Uranium Cookies&r, you can power exactly &l4&r LHCCs at once (given you keep the oven stocked with uranium cookie dough)."
-				""
-				"The downside to these is that uranium cookies are obviously more expensive than benzene."
-				""
-				"&o&8(Little tip: you can wallshare input buses so you don't have to make as many hungry helpers)&r&r"
-			]
-			hide_dependency_lines: true
-			id: "2C802A28F7E04EB9"
-			rewards: [{
-				id: "61E6E9FC9CC9C2B2"
-				item: "kubejs:ev_loot_bag"
-				type: "item"
-			}]
-			shape: "gear"
-			size: 1.5d
-			tasks: [{
-				id: "43117C991E250A87"
-				item: "gtceu:power_rectangle_helper_calorie_converter"
-				type: "item"
-			}]
-			title: "Large Helper Calorie Converter"
-			x: 1.5d
-			y: 18.0d
-		}
-		{
-			dependencies: [
 				"7C59AB67C9EA3C41"
 				"0C382CC77CE3E286"
 				"322A6C5A9CE52178"
@@ -1778,7 +1743,10 @@
 			y: 17.0d
 		}
 		{
-			dependencies: ["5D1E251B9F28C8B4"]
+			dependencies: [
+				"5D1E251B9F28C8B4"
+				"0536C639840A0927"
+			]
 			description: [
 				"You may notice that there is no &5EV&r helper assembler. It is replaced by this multiblock."
 				""
@@ -2178,6 +2146,22 @@
 			}]
 			x: 2.5d
 			y: 14.0d
+		}
+		{
+			dependencies: [
+				"58F2F4DFC5C4E690"
+				"04BD5101521DF8BC"
+			]
+			id: "5E638EF01B328D7F"
+			shape: "gear"
+			size: 1.5d
+			tasks: [{
+				id: "27ABC45E0621FE20"
+				item: "voyagercore:helper_calorie_converter"
+				type: "item"
+			}]
+			x: 1.0d
+			y: 18.0d
 		}
 	]
 	title: "Chapter 4: To Space! (EV)"

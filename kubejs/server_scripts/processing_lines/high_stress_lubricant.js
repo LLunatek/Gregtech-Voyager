@@ -10,13 +10,13 @@ ServerEvents.recipes((event) => {
     event.remove({ output: "gtceu:rhodium_sulfate" })
     event.remove({ output: "gtceu:ruthenium_tetroxide" })
 
-    recipe_mixer(event, "igp_lubricant_base", "gtceu:indium_gallium_phosphide_dust", "gtceu:lubricant 2000", [], "kubejs:igp_lubricant_base 1000", 7680, 20)
+    global.recipe_mixer(event, "igp_lubricant_base", "gtceu:indium_gallium_phosphide_dust", "gtceu:lubricant 2000", [], "kubejs:igp_lubricant_base 1000", 7680, 20)
 
-    recipe_distillation(event, "igp_lubricant_base", 1000, "gtceu:carbon_dust", ["kubejs:gallium_lubricant_residue 1000", "kubejs:indium_binded_phospho_lubricant_sludge 1000"], 7860, 10)
+    global.recipe_distillation(event, "igp_lubricant_base", 1000, "gtceu:carbon_dust", ["kubejs:gallium_lubricant_residue 1000", "kubejs:indium_binded_phospho_lubricant_sludge 1000"], 7860, 10)
 
-    recipe_electrolyzer(event, "gallium_lubricant_residue_byproduct", [], ["kubejs:gallium_lubricant_residue 1000"], ["gtceu:gallium_dust"], ["gtceu:creosote 500"], 10, 30)
+    global.recipe_electrolyzer(event, "gallium_lubricant_residue_byproduct", [], ["kubejs:gallium_lubricant_residue 1000"], ["gtceu:gallium_dust"], ["gtceu:creosote 500"], 10, 30)
 
-    recipe_lcr(
+    global.recipe_lcr(
         event,
         "acidic_phospho_lubricant",
         ["gtceu:sulfur_dust", "gtceu:molybdenum_dust"],
@@ -27,7 +27,7 @@ ServerEvents.recipes((event) => {
         7680
     )
 
-    recipe_distillation(
+    global.recipe_distillation(
         event,
         "acidic_phospho_lubricant",
         1000,
@@ -37,9 +37,10 @@ ServerEvents.recipes((event) => {
         45
     )
 
-    recipe_centrifuge(event, "phospho_lubricant_byproducts", [], ["kubejs:phospho_lubricant_residue 1000"], ["gtceu:phosphorus_dust"], ["gtceu:creosote 500"], 10, 32)
+    global.recipe_centrifuge(event, "phospho_lubricant_byproducts", [], ["kubejs:phospho_lubricant_residue 1000"], ["gtceu:phosphorus_dust"], ["gtceu:creosote 500"], 10, 32)
 
-    recipe_chem_plant(
+
+    global.recipe_chem_plant(
         event,
         "high_stress_lubricant",
         ["gtceu:gallium_dust"],
@@ -48,19 +49,8 @@ ServerEvents.recipes((event) => {
         ["voyagercore:high_stress_lubricant 3000"],
         10,
         480,
-        4500
+        4500,
+        "chemist"
     )
 
-    recipe_chem_plant(
-        event,
-        "high_stress_lubricant",
-        ["gtceu:gallium_dust"],
-        ["gtceu:kerosene 2000", "kubejs:phospho_indium_molybdenum_binded_lubricant 1000"],
-        [],
-        ["voyagercore:high_stress_lubricant 5000"],
-        10,
-        120,
-        4500,
-        "advanced_chemist_helper"
-    )
 })

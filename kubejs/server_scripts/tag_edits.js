@@ -7,6 +7,21 @@ ServerEvents.tags("block", (event) => {
 })
 
 ServerEvents.tags("item", (event) => {
+
+    function remove_ad_astra_plates(mat)
+    {
+        event.remove(`forge:plates/${mat}`, `ad_astra:${mat}_plate`)
+        event.remove(`forge:ingots/${mat}`, `ad_astra:${mat}_ingot`)
+    }
+
+    const ad_astra_mat_list = ['iron', 'steel', 'desh', 'ostrum', 'calorite']
+
+    ad_astra_mat_list.forEach(mat =>
+        remove_ad_astra_plates(mat)
+    )
+
+
+    event.remove("forge:plates/iron", "ad_astra:iron_plate")
     event.remove("forge:plates/steel", "ad_astra:steel_plate")
     event.remove("forge:ingots/bronze", "forestry:ingot_bronze")
     event.remove("forge:ingots/bronze", "tconstruct:bronze_ingot")

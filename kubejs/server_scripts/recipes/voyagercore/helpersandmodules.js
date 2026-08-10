@@ -352,6 +352,11 @@ ServerEvents.recipes((event) => {
         assembler_paramount_module_recipe(id, tier, level, "grandma", items, fluids)
     }
 
+    function hungry_module(id, level, tier, items, fluids)
+    {
+        assembler_paramount_module_recipe(id, tier, level, "hungry", items, fluids)
+    }
+
     function embassy_module(id, level, tier, items, fluids)
     {
         assembler_paramount_module_recipe(id, tier, level, "embassy", items, fluids)
@@ -365,6 +370,22 @@ ServerEvents.recipes((event) => {
     s_tiers.forEach(tier => specialized_helper_hull_recipe(tier, tierBaseMatMap[tier], tierSpecialMatMap[tier], "gtceu:soldering_alloy 576"))
     tiers.forEach(tier => output_module_recipe(tier, tierMaxCircuitTierMap[tier], tierCoilMatMap[tier], tierBaseGearMap[tier]))
 
+    hungry_module("stomach", 1, "ev",
+        ['4x gtceu:double_ultimet_plate', 'voyagercore:ev_basic_helper_module', 'gtceu:ev_fluid_regulator', 'gtceu:ptfe_pipe_casing', '4x gtceu:tungsten_steel_tiny_fluid_pipe'],
+        ['gtceu:hydrochloric_acid 8000']
+    )
+
+    grandma_module("baking_sheet", 1, "hv", 
+        ['4x gtceu:double_desh_plate', 'voyagercore:ev_basic_helper_module', 'kubejs:grandmas_baking_sheet'],
+        ['gtceu:rose_gold 576']
+    )
+    event.recipes.gtceu.assembler(`kubejs:helper_wheel_recipe_module`)
+                .itemInputs(`voyagercore:hv_helper_module`)
+                .itemInputs('4x gtceu:steel_rotor', '2x gtceu:hv_electric_motor')
+                .inputFluids("kubejs:melted_butter 576")
+                .itemOutputs(`voyagercore:hv_helper_wheel_recipe_module`)
+                .duration(20 * 30)
+                .EUt(tiermap["hv"]) // trolol
     paramount_helper_hull_recipe('grandma', 
         ['voyagercore:ev_specialized_helper_hull', 'kubejs:heart_of_gold', '8x gtceu:sugar_block'],
         ['gtceu:gold 576'],
@@ -434,6 +455,7 @@ ServerEvents.recipes((event) => {
         ['voyagercore:hv_parallel_helper_module', 'gtceu:hv_assembler', '#gtceu:circuits/iv', '16x gtceu:smd_diode', '16x gtceu:smd_inductor', '16x gtceu:smd_capacitor', '16x gtceu:fine_fluxed_cobalt_electrum_wire'],
         'gtceu:radon 250'
     )
+    
     assembler_module_recipe('petrochem', 'ev', true,
         ['voyagercore:hv_parallel_helper_module', 'gtceu:distillation_tower', '8x kubejs:desh_coil_block', '#gtceu:circuits/ev', '16x gtceu:polyvinyl_butyral_plate','16x gtceu:fine_refined_fluxed_electrum_wire'],
         'gtceu:styrene_butadiene_rubber 250'

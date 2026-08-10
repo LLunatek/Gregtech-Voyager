@@ -28,10 +28,10 @@ ServerEvents.recipes((event) => {
 
     // venus sand
 
-    recipe_macerator(event, "gtceu:venus_sand_dust", "ad_astra:venus_sand", 100, 32)
+    global.recipe_macerator(event, "gtceu:venus_sand_dust", "ad_astra:venus_sand", 100, 32)
     atm_collect(9, "gtceu", "venus_sand_dust", 256, "gtceu:venus_air", 50000, 50, 2000, "ad_astra:venus")
     atm_collect(10, "gtceu", "venus_sand_dust", 64, "gtceu:liquid_venus_air", 50000, 75, 2000, "ad_astra:venus")
-    recipe_centrifuge(
+    global.recipe_centrifuge(
         event,
         "venus_sand",
         "15x gtceu:venus_sand_dust",

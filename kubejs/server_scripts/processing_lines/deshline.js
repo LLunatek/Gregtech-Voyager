@@ -3,40 +3,17 @@ import { recipe_centrifuge, recipe_electrolyzer, recipe_lcr } from "../00_util/r
 ServerEvents.recipes((event) => {
     event.remove({ input: "" })
 
-    recipe_electrolyzer(event, "lunite_dust", ["9x gtceu:lunite_dust"], [], ["2x gtceu:small_desh_dust", "2x gtceu:silicon_dust"], ["gtceu:oxygen 4000"], 20, 120)
+    global.recipe_electrolyzer(event, "lunite_dust", ["9x gtceu:lunite_dust"], [], ["2x gtceu:small_desh_dust", "2x gtceu:silicon_dust"], ["gtceu:oxygen 4000"], 20, 120)
 
-    recipe_lcr(event, "desh_group_sludge_lunite", ["gtceu:purified_lunite_ore"], ["gtceu:formic_acid 100"], ["4x gtceu:desh_group_sludge_dust"], [], 10, 32)
-    recipe_lcr(event, "desh_group_sludge_socochalamite", ["gtceu:purified_socochalamite_ore"], ["gtceu:formic_acid 100"], ["2x gtceu:desh_group_sludge_dust"], [], 10, 32)
-    recipe_lcr(event, "desh_group_sludge_glunite", ["gtceu:purified_glunite_ore"], ["gtceu:formic_acid 100"], ["2x gtceu:desh_group_sludge_dust"], [], 10, 32)
+    global.recipe_lcr(event, "desh_group_sludge_lunite", ["gtceu:purified_lunite_ore"], ["gtceu:formic_acid 100"], ["4x gtceu:desh_group_sludge_dust"], [], 10, 32)
+    global.recipe_lcr(event, "desh_group_sludge_socochalamite", ["gtceu:purified_socochalamite_ore"], ["gtceu:formic_acid 100"], ["2x gtceu:desh_group_sludge_dust"], [], 10, 32)
+    global.recipe_lcr(event, "desh_group_sludge_glunite", ["gtceu:purified_glunite_ore"], ["gtceu:formic_acid 100"], ["2x gtceu:desh_group_sludge_dust"], [], 10, 32)
 
-    recipe_lcr(event, "desh_group_sludge_desh", ["gtceu:purified_desh_ore"], ["gtceu:formic_acid 100"], ["8x gtceu:desh_group_sludge_dust"], [], 10, 32)
+    global.recipe_lcr(event, "desh_group_sludge_desh", ["gtceu:purified_desh_ore"], ["gtceu:formic_acid 100"], ["8x gtceu:desh_group_sludge_dust"], [], 10, 32)
 
-    recipe_centrifuge(event, "dsg_processing", ["6x gtceu:desh_group_sludge_dust"], ["gtceu:aqua_regia 800"], ["6x gtceu:lunar_metal_residue_dust", "4x gtceu:dense_metal_mixture_dust"], [], 30, 480)
-    recipe_centrifuge(
-        event,
-        "dsg_processing",
-        ["5x gtceu:desh_group_sludge_dust"],
-        ["gtceu:aqua_regia 600"],
-        ["8x gtceu:lunar_metal_residue_dust", "7x gtceu:dense_metal_mixture_dust"],
-        [],
-        20,
-        390,
-        "basic_chemist_helper"
-    )
+    global.recipe_centrifuge(event, "dsg_processing", ["6x gtceu:desh_group_sludge_dust"], ["gtceu:aqua_regia 800"], ["6x gtceu:lunar_metal_residue_dust", "4x gtceu:dense_metal_mixture_dust"], [], 30, 480)
 
-    recipe_centrifuge(
-        event,
-        "dsg_processing_adv",
-        ["4x gtceu:desh_group_sludge_dust"],
-        ["gtceu:aqua_regia 300"],
-        ["12x gtceu:lunar_metal_residue_dust", "10x gtceu:dense_metal_mixture_dust"],
-        [],
-        15,
-        120,
-        "advanced_chemist_helper"
-    )
-
-    recipe_lcr(
+    global.recipe_lcr(
         event,
         "lunarium_metal_sludge",
         ["7x gtceu:dense_metal_mixture_dust", "2x gtceu:calcium_hydroxide_dust"],
@@ -46,7 +23,7 @@ ServerEvents.recipes((event) => {
         15,
         7680
     )
-    recipe_lcr(
+    global.recipe_lcr(
         event,
         "dewatered_lunarium_metal_mixture",
         ["5x gtceu:lunarium_metal_sludge_dust"],
@@ -56,7 +33,7 @@ ServerEvents.recipes((event) => {
         40,
         1980
     )
-    recipe_centrifuge(
+    global.recipe_centrifuge(
         event,
         "impure_lunarium",
         ["8x gtceu:dewatered_lunarium_metal_mixture_dust"],
@@ -67,8 +44,8 @@ ServerEvents.recipes((event) => {
         120
     )
 
-    recipe_lcr(event, "sulfuric_lunar_metal_residue", ["7x gtceu:lunar_metal_residue_dust"], ["gtceu:sulfuric_acid 1000"], [], ["gtceu:sulfuric_lunar_metal_residue 1000"], 10, 30)
-    recipe_centrifuge(
+    global.recipe_lcr(event, "sulfuric_lunar_metal_residue", ["7x gtceu:lunar_metal_residue_dust"], ["gtceu:sulfuric_acid 1000"], [], ["gtceu:sulfuric_lunar_metal_residue 1000"], 10, 30)
+    global.recipe_centrifuge(
         event,
         "sulfuric_lunar_metal_residue_processing",
         ["2x gtceu:calcium_hydroxide_dust"],

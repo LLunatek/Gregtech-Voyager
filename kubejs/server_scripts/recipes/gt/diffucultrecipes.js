@@ -6,6 +6,6 @@ ServerEvents.recipes((event) => {
         .itemInputs("gtceu:silicon_dioxide_dust")
         .itemOutputs("gtceu:silicon_dust")
         .outputFluids("gtceu:oxygen 2000")
-        .duration(20 * 30)
-        .EUt(480)
+        .duration(20 * 3)
+        .EUt(120)
 })

@@ -30,8 +30,8 @@ ServerEvents.recipes((event) => {
             C: "gtceu:mv_robot_arm",
             A: "industrialforegoing:machine_frame_pity",
             B: "#gtceu:circuits/mv",
-            E: "kubejs:farmer_helper",
-            F: "gtceu:steel_plate"
+            E: "gtceu:copper_single_cable",
+            F: "gtceu:aluminium_plate"
             // G: 'minecraft:bucket'
         }
     )

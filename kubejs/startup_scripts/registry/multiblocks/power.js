@@ -80,7 +80,6 @@ GTCEuStartupEvents.registry("gtceu:machine", (event) => {
             `kubejs:block/overlay/helper_wheel`);
 
 
-    powerRectangle('helper_calorie_converter', 'radiation_proof_lead', 'gtceu:titanium_gearbox', 'helper_calorie_conversion')
 
 
 
