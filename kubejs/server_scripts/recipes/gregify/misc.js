@@ -17,6 +17,39 @@ ServerEvents.recipes((event) => {
 
     event.remove({ output: "framedblocks:framed_cube" })
 
+    event.remove({output: "hangglider:glider_wing"})
+    event.remove({output:"hangglider:glider_framework"})
+
+    event.recipes.gtceu.shaped(
+        Item.of("hangglider:glider_wing"),
+        [
+            " FC",
+            "SCL",
+            "CLL"
+        ],
+        {
+            C: "gtceu:treated_wood_rod",
+            L: "minecraft:leather",
+            S: "#forge:tools/saws",
+            F: "#forge:tools/files"
+        }
+    ).id("kjs:glider_wing");
+
+    event.recipes.gtceu.shaped(
+        Item.of("hangglider:glider_framework"),
+        [
+            "BAB",
+            "ACA",
+            "AAA"
+        ],
+        {
+            A: "gtceu:iron_rod",
+            B: "gtceu:iron_screw",
+            C: "#forge:tools/screwdrivers"
+        }
+    ).id("kjs:glider_framework");
+
+
     event.recipes.gtceu.assembler("kubejs:framed_cube").itemInputs("4x gtceu:wood_screw", "4x minecraft:stick").itemOutputs("16x framedblocks:framed_cube").duration(20).EUt(2)
 
     // @ts-ignore
