@@ -134,3 +134,13 @@ global.recipe_chem_bath = function(event, output, inputItems, inputFluids, eut, 
         .duration(duration * 20)
         .EUt(eut)
 }
+
+global.recipe_assembler = function(event, output, inputItems, inputFluids, eut, duration) {
+    event.recipes.gtceu
+        .chemical_bath(`${output}_assembler`)
+        .itemInputs(inputItems)
+        .inputFluids(inputFluids)
+        .itemOutputs(output)
+        .duration(duration * 20)
+        .EUt(eut)
+}

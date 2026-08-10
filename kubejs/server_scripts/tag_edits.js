@@ -44,4 +44,7 @@ ServerEvents.tags("item", (event) => {
 
 ServerEvents.tags("fluid", (event) => {
     event.add("ad_astra:fuel", "gtceu:rocket_fuel")
+
+    event.add("forestry:seed_oil", "gtcey:seed_oil")
+
 })
