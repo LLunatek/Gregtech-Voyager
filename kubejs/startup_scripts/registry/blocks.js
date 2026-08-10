@@ -8,9 +8,9 @@ StartupEvents.registry("block", (event) => {
     casing("durable_desh")
     casing("firm_ultimet")
     casing("stout_titanium_carbide")
-    casing("radiation_proof_lead")
-    casing("titanite")
-    casing("ostrum")
+    // casing("radiation_proof_lead")
+    // casing("titanite")
+    // casing("ostrum")
     casing("atmospheric_filter")
     // casing('condensation_resistant_tungsten')
     casing("heat_resistant_refined_fluxed_electrum")
@@ -36,11 +36,11 @@ StartupEvents.registry("block", (event) => {
         event.create(name).textureAll(`kubejs:block/${name}`).hardness(2).resistance(3).lightLevel(0).soundType("glass").requiresTool(true).renderType("translucent").tagBlock("mineable/wrench")
     }
 
-    metalblock("teus_beam_block")
+    // metalblock("teus_beam_block")
     metalblock("ruined_beam_block")
     // metalblock('cooling_lamp')
 
-    metalblock("hungry_helper_housing")
+    // metalblock("hungry_helper_housing")
 
-    glassblock("shock_proof_glass")
+    // glassblock("shock_proof_glass")
 })

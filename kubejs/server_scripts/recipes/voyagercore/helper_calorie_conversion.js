@@ -1,37 +1,9 @@
 ServerEvents.recipes((event) => {
     // @ts-ignore
-    event.shaped(
-        Item.of("gtceu:power_rectangle_helper_calorie_converter", 1), // arg 1: output
-        [
-            "DCD",
-            "BAB", // arg 2: the shape (array of strings)
-            "DCD"
-        ],
-        {
-            A: "gtceu:hv_helper_wheel",
-            B: "gtceu:refined_fluxed_electrum_frame", //arg 3: the mapping object
-            C: "#gtceu:circuits/iv",
-            D: "kubejs:radiation_proof_lead_casing"
-        }
-    )
+
 
     // @ts-ignore
-    function calorie_conversion(cookie, helper, output, time, eut, outF) {
-        if (!outF) {
-            outF = []
-        }
-        event.recipes.gtceu
-            .helper_calorie_conversion("kubejs:grandmas_" + cookie + "_" + helper)
-            .itemInputs("kubejs:grandmas_" + cookie)
-            .notConsumable("kubejs:" + helper + "_helper")
-            .itemOutputs(output)
-            .inputFluids("minecraft:water 4000")
-            .perTick(true)
-            .outputFluids(outF)
-            .perTick(false)
-            .duration(20 * time)
-            .EUt(-eut)
-    }
+
 
     // @ts-ignore
     function advanced_calorie_conversion(cookie, helper, output, time, eut, outF, helperLevel)

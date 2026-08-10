@@ -11,7 +11,7 @@ ServerEvents.recipes((event) => {
     global.recipe_chem_plant(event, "hog_specialized", [], 
         ['gtceu:gasoline 20000', 'gtceu:octane 2000', 'gtceu:nitrous_oxide 2000', 'gtceu:toluene 1000'],
         [], ['gtceu:high_octane_gasoline 32000'], 
-        2.5, 1980, 4500, "pretrochem")
+        2.5, 1980, 4500, "petrochem")
     
 
 })

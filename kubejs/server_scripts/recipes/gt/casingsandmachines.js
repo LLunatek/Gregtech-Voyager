@@ -29,7 +29,7 @@ ServerEvents.recipes((event) => {
     casing_recipe("ultimet", "firm_ultimet")
     // casing_recipe("ostrum", "ostrum")
     // casing_recipe('frost_conducting', 'aluminex_202_a')
-    casing_recipe("titanite_alloy", "titanite", ["#gtceu:circuits/iv"])
+    // casing_recipe("titanite_alloy", "titanite", ["#gtceu:circuits/iv"])
     // casing_recipe("black_bronze", "heatproof_helper")
     casing_recipe("refined_fluxed_electrum", "heat_resistant_refined_fluxed_electrum")
     // casing_recipe('tungsten', 'condensation_resistant_tungsten')
@@ -121,13 +121,13 @@ ServerEvents.recipes((event) => {
         .assembler("kubejs:radiation_proof_lead_casing")
         .itemInputs("6x gtceu:lead_plate", "1x gtceu:titanium_frame")
         .circuit(6)
-        .itemOutputs("2x kubejs:radiation_proof_lead_casing")
+        .itemOutputs("2x voyagercore:radiation_proof_lead_casing")
         .duration(30)
         .EUt(16)
 
     event.recipes.gtceu.assembler('kubejs:radiation_conducting_titanex_casing')
         .itemInputs(
-            '1x kubejs:radiation_proof_lead_casing',
+            '1x voyagercore:radiation_proof_lead_casing',
             '6x gtceu:double_titanex-879-htb_plate',
             'gtceu:iv_field_generator'
         )
