@@ -1,3 +1,8 @@
+function parse_item_with_ns(id)
+{
+    return id.split(':')[1]
+}
+
 global.recipe_lcr = function(event, name, inputItems, inputFluids, outputItems, outputFluids, duration, eut, helper) {
     event.recipes.gtceu
         .large_chemical_reactor("kubejs:lcr_" + name)
@@ -92,7 +97,7 @@ global.recipe_distillation = function(event, input, amt, itemOutput, fluidOutput
 
 global.recipe_macerator = function(event, inputItem, outputItem, eut, time) {
     event.recipes.gtceu
-        .macerator(outputItem + "_macerator")
+        .macerator(parse_item_with_ns(outputItem) + "_macerator")
         .itemInputs(inputItem)
         .itemOutputs(outputItem)
         .duration(time * 20)
@@ -114,7 +119,7 @@ global.recipe_radiation_chamber = function(event, name, inputItems, inputFluids,
 
 global.recipe_teus_laser = function(event, output, inputItems, nonconsumed, inputFluids, outputFluids, eut, duration, concentration) {
     event.recipes.gtceu
-        .beam_heating(`${output}_teus_laser`)
+        .beam_heating(`kubejs:${parse_item_with_ns(output)}_teus_laser`)
         .itemInputs(inputItems)
         .notConsumable(nonconsumed)
         .inputFluids(inputFluids)
@@ -127,7 +132,17 @@ global.recipe_teus_laser = function(event, output, inputItems, nonconsumed, inpu
 
 global.recipe_chem_bath = function(event, output, inputItems, inputFluids, eut, duration) {
     event.recipes.gtceu
-        .chemical_bath(`${output}_chem_bath`)
+        .chemical_bath(`kubejs:${parse_item_with_ns(output)}_chem_bath`)
+        .itemInputs(inputItems)
+        .inputFluids(inputFluids)
+        .itemOutputs(output)
+        .duration(duration * 20)
+        .EUt(eut)
+}
+
+global.recipe_assembler = function(event, output, inputItems, inputFluids, eut, duration) {
+    event.recipes.gtceu
+        .assembler(`kubejs:${parse_item_with_ns(output)}_assembler`)
         .itemInputs(inputItems)
         .inputFluids(inputFluids)
         .itemOutputs(output)

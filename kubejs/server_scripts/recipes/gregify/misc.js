@@ -1,23 +1,42 @@
 ServerEvents.recipes((event) => {
-    // event.remove({output: 'paraglider:paraglider'})
-
-    // event.shaped(
-    //             Item.of('paraglider:paraglider', 1), // arg 1: output
-    //             [
-    //                 ' C ',
-    //                 'CDC', // arg 2: the shape (array of strings)
-    //                 'DAD'
-    //             ],
-    //             {
-    //                 A: 'gtceu:iron_rod',
-    //                 C: 'gtceu:treated_wood_rod',
-    //                 D: 'minecraft:leather'
-    //             }
-    // );
 
     event.remove({ output: "framedblocks:framed_cube" })
 
-    event.recipes.gtceu.assembler("kubejs:framed_cube").itemInputs("4x gtceu:wood_screw", "4x minecraft:stick").itemOutputs("8x framedblocks:framed_cube").duration(20).EUt(2)
+    event.remove({output: "hangglider:glider_wing"})
+    event.remove({output:"hangglider:glider_framework"})
+    event.remove({output: "#minecraft:wool_carpets", mod: "minecraft", type: "crafting_shaped"})
+
+    event.recipes.gtceu.shaped(
+        Item.of("hangglider:glider_wing"),
+        [
+            " FC",
+            "SCL",
+            "CLL"
+        ],
+        {
+            C: "gtceu:treated_wood_rod",
+            L: "minecraft:leather",
+            S: "#forge:tools/saws",
+            F: "#forge:tools/files"
+        }
+    ).id("kjs:glider_wing");
+
+    event.recipes.gtceu.shaped(
+        Item.of("hangglider:glider_framework"),
+        [
+            "BAB",
+            "ACA",
+            "AAA"
+        ],
+        {
+            A: "gtceu:iron_rod",
+            B: "gtceu:iron_screw",
+            C: "#forge:tools/screwdrivers"
+        }
+    ).id("kjs:glider_framework");
+
+
+    event.recipes.gtceu.assembler("kubejs:framed_cube").itemInputs("4x gtceu:wood_screw", "4x minecraft:stick").itemOutputs("16x framedblocks:framed_cube").duration(20).EUt(2)
 
     // @ts-ignore
     event.shaped(
