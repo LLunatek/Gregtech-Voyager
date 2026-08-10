@@ -1,24 +1,10 @@
 ServerEvents.recipes((event) => {
-    // event.remove({output: 'paraglider:paraglider'})
-
-    // event.shaped(
-    //             Item.of('paraglider:paraglider', 1), // arg 1: output
-    //             [
-    //                 ' C ',
-    //                 'CDC', // arg 2: the shape (array of strings)
-    //                 'DAD'
-    //             ],
-    //             {
-    //                 A: 'gtceu:iron_rod',
-    //                 C: 'gtceu:treated_wood_rod',
-    //                 D: 'minecraft:leather'
-    //             }
-    // );
 
     event.remove({ output: "framedblocks:framed_cube" })
 
     event.remove({output: "hangglider:glider_wing"})
     event.remove({output:"hangglider:glider_framework"})
+    event.remove({output: "#minecraft:wool_carpets", mod: "minecraft", type: "crafting_shaped"})
 
     event.recipes.gtceu.shaped(
         Item.of("hangglider:glider_wing"),
