@@ -11,24 +11,26 @@ ServerEvents.tags("item", (event) => {
     event.add("minecraft:oak_logs", ["vinery:apple_log", "vinery:apple_wood"])
     event.add("vinery:dark_cherry_logs", ["vinery:dark_cherry_log", "vinery:dark_cherry_wood", "vinery:stripped_dark_cherry_log", "vinery:stripped_dark_cherry_wood"])
     event.add("minecraft:wooden_trapdoors", [/forestry:.*_trapdoor/]) //I have no idea why forestry did this
+    event.add("minecraft:planks","aether:skyroot_planks") // What
 })
 
 ServerEvents.recipes((event) => {
     const sawShaped = (/** @type {string} */ output, /** @type {string} */ input, /** @type {string} */ mod, /** @type {string} */ itemName) => {
         let pref = ""
+        if (mod == "minecraft") return
         if (mod != "minecraft") pref = mod + "_"
         event.recipes.gtceu
             .shaped(Item.of(output, 4), ["A", "B"], {
                 A: "#forge:tools/saws",
                 B: input
             })
-            .id(`gtceu:shaped/${pref + itemName}_saw`)
+            .id(`kjs:shaped/${pref + itemName}_saw`)
     }
 
     const cuttingMachine = (/** @type {string} */ output, /** @type {string} */ input, /** @type {string} */ custom, /** @type {string} */ mod) => {
         cuttingfluid.forEach((cf) => {
             event.recipes.gtceu
-                .cutter(`gtceu:cutter_${mod}_${custom}_${cf[0]}`)
+                .cutter(`kjs:cutter_${mod}_${custom}_${cf[0]}`)
                 .itemInputs(input)
                 .inputFluids(cf[1] + " " + cf[2])
                 .itemOutputs(Item.of(output, 6))
@@ -63,7 +65,7 @@ ServerEvents.recipes((event) => {
                 E: "gtceu:iron_screw",
                 F: "#forge:tools/saws"
             })
-            .id(`gtceu:shaped/${pref + input.replace(/.*:/, "").replace("_planks", "_door")}`)
+            .id(`kjs:shaped/${pref + input.replace(/.*:/, "").replace("_planks", "_door")}`)
     }
 
     /**
@@ -89,7 +91,7 @@ ServerEvents.recipes((event) => {
                 C: "#forge:tools/screwdrivers",
                 B: "gtceu:iron_bolt"
             })
-            .id(`gtceu:shaped/${pref + input.replace(/.*:/, "").replace("_planks", "_trapdoor")}_iron`)
+            .id(`kjs:shaped/${pref + input.replace(/.*:/, "").replace("_planks", "_trapdoor")}_iron`)
 
         event.recipes.gtceu
             .shaped(Item.of(`${wood + "_trapdoor"}`, 2), ["BAD", "ACA", "DAB"], {
@@ -98,10 +100,10 @@ ServerEvents.recipes((event) => {
                 C: "#forge:tools/screwdrivers",
                 B: "gtceu:steel_bolt"
             })
-            .id(`gtceu:shaped/${pref + input.replace(/.*:/, "").replace("_planks", "_trapdoor")}_steel`)
+            .id(`kjs:shaped/${pref + input.replace(/.*:/, "").replace("_planks", "_trapdoor")}_steel`)
 
         event.recipes.gtceu
-            .assembler(`gtceu:${pref + input.replace(/.*:/, "").replace("_planks", "_trapdoor")}_iron`)
+            .assembler(`kjs:${pref + input.replace(/.*:/, "").replace("_planks", "_trapdoor")}_iron`)
             .circuit(3)
             .itemInputs(Ingredient.of([planks[0], planks[1]], 2))
             .inputFluids(Fluid.of("gtceu:iron", 16))
@@ -110,7 +112,7 @@ ServerEvents.recipes((event) => {
             .EUt(4)
 
         event.recipes.gtceu
-            .assembler(`gtceu:${pref + input.replace(/.*:/, "").replace("_planks", "_trapdoor")}_steel`)
+            .assembler(`kjs:${pref + input.replace(/.*:/, "").replace("_planks", "_trapdoor")}_steel`)
             .circuit(3)
             .itemInputs(Ingredient.of([planks[0], planks[1]], 2))
             .inputFluids(Fluid.of("gtceu:steel", 16))
@@ -167,6 +169,7 @@ ServerEvents.recipes((event) => {
     event.remove({ type: "minecraft:crafting_shapeless", output: "minecraft:oak_planks", mod: "vinery" }) //Nuclear Option, This wouldn't work correctly the other ways I tried
     // @ts-ignore
     event.remove({ type: "minecraft:crafting_shapeless", output: "vinery:dark_cherry_planks" })
+    event.remove({ output: "@minecraft", input: "aether:skyroot_planks", mod: "aether"})
 
     // @ts-ignore
     event.shapeless("2x vinery:dark_cherry_planks", "#vinery:dark_cherry_logs").id("vinery:dark_cherry_planks")
