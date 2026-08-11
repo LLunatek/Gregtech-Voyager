@@ -28,6 +28,11 @@
 		{
 			dependencies: ["7C46710EF18B9648"]
 			id: "7F23975179B70629"
+			rewards: [{
+				id: "3CFD2ABE83B78F53"
+				item: "kubejs:stone_bag"
+				type: "item"
+			}]
 			subtitle: "Crafting stuff "
 			tasks: [{
 				id: "3F19B0F03784B91A"
@@ -40,6 +45,11 @@
 		{
 			dependencies: ["7F23975179B70629"]
 			id: "2AE4CD36755CB4AD"
+			rewards: [{
+				id: "027461C9834EADBC"
+				item: "kubejs:stone_bag"
+				type: "item"
+			}]
 			size: 0.75d
 			subtitle: "Taking crafting on the go"
 			tasks: [{
@@ -72,6 +82,11 @@
 		{
 			dependencies: ["7C46710EF18B9648"]
 			id: "79F5C09B1B3DFCC1"
+			rewards: [{
+				id: "3679412F4233BA82"
+				item: "kubejs:stone_bag"
+				type: "item"
+			}]
 			subtitle: "Tinker's construct, my beloved"
 			tasks: [{
 				id: "4EC6C213A02601F8"
@@ -88,6 +103,11 @@
 				"0A7847B88DC2A1C6"
 			]
 			id: "4AA0AEEC31BD3EDA"
+			rewards: [{
+				id: "787B534499CC83DF"
+				item: "kubejs:stone_bag"
+				type: "item"
+			}]
 			subtitle: "Building the tools"
 			tasks: [{
 				id: "21847638489A7A8E"
@@ -100,6 +120,11 @@
 		{
 			dependencies: ["79F5C09B1B3DFCC1"]
 			id: "1A9147331B7CC694"
+			rewards: [{
+				id: "3F3E5A26D39C8042"
+				item: "kubejs:stone_bag"
+				type: "item"
+			}]
 			subtitle: "Making the tool components"
 			tasks: [{
 				id: "6E520DE71B26C11C"
@@ -112,6 +137,11 @@
 		{
 			dependencies: ["7F23975179B70629"]
 			id: "24AE545643722390"
+			rewards: [{
+				id: "3FE4282F19184C7B"
+				item: "kubejs:stone_bag"
+				type: "item"
+			}]
 			subtitle: "Storing all of that stuff you have"
 			tasks: [{
 				id: "75014E02D516529D"
@@ -128,6 +158,11 @@
 				"79F5C09B1B3DFCC1"
 			]
 			id: "6C7E21FE242E1E58"
+			rewards: [{
+				id: "655467A4B688DC03"
+				item: "kubejs:stone_bag"
+				type: "item"
+			}]
 			subtitle: "Storing all of your extra parts"
 			tasks: [{
 				id: "073E00198DDD1483"
@@ -709,6 +744,11 @@
 			]
 			description: ["3 copper + 1 tin dust = bronze dust!"]
 			id: "171628CDF529A4DB"
+			rewards: [{
+				id: "01BD59624878E8F2"
+				item: "kubejs:stone_bag"
+				type: "item"
+			}]
 			subtitle: "First of many alloys"
 			tasks: [{
 				id: "4F85905FE11CA088"
@@ -746,6 +786,11 @@
 		{
 			dependencies: ["2F4B6CBA03B8301B"]
 			id: "1282177A7209F2D6"
+			rewards: [{
+				id: "78E4D01F4CCFC76B"
+				item: "kubejs:ulv_loot_bag"
+				type: "item"
+			}]
 			shape: "octagon"
 			size: 1.25d
 			subtitle: "Better than a Paraglider"

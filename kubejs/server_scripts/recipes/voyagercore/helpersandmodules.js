@@ -150,7 +150,7 @@ ServerEvents.recipes((event) => {
             .itemInputs(
                 `voyagercore:${tier}_speed_helper_module`,
                 `voyagercore:${tier}_efficiency_helper_module`,
-                `voyagercore:${tier}_parallel_helper_module`,
+                tier != "mv" ? `voyagercore:${tier}_parallel_helper_module` : `voyagercore:${tier}_basic_helper_module`,
                 `8x ${coilMat}_coil_block`,
                 `2x #gtceu:circuits/${ctier}`,
                 `2x gtceu:${tier}_field_generator`
@@ -419,7 +419,7 @@ ServerEvents.recipes((event) => {
     speed_module_recipe("mv", "hv", "black_steel", "black_bronze")
     efficiency_module_recipe("mv", "mv", "fluxed_electrum", "fluxed_electrum", "gtceu:sodium_potassium 2000")
     basic_module_recipe("mv", "hv", "cupronickel", "kanthal")
-    parallel_module_recipe("mv", "ev", "platinum", "magnesium_diboride")
+    // parallel_module_recipe("mv", "ev", "platinum", "magnesium_diboride")
 
     speed_module_recipe("hv", "ev", "tantalum", "niobium_nitride")
     efficiency_module_recipe("hv", "hv", "fluxed_cobalt_electrum", "fluxed_cobalt_electrum", "gtceu:sodium_potassium 2000")

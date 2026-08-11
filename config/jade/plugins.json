@@ -54,6 +54,13 @@
     "painting": true,
     "chiseled_bookshelf": true
   },
+  "gtmutils": {
+    "web_info": true,
+    "enlarged_me_stocking_bus_info": true
+  },
+  "jadeaddons.mcjtylib": {
+    "jadeaddons": true
+  },
   "gtceu": {
     "primitive_pump": true,
     "auto_output_info": true,
