@@ -11,6 +11,11 @@
 		{
 			dependencies: ["6ADAC23B330B235C"]
 			id: "0BF5B842E06C2661"
+			rewards: [{
+				id: "324DA402C3FDF7FE"
+				item: "kubejs:ulv_loot_bag"
+				type: "item"
+			}]
 			shape: "gear"
 			size: 2.0d
 			subtitle: "The end of the stone age was never due to a lack of stones"
@@ -30,6 +35,11 @@
 				"6ADAC23B330B235C"
 			]
 			id: "3057D811EC559A13"
+			rewards: [{
+				id: "21DDBCE7B9CD78AE"
+				item: "kubejs:ulv_loot_bag"
+				type: "item"
+			}]
 			shape: "gear"
 			size: 2.0d
 			subtitle: "Remeber these?"
@@ -94,6 +104,12 @@
 			]
 			description: ["Steam is produced using boilers. These allow you to.. boil water. There are three types of boilers: &l&0the solid boiler&r, which burns solid fuels, like charcoal and coal coal, &l&1the liquid boiler&r, which burns liquids like creosote and lava, and &lthe solar boiler&r, which uses the &l&o&epower of the sun&r to boil water."]
 			id: "694D21DD359391F9"
+			min_required_tasks: 1
+			rewards: [{
+				id: "65D7AAD7DDF29DC2"
+				item: "kubejs:ulv_loot_bag"
+				type: "item"
+			}]
 			size: 1.25d
 			subtitle: "Can't use a nuclear power plant yet"
 			tasks: [
@@ -122,6 +138,12 @@
 			description: ["You need water for all of your steam machines. This multiblock, thankfully, will make water for free!"]
 			icon: "gtceu:primitive_pump"
 			id: "1AA68223242ECD8C"
+			rewards: [{
+				count: 2
+				id: "714F0ACE91BC1A79"
+				item: "kubejs:ulv_loot_bag"
+				type: "item"
+			}]
 			shape: "gear"
 			size: 1.5d
 			subtitle: "Sadly no ULV pump"
@@ -174,6 +196,11 @@
 			description: ["The forge hammer will allow for plates to be made at a 3-2 ratio, instead of a 2-1 (As a tip from gregger to gregger, 9 ingots is 6 plates. That one helped me a lot. Or maybe i'm just dumb, who knows.)"]
 			id: "6E52D3FAEFF8D5C1"
 			optional: true
+			rewards: [{
+				id: "6FE482C30C75281D"
+				item: "kubejs:ulv_loot_bag"
+				type: "item"
+			}]
 			subtitle: "Tired of 2-1 ratios? Try this!"
 			tasks: [{
 				id: "5007F778E954B881"
@@ -188,6 +215,11 @@
 			description: ["The rock breaker is basically a cobble gen in a box. All you need to do is put water and lava next to this guy, and put a piece of cobblestone in it, and you will get infinite cobblestone for free!"]
 			id: "5BE328CB9E229D34"
 			optional: true
+			rewards: [{
+				id: "62B203B9C965DD3E"
+				item: "kubejs:ulv_loot_bag"
+				type: "item"
+			}]
 			subtitle: "Wait, this is a thing?"
 			tasks: [{
 				id: "20EE7F4CE650583F"
@@ -208,6 +240,11 @@
 			]
 			id: "45575EE69718E395"
 			optional: true
+			rewards: [{
+				id: "2209AEFAEC05C521"
+				item: "kubejs:ulv_loot_bag"
+				type: "item"
+			}]
 			subtitle: "Hulk SMASH!!"
 			tasks: [{
 				id: "54E4646743108295"
@@ -225,6 +262,11 @@
 				"&oYou did make a tinkers smeltery, right?"
 			]
 			id: "182D72912E295B5F"
+			rewards: [{
+				id: "7852CCA72ACE8BEC"
+				item: "kubejs:ulv_loot_bag"
+				type: "item"
+			}]
 			subtitle: "For vulcanizing the rubber pulp"
 			tasks: [{
 				id: "56CDA2B40E4F9C62"
@@ -238,6 +280,11 @@
 			dependencies: ["694D21DD359391F9"]
 			description: ["Did you happen to run across any rubber trees while you were searching for ore veins? if you didn't grab any of them, i would reccomend you go back and do so, becasue you need the &o&6sticky resin &rthat the trees drop, and then put them in this extractor machine."]
 			id: "6BE7BE31179AD3F3"
+			rewards: [{
+				id: "54BF19660BA4C5F1"
+				item: "kubejs:ulv_loot_bag"
+				type: "item"
+			}]
 			subtitle: "Extracting things without the fluids"
 			tasks: [{
 				id: "6E6E4ABC83057CA7"
@@ -258,6 +305,12 @@
 				"&oFun Fact: Vulcanization is a real thing in the real world, and was invented in 1839 by Dr. Goodyear, when he was mixing sulfur with rubber, and dropped it in a hot frying pan."
 			]
 			id: "47451BD6913C7E56"
+			rewards: [{
+				count: 8
+				id: "511244B50F0345A3"
+				item: "kubejs:lv_tech_coin"
+				type: "item"
+			}]
 			shape: "gear"
 			size: 1.5d
 			subtitle: "The best material for bands"
@@ -273,6 +326,11 @@
 		{
 			dependencies: ["694D21DD359391F9"]
 			id: "2F7A53AA41406D0D"
+			rewards: [{
+				id: "2F65015887E936DD"
+				item: "kubejs:ulv_loot_bag"
+				type: "item"
+			}]
 			subtitle: "Can be used for a youtube hydraulic press channel"
 			tasks: [{
 				id: "313278BB316BCA25"
@@ -286,6 +344,11 @@
 			dependencies: ["2F7A53AA41406D0D"]
 			description: ["The &l&7Primitive Blast Furnace&r is a multiblock that will produce steel very slowly, with the ratio being 2 coal and 1 iron to 1 steel. I would reccomend building at least 4 of these, so you can get a lot of extra steel."]
 			id: "0EC7EBD2F1EF165B"
+			rewards: [{
+				id: "43974CC5415AF1C4"
+				item: "kubejs:ulv_loot_bag"
+				type: "item"
+			}]
 			subtitle: "Steel, here we come!"
 			tasks: [
 				{
@@ -307,6 +370,19 @@
 			dependencies: ["0EC7EBD2F1EF165B"]
 			description: ["Just like real life, steel is used in a lot of different places. But, for now, it is just used for going to the Nether."]
 			id: "17B74197E07434BC"
+			rewards: [
+				{
+					id: "0F3D90D04DEBCEFA"
+					item: "kubejs:lv_loot_bag"
+					type: "item"
+				}
+				{
+					count: 8
+					id: "023FD5F240540877"
+					item: "kubejs:lv_tech_coin"
+					type: "item"
+				}
+			]
 			shape: "gear"
 			size: 1.5d
 			subtitle: "When bronze is too weak"
@@ -321,6 +397,19 @@
 		{
 			dependencies: ["17B74197E07434BC"]
 			id: "36B56F9A4C3CE9EB"
+			rewards: [
+				{
+					id: "616CB3E98FDA2B57"
+					item: "kubejs:ulv_loot_bag"
+					type: "item"
+				}
+				{
+					count: 8
+					id: "0F2907F866B5A388"
+					item: "kubejs:lv_tech_coin"
+					type: "item"
+				}
+			]
 			subtitle: "Because of course the flint and steel takes steel"
 			tasks: [{
 				dimension: "minecraft:the_nether"
@@ -336,6 +425,11 @@
 			description: ["While this takes the same amount of time as a furnace, this machine runs on steam and not burnables, so it is &otechnically &rbetter. Although, you should just use a tinker's smeltery"]
 			id: "290498B1719B554E"
 			optional: true
+			rewards: [{
+				id: "3E3E3F7ED13E07EA"
+				item: "kubejs:ulv_loot_bag"
+				type: "item"
+			}]
 			subtitle: "For when furnaces are eating too much fuel"
 			tasks: [{
 				id: "742D55E662AB9F7A"
@@ -353,6 +447,11 @@
 			description: ["Now that we have steel, we can make high pressure steam producers! These make a LOT more steam, with the drawback of not using any less fuel. The only one I would say is &otruly&r worth making is the solar boiler, because it is just more efficent with the water, and less spam is always nice"]
 			id: "33ABA0144D049B42"
 			optional: true
+			rewards: [{
+				id: "5E7CBF4BD8CCC553"
+				item: "kubejs:ulv_loot_bag"
+				type: "item"
+			}]
 			subtitle: "These make a lot of steam"
 			tasks: [
 				{
@@ -397,6 +496,12 @@
 			description: ["Along with the steam producers getting an upgrade, the machines do too! The low pressure machines actually had a speed debuff, with all recipes running at half speed, but these remove the debuff, running at full speed!"]
 			id: "4F58BDC4A67CB655"
 			optional: true
+			rewards: [{
+				count: 3
+				id: "55449D89A2D4DEAE"
+				item: "kubejs:ulv_loot_bag"
+				type: "item"
+			}]
 			subtitle: "Cause slow isn't an option"
 			tasks: [
 				{
@@ -786,6 +891,12 @@
 					item: "kubejs:ulv_loot_bag"
 					type: "item"
 				}
+				{
+					count: 8
+					id: "45D2F2BA4D3E7F10"
+					item: "kubejs:lv_tech_coin"
+					type: "item"
+				}
 			]
 			subtitle: "I wonder what these are for?"
 			tasks: [
@@ -821,6 +932,19 @@
 				"368B5D1609DE4CD7"
 			]
 			id: "56789FF17493784B"
+			rewards: [
+				{
+					id: "327864087CB3753C"
+					item: "kubejs:lv_loot_bag"
+					type: "item"
+				}
+				{
+					count: 20
+					id: "2BAC455B02A95ECD"
+					item: "kubejs:lv_tech_coin"
+					type: "item"
+				}
+			]
 			shape: "gear"
 			size: 2.0d
 			subtitle: "Turns out, circuits"
@@ -838,6 +962,19 @@
 				"17B74197E07434BC"
 			]
 			id: "12EEF6CEEB33CB25"
+			rewards: [
+				{
+					id: "793F67C90B7CDAD1"
+					item: "kubejs:lv_loot_bag"
+					type: "item"
+				}
+				{
+					count: 10
+					id: "1B922957B02E21F4"
+					item: "kubejs:lv_tech_coin"
+					type: "item"
+				}
+			]
 			shape: "gear"
 			size: 2.0d
 			subtitle: "Machine hull #2"
@@ -855,6 +992,19 @@
 				"12EEF6CEEB33CB25"
 			]
 			id: "76633C5616D9BE3B"
+			rewards: [
+				{
+					id: "25575CC25BA37BB9"
+					item: "kubejs:lv_loot_bag"
+					type: "item"
+				}
+				{
+					count: 16
+					id: "5D57153DE0FCC806"
+					item: "kubejs:lv_tech_coin"
+					type: "item"
+				}
+			]
 			shape: "gear"
 			size: 3.0d
 			subtitle: "Your first electricity."
@@ -928,6 +1078,12 @@
 		{
 			dependencies: ["182D72912E295B5F"]
 			id: "368B5D1609DE4CD7"
+			rewards: [{
+				count: 8
+				id: "10170E169B25F2F8"
+				item: "kubejs:lv_tech_coin"
+				type: "item"
+			}]
 			tasks: [{
 				id: "7E35EA751BB03B7A"
 				item: "gtceu:red_alloy_ingot"

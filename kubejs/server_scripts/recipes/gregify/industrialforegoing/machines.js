@@ -55,6 +55,21 @@ ServerEvents.recipes((event) => {
         }
     )
 
+    event.shaped(
+        Item.of("industrialforegoing:machine_frame_simple", 1), // arg 1: output
+        [
+            "   ",
+            "CAC", // arg 2: the shape (array of strings)
+            "FBF"
+        ],
+        {
+            C: "gtceu:pink_steel_plate",
+            A: "gtceu:steel_plate",
+            B: "gtceu:mv_machine_hull",
+            F: "gtceu:electrum_cable",
+        }
+    )
+
     // event.recipes.gtceu.assembler('kubejs:framed_cube')
     //     .itemInputs(
     //         '4x gtceu:wood_screw',

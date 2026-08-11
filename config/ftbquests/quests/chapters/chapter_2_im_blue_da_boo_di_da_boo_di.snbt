@@ -10,21 +10,47 @@
 	quests: [
 		{
 			dependencies: ["3B1202F3A9BF4E46"]
+			hide_dependent_lines: true
 			id: "419A5B81DA99E1A0"
+			rewards: [
+				{
+					id: "4504874FF3EA88B9"
+					item: "kubejs:mv_loot_bag"
+					type: "item"
+				}
+				{
+					count: 32
+					id: "0CCA157BB15817B3"
+					item: "kubejs:mv_tech_coin"
+					type: "item"
+				}
+			]
 			size: 2.0d
-			subtitle: "Is it just me, or does it feel like you can take a bite out of this?"
 			tasks: [{
-				count: 16L
-				id: "0E8D2F499D4F422C"
-				item: { Count: 16, id: "gtceu:aluminium_ingot" }
+				id: "2A6BAAED1C18DFBE"
+				item: "gtceu:mv_machine_hull"
 				type: "item"
 			}]
 			x: -1.0d
-			y: -5.0d
+			y: -6.0d
 		}
 		{
 			dependencies: ["3B1202F3A9BF4E46"]
 			id: "4ADC887D4291587B"
+			rewards: [
+				{
+					count: 4
+					id: "2A9C9AC5FB6CDB4B"
+					item: "kubejs:mv_universal_circuit"
+					type: "item"
+				}
+				{
+					count: 8
+					id: "2D22970C59C31548"
+					item: "kubejs:mv_tech_coin"
+					type: "item"
+				}
+			]
 			size: 2.0d
 			tasks: [{
 				count: 4L
@@ -42,19 +68,32 @@
 			]
 			description: ["Yep. You need a LOT of stuff to greg succesfully. So, be aware, we are doing this &n&o&lEVERY. CHAPTER."]
 			id: "3B1202F3A9BF4E46"
+			rewards: [{
+				count: 8
+				id: "5F8875F6F4FF94FD"
+				item: "kubejs:mv_tech_coin"
+				type: "item"
+			}]
 			size: 3.0d
-			subtitle: "This again?"
+			subtitle: "Is it just me, or does it feel like you can take a bite out of this?"
 			tasks: [{
-				id: "1EF893213F18477C"
-				title: "More collection"
-				type: "checkmark"
+				count: 16L
+				id: "5F971E777D2EA0DD"
+				item: { Count: 16, id: "gtceu:aluminium_ingot" }
+				type: "item"
 			}]
 			x: 2.0d
 			y: -6.5d
 		}
 		{
-			dependencies: ["419A5B81DA99E1A0"]
+			dependencies: ["3B1202F3A9BF4E46"]
 			id: "7E9733D387BA5BE2"
+			rewards: [{
+				count: 8
+				id: "2EFB65AC717B5274"
+				item: "kubejs:mv_tech_coin"
+				type: "item"
+			}]
 			size: 1.5d
 			subtitle: "We do need to preform this song and dance again"
 			tasks: [{
@@ -64,11 +103,16 @@
 			}]
 			title: "You're gonna hate this in MV I"
 			x: -0.75d
-			y: -3.0d
+			y: -3.75d
 		}
 		{
 			dependencies: ["7E9733D387BA5BE2"]
 			id: "27E4822E8D7DBDAF"
+			rewards: [{
+				id: "324B7CE6A94AE18B"
+				item: "kubejs:mv_loot_bag"
+				type: "item"
+			}]
 			subtitle: "These are just aluminium checks"
 			tasks: [{
 				id: "7EEF9CD2C5920371"
@@ -82,6 +126,19 @@
 		{
 			dependencies: ["7E9733D387BA5BE2"]
 			id: "1D392A6831DCF0D0"
+			rewards: [
+				{
+					id: "29598D91B6F4FC07"
+					item: "kubejs:mv_loot_bag"
+					type: "item"
+				}
+				{
+					count: 8
+					id: "2130728DD60FEF34"
+					item: "kubejs:mv_tech_coin"
+					type: "item"
+				}
+			]
 			subtitle: "Does anyone even use GT item routing?"
 			tasks: [{
 				id: "514BB8660BE3E51D"
@@ -95,6 +152,12 @@
 		{
 			dependencies: ["4ADC887D4291587B"]
 			id: "417BBD08E300AC6B"
+			rewards: [{
+				count: 8
+				id: "65FB371E7CFD83E2"
+				item: "kubejs:mv_tech_coin"
+				type: "item"
+			}]
 			subtitle: "This one would be even worse to point at an airplane"
 			tasks: [{
 				id: "34BCF43418D3AD9E"
@@ -109,6 +172,12 @@
 			dependencies: ["4ADC887D4291587B"]
 			id: "7EC0567F57BDAFCE"
 			optional: true
+			rewards: [{
+				count: 8
+				id: "49351D561D1ACCC3"
+				item: "kubejs:mv_tech_coin"
+				type: "item"
+			}]
 			subtitle: "Can sense more things than you can imagine"
 			tasks: [{
 				id: "37D5254E01D109A7"
@@ -125,6 +194,20 @@
 				"7E9733D387BA5BE2"
 			]
 			id: "5036ABCE601C92A6"
+			rewards: [
+				{
+					count: 2
+					id: "50419AF552D9ADBF"
+					item: "kubejs:mv_loot_bag"
+					type: "item"
+				}
+				{
+					count: 8
+					id: "25AD1B3B90FB18E1"
+					item: "kubejs:mv_tech_coin"
+					type: "item"
+				}
+			]
 			size: 1.25d
 			subtitle: "Blue cyborg?"
 			tasks: [{
@@ -140,6 +223,19 @@
 			dependencies: ["7EC0567F57BDAFCE"]
 			id: "3CF6A272AFB7D9FD"
 			optional: true
+			rewards: [
+				{
+					id: "2130897C8EFE65EE"
+					item: "kubejs:mv_loot_bag"
+					type: "item"
+				}
+				{
+					exclude_from_claim_all: true
+					id: "48D73D69E1074FC6"
+					table_id: 1823505249908941610L
+					type: "choice"
+				}
+			]
 			subtitle: "When LV automatic mining is too slow"
 			tasks: [{
 				id: "1F1DEC3C490F48E1"
@@ -153,8 +249,23 @@
 			dependencies: [
 				"5036ABCE601C92A6"
 				"1D392A6831DCF0D0"
+				"419A5B81DA99E1A0"
 			]
 			id: "538EC8442BCC6589"
+			rewards: [
+				{
+					count: 2
+					id: "623229C2FCB91A4A"
+					item: "kubejs:mv_loot_bag"
+					type: "item"
+				}
+				{
+					count: 32
+					id: "1EB4C4E3C56A1D17"
+					item: "kubejs:mv_tech_coin"
+					type: "item"
+				}
+			]
 			size: 1.0d
 			subtitle: "We do be assembling"
 			tasks: [{
@@ -168,6 +279,19 @@
 		{
 			dependencies: ["7E9733D387BA5BE2"]
 			id: "6C57DDC176F398D1"
+			rewards: [
+				{
+					id: "51AB4F4A0AC886F7"
+					item: "kubejs:mv_loot_bag"
+					type: "item"
+				}
+				{
+					count: 8
+					id: "48EEF436C221AB3A"
+					item: "kubejs:mv_tech_coin"
+					type: "item"
+				}
+			]
 			subtitle: "The pump is always the most annoying to craft"
 			tasks: [{
 				id: "648A1AF5926EA7F5"
@@ -179,7 +303,10 @@
 			y: -4.0d
 		}
 		{
-			dependencies: ["6C57DDC176F398D1"]
+			dependencies: [
+				"6C57DDC176F398D1"
+				"419A5B81DA99E1A0"
+			]
 			id: "52BDFD2A8FC3FC07"
 			optional: true
 			subtitle: "Yes, this is in the questbook twice. Why do you ask?"
@@ -192,9 +319,17 @@
 			y: -4.5d
 		}
 		{
-			dependencies: ["6C57DDC176F398D1"]
+			dependencies: [
+				"6C57DDC176F398D1"
+				"419A5B81DA99E1A0"
+			]
 			id: "162C4272B08CCB6F"
 			optional: true
+			rewards: [{
+				id: "64BD8E315A199B91"
+				item: "kubejs:mv_loot_bag"
+				type: "item"
+			}]
 			subtitle: "Extracting the souls of the gregged"
 			tasks: [{
 				id: "568224DB6A96B234"
@@ -212,6 +347,11 @@
 			icon: "ars_nouveau:novice_spell_book"
 			id: "4EE4195E595A74FD"
 			optional: true
+			rewards: [{
+				id: "0E591B6B5885B135"
+				item: "kubejs:ars_bag_1"
+				type: "item"
+			}]
 			subtitle: "IT'S WIZARD TIME"
 			tasks: [{
 				id: "2617AD6756CDAFAA"
@@ -222,8 +362,16 @@
 			y: -4.0d
 		}
 		{
-			dependencies: ["5036ABCE601C92A6"]
+			dependencies: [
+				"5036ABCE601C92A6"
+				"419A5B81DA99E1A0"
+			]
 			id: "719F6D1B75209AD8"
+			rewards: [{
+				id: "0B7FC643A645C23D"
+				item: "kubejs:mv_loot_bag"
+				type: "item"
+			}]
 			subtitle: "Assembling friends EVEN BETTER"
 			tasks: [{
 				id: "7E08D153FCF731B7"
@@ -234,8 +382,24 @@
 			y: 0.0d
 		}
 		{
-			dependencies: ["7E9733D387BA5BE2"]
+			dependencies: [
+				"7E9733D387BA5BE2"
+				"419A5B81DA99E1A0"
+			]
 			id: "5B8348AB4F45374A"
+			rewards: [
+				{
+					id: "4B8D1313F3E32328"
+					item: "kubejs:mv_loot_bag"
+					type: "item"
+				}
+				{
+					count: 8
+					id: "4EAC1321AFF20F76"
+					item: "kubejs:mv_tech_coin"
+					type: "item"
+				}
+			]
 			subtitle: "More advanced alloys"
 			tasks: [{
 				id: "4C4B71D066565456"
@@ -263,6 +427,12 @@
 		{
 			dependencies: ["538EC8442BCC6589"]
 			id: "34256B5B77FAF597"
+			rewards: [{
+				count: 3
+				id: "72D1AEF36C23244F"
+				item: "kubejs:mv_loot_bag"
+				type: "item"
+			}]
 			subtitle: "No soldering alloy alternative?"
 			tasks: [{
 				id: "588D83B28C77DEDC"
@@ -278,6 +448,12 @@
 				"538EC8442BCC6589"
 			]
 			id: "4C1ED02854ED8430"
+			rewards: [{
+				count: 2
+				id: "42AA398ABCA7D7F6"
+				item: "kubejs:mv_loot_bag"
+				type: "item"
+			}]
 			size: 2.0d
 			subtitle: "HV EBF time!!"
 			tasks: [{
@@ -291,6 +467,19 @@
 		{
 			dependencies: ["417BBD08E300AC6B"]
 			id: "74B5AD5B1311F3E7"
+			rewards: [
+				{
+					exclude_from_claim_all: true
+					id: "77B0B7E2FBF742D7"
+					table_id: 5039140047551286599L
+					type: "choice"
+				}
+				{
+					id: "20D35B18796726F4"
+					item: "kubejs:mv_loot_bag"
+					type: "item"
+				}
+			]
 			subtitle: "Etching circuits like it's no one's buisness"
 			tasks: [{
 				id: "3112F50E8CB2A4AC"
@@ -307,6 +496,11 @@
 			]
 			hide_dependency_lines: true
 			id: "2411310CF21320C9"
+			rewards: [{
+				id: "7A5C3F3F46119A01"
+				item: "kubejs:mv_loot_bag"
+				type: "item"
+			}]
 			subtitle: "Faster 2-1 rods"
 			tasks: [{
 				id: "05ECAF7C96CD42F8"
@@ -323,6 +517,12 @@
 				"40B850098273F668"
 			]
 			id: "68CEAD8ABAED6196"
+			rewards: [{
+				count: 8
+				id: "758E49627182B89A"
+				item: "kubejs:mv_tech_coin"
+				type: "item"
+			}]
 			subtitle: "The symbol this has looks kinda like a ~"
 			tasks: [{
 				id: "111AFFBA4580DC9F"
@@ -339,6 +539,11 @@
 				"40B850098273F668"
 			]
 			id: "59B674C96777452E"
+			rewards: [{
+				id: "15D0FB4CD396AC61"
+				item: "kubejs:mv_loot_bag"
+				type: "item"
+			}]
 			subtitle: "THEY HAVE RAM!"
 			tasks: [{
 				id: "18AFB9F49BF0B602"
@@ -355,6 +560,12 @@
 				"40B850098273F668"
 			]
 			id: "025B372D6DEB3E59"
+			rewards: [{
+				count: 8
+				id: "3397BFE76BC96AEA"
+				item: "kubejs:mv_tech_coin"
+				type: "item"
+			}]
 			subtitle: "Lost the logic when it became small"
 			tasks: [{
 				id: "70A615B783CC3D6D"
@@ -370,6 +581,12 @@
 				"4335A9DF8AA086EF"
 			]
 			id: "6A1887AE0B579449"
+			rewards: [{
+				count: 8
+				id: "32F62F9E1CEC6374"
+				item: "kubejs:mv_tech_coin"
+				type: "item"
+			}]
 			subtitle: "More advanced circuitry"
 			tasks: [{
 				id: "151BFAF24A28A8C6"
@@ -382,6 +599,12 @@
 		{
 			dependencies: ["6A1887AE0B579449"]
 			id: "10835D2C1A8C7F7A"
+			rewards: [{
+				count: 8
+				id: "5CC24EFBD731A0AA"
+				item: "kubejs:mv_tech_coin"
+				type: "item"
+			}]
 			subtitle: "Cheaper MV circuits for the whole family"
 			tasks: [{
 				id: "0C6A6B669601F520"
@@ -399,6 +622,20 @@
 				"4EE7F344816F8356"
 			]
 			id: "432590144B64AB10"
+			rewards: [
+				{
+					count: 2
+					id: "3CDD8D3E966301D7"
+					item: "kubejs:mv_loot_bag"
+					type: "item"
+				}
+				{
+					count: 4
+					id: "61C73D42CB7236CF"
+					item: "kubejs:mv_universal_circuit"
+					type: "item"
+				}
+			]
 			size: 2.0d
 			subtitle: "Time for HV (if you have PE and white steel)"
 			tasks: [{
@@ -410,7 +647,10 @@
 			y: 2.0d
 		}
 		{
-			dependencies: ["4ADC887D4291587B"]
+			dependencies: [
+				"4ADC887D4291587B"
+				"419A5B81DA99E1A0"
+			]
 			id: "5003483C6028EE64"
 			subtitle: "Whadda think this machine even does?"
 			tasks: [{
@@ -427,6 +667,11 @@
 				"5003483C6028EE64"
 			]
 			id: "2D373E7FC492E348"
+			rewards: [{
+				id: "6CFA53A20E1B7BA2"
+				item: "kubejs:mv_loot_bag"
+				type: "item"
+			}]
 			subtitle: "Everything is chrome in the future, Squidward"
 			tasks: [{
 				id: "7EE0C6FBE4A39AD7"
@@ -439,6 +684,12 @@
 		{
 			dependencies: ["2D373E7FC492E348"]
 			id: "36817259703DEB93"
+			rewards: [{
+				count: 8
+				id: "37D1796C81188C36"
+				item: "kubejs:mv_tech_coin"
+				type: "item"
+			}]
 			subtitle: "Steel variant #1"
 			tasks: [{
 				id: "6AA072E4AF79E5B0"
@@ -451,6 +702,11 @@
 		{
 			dependencies: ["36817259703DEB93"]
 			id: "3D5A07370F18961C"
+			rewards: [{
+				id: "2AB2906B608EC411"
+				item: "kubejs:mv_loot_bag"
+				type: "item"
+			}]
 			subtitle: "Now this one takes time"
 			tasks: [{
 				id: "1017960218D23492"
@@ -463,6 +719,11 @@
 		{
 			dependencies: ["72BCD56BAC6F1E57"]
 			id: "01C94BA5CADFA830"
+			rewards: [{
+				id: "6DD0D1B3A3A0A236"
+				item: "kubejs:mv_loot_bag"
+				type: "item"
+			}]
 			subtitle: "Names get very long and stupid from here on out"
 			tasks: [{
 				id: "4869194546F6D979"
@@ -478,6 +739,12 @@
 				"01C94BA5CADFA830"
 			]
 			id: "54383B663449C45D"
+			rewards: [{
+				count: 8
+				id: "6CDE6B9188C0EA13"
+				item: "kubejs:mv_tech_coin"
+				type: "item"
+			}]
 			subtitle: "Only sixteen from each boule?"
 			tasks: [{
 				id: "59617BCE97D49673"
@@ -494,6 +761,11 @@
 			]
 			hide_dependent_lines: true
 			id: "7316516D8EB8CD60"
+			rewards: [{
+				id: "3D15F3064AFA6BFD"
+				item: "kubejs:mv_loot_bag"
+				type: "item"
+			}]
 			subtitle: "Uh oh"
 			tasks: [{
 				id: "1CD5ACED2CED8598"
@@ -507,9 +779,23 @@
 			dependencies: [
 				"6C57DDC176F398D1"
 				"1D392A6831DCF0D0"
+				"419A5B81DA99E1A0"
 			]
 			hide_dependency_lines: true
 			id: "654CD3417DA4DA1D"
+			rewards: [
+				{
+					id: "3A206B8F83B5B428"
+					item: "kubejs:mv_loot_bag"
+					type: "item"
+				}
+				{
+					count: 8
+					id: "20F139A6969B58C9"
+					item: "kubejs:mv_tech_coin"
+					type: "item"
+				}
+			]
 			subtitle: "The microsoft outlook of cooling ingots"
 			tasks: [{
 				id: "1B82D782352263F3"
@@ -526,6 +812,19 @@
 				"7316516D8EB8CD60"
 			]
 			id: "31ECA53434A3F674"
+			rewards: [
+				{
+					id: "63BC09091A6E92A6"
+					item: "kubejs:mv_loot_bag"
+					type: "item"
+				}
+				{
+					count: 8
+					id: "34139E0F0B1ADFC4"
+					item: "kubejs:mv_tech_coin"
+					type: "item"
+				}
+			]
 			subtitle: "Now for the other 127"
 			tasks: [{
 				id: "403F89F7786D027C"
@@ -541,6 +840,12 @@
 				"31ECA53434A3F674"
 			]
 			id: "0A90A77024E6430C"
+			rewards: [{
+				count: 2
+				id: "3DE72588512B1389"
+				item: "kubejs:mv_loot_bag"
+				type: "item"
+			}]
 			subtitle: "How long did these take?"
 			tasks: [{
 				count: 16L
@@ -557,6 +862,12 @@
 				"654CD3417DA4DA1D"
 			]
 			id: "4BD922E5CE685F22"
+			rewards: [{
+				count: 8
+				id: "5C11945D70277986"
+				item: "kubejs:mv_tech_coin"
+				type: "item"
+			}]
 			subtitle: "Yes, this was the entire reason for kanthal"
 			tasks: [{
 				id: "34E72C8FB6E27A04"
@@ -569,6 +880,12 @@
 		{
 			dependencies: ["4BD922E5CE685F22"]
 			id: "4EE7F344816F8356"
+			rewards: [{
+				count: 8
+				id: "1E3DEB97E7746079"
+				item: "kubejs:mv_tech_coin"
+				type: "item"
+			}]
 			subtitle: "Moore's law goes hard"
 			tasks: [{
 				id: "64DA5C3B16DE3B6A"
@@ -584,6 +901,12 @@
 				"654CD3417DA4DA1D"
 			]
 			id: "3778C068660FCD61"
+			rewards: [{
+				count: 8
+				id: "07A8E003FCC3CB75"
+				item: "kubejs:mv_tech_coin"
+				type: "item"
+			}]
 			subtitle: "The cooler bronze"
 			tasks: [{
 				id: "5F60C0A1E2460EAF"
@@ -599,6 +922,12 @@
 				"5BDC588635E9B551"
 			]
 			id: "7A2ABD419B2FB9E0"
+			rewards: [{
+				count: 2
+				id: "1DBB741AAA5F158B"
+				item: "kubejs:mv_loot_bag"
+				type: "item"
+			}]
 			subtitle: "Steel variant #3"
 			tasks: [{
 				id: "53B76633304435DC"
@@ -615,6 +944,11 @@
 			]
 			hide_dependent_lines: true
 			id: "5BDC588635E9B551"
+			rewards: [{
+				id: "42C58EB6BCF41B66"
+				item: "kubejs:mv_loot_bag"
+				type: "item"
+			}]
 			subtitle: "White steel"
 			tasks: [{
 				id: "2A67C8FAFEDA3312"
@@ -630,6 +964,20 @@
 				"31386F98AE94D575"
 			]
 			id: "6A65D57C567806CB"
+			rewards: [
+				{
+					count: 3
+					id: "57B6D7F7A3AA7858"
+					item: "kubejs:mv_loot_bag"
+					type: "item"
+				}
+				{
+					exclude_from_claim_all: true
+					id: "39E515940C56058A"
+					table_id: 6754857317440773956L
+					type: "choice"
+				}
+			]
 			shape: "gear"
 			size: 3.0d
 			subtitle: "And then there were four"
@@ -642,8 +990,24 @@
 			y: 4.5d
 		}
 		{
-			dependencies: ["7E9733D387BA5BE2"]
+			dependencies: [
+				"7E9733D387BA5BE2"
+				"419A5B81DA99E1A0"
+			]
 			id: "2DE64A0F27847F54"
+			rewards: [
+				{
+					id: "0445841824EA484E"
+					item: "kubejs:mv_loot_bag"
+					type: "item"
+				}
+				{
+					count: 8
+					id: "32E09C4610701047"
+					item: "kubejs:mv_tech_coin"
+					type: "item"
+				}
+			]
 			size: 2.0d
 			subtitle: "First REAL chemical reactor"
 			tasks: [{
@@ -662,6 +1026,12 @@
 			]
 			id: "49F17D4469082171"
 			min_required_tasks: 1
+			rewards: [{
+				count: 8
+				id: "4268D99DBCD9DA17"
+				item: "kubejs:mv_tech_coin"
+				type: "item"
+			}]
 			subtitle: "You don't need to do this yet, but PLEASE passive this"
 			tasks: [{
 				id: "794E07DB1F0BC94B"
@@ -674,6 +1044,19 @@
 		{
 			dependencies: ["49F17D4469082171"]
 			id: "31386F98AE94D575"
+			rewards: [
+				{
+					count: 32
+					id: "40E92CD744D76193"
+					item: "kubejs:mv_tech_coin"
+					type: "item"
+				}
+				{
+					id: "6C926C44B80302F1"
+					item: "kubejs:mv_loot_bag"
+					type: "item"
+				}
+			]
 			size: 1.5d
 			subtitle: "FINALLY first plastic"
 			tasks: [{
@@ -689,6 +1072,12 @@
 			hide_until_deps_visible: false
 			id: "3F19DD981F340045"
 			optional: true
+			rewards: [{
+				count: 2
+				id: "6A5EE9B36449227D"
+				item: "kubejs:mv_loot_bag"
+				type: "item"
+			}]
 			subtitle: "Thought second would take more time, huh?"
 			tasks: [{
 				id: "534C22800761FE39"
@@ -702,6 +1091,12 @@
 			dependencies: ["31386F98AE94D575"]
 			id: "34E27193A1178686"
 			optional: true
+			rewards: [{
+				count: 8
+				id: "0F2EEC0A26DC4B97"
+				item: "kubejs:mv_tech_coin"
+				type: "item"
+			}]
 			subtitle: "I don't know what a \"hermetic\" is either"
 			tasks: [{
 				id: "5ACC0205599E85DF"
@@ -715,6 +1110,12 @@
 			dependencies: ["3F19DD981F340045"]
 			id: "729685A8B2D7482C"
 			optional: true
+			rewards: [{
+				count: 8
+				id: "39A178FDFD16B3EC"
+				item: "kubejs:mv_tech_coin"
+				type: "item"
+			}]
 			subtitle: "Still don't know what a \"hermetic\" is"
 			tasks: [{
 				id: "7C54C2A17922D829"
@@ -725,9 +1126,17 @@
 			y: -0.5d
 		}
 		{
-			dependencies: ["34E27193A1178686"]
+			dependencies: [
+				"34E27193A1178686"
+				"6A066106E82E9C31"
+			]
 			id: "4BFF7E28298F7F53"
 			optional: true
+			rewards: [{
+				id: "5675E9BCF2915187"
+				item: "kubejs:mv_loot_bag"
+				type: "item"
+			}]
 			size: 1.75d
 			subtitle: "FINALLY good fluid storage"
 			tasks: [{
@@ -742,6 +1151,11 @@
 			dependencies: ["729685A8B2D7482C"]
 			id: "1865DE166C804C4D"
 			optional: true
+			rewards: [{
+				id: "5D9687592D6333DC"
+				item: "kubejs:mv_loot_bag"
+				type: "item"
+			}]
 			size: 1.75d
 			subtitle: "Why would you not use these?"
 			tasks: [{
@@ -756,6 +1170,12 @@
 			dependencies: ["7B351CBB336D5129"]
 			id: "2AE88B3B3356EFF3"
 			optional: true
+			rewards: [{
+				count: 8
+				id: "4D61CC320B5D54A9"
+				item: "kubejs:mv_tech_coin"
+				type: "item"
+			}]
 			subtitle: "Don't use fermented biomass for this please"
 			tasks: [{
 				id: "3B52384194F1F5FC"
@@ -769,6 +1189,12 @@
 			dependencies: ["540D3841076D1667"]
 			id: "7B351CBB336D5129"
 			optional: true
+			rewards: [{
+				count: 8
+				id: "0EC4B2D8DF896A73"
+				item: "kubejs:mv_tech_coin"
+				type: "item"
+			}]
 			subtitle: "Made of plants"
 			tasks: [{
 				id: "1BEB15230B211168"
@@ -787,6 +1213,11 @@
 			hide_dependency_lines: true
 			id: "540D3841076D1667"
 			optional: true
+			rewards: [{
+				id: "4342DFFB564EAF54"
+				item: "kubejs:mv_loot_bag"
+				type: "item"
+			}]
 			subtitle: "Coke oven 2.0"
 			tasks: [{
 				id: "2D9BAE73632F26E2"
@@ -800,6 +1231,12 @@
 			dependencies: ["6ECAE141D27C5E82"]
 			id: "088A47A6F8B2E1EC"
 			optional: true
+			rewards: [{
+				count: 8
+				id: "2E37D5A7F0024274"
+				item: "kubejs:mv_tech_coin"
+				type: "item"
+			}]
 			subtitle: "Black gold. 'Nuff said"
 			tasks: [{
 				id: "0FEF9A0E76F9CB56"
@@ -813,6 +1250,11 @@
 			dependencies: ["31386F98AE94D575"]
 			id: "136C44FC0AA0FC95"
 			optional: true
+			rewards: [{
+				id: "59A03AA9B9CCBE0B"
+				item: "kubejs:mv_loot_bag"
+				type: "item"
+			}]
 			size: 1.5d
 			subtitle: "Needed for TSS"
 			tasks: [{
@@ -826,6 +1268,20 @@
 		{
 			dependencies: ["432590144B64AB10"]
 			id: "13C87727AE1B10DA"
+			rewards: [
+				{
+					count: 4
+					id: "663A8F3E78B27BB1"
+					item: "kubejs:mv_universal_circuit"
+					type: "item"
+				}
+				{
+					count: 2
+					id: "1EF3F96D483F1DC2"
+					item: "kubejs:mv_loot_bag"
+					type: "item"
+				}
+			]
 			size: 1.5d
 			subtitle: "Make this"
 			tasks: [{
@@ -840,6 +1296,20 @@
 			dependencies: ["31386F98AE94D575"]
 			id: "6A3ADC148BE019C6"
 			optional: true
+			rewards: [
+				{
+					exclude_from_claim_all: true
+					id: "52BC1D130F4D9EBE"
+					table_id: 4997333476348739645L
+					type: "choice"
+				}
+				{
+					count: 32
+					id: "6FB5B5C5757C022B"
+					item: "kubejs:mv_tech_coin"
+					type: "item"
+				}
+			]
 			size: 1.5d
 			subtitle: "Tom's simple storage, anyone?"
 			tasks: [{
@@ -854,6 +1324,11 @@
 			dependencies: ["6A3ADC148BE019C6"]
 			id: "0DF6DAD9846C3812"
 			optional: true
+			rewards: [{
+				id: "2E34B8AB02645C91"
+				item: "kubejs:mv_loot_bag"
+				type: "item"
+			}]
 			subtitle: "No crafting table needed."
 			tasks: [{
 				id: "3045161A8F1016DE"
@@ -866,6 +1341,12 @@
 		{
 			dependencies: ["38B51C570B6D8316"]
 			id: "4335A9DF8AA086EF"
+			rewards: [{
+				count: 4
+				id: "59572C5523955B5D"
+				item: "kubejs:mv_universal_circuit"
+				type: "item"
+			}]
 			subtitle: "Why WOULDN'T you need this?"
 			tasks: [{
 				id: "50695A946C458099"
@@ -895,6 +1376,12 @@
 		{
 			dependencies: ["2411310CF21320C9"]
 			id: "40B850098273F668"
+			rewards: [{
+				count: 8
+				id: "69D061D2D34A800B"
+				item: "kubejs:mv_tech_coin"
+				type: "item"
+			}]
 			subtitle: "*The green lens waves at you, even if it does not have any arms"
 			tasks: [
 				{
@@ -918,7 +1405,22 @@
 		}
 		{
 			dependencies: ["5003483C6028EE64"]
+			description: ["Once you get an &bMV&r electrolyzer, you can get &ofree&r aluminium. You can get clay dust in numerous ways, but making diorite from a rock breaker and centrifuging the crushed dust is the simplest"]
 			id: "2F967DD18F7DF1F4"
+			rewards: [
+				{
+					id: "5C2714D0B088DED4"
+					item: "kubejs:mv_loot_bag"
+					type: "item"
+				}
+				{
+					count: 32
+					id: "65C03FCA42322A26"
+					item: "kubejs:mv_tech_coin"
+					type: "item"
+				}
+			]
+			subtitle: "Free aluminium!"
 			tasks: [
 				{
 					count: 64L
@@ -1008,6 +1510,19 @@
 			]
 			hide_dependency_lines: true
 			id: "262F73B3227772C7"
+			rewards: [
+				{
+					count: 8
+					id: "3E7DB1A54BD016D9"
+					item: "kubejs:mv_tech_coin"
+					type: "item"
+				}
+				{
+					id: "438002425157126F"
+					item: "kubejs:mv_loot_bag"
+					type: "item"
+				}
+			]
 			tasks: [{
 				id: "5D23D00DDFF97808"
 				item: "voyagercore:mv_efficiency_helper_module"
@@ -1022,6 +1537,12 @@
 				"62201BC7050CB208"
 			]
 			id: "3D72EE5E9A0E24B8"
+			rewards: [{
+				count: 4
+				id: "5D6B0AA72EE24339"
+				item: "kubejs:mv_universal_circuit"
+				type: "item"
+			}]
 			tasks: [{
 				id: "394A16AE1EC29192"
 				item: "voyagercore:mv_speed_helper_module"
@@ -1033,6 +1554,19 @@
 		{
 			dependencies: ["62201BC7050CB208"]
 			id: "0756A5FF4EA647D9"
+			rewards: [
+				{
+					count: 8
+					id: "71E261C94B0CA4EA"
+					item: "kubejs:mv_tech_coin"
+					type: "item"
+				}
+				{
+					id: "3C7B878372831BB3"
+					item: "kubejs:mv_loot_bag"
+					type: "item"
+				}
+			]
 			tasks: [{
 				id: "481A476B471146B0"
 				item: "voyagercore:mv_basic_helper_module"
@@ -1040,31 +1574,6 @@
 			}]
 			x: -6.0d
 			y: 0.5d
-		}
-		{
-			dependencies: ["0A90A77024E6430C"]
-			id: "79BA4D9E13470F93"
-			tasks: [{
-				id: "430271F8D8E160D3"
-				item: "gtceu:magnesium_diboride_ingot"
-				type: "item"
-			}]
-			x: -3.5d
-			y: 2.5d
-		}
-		{
-			dependencies: [
-				"79BA4D9E13470F93"
-				"62201BC7050CB208"
-			]
-			id: "0B2A42CD3C913D9B"
-			tasks: [{
-				id: "76EF77EDA3562CC1"
-				item: "voyagercore:mv_parallel_helper_module"
-				type: "item"
-			}]
-			x: -3.5d
-			y: 1.5d
 		}
 		{
 			dependencies: [
@@ -1076,6 +1585,11 @@
 			description: ["Note: If your multiblock has a helper holder installed, it &l&cwill not run recipes&r unless there is a helper in it. If you do not want/cannot use a helper for a recipe, remove the helper holder."]
 			hide_dependency_lines: true
 			id: "42EE53E235AE139A"
+			rewards: [{
+				id: "23D0C3C316E8055D"
+				item: "kubejs:mv_loot_bag"
+				type: "item"
+			}]
 			tasks: [{
 				id: "77F61F0A0D828B55"
 				item: "voyagercore:helper_holder"
@@ -1098,18 +1612,31 @@
 			]
 			hide_dependency_lines: true
 			id: "356A5D0CB68CEB41"
+			rewards: [{
+				id: "2A7A4FEC5C730A0B"
+				item: "kubejs:mv_loot_bag"
+				type: "item"
+			}]
 			tasks: [{
 				id: "3E2EA442BD134EEA"
 				item: "voyagercore:helper_electric_blast_furnace"
 				type: "item"
 			}]
-			x: -5.0d
-			y: 6.0d
+			x: -3.5d
+			y: 1.5d
 		}
 		{
-			dependencies: ["5036ABCE601C92A6"]
+			dependencies: [
+				"5036ABCE601C92A6"
+				"419A5B81DA99E1A0"
+			]
 			hide_dependency_lines: true
 			id: "5C9FE6B7CCF1654F"
+			rewards: [{
+				id: "42FD186FDA1B3010"
+				item: "kubejs:mv_loot_bag"
+				type: "item"
+			}]
 			tasks: [{
 				id: "4725394D39610137"
 				item: "gtceu:mv_helper_factory"
@@ -1121,13 +1648,412 @@
 		{
 			dependencies: ["62201BC7050CB208"]
 			id: "5C5282F7F08E9520"
+			rewards: [{
+				count: 32
+				id: "65678DF356A09C68"
+				item: "kubejs:mv_tech_coin"
+				type: "item"
+			}]
 			tasks: [{
 				id: "3315AA6B6CCBCDCD"
 				item: "voyagercore:mv_ebf_helper_recipe_module"
 				type: "item"
 			}]
-			x: -4.0d
+			x: -3.5d
+			y: 2.5d
+		}
+		{
+			dependencies: [
+				"6C57DDC176F398D1"
+				"5036ABCE601C92A6"
+				"723C5F19797DC4E3"
+			]
+			hide_dependency_lines: true
+			id: "13C922D0C3778887"
+			rewards: [
+				{
+					id: "0F437883CC545EB7"
+					item: "kubejs:mv_loot_bag"
+					type: "item"
+				}
+				{
+					count: 4
+					id: "26CF159E3ADBBE07"
+					item: "kubejs:mv_universal_circuit"
+					type: "item"
+				}
+			]
+			tasks: [
+				{
+					id: "62B1DAB17FEE40F9"
+					item: "industrialforegoing:plant_gatherer"
+					type: "item"
+				}
+				{
+					id: "131BDB63475B2A48"
+					item: "industrialforegoing:plant_sower"
+					type: "item"
+				}
+			]
+			title: "Industrial Foregoing Crops"
+			x: 3.5d
+			y: 4.5d
+		}
+		{
+			id: "723C5F19797DC4E3"
+			tasks: [{
+				id: "299A031FEC228D1B"
+				item: "gtceu:lv_4a_energy_converter"
+				type: "item"
+			}]
+			title: "RF Converters"
+			x: 2.5d
+			y: 5.0d
+		}
+		{
+			dependencies: [
+				"27E4822E8D7DBDAF"
+				"419A5B81DA99E1A0"
+			]
+			id: "166B639B8E96193A"
+			rewards: [
+				{
+					id: "0616BCEDB2F155F5"
+					item: "kubejs:mv_loot_bag"
+					type: "item"
+				}
+				{
+					count: 4
+					id: "0ADAB1ABF9F2C17B"
+					item: "kubejs:mv_universal_circuit"
+					type: "item"
+				}
+			]
+			tasks: [{
+				id: "152536812D614F27"
+				item: "gtceu:mv_combustion"
+				type: "item"
+			}]
+			x: -1.0d
+			y: -0.5d
+		}
+		{
+			dependencies: [
+				"7E9733D387BA5BE2"
+				"419A5B81DA99E1A0"
+			]
+			id: "18ADDF2D44627C00"
+			rewards: [
+				{
+					id: "744F1F82D4A4FCC6"
+					item: "kubejs:mv_loot_bag"
+					type: "item"
+				}
+				{
+					count: 8
+					id: "06E4553E1E06B234"
+					item: "kubejs:mv_tech_coin"
+					type: "item"
+				}
+			]
+			tasks: [{
+				id: "522C671CE0D44990"
+				item: "gtceu:mv_gas_turbine"
+				type: "item"
+			}]
+			x: -2.5d
+			y: -5.0d
+		}
+		{
+			dependencies: [
+				"7E9733D387BA5BE2"
+				"419A5B81DA99E1A0"
+			]
+			id: "5B6C45452E18E0A7"
+			rewards: [
+				{
+					id: "35C42EE2ECEEEC88"
+					item: "kubejs:mv_loot_bag"
+					type: "item"
+				}
+				{
+					count: 4
+					id: "6E1B6591F7EC1E46"
+					item: "kubejs:mv_tech_coin"
+					type: "item"
+				}
+			]
+			tasks: [{
+				id: "6807FBF7DF55B09B"
+				item: "gtceu:mv_steam_turbine"
+				type: "item"
+			}]
+			x: -2.5d
+			y: -6.0d
+		}
+		{
+			dependencies: ["5B8348AB4F45374A"]
+			hide_dependency_lines: true
+			id: "6A066106E82E9C31"
+			tasks: [{
+				id: "2BD4AEBB8302E1A4"
+				item: "gtceu:pearlic_steel_ingot"
+				type: "item"
+			}]
+			x: -16.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["0A90A77024E6430C"]
+			id: "674B6183CEB82483"
+			tasks: [{
+				id: "6694D41EC0557410"
+				item: "gtceu:energetic_alloy_ingot"
+				type: "item"
+			}]
+			x: 0.5d
+			y: 5.0d
+		}
+		{
+			dependencies: ["5B8348AB4F45374A"]
+			hide_dependency_lines: true
+			id: "759B3B1DFB793555"
+			tasks: [{
+				id: "42ADED8C5C6F54F3"
+				item: "gtceu:pink_steel_ingot"
+				type: "item"
+			}]
+			x: 6.0d
+			y: 2.5d
+		}
+		{
+			dependencies: ["6A066106E82E9C31"]
+			id: "0F580A8CF3E4400A"
+			rewards: [
+				{
+					exclude_from_claim_all: true
+					id: "007151D326B7F473"
+					table_id: 2337645737389477110L
+					type: "choice"
+				}
+				{
+					count: 10
+					id: "2730EAB425957C2F"
+					item: "kubejs:mv_tech_coin"
+					type: "item"
+				}
+			]
+			tasks: [
+				{
+					id: "324EBA66D041BF00"
+					item: "laserio:laser_node"
+					type: "item"
+				}
+				{
+					id: "4FD05753E9324E3F"
+					item: "laserio:laser_wrench"
+					type: "item"
+				}
+			]
+			title: "IO, IO, oh wait, it's just Laser IO."
+			x: -18.0d
+			y: 3.5d
+		}
+		{
+			dependencies: [
+				"759B3B1DFB793555"
+				"419A5B81DA99E1A0"
+			]
+			id: "6A6C0D6366381F30"
+			tasks: [{
+				id: "0756E9543DBBA2C6"
+				item: "industrialforegoing:machine_frame_simple"
+				type: "item"
+			}]
+			title: "IO, IO, wait a minute... This is Industrial Foregoing!"
+			x: 6.0d
+			y: 4.0d
+		}
+		{
+			dependencies: ["6A6C0D6366381F30"]
+			id: "6CF825DD7145FF7A"
+			tasks: [{
+				id: "7827EE6435B41D36"
+				item: "industrialforegoing:block_breaker"
+				type: "item"
+			}]
+			x: 7.5d
+			y: 4.0d
+		}
+		{
+			dependencies: ["6A6C0D6366381F30"]
+			id: "0145040DE1A2A5F9"
+			tasks: [{
+				id: "71982A9857893412"
+				item: "industrialforegoing:block_placer"
+				type: "item"
+			}]
+			x: 7.5d
+			y: 5.0d
+		}
+		{
+			dependencies: ["6A6C0D6366381F30"]
+			id: "366EFEEAC2898351"
+			tasks: [{
+				id: "0C5ED04741A0AF01"
+				item: "industrialforegoing:plant_fertilizer"
+				type: "item"
+			}]
+			x: 7.5d
+			y: 3.0d
+		}
+		{
+			dependencies: ["6A6C0D6366381F30"]
+			id: "51508AD1F2DFF7F3"
+			tasks: [{
+				id: "1C550ECEA5792F58"
+				item: "industrialforegoing:mob_slaughter_factory"
+				type: "item"
+			}]
+			x: 7.0d
+			y: 6.0d
+		}
+		{
+			dependencies: ["3A539B27DF71BBA7"]
+			id: "6B5C44C6A519A57D"
+			tasks: [{
+				id: "0F73023A3422863F"
+				item: "industrialforegoing:enchantment_sorter"
+				type: "item"
+			}]
+			x: 5.0d
+			y: 6.0d
+		}
+		{
+			dependencies: ["6A6C0D6366381F30"]
+			id: "125CC82C035B8C09"
+			tasks: [{
+				id: "60A7A93E203B4E56"
+				item: "industrialforegoing:animal_rancher"
+				type: "item"
+			}]
+			x: 4.5d
+			y: 5.0d
+		}
+		{
+			dependencies: ["6A6C0D6366381F30"]
+			id: "1F2D1F70303BE733"
+			tasks: [{
+				id: "0BCFA2245C820D54"
+				item: "industrialforegoing:animal_feeder"
+				type: "item"
+			}]
+			x: 4.5d
+			y: 4.0d
+		}
+		{
+			dependencies: ["6A6C0D6366381F30"]
+			id: "175242C464E5DBF3"
+			tasks: [{
+				id: "1F8E1EFEBEBF7499"
+				item: "industrialforegoing:animal_baby_separator"
+				type: "item"
+			}]
+			x: 4.5d
+			y: 3.0d
+		}
+		{
+			dependencies: ["0F580A8CF3E4400A"]
+			id: "415FD2148FD2D20C"
+			tasks: [{
+				id: "2AE89521AB363CD8"
+				item: {
+					Count: 1
+					ForgeCaps: {
+						Parent: {
+							Items: [ ]
+							Size: 15
+						}
+					}
+					id: "laserio:card_holder"
+				}
+				type: "item"
+			}]
+			x: -17.5d
 			y: 5.5d
+		}
+		{
+			dependencies: ["0F580A8CF3E4400A"]
+			id: "1C205C329E3384BD"
+			tasks: [{
+				id: "78884C36D69E2CD8"
+				item: "laserio:card_cloner"
+				type: "item"
+			}]
+			x: -18.5d
+			y: 5.5d
+		}
+		{
+			dependencies: ["0F580A8CF3E4400A"]
+			id: "239EC900617E4E2B"
+			tasks: [{
+				id: "610A827DF6DCA342"
+				item: "laserio:card_item"
+				type: "item"
+			}]
+			x: -19.0d
+			y: 4.5d
+		}
+		{
+			dependencies: ["0F580A8CF3E4400A"]
+			id: "506F1B7C37510C40"
+			tasks: [{
+				id: "45FB6C6AE5F5CDA5"
+				item: "laserio:card_fluid"
+				type: "item"
+			}]
+			x: -19.0d
+			y: 3.5d
+		}
+		{
+			dependencies: ["0F580A8CF3E4400A"]
+			id: "0BFE34C034F2EC46"
+			tasks: [{
+				id: "01A09241E8825A7A"
+				item: "laserio:card_redstone"
+				type: "item"
+			}]
+			x: -17.0d
+			y: 4.5d
+		}
+		{
+			dependencies: ["0F580A8CF3E4400A"]
+			id: "700C4357663A7A9C"
+			tasks: [
+				{
+					id: "2F36F45DF70A82E9"
+					item: "laserio:overclocker_node"
+					type: "item"
+				}
+				{
+					id: "48ECED8A5862B8BF"
+					item: "laserio:overclocker_card"
+					type: "item"
+				}
+			]
+			x: -17.0d
+			y: 3.5d
+		}
+		{
+			dependencies: ["51508AD1F2DFF7F3"]
+			id: "3A539B27DF71BBA7"
+			tasks: [{
+				id: "2CC890FD4B59C722"
+				item: "industrialforegoing:pink_slime"
+				type: "item"
+			}]
+			x: 6.0d
+			y: 6.0d
 		}
 	]
 	title: "Chapter 2: Medium Voltage"

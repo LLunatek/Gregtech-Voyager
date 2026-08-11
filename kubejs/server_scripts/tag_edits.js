@@ -13,11 +13,19 @@ ServerEvents.tags("item", (event) => {
         event.remove(`forge:plates/${mat}`, `ad_astra:${mat}_plate`)
         event.remove(`forge:ingots/${mat}`, `ad_astra:${mat}_ingot`)
     }
+    function remove_ad_astra_rods(mat)
+    {
+        event.remove(`forge:rods/${mat}`, `ad_astra:${mat}_rod`)
+    }
+
 
     const ad_astra_mat_list = ['iron', 'steel', 'desh', 'ostrum', 'calorite']
 
     ad_astra_mat_list.forEach(mat =>
-        remove_ad_astra_plates(mat)
+        {
+            remove_ad_astra_plates(mat)
+            remove_ad_astra_rods(mat)
+        }
     )
 
 

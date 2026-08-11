@@ -1,0 +1,12 @@
+{
+	id: "45EE9F2CBBBD4D47"
+	loot_size: 1
+	order_index: 34
+	rewards: [
+		{ item: "gtceu:ruby_lens" }
+		{ item: "gtceu:diamond_lens" }
+		{ item: "gtceu:emerald_lens" }
+		{ item: "gtceu:sapphire_lens" }
+	]
+	title: "mvlens"
+}

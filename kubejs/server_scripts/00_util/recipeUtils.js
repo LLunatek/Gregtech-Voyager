@@ -49,6 +49,15 @@ global.recipe_electrolyzer = function(event, name, inputItems, inputFluids, outp
         .EUt(eut)
 }
 
+global.recipe_fluid_solidifier = function(event, name, inputFluids, outputItems, duration, eut) {
+    event.recipes.gtceu
+        .fluid_solidifier("kubejs:fluid_solidifier_" + name)
+        .itemOutputs(outputItems)
+        .inputFluids(inputFluids)
+        .duration(duration * 20)
+        .EUt(eut)
+}
+
 global.recipe_chem_plant = function(event, name, inputItems, inputFluids, outputItems, outputFluids, duration, eut, temp, specialized) {
     if (specialized) {
         event.recipes.gtceu
