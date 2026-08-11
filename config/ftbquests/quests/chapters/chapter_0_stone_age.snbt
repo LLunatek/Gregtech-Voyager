@@ -1064,6 +1064,17 @@
 			x: 3.5d
 			y: 6.5d
 		}
+		{
+			dependencies: ["2F4B6CBA03B8301B"]
+			id: "0A5968194E7F4714"
+			tasks: [{
+				id: "76640CA06DB23C9C"
+				item: "comforts:sleeping_bag_white"
+				type: "item"
+			}]
+			x: -2.0d
+			y: 7.0d
+		}
 	]
 	title: "Chapter 0: Not A Voltage"
 }
