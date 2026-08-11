@@ -13,6 +13,19 @@
 			dependencies: ["76633C5616D9BE3B"]
 			description: ["Circuits are very important in gregtech, so making 4 of them will hold you over until you need to make more, and then, they will be much cheaper and faster to make!"]
 			id: "0B4A6B9B95DFA2B4"
+			rewards: [
+				{
+					id: "2B67D1F102BF0801"
+					item: "kubejs:lv_loot_bag"
+					type: "item"
+				}
+				{
+					count: 16
+					id: "75513FA5178A8849"
+					item: "kubejs:lv_tech_coin"
+					type: "item"
+				}
+			]
 			shape: "gear"
 			size: 3.0d
 			subtitle: "Oh yeah, you need more of these"
@@ -30,6 +43,20 @@
 			description: ["The &o&l&6large bronze boiler&r is a &lbeast&r when it comes to making steam. The only sad part about it is it &odoes&r need fuel, so try to make a tree farm for charcoal."]
 			id: "2F869DBB6A957477"
 			optional: true
+			rewards: [
+				{
+					exclude_from_claim_all: true
+					id: "6294FD333C787981"
+					table_id: 8329633971839592888L
+					type: "choice"
+				}
+				{
+					count: 8
+					id: "3378B936E2008D14"
+					item: "kubejs:lv_tech_coin"
+					type: "item"
+				}
+			]
 			subtitle: "First REAL gregtech multi"
 			tasks: [{
 				id: "0239E463AD4F7137"
@@ -44,6 +71,11 @@
 			description: ["Super chests are basically better versions of the drawers you probably are using right now. they allow for you to hold &labsurd&r amounts of items, while having auto-output features along with voiding by default. There &oare&r super tanks, but those take plastics you make in MV."]
 			id: "52E02563BB341FBC"
 			optional: true
+			rewards: [{
+				id: "22F29CE3014DC174"
+				item: "kubejs:lv_loot_bag"
+				type: "item"
+			}]
 			subtitle: "Storing a small amount of items"
 			tasks: [{
 				id: "59B2F1E1DC8C3353"
@@ -57,6 +89,12 @@
 			dependencies: ["0B4A6B9B95DFA2B4"]
 			id: "414BBA1691022BC5"
 			optional: true
+			rewards: [{
+				count: 16
+				id: "442C00187525453F"
+				item: "kubejs:lv_tech_coin"
+				type: "item"
+			}]
 			subtitle: "Stuff for tinkers"
 			tasks: [{
 				id: "08F1AB34238262F8"
@@ -76,6 +114,11 @@
 			dependencies: ["0B4A6B9B95DFA2B4"]
 			description: ["Gregtech requires a lot of 'microparts,' items that don't have a use on their own for anything but craftong other things. This your first, the motor. You need a lot of these, so start with making 4 of them."]
 			id: "5CD3D0225E984D8A"
+			rewards: [{
+				id: "4E02D471E86A4D48"
+				item: "kubejs:lv_loot_bag"
+				type: "item"
+			}]
 			shape: "gear"
 			size: 2.0d
 			subtitle: "The first micropart"
@@ -93,6 +136,11 @@
 			dependencies: ["0B4A6B9B95DFA2B4"]
 			description: ["This is easily the cheapest machine you will make each tier. It takes 0 circuits, no microparts, just some wires. And &owhat&r this machine does is it magnetizes your rods for free! no redstone needed."]
 			id: "7389B78DE5F7B7C3"
+			rewards: [{
+				id: "417B9BB0B0C17714"
+				item: "kubejs:lv_loot_bag"
+				type: "item"
+			}]
 			subtitle: "The first LV machine"
 			tasks: [{
 				id: "1AD1757BB6F4098D"
@@ -105,6 +153,12 @@
 		{
 			dependencies: ["5CD3D0225E984D8A"]
 			id: "587504389A9E26C9"
+			rewards: [{
+				count: 8
+				id: "4FCBC845B8C2015B"
+				item: "kubejs:lv_tech_coin"
+				type: "item"
+			}]
 			size: 1.25d
 			subtitle: "No piston boots in this modpack, sadly"
 			tasks: [{
@@ -122,6 +176,19 @@
 				"587504389A9E26C9"
 			]
 			id: "4CCB17B0BA0C924D"
+			rewards: [
+				{
+					id: "289B7AEE4B6E07CB"
+					item: "kubejs:lv_loot_bag"
+					type: "item"
+				}
+				{
+					count: 16
+					id: "4A6AEF1731F28AF3"
+					item: "kubejs:lv_tech_coin"
+					type: "item"
+				}
+			]
 			size: 1.5d
 			subtitle: "Maybe we can craft a Cyborg with all of these parts..."
 			tasks: [{
@@ -136,6 +203,12 @@
 		{
 			dependencies: ["5CD3D0225E984D8A"]
 			id: "77B2F5FB6D354011"
+			rewards: [{
+				count: 8
+				id: "20C846F6562839A5"
+				item: "kubejs:lv_tech_coin"
+				type: "item"
+			}]
 			size: 1.5d
 			subtitle: "Thankfully, we CAN convey our items with these"
 			tasks: [{
@@ -151,6 +224,11 @@
 			dependencies: ["5CD3D0225E984D8A"]
 			description: ["This micropart can move fluids into pipes, and between machines."]
 			id: "62EE454BE9E8329E"
+			rewards: [{
+				id: "610C3C95C67500ED"
+				item: "kubejs:lv_loot_bag"
+				type: "item"
+			}]
 			size: 1.5d
 			subtitle: "Pumping is it's specality"
 			tasks: [{
@@ -165,6 +243,11 @@
 		{
 			dependencies: ["62EE454BE9E8329E"]
 			id: "3BD1329332AD4118"
+			rewards: [{
+				id: "7DE76AE420AA38F5"
+				item: "kubejs:lv_loot_bag"
+				type: "item"
+			}]
 			subtitle: "Pumping at a regulated pace"
 			tasks: [{
 				id: "41674EC65F7E961B"
@@ -182,6 +265,20 @@
 			]
 			description: ["The assembler. This machine is easily one of the most important machines in all of gregtech, providing access to many, &lmany&r, recipes. It also happenes to be one of the most expensive, costing four circuits of the tier. Please use some of your first sixteen on this, I beg of you."]
 			id: "09FEF2154F49CB7E"
+			rewards: [
+				{
+					count: 2
+					id: "14E6359F96B3EA46"
+					item: "kubejs:lv_loot_bag"
+					type: "item"
+				}
+				{
+					count: 8
+					id: "6777BEFFC0426C3D"
+					item: "gtceu:steel_fluid_cell"
+					type: "item"
+				}
+			]
 			shape: "gear"
 			size: 1.5d
 			subtitle: "Putting the \"craft\" in Microcraft"
@@ -194,23 +291,21 @@
 			y: 3.0d
 		}
 		{
-			dependencies: [
-				"4CCB17B0BA0C924D"
-				"070ADCCF6E91E8E3"
-			]
-			id: "540B2F351A5F0A27"
-			subtitle: "Making friends, basically"
-			tasks: [{
-				id: "691D1CAFA656A9BD"
-				item: "gtceu:lv_helper_assembler"
-				type: "item"
-			}]
-			x: 1.0d
-			y: 2.0d
-		}
-		{
 			dependencies: ["5CD3D0225E984D8A"]
 			id: "2226F7D45DBFEDED"
+			rewards: [
+				{
+					id: "5106B0EECF00F55C"
+					item: "kubejs:lv_loot_bag"
+					type: "item"
+				}
+				{
+					count: 8
+					id: "50ADF767B63DD6B9"
+					item: "kubejs:lv_tech_coin"
+					type: "item"
+				}
+			]
 			subtitle: "Not for cooking, sadly"
 			tasks: [{
 				id: "6932AEE278FB17D4"
@@ -225,6 +320,19 @@
 			description: ["Unlinke the &lCRINGE&r, &lSTINKY&r, &lNOT AWESOMESAUCE&r tin cables you are &oprobably &ousing right now, tin-silver wires are a superconductor, and have NO cable loss. Cable loss is when the more blocks away from your power source, the less power the cables actually transmit. The superconductor, however, does not do that, and transmits power at a loss of ZERO."]
 			hide_dependent_lines: true
 			id: "031CF7A7E9C89CD5"
+			rewards: [
+				{
+					count: 16
+					id: "380FCEF4A2606F16"
+					item: "gtceu:steel_ingot"
+					type: "item"
+				}
+				{
+					id: "1C1335701ABC6DC4"
+					item: "kubejs:lv_loot_bag"
+					type: "item"
+				}
+			]
 			subtitle: "Conducting superbly."
 			tasks: [{
 				id: "182AA5235715FF4E"
@@ -236,181 +344,13 @@
 			y: 2.0d
 		}
 		{
-			dependencies: [
-				"09FEF2154F49CB7E"
-				"031CF7A7E9C89CD5"
-			]
-			id: "2B55A7F41202E9B4"
-			subtitle: "Computing friendship is hard work"
-			tasks: [{
-				id: "6E64D38AC8D7713F"
-				item: "kubejs:lv_helper_computation_array"
-				type: "item"
-			}]
-			x: 0.0d
-			y: 2.5d
-		}
-		{
-			dependencies: [
-				"2B55A7F41202E9B4"
-				"540B2F351A5F0A27"
-			]
-			description: ["&oHe absolutely loves GIFs (pronouned JIFs)"]
-			id: "5F7C701053219452"
-			rewards: [
-				{
-					count: 16
-					id: "3BB7E7AEC60B1AEF"
-					item: "kubejs:lv_tech_coin"
-					type: "item"
-				}
-				{
-					count: 2
-					id: "0C1BA7CCF9C82FAB"
-					item: "kubejs:lv_loot_bag"
-					type: "item"
-				}
-			]
-			subtitle: "Jerry (pronounced Gerry)"
-			tasks: [{
-				id: "36688576A0C583F1"
-				item: "kubejs:lv_technician_helper"
-				type: "item"
-			}]
-			x: 2.5d
-			y: 3.0d
-		}
-		{
-			dependencies: [
-				"2B55A7F41202E9B4"
-				"540B2F351A5F0A27"
-			]
-			description: ["&oIs indifferent on Gifs and Jifs"]
-			id: "3F8F446B53DF0733"
-			rewards: [
-				{
-					count: 16
-					id: "6803E2A0BB970A49"
-					item: "kubejs:lv_tech_coin"
-					type: "item"
-				}
-				{
-					id: "333B4E7E11ED8182"
-					item: "kubejs:lv_loot_bag"
-					type: "item"
-				}
-			]
-			subtitle: "Carl"
-			tasks: [{
-				id: "7AFEBAAAA31EA884"
-				item: "kubejs:farmer_helper"
-				type: "item"
-			}]
-			x: 1.5d
-			y: 3.5d
-		}
-		{
-			dependencies: [
-				"540B2F351A5F0A27"
-				"2B55A7F41202E9B4"
-			]
-			description: ["&oThis guy loves Jifs (pronounced GIFs)"]
-			id: "6000C2751D28FEAE"
-			rewards: [
-				{
-					count: 16
-					id: "2AAFB2085C2550C3"
-					item: "kubejs:lv_tech_coin"
-					type: "item"
-				}
-				{
-					id: "32655EB75B4111F1"
-					item: "kubejs:lv_loot_bag"
-					type: "item"
-				}
-			]
-			subtitle: "Geffrey (pronounced Jeffrey)"
-			tasks: [{
-				id: "419C10AF95DAB785"
-				item: "kubejs:track_runner_helper"
-				type: "item"
-			}]
-			x: 0.5d
-			y: 4.0d
-		}
-		{
-			dependencies: [
-				"6000C2751D28FEAE"
-				"6B231CA46629AB81"
-			]
-			id: "2B06164AFF620B90"
-			subtitle: "Literally running on cookie power"
-			tasks: [{
-				id: "0CE705668109AE17"
-				item: "gtceu:lv_helper_wheel"
-				type: "item"
-			}]
-			x: 0.5d
-			y: 5.0d
-		}
-		{
-			dependencies: ["3F8F446B53DF0733"]
-			description: ["This multiblock can farm just about any crop, and if it's encompanied by a &eFarmer Helper&r, it will will self manage!"]
-			id: "471F2F313463FCC5"
-			rewards: [
-				{
-					exclude_from_claim_all: true
-					id: "6216CFAD35ED2674"
-					table_id: 8492432244266067596L
-					type: "choice"
-				}
-				{
-					exclude_from_claim_all: true
-					id: "03E7F27D5C844FAF"
-					table_id: 1013865981561112222L
-					type: "choice"
-				}
-			]
-			subtitle: "You will need an energy hatch"
-			tasks: [{
-				id: "60C4DD70746251A1"
-				item: "gtceu:micro_farm"
-				type: "item"
-			}]
-			x: 2.5d
-			y: 4.5d
-		}
-		{
-			dependencies: ["587504389A9E26C9"]
-			hide_dependency_lines: true
-			id: "009FC0259CDBF980"
-			subtitle: "She forming on my press"
-			tasks: [{
-				id: "04716D9B4866019E"
-				item: "gtceu:lv_forming_press"
-				type: "item"
-			}]
-			x: 2.5d
-			y: 5.5d
-		}
-		{
-			dependencies: [
-				"009FC0259CDBF980"
-				"471F2F313463FCC5"
-			]
-			id: "6B231CA46629AB81"
-			subtitle: "It's just a little cookie!"
-			tasks: [{
-				id: "74D28C5A17D3F175"
-				item: "minecraft:cookie"
-				type: "item"
-			}]
-			x: 1.5d
-			y: 5.0d
-		}
-		{
 			dependencies: ["4CCB17B0BA0C924D"]
 			id: "4D45A9DBA5A33A12"
+			rewards: [{
+				id: "30B27D98E8D78BE0"
+				item: "kubejs:lv_loot_bag"
+				type: "item"
+			}]
 			subtitle: "Is this not just a compressor?"
 			tasks: [{
 				id: "11DFD495519B541D"
@@ -421,54 +361,15 @@
 			y: -0.5d
 		}
 		{
-			dependencies: ["12EEF6CEEB33CB25"]
-			description: ["This is for all two of the Industrial Foregoing machines you can get in LV."]
-			id: "2E4971923A55550F"
-			subtitle: "For non-GT affiars"
-			tasks: [{
-				id: "64ECD708C689084A"
-				item: "industrialforegoing:machine_frame_pity"
-				type: "item"
-			}]
-			x: 4.0d
-			y: 1.5d
-		}
-		{
-			dependencies: [
-				"4CCB17B0BA0C924D"
-				"2E4971923A55550F"
-				"7386B77A807C3FE0"
-			]
-			id: "4C0BADE77523F7BC"
-			subtitle: "Sowing the seeds of the future"
-			tasks: [{
-				id: "1764907B4DE10C21"
-				item: "industrialforegoing:plant_sower"
-				type: "item"
-			}]
-			x: 2.5d
-			y: 0.5d
-		}
-		{
-			dependencies: [
-				"4CCB17B0BA0C924D"
-				"2E4971923A55550F"
-				"7386B77A807C3FE0"
-			]
-			id: "7F5A671FFB5CD33C"
-			subtitle: "And then collecting said seeds"
-			tasks: [{
-				id: "3F3746253B0D9182"
-				item: "industrialforegoing:plant_gatherer"
-				type: "item"
-			}]
-			x: 2.5d
-			y: 1.5d
-		}
-		{
 			dependencies: ["2226F7D45DBFEDED"]
 			hide_dependent_lines: true
 			id: "0BF47C4BE9DB3D22"
+			rewards: [{
+				count: 16
+				id: "4858107EE1E72CEF"
+				item: "kubejs:lv_tech_coin"
+				type: "item"
+			}]
 			subtitle: "Gallium + Arsenide"
 			tasks: [{
 				id: "60BA9E95B095B0C9"
@@ -482,6 +383,28 @@
 			dependencies: ["2226F7D45DBFEDED"]
 			hide_dependent_lines: true
 			id: "095C4EB93E50A623"
+			rewards: [
+				{
+					id: "56377DE45A6CFA15"
+					item: "kubejs:lv_loot_bag"
+					type: "item"
+				}
+				{
+					count: 16
+					id: "4545F3C8EB29AFA0"
+					item: {
+						Count: 1
+						id: "gtceu:fluid_cell"
+						tag: {
+							Fluid: {
+								Amount: 1000
+								FluidName: "gtceu:oil"
+							}
+						}
+					}
+					type: "item"
+				}
+			]
 			subtitle: "Yes, mica is important"
 			tasks: [{
 				id: "731C5EC738FEFCE3"
@@ -498,6 +421,11 @@
 				"09FEF2154F49CB7E"
 			]
 			id: "3EB5A2410C65114B"
+			rewards: [{
+				id: "663633BB09D43CC1"
+				item: "kubejs:lv_loot_bag"
+				type: "item"
+			}]
 			subtitle: "Actually a diode"
 			tasks: [{
 				id: "5527B451A7573A13"
@@ -531,6 +459,20 @@
 			]
 			description: ["The final upgrade to the first tier of circuit. No, these guys cannot be upgraded to HV, that would be too easy. However, continue voyaging, and you shall find the path to truly high power circuits."]
 			id: "3DBFA17AD6A66F7B"
+			rewards: [
+				{
+					count: 2
+					id: "6D4C2B14EE18871A"
+					item: "kubejs:lv_loot_bag"
+					type: "item"
+				}
+				{
+					count: 16
+					id: "5DF15DA061B6F284"
+					item: "kubejs:lv_tech_coin"
+					type: "item"
+				}
+			]
 			shape: "gear"
 			size: 2.0d
 			subtitle: "MV circuit #1"
@@ -545,6 +487,19 @@
 		{
 			dependencies: ["0B4A6B9B95DFA2B4"]
 			id: "770C518D09A0CAA0"
+			rewards: [
+				{
+					id: "4F9C6CCE033D9554"
+					item: "kubejs:lv_loot_bag"
+					type: "item"
+				}
+				{
+					count: 8
+					id: "259369A2465FD83D"
+					item: "kubejs:lv_tech_coin"
+					type: "item"
+				}
+			]
 			subtitle: "Tony Stark could never"
 			tasks: [{
 				id: "1AA0D8EC3198A1A4"
@@ -557,14 +512,19 @@
 		{
 			dependencies: ["770C518D09A0CAA0"]
 			id: "070ADCCF6E91E8E3"
+			rewards: [{
+				id: "57A75D9C36E60D7C"
+				item: "kubejs:lv_tech_coin"
+				type: "item"
+			}]
 			subtitle: "Glass 2.0"
 			tasks: [{
 				id: "0BD2227989EB84FF"
 				item: "gtceu:tempered_glass"
 				type: "item"
 			}]
-			x: 6.0d
-			y: 2.0d
+			x: 5.0d
+			y: 1.0d
 		}
 		{
 			dependencies: ["5CD3D0225E984D8A"]
@@ -582,6 +542,19 @@
 		{
 			dependencies: ["5CD3D0225E984D8A"]
 			id: "79C113CEFFDAC5D2"
+			rewards: [
+				{
+					id: "77CD0CAF74127EEA"
+					item: "kubejs:lv_loot_bag"
+					type: "item"
+				}
+				{
+					count: 8
+					id: "4038ED5F1E394699"
+					item: "kubejs:lv_tech_coin"
+					type: "item"
+				}
+			]
 			subtitle: "Crushing things faster"
 			tasks: [{
 				id: "3FEF3130E617072D"
@@ -594,6 +567,19 @@
 		{
 			dependencies: ["5CD3D0225E984D8A"]
 			id: "32C228B6CBA16DCB"
+			rewards: [
+				{
+					id: "2158594380F248BC"
+					item: "kubejs:lv_loot_bag"
+					type: "item"
+				}
+				{
+					count: 8
+					id: "4DF2BD58F07D3218"
+					item: "kubejs:lv_tech_coin"
+					type: "item"
+				}
+			]
 			subtitle: "You spin me right round, baby right round"
 			tasks: [{
 				id: "25DADF318197EA58"
@@ -606,6 +592,19 @@
 		{
 			dependencies: ["5CD3D0225E984D8A"]
 			id: "75BCB22E498512DF"
+			rewards: [
+				{
+					id: "546EB79A214D0097"
+					item: "kubejs:lv_loot_bag"
+					type: "item"
+				}
+				{
+					count: 8
+					id: "77B66938E4EACBE8"
+					item: "kubejs:lv_tech_coin"
+					type: "item"
+				}
+			]
 			subtitle: "Sulfuric acid, anyone?"
 			tasks: [{
 				id: "6C63341B43AC8BF4"
@@ -661,6 +660,11 @@
 			description: ["This alloy smelter can do everything a high pressure one can do, just off of electricity and not steam."]
 			hide_dependent_lines: true
 			id: "6471E39226FE3104"
+			rewards: [{
+				id: "197F66E8F546EA4C"
+				item: "kubejs:lv_loot_bag"
+				type: "item"
+			}]
 			subtitle: "Dosen't use steam"
 			tasks: [{
 				id: "7155D0FE741E5919"
@@ -674,6 +678,12 @@
 			dependencies: ["6471E39226FE3104"]
 			hide_dependency_lines: false
 			id: "2F3815FF9FC61F9A"
+			rewards: [{
+				count: 8
+				id: "1462A19B8C06B290"
+				item: "kubejs:lv_tech_coin"
+				type: "item"
+			}]
 			subtitle: "Electrum 1.0"
 			tasks: [{
 				id: "635355D204E8836F"
@@ -686,6 +696,12 @@
 		{
 			dependencies: ["62EE454BE9E8329E"]
 			id: "24A776CF80BFF58E"
+			rewards: [{
+				count: 8
+				id: "2F44B6B24F16D7A3"
+				item: "kubejs:lv_loot_bag"
+				type: "item"
+			}]
 			subtitle: "Good at making cans of beans"
 			tasks: [{
 				id: "1B166077A3D2592F"
@@ -698,6 +714,19 @@
 		{
 			dependencies: ["62EE454BE9E8329E"]
 			id: "407D0E044613CE7C"
+			rewards: [
+				{
+					count: 16
+					id: "1F274C784BEB3311"
+					item: "kubejs:lv_tech_coin"
+					type: "item"
+				}
+				{
+					id: "139375BD0384C58E"
+					item: "kubejs:lv_loot_bag"
+					type: "item"
+				}
+			]
 			subtitle: "Turning solids into liquids"
 			tasks: [{
 				id: "72F528C7E7210747"
@@ -710,6 +739,19 @@
 		{
 			dependencies: ["62EE454BE9E8329E"]
 			id: "6E1B15167DC07963"
+			rewards: [
+				{
+					id: "2AC2A1EB34984FDA"
+					item: "kubejs:lv_loot_bag"
+					type: "item"
+				}
+				{
+					count: 8
+					id: "4F0A97B90F785BDE"
+					item: "kubejs:lv_tech_coin"
+					type: "item"
+				}
+			]
 			subtitle: "Turning liquids into solids"
 			tasks: [{
 				id: "65023FDF2EAFE336"
@@ -726,6 +768,12 @@
 			]
 			icon: "gtceu:tin_rotor"
 			id: "2CABD57BD9E70021"
+			rewards: [{
+				count: 8
+				id: "59550DD0CFBDEDD6"
+				item: "kubejs:lv_tech_coin"
+				type: "item"
+			}]
 			subtitle: "And if we combine them..."
 			tasks: [{
 				id: "5A1AC849E4CD0E9F"
@@ -739,6 +787,12 @@
 			dependencies: ["2226F7D45DBFEDED"]
 			hide_dependent_lines: true
 			id: "66B7B98EF236EC9E"
+			rewards: [{
+				count: 8
+				id: "4EB587128864E137"
+				item: "kubejs:lv_tech_coin"
+				type: "item"
+			}]
 			subtitle: "Very puzzled as to what this could be made of"
 			tasks: [{
 				id: "4CD0C3F761283614"
@@ -751,12 +805,19 @@
 		{
 			dependencies: ["0B4A6B9B95DFA2B4"]
 			id: "36D69A3E45A6050C"
-			rewards: [{
-				count: 4
-				id: "061CD256C45A95AF"
-				item: "kubejs:lv_universal_coin"
-				type: "item"
-			}]
+			rewards: [
+				{
+					count: 4
+					id: "061CD256C45A95AF"
+					item: "kubejs:lv_universal_coin"
+					type: "item"
+				}
+				{
+					id: "739D13A928D747A7"
+					item: "kubejs:lv_loot_bag"
+					type: "item"
+				}
+			]
 			subtitle: "Dont point this at airplanes"
 			tasks: [{
 				id: "2A30A58555528140"
@@ -770,12 +831,19 @@
 		{
 			dependencies: ["0B4A6B9B95DFA2B4"]
 			id: "30E0DE5BC641A082"
-			rewards: [{
-				count: 4
-				id: "563E3583BB5F939D"
-				item: "kubejs:lv_universal_coin"
-				type: "item"
-			}]
+			rewards: [
+				{
+					count: 4
+					id: "563E3583BB5F939D"
+					item: "kubejs:lv_universal_coin"
+					type: "item"
+				}
+				{
+					id: "7284945F2986A9FA"
+					item: "kubejs:lv_loot_bag"
+					type: "item"
+				}
+			]
 			subtitle: "It wouldnt do anything, but also doint point this one at airplanes"
 			tasks: [{
 				id: "79807A7363A5557C"
@@ -792,6 +860,11 @@
 				"30E0DE5BC641A082"
 			]
 			id: "2637F2688C981D00"
+			rewards: [{
+				id: "69465B9D2704A830"
+				item: "kubejs:lv_loot_bag"
+				type: "item"
+			}]
 			subtitle: "\"Can you feel it? The ores in the ground?\" -Sun Tzu"
 			tasks: [{
 				id: "2F2D691E28C93418"
@@ -807,6 +880,19 @@
 				"30E0DE5BC641A082"
 			]
 			id: "3CC6A3672A9EA15E"
+			rewards: [
+				{
+					exclude_from_claim_all: true
+					id: "691EA45EEBDE05B8"
+					table_id: 697874867513185926L
+					type: "choice"
+				}
+				{
+					id: "5509A1E83DCA2BF3"
+					item: "kubejs:lv_tech_coin"
+					type: "item"
+				}
+			]
 			subtitle: "When manually mining is to slow"
 			tasks: [{
 				id: "607810ABFE6F3058"
@@ -953,6 +1039,28 @@
 			description: ["Do I even need to write a description? It's a battery..."]
 			id: "364FFCF1ED869B0A"
 			min_required_tasks: 1
+			rewards: [
+				{
+					id: "62EE9643141CD919"
+					item: "kubejs:lv_tech_coin"
+					type: "item"
+				}
+				{
+					count: 16
+					id: "1E8DDD68DC2F8B5B"
+					item: {
+						Count: 1
+						id: "gtceu:fluid_cell"
+						tag: {
+							Fluid: {
+								Amount: 1000
+								FluidName: "gtceu:sulfuric_acid"
+							}
+						}
+					}
+					type: "item"
+				}
+			]
 			subtitle: "Storing all that power you're making"
 			tasks: [
 				{
@@ -979,6 +1087,11 @@
 			dependencies: ["364FFCF1ED869B0A"]
 			id: "4CD530FEAA303C21"
 			min_required_tasks: 1
+			rewards: [{
+				id: "21E8BF1127895B17"
+				item: "kubejs:lv_loot_bag"
+				type: "item"
+			}]
 			subtitle: "Releasing that stored power to your machines"
 			tasks: [
 				{
@@ -1004,6 +1117,11 @@
 		{
 			dependencies: ["364FFCF1ED869B0A"]
 			id: "1D591C81B7DED370"
+			rewards: [{
+				id: "15AC1C435AD0EBB6"
+				item: "kubejs:lv_loot_bag"
+				type: "item"
+			}]
 			subtitle: "POWER TOOLS YEAH BABY"
 			tasks: [{
 				id: "0469A6821277A2F3"
@@ -1032,17 +1150,34 @@
 				type: "item"
 			}]
 			x: -0.5d
-			y: 9.5d
+			y: 2.5d
 		}
 		{
 			dependencies: ["7701C062FA4B703D"]
 			id: "6ECAE141D27C5E82"
 			min_required_tasks: 1
-			rewards: [{
-				id: "60286314F3441A1D"
-				item: "kubejs:lv_loot_bag"
-				type: "item"
-			}]
+			rewards: [
+				{
+					id: "60286314F3441A1D"
+					item: "kubejs:lv_loot_bag"
+					type: "item"
+				}
+				{
+					count: 16
+					id: "70437CB86961EC43"
+					item: {
+						Count: 1
+						id: "gtceu:fluid_cell"
+						tag: {
+							Fluid: {
+								Amount: 1000
+								FluidName: "gtceu:oil"
+							}
+						}
+					}
+					type: "item"
+				}
+			]
 			subtitle: "Black gold. 'Nuff said."
 			tasks: [
 				{
@@ -1066,8 +1201,8 @@
 					type: "item"
 				}
 			]
-			x: -0.5d
-			y: 8.5d
+			x: 0.5d
+			y: 2.5d
 		}
 		{
 			dependencies: ["6ECAE141D27C5E82"]
@@ -1084,8 +1219,8 @@
 				item: "gtceu:heavy_fuel_bucket"
 				type: "item"
 			}]
-			x: -1.5d
-			y: 8.5d
+			x: 1.5d
+			y: 3.0d
 		}
 		{
 			dependencies: [
@@ -1113,8 +1248,8 @@
 				item: "gtceu:phenol_bucket"
 				type: "item"
 			}]
-			x: -1.5d
-			y: 7.5d
+			x: 1.5d
+			y: 4.0d
 		}
 		{
 			id: "4F7BAD7DB45BA530"
@@ -1131,6 +1266,12 @@
 					item: "kubejs:lv_tech_coin"
 					type: "item"
 				}
+				{
+					exclude_from_claim_all: true
+					id: "02AF97BAF22EE7BA"
+					table_id: 4731974358258767428L
+					type: "choice"
+				}
 			]
 			subtitle: "I dont need no darn tower!"
 			tasks: [{
@@ -1138,8 +1279,8 @@
 				item: "gtceu:lv_distillery"
 				type: "item"
 			}]
-			x: -2.5d
-			y: 8.5d
+			x: 2.5d
+			y: 5.0d
 		}
 		{
 			dependencies: [
@@ -1167,12 +1308,18 @@
 					type: "item"
 				}
 			]
-			x: -2.5d
-			y: 7.0d
+			x: 0.5d
+			y: 5.0d
 		}
 		{
 			dependencies: ["3DBFA17AD6A66F7B"]
 			id: "38B51C570B6D8316"
+			rewards: [{
+				count: 3
+				id: "299EB701FB3CB8F8"
+				item: "kubejs:lv_loot_bag"
+				type: "item"
+			}]
 			shape: "gear"
 			size: 2.5d
 			subtitle: "The best LV machine. Of course it takes MV circuits!"
@@ -1195,37 +1342,6 @@
 			}]
 			x: -2.5d
 			y: 4.0d
-		}
-		{
-			dependencies: ["12EEF6CEEB33CB25"]
-			description: ["This is a machine that can turn Gregtech EU (European Unions) into general modded MC RF (Redstone Flux.) Now, there is no way to generate RF in this pack, so this is only used for making RF, which is only for the two Industrial Forgoing machines."]
-			id: "7386B77A807C3FE0"
-			subtitle: "For those RF machines"
-			tasks: [
-				{
-					id: "63EA637308AE1B94"
-					item: "gtceu:lv_1a_energy_converter"
-					type: "item"
-				}
-				{
-					id: "0B9E8A95F6C5BE9C"
-					item: "gtceu:lv_4a_energy_converter"
-					type: "item"
-				}
-				{
-					id: "0B4AE53558A0A05A"
-					item: "gtceu:lv_8a_energy_converter"
-					type: "item"
-				}
-				{
-					id: "1BAA9C7B51981214"
-					item: "gtceu:lv_16a_energy_converter"
-					type: "item"
-				}
-			]
-			title: "Energy converters"
-			x: 4.0d
-			y: 0.5d
 		}
 	]
 	title: "Chapter 1: Low Voltage"

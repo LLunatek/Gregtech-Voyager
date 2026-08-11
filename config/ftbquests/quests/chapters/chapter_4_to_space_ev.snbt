@@ -1664,7 +1664,7 @@
 				""
 				"These multiblocks scale really well, and you may end up keeping them for a long time as they are easily upgradable."
 			]
-			icon: "gtceu:power_rectangle_helper_calorie_converter"
+			icon: "voyagercore:helper_calorie_converter"
 			id: "44FFD6BD6CCFAE73"
 			shape: "octagon"
 			size: 2.0d
