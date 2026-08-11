@@ -1,0 +1,11 @@
+{
+	id: "2070FC69ABCE4CF6"
+	loot_size: 1
+	order_index: 35
+	rewards: [
+		{ count: 4, item: "laserio:laser_node" }
+		{ count: 10, item: "laserio:filter_basic" }
+		{ count: 8, item: "laserio:card_item" }
+	]
+	title: "laserio"
+}

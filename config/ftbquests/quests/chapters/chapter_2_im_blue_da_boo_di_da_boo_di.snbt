@@ -1126,7 +1126,10 @@
 			y: -0.5d
 		}
 		{
-			dependencies: ["34E27193A1178686"]
+			dependencies: [
+				"34E27193A1178686"
+				"6A066106E82E9C31"
+			]
 			id: "4BFF7E28298F7F53"
 			optional: true
 			rewards: [{
@@ -1665,6 +1668,7 @@
 				"5036ABCE601C92A6"
 				"723C5F19797DC4E3"
 			]
+			hide_dependency_lines: true
 			id: "13C922D0C3778887"
 			rewards: [
 				{
@@ -1692,8 +1696,8 @@
 				}
 			]
 			title: "Industrial Foregoing Crops"
-			x: -3.5d
-			y: -5.5d
+			x: 3.5d
+			y: 4.5d
 		}
 		{
 			id: "723C5F19797DC4E3"
@@ -1703,8 +1707,8 @@
 				type: "item"
 			}]
 			title: "RF Converters"
-			x: -4.5d
-			y: -6.0d
+			x: 2.5d
+			y: 5.0d
 		}
 		{
 			dependencies: [
@@ -1786,6 +1790,270 @@
 			}]
 			x: -2.5d
 			y: -6.0d
+		}
+		{
+			dependencies: ["5B8348AB4F45374A"]
+			hide_dependency_lines: true
+			id: "6A066106E82E9C31"
+			tasks: [{
+				id: "2BD4AEBB8302E1A4"
+				item: "gtceu:pearlic_steel_ingot"
+				type: "item"
+			}]
+			x: -16.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["0A90A77024E6430C"]
+			id: "674B6183CEB82483"
+			tasks: [{
+				id: "6694D41EC0557410"
+				item: "gtceu:energetic_alloy_ingot"
+				type: "item"
+			}]
+			x: 0.5d
+			y: 5.0d
+		}
+		{
+			dependencies: ["5B8348AB4F45374A"]
+			hide_dependency_lines: true
+			id: "759B3B1DFB793555"
+			tasks: [{
+				id: "42ADED8C5C6F54F3"
+				item: "gtceu:pink_steel_ingot"
+				type: "item"
+			}]
+			x: 6.0d
+			y: 2.5d
+		}
+		{
+			dependencies: ["6A066106E82E9C31"]
+			id: "0F580A8CF3E4400A"
+			rewards: [
+				{
+					exclude_from_claim_all: true
+					id: "007151D326B7F473"
+					table_id: 2337645737389477110L
+					type: "choice"
+				}
+				{
+					count: 10
+					id: "2730EAB425957C2F"
+					item: "kubejs:mv_tech_coin"
+					type: "item"
+				}
+			]
+			tasks: [
+				{
+					id: "324EBA66D041BF00"
+					item: "laserio:laser_node"
+					type: "item"
+				}
+				{
+					id: "4FD05753E9324E3F"
+					item: "laserio:laser_wrench"
+					type: "item"
+				}
+			]
+			title: "IO, IO, oh wait, it's just Laser IO."
+			x: -18.0d
+			y: 3.5d
+		}
+		{
+			dependencies: [
+				"759B3B1DFB793555"
+				"419A5B81DA99E1A0"
+			]
+			id: "6A6C0D6366381F30"
+			tasks: [{
+				id: "0756E9543DBBA2C6"
+				item: "industrialforegoing:machine_frame_simple"
+				type: "item"
+			}]
+			title: "IO, IO, wait a minute... This is Industrial Foregoing!"
+			x: 6.0d
+			y: 4.0d
+		}
+		{
+			dependencies: ["6A6C0D6366381F30"]
+			id: "6CF825DD7145FF7A"
+			tasks: [{
+				id: "7827EE6435B41D36"
+				item: "industrialforegoing:block_breaker"
+				type: "item"
+			}]
+			x: 7.5d
+			y: 4.0d
+		}
+		{
+			dependencies: ["6A6C0D6366381F30"]
+			id: "0145040DE1A2A5F9"
+			tasks: [{
+				id: "71982A9857893412"
+				item: "industrialforegoing:block_placer"
+				type: "item"
+			}]
+			x: 7.5d
+			y: 5.0d
+		}
+		{
+			dependencies: ["6A6C0D6366381F30"]
+			id: "366EFEEAC2898351"
+			tasks: [{
+				id: "0C5ED04741A0AF01"
+				item: "industrialforegoing:plant_fertilizer"
+				type: "item"
+			}]
+			x: 7.5d
+			y: 3.0d
+		}
+		{
+			dependencies: ["6A6C0D6366381F30"]
+			id: "51508AD1F2DFF7F3"
+			tasks: [{
+				id: "1C550ECEA5792F58"
+				item: "industrialforegoing:mob_slaughter_factory"
+				type: "item"
+			}]
+			x: 7.0d
+			y: 6.0d
+		}
+		{
+			dependencies: ["3A539B27DF71BBA7"]
+			id: "6B5C44C6A519A57D"
+			tasks: [{
+				id: "0F73023A3422863F"
+				item: "industrialforegoing:enchantment_sorter"
+				type: "item"
+			}]
+			x: 5.0d
+			y: 6.0d
+		}
+		{
+			dependencies: ["6A6C0D6366381F30"]
+			id: "125CC82C035B8C09"
+			tasks: [{
+				id: "60A7A93E203B4E56"
+				item: "industrialforegoing:animal_rancher"
+				type: "item"
+			}]
+			x: 4.5d
+			y: 5.0d
+		}
+		{
+			dependencies: ["6A6C0D6366381F30"]
+			id: "1F2D1F70303BE733"
+			tasks: [{
+				id: "0BCFA2245C820D54"
+				item: "industrialforegoing:animal_feeder"
+				type: "item"
+			}]
+			x: 4.5d
+			y: 4.0d
+		}
+		{
+			dependencies: ["6A6C0D6366381F30"]
+			id: "175242C464E5DBF3"
+			tasks: [{
+				id: "1F8E1EFEBEBF7499"
+				item: "industrialforegoing:animal_baby_separator"
+				type: "item"
+			}]
+			x: 4.5d
+			y: 3.0d
+		}
+		{
+			dependencies: ["0F580A8CF3E4400A"]
+			id: "415FD2148FD2D20C"
+			tasks: [{
+				id: "2AE89521AB363CD8"
+				item: {
+					Count: 1
+					ForgeCaps: {
+						Parent: {
+							Items: [ ]
+							Size: 15
+						}
+					}
+					id: "laserio:card_holder"
+				}
+				type: "item"
+			}]
+			x: -17.5d
+			y: 5.5d
+		}
+		{
+			dependencies: ["0F580A8CF3E4400A"]
+			id: "1C205C329E3384BD"
+			tasks: [{
+				id: "78884C36D69E2CD8"
+				item: "laserio:card_cloner"
+				type: "item"
+			}]
+			x: -18.5d
+			y: 5.5d
+		}
+		{
+			dependencies: ["0F580A8CF3E4400A"]
+			id: "239EC900617E4E2B"
+			tasks: [{
+				id: "610A827DF6DCA342"
+				item: "laserio:card_item"
+				type: "item"
+			}]
+			x: -19.0d
+			y: 4.5d
+		}
+		{
+			dependencies: ["0F580A8CF3E4400A"]
+			id: "506F1B7C37510C40"
+			tasks: [{
+				id: "45FB6C6AE5F5CDA5"
+				item: "laserio:card_fluid"
+				type: "item"
+			}]
+			x: -19.0d
+			y: 3.5d
+		}
+		{
+			dependencies: ["0F580A8CF3E4400A"]
+			id: "0BFE34C034F2EC46"
+			tasks: [{
+				id: "01A09241E8825A7A"
+				item: "laserio:card_redstone"
+				type: "item"
+			}]
+			x: -17.0d
+			y: 4.5d
+		}
+		{
+			dependencies: ["0F580A8CF3E4400A"]
+			id: "700C4357663A7A9C"
+			tasks: [
+				{
+					id: "2F36F45DF70A82E9"
+					item: "laserio:overclocker_node"
+					type: "item"
+				}
+				{
+					id: "48ECED8A5862B8BF"
+					item: "laserio:overclocker_card"
+					type: "item"
+				}
+			]
+			x: -17.0d
+			y: 3.5d
+		}
+		{
+			dependencies: ["51508AD1F2DFF7F3"]
+			id: "3A539B27DF71BBA7"
+			tasks: [{
+				id: "2CC890FD4B59C722"
+				item: "industrialforegoing:pink_slime"
+				type: "item"
+			}]
+			x: 6.0d
+			y: 6.0d
 		}
 	]
 	title: "Chapter 2: Medium Voltage"

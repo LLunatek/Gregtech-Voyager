@@ -55,7 +55,78 @@ ServerEvents.recipes((event) => {
         }
     }
 
+    function ebf_recipe_hot_ingot(input, ebfduration, ebfeut, ebftemp, blastfluid, do_helium_cooling) {
+        event.remove({ type: "gtceu:electric_blast_furnace", output: `gtceu:hot_${input}_ingot` })
+        event.remove({ type: "gtceu:electric_blast_furnace", output: `gtceu:${input}_ingot` })
+        event.remove({ type: "gtceu:vacuum_freezer", output: `gtceu:${input}_ingot` })
+        event.recipes.gtceu
+            .electric_blast_furnace("kubejs:hot_" + input)
+            .itemInputs("gtceu:" + input + "_dust")
+            .itemOutputs("gtceu:hot_" + input + "_ingot")
+            .circuit(1)
+            .duration(ebfduration)
+            .EUt(ebfeut)
+            .blastFurnaceTemp(ebftemp)
+
+        event.recipes.gtceu
+            .electric_blast_furnace("kubejs:hot_" + input + "_fluid")
+            .itemInputs("gtceu:" + input + "_dust")
+            .inputFluids(blastfluid + " 100")
+            .itemOutputs("gtceu:hot_" + input + "_ingot")
+            .circuit(2)
+            .duration(ebfduration * 0.67)
+            .EUt(ebfeut)
+            .blastFurnaceTemp(ebftemp)
+
+        if (!do_helium_cooling) {
+            event.recipes.gtceu
+                .vacuum_freezer("kubejs:" + input + "_cooling")
+                .itemInputs("gtceu:hot_" + input + "_ingot")
+                .itemOutputs("gtceu:" + input + "_ingot")
+                .duration(20 * 6)
+                .EUt(ebfeut / 4)
+        } else {
+            event.recipes.gtceu
+                .vacuum_freezer("kubejs:" + input + "_cooling")
+                .itemInputs("gtceu:hot_" + input + "_ingot")
+                .itemOutputs("gtceu:" + input + "_ingot")
+                .inputFluids("gtceu:liquid_helium 500")
+                .outputFluids("gtceu:helium 250")
+                .duration(ebfduration / 10)
+                .EUt(ebfeut / 4)
+        }
+    }
+
+
+    function ebf_recipe_ingot(input, ebfduration, ebfeut, ebftemp, blastfluid) {
+        event.remove({ type: "gtceu:electric_blast_furnace", output: `gtceu:${input}_ingot` })
+        event.recipes.gtceu
+            .electric_blast_furnace("kubejs:" + input)
+            .itemInputs("gtceu:" + input + "_dust")
+            .itemOutputs("gtceu:" + input + "_ingot")
+            .circuit(1)
+            .duration(ebfduration)
+            .EUt(ebfeut)
+            .blastFurnaceTemp(ebftemp)
+
+        event.recipes.gtceu
+            .electric_blast_furnace("kubejs:" + input + "_fluid")
+            .itemInputs("gtceu:" + input + "_dust")
+            .inputFluids(blastfluid + " 1000")
+            .itemOutputs("gtceu:" + input + "_ingot")
+            .circuit(2)
+            .duration(ebfduration * 0.67)
+            .EUt(ebfeut)
+            .blastFurnaceTemp(ebftemp)
+
+
+    }
     // if someone wants to PR and clean this code using the new function, please do 😂
+
+    ebf_recipe_ingot("pearlic_steel", 20 * 60, 120, 1800, 'gtceu:oxygen')
+    ebf_recipe_ingot("pink_steel", 20 * 120, 120, 1800, 'gtceu:oxygen', false)
+    ebf_recipe_ingot("energetic_alloy", 20 * 120, 120, 2700, 'gtceu:oxygen', false)
+    ebf_recipe_hot_ingot("energetic_pearlic_alloy", 20 * 120, 480, 3600, 'gtceu:oxygen', false)
 
     event.recipes.gtceu
         .electric_blast_furnace("kubejs:everlasting_steak_ebf")

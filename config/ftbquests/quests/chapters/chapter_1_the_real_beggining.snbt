@@ -104,6 +104,7 @@
 			]
 			description: ["Steam is produced using boilers. These allow you to.. boil water. There are three types of boilers: &l&0the solid boiler&r, which burns solid fuels, like charcoal and coal coal, &l&1the liquid boiler&r, which burns liquids like creosote and lava, and &lthe solar boiler&r, which uses the &l&o&epower of the sun&r to boil water."]
 			id: "694D21DD359391F9"
+			min_required_tasks: 1
 			rewards: [{
 				id: "65D7AAD7DDF29DC2"
 				item: "kubejs:ulv_loot_bag"

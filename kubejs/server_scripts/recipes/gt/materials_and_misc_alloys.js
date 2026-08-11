@@ -81,6 +81,11 @@ ServerEvents.recipes((event) => {
 
     create_mixer_recipe("trellium_base_dust", ["2x gtceu:trellium_dust", "2x gtceu:duranium_dust", "2x gtceu:sulfuria_dust"], "gtceu:radon 500", "6x gtceu:trellium_base_dust", voltTier("luv"), 20)
 
+
+    create_mixer_recipe("pearlic_steel", ['2x gtceu:steel_dust', '2x gtceu:ender_pearl_dust', '2x gtceu:opal_dust'], [], '6x gtceu:pearlic_steel_dust', 120, 300)
+    create_mixer_recipe("pink_steel", ['2x gtceu:vanadium_steel_dust', '2x gtceu:rose_gold_dust', '2x gtceu:red_steel_dust'], [], '6x gtceu:pink_steel_dust', 120, 300)
+    create_mixer_recipe("energetic_alloy", ['2x gtceu:black_steel_dust', '2x gtceu:fluxed_electrum_dust', '2x gtceu:red_alloy_dust'], [], '6x gtceu:energetic_alloy_dust', 120, 300)
+    create_mixer_recipe("energetic_pearlic_alloy", ['4x gtceu:energetic_alloy_dust', '2x gtceu:pearlic_steel_dust', '2x gtceu:pink_steel_dust', '2x gtceu:chromium_dust'], [], '10x gtceu:energetic_pearlic_alloy_dust', 480, 300)
     // create_mixer_recipe('refined_fluxed_electrum_mix',['8x gtceu:refined_fluxed_electrum', '2x gtceu:cobalt_dust', '1x gtceu:ruby_dust'], [], ['6x gtceu:fluxed_cobalt_electrum_dust'], voltTier('ev'), 300);
 
     // refined_fluxed_electrum

@@ -1699,6 +1699,37 @@
 			x: -2.5d
 			y: 5.0d
 		}
+		{
+			dependencies: ["6164D33ACEB4E515"]
+			id: "2FC046CA926EC302"
+			tasks: [{
+				id: "02B65A272E563DEF"
+				item: "gtceu:energetic_pearlic_alloy_ingot"
+				type: "item"
+			}]
+			x: 2.5d
+			y: -8.0d
+		}
+		{
+			id: "27DE983E37D01A68"
+			tasks: [{
+				id: "19EDF028ECE20580"
+				item: "industrialforegoing:machine_frame_advanced"
+				type: "item"
+			}]
+			x: 3.0d
+			y: -9.5d
+		}
+		{
+			id: "62E10A2A8918DE59"
+			tasks: [{
+				id: "4BFDA08772E5CD6D"
+				item: "industrialforegoing:mechanical_dirt"
+				type: "item"
+			}]
+			x: 4.0d
+			y: -10.0d
+		}
 	]
 	title: "Chapter 3: High Voltage"
 }
