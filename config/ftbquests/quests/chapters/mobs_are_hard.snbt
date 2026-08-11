@@ -86,50 +86,6 @@
 					match_nbt: true
 					type: "item"
 				}
-				{
-					id: "332D977AD5076C08"
-					item: {
-						Count: 1
-						id: "tconstruct:longbow"
-						tag: {
-							Damage: 0
-							tic_broken: 0b
-							tic_materials: [
-								"gm_construct:carbon"
-								"gm_construct:carbon"
-								"tconstruct:bronze"
-								"tconstruct:skyslime_vine"
-							]
-							tic_modifiers: [
-								{
-									level: 1
-									name: "tconstruct:maintained"
-								}
-								{
-									level: 1
-									name: "tconstruct:airborne"
-								}
-							]
-							tic_multipliers: {
-								"tconstruct:durability": 1.5f
-							}
-							tic_persistent: { }
-							tic_stats: {
-								"tconstruct:accuracy": 1.0f
-								"tconstruct:attack_damage": 2.25f
-								"tconstruct:draw_speed": 3.0f
-								"tconstruct:durability": 514.80005f
-								"tconstruct:velocity": 9.0f
-							}
-							tic_volatile_data: {
-								abilities: 1
-								upgrades: 2
-							}
-						}
-					}
-					match_nbt: true
-					type: "item"
-				}
 			]
 			title: "Ranger v0.1a"
 			x: 0.0d

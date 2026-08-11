@@ -1813,7 +1813,10 @@
 			y: 2.0d
 		}
 		{
-			dependencies: ["0A90A77024E6430C"]
+			dependencies: [
+				"0A90A77024E6430C"
+				"5B8348AB4F45374A"
+			]
 			hide_dependency_lines: true
 			id: "674B6183CEB82483"
 			subtitle: "Great for crossbows"
