@@ -1,5 +1,6 @@
 ServerEvents.recipes((event) => {
     event.remove({ output: "tconstruct:seared_fuel_gauge" })
+    event.remove({ output: "tconstruct:seared_ingot_gauge"})
 
     // @ts-ignore
     event.shaped(
