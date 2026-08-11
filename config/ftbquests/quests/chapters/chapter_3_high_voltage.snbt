@@ -153,8 +153,8 @@
 		}
 		{
 			dependencies: [
-				"4627AEED5BEF3133"
 				"477F006BF784C7E4"
+				"79575089A6C65ADD"
 			]
 			description: ["The LHW (Large helper wheel) is a superb option for power while in &6HV&r. It generates 1.5 Amps of HV Power using Grandma's Cookies and an LCPTR Helper. A few of these will get your power needs up until &dEV&r with ease."]
 			id: "683807E475A6A74B"
@@ -180,28 +180,6 @@
 			}]
 			x: 2.0d
 			y: 1.0d
-		}
-		{
-			dependencies: [
-				"47B86AAAB18C918E"
-				"2331F01276C17711"
-				"15641EDDE751887F"
-			]
-			description: ["Yeah, this one dosen't get a name (he HATES Nicknames [pronounced Nicknames])"]
-			id: "4627AEED5BEF3133"
-			rewards: [{
-				id: "38A25E5BBAFED70A"
-				item: "kubejs:hv_loot_bag"
-				type: "item"
-			}]
-			subtitle: "LCPTRH"
-			tasks: [{
-				id: "58C26FC6A43636BC"
-				item: "kubejs:lcptr_helper"
-				type: "item"
-			}]
-			x: -1.0d
-			y: 4.0d
 		}
 		{
 			dependencies: [
@@ -368,8 +346,8 @@
 				item: "gtceu:hv_cutter"
 				type: "item"
 			}]
-			x: 6.5d
-			y: -1.5d
+			x: 5.5d
+			y: -2.0d
 		}
 		{
 			dependencies: [
@@ -438,7 +416,7 @@
 				type: "item"
 			}]
 			x: 7.5d
-			y: -2.0d
+			y: -2.5d
 		}
 		{
 			dependencies: ["4F367E1F9CD2499E"]
@@ -1028,7 +1006,7 @@
 			}]
 			title: "To The Moon!"
 			x: 3.0d
-			y: 4.5d
+			y: 3.5d
 		}
 		{
 			id: "7A11C3062B307765"
@@ -1045,7 +1023,7 @@
 				type: "item"
 			}]
 			x: 3.75d
-			y: 7.25d
+			y: 6.25d
 		}
 		{
 			hide_dependency_lines: true
@@ -1070,7 +1048,7 @@
 			}]
 			title: "Swagged out 1"
 			x: 0.5d
-			y: 4.5d
+			y: 3.5d
 		}
 		{
 			hide_dependency_lines: true
@@ -1095,7 +1073,7 @@
 			}]
 			title: "Swagged out 2"
 			x: 0.5d
-			y: 5.5d
+			y: 4.5d
 		}
 		{
 			hide_dependency_lines: true
@@ -1120,7 +1098,7 @@
 			}]
 			title: "Swagged out 3"
 			x: 1.0d
-			y: 6.5d
+			y: 5.5d
 		}
 		{
 			hide_dependency_lines: true
@@ -1145,7 +1123,7 @@
 			}]
 			title: "Swagged out 4"
 			x: 2.0d
-			y: 7.0d
+			y: 6.0d
 		}
 		{
 			dependencies: [
@@ -1519,6 +1497,7 @@
 				"15641EDDE751887F"
 				"47B86AAAB18C918E"
 				"53E1E1523013DC56"
+				"3899D5A329039714"
 			]
 			id: "4CFCDA131CC5888F"
 			shape: "gear"
@@ -1729,6 +1708,17 @@
 			}]
 			x: 4.0d
 			y: -10.0d
+		}
+		{
+			dependencies: ["4CFCDA131CC5888F"]
+			id: "79575089A6C65ADD"
+			tasks: [{
+				id: "3B1AE5D17EBB6B4E"
+				item: "voyagercore:hv_helper_wheel_recipe_module"
+				type: "item"
+			}]
+			x: -1.0d
+			y: 1.5d
 		}
 	]
 	title: "Chapter 3: High Voltage"
