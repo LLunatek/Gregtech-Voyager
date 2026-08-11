@@ -416,12 +416,12 @@ ServerEvents.recipes((event) => {
     )
 
 
-    speed_module_recipe("mv", "hv", "black_steel", "black_bronze")
+    speed_module_recipe("mv", "hv", "energetic_alloy", "black_bronze")
     efficiency_module_recipe("mv", "mv", "fluxed_electrum", "fluxed_electrum", "gtceu:sodium_potassium 2000")
     basic_module_recipe("mv", "hv", "cupronickel", "kanthal")
     // parallel_module_recipe("mv", "ev", "platinum", "magnesium_diboride")
 
-    speed_module_recipe("hv", "ev", "tantalum", "niobium_nitride")
+    speed_module_recipe("hv", "ev", "energetic_pearlic_alloy", "niobium_nitride")
     efficiency_module_recipe("hv", "hv", "fluxed_cobalt_electrum", "fluxed_cobalt_electrum", "gtceu:sodium_potassium 2000")
     basic_module_recipe("hv", "ev", "platinum", "nichrome")
     parallel_module_recipe("hv", "iv", "tantalum", "mercury_barium_calcium_cuprate")

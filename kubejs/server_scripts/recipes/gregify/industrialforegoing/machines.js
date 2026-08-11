@@ -66,7 +66,7 @@ ServerEvents.recipes((event) => {
             C: "gtceu:pink_steel_plate",
             A: "gtceu:steel_plate",
             B: "gtceu:mv_machine_hull",
-            F: "gtceu:electrum_cable",
+            F: "gtceu:electrum_single_cable",
         }
     )
 

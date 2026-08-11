@@ -1681,6 +1681,7 @@
 		{
 			dependencies: ["6164D33ACEB4E515"]
 			id: "2FC046CA926EC302"
+			subtitle: "Great for swords"
 			tasks: [{
 				id: "02B65A272E563DEF"
 				item: "gtceu:energetic_pearlic_alloy_ingot"
@@ -1690,24 +1691,26 @@
 			y: -8.0d
 		}
 		{
+			dependencies: ["2FC046CA926EC302"]
 			id: "27DE983E37D01A68"
 			tasks: [{
 				id: "19EDF028ECE20580"
 				item: "industrialforegoing:machine_frame_advanced"
 				type: "item"
 			}]
-			x: 3.0d
-			y: -9.5d
+			x: 3.5d
+			y: -9.0d
 		}
 		{
+			dependencies: ["27DE983E37D01A68"]
 			id: "62E10A2A8918DE59"
 			tasks: [{
 				id: "4BFDA08772E5CD6D"
 				item: "industrialforegoing:mechanical_dirt"
 				type: "item"
 			}]
-			x: 4.0d
-			y: -10.0d
+			x: 4.5d
+			y: -9.5d
 		}
 		{
 			dependencies: ["4CFCDA131CC5888F"]
@@ -1719,6 +1722,61 @@
 			}]
 			x: -1.0d
 			y: 1.5d
+		}
+		{
+			dependencies: ["27DE983E37D01A68"]
+			id: "03EA1BCB30CE2DCA"
+			tasks: [{
+				id: "7B945540FA7B3225"
+				item: "industrialforegoing:mob_crusher"
+				type: "item"
+			}]
+			x: 3.5d
+			y: -10.0d
+		}
+		{
+			dependencies: ["27DE983E37D01A68"]
+			id: "6D341EDFCE8B1C6A"
+			tasks: [{
+				id: "6521ED4E75806631"
+				item: "industrialforegoing:enchantment_factory"
+				type: "item"
+			}]
+			x: 2.5d
+			y: -9.5d
+		}
+		{
+			dependencies: ["27DE983E37D01A68"]
+			id: "77272B5447295AA3"
+			tasks: [{
+				id: "46ED47A31B4F28E0"
+				item: "industrialforegoing:enchantment_extractor"
+				type: "item"
+			}]
+			x: 2.5d
+			y: -10.5d
+		}
+		{
+			dependencies: ["27DE983E37D01A68"]
+			id: "353FAED9E0B3DCC8"
+			tasks: [{
+				id: "509106CC10A7E2D9"
+				item: "industrialforegoing:enchantment_applicator"
+				type: "item"
+			}]
+			x: 4.5d
+			y: -10.5d
+		}
+		{
+			dependencies: ["27DE983E37D01A68"]
+			id: "490E0F9C40F7D0D0"
+			tasks: [{
+				id: "0B64A6FC12EA30C4"
+				item: "industrialforegoing:enchantment_sorter"
+				type: "item"
+			}]
+			x: 3.5d
+			y: -11.0d
 		}
 	]
 	title: "Chapter 3: High Voltage"

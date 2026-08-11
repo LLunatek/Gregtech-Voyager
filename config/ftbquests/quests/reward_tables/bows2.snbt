@@ -1,0 +1,26 @@
+{
+	id: "702B5FFFC25ED6FD"
+	loot_size: 1
+	order_index: 37
+	rewards: [
+		{
+			item: {
+				Count: 1
+				id: "tconstruct:tool_handle"
+				tag: {
+					Material: "gm_construct:energetic_pearlic_alloy"
+				}
+			}
+		}
+		{
+			item: {
+				Count: 1
+				id: "tconstruct:tool_handle"
+				tag: {
+					Material: "gm_construct:lunarium"
+				}
+			}
+		}
+	]
+	title: "bows2"
+}
