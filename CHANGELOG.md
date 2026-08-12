@@ -8,6 +8,8 @@
     + Pre-LV
     + LV
     + EV
++ Tinker's Construct Additions:
+    + Added new materials for: Carbon, Energetic Alloy, Energetic Pearlic Alloy, Lunarium, Pink Steel, Tungsten Carbide, Vanadium Steel
 
 ### Balance/Recipe Changes
 + Gregified some of Forestry, mainly through recipe alterations in the base components.
@@ -18,7 +20,7 @@
 + Removed Minecraft's base carpet recipe, GTCEu's recipe is now the default [(Fixes #49)](https://github.com/bzells/Gregtech-Voyager/issues/49)
 + Changed The Skyroot Wood to be unified with other wood types. [(Fixes #50)](https://github.com/bzells/Gregtech-Voyager/issues/50)
 + Added GT Knives to Farmer's Delight Tags, so they should now work for thatch and other special interactions. [(Fixes #57)](https://github.com/bzells/Gregtech-Voyager/issues/57)
-+ 
++ Added recipes for some Industrial Foregoing machines
 
 ### Mod Additions
 + Added Aether
@@ -28,4 +30,5 @@
 + Added TCON Plannning
 
 ### Mod Updates
-+ Updated Voyager Core 
++ Updated Voyager Core
++ Updated GTCEu to 7.5.3
