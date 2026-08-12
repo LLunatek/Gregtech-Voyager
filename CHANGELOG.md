@@ -10,6 +10,10 @@
     + EV
 + Tinker's Construct Additions:
     + Added new materials for: Carbon, Energetic Alloy, Energetic Pearlic Alloy, Lunarium, Pink Steel, Tungsten Carbide, Vanadium Steel
+ 
+
+### Feature Additions
++ Added 4 new steam multiblocks (Ore washer, Centrifuge, Forge Hammer, Compressor)
 
 ### Balance/Recipe Changes
 + Gregified some of Forestry, mainly through recipe alterations in the base components.
@@ -28,6 +32,7 @@
 + Added Fancy Menu
 + Added Item Collectors
 + Added TCON Plannning
++ Added LaserIO
 
 ### Mod Updates
 + Updated Voyager Core
