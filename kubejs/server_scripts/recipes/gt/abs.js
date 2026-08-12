@@ -90,7 +90,7 @@ ServerEvents.recipes((event) => {
     abs_strict(
         "titanex-879-htb",
         17 * 144,
-        ["7x gtceu:titanite_alloy_dust", "5x gtceu:iridium_dust", "5x gtceu:plutonium_dust", "2x gtceu:lunarium_dust", "2x gtceu:lanthanum_dust"],
+        ["7x gtceu:titanite_alloy_dust", "5x gtceu:iridium_dust", "5x gtceu:desh_dust", "2x gtceu:lunarium_dust", "2x gtceu:lanthanum_dust"],
         "gtceu:molten_titanex-879-htb",
         "kubejs:high_temp_binding_agent_s",
         17 * 33,

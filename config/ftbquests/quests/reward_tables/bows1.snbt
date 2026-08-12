@@ -1,0 +1,26 @@
+{
+	id: "5A2A7A46EBA68B1F"
+	loot_size: 1
+	order_index: 36
+	rewards: [
+		{
+			item: {
+				Count: 1
+				id: "tconstruct:tool_handle"
+				tag: {
+					Material: "gm_construct:pink_steel"
+				}
+			}
+		}
+		{
+			item: {
+				Count: 1
+				id: "tconstruct:arrow_head"
+				tag: {
+					Material: "tconstruct:shulker"
+				}
+			}
+		}
+	]
+	title: "bows1"
+}

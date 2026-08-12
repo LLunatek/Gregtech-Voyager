@@ -761,16 +761,6 @@
 			y: 8.0d
 		}
 		{
-			id: "2E80D4DB789A1A02"
-			tasks: [{
-				id: "3E35A9F1CB62B045"
-				title: "satellite post-box"
-				type: "checkmark"
-			}]
-			x: -8.0d
-			y: 15.5d
-		}
-		{
 			hide_dependent_lines: true
 			id: "02C6DE529687AD0D"
 			tasks: [{
@@ -899,16 +889,6 @@
 			}]
 			x: 1.0d
 			y: 13.5d
-		}
-		{
-			id: "1BE06740CA209D95"
-			tasks: [{
-				id: "61ACC0A60B0990CA"
-				title: "spacial-calculation-super-helper"
-				type: "checkmark"
-			}]
-			x: -1.0d
-			y: 12.5d
 		}
 		{
 			dependencies: ["791AD7CB5EA8563F"]
