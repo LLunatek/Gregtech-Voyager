@@ -1805,7 +1805,7 @@
 				item: "gtceu:pearlic_steel_ingot"
 				type: "item"
 			}]
-			x: -16.0d
+			x: -16.5d
 			y: 2.0d
 		}
 		{
@@ -1838,7 +1838,11 @@
 			y: 2.5d
 		}
 		{
-			dependencies: ["6A066106E82E9C31"]
+			dependencies: [
+				"4BD922E5CE685F22"
+				"4E64B4B02EEBDB80"
+			]
+			hide_dependency_lines: true
 			id: "0F580A8CF3E4400A"
 			rewards: [
 				{
@@ -2068,6 +2072,17 @@
 			}]
 			x: 6.0d
 			y: 6.0d
+		}
+		{
+			dependencies: ["6A066106E82E9C31"]
+			id: "4E64B4B02EEBDB80"
+			tasks: [{
+				id: "754D976B544206CB"
+				item: "laserio:laser_connector"
+				type: "item"
+			}]
+			x: -16.5d
+			y: 3.0d
 		}
 	]
 	title: "Chapter 2: Medium Voltage"
