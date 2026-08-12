@@ -24,6 +24,7 @@
 + Removed Minecraft's base carpet recipe, GTCEu's recipe is now the default [(Fixes #49)](https://github.com/bzells/Gregtech-Voyager/issues/49)
 + Changed The Skyroot Wood to be unified with other wood types. [(Fixes #50)](https://github.com/bzells/Gregtech-Voyager/issues/50)
 + Added GT Knives to Farmer's Delight Tags, so they should now work for thatch and other special interactions. [(Fixes #57)](https://github.com/bzells/Gregtech-Voyager/issues/57)
++ Added recipes to ULV IO Buses to allow for Steam aquistion of Steel Blast Furnace [(Addresses #65)](https://github.com/bzells/Gregtech-Voyager/issues/65)
 + Added recipes for some Industrial Foregoing machines
 
 ### Mod Additions
