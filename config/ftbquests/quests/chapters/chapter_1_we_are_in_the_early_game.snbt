@@ -844,7 +844,7 @@
 					type: "item"
 				}
 			]
-			subtitle: "It wouldnt do anything, but also doint point this one at airplanes"
+			subtitle: "It wouldnt do anything, but also don't point this one at airplanes"
 			tasks: [{
 				id: "79807A7363A5557C"
 				item: "gtceu:lv_sensor"
