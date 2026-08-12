@@ -830,6 +830,7 @@
 		}
 		{
 			dependencies: ["0B4A6B9B95DFA2B4"]
+			description: [""]
 			id: "30E0DE5BC641A082"
 			rewards: [
 				{
