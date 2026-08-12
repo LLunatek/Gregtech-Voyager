@@ -1,0 +1,195 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "mobs_are_hard"
+	group: "6D0B610876588986"
+	icon: "minecraft:creeper_head"
+	id: "5E70D151076F8F17"
+	order_index: 5
+	quest_links: [ ]
+	quests: [
+		{
+			description: ["You may have noticed that in &dGregtech: Voyager&r, the mobs are quite difficult to deal with. That's what this page is for! This QB will show you the progression of weapons and armor."]
+			id: "14A975A6F2A53ECE"
+			size: 2.0d
+			tasks: [{
+				id: "24E3D2136E1F1DDD"
+				title: "How do I fight back?"
+				type: "checkmark"
+			}]
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["3A557C43CE0F534F"]
+			icon: {
+				Count: 1
+				id: "tconstruct:bow_limb"
+				tag: {
+					Material: "gm_construct:carbon"
+				}
+			}
+			id: "0681187085166907"
+			rewards: [
+				{
+					id: "07E5995425AA31B4"
+					item: {
+						Count: 1
+						id: "tconstruct:tool_handle"
+						tag: {
+							Material: "gm_construct:energetic_pearlic_alloy"
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "57EAB3E3FC27E5F4"
+					item: "kubejs:ulv_loot_bag"
+					type: "item"
+				}
+			]
+			tasks: [
+				{
+					id: "3EF4A977A13F5164"
+					item: {
+						Count: 1
+						id: "tconstruct:bow_grip"
+						tag: {
+							Material: "tconstruct:bronze"
+						}
+					}
+					match_nbt: true
+					type: "item"
+				}
+				{
+					id: "634694BC30D3B5C0"
+					item: {
+						Count: 1
+						id: "tconstruct:bowstring"
+						tag: {
+							Material: "tconstruct:skyslime_vine"
+						}
+					}
+					match_nbt: true
+					type: "item"
+				}
+				{
+					count: 2L
+					id: "310CBC3945D28A3A"
+					item: {
+						Count: 2
+						id: "tconstruct:bow_limb"
+						tag: {
+							Material: "gm_construct:carbon"
+						}
+					}
+					match_nbt: true
+					type: "item"
+				}
+			]
+			title: "Ranger v0.1a"
+			x: 0.0d
+			y: 3.0d
+		}
+		{
+			dependencies: [
+				"0681187085166907"
+				"36817259703DEB93"
+			]
+			id: "76272C7E745847DA"
+			rewards: [
+				{
+					exclude_from_claim_all: true
+					id: "2508F446B28884E5"
+					table_id: 6497139857455221535L
+					type: "choice"
+				}
+				{
+					id: "09F0B11E1D7ACB2C"
+					item: "kubejs:mv_loot_bag"
+					type: "item"
+				}
+			]
+			tasks: [{
+				id: "7F17C5D6E4A15D26"
+				item: {
+					Count: 1
+					id: "tconstruct:bow_grip"
+					tag: {
+						Material: "gm_construct:vanadium_steel"
+					}
+				}
+				match_nbt: true
+				type: "item"
+			}]
+			title: "Durability Upgrade 1"
+			x: 0.0d
+			y: 4.0d
+		}
+		{
+			dependencies: ["759B3B1DFB793555"]
+			id: "5C9F54BFFC7A777F"
+			rewards: [
+				{
+					id: "32E76604CF7C4DD2"
+					item: "kubejs:mv_loot_bag"
+					type: "item"
+				}
+				{
+					exclude_from_claim_all: true
+					id: "6872BB657D721CB4"
+					table_id: 8082659508328781565L
+					type: "choice"
+				}
+			]
+			tasks: [{
+				id: "52AF8A68C99FB892"
+				item: {
+					Count: 1
+					id: "tconstruct:bow_grip"
+					tag: {
+						Material: "gm_construct:pink_steel"
+					}
+				}
+				type: "item"
+			}]
+			title: "Durability upgrade... 1000?"
+			x: 0.0d
+			y: 5.0d
+		}
+		{
+			dependencies: ["674B6183CEB82483"]
+			id: "01A09CDC810A4337"
+			rewards: [
+				{
+					id: "247372EB3B45F096"
+					item: "kubejs:mv_loot_bag"
+					type: "item"
+				}
+				{
+					exclude_from_claim_all: true
+					id: "2CD53FFA7478DE10"
+					table_id: 8082659508328781565L
+					type: "choice"
+				}
+			]
+			subtitle: "It's not op, promise"
+			tasks: [{
+				count: 2L
+				id: "1B6C44628943BBFE"
+				item: {
+					Count: 2
+					id: "tconstruct:bow_limb"
+					tag: {
+						Material: "gm_construct:energetic_alloy"
+					}
+				}
+				type: "item"
+			}]
+			title: "THE Bow Upgrade"
+			x: 0.0d
+			y: 6.0d
+		}
+	]
+	title: "Mobs are hard"
+}

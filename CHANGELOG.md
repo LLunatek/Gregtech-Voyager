@@ -8,6 +8,12 @@
     + Pre-LV
     + LV
     + EV
++ Tinker's Construct Additions:
+    + Added new materials for: Carbon, Energetic Alloy, Energetic Pearlic Alloy, Lunarium, Pink Steel, Tungsten Carbide, Vanadium Steel
+ 
+
+### Feature Additions
++ Added 4 new steam multiblocks (Ore washer, Centrifuge, Forge Hammer, Compressor)
 
 ### Balance/Recipe Changes
 + Gregified some of Forestry, mainly through recipe alterations in the base components.
@@ -19,6 +25,7 @@
 + Changed The Skyroot Wood to be unified with other wood types. [(Fixes #50)](https://github.com/bzells/Gregtech-Voyager/issues/50)
 + Added GT Knives to Farmer's Delight Tags, so they should now work for thatch and other special interactions. [(Fixes #57)](https://github.com/bzells/Gregtech-Voyager/issues/57)
 + Added recipes to ULV IO Buses to allow for Steam aquistion of Steel Blast Furnace [(Addresses #65)](https://github.com/bzells/Gregtech-Voyager/issues/65)
++ Added recipes for some Industrial Foregoing machines
 
 ### Mod Additions
 + Added Aether
@@ -26,6 +33,8 @@
 + Added Fancy Menu
 + Added Item Collectors
 + Added TCON Plannning
++ Added LaserIO
 
 ### Mod Updates
-+ Updated Voyager Core 
++ Updated Voyager Core
++ Updated GTCEu to 7.5.3

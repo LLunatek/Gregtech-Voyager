@@ -443,7 +443,7 @@
 			}
 			id: "66CE6007DC2ED744"
 			rewards: [{
-				count: 4
+				count: 8
 				id: "66EFF61DA115BCE2"
 				item: {
 					Count: 1
@@ -577,7 +577,7 @@
 			}]
 			tasks: [
 				{
-					count: 64L
+					count: 16L
 					id: "26F7E8E31C04139E"
 					item: "kubejs:ulv_tech_coin"
 					type: "item"
@@ -591,6 +591,32 @@
 			]
 			title: "ULV Loot Bag"
 			x: 2.5d
+			y: -5.0d
+		}
+		{
+			icon: "minecraft:gravel"
+			id: "21BB4910473DE9D4"
+			rewards: [{
+				count: 64
+				id: "6FC995AF07A9E80E"
+				item: "minecraft:gravel"
+				type: "item"
+			}]
+			tasks: [
+				{
+					count: 8L
+					id: "018E3BEA1E9AECD3"
+					item: { Count: 8, id: "kubejs:ulv_tech_coin" }
+					type: "item"
+				}
+				{
+					elapsedTime: 240L
+					id: "57D26FD80E19648A"
+					type: "questsadditions:time"
+				}
+			]
+			title: "Gravel"
+			x: 3.5d
 			y: -5.0d
 		}
 	]

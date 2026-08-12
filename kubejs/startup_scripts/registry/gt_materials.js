@@ -471,7 +471,7 @@ register_dust("martian_sand", [], "0x732a22", no_decomp)
 
 // desh line
 register_dust("desh_group_sludge", [], "0x331305", no_decomp)
-register_nosmelt_elem_metal("lunarium", [], true, "0x000d61", [4500, "mid", voltTier("iv"), 20 * 64], [200, 500, 1, 100000], voltTier("iv"))
+// register_nosmelt_elem_metal("lunarium", [], true, "0x000d61", [4500, "mid", voltTier("iv"), 20 * 64], [200, 500, 1, 100000], voltTier("iv"))
 
 register_dust("lunar_metal_residue", ["desh", "titanium", "3x glowstone", "2x gold"], "0x634d21", no_decomp)
 register_fluid("sulfuric_lunar_metal_residue", "0x634d21", [], no_decomp)
