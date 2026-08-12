@@ -4,6 +4,7 @@ ServerEvents.tags("block", (event) => {
     event.remove("minecraft:flower_pots", [/twilightforest:potted.*/])
 
     event.remove("forge:storage_blocks/certus_quartz", "ae2:quartz_block")
+
 })
 
 ServerEvents.tags("item", (event) => {
@@ -37,7 +38,13 @@ ServerEvents.tags("item", (event) => {
     event.remove("forge:dusts/certus_quartz", "ae2:certus_quartz_dust")
 
     event.remove("forge:ingots/steel", ["ad_astra:steel_ingot", "tconstruct:steel_ingot"])
-
+    
+    const gtknives = event.get("gtceu:tools/crafting_knives").getObjectIds()
+    
+    // gtknives.forEach(knife =>{
+        event.add("farmersdelight:straw_harvesters", event.get("gtceu:tools/crafting_knives").getObjectIds())
+        event.add("farmersdelight:tools/knives", event.get("gtceu:tools/crafting_knives").getObjectIds())
+    // })
     /**
      * @param {string} tier
      */

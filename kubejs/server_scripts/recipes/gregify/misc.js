@@ -5,6 +5,7 @@ ServerEvents.recipes((event) => {
     event.remove({output: "hangglider:glider_wing"})
     event.remove({output:"hangglider:glider_framework"})
     event.remove({output: "#minecraft:wool_carpets", mod: "minecraft", type: "crafting_shaped"})
+    event.remove({output:"farmersdelight:flint_knife", type: "crafting_shaped"})
 
     event.recipes.gtceu.shaped(
         Item.of("hangglider:glider_wing"),
