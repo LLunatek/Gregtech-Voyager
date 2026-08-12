@@ -1614,11 +1614,7 @@
 				"3F19DD981F340045"
 			]
 			dependency_requirement: "one_completed"
-			description: [
-				"Currently &o&7(as of 0.4A/Pre-Beta)&r&r, the &bMV Helpers&r can only be used to help with &eEBF&r recipes. Because of this, you unlock a helper variant of te &eEBF&r."
-				""
-				"&l&n&cNOTE:&r if you have a helper hatch installed on a machine, with no helper in it, the recipe will not progress, but still consume power. This is a band-aid fix to a bug, and will be changed before Beta releases."
-			]
+			description: ["Currently &o&7(as of 0.4A/Pre-Beta)&r&r, the &bMV Helpers&r can only be used to help with &eEBF&r recipes. Because of this, you unlock a helper variant of te &eEBF&r."]
 			hide_dependency_lines: true
 			id: "356A5D0CB68CEB41"
 			rewards: [{
