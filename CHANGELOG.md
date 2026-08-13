@@ -26,6 +26,7 @@
 + Added GT Knives to Farmer's Delight Tags, so they should now work for thatch and other special interactions. [(Fixes #57)](https://github.com/bzells/Gregtech-Voyager/issues/57)
 + Added recipes to ULV IO Buses to allow for Steam aquistion of Steel Blast Furnace [(Addresses #65)](https://github.com/bzells/Gregtech-Voyager/issues/65)
 + Added recipes for some Industrial Foregoing machines
++ Reduced spawn rate of Ice and Fire dragons
 
 ### Mod Additions
 + Added Aether
