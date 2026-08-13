@@ -31,6 +31,8 @@
 + Added recipes for some Industrial Foregoing machines
 + Reduced spawn rate of Ice and Fire dragons
 + Tuned down mobs (may be tuned again back up)
++ Gregified LaserIO UEL Recipes
++ Gregified Item Collectors Recipes
 
 ### Mod Additions
 + Added Aether
