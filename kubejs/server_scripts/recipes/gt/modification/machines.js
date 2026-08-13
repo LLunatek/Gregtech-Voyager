@@ -17,5 +17,39 @@ ServerEvents.recipes((event) => {
         }
     )
 
+    event.shaped(
+        Item.of("gtceu:ulv_input_bus"),
+        [
+            "SPS",
+            "WHM",
+            "SCS"
+        ],
+        {
+            S: "gtceu:sticky_resin",
+            H: "gtceu:ulv_machine_hull",
+            C: "#forge:chests/wooden",
+            P: "gtceu:wood_plate",
+            W: "#forge:tools/wrenches",
+            M: "#forge:tools/mallets"
+        }
+    )
+
+    event.shaped(
+        Item.of("gtceu:ulv_output_bus"),
+        [
+            "SCS",
+            "WHM",
+            "SPS"
+        ],
+        {
+            S: "gtceu:sticky_resin",
+            H: "gtceu:ulv_machine_hull",
+            C: "#forge:chests/wooden",
+            P: "gtceu:wood_plate",
+            W: "#forge:tools/wrenches",
+            M: "#forge:tools/mallets"
+        }
+    )
+
     
 })
