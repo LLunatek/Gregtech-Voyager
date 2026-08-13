@@ -8,12 +8,15 @@
     + Pre-LV
     + LV
     + EV
++ Stone-HV Questbooks now have rewards
++ New "Mobs are hard" QB chapter
 + Tinker's Construct Additions:
     + Added new materials for: Carbon, Energetic Alloy, Energetic Pearlic Alloy, Lunarium, Pink Steel, Tungsten Carbide, Vanadium Steel
  
 
 ### Feature Additions
 + Added 4 new steam multiblocks (Ore washer, Centrifuge, Forge Hammer, Compressor)
++ Basic helper JEI recipe integration
 
 ### Balance/Recipe Changes
 + Gregified some of Forestry, mainly through recipe alterations in the base components.
@@ -27,6 +30,7 @@
 + Added recipes to ULV IO Buses to allow for Steam aquistion of Steel Blast Furnace [(Addresses #65)](https://github.com/bzells/Gregtech-Voyager/issues/65)
 + Added recipes for some Industrial Foregoing machines
 + Reduced spawn rate of Ice and Fire dragons
++ Tuned down mobs (may be tuned again back up)
 
 ### Mod Additions
 + Added Aether
