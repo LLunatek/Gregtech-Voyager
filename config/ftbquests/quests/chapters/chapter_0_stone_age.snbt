@@ -704,6 +704,11 @@
 			dependencies: ["3A557C43CE0F534F"]
 			description: ["You will need 2 bronze drums to make the entire smeltery"]
 			id: "2977381A674780EF"
+			rewards: [{
+				id: "5D34531E62E3C570"
+				item: "kubejs:stone_bag"
+				type: "item"
+			}]
 			subtitle: "Fluid storage that isn't in increments of a bucket"
 			tasks: [{
 				count: 2L

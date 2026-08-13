@@ -1,6 +1,40 @@
 ServerEvents.recipes((event) => {
     event.remove({ mod: "industrialforegoing" })
 
+    function if_machine(crafting_result, a, b, c, d, e, f)
+    {
+        event.shaped(
+        Item.of(crafting_result, 1), // arg 1: output
+            [
+                "FEF",
+                "CAC", // arg 2: the shape (array of strings)
+                "BDB"
+            ],
+            {
+                A: a,
+                B: b,
+                C: c,
+                D: d,
+                E: e,
+                F: f
+            }
+        )
+    }
+
+    function if_ns(str)
+    {
+        return "industrialforegoing:" + str
+    }
+
+    const pity_frame = if_ns("machine_frame_pity")
+    const simple_frame = if_ns("machine_frame_simple")
+    const advanced_frame = if_ns("machine_frame_advanced")
+
+    if_machine(if_ns("mob_slaughter_factory"), simple_frame, "gtceu:vanadium_steel_buzz_saw_blade", '#gtceu:circuits/mv', 'gtceu:mv_fluid_regulator', "gtceu:double_pink_steel_plate", "gtceu:vanadium_steel_buzz_saw_blade")
+    if_machine(if_ns("mob_crusher"), advanced_frame, "gtceu:red_steel_buzz_saw_blade", '#gtceu:circuits/ev', if_ns("pink_slime"), "gtceu:double_pink_steel_plate", "gtceu:pink_steel_gear")
+    
+
+
     // @ts-ignore
     event.shaped(
         Item.of("industrialforegoing:machine_frame_pity", 1), // arg 1: output
