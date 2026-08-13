@@ -68,4 +68,22 @@ ServerEvents.recipes((event) => {
             D: "#minecraft:planks"
         }
     )
+
+
+    event.remove({mod: "shrink"})
+
+    event.shaped(
+        Item.of("shrink:shrinking_device", 1), // arg 1: output
+        [
+            "ACA",
+            "BDB", // arg 2: the shape (array of strings)
+            "ACA"
+        ],
+        {
+            A: "gtceu:pearlic_steel_plate",
+            B: "gtceu:ender_eye_plate",
+            C: "#gtceu:circuits/mv",
+            D: "#minecraft:buttons"
+        }
+    )
 })

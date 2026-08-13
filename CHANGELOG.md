@@ -12,6 +12,8 @@
 + New "Mobs are hard" QB chapter
 + Tinker's Construct Additions:
     + Added new materials for: Carbon, Energetic Alloy, Energetic Pearlic Alloy, Lunarium, Pink Steel, Tungsten Carbide, Vanadium Steel
++ Lang additions
++ Here Be Dragons QB Chapter
  
 
 ### Feature Additions
@@ -33,6 +35,10 @@
 + Tuned down mobs (may be tuned again back up)
 + Gregified LaserIO UEL Recipes
 + Gregified Item Collectors Recipes
++ Gregified Building Gadgets Recipes
++ Gregified Spatial Tools Compatible Recipes
++ Gregified Personal Shrinking Device
++ Changed IaF recipes
 
 ### Mod Additions
 + Added Aether
@@ -41,6 +47,7 @@
 + Added Item Collectors
 + Added TCON Plannning
 + Added LaserIO
++ Added Spatial Tools Compatible
 
 ### Mod Updates
 + Updated Voyager Core

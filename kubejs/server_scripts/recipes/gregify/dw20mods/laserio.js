@@ -4,15 +4,15 @@ ServerEvents.recipes((event) => {
 
     global.recipe_circuit_assembler_with_id(event, 'nether_quartz', '2x laserio:logic_chip',
         ['gtceu:nether_quartz_plate','#gtceu:circuits/lv', '4x gtceu:cpu_chip', '4x gtceu:fine_gold_wire'],
-        [], 120, 20
+        [], 28, 20
     )
     global.recipe_circuit_assembler_with_id(event, 'quartzite', '2x laserio:logic_chip',
         ['gtceu:quartzite_plate','#gtceu:circuits/lv', '4x gtceu:cpu_chip', '4x gtceu:fine_gold_wire'],
-        [], 120, 20
+        [], 28, 20
     )
     global.recipe_circuit_assembler_with_id(event, 'certus_quartz', '2x laserio:logic_chip',
         ['gtceu:certus_quartz_plate','#gtceu:circuits/lv', '4x gtceu:cpu_chip', '4x gtceu:fine_gold_wire'],
-        [], 120, 20
+        [], 28, 20
     )
 
     global.recipe_circuit_assembler_with_id(event, 'nether_quartz_energetic', '12x laserio:logic_chip',
