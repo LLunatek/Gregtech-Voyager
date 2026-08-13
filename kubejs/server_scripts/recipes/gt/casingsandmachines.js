@@ -245,6 +245,21 @@ ServerEvents.recipes((event) => {
     )
 
     event.shaped(
+        Item.of("voyagercore:grandmas_stovetop_oven", 1), // arg 1: output
+        [
+            "DDD",
+            "DBD", // arg 2: the shape (array of strings)
+            "FEF"
+        ],
+        {
+            B: "voyagercore:ev_oven_helper_recipe_module", //arg 3: the mapping object
+            D: "gtceu:titanium_plate",
+            E: "gtceu:ev_electric_furnace",
+            F: "#gtceu:circuits/ev"
+        }
+    )
+
+    event.shaped(
         Item.of("voyagercore:helper_factory", 1), // arg 1: output
         [
             "DED",

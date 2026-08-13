@@ -1705,11 +1705,16 @@
 			y: 4.5d
 		}
 		{
+			description: [
+				"Since Industrial Foregoing doesn't use GTCEu's native EU energy system, you will need to craft converters to power these machines. That or place a generator right on top of a machine. Your call."
+				""
+				"&7&oCurrently, to transfer RF/FE around... you need to use LaserIO&r"
+			]
+			icon: "gtceu:ulv_1a_energy_converter"
 			id: "723C5F19797DC4E3"
 			tasks: [{
-				id: "299A031FEC228D1B"
-				item: "gtceu:lv_4a_energy_converter"
-				type: "item"
+				id: "27584238FFFAC1FF"
+				type: "checkmark"
 			}]
 			title: "RF Converters"
 			x: 2.5d
@@ -2083,6 +2088,28 @@
 			}]
 			x: -16.5d
 			y: 3.0d
+		}
+		{
+			dependencies: ["6A066106E82E9C31"]
+			id: "47DBE874D3841A1B"
+			tasks: [{
+				id: "04C0CF8855564EC9"
+				item: "itemcollectors:basic_collector"
+				type: "item"
+			}]
+			x: -16.5d
+			y: 1.0d
+		}
+		{
+			dependencies: ["47DBE874D3841A1B"]
+			id: "4F50A6F59D48BEF3"
+			tasks: [{
+				id: "74259E24E2C04B6E"
+				item: "itemcollectors:advanced_collector"
+				type: "item"
+			}]
+			x: -16.5d
+			y: 0.0d
 		}
 	]
 	title: "Chapter 2: Medium Voltage"
