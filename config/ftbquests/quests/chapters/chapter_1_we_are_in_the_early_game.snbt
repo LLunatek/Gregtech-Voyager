@@ -830,6 +830,7 @@
 		}
 		{
 			dependencies: ["0B4A6B9B95DFA2B4"]
+			description: [""]
 			id: "30E0DE5BC641A082"
 			rewards: [
 				{
@@ -844,7 +845,7 @@
 					type: "item"
 				}
 			]
-			subtitle: "It wouldnt do anything, but also doint point this one at airplanes"
+			subtitle: "It wouldnt do anything, but also don't point this one at airplanes"
 			tasks: [{
 				id: "79807A7363A5557C"
 				item: "gtceu:lv_sensor"
