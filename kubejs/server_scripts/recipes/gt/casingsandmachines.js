@@ -292,6 +292,40 @@ ServerEvents.recipes((event) => {
         }
     )
 
+    const tier_gear_map =
+    {
+        "mv": "vanadium_steel",
+        "hv": "red_steel"
+    }
+
+    const tier_wire_map =
+    {
+        "mv": "fluxed_electrum",
+        "hv": "fluxed_cobalt_electrum"
+    }
+
+    function singleblock_ha(tier)
+    {
+        event.shaped(
+        Item.of(`gtceu:${tier}_helper_assembler`, 1), // arg 1: output
+            [
+                "DED",
+                "CBC", // arg 2: the shape (array of strings)
+                "FEF"
+            ],
+            {
+                B: `gtceu:${tier}_machine_hull`, //arg 3: the mapping object
+                C: `gtceu:${tier}_robot_arm`,
+                D: `#gtceu:circuits/${tier}`,
+                E: `gtceu:${tier_gear_map[tier]}_gear`,
+                F: `gtceu:fine_${tier_wire_map[tier]}_wire`
+            }
+        )
+    }
+
+    singleblock_ha('mv')
+    singleblock_ha('hv')
+
     event.recipes.gtceu
         .canner("kubejs:ev_precise_robot_arm_box")
         .itemInputs("1x gtceu:ev_machine_hull", "4x gtceu:ev_robot_arm")

@@ -39,6 +39,7 @@
 + Gregified Spatial Tools Compatible Recipes
 + Gregified Personal Shrinking Device
 + Changed IaF recipes
++ Added recipes for Helper Assemblers
 
 ### Mod Additions
 + Added Aether
