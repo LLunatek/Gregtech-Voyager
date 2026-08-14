@@ -306,8 +306,14 @@ ServerEvents.recipes((event) => {
         .EUt(120)
     event.recipes.gtceu
         .forming_press("kubejs:quantum_link_chamber")
-        .itemInputs("3x gtceu:double_iridium_plate", "3x gtceu:double_ruthenium_plate", "gtceu:laminated_glass", "gtceu:quantum_star", "#gtceu:circuits/iv")
+        .itemInputs("7x gtceu:double_iridium_plate", "5x gtceu:double_ruthenium_plate", "gtceu:laminated_glass", "gtceu:quantum_star", "#gtceu:circuits/iv")
         .itemOutputs("ae2:quantum_link")
+        .duration(200)
+        .EUt(1980)
+    event.recipes.gtceu
+        .forming_press("kubejs:quantum_ring")
+        .itemInputs("7x gtceu:double_palladium_plate", "5x gtceu:double_platinum_plate", "gtceu:laminated_glass", "gtceu:desh_frame", "#gtceu:circuits/hv")
+        .itemOutputs("ae2:quantum_ring")
         .duration(200)
         .EUt(1980)
 })
