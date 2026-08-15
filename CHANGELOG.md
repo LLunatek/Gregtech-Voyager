@@ -20,6 +20,7 @@
 ### Feature Additions
 + Added 4 new steam multiblocks (Ore washer, Centrifuge, Forge Hammer, Compressor)
 + Basic helper JEI recipe integration
++ Added Multiblock Water Collector
 
 ### Balance/Recipe Changes
 + Gregified some of Forestry, mainly through recipe alterations in the base components.
