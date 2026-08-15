@@ -1024,6 +1024,7 @@
 				"2AE88B3B3356EFF3"
 				"2DE64A0F27847F54"
 			]
+			icon: "gtceu:ethylene_bucket"
 			id: "49F17D4469082171"
 			min_required_tasks: 1
 			rewards: [{
@@ -1174,6 +1175,7 @@
 		}
 		{
 			dependencies: ["7B351CBB336D5129"]
+			icon: "gtceu:ethanol_bucket"
 			id: "2AE88B3B3356EFF3"
 			min_required_tasks: 1
 			optional: true
@@ -1200,7 +1202,9 @@
 		}
 		{
 			dependencies: ["540D3841076D1667"]
+			icon: "gtceu:biomass_bucket"
 			id: "7B351CBB336D5129"
+			min_required_tasks: 1
 			optional: true
 			rewards: [{
 				count: 8
@@ -1209,11 +1213,17 @@
 				type: "item"
 			}]
 			subtitle: "Made of plants"
-			tasks: [{
-				id: "1BEB15230B211168"
-				item: "gtceu:biomass_bucket"
-				type: "item"
-			}]
+			tasks: [
+				{
+					id: "1BEB15230B211168"
+					item: "gtceu:biomass_bucket"
+					type: "item"
+				}
+				{
+					id: "290D76A7FC14255C"
+					type: "checkmark"
+				}
+			]
 			x: -8.0d
 			y: -0.5d
 		}
