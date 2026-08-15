@@ -29,11 +29,11 @@ ServerEvents.recipes((event) => {
     )
 
     global.recipe_assembler(event, '2x laserio:laser_connector', 
-        ['2x gtceu:double_silicon_plate','gtceu:long_pearlic_steel_rod', 'gtceu:electrum_single_cable', 'laserio:logic_chip'],
+        ['2x gtceu:double_silicon_plate','2x gtceu:long_pearlic_steel_rod', '2x gtceu:electrum_single_cable', 'laserio:logic_chip'],
         [], 120, 20)
 
     global.recipe_assembler(event, 'laserio:laser_connector_advanced', 
-        ['laserio:laser_connector','gtceu:long_energetic_alloy_rod', 'gtceu:fluxed_electrum_single_wire', 'laserio:logic_chip'],
+        ['laserio:laser_connector','2x gtceu:long_energetic_alloy_rod', '2x gtceu:fluxed_electrum_single_wire', 'laserio:logic_chip'],
         [], 120, 20)
     
     global.recipe_assembler_with_id(event, 'energetic', '8x laserio:laser_connector', 
@@ -41,15 +41,15 @@ ServerEvents.recipes((event) => {
         [], 120, 20)
 
     global.recipe_assembler(event, 'laserio:laser_node', 
-        ['laserio:laser_connector', 'gtceu:mv_sensor', '#gtceu:circuits/lv'],
+        ['2x laserio:laser_connector', 'gtceu:mv_sensor', '#gtceu:circuits/mv'],
         [], 120, 20)
 
 
-    global.recipe_assembler(event, '8x laserio:card_item', 
+    global.recipe_assembler(event, '2x laserio:card_item', 
         ['1x gtceu:pearlic_steel_plate','gtceu:electrum_large_item_pipe', '2x laserio:logic_chip'],
         [], 120, 20)
 
-    global.recipe_assembler(event, '8x laserio:card_fluid', 
+    global.recipe_assembler(event, '2x laserio:card_fluid', 
         ['1x gtceu:energetic_alloy_plate','gtceu:polytetrafluoroethylene_large_fluid_pipe', '2x laserio:logic_chip'],
         [], 120, 20)
 

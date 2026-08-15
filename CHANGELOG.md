@@ -14,6 +14,7 @@
     + Added new materials for: Carbon, Energetic Alloy, Energetic Pearlic Alloy, Lunarium, Pink Steel, Tungsten Carbide, Vanadium Steel
 + Lang additions
 + Here Be Dragons QB Chapter
++ New helper/modules textures
  
 
 ### Feature Additions
@@ -39,6 +40,8 @@
 + Gregified Spatial Tools Compatible Recipes
 + Gregified Personal Shrinking Device
 + Changed IaF recipes
++ Added recipes for Helper Assemblers
++ Kitchen sink no longer has infinite water
 
 ### Mod Additions
 + Added Aether
@@ -52,3 +55,13 @@
 ### Mod Updates
 + Updated Voyager Core
 + Updated GTCEu to 7.5.3
+
+### Bug Fixes
++ Apotheosis Salvaging table is now craftable without iron tools
++ Helper assemblers are now craftable
++ Slimer quest now requires the actual slimer
++ Occultism deepslate ore no longer generates
++ Torch pet food item can now be crafted
++ Hang glider now needs treated wood
++ Fixed Ad Astra tag issues
++ Many more recipe fixes
