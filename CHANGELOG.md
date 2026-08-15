@@ -43,6 +43,8 @@
 + Changed IaF recipes
 + Added recipes for Helper Assemblers
 + Kitchen sink no longer has infinite water
++ Added recipe for Magma cube pet
++ Inventory pets no longer need food
 
 ### Mod Additions
 + Added Aether
