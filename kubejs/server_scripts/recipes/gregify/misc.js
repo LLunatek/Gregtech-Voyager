@@ -3,6 +3,7 @@ ServerEvents.recipes((event) => {
     event.remove({ output: "framedblocks:framed_cube" })
 
     event.remove({output: "hangglider:glider_wing"})
+    event.remove({output: "vinery:straw_hat"})
     event.remove({output:"hangglider:glider_framework"})
     event.remove({mod: "comforts"})
     event.remove({output: "#minecraft:wool_carpets", mod: "minecraft", type: "crafting_shaped"})
