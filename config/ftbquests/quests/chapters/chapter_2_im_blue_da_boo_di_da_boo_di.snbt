@@ -1033,11 +1033,17 @@
 				type: "item"
 			}]
 			subtitle: "You don't need to do this yet, but PLEASE passive this"
-			tasks: [{
-				id: "794E07DB1F0BC94B"
-				item: "gtceu:ethylene_bucket"
-				type: "item"
-			}]
+			tasks: [
+				{
+					id: "794E07DB1F0BC94B"
+					item: "gtceu:ethylene_bucket"
+					type: "item"
+				}
+				{
+					id: "48B5618A98576D4A"
+					type: "checkmark"
+				}
+			]
 			x: -9.0d
 			y: 0.5d
 		}
@@ -1169,6 +1175,7 @@
 		{
 			dependencies: ["7B351CBB336D5129"]
 			id: "2AE88B3B3356EFF3"
+			min_required_tasks: 1
 			optional: true
 			rewards: [{
 				count: 8
@@ -1177,11 +1184,17 @@
 				type: "item"
 			}]
 			subtitle: "Don't use fermented biomass for this please"
-			tasks: [{
-				id: "3B52384194F1F5FC"
-				item: "gtceu:ethanol_bucket"
-				type: "item"
-			}]
+			tasks: [
+				{
+					id: "3B52384194F1F5FC"
+					item: "gtceu:ethanol_bucket"
+					type: "item"
+				}
+				{
+					id: "498DBFC0D770AA11"
+					type: "checkmark"
+				}
+			]
 			x: -8.0d
 			y: 0.5d
 		}
@@ -1229,7 +1242,9 @@
 		}
 		{
 			dependencies: ["6ECAE141D27C5E82"]
+			icon: "gtceu:oil_bucket"
 			id: "088A47A6F8B2E1EC"
+			min_required_tasks: 1
 			optional: true
 			rewards: [{
 				count: 8
@@ -1238,11 +1253,17 @@
 				type: "item"
 			}]
 			subtitle: "Black gold. 'Nuff said"
-			tasks: [{
-				id: "0FEF9A0E76F9CB56"
-				item: "gtceu:oil_bucket"
-				type: "item"
-			}]
+			tasks: [
+				{
+					id: "0FEF9A0E76F9CB56"
+					item: "gtceu:oil_bucket"
+					type: "item"
+				}
+				{
+					id: "0E667B04449A3B87"
+					type: "checkmark"
+				}
+			]
 			x: -10.0d
 			y: 0.5d
 		}
