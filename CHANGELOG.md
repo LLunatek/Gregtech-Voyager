@@ -41,6 +41,7 @@
 + Gregified Personal Shrinking Device
 + Changed IaF recipes
 + Added recipes for Helper Assemblers
++ Kitchen sink no longer has infinite water
 
 ### Mod Additions
 + Added Aether
